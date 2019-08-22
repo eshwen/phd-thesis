@@ -1,15 +1,19 @@
 # phd-thesis
 
+
 Repository containing everything related to my thesis.
 
 Thesis guidelines: http://www.bristol.ac.uk/academic-quality/pg/pgrcode/annex4/
 
 For choosing fonts: https://thesiswhisperer.com/2016/03/30/what-font-should-i-choose-for-my-thesis/, https://en.wikibooks.org/wiki/LaTeX/Fonts
 
+
 ## Immediate to-do
+- Sort out ssh key for GitHub on MacBook Air so I can easily push and pull
 - Add my thesis outline from my third year report into document and make chapter directories/tex files accordingly
 - Take things from lab book that should be useful for thesis and add in
 - Get higher res Bristol crest for title page and replace current one (make sure sizing is correct)
+- Once initial template is sorted and stable, create another release. Then import into Overleaf for simple editing
 
 
 ## Questions/comments

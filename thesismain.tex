@@ -1,7 +1,9 @@
 %\title{University of Bristol Thesis Template}
+% ----------------------------------------
 \RequirePackage[l2tabu]{nag}		% Warns for incorrect (obsolete) LaTeX usage
-%
-%
+% ----------------------------------------
+
+% ----------------------------------------
 % File: memoirthesis.tex
 % Author: Victor Brena
 % Description: Contains the thesis template using memoir class,
@@ -26,14 +28,15 @@
 %
 % Memoir class loads useful packages by default (see manual).
 \documentclass[a4paper,12pt,leqno,openbib,oldfontcommands]{memoir} %add 'draft' to turn draft option on (see below)
-%
-%
+% ----------------------------------------
+
+% ----------------------------------------
 % Adding metadata:
 \usepackage{datetime}
 \usepackage{ifpdf}
 \ifpdf
 \pdfinfo{
-   /Author (Author's name)
+   /Author Eshwen Bhal
    /Title (PhD Thesis)
    /Keywords (One; Two;Three)
    /CreationDate (D:\pdfdate)
@@ -41,14 +44,19 @@
 \fi
 % When draft option is on. 
 \ifdraftdoc 
-	\usepackage{draftwatermark}				%Sets watermarks up.
+	\usepackage{draftwatermark} % Sets watermarks up.
 	\SetWatermarkScale{0.3}
 	\SetWatermarkText{\bf Draft: \today}
 \fi
-%
+% ----------------------------------------
+
+% ----------------------------------------
 % Declare figure/table as a subfloat.
 \newsubfloat{figure}
 \newsubfloat{table}
+% ----------------------------------------
+
+% ----------------------------------------
 % Better page layout for A4 paper, see memoir manual.
 \settrimmedsize{297mm}{210mm}{*}
 \setlength{\trimtop}{0pt} 
@@ -61,13 +69,20 @@
 \setheadfoot{\onelineskip}{2\onelineskip} 
 \setheaderspaces{*}{2\onelineskip}{*} 
 \checkandfixthelayout
-%
-\frenchspacing
+% ----------------------------------------
+
+% ----------------------------------------
+\frenchspacing % single space after a sentence
+% ----------------------------------------
+
+% ----------------------------------------
 % Font with math support: New Century Schoolbook
 %\usepackage{fouriernc} % default font for template
-\usepackage{palatino} % this is the font of the main text
+\usepackage{courier} % this is the font of the main text
 \usepackage[T1]{fontenc}
-%
+% ----------------------------------------
+
+% ----------------------------------------
 % UoB guidelines:
 %
 % Text should be in double or 1.5 line spacing, and font size should be
@@ -115,7 +130,9 @@
 } 
 \makeatother 
 \chapterstyle{daleifmodif}
-%
+% ----------------------------------------
+
+% ----------------------------------------
 % UoB guidelines:
 %
 % The pages should be numbered consecutively at the bottom centre of the
@@ -151,87 +168,83 @@
 % instead of
 % \includegraphics{chapters/brewing/images/figure1}
 \usepackage{import}
+% ----------------------------------------
 
+% ----------------------------------------
 % Add other packages needed for chapters here. For example:
-\usepackage{lipsum}					%Needed to create dummy text
-\usepackage{amsfonts} 					%Calls Amer. Math. Soc. (AMS) fonts
-\usepackage[centertags]{amsmath}			%Writes maths centred down
-\usepackage{stmaryrd}					%New AMS symbols
-\usepackage{amssymb}					%Calls AMS symbols
-\usepackage{amsthm}					%Calls AMS theorem environment
-\usepackage{newlfont}					%Helpful package for fonts and symbols
-\usepackage{layouts}					%Layout diagrams
-\usepackage{graphicx}					%Calls figure environment
-\usepackage{longtable,rotating}			%Long tab environments including rotation. 
-\usepackage[utf8]{inputenc}			%Needed to encode non-english characters 
-									%directly for mac
-\usepackage{colortbl}					%Makes coloured tables
-\usepackage{wasysym}					%More math symbols
-\usepackage{mathrsfs}					%Even more math symbols
-\usepackage{float}						%Helps to place figures, tables, etc. 
-\usepackage{verbatim}					%Permits pre-formated text insertion
-\usepackage{upgreek }					%Calls other kind of greek alphabet
-\usepackage{latexsym}					%Extra symbols
+\usepackage{lipsum}					% Needed to create dummy text
+\usepackage{mathtools} 				% includes the "amsmath" package and other mathematical symbols and environments
+\usepackage{newlfont}					% Helpful package for fonts and symbols
+\usepackage{layouts}					% Layout diagrams
+\usepackage{graphicx}					% Calls figure environment, i.e., starting figures with \includegraphics
+\usepackage{longtable,rotating}			% Long tab environments including rotation. 
+\usepackage[utf8]{inputenc}			% Needed to encode non-english characters directly for mac
+\usepackage{colortbl}					% Makes coloured tables
+\usepackage{wasysym}					% More math symbols
+\usepackage{mathrsfs}					% Even more math symbols
+\usepackage{float}						% Helps to place figures, tables, etc. 
+\usepackage{verbatim}					% Permits pre-formated text insertion
+\usepackage{latexsym}					% Extra symbols
 \usepackage[square,numbers,
-		     sort&compress]{natbib}		%Calls bibliography commands 
-\usepackage{url}						%Supports url commands
-% \usepackage{etex}						%eTeXÕs extended support for counters
-% \usepackage{fixltx2e}					%Eliminates some in felicities of the 
-									%original LaTeX kernel
-\usepackage[spanish,english]{babel}		%For languages characters and hyphenation
-\usepackage{color}                    				%Creates coloured text and background
-\usepackage[colorlinks=true,
-		     allcolors=black]{hyperref}              %Creates hyperlinks in cross references
-\usepackage{memhfixc}					%Must be used on memoir document 
-									%class after hyperref
-\usepackage{enumerate}					%For enumeration counter
-\usepackage{footnote}					%For footnotes
-\usepackage{microtype}					%Makes pdf look better.
-\usepackage{rotfloat}					%For rotating and float environments as tables, 
-									%figures, etc. 
-\usepackage{alltt}						%LaTeX commands are not disabled in 
-									%verbatim-like environment
-\usepackage[version=0.96]{pgf}			%PGF/TikZ is a tandem of languages for producing vector graphics from a 
-\usepackage{tikz}						%geometric/algebraic description.
+		     sort&compress]{natbib}		% Calls bibliography commands 
+% \usepackage{etex}						% eTeXÕs extended support for counters
+% \usepackage{fixltx2e}					% Eliminates some in felicities of the original LaTeX kernel
+\usepackage[spanish,english]{babel}		% For languages characters and hyphenation
+\usepackage{color}                    				% Creates coloured text and background
+%\usepackage[colorlinks=true,
+%		     allcolors=black]{hyperref}              % Creates hyperlinks in cross references. Superseded by the one I've called below
+\usepackage{memhfixc}					% Must be used on memoir document class after hyperref
+\usepackage{enumerate}					% For enumeration counter
+\usepackage{footnote}					% For footnotes
+\usepackage{microtype}					% Makes pdf look better (affects font and line spacing. fewer overfull/underfull hbox warnings)
+\usepackage{rotfloat}					% For rotating and float environments as tables, figures, etc. 
+\usepackage{alltt}						% LaTeX commands are not disabled in verbatim-like environment
+\usepackage[version=0.96]{pgf}			% PGF/TikZ is a tandem of languages for producing vector graphics from a 
+\usepackage{tikz}						% geometric/algebraic description.
 \usetikzlibrary{arrows,shapes,snakes,
 		       automata,backgrounds,
-		       petri,topaths}				%To use diverse features from tikz
-% Esh's packages from here
-\iffalse
-\usepackage{mathtools} % includes the "amsmath" package and other mathematical symbols and environments
-\usepackage{microtype} % for font and line spacing. fewer overfull/underfull hbox warnings
+		       petri,topaths}				% To use diverse features from tikz
+
+% Esh's extra packages from here
 \usepackage{texnames}
-\usepackage[utf8]{inputenc} % for special/accented characters
-\usepackage{physics} % for physics symbols, such as differential symbols
-\usepackage{courier} % font for code
-\usepackage{float} % to fix figures in place
-\usepackage{graphicx} % so I can use \includegraphics, etc.
-\usepackage{cprotect} % so I can use \verb and other commands within captions
-\usepackage{bbold} % for mathematical symbols like the characters for special sets
-\usepackage[ampersand]{easylist} % for bullet points and lists, etc. New entry starts with & character
-\usepackage{cancel} % for strike-throughs for missing energy/momentum, etc.
-\usepackage{maybemath} % required for hepparticles
-\usepackage{hepparticles} % required for hepnicenames
-\usepackage{hepnicenames} % standard symbols for HEP particles
-\usepackage{wasysym} % for more mathematical and astronomical symbols
-\usepackage{pdfpages} % to insert PDF documents within this document
-\usepackage{spverbatim} % for linebreaks in the verbatim environment
-\usepackage{tabularx} % for multii-line cells in tables
-\usepackage{multirow} % for nested rows in tables
-\usepackage{siunitx} % for aligning numbers properly in tables (column type is "S")
-\usepackage[normalem]{ulem} % for underlining over multiple lines. Need "normalem" option otherwise \emph underlines
-\usepackage{pdflscape} % for landscape-oriented tables
-\usepackage{xfrac} % for nice-looking diagonal (a/b) fractions
-\fi
+\usepackage{physics} 					% for physics symbols, such as differential symbols
+\usepackage{float} 						% to fix figures in place
+\usepackage{cprotect}					% so I can use \verb and other commands within captions
+\usepackage{bbold} 						% for mathematical symbols like the characters for special sets
+\usepackage[ampersand]{easylist} 			% for bullet points and lists, etc. New entry starts with & character
+\usepackage{cancel} 					% for strike-throughs for missing energy/momentum, etc.
+\usepackage{maybemath} 				% required for hepparticles
+\usepackage{hepparticles} 				% required for hepnicenames
+\usepackage{hepnicenames} 				% standard symbols for HEP particles
+\usepackage{spverbatim} 					% for linebreaks in the verbatim environment
+\usepackage{tabularx} 					% for multii-line cells in tables
+\usepackage{multirow} 					% for nested rows in tables
+\usepackage{siunitx} 					% for aligning numbers properly in tables (column type is "S")
+\usepackage[normalem]{ulem} 				% for underlining over multiple lines. Need "normalem" option otherwise \emph underlines
+\usepackage{pdflscape}					% for landscape-oriented tables
+\usepackage{xfrac} 						% for nice-looking diagonal (a/b) fractions
 
 \usepackage{array} % for more flexibility with tables
 \newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}} % for text in table cells to be centred
-%							
+
+\usepackage{hyperref} % to hyperlink references, contents, etc. Change colours if required
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=Fuchsia,
+    urlcolor=red,
+    citecolor=cyan,
+}
+% ----------------------------------------
+
+% ----------------------------------------							
 %Reduce widows  (the last line of a paragraph at the start of a page) and orphans 
 % (the first line of paragraph at the end of a page)
 \widowpenalty=1000
 \clubpenalty=1000
-%
+% ----------------------------------------
+
+% ----------------------------------------
 % New command definitions for my thesis
 %
 \newcommand{\keywords}[1]{\par\noindent{\small{\bf Keywords:} #1}} %Defines keywords small section
@@ -261,26 +274,29 @@
 \newcommand{\prom}[1]{\left\langle#1\right\rangle}                                         %Defines average operator
 \newcommand{\tra}[1]{\textnormal{tra} \: #1}                                                       %Defines trace operator
 \newcommand{\sign}[1]{\textnormal{sign\,}#1}                                                   %Defines sign operator
-\newcommand{\sech}[1]{\textnormal{sech} #1}                                                  %Defines sech
 \newcommand{\diag}[1]{\textnormal{diag} #1}                                                    %Defines diag operator
 \newcommand{\arcsech}[1]{\textnormal{arcsech} #1}                                       %Defines arcsech
 \newcommand{\arctanh}[1]{\textnormal{arctanh} #1}                                         %Defines arctanh
 %Change tombstone symbol
 \newcommand{\blackged}{\hfill$\blacksquare$}
 \newcommand{\whiteged}{\hfill$\square$}
-%
-%
-% New definition of square root:
-% it renames \sqrt as \oldsqrt
-\let\oldsqrt\sqrt
-% it defines the new \sqrt in terms of the old one
-\def\sqrt{\mathpalette\DHLhksqrt}
-\def\DHLhksqrt#1#2{%
-\setbox0=\hbox{$#1\oldsqrt{#2\,}$}\dimen0=\ht0
-\advance\dimen0-0.2\ht0
-\setbox2=\hbox{\vrule height\ht0 depth -\dimen0}%
-{\box0\lower0.4pt\box2}}
-%
+
+\renewcommand{\_}{\texttt{\char`_}}
+\newcommand{\madgraph}{\MADGRAPH}
+\newcommand{\madanalysis}{\textsc{MadAnalysis}\xspace}
+\newcommand{\rivet}{\textsc{Rivet}}
+\newcommand{\etmiss}{\MET}
+\newcommand{\met}{\MET}
+\newcommand{\htmiss}{\mht}
+\newcommand{\alphat}{\ensuremath{\alpha_{\mathrm{T}}}\xspace}
+\newcommand{\biasedDPhi}{\ensuremath{\Delta\phi^*_{\mathrm{min}}}\xspace}
+\newcommand{\pT}{\pt}
+\newcommand{\LSP}{\ensuremath{\tilde{\chi}_1^0}\xspace}
+\newcommand{\rinv}{\ensuremath{r_{\mathrm{inv}}}\xspace}
+\newcommand{\comruntwo}{\ensuremath{\sqrt{s} = 13 \TeV}\xspace}
+% ----------------------------------------
+
+% ----------------------------------------
 % My caption style
 \newcommand{\mycaption}[2][\@empty]{
 	\captionnamefont{\scshape} 
@@ -309,7 +325,9 @@
 	\lettrine[lines=3,lhang=0.33,nindent=0em]{
 		\color{gray}
      		{\textsc{#1}}}{}}
-%
+% ----------------------------------------
+
+% ----------------------------------------
 % Hyphenation for some words
 %
 \hyphenation{res-pec-tively}
@@ -317,8 +335,9 @@
 \hyphenation{hypo-the-sis}
 \hyphenation{para-me-ters}
 \hyphenation{sol-va-bi-li-ty}
-%
-%
+% ----------------------------------------
+
+
 \begin{document}
 % UoB guidlines:
 %
@@ -371,7 +390,7 @@
 % subdirectories.
 \mainmatter
 %
-\import{chapters/chapter01/}{chap01.tex}
+\import{chapters/introduction/}{introduction.tex}
 \clearemptydoublepage
 %
 %

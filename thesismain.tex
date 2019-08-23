@@ -1,4 +1,7 @@
 %\title{University of Bristol Thesis Template}
+
+% In TeXShop, compile pdflatex, bibliography and glossary in one command by selecting "pdflatexmk" from the drop-down menu next to "Typeset".
+
 % ----------------------------------------
 \RequirePackage[l2tabu]{nag}		% Warns for incorrect (obsolete) LaTeX usage
 % ----------------------------------------
@@ -6,28 +9,19 @@
 % ----------------------------------------
 % File: memoirthesis.tex
 % Author: Victor Brena
-% Description: Contains the thesis template using memoir class,
-% which is mainly based on book class but permits better control of 
-% chapter styles for example. This template is an adaptation and 
-% modification of Oscar's.
+% Description: Contains the thesis template using memoir class, which is mainly based on book class but permits better control of  chapter styles for example. This template is an adaptation and modification of Oscar's.
 % 
-% Memoir is a flexible class for typesetting poetry, fiction, 
-% non-fiction and mathematical works as books, reports, articles or
-% manuscripts. CTAN repository is found at:
-% http://www.ctan.org/tex-archive/macros/latex/contrib/memoir/
+% Memoir is a flexible class for typesetting poetry, fiction, non-fiction and mathematical works as books, reports, articles or manuscripts. CTAN repository is found at: http://www.ctan.org/tex-archive/macros/latex/contrib/memoir/
 %
 %
-% UoB guidelines for thesis presentation were found at:
-% http://www.bris.ac.uk/esu/pg/pgrcop11-12topic.pdf#page=49
+% UoB guidelines for thesis presentation were found at: http://www.bris.ac.uk/esu/pg/pgrcop11-12topic.pdf#page=49
 %
 % UoB guidelines:
 %
-% The dissertation must be printed on A4 white paper. Paper up to A3 may be used
-% for maps, plans, diagrams and illustrative material. Pages (apart from the
-% preliminary pages) should normally be double-sided.
+% The dissertation must be printed on A4 white paper. Paper up to A3 may be used for maps, plans, diagrams and illustrative material. Pages (apart from the preliminary pages) should normally be double-sided.
 %
 % Memoir class loads useful packages by default (see manual).
-\documentclass[a4paper,12pt,leqno,openbib,oldfontcommands]{memoir} %add 'draft' to turn draft option on (see below)
+\documentclass[a4paper,12pt,leqno,openbib,oldfontcommands]{memoir} % add 'draft' to turn draft option on (see below)
 % ----------------------------------------
 
 % ----------------------------------------
@@ -85,12 +79,9 @@
 % ----------------------------------------
 % UoB guidelines:
 %
-% Text should be in double or 1.5 line spacing, and font size should be
-% chosen to ensure clarity and legibility for the main text and for any
-% quotations and footnotes. Margins should allow for eventual hard binding.
+% Text should be in double or 1.5 line spacing, and font size should be chosen to ensure clarity and legibility for the main text and for any quotations and footnotes. Margins should allow for eventual hard binding.
 %
-% Note: This is automatically set by memoir class. Nevertheless \OnehalfSpacing 
-% enables double spacing but leaves single spaced for captions for instance. 
+% Note: This is automatically set by memoir class. Nevertheless \OnehalfSpacing enables double spacing but leaves single spaced for captions for instance.
 \OnehalfSpacing 
 %
 % Sets numbering division level
@@ -135,8 +126,7 @@
 % ----------------------------------------
 % UoB guidelines:
 %
-% The pages should be numbered consecutively at the bottom centre of the
-% page.
+% The pages should be numbered consecutively at the bottom centre of the page.
 \makepagestyle{myvf} 
 \makeoddfoot{myvf}{}{\thepage}{} 
 \makeevenfoot{myvf}{}{\thepage}{} 
@@ -145,23 +135,8 @@
 \makeoddhead{myvf}{}{}{\small\textsc{\rightmark}}
 \pagestyle{myvf}
 %
-% Oscar's command (it works):
-% Fills blank pages until next odd-numbered page. Used to emulate single-sided
-% frontmatter. This will work for title, abstract and declaration. Though the
-% contents sections will each start on an odd-numbered page they will
-% spill over onto the even-numbered pages if extending beyond one page
-% (hopefully, this is ok).
+% Oscar's command (it works): Fills blank pages until next odd-numbered page. Used to emulate single-sided frontmatter. This will work for title, abstract and declaration. Though the contents sections will each start on an odd-numbered page they will spill over onto the even-numbered pages if extending beyond one page (hopefully, this is ok).
 \newcommand{\clearemptydoublepage}{\newpage{\thispagestyle{empty}\cleardoublepage}}
-%
-%
-% Creates indexes for Table of Contents, List of Figures, List of Tables and Index
-\makeindex
-
-%\usepackage[toc,acronym]{glossaries}
-%\makeglossaries
-%\input{backmatter/glossary}
-
-% \printglossaries below creates a list of abbreviations. \gls and related commands are then used throughout the text, so that latex can automatically keep track of which abbreviations have already been defined in the text.
 % ----------------------------------------
 
 % ----------------------------------------
@@ -235,10 +210,17 @@
     citecolor=cyan,
 }
 % ----------------------------------------
+% ----------------------------------------
+% Creates the glossary for terms and acronyms
+\usepackage[acronym, toc, nonumberlist]{glossaries}
+\makeglossaries
+\input{backmatter/glossary}
+% Creates indexes for Table of Contents, List of Figures, List of Tables and Index
+\makeindex
+% ----------------------------------------
 
 % ----------------------------------------							
-%Reduce widows  (the last line of a paragraph at the start of a page) and orphans 
-% (the first line of paragraph at the end of a page)
+%Reduce widows  (the last line of a paragraph at the start of a page) and orphans (the first line of paragraph at the end of a page)
 \widowpenalty=1000
 \clubpenalty=1000
 % ----------------------------------------
@@ -342,18 +324,11 @@
 %
 % Preliminary pages
 % 
-% The five preliminary pages must be the Title Page, Abstract, Dedication
-% and Acknowledgements, Author's Declaration and Table of Contents.
-% These should be single-sided.
+% The five preliminary pages must be the Title Page, Abstract, Dedication and Acknowledgements, Author's Declaration and Table of Contents. These should be single-sided.
 % 
 % Table of contents, list of tables and illustrative material
 % 
-% The table of contents must list, with page numbers, all chapters,
- % sections and subsections, the list of references, bibliography, list of
-% abbreviations and appendices. The list of tables and illustrations
-% should follow the table of contents, listing with page numbers the
-% tables, photographs, diagrams, etc., in the order in which they appear
-% in the text.
+% The table of contents must list, with page numbers, all chapters, sections and subsections, the list of references, bibliography, list of abbreviations and appendices. The list of tables and illustrations should follow the table of contents, listing with page numbers the tables, photographs, diagrams, etc., in the order in which they appear in the text.
 % 
 \frontmatter
 \pagenumbering{roman}
@@ -401,14 +376,18 @@
 % Apparently the guidelines don't say anything about citations or bibliography styles so I guess we can use anything.
 \backmatter
 
-%\printglossary
-%\clearemptydoublepage
-
 % Bibliography uses bibtex backend
 \bibliographystyle{siam}  % CHANGE BIBLIOGRAPHY STYLE
 \refstepcounter{chapter}
 \bibliography{backmatter/thesisbib}
 \clearemptydoublepage
+
+% Create separate glossaries for terms and acronyms. Can merge by instead using \printglossaries
+\printglossary
+\clearpage
+\printglossary[type=\acronymtype]
+\clearemptydoublepage
+
 %
 % Add index
 %\printindex

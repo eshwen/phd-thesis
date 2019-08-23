@@ -156,17 +156,16 @@
 %
 % Creates indexes for Table of Contents, List of Figures, List of Tables and Index
 \makeindex
-% \printglossaries below creates a list of abbreviations. \gls and related
-% commands are then used throughout the text, so that latex can automatically
-% keep track of which abbreviations have already been defined in the text.
-%
-% The import command enables each chapter tex file to use relative paths when
-% accessing supplementary files. For example, to include
-% chapters/brewing/images/figure1.png from chapters/brewing/brewing.tex we can
-% use
-% \includegraphics{images/figure1}
-% instead of
-% \includegraphics{chapters/brewing/images/figure1}
+
+%\usepackage[toc,acronym]{glossaries}
+%\makeglossaries
+%\input{backmatter/glossary}
+
+% \printglossaries below creates a list of abbreviations. \gls and related commands are then used throughout the text, so that latex can automatically keep track of which abbreviations have already been defined in the text.
+% ----------------------------------------
+
+% ----------------------------------------
+% The import command enables each chapter tex file to use relative paths when accessing supplementary files. For example, to include chapters/brewing/images/figure1.png from chapters/brewing/brewing.tex we can use \includegraphics{images/figure1} instead of \includegraphics{chapters/brewing/images/figure1}
 \usepackage{import}
 % ----------------------------------------
 
@@ -386,8 +385,7 @@
 \clearemptydoublepage
 %
 %
-% The bulk of the document is delegated to these chapter files in
-% subdirectories.
+% The bulk of the document is delegated to these chapter files in subdirectories.
 \mainmatter
 %
 \import{chapters/introduction/}{introduction.tex}
@@ -399,12 +397,17 @@
 \import{chapters/appendices/}{app0A.tex}
 \clearemptydoublepage
 %
-% Apparently the guidelines don't say anything about citations or
-% bibliography styles so I guess we can use anything.
+
+% Apparently the guidelines don't say anything about citations or bibliography styles so I guess we can use anything.
 \backmatter
-\bibliographystyle{siam}
+
+%\printglossary
+%\clearemptydoublepage
+
+% Bibliography uses bibtex backend
+\bibliographystyle{siam}  % CHANGE BIBLIOGRAPHY STYLE
 \refstepcounter{chapter}
-\bibliography{thesisbib}
+\bibliography{backmatter/thesisbib}
 \clearemptydoublepage
 %
 % Add index

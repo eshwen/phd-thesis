@@ -146,13 +146,13 @@
 
 % ----------------------------------------
 % Add other packages needed for chapters here. For example:
-\usepackage{lipsum}					% Needed to create dummy text
-\usepackage{mathtools} 				% includes the "amsmath" package and other mathematical symbols and environments
+\usepackage{lipsum}						% Needed to create dummy text
+\usepackage{mathtools} 					% includes the "amsmath" package and other mathematical symbols and environments
 \usepackage{newlfont}					% Helpful package for fonts and symbols
 \usepackage{layouts}					% Layout diagrams
 \usepackage{graphicx}					% Calls figure environment, i.e., starting figures with \includegraphics
-\usepackage{longtable,rotating}			% Long tab environments including rotation. 
-\usepackage[utf8]{inputenc}			% Needed to encode non-english characters directly for mac
+\usepackage{longtable,rotating}				% Long tab environments including rotation
+\usepackage[utf8]{inputenc}				% Needed to encode non-english characters directly for mac
 \usepackage{colortbl}					% Makes coloured tables
 \usepackage{wasysym}					% More math symbols
 \usepackage{mathrsfs}					% Even more math symbols
@@ -161,12 +161,10 @@
 \usepackage{latexsym}					% Extra symbols
 \usepackage[square,numbers,
 		     sort&compress]{natbib}		% Calls bibliography commands 
-% \usepackage{etex}						% eTeXÕs extended support for counters
+% \usepackage{etex}					% eTeXÕs extended support for counters
 % \usepackage{fixltx2e}					% Eliminates some in felicities of the original LaTeX kernel
-\usepackage[spanish,english]{babel}		% For languages characters and hyphenation
-\usepackage{color}                    				% Creates coloured text and background
-%\usepackage[colorlinks=true,
-%		     allcolors=black]{hyperref}              % Creates hyperlinks in cross references. Superseded by the one I've called below
+\usepackage[spanish,english]{babel}			% For languages characters and hyphenation
+\usepackage{color}                    			% Creates coloured text and background
 \usepackage{memhfixc}					% Must be used on memoir document class after hyperref
 \usepackage{enumerate}					% For enumeration counter
 \usepackage{footnote}					% For footnotes
@@ -180,7 +178,6 @@
 		       petri,topaths}				% To use diverse features from tikz
 
 % Esh's extra packages from here
-\usepackage{texnames}
 \usepackage{physics} 					% for physics symbols, such as differential symbols
 \usepackage{float} 						% to fix figures in place
 \usepackage{cprotect}					% so I can use \verb and other commands within captions
@@ -198,10 +195,10 @@
 \usepackage{pdflscape}					% for landscape-oriented tables
 \usepackage{xfrac} 						% for nice-looking diagonal (a/b) fractions
 
-\usepackage{array} % for more flexibility with tables
+\usepackage{array} 						% for more flexibility with tables
 \newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}} % for text in table cells to be centred
 
-\usepackage{hyperref} % to hyperlink references, contents, etc. Change colours if required
+\usepackage{hyperref} 					% to hyperlink references, contents, etc. Change colours if required
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
@@ -210,17 +207,18 @@
     citecolor=cyan,
 }
 % ----------------------------------------
+
 % ----------------------------------------
-% Creates the glossary for terms and acronyms
+% Create the glossary for terms and acronyms
 \usepackage[acronym, toc, nonumberlist]{glossaries}
 \makeglossaries
 \input{backmatter/glossary}
-% Creates indexes for Table of Contents, List of Figures, List of Tables and Index
+% Create indexes for Table of Contents, List of Figures, List of Tables and Index
 \makeindex
 % ----------------------------------------
 
 % ----------------------------------------							
-%Reduce widows  (the last line of a paragraph at the start of a page) and orphans (the first line of paragraph at the end of a page)
+% Reduce widows (the last line of a paragraph at the start of a page) and orphans (the first line of paragraph at the end of a page)
 \widowpenalty=1000
 \clubpenalty=1000
 % ----------------------------------------
@@ -228,20 +226,8 @@
 % ----------------------------------------
 % New command definitions for my thesis
 %
-\newcommand{\keywords}[1]{\par\noindent{\small{\bf Keywords:} #1}} %Defines keywords small section
-\newcommand{\parcial}[2]{\frac{\partial#1}{\partial#2}}                             %Defines a partial operator
-\newcommand{\vectorr}[1]{\mathbf{#1}}                                                        %Defines a bold vector
-\newcommand{\vecol}[2]{\left(                                                                         %Defines a column vector
-	\begin{array}{c} 
-		\displaystyle#1 \\
-		\displaystyle#2
-	\end{array}\right)}
-\newcommand{\mados}[4]{\left(                                                                       %Defines a 2x2 matrix
-	\begin{array}{cc}
-		\displaystyle#1 &\displaystyle #2 \\
-		\displaystyle#3 & \displaystyle#4
-	\end{array}\right)}
-\newcommand{\pgftextcircled}[1]{                                                                    %Defines encircled text
+\newcommand{\keywords}[1]{\par\noindent{\small{\bf Keywords:} #1}} % Defines keywords small section
+\newcommand{\pgftextcircled}[1]{                                                                    % Defines encircled text
     \setbox0=\hbox{#1}%
     \dimen0\wd0%
     \divide\dimen0 by 2%
@@ -250,17 +236,6 @@
         \node[circle,draw,outer sep=0pt,inner sep=0.1ex] (a) {#1};
     \end{tikzpicture}
 }
-\newcommand{\range}[1]{\textnormal{range }#1}                                             %Defines range operator
-\newcommand{\innerp}[2]{\left\langle#1,#2\right\rangle}                                 %Defines inner product
-\newcommand{\prom}[1]{\left\langle#1\right\rangle}                                         %Defines average operator
-\newcommand{\tra}[1]{\textnormal{tra} \: #1}                                                       %Defines trace operator
-\newcommand{\sign}[1]{\textnormal{sign\,}#1}                                                   %Defines sign operator
-\newcommand{\diag}[1]{\textnormal{diag} #1}                                                    %Defines diag operator
-\newcommand{\arcsech}[1]{\textnormal{arcsech} #1}                                       %Defines arcsech
-\newcommand{\arctanh}[1]{\textnormal{arctanh} #1}                                         %Defines arctanh
-%Change tombstone symbol
-\newcommand{\blackged}{\hfill$\blacksquare$}
-\newcommand{\whiteged}{\hfill$\square$}
 
 \renewcommand{\_}{\texttt{\char`_}}
 \newcommand{\madgraph}{\MADGRAPH}
@@ -275,9 +250,7 @@
 \newcommand{\LSP}{\ensuremath{\tilde{\chi}_1^0}\xspace}
 \newcommand{\rinv}{\ensuremath{r_{\mathrm{inv}}}\xspace}
 \newcommand{\comruntwo}{\ensuremath{\sqrt{s} = 13 \TeV}\xspace}
-% ----------------------------------------
 
-% ----------------------------------------
 % My caption style
 \newcommand{\mycaption}[2][\@empty]{
 	\captionnamefont{\scshape} 
@@ -289,7 +262,7 @@
 	\setlength{\belowcaptionskip}{10pt}
 	\ifx \@empty#1 \caption{#2}\else \caption[#1]{#2}
 }
-%
+
 % My subcaption style
 \newcommand{\mysubcaption}[2][\@empty]{
 	\subcaptionsize{\small}
@@ -299,8 +272,8 @@
 	\setlength{\belowcaptionskip}{10pt}
 	\ifx \@empty#1 \subcaption{#2}\else \subcaption[#1]{#2}
 }
-%
-%An initial of the very first character of the content
+
+% An initial of the very first character of the content
 \usepackage{lettrine}
 \newcommand{\initial}[1]{%
 	\lettrine[lines=3,lhang=0.33,nindent=0em]{
@@ -310,7 +283,6 @@
 
 % ----------------------------------------
 % Hyphenation for some words
-%
 \hyphenation{res-pec-tively}
 \hyphenation{mono-ti-ca-lly}
 \hyphenation{hypo-the-sis}
@@ -329,49 +301,50 @@
 % Table of contents, list of tables and illustrative material
 % 
 % The table of contents must list, with page numbers, all chapters, sections and subsections, the list of references, bibliography, list of abbreviations and appendices. The list of tables and illustrations should follow the table of contents, listing with page numbers the tables, photographs, diagrams, etc., in the order in which they appear in the text.
-% 
+
+
 \frontmatter
 \pagenumbering{roman}
-%
+
 \input{frontmatter/title}
 \clearemptydoublepage
-%
+
 \input{frontmatter/abstract}
 \clearemptydoublepage
-%
+
 \input{frontmatter/dedication}
 \clearemptydoublepage
-%
+
 \input{frontmatter/declaration}
 \clearemptydoublepage
-%
+
 \renewcommand{\contentsname}{Table of Contents}
 \maxtocdepth{subsection}
 \tableofcontents*
 \addtocontents{toc}{\par\nobreak \mbox{}\hfill{\bf Page}\par\nobreak}
 \clearemptydoublepage
-%
+
 \listoftables
 \addtocontents{lot}{\par\nobreak\textbf{{\scshape Table} \hfill Page}\par\nobreak}
 \clearemptydoublepage
-%
+
 \listoffigures
 \addtocontents{lof}{\par\nobreak\textbf{{\scshape Figure} \hfill Page}\par\nobreak}
 \clearemptydoublepage
-%
-%
+
+
 % The bulk of the document is delegated to these chapter files in subdirectories.
 \mainmatter
-%
+
 \import{chapters/introduction/}{introduction.tex}
 \clearemptydoublepage
-%
-%
+
+
 % And the appendix goes here
 \appendix
 \import{chapters/appendices/}{app0A.tex}
 \clearemptydoublepage
-%
+
 
 % Apparently the guidelines don't say anything about citations or bibliography styles so I guess we can use anything.
 \backmatter
@@ -388,8 +361,7 @@
 \printglossary[type=\acronymtype]
 \clearemptydoublepage
 
-%
 % Add index
 %\printindex
-%   
+
 \end{document}

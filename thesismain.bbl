@@ -1,3 +1,26 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{1}
+
+\bibitem{CMS-PAS-SUS-15-005}
+{\sc C.~Collaboration}, {\em {Search for new physics in final states with jets
+  and missing transverse momentum in $\sqrt{s}$ = 13 TeV pp collisions with the
+  $\alpha_{\mathrm{T}}$ variable}}, Tech. Rep. CMS-PAS-SUS-15-005, CERN,
+  Geneva, 2015.
+
+\bibitem{CMS-PAPER-SUS-15-005-arXiv}
+\leavevmode\vrule height 2pt depth -1.6pt width 23pt, {\em {A search for new
+  phenomena in pp collisions at $\sqrt{s}$ = 13 TeV in final states with
+  missing transverse momentum and at least one jet using the
+  ${\alpha_{\mathrm{T}}}$ variable}}, Submitted to: Eur. Phys. J. C,  (2016).
+\newblock CMS-SUS-15-005, CERN-EP-2016-246.
+
+\bibitem{Lisanti:2016jxe}
+{\sc M.~Lisanti}, {\em {Lectures on Dark Matter Physics}}, in {Proceedings,
+  Theoretical Advanced Study Institute in Elementary Particle Physics: New
+  Frontiers in Fields and Strings (TASI 2015): Boulder, CO, USA, June 1-26,
+  2015}, 2017, pp.~399--446.
+
+\bibitem{tagkey1984quarksandleptons}
+{\sc L.~OKUN}, ed., {\em Leptons and Quarks}, North-Holland Personal Library,
+  Elsevier, Amsterdam, 1984.
 
 \end{thebibliography}

@@ -14,9 +14,10 @@ Repository containing everything related to my thesis.
 
 ## Useful links
 
-- Thesis guidelines: http://www.bristol.ac.uk/academic-quality/pg/pgrcode/annex4/
-- For choosing fonts: https://thesiswhisperer.com/2016/03/30/what-font-should-i-choose-for-my-thesis/, https://tug.org/FontCatalogue/seriffonts.html, http://www.indesignskills.com/inspiration/fonts-for-books/, https://fonts.google.com/?category=Serif
+- Thesis guidelines from the University: http://www.bristol.ac.uk/academic-quality/pg/pgrcode/annex4/
+- For choosing fonts: https://thesiswhisperer.com/2016/03/30/what-font-should-i-choose-for-my-thesis/, http://www.indesignskills.com/inspiration/fonts-for-books/, [LaTeX Serif Font Catalogue](https://tug.org/FontCatalogue/seriffonts.html), [Google's serif font catalogue](https://fonts.google.com/?category=Serif)
 - Glossary info: https://en.wikibooks.org/wiki/LaTeX/Glossary
+- Previous Bristol CMS theses for reference: [Lana's](https://github.com/Lana-B/Thesis, [Alex Titterton's](https://www.dropbox.com/sh/a859z9b7jlfmum4/AAC2CjjkLGmbeSIp5H5gQbEIa?dl=0)
 
 
 ## Questions/comments

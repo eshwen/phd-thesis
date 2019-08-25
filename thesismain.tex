@@ -1,6 +1,7 @@
 %\title{University of Bristol Thesis Template}
 
 % In TeXShop, compile pdflatex, bibliography and glossary in one command by selecting "pdflatexmk" from the drop-down menu next to "Typeset".
+% If compilation with pdflatexmk fails, compile with just "LaTeX" and then recompile with "pdflatexmk".
 
 % ----------------------------------------
 \RequirePackage[l2tabu]{nag}		% Warns for incorrect (obsolete) LaTeX usage
@@ -253,6 +254,7 @@
 \newcommand{\LSP}{\ensuremath{\tilde{\chi}_1^0}\xspace}
 \newcommand{\rinv}{\ensuremath{r_{\mathrm{inv}}}\xspace}
 \newcommand{\comruntwo}{\ensuremath{\sqrt{s} = 13 \TeV}\xspace}
+\newcommand{\higgstoinv}{\ensuremath{H \rightarrow \text{inv.}}\xspace}
 
 % My caption style
 \newcommand{\mycaption}[2][\@empty]{
@@ -340,6 +342,21 @@
 \mainmatter
 
 \import{chapters/introduction/}{introduction.tex}
+\clearemptydoublepage
+
+\import{chapters/theory/}{theory.tex}
+\clearemptydoublepage
+
+\import{chapters/detector/}{detector.tex}
+\clearemptydoublepage
+
+\import{chapters/higgstoinv/}{higgstoinv.tex}
+\clearemptydoublepage
+
+\import{chapters/svj/}{svj.tex}
+\clearemptydoublepage
+
+\import{chapters/conclusions/}{conclusions.tex}
 \clearemptydoublepage
 
 

@@ -5,9 +5,9 @@ Repository containing everything related to my thesis.
 ## Table of contents
 
 1. [Immediate to-do items](#immediate_to_do)
-2. #useful_links
-3. #gen_questions
-4. #caveats
+2. [Useful links](#useful_links)
+3. [General questions and comments](#gen_questions)
+4. [Caveats/things to note](#caveats)
 
 
 ## Immediate to-do items <a name="immediate_to_do"></a>
@@ -25,7 +25,7 @@ Repository containing everything related to my thesis.
 - Previous Bristol CMS theses for reference: [Lana's](https://github.com/Lana-B/Thesis), [Alex Titterton's](https://www.dropbox.com/sh/a859z9b7jlfmum4/AAC2CjjkLGmbeSIp5H5gQbEIa?dl=0)
 
 
-## General questions/comments <a name="gen_questions"></a>
+## General questions and comments <a name="gen_questions"></a>
 
 - Do I need to abide by CMS standards and formatting (e.g., British/Americanised words, using upright letters for quarks instead of in math mode)? If so, will need to include the ptdr-definitions.sty file from lab book folder
 - What should the title of the thesis be? "Dark matter searches at CMS at sqrt(s) = 13 TeV" sounds a bit boring and generic. And should there be a subtitle?

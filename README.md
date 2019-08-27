@@ -1,15 +1,21 @@
 # phd-thesis
 
-
 Repository containing everything related to my thesis.
 
+## Table of contents
 
-## Immediate to-do
+1. [Immediate to-do items](#immediate_to_do)
+2. #useful_links
+3. #gen_questions
+4. #caveats
+
+
+## Immediate to-do items <a name="immediate_to_do"></a>
 
 - Import into Overleaf, and sync, for simple editing
 
 
-## Useful links
+## Useful links <a name="useful_links"></a>
 
 - Thesis guidelines from the University: http://www.bristol.ac.uk/academic-quality/pg/pgrcode/annex4/
 - Common pitfalls when writing HEP theses: https://www.scribd.com/document/401311835/Common-Gotchas-in-HEP-Thesis-Writing
@@ -19,15 +25,14 @@ Repository containing everything related to my thesis.
 - Previous Bristol CMS theses for reference: [Lana's](https://github.com/Lana-B/Thesis), [Alex Titterton's](https://www.dropbox.com/sh/a859z9b7jlfmum4/AAC2CjjkLGmbeSIp5H5gQbEIa?dl=0)
 
 
-## Questions/comments
+## General questions/comments <a name="gen_questions"></a>
 
 - Do I need to abide by CMS standards and formatting (e.g., British/Americanised words, using upright letters for quarks instead of in math mode)? If so, will need to include the ptdr-definitions.sty file from lab book folder
 - What should the title of the thesis be? "Dark matter searches at CMS at sqrt(s) = 13 TeV" sounds a bit boring and generic. And should there be a subtitle?
-- Can I use different colours for links (from hyperref package), e.g., urls, in Table of Contents, etc.? Or should it all be black/more muted colours?
-- Use hyperlinking in this README for the different sections as I add to it
+- Can I use different colours for different links (from hyperref package), e.g., urls, references, etc.? Or should it all be black/more muted colours?
 
 
-## Caveats/things to note
+## Caveats/things to note <a name="caveats"></a>
 
 - Currently, I use the font "Garamond Expert with New TX Math" for the main text (i.e., with the package `garamondx`). If compiling the document on Overleaf, this should already be installed. However, with TeX Live on Mac, it is not. To circumvent this, I need to follow the instructions at http://tug.org/fonts/getnonfreefonts/:
 

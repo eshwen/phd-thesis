@@ -6,10 +6,7 @@ Repository containing everything related to my thesis.
 
 ## Immediate to-do
 
-- Add my thesis outline from my third year report into document and make chapter directories/tex files accordingly
-- Take things from lab book that should be useful for thesis and add in
-- Get higher res Bristol crest for title page and replace current one (make sure sizing is correct)
-- Once initial template is sorted and stable, create another release. Then import into Overleaf for simple editing
+- Import into Overleaf, and sync, for simple editing
 
 
 ## Useful links

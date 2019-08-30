@@ -329,12 +329,12 @@
 \addtocontents{toc}{\par\nobreak \mbox{}\hfill{\bf Page}\par\nobreak}
 \clearemptydoublepage
 
-\listoftables
-\addtocontents{lot}{\par\nobreak\textbf{{\scshape Table} \hfill Page}\par\nobreak}
-\clearemptydoublepage
-
 \listoffigures
 \addtocontents{lof}{\par\nobreak\textbf{{\scshape Figure} \hfill Page}\par\nobreak}
+\clearemptydoublepage
+
+\listoftables
+\addtocontents{lot}{\par\nobreak\textbf{{\scshape Table} \hfill Page}\par\nobreak}
 \clearemptydoublepage
 
 
@@ -370,7 +370,7 @@
 \backmatter
 
 % Bibliography uses bibtex backend
-\bibliographystyle{siam}  % CHANGE BIBLIOGRAPHY STYLE
+\bibliographystyle{siam} % hopefully fine to use this style. Unsure if references need to be in order they appear in text
 \refstepcounter{chapter}
 \bibliography{backmatter/thesisbib}
 \clearemptydoublepage

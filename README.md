@@ -41,3 +41,5 @@ curl --remote-name https://www.tug.org/fonts/getnonfreefonts/install-getnonfreef
 sudo texlua install-getnonfreefonts
 getnonfreefonts --user -a
 ```
+
+- Thesis template comes from [here](https://www.overleaf.com/latex/templates/university-of-bristol-thesis-template/kzqrfvyxxcdm). Has been built upon

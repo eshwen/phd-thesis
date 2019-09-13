@@ -18,7 +18,7 @@ Repository containing everything related to my thesis.
 ## Useful links <a name="useful_links"></a>
 
 - Thesis guidelines from the University: http://www.bristol.ac.uk/academic-quality/pg/pgrcode/annex4/
-- Common pitfalls when writing HEP theses: https://www.scribd.com/document/401311835/Common-Gotchas-in-HEP-Thesis-Writing
+- Common pitfalls when writing HEP theses: https://zenodo.org/record/3228336
 - CMS guidelines for authors: https://twiki.cern.ch/twiki/bin/viewauth/CMS/Internal/PubGuidelines
 - For choosing fonts: https://thesiswhisperer.com/2016/03/30/what-font-should-i-choose-for-my-thesis/, http://www.indesignskills.com/inspiration/fonts-for-books/, [LaTeX Serif Font Catalogue](https://tug.org/FontCatalogue/seriffonts.html), [Google's serif font catalogue](https://fonts.google.com/?category=Serif)
 - Glossary info: https://en.wikibooks.org/wiki/LaTeX/Glossary

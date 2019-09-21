@@ -21,7 +21,7 @@ Begins a section.
 Begins a subsection.
 
 %A figures matrix.
-\begin{figure}[t!]
+\begin{figure}[htbp]
 \centering
 \begin{minipage}{3.3cm}
     \centering
@@ -47,12 +47,12 @@ Begins a subsection.
     \centering
     \subtop[]{\includegraphics[height=0.16\textheight]{fig01/auxab}\label{sf:multiRH02e}}
 \end{minipage}
-\mycaption[Hair-forming mutant cells.]{(a) A mutant RH cell. Asterisks show multiple sites of RH initiation in a single root hair cell (indicated by the arrows). Figure reproduced from \cite{rigas01}. (b)~Hair-forming cell with three RH initiation locations. The bar represents $50\mu m$. Figure reproduced from \cite{massuci01}. (c) Large bump in mutant {\itshape rhd1}. Figure reproduced from \cite{griersonRH}. (d) Mutant overexpressing gene {\itshape ROP2}; from right-hand to left-hand, numbers indicate progressive snapshots at different times. RH initiation sites are indicated by the arrows. The bar represents $75\mu m$. Figure reproduced from~\cite{mjones01}. (e)~Mutants affected by auxin. On the left-hand side, RH site is farther away from the apical end (left arrow cap); on the right-hand side, multiple RH locations (arrows). Figure reproduced from~\cite{payne01}.}
+\mycaption[Hair-forming mutant cells.]{(a) A mutant RH cell. Asterisks show multiple sites of RH initiation in a single root hair cell (indicated by the arrows). Figure reproduced from Ref.~\cite{rigas01}. (b)~Hair-forming cell with three RH initiation locations. The bar represents 50\,\si{\micro}m. Figure reproduced from Ref.~\cite{massuci01}. (c) Large bump in mutant {\itshape rhd1}. Figure reproduced from Ref.~\cite{griersonRH}. (d) Mutant overexpressing gene {\itshape ROP2}; from right-hand to left-hand, numbers indicate progressive snapshots at different times. RH initiation sites are indicated by the arrows. The bar represents 75\,\si{\micro}m. Figure reproduced from Ref.~\cite{mjones01}. (e)~Mutants affected by auxin. On the left-hand side, RH site is farther away from the apical end (left arrow cap); on the right-hand side, multiple RH locations (arrows). Figure reproduced from Ref.~\cite{payne01}.}
 \label{fig:multiRH02}
 \end{figure}
 
 % A single figure
-\begin{figure}[t!]
+\begin{figure}[htbp]
 	\centering
 	\includegraphics[height=0.35\textheight]{fig01/devepzones}
 	\mycaption[Developmental zones of an Arabidopsis root.]{Developmental zones of an Arabidopsis root. Figure reproduced from \cite{griersonRH}.}
@@ -71,14 +71,17 @@ Also testing glossaries: \gls{latex}, \acrlong{lhc}, \acrshort{lhc}, \acrfull{lh
 
 Also testing references: \cite{CMS-PAPER-SUS-15-005-published} (article), \cite{tagkey1984quarksandleptons} (book), \cite{Lisanti:2016jxe} (inproceedings), \cite{CMS-PAS-SUS-15-005} (techreport).
 
-Testing numbers: 1234567890
+Testing numbers: 1234567890 (normal), $1234567890$ (math), \si{1234567890} (from siunitx).
 
-Testing alphabet: The quick brown fox jumps over the sleazy dog
+Testing alphabet: The quick brown fox jumps over the lazy dog
 
-Testing equations:
+Testing math characters compared to normal text: $b$-tag, \emph{b}-tag, $b\mathrm{b}\text{b}$\emph{b}b, $c\mathrm{c}\text{c}$\emph{c}c.
 
+Testing equations: $\sfrac{1}{2} \rho \Delta \phi \mathcal{L}$ (inline)
 \begin{equation}
-B(P) = \frac{\mu_0}{4\pi} \int \frac{I \times \hat{r}}{\bar{r}^2}dr
+B(P) = \frac{\mu_0}{4\pi} \int \frac{I \times \hat{r}}{\bar{r}^2}\mathrm{d}r \ \text{(equation environment)}
 \end{equation}
+
+Testing symbols/macros: \eV, \MeV, \GeV, \TeV, \pt, \ptmiss, \met, \HT, \mht.
 
 %=========================================================

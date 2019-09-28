@@ -187,9 +187,7 @@
 \usepackage{bbold} 						% for mathematical symbols like the characters for special sets
 \usepackage[ampersand]{easylist} 			% for bullet points and lists, etc. New entry starts with & character
 \usepackage{cancel} 					% for strike-throughs for missing energy/momentum, etc.
-\usepackage{maybemath} 				% required for hepparticles
-\usepackage{hepparticles} 				% required for hepnicenames
-\usepackage{hepnicenames} 				% standard symbols for HEP particles
+\usepackage{hepnames}					% standard symbols for HEP particles
 \usepackage{spverbatim} 					% for linebreaks in the verbatim environment
 \usepackage{tabularx} 					% for multii-line cells in tables
 \usepackage{multirow} 					% for nested rows in tables
@@ -230,63 +228,7 @@
 
 % ----------------------------------------
 % New command definitions for my thesis
-%
-\newcommand{\keywords}[1]{\par\noindent{\small{\bf Keywords:} #1}} % Defines keywords small section
-\newcommand{\pgftextcircled}[1]{                                                                    % Defines encircled text
-    \setbox0=\hbox{#1}%
-    \dimen0\wd0%
-    \divide\dimen0 by 2%
-    \begin{tikzpicture}[baseline=(a.base)]%
-        \useasboundingbox (-\the\dimen0,0pt) rectangle (\the\dimen0,1pt);
-        \node[circle,draw,outer sep=0pt,inner sep=0.1ex] (a) {#1};
-    \end{tikzpicture}
-}
-
-\renewcommand{\_}{\texttt{\char`_}}
-\newcommand{\madgraph}{\MADGRAPH}
-\newcommand{\madanalysis}{\textsc{MadAnalysis}\xspace}
-\newcommand{\rivet}{\textsc{Rivet}}
-\newcommand{\etmiss}{\MET}
-\newcommand{\met}{\MET}
-\newcommand{\htmiss}{\mht}
-\newcommand{\alphat}{\ensuremath{\alpha_{\mathrm{T}}}\xspace}
-\newcommand{\alphaT}{\alphat}
-\newcommand{\biasedDPhi}{\ensuremath{\Delta\phi^*_{\mathrm{min}}}\xspace}
-\newcommand{\pT}{\pt}
-\newcommand{\eV}{\text{e\kern-0.15ex V}\xspace}
-\newcommand{\LSP}{\ensuremath{\tilde{\chi}_1^0}\xspace}
-\newcommand{\rinv}{\ensuremath{r_{\mathrm{inv}}}\xspace}
-\newcommand{\comruntwo}{\ensuremath{\sqrt{s} = 13\TeV}\xspace}
-\newcommand{\higgstoinv}{\ensuremath{H \rightarrow \text{inv.}}\xspace}
-
-% My caption style
-\newcommand{\mycaption}[2][\@empty]{
-	\captionnamefont{\scshape} 
-	\changecaptionwidth
-	\captionwidth{0.9\linewidth}
-	\captiondelim{.\:} 
-	\indentcaption{0.75cm}
-	\captionstyle[\centering]{}
-	\setlength{\belowcaptionskip}{10pt}
-	\ifx \@empty#1 \caption{#2}\else \caption[#1]{#2}
-}
-
-% My subcaption style
-\newcommand{\mysubcaption}[2][\@empty]{
-	\subcaptionsize{\small}
-	\hangsubcaption
-	\subcaptionlabelfont{\rmfamily}
-	\sidecapstyle{\raggedright}
-	\setlength{\belowcaptionskip}{10pt}
-	\ifx \@empty#1 \subcaption{#2}\else \subcaption[#1]{#2}
-}
-
-% An initial of the very first character of the content
-\usepackage{lettrine}
-\newcommand{\initial}[1]{%
-	\lettrine[lines=3,lhang=0.33,nindent=0em]{
-		\color{gray}
-     		{\textsc{#1}}}{}}
+\input{macros}
 % ----------------------------------------
 
 % ----------------------------------------

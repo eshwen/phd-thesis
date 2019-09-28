@@ -40,6 +40,7 @@
 
 % Generic
 \renewcommand{\_}{\texttt{\char`_}}
+\newcommand{\plusjets}{\ensuremath{+ \text{jets}}\xspace}
 
 % Rationale for when to use \text{} and when to use \mathrm{} in physics symbols:
 %     In math mode, wrapping something \text{} will render it in the main document font (i.e., garamond from the 'garamondx' package).
@@ -50,10 +51,10 @@
 % Not sure if I should continue using the particle names from hepnames/ptdr-definitions (as they tend to produce them upright) or whether to use the italic math verisons. If the latter, will have to edit macros below.
 
 % Higgs to inv. control regions
-\newcommand{\singleMuCr}{\ensuremath{\Pgm + \text{jets}}\xspace} 
-\newcommand{\doubleMuCr}{\ensuremath{\Pgm\Pgm + \text{jets}}\xspace}
-\newcommand{\singleEleCr}{\ensuremath{\Pe + \text{jets}}\xspace}
-\newcommand{\doubleEleCr}{\ensuremath{\Pe\Pe + \text{jets}}\xspace}
+\newcommand{\singleMuCr}{\ensuremath{\Pgm \plusjets}\xspace}
+\newcommand{\doubleMuCr}{\ensuremath{\Pgm\Pgm \plusjets}\xspace}
+\newcommand{\singleEleCr}{\ensuremath{\Pe \plusjets}\xspace}
+\newcommand{\doubleEleCr}{\ensuremath{\Pe\Pe \plusjets}\xspace}
 
 % Variables/physics symbols
 \newcommand{\doubleMuMass}{\ensuremath{m_{\Pgm\Pgm}}\xspace}
@@ -76,10 +77,10 @@
 \newcommand{\ptsup}[1]{\ensuremath{\pt^{#1}}\xspace}  % to add a superscript in pT
 \newcommand{\etasub}[1]{\ensuremath{\eta_{#1}}\xspace} % to add a subscript in eta
 \newcommand{\nsub}[1]{\ensuremath{n_{#1}}\xspace}  % to add a subscript in n
-\newcommand{\ptjone}{\ensuremath{\ptsup{\mathrm{j}_1}}\xspace}
-\newcommand{\ptjtwo}{\ensuremath{\ptsup{\mathrm{j}_2}}\xspace}
-\newcommand{\etajone}{\ensuremath{\etasub{\mathrm{j}_1}}\xspace}
-\newcommand{\etajtwo}{\ensuremath{\etasub{\mathrm{j}_2}}\xspace}
+\newcommand{\ptjone}{\ensuremath{\ptsup{\mathrm{j}_{1}}}\xspace}
+\newcommand{\ptjtwo}{\ensuremath{\ptsup{\mathrm{j}_{2}}}\xspace}
+\newcommand{\etajone}{\ensuremath{\etasub{\mathrm{j}_{1}}}\xspace}
+\newcommand{\etajtwo}{\ensuremath{\etasub{\mathrm{j}_{2}}}\xspace}
 \newcommand{\njet}{\ensuremath{\nsub{\mathrm{jet}}}\xspace}
 
 % Semi-visible jets variables. Taken from AN-19-061
@@ -116,8 +117,8 @@
 \newcommand{\mq}{\ensuremath{m_{\cPq}}\xspace}
 \newcommand{\Nstable}{\ensuremath{N_{\text{stable}}}\xspace}
 \newcommand{\Nunstable}{\ensuremath{N_{\text{unstable}}}\xspace}
-\newcommand{\deta}{\ensuremath{\Delta\eta(j_{1},j_{2})}\xspace}
-\newcommand{\mindphi}{\ensuremath{\Delta\phi_{\mathrm{min}}(j_{1,2}, \met)}\xspace}
+\newcommand{\dijetDeta}{\ensuremath{\Delta\eta(j_{1},j_{2})}\xspace}
+\newcommand{\dijetMindphi}{\ensuremath{\Delta\phi_{\mathrm{min}}(j_{1,2}, \met)}\xspace}
 
 % Higgs to inv. modes
 \newcommand{\ttH}{\ensuremath{\Pqt\Pqt\PH}\xspace}
@@ -134,20 +135,20 @@
 \newcommand{\lostlepton}{\ensuremath{\ell_{\text{lost}}}\xspace}
 \newcommand{\ztonunu}{\ensuremath{\PZ \rightarrow \Pgn\Pagn}\xspace}
 \newcommand{\ztomumu}{\ensuremath{\PZ \rightarrow \Pgm\Pgm}\xspace}
-\newcommand{\ztonunupjets}{\ensuremath{\PZ(\rightarrow \Pgn\Pagn) + \text{jets}}\xspace}
-\newcommand{\wtolnupjets}{\ensuremath{\PW(\rightarrow \ell\Pgn) + \text{jets}}\xspace}
-\newcommand{\ttbarpjets}{\ensuremath{\ttbar + \text{jets}}\xspace}
+\newcommand{\ztonunupjets}{\ensuremath{\PZ(\rightarrow \Pgn\Pagn) \plusjets}\xspace}
+\newcommand{\wtolnupjets}{\ensuremath{\PW(\rightarrow \ell\Pgn) \plusjets}\xspace}
+\newcommand{\ttbarpjets}{\ensuremath{\ttbar \plusjets}\xspace}
 
 % Software
 \newcommand{\madgraph}{\MADGRAPH}
-\newcommand{\MADGRAPHFULL}{\MGvATNLO\,2.6.0}
-\newcommand{\FEYNRULES}{\textsc{FeynRules}}
+\newcommand{\MADGRAPHFULL}{\MGvATNLO\,2.6.0\xspace}
+\newcommand{\FEYNRULES}{\textsc{FeynRules}\xspace}
 \newcommand{\madanalysis}{\textsc{MadAnalysis}\xspace}
 \newcommand{\rivet}{\textsc{Rivet}\xspace}
 
 % Other (physics-related)
 \newcommand{\transfac}{\ensuremath{\mathcal{T}}\xspace}
 \newcommand{\eV}{\text{e\kern-0.15ex V}\xspace}
-\newcommand{\LSP}{\ensuremath{\tilde{\chi}_1^0}\xspace}
+\newcommand{\LSP}{\ensuremath{\tilde{\chi}_{1}^{0}}\xspace}
 \newcommand{\comruntwo}{\ensuremath{\sqrt{s} = 13\TeV}\xspace}
 \newcommand{\higgstoinv}{\ensuremath{H \rightarrow \text{inv.}}\xspace}

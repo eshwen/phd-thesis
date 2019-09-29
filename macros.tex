@@ -48,7 +48,7 @@
 %     \text{} should be used for things like control regions where the text from the macro is supposed to flow into the main text. Then it looks natural and consistent
 %     \mathrm{} should be used for subscripts and superscripts in symbols so it looks natural and consistent in that context. Even for sub/superscripts longer than one letter, e.g., the "min" in biased delta phi, it looks more natural if the font matches the rest of the symbol and equation.
 
-% Not sure if I should continue using the particle names from hepnames/ptdr-definitions (as they tend to produce them upright) or whether to use the italic math verisons. If the latter, will have to edit macros below.
+% Particles are typeset using the 'hepnames' package. If given the option 'italic', it will render the particles in italics. So if I want to change style, only need to edit the line that imports the package, not the macros.
 
 % Higgs to inv. control regions
 \newcommand{\singleMuCr}{\ensuremath{\Pgm \plusjets}\xspace}
@@ -124,7 +124,7 @@
 \newcommand{\ttH}{\ensuremath{\Pqt\Pqt\PH}\xspace}
 \newcommand{\ggF}{\ensuremath{\cPg\cPg\mathrm{F}}\xspace}
 \newcommand{\ggH}{\ensuremath{\cPg\cPg\PH}\xspace}
-\newcommand{\PVec}{\ensuremath{\mathrm{V}}}  % couldn't find command for generic V boson so created one
+\newcommand{\PVec}{\ensuremath{V}\xspace}  % couldn't find command for generic V boson so created one. Note that this is italic, so depending on style choice for particles being upright/italic, may have to change
 \newcommand{\VH}{\ensuremath{\PVec\PH}\xspace}
 \newcommand{\WH}{\ensuremath{\PW\PH}\xspace}
 \newcommand{\WplusH}{\ensuremath{\PWp\PH}\xspace}
@@ -149,6 +149,6 @@
 % Other (physics-related)
 \newcommand{\transfac}{\ensuremath{\mathcal{T}}\xspace}
 \newcommand{\eV}{\text{e\kern-0.15ex V}\xspace}
-\newcommand{\LSP}{\ensuremath{\tilde{\chi}_{1}^{0}}\xspace}
+\newcommand{\LSP}{\PSneutralinoOne}
 \newcommand{\comruntwo}{\ensuremath{\sqrt{s} = 13\TeV}\xspace}
 \newcommand{\higgstoinv}{\ensuremath{H \rightarrow \text{inv.}}\xspace}

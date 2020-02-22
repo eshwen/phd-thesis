@@ -4,12 +4,10 @@ Repository containing everything related to my thesis.
 
 ## Table of contents
 
-- [phd-thesis](#phd-thesis)
-  - [Table of contents](#table-of-contents)
-  - [Immediate to-do items <a name="immediate_to_do"></a>](#immediate-to-do-items)
-  - [Useful links <a name="useful_links"></a>](#useful-links)
-  - [General questions and comments <a name="gen_questions"></a>](#general-questions-and-comments)
-  - [Caveats/things to note <a name="caveats"></a>](#caveatsthings-to-note)
+1. [Immediate to-do items](#immediate_to_do)
+2. [Useful links](#useful_links)
+3. [General questions and comments](#gen_questions)
+4. [Caveats/things to note](#caveats)
 
 
 ## Immediate to-do items <a name="immediate_to_do"></a>

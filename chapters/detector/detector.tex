@@ -9,37 +9,50 @@
 \ListProperties(Style*=-- , FinalMark={)}, Margin=0.5cm)
 & Explain \acrshort{cern} and the \acrshort{lhc} in more detail.
 & Give an overview of the \acrshort{cms} experiment and detector (including all subsystems, object identification, algorithms for event/object reconstruction like Particle Flow and \gls{antikt}, and algorithms for tagging objects like \glspl{bjet}).
-& Either as a subsection in this chapter or in a separate chapter, discuss the Level-1 Trigger in depth. Emphasise the jet and energy sum triggers as I've worked on them, and Calorimeter Layer-2 for the same reason.
+& As a subsection in this chapter, discuss the Level-1 Trigger in depth. Emphasise the jet and energy sum triggers as I've worked on them, and Calorimeter Layer-2 for the same reason. Tie into SVJ and Hinv since they're hadronic searches.
 \end{easylist}
 
 \section{The Large Hadron Collider}
+\label{sec:detector_lhc}
 
-Deep underground beneath the Franco-Swiss border lies the \acrfull{lhc}, a synchrotron particle accelerator 27~km in circumference. Predominantly a proton collider, lead and xenon ions have also been injected for novel and unique studies. Four principle experiments are situated at their own interaction points where the two beams of particles are brought into contact: \acrfull{cms}, a general purpose detector with interests in precision measurements, searches for new physics, and many other avenues; \acrshort{atlas} (\acrlong{atlas}), another general purpose detector with similar aims to \acrshort{cms}; LHCb, designed to study the decay of \PB hadrons; and \acrshort{alice} (\acrlong{alice}), primarily studying heavy ion collisions and the quark-gluon plasma.
+Deep underground beneath the Franco-Swiss border lies the \acrfull{lhc}, a synchrotron particle accelerator 27~km in circumference. Predominantly a proton collider, lead and xenon ions have also been injected for novel and unique studies. Four principle experiments are situated at their own interaction points where the two beams of particles are brought into contact: \acrshort{cms} (\acrlong{cms}), a general purpose detector with interests in precision measurements, searches for new physics, and many other avenues; \acrshort{atlas} (\acrlong{atlas}), another general purpose detector with similar aims to \acrshort{cms}; LHCb, designed to study the decay of \PB hadrons; and \acrshort{alice} (\acrlong{alice}), primarily studying heavy ion collisions and the quark-gluon plasma.
 
-% Describe the structure of the LHC - beam pipe, magnets, cooling, feeding in to LHC from PS/SPS, etc., beam structure (train of bunches, 11k revolutions around ring per second), bunch interaction/collision (40 MHz bunch collision frequency, crossing angle, pileup) 
+% Describe the structure of the LHC - beam pipe, magnets, cooling, feeding in to LHC from PS/SPS, etc., beam structure (train of bunches, 11k revolutions around ring per second), bunch interaction/collision (40 MHz bunch collision frequency, crossing angle, pileup). Can look in Postgraduate and CMS courses/ folder
 
 The \acrshort{lhc} began operating in 2010 at a centre of mass energy of $\sqrt{s} = \text{7}\TeV$ (\acrlong{tev}s), 3.5\TeV per beam. A modest increase to 8\TeV was achieved by the end of Run-1 in 2013. After upgrades were performed, the LHC resumed operation in 2015, further pushing the frontiers of high energy physics with a centre of mass energy of \comruntwo. While valuable data was taken, it was not until 2016 when Run-2 of the \acrshort{lhc} began. This period ended in 2018 with 162.85\fbinv of $\Pp\Pp$ collisions delivered, 150.26\fbinv of which were recorded by \acrshort{cms}.
 
 
 \section{The CMS experiment}
+\label{sec:detector_cms}
+
+% Can look in Postgraduate and CMS courses/ folder
 
 \begin{figure}[htbp]
-\centering
-\includegraphics[width=0.75\textwidth]{figures/int_lumi_cumulative_pp_2_run2.pdf}
-\caption[The integrated luminosity of $\Pp\Pp$ collision data collected by CMS during 2015 and Run-2 of the LHC]{The integrated luminosity of $\Pp\Pp$ collision data collected by CMS during 2015 and Run-2 of the LHC \cite{cmslumitwikipage}.}
+    \centering
+    \includegraphics[width=0.75\textwidth]{figures/Transverse_slice_CMS.png}
+    \caption[A transverse slice through the CMS detector with the main subsystems and components visible]{A transverse slice through the CMS detector with the main subsystems and components visible \cite{CMS-PRF-14-001}. Several particles produced at the primary vertex and their interactions with the detector are also depicted.}
+    \label{fig:detector_cms_transverse}
 \end{figure}
 
 \begin{figure}[htbp]
-\centering
-\includegraphics[width=0.75\textwidth]{figures/pileup_allYears_run2.pdf}
-\caption[The average number of pileup interactions at CMS during 2015 and Run-2 of the LHC]{The average number of pileup interactions at CMS during 2015 and Run-2 of the LHC \cite{cmslumitwikipage}.}
+    \centering
+    \includegraphics[width=0.75\textwidth]{figures/int_lumi_cumulative_pp_2_run2.pdf}
+    \caption[The integrated luminosity of $\Pp\Pp$ collision data collected by CMS during 2015 and Run-2 of the LHC]{The integrated luminosity of $\Pp\Pp$ collision data collected by CMS during 2015 and Run-2 of the LHC \cite{cmslumitwikipage}.}
+    \label{fig:detector_cms_lumi}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.75\textwidth]{figures/pileup_allYears_run2.pdf}
+    \caption[The average number of pileup interactions at CMS during 2015 and Run-2 of the LHC]{The average number of pileup interactions at CMS during 2015 and Run-2 of the LHC \cite{cmslumitwikipage}.}
+    \label{fig:detector_cms_pileup}
 \end{figure}
 
 
 \subsection{Jet energy corrections in the Level-1 Trigger}
 \label{subsubsec:detector_jecs}
 
-% Taken directly from second year report. Tidy up and improve
+% Taken directly from second year report. Tidy up and improve. Can also look in Section 20 of my lab book for more info. Define what eta is, somewhere (can take from Section 14 of lab book)
 \Gls{jec} are necessary to compensate for various losses when recording jet properties in the trigger. These losses depend on the transverse momentum \pt and pseudorapidity $\eta$. The calibrations ensure that the performance of the trigger is uniform across the detector. Firstly, some ideal (or reference) jets are needed to compare against given L1 jets. Since Monte Carlo datasets are used for the calibrations, the reference jets we use are the generator-level jets (or GenJets). These are stable, simulated particles clustered with the \gls{antikt} algorithm \cite{Cacciari:2008gp} to form the jet. The state of these jets are post-hadronisation, before detector interaction. L1 jets need to be matched against the GenJets. From there, various studies can be performed such measuring the response ($< \ptsup{{\mathrm{L1}}} / \ptsup{{\mathrm{ref.}}} >$) of the detector, and its position and energy resolutions.
 
 Once Calorimeter Layer-1 experts have derived scale factors for the physics objects, they are applied in Layer-2 where the calibrations are conducted. For jets, ntuples are created from the specified dataset and the L1 jets are matched to the GenJets using the variable $\Delta R$: 

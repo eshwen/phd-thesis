@@ -16,7 +16,7 @@
 
 \newglossaryentry{svj}{
         name=semi-visible jet,
-        description={A shower of Standard Model and dark hadrons from the decay of a leptophobic \PZprime or $\Phi$ mediator that couples the hidden sector to the standard model}
+        description={A shower of standard model and dark hadrons from the decay of a leptophobic \PZprime or $\Phi$ mediator that couples the hidden sector to the standard model}
 }
 
 \newglossaryentry{bjet}{
@@ -34,6 +34,12 @@
         description={}
 }
 
+% Maybe define it predominantly as missing transverse momentum instead. If so, use correct symbol
+\newglossaryentry{met}{
+        name=missing transverse energy,
+        description={The negative vector sum of the transverse momentum of all particles in a collider event. It is sometimes abbreviate to ``MET'', and also referred to in literature as ``missing transverse momentum'' (\ensuremath{\ptmiss})},
+        symbol={\ensuremath{\etmiss}}
+}
 
 % Define acronyms with \newacronym{<label>}{<abbrv>}{<full>}
 % Organisations
@@ -73,9 +79,10 @@
 \newacronym{nlo}{NLO}{next-to-leading order}
 \newacronym{nnlo}{NNLO}{next-to-next-to-leading order}
 
-% Dark matter terms
+% Dark matter/BSM terms
 \newacronym{dm}{DM}{dark matter}
 \newacronym{wimp}{WIMP}{Weakly Interacting Massive Particle}
+\newacronym{susy}{SUSY}{supersymmetry}
 \newacronym{lsp}{LSP}{lightest supersymmetric particle}
 
 % Misc.
@@ -84,9 +91,11 @@
 \newacronym{vbf}{VBF}{vector boson fusion}
 \newacronym{pu}{PU}{pileup}
 \newacronym{pf}{PF}{Particle Flow}
+\newacronym{jec}{JEC}{jet energy corrections}
 
 \newacronym{mev}{MeV}{megaelectron volt}
 \newacronym{gev}{GeV}{gigaelectron volt}
 \newacronym{tev}{TeV}{teraelectron volt}
 
 % To reference glossary terms and acronyms in the document, see https://en.wikibooks.org/wiki/LaTeX/Glossary#Using_defined_terms for commands
+% The general glossary commands \gls{}, \Gls{}, etc. can be used for acronyms as well. For example, if I want the first letter of "jet energy corrections" capitalised, even though it's an acronym I can do \Gls{jec}.

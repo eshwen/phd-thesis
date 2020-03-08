@@ -46,3 +46,5 @@ getnonfreefonts --user -a
 - The BibTeX backend of my choice is `biblatex` with the `natbib` package. The backend can be changed to `bibtex` if required as compatibility (as of my last check) isn't an issue
 - External helpful documents regarding LaTeX, thesis writing (Bristol-specific and general), etc. can be found in [helpful_docs/](helpful_docs/)
 - HEP particles are typeset using the `hepnames` package. With the `italic` option, they are rendered in italics. The default is upright. If I decide to change the style, I can just edit the line that imports the package in [thesismain.tex](./thesismain.tex)
+- To add a shorter caption for a figure in the List of Figures, add the shorter caption inside square brackets before the main one, i.e., `\caption[Reduced caption]{Full caption}`. Avoid a full stop at the end of a reduced caption since it looks ugly in the table of contents
+- Use a tilde `~` between instead of a space between words and their references, and between numbers/quantities and their units to prevent linebreaks separating them.

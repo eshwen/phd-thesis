@@ -35,4 +35,52 @@ The \acrshort{lhc} began operating in 2010 at a centre of mass energy of $\sqrt{
 \caption[The average number of pileup interactions at CMS during 2015 and Run-2 of the LHC]{The average number of pileup interactions at CMS during 2015 and Run-2 of the LHC \cite{cmslumitwikipage}.}
 \end{figure}
 
+
 \subsection{Jet energy corrections in the Level-1 Trigger}
+\label{subsubsec:detector_jecs}
+
+% Taken directly from second year report. Tidy up and improve
+\Gls{jec} are necessary to compensate for various losses when recording jet properties in the trigger. These losses depend on the transverse momentum \pt and pseudorapidity $\eta$. The calibrations ensure that the performance of the trigger is uniform across the detector. Firstly, some ideal (or reference) jets are needed to compare against given L1 jets. Since Monte Carlo datasets are used for the calibrations, the reference jets we use are the generator-level jets (or GenJets). These are stable, simulated particles clustered with the \gls{antikt} algorithm \cite{Cacciari:2008gp} to form the jet. The state of these jets are post-hadronisation, before detector interaction. L1 jets need to be matched against the GenJets. From there, various studies can be performed such measuring the response ($< \ptsup{{\mathrm{L1}}} / \ptsup{{\mathrm{ref.}}} >$) of the detector, and its position and energy resolutions.
+
+Once Calorimeter Layer-1 experts have derived scale factors for the physics objects, they are applied in Layer-2 where the calibrations are conducted. For jets, ntuples are created from the specified dataset and the L1 jets are matched to the GenJets using the variable $\Delta R$: 
+
+\begin{equation}
+\Delta R = \sqrt{\Delta \eta^2 + \Delta \phi^2}
+\label{eq:delta_r}
+\end{equation}
+
+where $\phi$ is the azimuthal angle of the jet. The algorithm used to match the jets does so by inspecting each L1 jet in descending \pt and searching for a reference jet with $\Delta R < 0.25$. If there is more than one match, the reference jet with the smallest $\Delta R$ is taken. Then the next L1 jet (and so on) follows the same procedure, with the previous reference jet removed from the matching collection. Calibrations are then derived. The reciprocal of the response vs. $\ptsup{{\mathrm{L1}}}$ is plotted for each \abseta bin and correction curves are fitted to them (see Fig. \ref{fig:detector_jecs_corr_curves}). Once tuned such that the fit captures the low-\pt spike and high-\pt plateau, closure tests are conducted as the final step. The ntuples are remade with JECs and then matched with the reference jets to check that the calibrations have been properly applied. Plots such as Fig. \ref{fig:detector_jecs_scatter_BE} are then passed to the Trigger Studies Group to check over and continue the chain of trigger corrections and object calibrations.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{./figures/jecs//corrCurveBarrel.pdf}
+        \caption{$0.435 < \abseta < 0.783$ (Barrel)}
+        \label{fig:detector_jecs_corr_curve_Barrel}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{./figures/jecs/corrCurveHF.pdf}
+        \caption{$4.191 < \abseta < 5.191$ (HF)}
+        \label{fig:detector_jecs_corr_curve_HF}
+    \end{subfigure}
+\caption[Examples of correction curves used to calibrate the jet energies in two \texorpdfstring{\abseta}{abs-eta} bins]{Examples of correction curves used to calibrate the jet energies in two \abseta bins. The response is plotted against the \pt of the Level-1 jet and a complex function produces a fit. These plots are from the jet energy corrections performed on 2018 QCD Monte Carlo.}
+\label{fig:detector_jecs_corr_curves}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{./figures/jecs/scatterPlotBeforeBE.png}
+        \caption{Before corrections}
+        \label{fig:detector_jecs_scatter_before_BE}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{./figures/jecs/scatterPlotAfterBE.png}
+        \caption{After corrections}
+        \label{fig:detector_jecs_scatter_after_BE}
+    \end{subfigure}
+\caption[The energies of matched pairs of jets in the entire barrel and end cap, before and after jet energy corrections have been applied]{The energies of matched pairs of jets in the entire barrel and end cap, before and after jet energy corrections have been applied. After calibrations, the distribution is much more symmetrical. An equivalent plot using jets from LHC data is expected to look similar after applying these calibrations.}
+\label{fig:detector_jecs_scatter_BE}
+\end{figure}

@@ -8,6 +8,7 @@ Repository containing everything related to my thesis.
 2. [Useful links](#useful_links)
 3. [General questions and comments](#gen_questions)
 4. [Caveats/things to note](#caveats)
+5. [Formatting guidelines](#formatting)
 
 
 ## Immediate to-do items <a name="immediate_to_do"></a>
@@ -46,5 +47,16 @@ getnonfreefonts --user -a
 - The BibTeX backend of my choice is `biblatex` with the `natbib` package. The backend can be changed to `bibtex` if required as compatibility (as of my last check) isn't an issue
 - External helpful documents regarding LaTeX, thesis writing (Bristol-specific and general), etc. can be found in [helpful_docs/](helpful_docs/)
 - HEP particles are typeset using the `hepnames` package. With the `italic` option, they are rendered in italics. The default is upright. If I decide to change the style, I can just edit the line that imports the package in [thesismain.tex](./thesismain.tex)
-- To add a shorter caption for a figure in the List of Figures, add the shorter caption inside square brackets before the main one, i.e., `\caption[Reduced caption]{Full caption}`. Avoid a full stop at the end of a reduced caption since it looks ugly in the table of contents
-- Use a tilde `~` between instead of a space between words and their references, and between numbers/quantities and their units to prevent linebreaks separating them.
+
+
+## Formatting guidelines <a name="formatting"></a>
+
+The following are some notes on formatting guidelines, just to remain consistent throughout the document and writing process:
+
+- To add a shorter caption for a figure in the List of Figures, add the shorter caption inside square brackets before the main one, i.e., `\caption[Reduced caption]{Full caption}`. Avoid a full stop at the end of a reduced caption since it looks ugly in the table of contents, and omit references/citations from short captions
+- Use a tilde `~` between instead of a space between words and their references, and between numbers/quantities and their units to prevent linebreaks separating them
+- In the bibliography, the current sorting method I use is by author's last name. As such, in entries where the author is repeated (e.g., "CMS Collaboration"), the author's name will be replaced by a long dash. If undesired, it should be possible to change it either with an option/different sorting method, or maybe a different backend
+- For when to write numbers in words or numerals, see https://www.scribbr.com/academic-writing/numbers/ for help
+- For references at the end of a sentence, cite before the full stop
+- For quotation marks, open the quote with a double backtick. Close with either a single double quote or two single quotes
+- I'm not sure of the best way to format the journal component of a bibliography entry, i.e., whether the entire journal name should be given or just the ISO4 abbreviation

@@ -54,9 +54,11 @@ getnonfreefonts --user -a
 The following are some notes on formatting guidelines, just to remain consistent throughout the document and writing process:
 
 - To add a shorter caption for a figure in the List of Figures, add the shorter caption inside square brackets before the main one, i.e., `\caption[Reduced caption]{Full caption}`. Avoid a full stop at the end of a reduced caption since it looks ugly in the table of contents, and omit references/citations from short captions
-- Use a tilde `~` instead of a space between words and their references, and between numbers/quantities and their units to prevent linebreaks separating them
+- Use a tilde `~` instead of a space between words and their references, and between numbers/quantities and their units to prevent linebreaks separating them. Between a number and its unit, I can also use `\,` for a thin space (i.e., separation smaller than a traditional space)
 - In the bibliography, the current sorting method I use is by author's last name. As such, in entries where the author is repeated (e.g., "CMS Collaboration"), the author's name will be replaced by a long dash. If undesired, it should be possible to change it either with an option/different sorting method, or maybe a different backend
 - For when to write numbers in words or numerals, see https://www.scribbr.com/academic-writing/numbers/ for help
-- For references at the end of a sentence, cite before the full stop
+- For references at the end of a sentence, cite _before_ the full stop
+- When explicitly referring to a reference with "Ref.", use `\citenum{}` instead of `\cite{}` so that the number isn't wrapped in square brackets
 - For quotation marks, open the quote with a double backtick. Close with either a single double quote or two single quotes
 - I'm not sure of the best way to format the journal component of a bibliography entry, i.e., whether the entire journal name should be given or just the ISO4 abbreviation
+- More formatting/stylistic guildelines can be found in https://zenodo.org/record/3228336 (also [locally](helpful_docs/thesis-writing-gotchas.pdf))

@@ -31,6 +31,8 @@ Repository containing everything related to my thesis.
 
 - What should the title of the thesis be? "Dark matter searches at CMS at sqrt(s) = 13 TeV" sounds a bit boring and generic. And should there be a subtitle?
 - Can I use different colours for different links (from hyperref package), e.g., urls, references, etc.? Or should it all be black/more muted colours?
+- I'm not sure of the best way to format the journal component of a bibliography entry, i.e., whether the entire journal name should be given or just the ISO4 abbreviation
+- Should I use abbreviations or the actual words when referencing items within the thesis, i.e., "Chpt." or "Chapter", "Fig." or "Figure", "Tab." or "Table"?
 
 
 ## Caveats/things to note <a name="caveats"></a>
@@ -60,5 +62,4 @@ The following are some notes on formatting guidelines, just to remain consistent
 - For references at the end of a sentence, cite _before_ the full stop
 - When explicitly referring to a reference with "Ref.", use `\citenum{}` instead of `\cite{}` so that the number isn't wrapped in square brackets
 - For quotation marks, open the quote with a double backtick. Close with either a single double quote or two single quotes
-- I'm not sure of the best way to format the journal component of a bibliography entry, i.e., whether the entire journal name should be given or just the ISO4 abbreviation
 - More formatting/stylistic guildelines can be found in https://zenodo.org/record/3228336 (also [locally](helpful_docs/thesis-writing-gotchas.pdf))

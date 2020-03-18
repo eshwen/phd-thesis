@@ -4,7 +4,6 @@
 
 \initial{T}his is the detector chapter.
 
-%=======
 \begin{easylist}[itemize]
 \ListProperties(Style*=-- , FinalMark={)}, Margin=0.5cm)
 & Explain \acrshort{cern} and the \acrshort{lhc} in more detail.
@@ -12,12 +11,38 @@
 & As a subsection in this chapter, discuss the Level-1 Trigger in depth. Emphasise the jet and energy sum triggers as I've worked on them, and Calorimeter Layer-2 for the same reason. Tie into SVJ and Hinv since they're hadronic searches.
 \end{easylist}
 
+
+%=========================================================
+
+
 \section{The Large Hadron Collider}
 \label{sec:detector_lhc}
 
-Deep underground beneath the Franco-Swiss border lies the \acrfull{lhc}, a synchrotron particle accelerator 27~km in circumference. Predominantly a proton collider, lead and xenon ions have also been injected for novel and unique studies. Four principle experiments are situated at their own interaction points where the two beams of particles are brought into contact: \acrshort{cms} (\acrlong{cms}), a general purpose detector with interests in precision measurements, searches for new physics, and many other avenues; \acrshort{atlas} (\acrlong{atlas}), another general purpose detector with similar aims to \acrshort{cms}; LHCb, designed to study the decay of \PB hadrons; and \acrshort{alice} (\acrlong{alice}), primarily studying heavy ion collisions and the quark-gluon plasma.
+Deep underground beneath the Franco-Swiss border lies the \acrfull{lhc}, a synchrotron particle accelerator 27\,km in circumference. As the largest machine in the world, the \acrshort{lhc} stands as a testament to the importance of fundamental science and the dedication to which it is pursued. Predominantly a proton collider, lead and xenon ions have also been injected for novel and unique studies. Four principle experiments are situated at their own interaction points where the two beams of particles are brought into contact: \acrshort{cms} (\acrlong{cms}), a general purpose detector with interests in precision measurements, searches for new physics, and many other avenues; \acrshort{atlas} (\acrlong{atlas}), another general purpose detector with similar aims to \acrshort{cms}; LHCb, designed to study the decay of \PB hadrons; and \acrshort{alice} (\acrlong{alice}), primarily studying heavy ion collisions and the quark-gluon plasma.
 
-% Describe the structure of the LHC - beam pipe, magnets, cooling, feeding in to LHC from PS/SPS, etc., beam structure (train of bunches, 11k revolutions around ring per second), bunch interaction/collision (40 MHz bunch collision frequency, crossing angle, pileup). Can look in Postgraduate and CMS courses/ folder
+
+%=========================================================
+
+
+\subsection{A proton's journey}
+\label{subsec:protons_journey}
+
+A proton begins its journey as a hydrogen atom in a little, red bottle. Around 10$^{\text{14}}$ protons are supplied to each beam in the \acrshort{lhc}, with billions of refills available in this single container. Once the hydrogen atoms leave the source, they are stripped of their electrons, and [sent] to the linear accelerator LINAC2. This is the start of a long voyage through the accelerator complex.
+
+Given a modest boost to 50\,\acrshort{mev} (\acrlong{mev}s), the protons are sequentially fed from LINAC2 into the \acrfull{psb} that accelerates them further to 1.4\GeV. Another upsurge is provided once the protons travel to the \acrfull{ps}, this time to 26\GeV. Then the final energy increase received before entering the \acrshort{lhc} comes from the \acrfull{sps}, leaving the protons at 450\GeV. Once injected into the \acrshort{lhc}, they are finally accelerated to their peak energy of up to 6.5\TeV from a sequence of radio frequency cavities over the course of twenty minutes. The oscillation frequency of these cavities is precisely tuned and timed to give protons the appropriate kicks and accelerate them to the desired energy. Since there is a distribution of proton energies in the beam, those that enter a cavity slightly out of time with a different energy than expected consequently become sorted into ``bunches''. The remainder of the \acrshort{lhc} ring is used to steer the beam with the aid of over 1,200 liquid helium-cooled superconducting dipole magnets. It is also focused by almost 400 equivalently-cooled quadrupole magnets to increase the rate of proton collisions.
+
+One beam consists of a ``train'' of up to 2,808 bunches spaced 25\,ns apart, each with 115 billion protons. Using these bunches provides an advantage to the experiments at each of the interaction points. Discrete collisions take place between bunches in the opposing beams at 40\,MHz as opposed to an almost continuous stream of protons. This allows for estimates of multiple interactions per bunch crossing (known as \emph{\gls{pileup}}) that can be filtered out, and would otherwise introduce miscalculations of sums like \ptmiss and \HT. Each proton-proton collision is colloquially known as an ``event'', with data recorded by each experiment separated into events.
+
+% Describe the structure of the LHC - beam pipe, cooling, bunch interaction/collision (crossing angle, instantaneous and integrated luminosity). Include a couple more stats somewhere (revolutions of protons per second round the LHC, operating/electricity power draw)? Can look in Postgraduate and CMS courses/ folder. Reference the technical design report of the LHC (\cite{lhc_design_report} 
+
+
+%=========================================================
+
+
+\subsection{Evolution of the LHC}
+\label{subsec:evolution_lhc}
+
+% Talk about some of the upgrades, maybe to the magnets and stuff which allowed the c.o.m. to be increased, and stuff. Might also want to mention design energy and luminosity (that we aren't quite at design energy - but might hit it for Run-3, and surpassed design instantaneous lumi in 2016).
 
 The \acrshort{lhc} began operating in 2010 at a centre of mass energy of $\sqrt{s} = \text{7}\TeV$ (\acrlong{tev}s), 3.5\TeV per beam. A modest increase to 8\TeV was achieved by the end of Run-1 in 2013. After upgrades were performed, the LHC resumed operation in 2015, further pushing the frontiers of high energy physics with a centre of mass energy of \comruntwo. While valuable data was taken, it was not until 2016 when Run-2 of the \acrshort{lhc} began. This period ended in 2018 with 158.64\fbinv of $\Pp\Pp$ collisions delivered, 146.45\fbinv of which were recorded by \acrshort{cms} who certified 137.19\fbinv suitable for analysis~\cite{cmslumitwikipage,cmslumipogpage}. A breakdown by year is presented in Tab.~\ref{tab:lumis_lhc_cms}.
 
@@ -36,15 +61,27 @@ The \acrshort{lhc} began operating in 2010 at a centre of mass energy of $\sqrt{
 \end{table}
 
 
+%=========================================================
+
+
 \section{The CMS experiment}
 \label{sec:detector_cms}
 
-% Can look in Postgraduate and CMS courses/ folder
+% Can look in Postgraduate and CMS courses/ folder. Reference letter of intent \cite{DellaNegra:290808} and probably some TDRs as well (search at https://cds.cern.ch/collection/CMS%20Reports?ln=en)
+% In this bit, give a short introduction to the CMS experiment (when it started, number of collaborators, what kind of physics is done) before talking specifically about the detector and stuff.
+
+%=========================================================
+
+
+\subsection{The CMS detector}
+\label{subsec:cms_detector_itself}
+
+% Talk about the design of the detector and the principal components/subsystems. Give some numbers and stats (solenoid contains more energy than any other magnet in the world, etc). Explain geometry as well ($\phi$, $\eta$ -- with a description (angle between particle/object and beam axis) and equation, also noting the boundaries between barrel, end cap and HF). Maybe mention the upgrades done between Run-1 and Run-2, and possibly even the planned upgrades for Run-3 and Phase-2.
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.9\textwidth]{figures/cms_160312_06.pdf}
-    \caption[A cutaway diagram of the CMS detector with all of the principal components labelled. This detector configuration was used for the 2017--18 data taking years, where the coverage of the pixel detectors in the silicon tracker were upgraded from 1\,m$^2$ (66 million channels) to 1.9\,m$^2$ (124 million channels)]{A cutaway diagram of the CMS detector with all of the principal components labelled. This detector configuration was used for the 2017--18 data taking years, where the coverage of the pixel detectors in the silicon tracker were upgraded from 1\,m$^2$ (66 million channels) to 1.9\,m$^2$ (124 million channels). Image taken from Ref.~\citenum{Sakuma:2665537}.}
+    \caption[A cutaway diagram of the CMS detector with all of the principal components labelled. This detector configuration was used for the 2017--18 data taking years]{A cutaway diagram of the CMS detector with all of the principal components labelled. This detector configuration was used for the 2017--18 data taking years, where the coverage of the pixel detectors in the silicon tracker were upgraded from 1\,m$^2$ (66 million channels) to 1.9\,m$^2$ (124 million channels). Image taken from Ref.~\citenum{Sakuma:2665537}.}
     \label{fig:detector_cms_cutaway}
 \end{figure}
 
@@ -68,6 +105,18 @@ The \acrshort{lhc} began operating in 2010 at a centre of mass energy of $\sqrt{
     \caption[The average number of pileup interactions at CMS during 2015 and Run-2 of the LHC]{The average number of pileup interactions at CMS during 2015 and Run-2 of the LHC. Figure obtained from Ref.~\citenum{cmslumitwikipage}.}
     \label{fig:detector_cms_pileup}
 \end{figure}
+
+
+%=========================================================
+
+
+\subsection{Recording data for analysis}
+\label{subsec:cms_recording_data}
+
+% Talk about the different stages of data recording, from the Level-1 and High Level Trigger (and how they work with hardware/software), object identification, Particle Flow, anti-kt, any corrections and stuff applied, and how the data tiers work (AOD, miniAOD, nanoAOD, etc., which might require a small segue into ROOT and how we use it).
+
+
+%=========================================================
 
 
 \subsection{Jet energy corrections in the Level-1 Trigger}
@@ -118,3 +167,5 @@ where $\phi$ is the azimuthal angle of the jet. The algorithm used to match the 
 \caption[The energies of matched pairs of jets in the entire barrel and end cap, before and after jet energy corrections have been applied]{The energies of matched pairs of jets in the entire barrel and end cap, before and after jet energy corrections have been applied. After calibrations, the distribution is much more symmetrical. An equivalent plot using jets from LHC data is expected to look similar after applying these calibrations.}
 \label{fig:detector_jecs_scatter_BE}
 \end{figure}
+
+%=========================================================

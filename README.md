@@ -62,5 +62,5 @@ The following are some notes on formatting guidelines, just to remain consistent
 - For when to write numbers in words or numerals, see https://www.scribbr.com/academic-writing/numbers/ for help
 - For references at the end of a sentence, cite _before_ the full stop
 - When explicitly referring to a reference with "Ref.", use `\citenum{}` instead of `\cite{}` so that the number isn't wrapped in square brackets
-- For quotation marks, open the quote with a double backtick. Close with either a single double quote or two single quotes
+- For quotation marks, open the quote with a double backtick. Close with two single quotes so that the style of the opening and closing quotation marks match
 - More formatting/stylistic guildelines can be found in https://zenodo.org/record/3228336 (also [locally](helpful_docs/thesis-writing-gotchas.pdf))

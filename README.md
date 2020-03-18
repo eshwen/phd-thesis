@@ -25,6 +25,7 @@ Repository containing everything related to my thesis.
 - Glossary info: https://en.wikibooks.org/wiki/LaTeX/Glossary
 - Previous Bristol CMS theses for reference: [Lana's](https://github.com/Lana-B/Thesis), [Alex Titterton's](https://www.dropbox.com/sh/a859z9b7jlfmum4/AAC2CjjkLGmbeSIp5H5gQbEIa?dl=0)
 - The Comprehensive LaTeX Symbol List (also [locally](helpful_docs/symbols-a4.pdf)): https://www.ctan.org/pkg/comprehensive
+- Symbol list for particle names (also locally - [`hepnicenames`](helpful_docs/hepnicenames-rm.pdf), [`heppennames`](helpful_docs/heppennames-rm.pdf), [`ptdr-definitions` (additional macros for CMS publications)](ptdr-definitions.sty)): [`hepnicenames`](http://mirrors.ctan.org/macros/latex/contrib/hepnames/hepnicenames-rm.pdf), [`heppennames`](http://mirrors.ctan.org/macros/latex/contrib/hepnames/heppennames-rm.pdf)
 
 
 ## General questions and comments <a name="gen_questions"></a>

@@ -4,7 +4,10 @@
 
 \initial{T}his is the theory chapter.
 
-%=======
+
+%=========================================================
+
+
 \begin{easylist}[itemize]
 \ListProperties(Style*=-- , FinalMark={)}, Margin=0.5cm)
 & Give an overview of the fundamental forces and particles.
@@ -16,10 +19,16 @@
 \end{easylist}
 
 
+%=========================================================
+
+
 \section{The standard model of particle physics}
 \label{sec:standardmodel}
 
 % Check Lancaster and other summer school notes (Postgraduate and CMS courses/ folder)
+
+
+%=========================================================
 
 
 \section{Limitations of the standard model}
@@ -27,15 +36,22 @@
 
 % Check Lancaster and other summer school notes for other limitations, specifically referencing things that can tie into dark matter
 
+Despite the \acrlong{sm} providing precise predictions of three of the four fundamental forces and the particles that they interact with, there are many experimental observations that it cannot currently explain. Neutrino masses, dark matter, dark energy, and gravity all escape its description.
+
+%=========================================================
+
 
 \section{Theoretical motivations for, and descriptions of, dark matter}
 \label{sec:dark_matter}
 
+% Will probably be referring to things from introduction section. Try to just give overview there and describe the nitty-gritty here
+
+The universe may have birthed dark matter via one of many possible mechanisms. The most popular is described as a ``thermal freeze-out'' process. In the hot, early universe when the thermal background allowed spontaneous pair production of particle dark matter, it was produced in abundance. During this period, they may also have frequently annihilated since the cosmos was still small. Inevitably, the universe expanded and cooled; the temperature became too low to allow significant production \cite{Baldes:2017gzw}. Matter was further separated and the dark matter annihilation rate decreased, leaving a behind the ``thermal relic'' that is observed today. These remaining particles were attracted via gravity, forming filaments throughout the universe. The potential wells they induced allowed the progenitors of galaxies to form within.
+
+% Go into more detail about freeze-out mechanism, with some equations and plots. Could also describe freeze-in theory, 
+
 % DON'T RENDER
 \iffalse
-
-% Will probably be referring to things from introduction section. Try to just give overview there and describe the nitty-gritty here
-Dark matter was thought to be created in the hot, early universe when the thermal background allowed its spontaneous pair production. When the universe expanded and cooled, a thermal freeze out occurred: the average temperature became too low to allow significant production \cite{Baldes:2017gzw}. Matter became further separated and the dark matter annihilation rate decreased, leaving a ``thermal relic". These remaining particles were attracted via gravity, the only known force by which dark matter interacts. They formed filaments throughout the universe, and the potential wells they induced allowed the progenitors of galaxies to form within.
 
 % Taken directly from my lab book. Tidy up and improve
 \begin{easylist}[itemize]
@@ -47,17 +63,15 @@ Dark matter was thought to be created in the hot, early universe when the therma
 
 & Because WIMPs are stable (at least on the timescale of the current age of the Universe), they wouldn't decay into other particles when produced from accelerator collisions. So you would detect them (indirectly) by looking for MET and by looking for visible particles recoiling against the WIMPs.
 
-& The mediator (force-carrying particle, like the gauge bosons) for dark matter -- between dark matter particles or the dark matter-Standard Model particle interactions -- may be a scalar (spin-0, like the Higgs boson) or pseudoscalar (reverses parity under a Lorentz transformation, like the pion) boson. [Support] for a pseudoscalar over a scalar mediator comes from the Feynman diagrams for DM annihilation into, e.g., $b$-quarks. With a scalar mediator, the vertex factors and the propagator term lead to cancellations in the cross section equation in the low-velocity limit.
+& The mediator (force-carrying particle, like the gauge bosons) for dark matter -- between dark matter particles or the dark matter-Standard Model particle interactions -- may be a scalar (spin-0, like the Higgs boson) or pseudoscalar (reverses parity under a Lorentz transformation, like the pion) boson. [Support] for a pseudoscalar over a scalar mediator comes from the Feynman diagrams for DM annihilation into, e.g., \Pqb-quarks. With a scalar mediator, the vertex factors and the propagator term lead to cancellations in the cross section equation in the low-velocity limit.
 
-& The mediator for dark matter may be heavier than the dark matter particle itself (like with the $W^{\pm}$ and $Z$ bosons being heavier than most of the particles they mediate), maybe 2x heavier or more so than the DM particle. The mediator could decay via DM pair production, so it makes sense that it would be at least twice as heavy.
+& The mediator for dark matter may be heavier than the dark matter particle itself (like with the $W^{\pm}$ and \PZ bosons being heavier than most of the particles they mediate), maybe 2x heavier or more so than the DM particle. The mediator could decay via DM pair production, so it makes sense that it would be at least twice as heavy.
 
 & There's no consensus on whether dark matter is fermionic or bosonic. If fermionic, it may be either a Dirac fermion (particle is distinct from its antiparticle, like the electron and positron) or Majorana fermion (particle is the same as its antiparticle, like the neutrino is \underline{suspected} to be). If it were Majorana, dark matter could annihilate with itself, making discoveries via indirect searches more likely.
 
 & At the LHC, monojets are used most prominently to look for dark matter particles. But multijet plus \etmiss might provide better sensitivity and constraints (particularly if the mediator is pseudoscalar).
 
 & \underline{Many} dark matter candidates include a few supersymmetric particles (the neutralino being the most widely studied), sterile neutrinos \cite{doi:10.1142/S0218301313300191}, axions, Kaluza-Klein states \cite{Han:1998sg} (which are excitations of Standard Model fields in extra dimensions), etc.
-
-& The different aspects of dark matter searches: indirect (annihilation), direct (scattering from SM particles), and collider (production). Try to find/make a good image that showcases this (Feynman diagram with arrows for each type of detection).
 
 & Some good results showcasing dark matter masses and that of its mediator from different analyses and decay channels are at \cite{CMS-DP-2016-057}. Particularly figures 4 and 6, which I used in my poster for the PGR conference.
 
@@ -72,8 +86,6 @@ Papers to look at regarding SUSY and dark matter:
 & \cite{dmsearcheslhc2015}
 & \cite{dmbenchmarkearlylhcrun2}
 & \cite{CMS-PAS-EXO-12-055}
-& \cite{Martin:1997ns}
-& \cite{CMS-PAS-SUS-15-005}
 & \cite{Aitchison:2005cf}
 & \cite{Ellis:2002mx}
 & \cite{Murayama:2007ek}
@@ -87,8 +99,15 @@ Papers to look at regarding SUSY and dark matter:
 \fi
 
 
+%=========================================================
+
+
 \section{Important observables in collider physics}
 \label{sec:theory_important_observables}
+
+
+%=========================================================
+
 
 \subsection{Transverse momentum (\texorpdfstring{\pt}{pt})}
 \label{subsec:theory_pt}
@@ -96,6 +115,10 @@ Papers to look at regarding SUSY and dark matter:
 In the LHC (or any other collider), the longitudinal momentum of the initial state particles is typically unknown. However, the momentum transverse to the beam is zero before the collision, and therefore must be zero afterward after due to momentum conservation. This is why the transverse momentum of a particle or physics object (\ptvec for the vector quantity, \pt for its magnitude) is a useful variable in an analysis.
 
 % Do I need a more formal/mathematical definition, or a diagram?
+
+
+%=========================================================
+
 
 \subsection{\texorpdfstring{\HT}{HT}}
 \label{subsec:theory_ht}
@@ -110,6 +133,9 @@ The scalar sum of the transverse momentum of hadronic constituents in an event, 
 \end{equation}
 
 Typically, a lower limit on \pt is used when calculating the \HT, so jets below this threshold do not factor into the sum. This is to avoid low momentum jets attributed to pileup events (see Chpt. [REF PU IN DETECTOR CHAP.]), and those from the primary vertex that can often be mismeasured.
+
+
+%=========================================================
 
 
 \subsection{Missing transverse momentum (\texorpdfstring{\ptmiss}{ptmiss})}
@@ -134,10 +160,16 @@ As with \HT, the \mht is often calculated with a lower limit on the jet \pt.
 % A depiction of the MET (e.g., SM particles recoiling off dark matter) might be useful for the reader
 
 
+%=========================================================
+
+
 \section{Measuring the branching ratio for the invisible decays of the Higgs boson}
 \label{sec:theory_higgs_to_inv}
 
 % Can pull from Section 37 in my lab book, as well as all the talk I've given (Presentations and talks/ folder, my IOP one is a good starting point)
+
+
+%=========================================================
 
 
 \section{Searches for semi-visible jets}

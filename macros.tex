@@ -41,6 +41,9 @@
 % Generic
 \renewcommand{\_}{\texttt{\char`_}}
 \newcommand{\plusjets}{\ensuremath{+ \text{jets}}\xspace}
+\newcommand{\jone}{\ensuremath{\mathrm{j}_1}\xspace}
+\newcommand{\jtwo}{\ensuremath{\mathrm{j}_2}\xspace}
+\newcommand{\PVec}{\HepParticle{V}{}{}\xspace} % couldn't find command for generic V boson so created one
 
 % Rationale for when to use \text{} and when to use \mathrm{} in physics symbols:
 %     In math mode, wrapping something \text{} will render it in the main document font (i.e., garamond from the 'garamondx' package).
@@ -50,11 +53,22 @@
 
 % Particles are typeset using the 'hepnames' package. If given the option 'italic', it will render the particles in italics. So if I want to change style, only need to edit the line that imports the package, not the macros.
 
+% Higgs to inv. modes
+\newcommand{\ttH}{\ensuremath{\Pqt\Pqt\PH}\xspace}
+\newcommand{\ggF}{\ensuremath{\cPg\cPg\mathrm{F}}\xspace}
+\newcommand{\ggH}{\ensuremath{\cPg\cPg\PH}\xspace}
+\newcommand{\VH}{\ensuremath{\PVec\PH}\xspace}
+\newcommand{\WH}{\ensuremath{\PW\PH}\xspace}
+\newcommand{\WplusH}{\ensuremath{\PWp\PH}\xspace}
+\newcommand{\WminusH}{\ensuremath{\PWm\PH}\xspace}
+\newcommand{\ZH}{\ensuremath{\PZ\PH}\xspace}
+
 % Higgs to inv. control regions
 \newcommand{\singleMuCr}{\ensuremath{\Pgm \plusjets}\xspace}
 \newcommand{\doubleMuCr}{\ensuremath{\Pgm\Pgm \plusjets}\xspace}
 \newcommand{\singleEleCr}{\ensuremath{\Pe \plusjets}\xspace}
 \newcommand{\doubleEleCr}{\ensuremath{\Pe\Pe \plusjets}\xspace}
+\newcommand{\singlePhotonCr}{\ensuremath{\Pphoton \plusjets}\xspace}
 
 % Variables/physics symbols
 \newcommand{\doubleMuMass}{\ensuremath{m_{\Pgm\Pgm}}\xspace}
@@ -74,16 +88,29 @@
 \newcommand{\mTsup}[1]{\ensuremath{\mT^{#1}}\xspace}  % to add a superscript in mT. Call like \mTsup{foo} to get m_T^{foo}
 \newcommand{\mtMuon}{\ensuremath{\mTsup{\Pgm}}\xspace}
 \newcommand{\mtElectron}{\ensuremath{\mTsup{\Pe}}\xspace}
+\newcommand{\mjj}{\ensuremath{m_{\mathrm{jj}}}\xspace}
 \newcommand{\ptsup}[1]{\ensuremath{\pt^{#1}}\xspace}  % to add a superscript in pT
 \newcommand{\etasub}[1]{\ensuremath{\eta_{#1}}\xspace} % to add a subscript in eta
 \newcommand{\abseta}{\ensuremath{\lvert \eta \rvert}\xspace}
 \newcommand{\absetasub}[1]{\ensuremath{\lvert \eta_{#1} \rvert}\xspace}
 \newcommand{\nsub}[1]{\ensuremath{n_{#1}}\xspace}  % to add a subscript in n
-\newcommand{\ptjone}{\ensuremath{\ptsup{\mathrm{j}_{1}}}\xspace}
-\newcommand{\ptjtwo}{\ensuremath{\ptsup{\mathrm{j}_{2}}}\xspace}
-\newcommand{\etajone}{\ensuremath{\etasub{\mathrm{j}_{1}}}\xspace}
-\newcommand{\etajtwo}{\ensuremath{\etasub{\mathrm{j}_{2}}}\xspace}
+\newcommand{\ptjone}{\ensuremath{\ptsup{\jone}}\xspace}
+\newcommand{\ptjtwo}{\ensuremath{\ptsup{\jtwo}}\xspace}
+\newcommand{\etajone}{\ensuremath{\etasub{\jone}}\xspace}
+\newcommand{\etajtwo}{\ensuremath{\etasub{\jtwo}}\xspace}
 \newcommand{\njet}{\ensuremath{\nsub{\mathrm{jet}}}\xspace}
+\newcommand{\nbjet}{\ensuremath{\nsub{\Pqb}}\xspace}
+\newcommand{\nBoostedTop}{\ensuremath{\nsub{\Pqt}}\xspace}
+\newcommand{\nBoostedV}{\ensuremath{\nsub{\PVec}}\xspace}
+
+% Angular variables
+\newcommand{\omegaHat}{\ensuremath{\hat{\omega}_{\text{min}}}\xspace}
+\newcommand{\omegaTilde}{\ensuremath{\tilde{\omega}_{\text{min}}}\xspace}
+\newcommand{\minChi}{\ensuremath{\chi_{\text{min}}}\xspace}
+\newcommand{\mindphiAB}[2]{\ensuremath{\Delta\phi_{\text{min}}(#1, \ #2)}\xspace}
+\newcommand{\mindphiJetMet}{\ensuremath{\mindphiAB{\text{j}}{\MET}}\xspace}
+\newcommand{\dphiTj}{\ensuremath{\mindphiAB{\text{j}_{1, 2}}{\MET}}\xspace}
+\newcommand{\dphiFj}{\ensuremath{\mindphiAB{\text{j}_{1, 2, 3, 4}}{\MET}}\xspace}
 
 % Semi-visible jets variables. Taken from AN-19-061
 %\newcommand{\metmt}{\ensuremath{\MET/\mt}\xspace}
@@ -123,17 +150,6 @@
 \newcommand{\dijetMindphi}{\ensuremath{\Delta\phi_{\mathrm{min}}(j_{1,2}, \met)}\xspace}
 \newcommand{\schannel}{\ensuremath{s\text{-channel}}\xspace}
 \newcommand{\tchannel}{\ensuremath{t\text{-channel}}\xspace}
-
-% Higgs to inv. modes
-\newcommand{\ttH}{\ensuremath{\Pqt\Pqt\PH}\xspace}
-\newcommand{\ggF}{\ensuremath{\cPg\cPg\mathrm{F}}\xspace}
-\newcommand{\ggH}{\ensuremath{\cPg\cPg\PH}\xspace}
-\newcommand{\PVec}{\HepParticle{V}{}{}\xspace} % couldn't find command for generic V boson so created one
-\newcommand{\VH}{\ensuremath{\PVec\PH}\xspace}
-\newcommand{\WH}{\ensuremath{\PW\PH}\xspace}
-\newcommand{\WplusH}{\ensuremath{\PWp\PH}\xspace}
-\newcommand{\WminusH}{\ensuremath{\PWm\PH}\xspace}
-\newcommand{\ZH}{\ensuremath{\PZ\PH}\xspace}
 
 % Background processes
 \newcommand{\lostlepton}{\ensuremath{\ell_{\text{lost}}}\xspace}

@@ -2,7 +2,7 @@
 \chapter{The LHC and the CMS experiment}
 \label{chap:detector}
 
-\initial{T}his is the detector chapter.
+\initial{T}his chapter concerns the experimental setup. The \acrlong{lhc} provides the \acrshort{cms} experiment with proton-proton collision data that is then stored, corrected, and then used by physicists for various analyses from \acrlong{sm} precision measurements, searches for new physics, the development of tools and algorithms to aid the previous two, and much more.
 
 \begin{easylist}[itemize]
 \ListProperties(Style*=-- , FinalMark={)}, Margin=0.5cm)
@@ -27,13 +27,58 @@ Deep underground beneath the Franco-Swiss border lies the \acrfull{lhc}, a synch
 \subsection{A proton's journey}
 \label{subsec:protons_journey}
 
-A proton begins its journey as a hydrogen atom in a little, red bottle. Around 10$^{\text{14}}$ protons are supplied to each beam in the \acrshort{lhc}, with billions of refills available in this single container. Once the hydrogen atoms leave the source, they are stripped of their electrons, and [sent] to the linear accelerator LINAC2. This is the start of a long voyage through the accelerator complex.
+A proton begins its journey as a hydrogen atom in a little, red bottle. Around 10$^{\text{14}}$ protons are supplied to each beam in the \acrshort{lhc}, with billions of refills available in this single container. Once the hydrogen atoms leave the source, they are stripped of their electrons, and [sent] to the linear accelerator LINAC2. This is the start of a long voyage through the accelerator complex (visualised in Fig.~\ref{fig:cern_accelerator_complex}).
 
 Given a modest boost to 50\,\acrshort{mev} (\acrlong{mev}s), the protons are sequentially fed from LINAC2 into the \acrfull{psb} that accelerates them further to 1.4\GeV. Another upsurge is provided once the protons travel to the \acrfull{ps}, this time to 26\GeV. Then the final energy increase received before entering the \acrshort{lhc} comes from the \acrfull{sps}, leaving the protons at 450\GeV. Once injected into the \acrshort{lhc}, they are finally accelerated to their peak energy of up to 6.5\TeV from a sequence of radio frequency cavities over the course of twenty minutes. The oscillation frequency of these cavities is precisely tuned and timed to give protons the appropriate kicks and accelerate them to the desired energy. Since there is a distribution of proton energies in the beam, those that enter a cavity slightly out of time with a different energy than expected consequently become sorted into ``bunches''. The remainder of the \acrshort{lhc} ring is used to steer the beam with the aid of over 1,200 liquid helium-cooled superconducting dipole magnets. It is also focused by almost 400 equivalently-cooled quadrupole magnets to increase the rate of proton collisions.
 
 One beam consists of a ``train'' of up to 2,808 bunches spaced 25\,ns apart, each with 115 billion protons. Using bunches provides an advantage to the experiments at each of the interaction points. Discrete collisions take place between bunches in the opposing beams at 40\,MHz as opposed to an almost continuous stream of protons. This allows for estimates of multiple interactions per bunch crossing (known as \emph{\gls{pileup}}) that can be filtered out, and would otherwise introduce miscalculations of sums like \ptmiss and \HT. Each proton-proton collision is colloquially known as an ``event'', with data recorded by each experiment separated into events.
 
-% Describe the structure of the LHC - beam pipe, cooling, bunch interaction/collision (crossing angle, instantaneous and integrated luminosity). Include a couple more stats somewhere (revolutions of protons per second round the LHC, operating/electricity power draw)? Can look in Postgraduate and CMS courses/ folder. Reference the technical design report of the LHC (\cite{lhc_design_report} 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/CERN_accelerator_complex.jpg}
+    \caption[A schematic of the \acrshort{cern} accelerator complex]{A schematic of the \acrshort{cern} accelerator complex. Various particles are shown from their sources to the detectors they are observed at. Figure obtained from Ref.~\citenum{cern_accelerator_complex_page}.}
+    \label{fig:cern_accelerator_complex}
+\end{figure}
+
+% Describe the structure of the LHC - beam pipe, cooling. Include a couple more stats somewhere (operating/electricity power draw)? Can look in Postgraduate and CMS courses/ folder. Reference the technical design report of the LHC (\cite{lhc_design_report} 
+
+
+%=========================================================
+
+
+\subsection{Luminosity}
+\label{subsec:luminosity}
+
+The \emph{luminosity} of a particle accelerator is, along with centre of mass energy, a quantitative measure of its performance. It also often used to denote the amount of data delivered, or the data collected by the receiving detector. A full derivation of this quantity can be found in Ref.~\citenum{Herr:941318}, and as such, a summary is given here. The \emph{instantaneous luminosity} $\mathcal{L}$, typically quoted in $\text{cm}^{-2}\text{s}^{-1}$, is defined as
+
+\begin{equation}
+    \mathcal{L} = \frac{1}{\sigma_{\mathrm{p}}} \frac{\mathrm{d}N}{\mathrm{d}t}
+    \label{eq:lumi_instantaneous}
+\end{equation}
+
+where $N$ is the number of collisions and $\sigma_{\mathrm{p}}$ is the production cross section. In the \acrshort{lhc}, since many final states are possible, $\sigma_{\mathrm{p}}$ is not generally known. For two colliding beams split into bunches with the constituents in each bunch distributed according to a gaussian profile,
+
+\begin{equation}
+    \mathcal{L} = \frac{N_1 N_2 f N_b}{4 \pi \sigma_x \sigma_y} \cdot F % \cdot H
+    \label{eq:lumi_inst_head_on_colliding_beams}
+\end{equation}
+
+where $N_1$ and $N_2$ are the number of particles in a bunch in beams 1 and 2, respectively, $N_b$ is the number of bunches in a beam, $f$ is the revolution frequency (11,245\,Hz for protons in the LHC), and $\sigma_x$ and $\sigma_y$ are the horizontal and vertical sizes of the beam, respectively.
+
+The geometric reduction factor $F$ is unity for beams colliding head on. However, in the \acrshort{lhc}, the beams collide at an angle known as the ``crossing angle'' to reduce the effects of pileup. At the start of a fill when the number of protons in the \acrshort{lhc} is at its maximum, the crossing angle at each interaction point is approximately 300\,\si{\micro\text{rad}}. As the runs progress, more protons collide and the luminosity decreases. One of measures taken to recover luminosity and keep the \acrshort{lhc} as efficient as possible is to reduce the crossing angle. By the end of the fill, it can be as small as 240\,\si{\micro\text{rad}}.
+
+% Add mathematical formula for F (see https://espace.cern.ch/DG-DAT/public/Springer_Volume%20I21C/9_Lamont/luminosity/Luminosity%20Optimization.pdf)? Also, uncomment H factor from the hourglass effect and explain?
+
+The instantaneous luminosity can be increased by the inclusion of more bunches in the beam, decreasing the size of the beam through improved quadrupole magnets, and by reducing the crossing angle. Tuning these parameters led the \acrshort{lhc} to reach is design luminosity of 10$^{34}\text{cm}^{-2}\text{s}^{-1}$ in 2016. It had more than doubled by the end of Run-2.
+
+Integrating the the instantaneous luminosity over a period of time yields the \emph{integrated luminosity} $\mathcal{L}_{\mathrm{int.}}$:
+
+\begin{equation}
+    \mathcal{L}_{\mathrm{int.}} = \int \mathcal{L} \ \mathrm{d}t
+    \label{eq:lumi_integrated}
+\end{equation}
+
+These values are often quoted by experiments in units of ``inverse femtobarn'' (\fbinv) as an indicator of the amount of collision data collected. A ``barn'' is a unit equal to 10$^{-28}$\,m$^2$ and colloquially used to express cross sectional area in nuclear and particle physics. As such its reciprocal, the same units as integrated luminosity gives a good sense of scale that relates cross sections of individual processes to the total amount of data. Tab.~\ref{tab:lumis_lhc_cms} gives the integrated luminosities over Run-2 delivered by the LHC and collected by CMS.
 
 
 %=========================================================
@@ -42,7 +87,7 @@ One beam consists of a ``train'' of up to 2,808 bunches spaced 25\,ns apart, eac
 \subsection{Evolution of the LHC}
 \label{subsec:evolution_lhc}
 
-% Talk about some of the upgrades, maybe to the magnets and stuff which allowed the c.o.m. to be increased, and stuff. Might also want to mention design energy and luminosity (that we aren't quite at design energy - but might hit it for Run-3, and surpassed design instantaneous lumi in 2016).
+% Talk about some of the upgrades, maybe to the magnets and stuff which allowed the c.o.m. to be increased, and stuff. Might also want to mention design energy and luminosity (that we aren't quite at design energy - but might hit it for Run-3).
 
 The \acrshort{lhc} began operating in 2010 at a centre of mass energy of $\sqrt{s} = \text{7}\TeV$ (\acrlong{tev}s), 3.5\TeV per beam. A modest increase to 8\TeV was achieved by the end of Run-1 in 2013. After upgrades were performed, the LHC resumed operation in 2015, further pushing the frontiers of high energy physics with a centre of mass energy of \comruntwo. While valuable data was taken, it was not until 2016 when Run-2 of the \acrshort{lhc} began. This period ended in 2018 with 158.64\fbinv of $\Pp\Pp$ collisions delivered, 146.45\fbinv of which were recorded by \acrshort{cms} who certified 137.19\fbinv suitable for analysis~\cite{cmslumitwikipage,cmslumipogpage}. A breakdown by year is presented in Tab.~\ref{tab:lumis_lhc_cms}.
 

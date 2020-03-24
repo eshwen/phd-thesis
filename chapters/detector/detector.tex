@@ -31,7 +31,7 @@ A proton begins its journey as a hydrogen atom in a little, red bottle. Around 1
 
 Given a modest boost to 50\,\acrshort{mev} (\acrlong{mev}s), the protons are sequentially fed from LINAC2 into the \acrfull{psb} that accelerates them further to 1.4\GeV. Another upsurge is provided once the protons travel to the \acrfull{ps}, this time to 26\GeV. Then the final energy increase received before entering the \acrshort{lhc} comes from the \acrfull{sps}, leaving the protons at 450\GeV. Once injected into the \acrshort{lhc}, they are finally accelerated to their peak energy of up to 6.5\TeV from a sequence of radio frequency cavities over the course of twenty minutes. The oscillation frequency of these cavities is precisely tuned and timed to give protons the appropriate kicks and accelerate them to the desired energy. Since there is a distribution of proton energies in the beam, those that enter a cavity slightly out of time with a different energy than expected consequently become sorted into ``bunches''. The remainder of the \acrshort{lhc} ring is used to steer the beam with the aid of over 1,200 liquid helium-cooled superconducting dipole magnets. It is also focused by almost 400 equivalently-cooled quadrupole magnets to increase the rate of proton collisions.
 
-One beam consists of a ``train'' of up to 2,808 bunches spaced 25\,ns apart, each with 115 billion protons. Using bunches provides an advantage to the experiments at each of the interaction points. Discrete collisions take place between bunches in the opposing beams at 40\,MHz as opposed to an almost continuous stream of protons. This allows for estimates of multiple interactions per bunch crossing (known as \emph{\gls{pileup}}) that can be filtered out, and would otherwise introduce miscalculations of sums like \ptmiss and \HT. Each proton-proton collision is colloquially known as an ``event'', with data recorded by each experiment separated into events.
+One beam consists of a ``train'' of up to 2,808 bunches spaced 25\,ns apart, each with 115 billion protons. Using bunches provides an advantage to the experiments at each of the interaction points. Discrete collisions take place between bunches in the opposing beams at 40\,MHz as opposed to an almost continuous stream of protons. This allows for estimates of \gls{pileup} interactions that can be filtered out, and would otherwise introduce miscalculations of sums like \ptmiss and \HT. Each proton-proton collision is colloquially known as an ``event'', with data recorded by each experiment separated into events.
 
 \begin{figure}[htbp]
     \centering
@@ -56,7 +56,7 @@ The \emph{luminosity} of a particle accelerator is, along with centre of mass en
     \label{eq:lumi_instantaneous}
 \end{equation}
 
-where $N$ is the number of collisions and $\sigma_{\mathrm{p}}$ is the production cross section. In the \acrshort{lhc}, since many final states are possible, $\sigma_{\mathrm{p}}$ is not generally known. For two colliding beams split into bunches with the constituents in each bunch distributed according to a gaussian profile,
+where $N$ is the number of collisions and $\sigma_{\mathrm{p}}$ is the production cross section. In the \acrshort{lhc}, since many final states are possible, $\sigma_{\mathrm{p}}$ is not generally known. It can be measured, however. A recent paper from LHCb measured the extrapolated inelastic cross section (which is the important component for LHC collisions) to be $\text{75.4}\pm\text{5.4}$\,mb at \comruntwo \cite{Aaij:2018okq}, allowing an estimate of the collision rate. For two colliding beams split into bunches with the constituents in each bunch distributed according to a gaussian profile,
 
 \begin{equation}
     \mathcal{L} = \frac{N_1 N_2 f N_b}{4 \pi \sigma_x \sigma_y} \cdot F % \cdot H
@@ -71,14 +71,25 @@ The geometric reduction factor $F$ is unity for beams colliding head on. However
 
 The instantaneous luminosity can be increased by the inclusion of more bunches in the beam, decreasing the size of the beam through improved quadrupole magnets, and by reducing the crossing angle. Tuning these parameters led the \acrshort{lhc} to reach is design luminosity of 10$^{34}\text{cm}^{-2}\text{s}^{-1}$ in 2016. It had more than doubled by the end of Run-2.
 
-Integrating the the instantaneous luminosity over a period of time yields the \emph{integrated luminosity} $\mathcal{L}_{\mathrm{int.}}$:
+Integrating the the instantaneous luminosity over a period of time yields the \emph{integrated luminosity} \intlumi:
 
 \begin{equation}
-    \mathcal{L}_{\mathrm{int.}} = \int \mathcal{L} \ \mathrm{d}t
+    \intlumi = \int \mathcal{L} \ \mathrm{d}t
     \label{eq:lumi_integrated}
 \end{equation}
 
-These values are often quoted by experiments in units of ``inverse femtobarn'' (\fbinv) as an indicator of the amount of collision data collected. A ``barn'' is a unit equal to 10$^{-28}$\,m$^2$ and colloquially used to express cross sectional area in nuclear and particle physics. As such its reciprocal, the same units as integrated luminosity gives a good sense of scale that relates cross sections of individual processes to the total amount of data. Tab.~\ref{tab:lumis_lhc_cms} gives the integrated luminosities over Run-2 delivered by the LHC and collected by CMS.
+These values are often quoted by experiments in units of ``inverse femtobarn'' (\fbinv) as an indicator of the amount of collision data collected. A ``barn'' is a unit equal to 10$^{-28}$\,m$^2$ and colloquially used to express cross sectional area in nuclear and particle physics. As such its reciprocal, the same units as integrated luminosity, gives a good sense of scale that relates cross sections of individual processes to the total amount of data. Tab.~\ref{tab:lumis_lhc_cms} gives the integrated luminosities over Run-2 delivered by the LHC and collected by CMS. Taking 137.19\,\fbinv from this table, and assuming the inelastic $\Pp\Pp$ cross section above gives an estimate of 10$^{16}$ collisions recorded by CMS over Run-2 (excluding pileup interactions).
+
+
+%=========================================================
+
+
+\subsection{Pileup}
+\label{subsec:pileup}
+
+% Describe pileup here and the problems it can pose
+
+At the high instantaneous luminosity of the LHC, multiple interactions per bunch crossing (known as \emph{\gls{pileup}}) are frequent.
 
 
 %=========================================================
@@ -87,7 +98,7 @@ These values are often quoted by experiments in units of ``inverse femtobarn'' (
 \subsection{Evolution of the LHC}
 \label{subsec:evolution_lhc}
 
-% Talk about some of the upgrades, maybe to the magnets and stuff which allowed the c.o.m. to be increased, and stuff. Might also want to mention design energy and luminosity (that we aren't quite at design energy - but might hit it for Run-3).
+% Talk about some of the upgrades, maybe to the magnets and stuff which allowed the c.o.m. to be increased, and stuff. Might also want to mention design energy and luminosity (that we aren't quite at design energy - but might hit it for Run-3), possibly a small paragraph on the HL-LHC. Maybe add a summary table with the most important quantities (com energy, instantaneous lumi, expected integrated lumi, number of protons per bunch, pileup, crossing angle) with 3 columns (now - end of Run-2, design, HL-LHC) - see https://journals.aps.org/prab/pdf/10.1103/PhysRevSTAB.18.101002
 
 The \acrshort{lhc} began operating in 2010 at a centre of mass energy of $\sqrt{s} = \text{7}\TeV$ (\acrlong{tev}s), 3.5\TeV per beam. A modest increase to 8\TeV was achieved by the end of Run-1 in 2013. After upgrades were performed, the LHC resumed operation in 2015, further pushing the frontiers of high energy physics with a centre of mass energy of \comruntwo. While valuable data was taken, it was not until 2016 when Run-2 of the \acrshort{lhc} began. This period ended in 2018 with 158.64\fbinv of $\Pp\Pp$ collisions delivered, 146.45\fbinv of which were recorded by \acrshort{cms} who certified 137.19\fbinv suitable for analysis~\cite{cmslumitwikipage,cmslumipogpage}. A breakdown by year is presented in Tab.~\ref{tab:lumis_lhc_cms}.
 

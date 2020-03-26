@@ -2,7 +2,7 @@
 \chapter{The LHC and the CMS experiment}
 \label{chap:detector}
 
-\initial{T}his chapter concerns the experimental setup. The \acrlong{lhc} provides the \acrshort{cms} experiment with proton-proton collision data that is then stored, corrected, and then used by physicists for various analyses from \acrlong{sm} precision measurements, searches for new physics, the development of tools and algorithms to aid the previous two, and much more.
+\initial{T}his chapter concerns the experimental setup. \acrshort{cern} is the organisation that manages the machines discussed and is a pioneer in the high energy physics community. As such, it will be given a short overview. The \acrlong{lhc} provides the \acrshort{cms} experiment with proton-proton collision data that is then stored, corrected, and then used by physicists for analyses ranging from \acrlong{sm} precision measurements, searches for new physics, the development of tools and algorithms to aid the previous two, and much more.
 
 \begin{easylist}[itemize]
 \ListProperties(Style*=-- , FinalMark={)}, Margin=0.5cm)
@@ -10,6 +10,15 @@
 & Give an overview of the \acrshort{cms} experiment and detector (including all subsystems, object identification, algorithms for event/object reconstruction like Particle Flow and \gls{antikt}, and algorithms for tagging objects like \glspl{bjet}). Explain geometry as well ($\phi$, $\eta$ -- with a description (angle between particle/object and beam axis) and equation, also noting the boundaries between barrel, end cap and HF).
 & As a subsection in this chapter, discuss the Level-1 Trigger in depth. Emphasise the jet and energy sum triggers as I've worked on them, and Calorimeter Layer-2 for the same reason. Tie into SVJ and Hinv since they're hadronic searches.
 \end{easylist}
+
+
+%=========================================================
+
+
+\section{CERN}
+\label{sec:detector_cern}
+
+% Give a brief overview of CERN - the history of the organisation, some info about the member states, previous experiments and important results achieved by CERN, then lead into the LHC.
 
 
 %=========================================================
@@ -49,7 +58,7 @@ One beam consists of a ``train'' of up to 2,808 bunches spaced 25\,ns apart, eac
 \subsection{Luminosity}
 \label{subsec:luminosity}
 
-The \emph{luminosity} of a particle accelerator is, along with centre of mass energy, a quantitative measure of its performance. It also often used to denote the amount of data delivered, or the data collected by the receiving detector. A full derivation of this quantity can be found in Ref.~\citenum{Herr:941318}, and as such, a summary is given here. The \emph{instantaneous luminosity} $\mathcal{L}$, typically quoted in $\text{cm}^{-2}\text{s}^{-1}$, is defined as
+The \emph{\gls{luminosity}} of a particle accelerator is, along with centre of mass energy, a quantitative measure of its performance. It also often used to denote the amount of data delivered, or the data collected by the receiving detector. A full derivation of this quantity can be found in Ref.~\citenum{Herr:941318}, and as such, a summary is given here. The \emph{instantaneous luminosity} $\mathcal{L}$, typically quoted in $\text{cm}^{-2}\text{s}^{-1}$, is defined as
 
 \begin{equation}
     \mathcal{L} = \frac{1}{\sigma_{\mathrm{p}}} \frac{\mathrm{d}N}{\mathrm{d}t}
@@ -87,9 +96,18 @@ These values are often quoted by experiments in units of ``inverse femtobarn'' (
 \subsection{Pileup}
 \label{subsec:pileup}
 
-% Describe pileup here and the problems it can pose
+At the high instantaneous luminosity of the LHC, multiple interactions per bunch crossing (known as \emph{\gls{pileup}}) are frequent. The expected, or nominal, number of collisions per bunch crossing is one, but because of all the factors that increase the luminosity, many ``softer'' collisions also take place. Pileup interactions can produce many low-\pt objects, and near-collinear to the beam (detecting particles in this region is essential for some analyses). These additional objects can contaminate the reconstruction of final state from the nominal collision, and as such affect the direction and magnitude of the \ptmiss. When one aims to increase the luminosity to collect more data, the more severe pollution from pileup is an inevitable consequence. The distribution of pileup events in CMS during 2015 and Run-2 can be seen in Fig.~\ref{fig:detector_cms_pileup}.
 
-At the high instantaneous luminosity of the LHC, multiple interactions per bunch crossing (known as \emph{\gls{pileup}}) are frequent.
+There are strategies in place in the LHC and the anchored experiments to mitigate pileup. Introducing, or increasing, a crossing angle between the beams reduces the effect. Track reconstruction algorithms are very efficient at connecting particles to their primary vertices, and therefore particles originating from pileup vertices can be identified and removed~\cite{Chatrchyan:2014fea,Aaboud:2017all}.
+
+% Should I add more methods for mitigating pileup (maybe offline stuff done at CMS with jet identification, etc.)?
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.75\textwidth]{figures/pileup_allYears_run2.pdf}
+    \caption[The average number of pileup interactions at CMS during 2015 and Run-2 of the LHC]{The average number of pileup interactions at CMS during 2015 and Run-2 of the LHC. Figure obtained from Ref.~\citenum{cmslumitwikipage}.}
+    \label{fig:detector_cms_pileup}
+\end{figure}
 
 
 %=========================================================
@@ -98,7 +116,7 @@ At the high instantaneous luminosity of the LHC, multiple interactions per bunch
 \subsection{Evolution of the LHC}
 \label{subsec:evolution_lhc}
 
-% Talk about some of the upgrades, maybe to the magnets and stuff which allowed the c.o.m. to be increased, and stuff. Might also want to mention design energy and luminosity (that we aren't quite at design energy - but might hit it for Run-3), possibly a small paragraph on the HL-LHC. Maybe add a summary table with the most important quantities (com energy, instantaneous lumi, expected integrated lumi, number of protons per bunch, pileup, crossing angle) with 3 columns (now - end of Run-2, design, HL-LHC) - see https://journals.aps.org/prab/pdf/10.1103/PhysRevSTAB.18.101002
+% Talk about some of the upgrades, maybe to the magnets and stuff which allowed the c.o.m. to be increased, basically things that have been upgraded up to now. Might also want to mention design luminosity, that we hit it in 2016. Haven't hit design energy yet, but may do it for Run-3.
 
 The \acrshort{lhc} began operating in 2010 at a centre of mass energy of $\sqrt{s} = \text{7}\TeV$ (\acrlong{tev}s), 3.5\TeV per beam. A modest increase to 8\TeV was achieved by the end of Run-1 in 2013. After upgrades were performed, the LHC resumed operation in 2015, further pushing the frontiers of high energy physics with a centre of mass energy of \comruntwo. While valuable data was taken, it was not until 2016 when Run-2 of the \acrshort{lhc} began. This period ended in 2018 with 158.64\fbinv of $\Pp\Pp$ collisions delivered, 146.45\fbinv of which were recorded by \acrshort{cms} who certified 137.19\fbinv suitable for analysis~\cite{cmslumitwikipage,cmslumipogpage}. A breakdown by year is presented in Tab.~\ref{tab:lumis_lhc_cms}.
 
@@ -106,7 +124,7 @@ The \acrshort{lhc} began operating in 2010 at a centre of mass energy of $\sqrt{
     \centering
     \begin{tabular}{lcccc}
         \hline
-        Integrated luminosity & 2016 & 2017 & 2018 & Full Run-2 \\\hline
+        Integrated luminosity & 2016 & 2017 & 2018 & Full Run-2 \\ \hline
         Delivered by LHC (\fbinv) & 40.99 & 49.79 & 67.86 & 158.64 \\
         Recorded by CMS (\fbinv) & 37.80 & 44.98 & 63.67 & 146.45 \\
         Certified by CMS (\fbinv) & 35.92 & 41.53 & 59.74 & 137.19 \\
@@ -114,6 +132,28 @@ The \acrshort{lhc} began operating in 2010 at a centre of mass energy of $\sqrt{
     \end{tabular}
     \caption[The integrated luminosity delivered by the LHC during Run-2 which were recorded and certified by CMS]{The integrated luminosity delivered by the LHC during Run-2 which were recorded and certified by CMS. Numbers obtained from Refs.~\citenum{cmslumitwikipage,cmslumipogpage}.}
     \label{tab:lumis_lhc_cms}
+\end{table}
+
+In addition to the upgrades that have so far been performed, a much grander change is on the horizon. In 2027, the \acrfull{hllhc} is expected to begin operations. The latest technical design report can be found at Ref.~\citenum{Apollinari:2284929}. Many [upgrades] are set to be introduced with the primary purpose of increasing the luminosity by up to a factor of ten: more powerful magnets for focusing the beam, crab cavities for increasing the bunch overlap area, shielding and more radiation-resistant components, an upgrade to many of the boosters in the accelerator complex, and much more. A summary of the important parameters at three stages of the LHC's life is given in Tab.~\ref{tab:lhc_specs}.
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{lccc}
+        \hline
+        Parameter & End of Run-2 & \acrshort{hllhc} & Design \\ \hline
+        Beam energy (TeV) & 6.5 & 7 & 7 \\
+        Bunches per beam & 2,556 & 2,748 & 2,808 \\  % bunches per beam in Run-2 from https://home.cern/news/news/accelerators/lhc-report-lhc-full
+        Protons per bunch & $\text{1.5} \times \text{10}^{\text{11}}$ & $\text{2.2} \times \text{10}^{\text{11}}$ & $\text{1.5} \times \text{10}^{\text{11}}$ \\
+        Crossing angle (\si{\micro\text{rad}}) & 300 & 590 & 285 \\
+        Instantaneous luminosity ($\text{cm}^{-2}\text{s}^{-1}$) & $\text{2.1} \times \text{10}^{\text{34}}$ & $\text{7.2} \times \text{10}^{\text{34}}$ * & $\text{1.0} \times \text{10}^{\text{34}}$ \\  % peak lumi in Run-2 from https://home.cern/news/news/accelerators/lhc-report-lhc-full
+        Integrated luminosity per year (\fbinv) & 68 & 250 & 40 \\  % 40 fb-1 for design integrated lumi using instantaneous lumi of 1e34
+        Average pileup per bunch crossing & 34 & 140 & 27 \\
+        \hline
+    \end{tabular}
+    \caption[Some of the important parameters defining the performance of the LHC at the end of Run-2, for the \acrlong{hllhc} and the design specification]{Some of the important parameters defining the performance of the LHC at the end of Run-2, for the \acrlong{hllhc} and the design specification. Several values in this table were obtained from Refs.~\citenum{Benedikt:2112115,Apollinari:2017cqg}.
+
+    * Does not account for the increase to virtual luminosity from the introduction of crab cavities.}
+    \label{tab:lhc_specs}
 \end{table}
 
 
@@ -153,13 +193,6 @@ The \acrshort{lhc} began operating in 2010 at a centre of mass energy of $\sqrt{
     \includegraphics[width=0.75\textwidth]{figures/int_lumi_cumulative_pp_2_run2.pdf}
     \caption[The integrated luminosity of $\Pp\Pp$ collision data delivered to CMS during 2015 and Run-2 of the LHC]{The integrated luminosity of $\Pp\Pp$ collision data collected by CMS during 2015 and Run-2 of the LHC. Figure obtained from Ref.~\citenum{cmslumitwikipage}.}
     \label{fig:detector_cms_lumi}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.75\textwidth]{figures/pileup_allYears_run2.pdf}
-    \caption[The average number of pileup interactions at CMS during 2015 and Run-2 of the LHC]{The average number of pileup interactions at CMS during 2015 and Run-2 of the LHC. Figure obtained from Ref.~\citenum{cmslumitwikipage}.}
-    \label{fig:detector_cms_pileup}
 \end{figure}
 
 

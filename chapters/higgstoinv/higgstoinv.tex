@@ -66,6 +66,13 @@
 %=========================================================
 
 
+\section{Categorisation of the non-VBF production modes}
+\label{sec:htoinv_categorisation}
+
+
+%=========================================================
+
+
 \section{Data and simulation}
 \label{sec:htoinv_data_sim}
 
@@ -152,20 +159,20 @@ The nominal pileup weight, as well as the up and down systematic variations, for
 In an analysis, events are often rejected by placing kinematic or object-based requirements. This type of selection strictly removes an event from the analysis if the requirement is not met. While kinematic requirements are either fulfilled or not, a different approach can be used when selecting the number of objects, i.e., when defining control regions. For a set of objects, the selection weight at event level is defined as
 
 \begin{equation}
-    w_{\mathrm{event, \ sel.}} = \prod_i^{N_\mathrm{objects}} \epsilon_i
+    w_{\mathrm{sel.}} = \prod_i^{N_\mathrm{objects}} \epsilon_i
     \label{eq:event_selection_weight}
 \end{equation}
 
-where $\epsilon_i$ is the efficiency/scale factor applied to object $i$. Only reconstructed (``reco'' level) objects that have been matched to a generator level object are considered. For leptons (\Pe, \Pmu, \Ptau) and photons, these scale factors are typically from the reconstruction efficiency, identification efficiency, and \pt or $\eta$-dependent energy corrections. In the case of \Pqb-tagged jets, it is the data-MC scale factor at the given working point of the algorithm used to identify them. These weights are calculated individually for each type of object in an event, and individually for each source since they also introduce systematic variations that cannot be trivially aggregated. A veto weight is defined as
+where $\epsilon_i$ is the efficiency/scale factor applied to object $i$. Only reconstructed (``reco'' level) objects that have been matched to a generator level object are considered. For leptons (\Pe, \Pmu, \Ptau) and photons, these scale factors are typically from the reconstruction efficiency, identification efficiency, and \pt- or $\eta$-dependent energy corrections. In the case of \Pqb-tagged jets, it is the data-MC scale factor at the given working point of the algorithm used to identify them. These weights are calculated individually for each type of object in an event, and individually for each source since they also introduce systematic variations that cannot be trivially aggregated. A veto weight is defined as
 
 \begin{equation}
-    w_{\mathrm{event, \ veto}} = \prod_i^{N_\mathrm{objects}} 1 - \epsilon_i
+    w_{\mathrm{veto}} = \prod_i^{N_\mathrm{objects}} 1 - \epsilon_i
     \label{eq:event_veto_weight}
 \end{equation}
 
 The uncertainties/systematic variations follow the same prescription. With these quantities defined, an event that meets the object criteria is given the selection weight, otherwise it is given the veto weight. For example, if an event with one muon that meets the criteria for the \singleMuCr region will enter that region with its selection weight. That same event can also enter the signal region or one of the sidebands (depending on the event kinematics) with the veto weights. This ``migration'' of events, where they are able to contribute to more than one region, and the fact that weights are applied instead of event rejection, provides a noticeable decrease to the \acrlong{mc} statistical uncertainty in a given bin of a given distribution.
 
-One thing must be noted about the migration of events, since we have many different regions of phase space in the analysis. The signal region and the sidebands have orthogonal kinematic requirements, so an event cannot enter the signal region \emph{and} one of the sidebands. The same is true amongst the control regions, i.e., an event cannot enter more than one of them due to the designed orthogonality. An event \emph{is} able to enter the signal region or a sideband with a veto weight, and also one of the control regions with its selection weight. Since events in data are not weighted, they may only enter a single region.
+One thing must be noted about the migration of events, since we have many different regions of phase space in the analysis. The signal region and the sidebands have orthogonal kinematic requirements, so an event cannot enter the signal region \emph{and} one of the sidebands. The same is true amongst the control regions, i.e., an event cannot enter more than one of them due to the designed orthogonality. An event \emph{is} able to enter the signal region or a sideband with $w_{\mathrm{veto}}$, and also one of the control regions with $w_{\mathrm{sel.}}$. Since events in data are not weighted, they may only enter a single region.
 
 
 %=========================================================
@@ -173,11 +180,6 @@ One thing must be noted about the migration of events, since we have many differ
 
 \section{Triggers}
 \label{sec:htoinv_triggers}
-
-
-\section{Categorisation of the non-VBF production modes}
-\label{sec:htoinv_categorisation}
-
 
 \section{Background estimation}
 \label{sec:htoinv_background_est}

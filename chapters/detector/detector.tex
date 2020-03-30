@@ -2,12 +2,10 @@
 \chapter{The LHC and the CMS experiment}
 \label{chap:detector}
 
-\initial{T}his chapter concerns the experimental setup. \acrshort{cern} is the organisation that manages the machines discussed and is a pioneer in the high energy physics community. As such, it will be given a short overview. The \acrlong{lhc} provides the \acrshort{cms} experiment with proton-proton collision data that is then stored, corrected, and then used by physicists for analyses ranging from \acrlong{sm} precision measurements, searches for new physics, the development of tools and algorithms to aid the previous two, and much more.
+\initial{T}his chapter concerns the experimental setup. \acrshort{cern} is the organisation that manages the machines discussed and is a pioneer in the high energy physics community. As such, it will be given a short overview. The \acrlong{lhc} provides the \acrshort{cms} experiment with proton-proton collision data that is then stored, corrected, and then used by physicists for analyses. Ranging from \acrlong{sm} precision measurements, searches for new physics, the development of tools and algorithms to aid the previous two, these and much more are studied by the collaboration.
 
 \begin{easylist}[itemize]
 \ListProperties(Style*=-- , FinalMark={)}, Margin=0.5cm)
-& Explain \acrshort{cern} and the \acrshort{lhc} in more detail.
-& Give an overview of the \acrshort{cms} experiment and detector (including all subsystems, object identification, algorithms for event/object reconstruction like Particle Flow and \gls{antikt}, and algorithms for tagging objects like \glspl{bjet}). Explain geometry as well ($\phi$, $\eta$ -- with a description (angle between particle/object and beam axis) and equation, also noting the boundaries between barrel, end cap and HF).
 & As a subsection in this chapter, discuss the Level-1 Trigger in depth. Emphasise the jet and energy sum triggers as I've worked on them, and Calorimeter Layer-2 for the same reason. Tie into SVJ and Hinv since they're hadronic searches.
 \end{easylist}
 
@@ -18,7 +16,15 @@
 \section{CERN}
 \label{sec:detector_cern}
 
-% Give a brief overview of CERN - the history of the organisation, some info about the member states, previous experiments and important results achieved by CERN, then lead into the LHC.
+\acrshort{cern}, the European Organisation for Nuclear Research (Organisation Europ\'{e}enne pour la Recherche Nucl\'{e}aire), is the body responsible for large scale particle and high energy physics projects in Europe. It was founded in 1954 under the \emph{Conseil Europ\'{e}en pour la Recherche Nucl\'{e}aire} (European Council for Nuclear Research), from where its acronym derived. \acrshort{cern}'s primary site is situated in the canton of Geneva and creeps over the Franco-Swiss border. Its main purpose today is to provide physical and technological infrastructure for particle and high energy physics experiments. From large scale accelerators to extensive computing farms, \acrshort{cern} has grown into the largest laboratory for particle physics in the world. The organisation also provides a central community for the many researchers, engineers, and technicians to share ideas and collaborate effectively.
+
+The organisation was founded by twelve European member states, the United Kingdom being one of them. It has since expanded to twenty three, encompassing most of western Europe and some of the continent's east. Many more countries from across the globe are affiliated with \acrshort{cern} in some way, providing researchers, computing resources, and more. The member states and associated members contribute to \acrshort{cern}'s budget, to the tune of 1.2 billion Swiss Francs for the year 2020 \cite{cern_budget_2020}.
+
+Many important inventions and discoveries can be attributed to \acrshort{cern} and its personnel. Physics [achievements] include observations of weak neutral current interactions in 1973~\cite{HASERT1973121,HASERT1973138}, paving the way for the \PW~\cite{ARNISON1983103,BANNER1983476} and \PZ~\cite{Arnison:1983mk,Bagnaia:1983zx} boson discoveries with the UA1 and UA2 experiments in 1983. The number of light neutrino generations at the \acrfull{lep} in 1989~\cite{Trentadue:200667}, and direct CP violation with the NA48 experiment in 1999~\cite{Fanti_1999}, were also observed. Tim Berners-Lee and Robert Cailliau are credited with inventing the World Wide Web -- the ubiquitous service for accessing the internet -- in 1989/90.
+
+\acrshort{cern} is perhaps most widely known as the home of the \acrlong{lhc}, the particle accelerator involved in the discovery of the Higgs boson~\cite{Chatrchyan:2012xdj,Aad:2012tfa}. More is discussed in Chpt.~\ref{sec:detector_lhc}. But \acrshort{cern} is still involved in many more undertakings. There are many fixed target experiments that use beams from the \acrshort{ps} and \acrshort{sps} such as COMPASS (studies hadronic structure) and NA62, investigating rare decays of kaons. Experiments like ALPHA and \acrshort{aegis} use antiprotons from the Antiproton Decelerator to study antimatter in detail. The \acrshort{isolde} facility at \acrshort{cern} delivers beams of radioactive ions to perform many nuclear physics experiments.
+
+Concern is given not just to contemporary science, but also to the physics of tomorrow. The experiments and accelerators are frequently upgraded, for example \acrshort{lhc} improvements documented in Chpt.~\ref{subsec:evolution_lhc}. Future accelerators are also being discussed, such as the \acrfull{fcc}. The collider would use the \acrshort{lhc} as a booster, with the final ring having a 90--100\,km circumference and up to 100\TeV centre of mass energy. Proposals for the injectants are electron-positron beams (\acrshort{fcc}-ee, $\sqrt{s} = \text{90--350}\GeV$), and proton-proton beams (\acrshort{fcc}-hh, $\sqrt{s} = \text{100}\TeV$). Each option boasts its own merits, and in an integrated scenario the former may be used as an intermediate step toward the latter.
 
 
 %=========================================================
@@ -27,16 +33,20 @@
 \section{The Large Hadron Collider}
 \label{sec:detector_lhc}
 
-Deep underground beneath the Franco-Swiss border lies the \acrfull{lhc}, a synchrotron particle accelerator 27\,km in circumference. As the largest machine in the world, the \acrshort{lhc} stands as a testament to the importance of fundamental science and the dedication to which it is pursued. Predominantly a proton collider, lead and xenon ions have also been injected for novel and unique studies. Four principle experiments are situated at their own interaction points where the two beams of particles are brought into contact: \acrshort{cms} (\acrlong{cms}), a general purpose detector with interests in precision measurements, searches for new physics, and many other avenues; \acrshort{atlas} (\acrlong{atlas}), another general purpose detector with similar aims to \acrshort{cms}; LHCb, designed to study the decay of \PB hadrons; and \acrshort{alice} (\acrlong{alice}), primarily studying heavy ion collisions and the quark-gluon plasma.
+Deep underground beneath the Franco-Swiss border lies the \acrfull{lhc}, a synchrotron particle accelerator 27\,km in circumference. As the largest machine in the world, the \acrshort{lhc} stands as a testament to the importance of fundamental science and the dedication to which it is pursued. Predominantly a proton collider, lead and xenon ions have also been injected for novel and unique studies. Four principal experiments are situated at their own interaction points where the two beams of particles are brought into contact: \acrshort{cms} (\acrlong{cms}), a general purpose detector with interests in precision measurements, searches for new physics, and many other avenues; \acrshort{atlas} (\acrlong{atlas}), a counterpart to \acrshort{cms} at the antipode of the \acrshort{lhc} ring; LHCb, designed to study the decay of \PB hadrons; and \acrshort{alice} (\acrlong{alice}), primarily studying heavy ion collisions and the quark-gluon plasma.
+
+Four additional, smaller experiments are stationed in the \acrshort{lhc} ring that are much more specialised than the above mentioned: \acrshort{totem} (\acrlong{totem}) shares the \acrshort{cms} cavern with three subdetectors positioned near the beam line to perform \Pp structure and interaction cross section studies; LHCf shares the \acrshort{atlas} cavern and is concerned with detecting neutral pions in the forward direction to explain the origins of high energy cosmic rays; \acrshort{faser} (\acrlong{faser}) is another forward-based detector near \acrshort{atlas} and searches for light, weakly interacting particles; finally, \acrshort{moedal} (\acrlong{moedal}) is installed in the LHCb cavern and aims to detect magnetic monopoles and other exotic particles.
 
 
 %=========================================================
 
 
-\subsection{A proton's journey}
+\subsection{A proton's journey}  % alternative title: A big bang from a small bottle
 \label{subsec:protons_journey}
 
-A proton begins its journey as a hydrogen atom in a little, red bottle. Around 10$^{\text{14}}$ protons are supplied to each beam in the \acrshort{lhc}, with billions of refills available in this single container. Once the hydrogen atoms leave the source, they are stripped of their electrons, and [sent] to the linear accelerator LINAC2. This is the start of a long voyage through the accelerator complex (visualised in Fig.~\ref{fig:cern_accelerator_complex}).
+A proton begins its journey as a hydrogen atom in a little, red bottle. Around $\text{3} \times \text{10}^{\text{14}}$ protons are supplied to each beam in the \acrshort{lhc}, with billions of refills available in this single container. Once the hydrogen atoms leave the source, they are stripped of their electrons, and [sent] to the linear accelerator LINAC2. This is the start of a long voyage through the accelerator complex (visualised in Fig.~\ref{fig:cern_accelerator_complex}).
+
+% LINAC2 decommissioned. Will be replaced by LINAC4 for Run-3
 
 Given a modest boost to 50\,\acrshort{mev} (\acrlong{mev}s), the protons are sequentially fed from LINAC2 into the \acrfull{psb} that accelerates them further to 1.4\GeV. Another upsurge is provided once the protons travel to the \acrfull{ps}, this time to 26\GeV. Then the final energy increase received before entering the \acrshort{lhc} comes from the \acrfull{sps}, leaving the protons at 450\GeV. Once injected into the \acrshort{lhc}, they are finally accelerated to their peak energy of up to 6.5\TeV from a sequence of radio frequency cavities over the course of twenty minutes. The oscillation frequency of these cavities is precisely tuned and timed to give protons the appropriate kicks and accelerate them to the desired energy. Since there is a distribution of proton energies in the beam, those that enter a cavity slightly out of time with a different energy than expected consequently become sorted into ``bunches''. The remainder of the \acrshort{lhc} ring is used to steer the beam with the aid of over 1,200 liquid helium-cooled superconducting dipole magnets. It is also focused by almost 400 equivalently-cooled quadrupole magnets to increase the rate of proton collisions.
 
@@ -115,8 +125,6 @@ There are strategies in place in the LHC and the anchored experiments to mitigat
 
 \subsection{Evolution of the LHC}
 \label{subsec:evolution_lhc}
-
-% Talk about some of the upgrades, maybe to the magnets and stuff which allowed the c.o.m. to be increased, basically things that have been upgraded up to now. Might also want to mention design luminosity, that we hit it in 2016. Haven't hit design energy yet, but may do it for Run-3.
 
 The \acrshort{lhc} began operating in 2010 at a centre of mass energy of $\sqrt{s} = \text{7}\TeV$ (\acrlong{tev}s), 3.5\TeV per beam. A modest increase to 8\TeV was achieved by the end of Run-1 in 2013. Long Shutdown 1 then commenced where maintenance work was carried out, and upgrades to the accelerator and experiments were performed. Notably, the superconducting magnets were improved to safely handle much more energetic beams.
 
@@ -198,14 +206,14 @@ CMS is designed to detect all manner of particles as accurately as possible. To 
 %=========================================================
 
 
-\subsubsection{Subsystems of the CMS detector}
+\subsubsection{Subsystems of the detector}
 \label{subsubsec:cms_subsystems}
 
 When a collision occurs, the ejected particles first encounter the silicon tracker that extends to just under 1\,m in radius. Consisting of tens of millions of pixels and microstrips, the positions of particles can be recorded to within 10\si{\micro\metre}. Initially, the pixel detector covered 1\,m$^2$, consisting of 66 million channels. It was upgraded for the 2017--18 run period to 1.9\,m$^2$ with 124 million channels. Since it is the closest subsystem to the interaction point, the components must be extremely radiation tolerant to withstand the bombardment of particles pummelling them every collision.
 
-After the tracker, the particles can interact with the \acrshort{ecal}. The 76,000 lead-tungstate crystals record energy deposits in the barrel and end cap regions belonging to charged particles. In particular, electrons and photons are identified here, and are usually stopped entirely in the \acrshort{ecal}. % Expand more
+After the tracker, the particles can interact with the \acrshort{ecal}. The 76,000 lead-tungstate crystals record energy deposits in the barrel and end cap regions belonging to charged particles. In particular, electrons and photons are identified here, and are usually stopped entirely in the \acrshort{ecal}. % Expand more. Say _how_ the particles are detected and how energy, etc. is determined.
 
-Hadronic particles can propagate further into the \acrshort{hcal}. A brass and plastic scintillator with 7,000 channels, the energies in showers of hadrons are measured. Unlike the \acrshort{ecal} which only covers the barrel and end cap, the \acrshort{hcal} also has a component in the forward region of the detector for particles with trajectories close to the beam line. % Expand more
+Hadronic particles can propagate further into the \acrshort{hcal}. A brass and plastic scintillator with 7,000 channels, the energies in showers of hadrons are measured. Unlike the \acrshort{ecal} which only covers the barrel and end cap, the \acrshort{hcal} also has a component in the forward region of the detector: the \acrfull{hf}. Made of quartz fibres and steel, it is designed for particles with trajectories close to the beam line, and serves the additional function of measuring the luminosity delivered to, and collected by, the experiment. % Expand more. Say _how_ the particles are detected and how energy, etc. is determined.
 
 These three subsystems are encased in a massive solenoid, making up 12,500 of the 14,000 tonne detector. It generates a magnetic field of 3.8\,T and $\text{2.4} \times \text{10}^{\text{9}}$\,J of energy, making it the largest store of energy in the world for a single magnet. The field allows for the transverse momentum of a charged particle to be measured at high resolution, since it deflects the particle into a circular orbit. The magnetic force $qvB$ exerted is equal to the centripetal force $mv^2/r$, and as such the radius of the orbit is proportional to the momentum.
 
@@ -235,7 +243,16 @@ Collider physics tends to use certain conventions when describing the positions 
     \label{eq:eta_def}
 \end{equation}
 
-where $\theta$ is the angle between the particle's three-momentum $\mathbf{p}$ and the positive direction of the beam axis. So as $\theta \rightarrow 0^{\circ}$ (the beam line), $\eta \rightarrow \infty$. Generally, particles with large $\eta$ escape the detector which is why forward calorimeters are in place. The transverse momentum of a particle can be found with $\pt = \lvert \mathbf{p} \rvert / \cosh \eta$. The detector is predominantly separated into three regions dependent on $\eta$: the barrel, or central region ($\abseta < 1.479$); the end caps ($1.479 < \abseta < ???$); and the forward region ($??? < \abseta < ???$). The divisions are due to the locations of the components that make up the calorimeters. % Add a diagram of the eta divisions?
+where $\theta$ is the angle between the particle's three-momentum $\mathbf{p}$ and the positive direction of the beam axis. So as $\theta \rightarrow 0^{\circ}$ (the beam line), $\eta \rightarrow \infty$. Generally, particles with large $\eta$ escape the detector which is why forward calorimeters are in place. The transverse momentum of a particle can be found with $\pt = \lvert \mathbf{p} \rvert / \cosh \eta$.
+
+The detector is predominantly separated into three regions dependent on $\eta$: the barrel, or central region ($\abseta < 1.479$); the end caps ($1.479 < \abseta < 3.0$); and the forward region ($3.0 < \abseta < 5.0$). The divisions are due to the locations of the components that make up the calorimeters. The \acrshort{ecal} and \acrshort{hcal} cover the barrel and end caps regions entirely, with the \acrshort{hcal} additionally having a component in the forward region. The muon chambers only reside in the barrel and end caps, but its pseudorapidity range is restricted to $\abseta < 2.4$, since the steel that surrounds the structure takes up the remainder of the end cap. One quadrant of CMS showing the $\eta$ divisions can be seen in Fig.~\ref{fig:cms_eta_bounds}.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.75\textwidth]{figures/cms_eta_ranges.pdf}
+    \caption[A quadrant of the CMS detector showing the main subsystems with their radius $R$, longitudinal distance $z$, and pseudorapidity $\eta$ from the interaction point]{A quadrant of the CMS detector showing the main subsystems with their radius $R$, longitudinal distance $z$, and pseudorapidity $\eta$ from the interaction point. The grey box at $3.0 < \abseta < 5.0$ and $\sim 10.9 < z < 12$\,m is the hadron forward calorimeter. Figure taken from Ref.~\cite{cms_dp_end_of_run2}.}
+    \label{fig:cms_eta_bounds}
+\end{figure}
 
 The distance between two objects can be found with the variable $\Delta R$:
 
@@ -253,7 +270,7 @@ It is often used as a distance parameter in jet clustering, or between individua
 \subsection{Data acquisition and triggering}
 \label{subsec:cms_recording_data}
 
-% Talk about the different stages of data recording, from the Level-1 and High Level Trigger (and how they work with hardware/software), object identification, Particle Flow, anti-kt, any corrections and stuff applied, and how the data tiers work (AOD, miniAOD, nanoAOD, etc., which might require a small segue into ROOT and how we use it).
+% Talk about the different stages of data recording, from the Level-1 and High Level Trigger (and how they work with hardware/software), object identification, reconstruction algos (Particle Flow, anti-kt), any corrections and postprocessing applied (e.g., other algos like DeepCSV for b-tagging, DeepAK8 for boosted AK8s), and how the data tiers work (AOD, miniAOD, nanoAOD, etc., which might require a small segue into ROOT and how we use it).
 
 
 %=========================================================
@@ -262,7 +279,9 @@ It is often used as a distance parameter in jet clustering, or between individua
 \subsection{Jet energy corrections in the Level-1 Trigger}
 \label{subsubsec:detector_jecs}
 
-% Taken directly from second year report. Tidy up and improve, describing the whole workflow, at least briefly. Can also look in Section 20 of my lab book for more info. Define what eta is, somewhere (can take from Section 14 of lab book). Can pull material from the trigger/DPG presentations I've given (I should have the actual pdf/png plots in Service Work - Jet Energy Corrections in the Level-1 Trigger/)
+% Taken directly from second year report.
+% Tidy up and improve, describing the whole workflow, at least briefly (uses QCD multijet MC, send through detector sim with expected detector layout/response(?), corrections made as function of pt and eta (mention the 16 eta bins), then closure tests - regenerate MC with corrections and check they're applied correctly, make plots, circulate corrections in various formats).
+% Can also look in Section 20 of my lab book for more info. Can pull material from the trigger/DPG presentations I've given (I should have the actual pdf/png plots in Service Work - Jet Energy Corrections in the Level-1 Trigger/)
 
 \Gls{jec} are necessary to compensate for various losses when recording jet properties in the trigger. These losses depend on the \pt and $\eta$. The calibrations ensure that the performance of the trigger is uniform across the detector. Firstly, some ideal (or reference) jets are needed to compare against given L1 jets. Since Monte Carlo datasets are used for the calibrations, the reference jets we use are the generator-level jets (or GenJets). These are stable, simulated particles clustered with the \gls{antikt} algorithm~\cite{Cacciari:2008gp} to form the jet. The state of these jets are post-hadronisation, before detector interaction. L1 jets need to be matched against the GenJets. From there, various studies can be performed such measuring the response of the detector $\langle \ptsup{{\mathrm{L1}}} / \ptsup{{\mathrm{ref.}}} \rangle$, and its position and energy resolutions.
 

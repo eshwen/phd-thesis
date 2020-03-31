@@ -38,11 +38,15 @@
    /CreationDate (D:\pdfdate)
 }
 \fi
+
 % When draft option is on. 
 \ifdraftdoc 
-	\usepackage{draftwatermark} % Sets watermarks up.
+	\usepackage{draftwatermark}  % Sets watermarks up
 	\SetWatermarkScale{0.3}
 	\SetWatermarkText{\bf Draft: \today}
+	\usepackage[left]{lineno}  % Set line numbers for easier referencing to specific points in the document
+	\linenumbers
+	\setkeys{Gin}{draft=false}  % allow figures to actually be displayed, not replaced by a box with the path to the figure
 \fi
 % ----------------------------------------
 

@@ -9,6 +9,7 @@ Repository containing everything related to my thesis.
 3. [General questions and comments](#gen_questions)
 4. [Caveats/things to note](#caveats)
 5. [Formatting guidelines](#formatting)
+6. [Draft versions of the pdf](#drafts)
 
 
 ## Immediate to-do items <a name="immediate_to_do"></a>
@@ -51,6 +52,7 @@ getnonfreefonts --user -a
 - The BibTeX backend of my choice is `biblatex` with the `natbib` package. The backend can be changed to `bibtex` if required as compatibility (as of my last check) isn't an issue
 - External helpful documents regarding LaTeX, thesis writing (Bristol-specific and general), etc. can be found in [helpful_docs/](helpful_docs/)
 - HEP particles are typeset using the `hepnames` package. With the `italic` option, they are rendered in italics. The default is upright. If I decide to change the style, I can just edit the line that imports the package in [thesismain.tex](./thesismain.tex)
+- Compiling [thesismain.tex](./thesismain.tex) in TeXShop can misbehave when new references or glossary terms are added, possibly due to conflicts or file changes when the hyperlinks are applied. If this is the case, run [trash_aux_files.sh](./trash_aux_files.sh) to wipe all of the auxiliary files and recompile
 
 
 ## Formatting guidelines <a name="formatting"></a>
@@ -64,4 +66,10 @@ The following are some notes on formatting guidelines, just to remain consistent
 - For references at the end of a sentence, cite _before_ the full stop
 - When explicitly referring to a reference with "Ref.", use `\citenum{}` instead of `\cite{}` so that the number isn't wrapped in square brackets
 - For quotation marks, open the quote with a double backtick. Close with two single quotes so that the style of the opening and closing quotation marks match
+- When to use hyphens, en-dashes and em-dashes: https://www.chicagomanualofstyle.org/qanda/data/faq/topics/HyphensEnDashesEmDashes/faq0002.html
 - More formatting/stylistic guildelines can be found in https://zenodo.org/record/3228336 (also [locally](helpful_docs/thesis-writing-gotchas.pdf))
+
+
+## Draft versions of the pdf <a name="drafts"></a>
+
+When sending a draft version of the pdf, e.g., to my supervisor, add "draft" in the `\documentclass` line with the other options. This turns on a draft watermark with the date the pdf was made, and adds line numbers for easier referencing to specific points. Also, use footnotes to mark any questions/concerns, etc. instead of comments in the tex file.

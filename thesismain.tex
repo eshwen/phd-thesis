@@ -206,16 +206,12 @@
 
 % Command for equivalent implementation of natbib's \citenum
 \DeclareCiteCommand{\citenum}
-    {\usebibmacro{cite:init}%
-     \usebibmacro{prenote}
-    }
+    {\usebibmacro{cite:init}}
     {\usebibmacro{citeindex}%
      \usebibmacro{cite:comp}
     }
     {}
-    {\usebibmacro{cite:dump}%
-     \usebibmacro{postnote}
-    }
+    {\usebibmacro{cite:dump}}
 
 \usepackage{color}                      % Creates coloured text and background
 \usepackage[spanish,british]{babel}     % For languages characters and hyphenation

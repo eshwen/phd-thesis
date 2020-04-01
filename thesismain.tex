@@ -169,13 +169,13 @@
 \usepackage{longtable,rotating}         % Long tab environments including rotation
 \usepackage{colortbl}                   % Makes coloured tables
 \usepackage{float}                      % Helps to place figures, tables, etc. 
-\usepackage{verbatim}                   % Permits pre-formated text insertion
 \usepackage{latexsym}                   % Extra symbols
 \usepackage[
     backend=biber,
     style=numeric-comp,                 % numerical citation and compress multiple ones ([1, 2, 3] -> [1-3]
     giveninits=true,                    % Replace first names with initial
     block=space,                        % Separate each block/component of a bibliography entry by a space
+    url=false,                          % Disable display of URL in bibliography
     ]{biblatex}                         % Calls bibliography commands.
 \addbibresource{backmatter/thesisbib.bib} % Location of bib file
 
@@ -218,8 +218,7 @@
 \usepackage{csquotes}                   % Used in conjunction with babel to use quotes appropriate to language (biblatex throws warning if not used)
 \usepackage{enumerate}                  % For enumeration counter
 \usepackage{footnote}                   % For footnotes
-\usepackage{microtype}                  % Makes pdf look better (affects font and line spacing. fewer overfull/underfull hbox warnings)
-\usepackage{rotfloat}                   % For rotating and float environments as tables, figures, etc. 
+\usepackage{microtype}                  % Makes pdf look better (affects font and line spacing, fewer overfull/underfull hbox warnings)
 \usepackage{alltt}                      % LaTeX commands are not disabled in verbatim-like environment
 \usepackage[version=0.96]{pgf}          % PGF/TikZ is a tandem of languages for producing vector graphics from a 
 \usepackage{tikz}                       % geometric/algebraic description.
@@ -232,16 +231,12 @@
 \usepackage{cprotect}                   % so I can use \verb and other commands within captions
 \usepackage{bbold}                      % for mathematical symbols like the characters for special sets
 \usepackage[ampersand]{easylist}        % for bullet points and lists, etc. New entry starts with & character
-\usepackage{cancel}                     % for strike-throughs for missing energy/momentum, etc.
 \usepackage[italic]{hepnames}           % standard symbols for HEP particles ('italic' option typesets particles in italics like ATLAS/LHCb convention, default is 'noticalic' a la CMS convention)
-\usepackage{spverbatim}                 % for linebreaks in the verbatim environment
 \usepackage{tabularx}                   % for multii-line cells in tables
 \usepackage{multirow}                   % for nested rows in tables
-\usepackage{siunitx}                    % for aligning numbers properly in tables (column type is "S")
-\usepackage[normalem]{ulem}             % for underlining over multiple lines. Need "normalem" option otherwise \emph underlines
-\usepackage{pdflscape}                  % for landscape-oriented tables
+\usepackage{siunitx}                    % for SI units, and aligning numbers properly in tables (column type is "S")
 \usepackage{xfrac}                      % for nice-looking diagonal (a/b) fractions
-\usepackage{booktabs}                   % for table formatting macros. other good formatting tips in the package manual
+\usepackage{booktabs}                   % for table formatting macros. Other good formatting tips in the package manual
 
 \usepackage{array}                      % for more flexibility with tables
 \newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}} % for text in table cells to be centred
@@ -255,6 +250,11 @@
     citecolor=cyan,
 }
 \usepackage{memhfixc}                   % Must be used on memoir document class after hyperref
+% ----------------------------------------
+
+% ----------------------------------------
+% New command definitions for my thesis. Put here so macros can be used in glossary entries
+\input{macros}
 % ----------------------------------------
 
 % ----------------------------------------
@@ -273,17 +273,14 @@
 % ----------------------------------------
 
 % ----------------------------------------
-% New command definitions for my thesis
-\input{macros}
-% ----------------------------------------
-
-% ----------------------------------------
 % Hyphenation for some words
 \hyphenation{res-pec-tively}
 \hyphenation{mono-ti-ca-lly}
 \hyphenation{hypo-the-sis}
 \hyphenation{para-me-ters}
 \hyphenation{sol-va-bi-li-ty}
+% ----------------------------------------
+
 % ----------------------------------------
 \begin{document}
 % UoB guidlines:

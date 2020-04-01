@@ -49,7 +49,7 @@ getnonfreefonts --user -a
 ```
 
 - Thesis template comes from [here](https://www.overleaf.com/latex/templates/university-of-bristol-thesis-template/kzqrfvyxxcdm). Has been built upon
-- The BibTeX backend of my choice is `biblatex` with the `natbib` package. The backend can be changed to `bibtex` if required as compatibility (as of my last check) isn't an issue
+- The BibTeX backend of my choice is `biber` with the `biblatex` package since it's much more modern that the `bibtex`/`natbib` combination
 - External helpful documents regarding LaTeX, thesis writing (Bristol-specific and general), etc. can be found in [helpful_docs/](helpful_docs/)
 - HEP particles are typeset using the `hepnames` package. With the `italic` option, they are rendered in italics. The default is upright. If I decide to change the style, I can just edit the line that imports the package in [thesismain.tex](./thesismain.tex)
 - Compiling [thesismain.tex](./thesismain.tex) in TeXShop can misbehave when new references or glossary terms are added, possibly due to conflicts or file changes when the hyperlinks are applied. If this is the case, run [trash_aux_files.sh](./trash_aux_files.sh) to wipe all of the auxiliary files and recompile

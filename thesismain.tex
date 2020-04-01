@@ -179,13 +179,6 @@
     ]{biblatex}                         % Calls bibliography commands.
 \addbibresource{backmatter/thesisbib.bib} % Location of bib file
 
-% Command for equivalent implementation of natbib's \citenum
-\DeclareCiteCommand{\citenum}
-  {}
-  {\printfield{labelnumber}}
-  {}
-  {}
-
 % Create bibliography style similar to SIAM as it's not available in biblatex
 \renewcommand*{\newunitpunct}{\addcomma\space}
 \renewcommand*{\mkbibnamefamily}[1]{\textsc{#1}}
@@ -195,21 +188,34 @@
 \DeclareFieldFormat{journaltitle}{#1}
 
 \renewbibmacro*{in:}{%
-  \ifentrytype{article}
-    {}
-    {\printtext{\bibstring{in}\intitlepunct}}}
+    \ifentrytype{article}
+        {}
+        {\printtext{\bibstring{in}\intitlepunct}}}
 
 \newbibmacro*{pubinstorg+location+date}[1]{%
-  \printlist{#1}%
-  \newunit
-  \printlist{location}%
-  \newunit
-  \usebibmacro{date}%
-  \newunit}
+    \printlist{#1}%
+    \newunit
+    \printlist{location}%
+    \newunit
+    \usebibmacro{date}%
+    \newunit}
 
 \renewbibmacro*{publisher+location+date}{\usebibmacro{pubinstorg+location+date}{publisher}}
 \renewbibmacro*{institution+location+date}{\usebibmacro{pubinstorg+location+date}{institution}}
 \renewbibmacro*{organization+location+date}{\usebibmacro{pubinstorg+location+date}{organization}}
+
+% Command for equivalent implementation of natbib's \citenum
+\DeclareCiteCommand{\citenum}
+    {\usebibmacro{cite:init}%
+     \usebibmacro{prenote}
+    }
+    {\usebibmacro{citeindex}%
+     \usebibmacro{cite:comp}
+    }
+    {}
+    {\usebibmacro{cite:dump}%
+     \usebibmacro{postnote}
+    }
 
 \usepackage{color}                      % Creates coloured text and background
 \usepackage[spanish,british]{babel}     % For languages characters and hyphenation

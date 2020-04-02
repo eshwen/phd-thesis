@@ -8,7 +8,7 @@ Repository containing everything related to my thesis.
   - [Immediate to-do items](#immediate-to-do-items)
   - [Useful links](#useful-links)
   - [General questions and comments](#general-questions-and-comments)
-  - [Caveats/things to note](#caveats-things-to-note)
+  - [Caveats and things to note](#caveats-and-things-to-note)
   - [Formatting guidelines](#formatting-guidelines)
   - [Draft versions of the pdf](#draft-versions-of-the-pdf)
 
@@ -35,7 +35,7 @@ Repository containing everything related to my thesis.
 - I'm not sure of the best way to format the journal component of a bibliography entry, i.e., whether the entire journal name should be given or just the ISO4 abbreviation
 - Should I use abbreviations or the actual words when referencing items within the thesis, i.e., "Chpt." or "Chapter", "Fig." or "Figure", "Tab." or "Table"?
 
-## Caveats/things to note
+## Caveats and things to note
 
 - Currently, I use the font "Garamond Expert with New TX Math" for the main text (i.e., with the package `garamondx`). If compiling the document on Overleaf, this should already be installed. However, with TeX Live on Mac, it is not. To circumvent this, I need to follow the instructions at <http://tug.org/fonts/getnonfreefonts/:>
 

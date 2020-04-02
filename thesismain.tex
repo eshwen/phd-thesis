@@ -1,4 +1,4 @@
-%\title{University of Bristol Thesis Template}
+ %\title{University of Bristol Thesis Template}
 
 % In TeXShop, compile pdflatex, bibliography and glossary in one command by selecting "pdflatexmk" from the drop-down menu next to "Typeset".
 % If compilation with pdflatexmk fails, hit the "Trash Aux Files" button and recompile.
@@ -23,7 +23,7 @@
 % The dissertation must be printed on A4 white paper. Paper up to A3 may be used for maps, plans, diagrams and illustrative material. Pages (apart from the preliminary pages) should normally be double-sided.
 %
 % Memoir class loads useful packages by default (see manual).
-\documentclass[a4paper,12pt,leqno,openbib,oldfontcommands]{memoir} % add 'draft' to turn draft option on (see below)
+\documentclass[a4paper,12pt,leqno,openbib,oldfontcommands]{memoir} % add 'draft' in options to render draft document (see below)
 % ----------------------------------------
 
 % ----------------------------------------
@@ -34,7 +34,7 @@
 \pdfinfo{
    /Author Eshwen Bhal
    /Title (PhD Thesis)
-   /Keywords (dark matter; large hadron collider; LHC; CMS; hadronic final states; semi-visible jets; Higgs boson)
+   /Keywords (dark matter; large hadron collider; LHC; CMS; hadronic final states; missing transverse energy; semi-visible jets; Higgs boson)
    /CreationDate (D:\pdfdate)
 }
 \fi
@@ -213,11 +213,10 @@
     {}
     {\usebibmacro{cite:dump}}
 
-\usepackage{color}                      % Creates coloured text and background
+\usepackage{xcolor}                     % Creates coloured text and background
 \usepackage[spanish,british]{babel}     % For languages characters and hyphenation
 \usepackage{csquotes}                   % Used in conjunction with babel to use quotes appropriate to language (biblatex throws warning if not used)
 \usepackage{enumerate}                  % For enumeration counter
-\usepackage{footnote}                   % For footnotes
 \usepackage{microtype}                  % Makes pdf look better (affects font and line spacing, fewer overfull/underfull hbox warnings)
 \usepackage{alltt}                      % LaTeX commands are not disabled in verbatim-like environment
 \usepackage[version=0.96]{pgf}          % PGF/TikZ is a tandem of languages for producing vector graphics from a 
@@ -232,7 +231,7 @@
 \usepackage{bbold}                      % for mathematical symbols like the characters for special sets
 \usepackage[ampersand]{easylist}        % for bullet points and lists, etc. New entry starts with & character
 \usepackage[italic]{hepnames}           % standard symbols for HEP particles ('italic' option typesets particles in italics like ATLAS/LHCb convention, default is 'noticalic' a la CMS convention)
-\usepackage{tabularx}                   % for multii-line cells in tables
+\usepackage{tabularx}                   % for multi-line cells in tables
 \usepackage{multirow}                   % for nested rows in tables
 \usepackage{siunitx}                    % for SI units, and aligning numbers properly in tables (column type is "S")
 \usepackage{xfrac}                      % for nice-looking diagonal (a/b) fractions
@@ -366,7 +365,7 @@
 
 % Create separate glossaries for terms and acronyms. Can merge by instead using \printglossaries
 \printglossary
-\clearpage
+\clearemptydoublepage
 \printglossary[type=\acronymtype]
 \clearemptydoublepage
 

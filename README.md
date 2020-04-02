@@ -63,6 +63,7 @@ The following are some notes on formatting guidelines, just to remain consistent
 - When explicitly referring to a reference with "Ref.", use `\citenum{}` instead of `\cite{}` so that the number isn't wrapped in square brackets
 - For quotation marks, open the quote with a double backtick. Close with two single quotes so that the style of the opening and closing quotation marks match
 - When to use hyphens, en-dashes and em-dashes: <https://www.chicagomanualofstyle.org/qanda/data/faq/topics/HyphensEnDashesEmDashes/faq0002.html>
+- Where appropriate, use small caps to refer to software programs. If the software is an acronym, use lowercase letters (e.g., "CMSSW" would be `\textsc{cmssw}`)
 - More formatting/stylistic guildelines can be found in <https://zenodo.org/record/3228336> (also [locally](helpful_docs/thesis-writing-gotchas.pdf))
 
 ## Draft versions of the pdf

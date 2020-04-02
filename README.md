@@ -55,7 +55,9 @@ getnonfreefonts --user -a
 
 The following are some notes on formatting guidelines, just to remain consistent throughout the document and writing process:
 
-- To add a shorter caption for a figure in the List of Figures, add the shorter caption inside square brackets before the main one, i.e., `\caption[Reduced caption]{Full caption}`. Avoid a full stop at the end of a reduced caption since it looks ugly in the table of contents, and omit references/citations from short captions
+- To add a shorter caption for a figure in the List of Figures, add the shorter caption inside square brackets before the main one, i.e., `\caption[Reduced caption]{Full caption}`.
+  - Avoid a full stop at the end of a reduced caption since it looks ugly in the table of contents, and omit references/citations from short captions
+  - In a short caption (or the regular caption if a short one isn't used), try to avoid referencing glossary and acronym terms (instead just write the normal text), since the internal links generated can take take a user to the glossary/acronym page if they accidentally click the referenced term
 - Use a tilde `~` instead of a space between words and their references, and between numbers/quantities and their units to prevent linebreaks separating them. Between a number and its unit, I can also use `\,` for a thin space (i.e., separation smaller than a traditional space)
 - In the bibliography, the current sorting method I use is by author's last name. As such, in entries where the author is repeated (e.g., "CMS Collaboration"), the author's name will be replaced by a long dash. If undesired, it should be possible to change it either with an option/different sorting method, or maybe a different backend
 - For when to write numbers in words or numerals, see <https://www.scribbr.com/academic-writing/numbers/> for help

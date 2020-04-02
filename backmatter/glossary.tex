@@ -25,13 +25,13 @@
 }
 
 \newglossaryentry{particleflow}{
-        name=Particle Flow algorithm,
-        description={}
+        name=\textsc{Particle Flow} algorithm,
+        description={An event reconstruction algorithm used in CMS. Information from all subdetectors is combined so that all stable particles can be identified. Jets are clustered, and complex objects such as \Pqb-jets are classified.}
 }
 
 \newglossaryentry{antikt}{
         name=anti-\kt algorithm,
-        description={}
+        description={A sequential clustering algorithm designed to group hadronic particles into jets with a radius parameter ($R$). The transverse momentum is symbolised as \kt instead of \pt. In CMS, standard radius parameters are $R = 0.4$ and $R = 0.8$, referred to as AK4 and AK8 jets, respectively.}
 }
 
 % Maybe define it predominantly as missing transverse momentum instead. If so, use correct symbol
@@ -74,6 +74,7 @@
 \newacronym{l1}{L1}{Level-1}
 \newacronym{l1t}{L1T}{Level-1 Trigger}
 \newacronym{hlt}{HLT}{High-Level Trigger}
+\newacronym{daq}{DAQ}{data acquisition}
 
 % Theory
 \newacronym{sm}{SM}{standard model}
@@ -99,6 +100,11 @@
 \newacronym{vbf}{VBF}{vector boson fusion}
 \newacronym{pu}{PU}{pileup}
 \newacronym{pf}{PF}{Particle Flow}
+\newacronym{cmssw}{\textsc{cmssw}}{CMS SoftWare}
+\newacronym{aod}{AOD}{Analysis Object Data}
+% Can't add these in macros.tex since it's initialised before the glossary
+\newcommand{\miniAOD}{mini\acrshort{aod}\xspace}
+\newcommand{\nanoAOD}{nano\acrshort{aod}\xspace}
 \newacronym{jec}{JEC}{jet energy corrections}
 
 \newacronym{mev}{MeV}{megaelectron volt}

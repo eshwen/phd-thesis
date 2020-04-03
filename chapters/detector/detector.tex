@@ -2,7 +2,7 @@
 \chapter{The LHC and the CMS experiment}
 \label{chap:detector}
 
-\initial{T}his chapter concerns the experimental setup. \acrshort{cern} is the organisation that manages the machines discussed and is a pioneer in the high energy physics community. As such, it will be given a short overview. The \acrlong{lhc} provides the \acrshort{cms} experiment with proton-proton collision data that is then stored, corrected, and then used by physicists for analyses. Ranging from \acrlong{sm} precision measurements, searches for new physics, the development of tools and algorithms to aid the previous two, these and much more are studied by the collaboration. \acrshort{cms} is described in detail, from its hardware and subdetectors to its data acquisition and trigger system. Special attention is given to the deriviation of \acrfull{jec} in the \acrfull{l1t} as I have been a part of that effort during my PhD.
+\initial{T}his chapter concerns the experimental setup. \acrshort{cern} is the organisation that manages the machines discussed and is a pioneer in the high energy physics community. As such, it will be given a short overview. The \acrlong{lhc} provides the \acrshort{cms} experiment with proton-proton collision data that is then stored, corrected, and then used by physicists for analyses. Ranging from \acrlong{sm} precision measurements, searches for new physics, the development of tools and algorithms to aid the previous two, these and much more are studied by the collaboration. \acrshort{cms} is described in detail, from its hardware and subdetectors to its data acquisition and trigger system. Special attention is given to the derivation of \acrfull{jec} in the \acrfull{l1t} as I have been a part of that effort during my PhD.
 
 \begin{easylist}[itemize]
 \ListProperties(Style*=-- , FinalMark={)}, Margin=0.5cm)
@@ -282,7 +282,7 @@ With the enormous collision rate at the \acrshort{cms} interaction point, acquir
 
 The \acrlong{l1t} is a set of algorithms (a trigger ``menu'')\footnote{Do I need to say that different menus are used throughout the data-taking periods and for different injectants (heavy ions, etc.)?} implemented in custom hardware designed to reduce the event rate from 40\,MHz to a maximum of 100\,kHz. FPGA and ASIC chips contain the algorithms in firmware, with timing systems synchronised with the \acrshort{lhc} clock. When a collision occurs, particles interact with the detector and registered by the components.
 
-Coarsely-segmented data is sent from the \acrshort{ecal} and \acrshort{hcal} through a two-layer Calorimeter Trigger. These are arrays of custom processors located at Point 5. Layer-1 receives data from the calorimeters over upwards of one thousand fibre optic links, each with multi-gigabit bandwidths. The information from the two subsystems are combined into calorimeter towers, and some simple position- and energy-dependent calibrations are applied. The data from Layer-1 is then transmitted to Layer-2, again over many high-bandwidth optical links. Here, physics object candidates are identified (\glspl{jet}, \Pe, \Pphoton, \Ptau).\footnote{An overview of the latest Run-2 algorithms for object identification can be found in Ref.~\citenum{Zabi_2017}.} Additional calibrations are applied to them (for example, in Chpt.~\ref{subsubsec:detector_jecs}), and simple pileup subtraction is performed.\footnote{Do I need to describe in detail how jets are formed? Jet seed, chunky donut PU subtraction, etc... Since it may be relevant for \acrshort{jec}.} Energy sums are also calculated at this stage, such as \etmiss, \HT, and \mht.
+Coarsely-segmented data is sent from the \acrshort{ecal} and \acrshort{hcal} through a two-layer Calorimeter Trigger. These are arrays of custom processors located at Point 5. Layer-1 receives data from the calorimeters over upwards of one thousand fibre optic links, each with multi-gigabit bandwidths. The information from the two subsystems are combined into calorimeter towers, and some simple position- and energy-dependent calibrations are applied.\footnote{Mention something about trigger primitives here?} The data from Layer-1 is then transmitted to Layer-2, again over many high-bandwidth optical links. Here, physics object candidates are identified (\glspl{jet}, \Pe, \Pphoton, \Ptau).\footnote{An overview of the latest Run-2 algorithms for object identification can be found in Ref.~\citenum{Zabi_2017}.} Additional calibrations are applied to them (for example, in Chpt.~\ref{subsec:detector_jecs}), and simple pileup subtraction is performed.\footnote{Do I need to describe in detail how jets are formed? Jet seed, chunky donut PU subtraction, etc... Since it may be relevant for \acrshort{jec}.} Energy sums are also calculated at this stage, such as \etmiss, \HT, and \mht.
 
 In parallel, the various subdetectors in the muon chambers pass information through successive stages, notably the Muon Track-Finder Layer (EXPAND), and is then combined with some of the calorimeter information in a sorting/merging/isolation layer. The output from this layer is combined with the remaining information in Layer-2 in the Global Trigger, a series of \si{\micro}TCA boards with FPGAs. The trigger menu lives here, and all of the information gathered --- object candidates, energy sums, beam conditions --- is provided to it. These triggers may be dependent on the presence a single object or the number of objects of a single class (e.g., one muon, two \glspl{jet}), multiple classes of object (cross triggers), the energy sums, the topologies of objects, and more. The latency given to make a decision on whether to keep or reject an event is 4\,\si{\micro}s.\footnote{Mention pre-scaling of triggers, and that as $\mathcal{L}$ decreases over a fill, the pre-scales change?} A diagram of this data flow is given in Fig.~\ref{fig:cms_l1t_data_flow}.
 
@@ -306,7 +306,7 @@ is executed. A larger and more complex trigger menu is available, including the 
 
 Physics objects are reconstructed further, with algorithms such as \gls{antikt} used to cluster \glspl{jet}~\cite{Cacciari:2008gp}. Additional classification algorithms are also applied to objects, such as the \textsc{DeepCSV} neural network to identify \glspl{bjet}. Some of these algorithms can be computationally expensive. Consequently, approximations/parameterisations are used at \acrshort{hlt} level. A global event reconstruction from the \gls{particleflow} (\acrshort{pf})~\cite{CMS-PAS-PFT-09-001,CMS-PRF-14-001} is performed as well. The [fully-fledged] versions of these kind of algorithms are re-run on the retained events in later stages of postprocessing.
 
-The \acrshort{hlt} reduces the event rate from the maximum 100\,kHz input susbstantially down to around 1\,kHz. The datastream \OrderOf{\text{6\,GB\,s}^{-1}} is then subject to further processing before the analysts access it. As well as the data being stored on networked hard drives at sites across the globe, back ups are made to magnetic tape for long term storage. As with the \acrlong{l1t}, some data is [diverted] for monitoring, object calibrations, and alignment of detector components.
+The \acrshort{hlt} reduces the event rate from the maximum 100\,kHz input substantially down to around 1\,kHz. The datastream \OrderOf{\text{6\,GB\,s}^{-1}} is then subject to further processing before the analysts access it. As well as the data being stored on networked hard drives at sites across the globe, back ups are made to magnetic tape for long term storage. As with the \acrlong{l1t}, some data is [diverted] for monitoring, object calibrations, and alignment of detector components.
 
 % CMS Computing TDR: \cite{Bayatyan:838359}.
 
@@ -319,32 +319,54 @@ The \acrshort{hlt} reduces the event rate from the maximum 100\,kHz input susbst
 
 Data recorded by \acrshort{cms} is paramount for analyses searching for new physics. However, simulated samples are also of high importance. Events for specific processes are generated using \acrfull{mc} random sampling, and the output datasets are often collectively referred to by the method: ``\acrlong{mc}'' or ``\acrshort{mc}''. The datasets are often generated with large numbers of events to minimise the associated statistical uncertainty. \acrshort{mc} samples are useful in a variety of cases: understanding the kinematics of signal processes in searches for new physics, modelling background processes that can mimic signal, and comparisons to data for validation purposes.
 
-A matrix element generator such as \madgraph~\cite{Alwall:2014hca} or \POWHEG~\cite{Nason:2004rx,Frixione:2007vw} models the hard scattering process, usually at \acrfull{lo} but sometimes at higher orders. Events then pass through a hadroniser (usually \PYTHIA~\cite{pythia82} in \acrshort{cms}) to model hadronisation of quarks and gluons; the softer radiation. \Glspl{jet} are clustered here by, for example, the \gls{antikt}. The particles are also run through a detector simulation that emulates the configuration and response of the detector in different years. Material interactions and emulation of the triggers are included. \GEANTfour~\cite{AGOSTINELLI2003250,1610988,ALLISON2016186} provides this in \acrshort{cms}. Once the particles have been appropriately simulated, they are given the same postprocessing treatment as actual data, such as executing object tagging algorithms so that the data and simulated samples are as comparable as possible.
+A matrix element generator such as \madgraph~\cite{Alwall:2014hca} or \POWHEG~\cite{Nason:2004rx,Frixione:2007vw} models the hard scattering process, usually at \acrfull{lo} but sometimes at higher orders. Events then pass through a hadroniser (usually \PYTHIA~\cite{pythia82} in \acrshort{cms}) to model hadronisation of quarks and gluons, sometimes known as the \emph{parton shower} -- the softer radiation that accompanies the hard scatter. \Glspl{jet} are clustered here by, for example, the \gls{antikt}. The particles are also run through a detector simulation that emulates the configuration and response of the detector in different years. Material interactions and emulation of the triggers are included. \GEANTfour~\cite{AGOSTINELLI2003250,1610988,ALLISON2016186} provides this in \acrshort{cms}. Once the particles have been appropriately simulated, they are given the same postprocessing treatment as actual data, such as executing object tagging algorithms so that the data and simulated samples are as comparable as possible.
 
 
 %=========================================================
 
 
 \subsection{Jet energy corrections in the Level-1 Trigger}
-\label{subsubsec:detector_jecs}
+\label{subsec:detector_jecs}
 
 Recording the properties of hadrons that are amalgamated into \glspl{jet} is not always consistent across the detector. While the components go through quality control, there is inevitably some variation in their performance. They can degrade at different rates. Some may also receive hits more often than others and be subject to greater radiation damage. As a result, non-uniformity of the detector response --- parameterised in terms of \pt and $\eta$ --- must be compensated for. For \glspl{jet}, this comes in the form of \gls{jec}.
 
-As outlined in Chpt.~\ref{subsubsec:detector_l1t} \glspl{jet} are initially identified in Layer-2 of the Calorimeter Trigger, and preliminary calibrations correct their energy. Disregarding these, even at this early stage in the data acquisition workflow, can affect the efficiency and rate of the \acrlong{l1t}. It is therefore important to rederive the calibrations regularly, since the configuration of the detector and beam conditions change over the lifetime of the experiment.
+As outlined in Chpt.~\ref{subsubsec:detector_l1t}, the trigger primitives from the \acrshort{ecal} and \acrshort{hcal} enter Layer-1 of the Calorimeter Trigger and coarse position- and energy-dependent calibrations are applied. \glspl{jet} as objects are initially identified in Layer-2, and preliminary calibrations correct their energy. Disregarding these, even at this early stage in the data acquisition workflow, can affect the efficiency and rate of the \acrlong{l1t}. It is therefore important to re-derive the calibrations regularly, since the configuration of the detector and beam conditions change over the lifetime of the experiment.
 
-% Taken directly from second year report.
-% Tidy up and improve, describing the whole workflow, at least briefly (uses QCD multijet MC, send through detector sim with expected detector layout/response(?), corrections made as function of pt and eta (mention the 16 eta bins), then closure tests - regenerate MC with corrections and check they're applied correctly, make plots, circulate corrections in various formats).
-% Can also look in Section 20 of my lab book for more info. Can pull material from the trigger/DPG presentations I've given (I should have the actual pdf/png plots in Service Work - Jet Energy Corrections in the Level-1 Trigger/)
-% Link the repository somewhere: https://github.com/eshwen/L1JetEnergyCorrections. Stress that I only forked it from the original developers and made modifications on top of it
+When a new round of calibrations are derived, there are many steps before this one. Preceding it, Layer-1 experts calculate their scale factors for the calorimeter towers. Once performed, the \acrlong{jec} are then derived in \acrshort{cmssw}.
 
-Firstly, some ideal (or reference) jets are needed to compare against given \acrshort{l1} jets. Because Monte Carlo datasets are used for the calibrations, the reference jets we use are the generator-level jets (or GenJets). These are stable, simulated particles clustered with the \gls{antikt} algorithm~\cite{Cacciari:2008gp} to form the jet. The state of these jets are post-hadronisation, before detector interaction. \acrshort{l1} jets need to be matched against the GenJets. From there, various studies can be performed such measuring the response of the detector $\langle \ptsup{{\mathrm{L1}}} / \ptsup{{\mathrm{ref.}}} \rangle$, and its position and energy resolutions.
 
-Once Calorimeter Layer-1 experts have derived scale factors for the physics objects, they are applied in Layer-2 where the calibrations are conducted. For jets, ntuples are created from the specified dataset and the \acrshort{l1} jets are matched to the GenJets using the variable $\Delta R$ (see Eq.~\ref{eq:delta_r}). The algorithm used to match the jets does so by inspecting each \acrshort{l1} jet in descending \pt and searching for a reference jet with $\Delta R < 0.25$. If there is more than one match, the reference jet with the smallest $\Delta R$ is taken. Then the next \acrshort{l1} jet (and so on) follows the same procedure, with the previous reference jet removed from the matching collection. Calibrations are then derived. The reciprocal of the response vs. $\ptsup{{\mathrm{L1}}}$ is plotted for each \abseta bin and correction curves are fitted to them (see Fig. \ref{fig:detector_jecs_corr_curves}). Once tuned such that the fit captures the low-\pt spike and high-\pt plateau, closure tests are conducted as the final step. The ntuples are remade with JECs and then matched with the reference jets to check that the calibrations have been properly applied. Plots such as Fig. \ref{fig:detector_jecs_scatter_BE} are then passed to the Trigger Studies Group to check over and continue the chain of trigger corrections and object calibrations.
+%=========================================================
+
+
+\subsubsection{The procedure}
+\label{subsubsec:detector_jec_procedure}
+
+\acrshort{qcd} multijet \acrshort{mc} datasets with a large \pt range used to derive the Layer-1 and Layer-2 calibrations. Corresponding \glspl{jet} in data for this process are often mismeasured (so providing good calibrations in the most difficult scenario is a good test), and \acrshort{mc} events contain ``truth-level'' information from the generator. Ntuples are made from these which have the Layer-1 corrections applied. Referring to the processing chain in Chpt.~\ref{subsec:cms_mc}, the jets these calibrations are derived for are post-hadronisation, but before interaction with the detector. They will be referred to as ``\acrfull{l1} jets''. The reference jets directly from the generator (``GenJets'' as colloquialised in \acrshort{cms}) are important for matching to our \acrshort{l1} jets to ensure we are not mistakenly using jets [birthed] in the parton shower that have no reference point.
+
+The reference and \acrshort{l1} jets are matched using the variable $\Delta R$ (see Eq.~\ref{eq:delta_r}). The algorithm used to match the jets does so by inspecting each \acrshort{l1} jet in descending \pt and searching for a reference jet with $\Delta R < 0.25$. If there is more than one match, the reference jet with the smallest $\Delta R$ is taken. Then the next \acrshort{l1} jet (and so on) follows the same procedure, with the previous reference jet removed from the matching collection.
+
+The pairs of jets are categorised into sixteen bins of \abseta, the highest granularity available since the calibrations must run quickly on hardware. Each in is then analysed in turn.
+
+Within each \abseta bin, the jet pairs are subdivided into bins of the transverse momentum of the reference jet (\ptRef). The bin widths, like \abseta, are variable. The ratio of the transverse momentum of the \acrshort{l1} jet (\ptLOne) to \ptRef is taken for each pair of jets. Our metric for measuring the detector response is the mean of these ratios:
+
+\begin{equation}
+    r_j = \langle \ptLOne / \ptRef \rangle
+    \label{eq:jec_detector_response}
+\end{equation}
+
+The reciprocal of the $r_j$ vs. \ptLOne is inspected and a correction curve is fitted. A gaussian captures the peak at low \pt and the following equation\footnote{Go into more detail regarding the equation? Reasoning, etc.} is used for the tail:
+
+\begin{equation}
+    \ptsup{{\mathrm{L1, \ corr.}}} = \ptLOne \cdot \left( p_0 + \frac{p_1}{ \left(\log_{10} \ptLOne \right) ^2 + p_2 } + p_3 \cdot \exp \left( -p_4 \left( \log_{10} \ptLOne - p_5 \right)^2 \right) \right)
+    \label{eq:corr_curve_jec_tail}
+\end{equation}
+
+The input parameters for the function may not be adequate, so they are tuned to capture the low-\pt spike and high-\pt plateau (see Fig.~\ref{fig:detector_jecs_corr_curves} for a visual representation). The value of this fit function in each \ptRef bin is exported.
 
 \begin{figure}[htbp]
     \centering
     \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{./figures/jecs//corrCurveBarrel.pdf}
+        \includegraphics[width=\textwidth]{./figures/jecs/corrCurveBarrel.pdf}
         \caption{$0.435 < \abseta < 0.783$ (Barrel)}
         \label{fig:detector_jecs_corr_curve_Barrel}
     \end{subfigure}
@@ -354,9 +376,19 @@ Once Calorimeter Layer-1 experts have derived scale factors for the physics obje
         \caption{$4.191 < \abseta < 5.191$ (HF)}
         \label{fig:detector_jecs_corr_curve_HF}
     \end{subfigure}
-\caption[Examples of correction curves used to calibrate the jet energies in two \abseta bins]{Examples of correction curves used to calibrate the jet energies in two \abseta bins. The response is plotted against the \pt of the Level-1 jet and a complex function produces a fit. These plots are from the jet energy corrections performed on 2018 QCD Monte Carlo.}
+\caption[Examples of correction curves used to calibrate the jet energies in two \abseta bins]{Examples of correction curves used to calibrate the jet energies in two \abseta bins. The reciprocal od the response is plotted against the \pt of the \acrlong{l1} jet, and a complex function (Eq.~\ref{eq:jec_detector_response}) fits the points. These plots are from the jet energy corrections performed on 2018 \acrshort{qcd} \acrlong{mc}.}
 \label{fig:detector_jecs_corr_curves}
 \end{figure}
+
+Once all \abseta bins have been inspected, the calibrations are consolidated in several forms. A machine-readable lookup table is [put] in the firmware of the Layer-2 hardware, so that the corrections are applied in the trigger. A version is added to the \acrlong{l1t} packages in \acrshort{cmssw} so that the next steps in the calibration chain can utilise them.
+
+A closure test is conducted to validate the corrections we have just produced. The \acrshort{mc} ntuples are regenerated with the \acrshort{jec} applied. Jet matching is performed and the calibrations are checked. Many diagnostic and performance plots are produced to ensure the calibrations are [performing] as expected. An example of these is Fig.~\ref{fig:detector_jecs_scatter_BE}.
+
+% Taken directly from second year report.
+% Tidy up and improve, describing the whole workflow, at least briefly (uses QCD multijet MC, send through detector sim with expected detector layout/response(?), corrections made as function of pt and eta (mention the 16 eta bins), then closure tests - regenerate MC with corrections and check they're applied correctly, make plots, circulate corrections in various formats).
+% Can also look in Section 20 of my lab book for more info. Can pull material from the trigger/DPG presentations I've given (I should have the actual pdf/png plots in Service Work - Jet Energy Corrections in the Level-1 Trigger/)
+% Link the repository somewhere: https://github.com/eshwen/L1JetEnergyCorrections. Stress that I only forked it from the original developers and made modifications on top of it
+% Should I note the pt values and abseta bins for the calibrations?
 
 \begin{figure}[htbp]
     \centering
@@ -371,7 +403,7 @@ Once Calorimeter Layer-1 experts have derived scale factors for the physics obje
         \caption{After corrections}
         \label{fig:detector_jecs_scatter_after_BE}
     \end{subfigure}
-\caption[The energies of matched pairs of jets in the entire barrel and end cap, before and after jet energy corrections have been applied]{The energies of matched pairs of jets in the entire barrel and end cap, before and after jet energy corrections have been applied. After calibrations, the distribution is much more symmetrical. An equivalent plot using jets from LHC data is expected to look similar after applying these calibrations.}
+\caption[The energies of matched pairs of jets in the entire barrel and end cap, before and after jet energy corrections have been applied]{The energies of matched pairs of jets in the entire barrel and end cap, before and after jet energy corrections have been applied. After calibrations, the distribution is much more symmetrical. An equivalent plot using \glspl{jet} from \acrshort{lhc} data is expected to look similar after applying these calibrations.}
 \label{fig:detector_jecs_scatter_BE}
 \end{figure}
 

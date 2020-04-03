@@ -1,13 +1,4 @@
 \newcommand{\keywords}[1]{\par\noindent{\small{\bf Keywords:} #1}} % Defines keywords small section
-\newcommand{\pgftextcircled}[1]{ % Defines encircled text
-    \setbox0=\hbox{#1}%
-    \dimen0\wd0%
-    \divide\dimen0 by 2%
-    \begin{tikzpicture}[baseline=(a.base)]%
-        \useasboundingbox (-\the\dimen0,0pt) rectangle (\the\dimen0,1pt);
-        \node[circle,draw,outer sep=0pt,inner sep=0.1ex] (a) {#1};
-    \end{tikzpicture}
-}
 
 % An initial of the very first character of the content
 \usepackage{lettrine}

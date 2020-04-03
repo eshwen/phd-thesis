@@ -26,12 +26,12 @@
 
 \newglossaryentry{particleflow}{
         name=\textsc{Particle Flow} algorithm,
-        description={An event reconstruction algorithm used in CMS. Information from all subdetectors is combined so that all stable particles can be identified. Jets are clustered, and complex objects such as \Pqb-jets are classified.}
+        description={An event reconstruction algorithm used in CMS. Information from all subdetectors is combined so that all stable particles can be identified. Jets are clustered, and complex objects such as \Pqb-jets are classified}
 }
 
 \newglossaryentry{antikt}{
         name=anti-\kt algorithm,
-        description={A sequential clustering algorithm designed to group hadronic particles into jets with a radius parameter ($R$). The transverse momentum is symbolised as \kt instead of \pt. In CMS, standard radius parameters are $R = 0.4$ and $R = 0.8$, referred to as AK4 and AK8 jets, respectively.}
+        description={A sequential clustering algorithm designed to group hadronic particles into jets with a radius parameter ($R$). The transverse momentum is symbolised as \kt instead of \pt. In CMS, standard radius parameters are $R = 0.4$ and $R = 0.8$, referred to as AK4 and AK8 jets, respectively}
 }
 
 % Maybe define it predominantly as missing transverse momentum instead. If so, use correct symbol
@@ -39,6 +39,16 @@
         name=missing transverse energy,
         description={The negative vector sum of the transverse momentum of all particles in a collider event. It is sometimes abbreviate to ``MET'', and also referred to in literature as ``missing transverse momentum'' (\ensuremath{\ptmiss})},
         symbol={\ensuremath{\etmiss}}
+}
+
+\newglossaryentry{CR}{
+        name=control region,
+        description={A region of phase space orthogonal to the signal region, typically by requiring an object that would otherwise be vetoed in the signal region. A control region enriched in a background process present in the signal region (such as \wtolnupjets) can be used to model its influence more accurately},
+}
+
+\newglossaryentry{SB}{
+        name=sideband,
+        description={A region of phase space orthogonal to the signal region, typically by inverting kinematic requirements. Similar to a control region, a sideband enriched in a background present in the signal region (such as QCD) can be used to model it more accurately},
 }
 
 % Define acronyms with \newacronym{<label>}{<abbrv>}{<full>}

@@ -55,11 +55,10 @@ getnonfreefonts --user -a
 
 The following are some notes on formatting guidelines, just to remain consistent throughout the document and writing process:
 
-- To add a shorter caption for a figure in the List of Figures, add the shorter caption inside square brackets before the main one, i.e., `\caption[Reduced caption]{Full caption}`.
-  - Avoid a full stop at the end of a reduced caption since it looks ugly in the table of contents, and omit references/citations from short captions
-  - In a short caption (or the regular caption if a short one isn't used), try to avoid referencing glossary and acronym terms (instead just write the normal text), since the internal links generated can take take a user to the glossary/acronym page if they accidentally click the referenced term
+- To add a shorter caption for a figure/table in the List of Figures/Tables, add it inside square brackets before the main one, i.e., `\caption[Short caption]{Full caption}`
+  - Avoid a full stop at the end of a short caption since it looks ugly in the table of contents, and omit references/citations from short captions for the same reason
+- In items that are referenced in the Table of Contents in the thesis (short captions or the regular caption if a short one isn't used, chapters, sections, subsections, etc.), try to avoid referencing glossary and acronym terms (instead just write the normal text). Othwerise, the internal links generated can take take a user to that definition in the glossary/acronym page if they accidentally click the referenced term
 - Use a tilde `~` instead of a space between words and their references, and between numbers/quantities and their units to prevent linebreaks separating them. Between a number and its unit, I can also use `\,` for a thin space (i.e., separation smaller than a traditional space)
-- In the bibliography, the current sorting method I use is by author's last name. As such, in entries where the author is repeated (e.g., "CMS Collaboration"), the author's name will be replaced by a long dash. If undesired, it should be possible to change it either with an option/different sorting method, or maybe a different backend
 - For when to write numbers in words or numerals, see <https://www.scribbr.com/academic-writing/numbers/> for help
 - For references at the end of a sentence, cite _before_ the full stop
 - When explicitly referring to a reference with "Ref.", use `\citenum{}` instead of `\cite{}` so that the number isn't wrapped in square brackets
@@ -70,4 +69,7 @@ The following are some notes on formatting guidelines, just to remain consistent
 
 ## Draft versions of the pdf
 
-When sending a draft version of the pdf, e.g., to my supervisor, add "draft" in the `\documentclass` line with the other options. This turns on a draft watermark with the date the pdf was made, and adds line numbers for easier referencing to specific points. Also, use footnotes to mark any questions/concerns, etc. instead of comments in the tex file.
+Before sending a draft version of the pdf, e.g., to my supervisor, compile with the following:
+
+- Add "draft" in the `\documentclass` line with the other options. This turns on a draft watermark with the date the pdf was made, and adds line numbers for easier referencing to specific points
+- Use footnotes to mark any questions/concerns, etc. instead of comments in the tex file. Ideally, these will be in a different colour to the normal footnotes in the document. But I've been having problems coverting both the label and the text to the same colour

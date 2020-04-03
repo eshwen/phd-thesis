@@ -31,19 +31,19 @@
 \usepackage{datetime}
 \usepackage{ifpdf}
 \ifpdf
-\pdfinfo{
-   /Author Eshwen Bhal
-   /Title (PhD Thesis)
-   /Keywords (dark matter; large hadron collider; LHC; CMS; hadronic final states; missing transverse energy; semi-visible jets; Higgs boson)
-   /CreationDate (D:\pdfdate)
-}
+    \pdfinfo{
+        /Author Eshwen Bhal
+        /Title (PhD Thesis)
+        /Keywords (dark matter; large hadron collider; LHC; CMS; hadronic final states; missing transverse energy; semi-visible jets; Higgs boson)
+        /CreationDate (D:\pdfdate)
+    }
 \fi
 
 % When draft option is on. 
 \ifdraftdoc 
     \usepackage{draftwatermark}  % Sets watermarks up
     \SetWatermarkScale{0.3}
-    \SetWatermarkText{\bf Draft: \today}
+    \SetWatermarkText{\textbf{Draft: \today}}
     \usepackage[left]{lineno}  % Set line numbers for easier referencing to specific points in the document
     \linenumbers
     \setkeys{Gin}{draft=false}  % allow figures to actually be displayed, not replaced by a box with the path to the figure
@@ -167,9 +167,8 @@
 \usepackage{graphicx}                   % Calls figure environment, i.e., starting figures with \includegraphics
 \usepackage{subcaption}                 % Allow use of subfigures
 \usepackage{longtable,rotating}         % Long tab environments including rotation
-\usepackage{colortbl}                   % Makes coloured tables
 \usepackage{float}                      % Helps to place figures, tables, etc. 
-\usepackage{latexsym}                   % Extra symbols
+
 \usepackage[
     backend=biber,
     style=numeric-comp,                 % numerical citation and compress multiple ones ([1, 2, 3] -> [1-3]
@@ -218,12 +217,6 @@
 \usepackage{csquotes}                   % Used in conjunction with babel to use quotes appropriate to language (biblatex throws warning if not used)
 \usepackage{enumerate}                  % For enumeration counter
 \usepackage{microtype}                  % Makes pdf look better (affects font and line spacing, fewer overfull/underfull hbox warnings)
-\usepackage{alltt}                      % LaTeX commands are not disabled in verbatim-like environment
-\usepackage[version=0.96]{pgf}          % PGF/TikZ is a tandem of languages for producing vector graphics from a 
-\usepackage{tikz}                       % geometric/algebraic description.
-\usetikzlibrary{arrows,shapes,snakes,
-                automata,backgrounds,
-                petri,topaths}          % To use diverse features from tikz
 
 % Esh's extra packages from here
 \usepackage{physics}                    % for physics symbols, such as differential symbols
@@ -258,7 +251,7 @@
 
 % ----------------------------------------
 % Create the glossary for terms and acronyms
-\usepackage[acronym, toc, nonumberlist]{glossaries}
+\usepackage[acronym,toc,nonumberlist]{glossaries}
 \makeglossaries
 \input{backmatter/glossary}
 % Create indexes for Table of Contents, List of Figures, List of Tables and Index
@@ -274,7 +267,6 @@
 % ----------------------------------------
 % Hyphenation for some words
 \hyphenation{res-pec-tively}
-\hyphenation{mono-ti-ca-lly}
 \hyphenation{hypo-the-sis}
 \hyphenation{para-me-ters}
 \hyphenation{sol-va-bi-li-ty}
@@ -311,7 +303,7 @@
 \renewcommand{\contentsname}{Table of Contents}
 \maxtocdepth{subsection}
 \tableofcontents*
-\addtocontents{toc}{\par\nobreak \mbox{}\hfill{\bf Page}\par\nobreak}
+\addtocontents{toc}{\par\nobreak \mbox{}\hfill\textbf{Page}\par\nobreak}
 \clearemptydoublepage
 
 \listoffigures

@@ -9,6 +9,11 @@
 
 % Generic
 \renewcommand{\_}{\texttt{\char`_}}
+\newcommand{\eV}{\text{e\kern-0.15ex V}\xspace}
+\newcommand{\tkeV}{\text{k\eV}\xspace} % add prefix 't' so it doesn't conflict with ptdr \keV, \MeV, \TeV, etc.
+\newcommand{\tMeV}{\text{M\eV}\xspace}
+\newcommand{\tGeV}{\text{G\eV}\xspace}
+\newcommand{\tTeV}{\text{T\kern-0.2ex \eV}\xspace}
 \newcommand{\plusjets}{\ensuremath{+ \text{jets}}\xspace}
 \newcommand{\jone}{\ensuremath{\mathrm{j}_1}\xspace}
 \newcommand{\jtwo}{\ensuremath{\mathrm{j}_2}\xspace}
@@ -142,7 +147,6 @@
 \newcommand{\BR}{\ensuremath{\mathcal{B}}\xspace}
 \newcommand{\BRof}[1]{\ensuremath{\BR(#1)}\xspace} % branching ratio of a process
 \newcommand{\OrderOf}[1]{\ensuremath{\mathcal{O}(#1)}\xspace} % (on the) order of something
-\newcommand{\eV}{\text{e\kern-0.15ex V}\xspace}
 \newcommand{\LSP}{\PSneutralinoOne}
 \newcommand{\comruntwo}{\ensuremath{\sqrt{s} = \text{13}\TeV}\xspace}
 \newcommand{\higgstoinv}{\ensuremath{\HepProcess{\PH \to \text{inv.}}}\xspace}

@@ -50,6 +50,7 @@ getnonfreefonts --user -a
 - External helpful documents regarding LaTeX, thesis writing (Bristol-specific and general), etc. can be found in [helpful_docs/](helpful_docs/)
 - HEP particles are typeset using the `hepnames` package. With the `italic` option, they are rendered in italics. The default is upright. If I decide to change the style, I can just edit the line that imports the package in [thesismain.tex](./thesismain.tex)
 - Compiling [thesismain.tex](./thesismain.tex) in TeXShop can misbehave when new references or glossary terms are added, possibly due to conflicts or file changes when the hyperlinks are applied. If this is the case, run [trash_aux_files.sh](./trash_aux_files.sh) to wipe all of the auxiliary files and recompile
+- Compiling [thesismain.tex](./thesismain.tex) in Visual Studio Code needs some edits to the LaTeX Workshop extension to get the glossary to compile properly. I can copy the snippet from [vscode_settings.json](vscode_settings.json) into my Visual Studio Code `settings.json` to fix it
 
 ## Formatting guidelines
 

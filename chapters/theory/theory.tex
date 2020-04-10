@@ -21,6 +21,9 @@
 \label{sec:standardmodel}
 
 % Check Lancaster and other summer school notes (Postgraduate and CMS courses/ folder)
+% May have to mention chirality and helicity in relation to "handedness" of particles
+% Mention resonances and widths. Each decay mode of a particle contributes a partial width (which determines its branching ratio - BR = partial width/total width)
+% Talk in some detail about the Higgs mechanism as that will inform the Higgs to invisible section. Mention Yukawa coupling to fermions, and that it's dependent on the squared mass of the decay products. Lends credence to suppression of direct decay to neutrinos (assuming they even couple to Higgs)
 
 
 %=========================================================
@@ -31,7 +34,7 @@
 
 % Check Lancaster and other summer school notes for other limitations, specifically referencing things that can tie into dark matter
 
-Despite the \acrlong{sm} providing precise predictions of three of the four fundamental forces and the particles that they interact with, there are many experimental observations that it cannot currently explain. Neutrino masses, dark matter, dark energy, and gravity all escape its description. Testing \TeV \tTeV.
+Despite the \acrlong{sm} providing precise predictions of three of the four fundamental forces and the particles that they interact with, there are many experimental observations that it cannot currently explain. Neutrino masses, dark matter, dark energy, and gravity all escape its description.
 
 % Mention the hierarchy problem as well - Significant fine-tuning required to cancel quadratic divergences of Higgs mass -> points to new physics below ~10 TeV. Ties into some Higgs and dark matter stuff nicely.
 
@@ -44,7 +47,7 @@ Despite the \acrlong{sm} providing precise predictions of three of the four fund
 
 % Will probably be referring to things from introduction section. Try to just give overview there and describe the nitty-gritty here
 
-The universe may have birthed dark matter via one of many possible mechanisms. The most popular is described as a ``thermal freeze-out'' process. In the hot, early universe when the thermal background allowed spontaneous pair production of particle dark matter, it was produced in abundance. During this period, the particles may also have frequently annihilated since the cosmos was still small. Inevitably, the universe expanded and cooled; the temperature became too low to allow significant production \cite{Baldes:2017gzw}. Matter was further separated and the dark matter annihilation rate decreased, leaving a behind the ``thermal relic'' that is observed today. These remaining particles were attracted via gravity, forming filaments throughout the universe. The potential wells they induced allowed the progenitors of galaxies to form within.
+The universe may have conjured dark matter via one of many possible mechanisms. The most popular is described as a ``thermal freeze-out'' process. In the hot, early universe when the thermal background allowed spontaneous pair production of particle dark matter, it was produced in abundance. During this period, the particles may also have frequently annihilated since the cosmos was still small. Inevitably, the universe expanded and cooled; the temperature became too low to allow significant production \cite{Baldes:2017gzw}. Matter was further separated and the dark matter annihilation rate decreased, leaving a behind the ``thermal relic'' that is observed today. These remaining particles were attracted via gravity, forming filaments throughout the universe. The potential wells they induced allowed the progenitors of galaxies to form within.
 
 Full derivations of the thermal freeze-out of dark matter\footnote{Is it worth going through the derivation, maybe as an appendix? It might be superfluous considering it's already described in literature.} can be found in literature \cite{cosmic_abundances_stable_particles,Bender:2012gc}, with the ``\acrshort{wimp} miracle'' as a consequence: with relatively few assumptions, the correct dark matter relic abundance can be recovered by requiring a \acrshort{wimp} mass of \OrderOf{\text{\tGeV} - \text{\tTeV}}, dependent on the annihilation cross section. This is a range accessible at contemporary colliders such as the \acrshort{lhc}, and perhaps coincidentally, around the electroweak energy scale. It is common for figures that depict the \acrshort{wimp} dark matter density over time to plot the ``yield'' $\sfrac{n_{\chi}}{s}$ as a function of the dimensionless parameter $x = \sfrac{m_{\chi}}{T}$. In the former variable, $n_{\chi}$ is the number density and $s$ is the entropy density. In the latter, $m_{\chi}$ is the dark matter mass and $T$ is the average temperature of the universe, which serves as a measure of its age since the temperature decreases over time. An example is given in Fig.~\ref{fig:theory_dm_abundance}.
 
@@ -102,8 +105,28 @@ Papers to look at regarding SUSY and dark matter:
 %=========================================================
 
 
-\section{Important observables in collider physics}
+\section{Important observables and quantities in collider physics}
 \label{sec:theory_important_observables}
+
+The following section discusses some ubiquitous variables and units in high energy physics, particularly in the context of colliders. Subsequently, it is [useful] to consolidate their definitions here.\footnote{The theory chapter is probably not the right place to put this section. Maybe a separate section or appendix would be better.}
+
+
+%=========================================================
+
+
+\subsection{The electron volt}
+\label{subsec:theory_electron_volt}
+
+In highly relativistic systems, such as beams of particles in accelerators, the ability to simply equate mass, energy, and momentum is desirable. In the \acrshort{lhc}, when protons are accelerated to an enormous Lorentz boost factor, their invariant mass $m_0$ contributes little to their total energy $E$. With Einstein's energy-momentum relation from special relativity, one can express mass and momentum in units of energy:
+
+\begin{equation}
+    E = \sqrt{ (pc)^2 + (m_0c^2)^2 }
+    \label{eq:theory_e_mc2}
+\end{equation}
+
+where $p$ is the magnitude of the momentum and $c$ is the speed of light. For highly relativistic objects, $pc \gg m_0c^2$ and so $E \approx pc$. At rest, $E = m_0c^2$. The \acrfull{ev} unit is common in high energy physics. Its value is the energy supplied to (or removed from) an electron accelerated through a potential difference of 1\,V, i.e., $\text{1.6}\times \text{10}^{-19}$\,J. The momentum gained is then $\text{1\,\eV}/c$ and relativistic mass $\text{1\,\eV}/c^2$. The factors of $c$ and $c^2$ are often dropped in less formal contexts, or when using natural units (where $c = \text{1}$).
+
+An electron volt is a minute quantity of energy, so when discussing properties of high energy particles and accelerators, a long string of digits may be required to express them. SI prefixes mitigate this problem and provide an intuitive sense of scale to scientists. The most frequently used in the context of \acrshort{lhc} physics are \emph{mega} (M, $\text{10}^6$), \emph{giga} (G, $\text{10}^9$), and \emph{tera} (T, $\text{10}^{12}$). For example, the mass of a proton is $\text{0.93}\GeV/c^2$ and the present centre of mass energy of the \acrshort{lhc} is $\text{13}\TeV$, which are much more natural and understandable numbers than $\text{1.78}\times \text{10}^{-27}$\,kg or $\text{1.6}\times \text{10}^{-7}$\,J, respectively.
 
 
 %=========================================================
@@ -144,14 +167,14 @@ Typically, a lower limit on \pt is used when calculating the \HT, so jets below 
 The missing transverse momentum \ptmiss is defined as the negative vector sum of the \pt of all identified particles in an event. It is a term often used interchangeably with \gls{met} (MET, \glssymbol{met}). Undetected particles from neutrinos or dark matter, or mismeasured kinematic properties of identified particles, will introduce an imbalance in the vector sum of the \pt. Hence, the \ptmiss will be non-zero. Formally,
 
 \begin{equation}
-    \ptmiss \equiv - \sum_i^{N_{\mathrm{particles}}} {\vec p}_{\mathrm{T}, \, i}
+    \ptmiss \equiv - \sum_i^{N_{\mathrm{particles}}} \vec{p}_{\mathrm{T}, \, i}
     \label{eq:met_definition}
 \end{equation}
 
 The hadronic-only counterpart to this variable, \mht, is the negative vector sum of the jet transverse momenta in an event:
 
 \begin{equation}
-    \mht \equiv - \sum_j^{N_{\mathrm{jets}}} {\vec p}_{\mathrm{T}, \, j}
+    \mht \equiv - \sum_j^{N_{\mathrm{jets}}} \vec{p}_{\mathrm{T}, \, j}
     \label{eq:mht_definition}
 \end{equation}
 
@@ -170,7 +193,7 @@ The Higgs boson has caught the attention of the high energy physics community an
 
 Many observations of the Higgs, such as its predominant decay mode $\HepProcess{\PH \to \Pqb\APqb}$, were not seen until recently (\acrshort{cms}~\cite{Sirunyan:2018kst}, \acrshort{atlas}~\cite{Aaboud:2018zhk}). Constraints on its other properties have also been placed, such as its resonance width and branching ratios \BR to other final states. Fully understanding the Higgs boson is important to understanding the Higgs field and the wider \acrlong{sm}. Precision measurements in tension with \acrshort{sm} predictions can also be a window to new physics. Measuring the \higgstoinv branching ratio aims to do just that.
 
-The only \acrshort{sm} process in which Higgs boson can decay invisibly\footnote{A direct decay to neutrinos is possible if they acquire their mass from the Higgs field. But as the upper limit on the \acrshort{sm} neutrino masses is very small, the branching ratio is expected to follow suit.} is $\HepProcess{\PH \to \PZ\PZ \to 4\nu}$ with a branching ratio of \OrderOf{\text{0.1\,\%}}~\cite{Heinemeyer:1559921}. The leading observed experimental upper limits on this measurement are 19\,\% from CMS~\cite{Sirunyan:2018owy} and 26\,\% from \acrshort{atlas}~\cite{Aaboud:2019rtt}, far above the predicted value. If undiscovered invisible particles, perhaps dark matter, couple to the Higgs field the branching ratio will be enhanced.\footnote{Do I need to give a more mathematical motivation for the BR being enhanced/what kind of values the BR is expected to be from various DM models?} Experimental evidence shows the coupling strength to proportionally follow the mass of the particle, as verified in \acrshort{atlas} and \acrshort{cms}' latest measurements~\cite{Sopczak:2708121}. A considerably large enhancement may allow for this process to be observed at the \acrshort{lhc}. At the very least, a more accurate constraint on the branching ratio is able to exclude some models of dark matter, such as those described in Refs.~\citenum{Djouadi:2012zc,KAKIZAKI201544}.
+The only \acrshort{sm} process in which Higgs boson can decay invisibly\footnote{A direct decay to neutrinos is possible if they acquire their mass from the Higgs field. But as the coupling is of a Yukawa form and the upper limit on the \acrshort{sm} neutrino masses is very small, the branching ratio is expected to be heavily suppressed.} is $\HepProcess{\PH \to \PZ\PZ \to 4\nu}$ with a branching ratio of \OrderOf{\text{0.1\,\%}}~\cite{Heinemeyer:1559921}. The leading observed experimental upper limits on this measurement are 19\,\% from CMS~\cite{Sirunyan:2018owy} and 26\,\% from \acrshort{atlas}~\cite{Aaboud:2019rtt}, far above the predicted value. If undiscovered invisible particles, perhaps dark matter, couple to the Higgs field the branching ratio will be enhanced.\footnote{Do I need to give a more mathematical motivation for the BR being enhanced/what kind of values the BR is expected to be from various DM models?} Experimental evidence shows the coupling strength to proportionally follow the mass of the particle, as verified in \acrshort{atlas} and \acrshort{cms}' latest measurements~\cite{Sopczak:2708121}. A considerably large enhancement may allow for this process to be observed at the \acrshort{lhc}. At the very least, a more accurate constraint on the branching ratio is able to exclude some models of dark matter, such as those described in Refs.~\citenum{Djouadi:2012zc,KAKIZAKI201544}.
 
 There is no reason to assume dark matter does \emph{not} interact with the Higgs field, since it bestows mass to all known elementary particles (a small caveat, perhaps, being neutrinos).\footnote{Do I need to give some mathematical motivation as to \emph{why} dark matter would couple to the Higgs? Or is the fact that it has mass enough justification?} Higgs ``portal'' models have been theorised that connect the visible sector of the \acrlong{sm} to a dark sector where particle dark matter resides~\cite{higgs_portal_singlet_dm,Arcadi:2019lka}. Certain models also predict a detectable presence at the \acrshort{lhc} from a sufficient production rate~\cite{Boveia:2018yeb}, perhaps even with data obtained during Run-2~\cite{Abercrombie:2015wmb}.
 

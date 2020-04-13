@@ -1,0 +1,53 @@
+language: generic
+dist: bionic
+
+before_install:
+ - fc-cache -f -v
+
+install:
+  - source ./texlive/texlive_install.sh
+  - curl -OL http://www.tug.org/fonts/getnonfreefonts/install-getnonfreefonts && texlua ./install-getnonfreefonts && rm -f install-getnonfreefonts && getnonfreefonts --sys garamondx
+#  - updmap-sys
+
+cache:
+  directories:
+    - /tmp/texlive
+    - $HOME/.texlive
+
+before_script:
+  - cp thesismain.tex thesismain_ci.tex
+  - cp thesismain.tex thesismain_ci_draft.tex
+
+script:
+  # Texliveonfly will download packages automatically
+  - texliveonfly --arguments="-synctex=1 -interaction=nonstopmode" thesismain_ci.tex
+
+  # Fully compile normal version of pdf with glossary
+  - pdflatex -synctex=1 -interaction=nonstopmode thesismain_ci.tex
+  - biber thesismain_ci
+  - makeglossaries thesismain_ci
+  - pdflatex -synctex=1 -interaction=nonstopmode thesismain_ci.tex
+  - pdflatex -synctex=1 -interaction=nonstopmode thesismain_ci.tex  # Compile twice to fix references
+
+  # Fully compile draft version of pdf with glossary
+  - texliveonfly --arguments="-synctex=1 -interaction=nonstopmode \"\PassOptionsToClass{draft}{memoir}\input{thesismain}\"" thesismain_ci_draft.tex
+  - pdflatex -synctex=1 -interaction=nonstopmode "\PassOptionsToClass{draft}{memoir}\input{thesismain_ci_draft}"
+  - biber thesismain_ci_draft
+  - makeglossaries thesismain_ci_draft
+  - pdflatex -synctex=1 -interaction=nonstopmode "\PassOptionsToClass{draft}{memoir}\input{thesismain_ci_draft}"
+  - pdflatex -synctex=1 -interaction=nonstopmode "\PassOptionsToClass{draft}{memoir}\input{thesismain_ci_draft}"
+
+  # Word count
+  - texcount -brief ./chapters/*/*.tex > ./word_count.txt
+
+
+deploy:
+  provider: releases
+  token: $GITHUB_CI_TOKEN  # Secure variable for GitHub token. Set in settings page of repository (on Travis CI)
+  file:
+    - ./thesismain_ci.pdf
+    - ./thesismain_ci_draft.pdf
+    - ./word_count.txt
+  skip_cleanup: true
+  on:
+    tags: true

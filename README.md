@@ -9,7 +9,7 @@ Repository containing everything related to my thesis.
   - [Useful links](#useful-links)
   - [General questions and comments](#general-questions-and-comments)
   - [Caveats and things to note](#caveats-and-things-to-note)
-  - [Formatting guidelines](#formatting-guidelines)
+  - [Formatting guidelines](#formatting-and-style-guidelines)
   - [Draft versions of the pdf](#draft-versions-of-the-pdf)
 
 ## Immediate to-do items
@@ -43,6 +43,11 @@ Repository containing everything related to my thesis.
 curl --remote-name https://www.tug.org/fonts/getnonfreefonts/install-getnonfreefonts
 sudo texlua install-getnonfreefonts
 getnonfreefonts --user -a
+# If the above doesn't work (sometimes the microtype package kinda fails to map things properly), try
+sudo getnonfreefonts --sys -a
+updmap-sys
+# If those two don't resolve it, additionally run
+updmap-user
 ```
 
 - Thesis template comes from [here](https://www.overleaf.com/latex/templates/university-of-bristol-thesis-template/kzqrfvyxxcdm). Has been built upon
@@ -52,20 +57,26 @@ getnonfreefonts --user -a
 - Compiling [thesismain.tex](./thesismain.tex) in TeXShop can misbehave when new references or glossary terms are added, possibly due to conflicts or file changes when the hyperlinks are applied. If this is the case, run [trash_aux_files.sh](./trash_aux_files.sh) to wipe all of the auxiliary files and recompile
 - Compiling [thesismain.tex](./thesismain.tex) in Visual Studio Code needs some edits to the LaTeX Workshop extension to get the glossary to compile properly. I can copy the snippet from [vscode_settings.json](vscode_settings.json) into my Visual Studio Code `settings.json` to fix it
 
-## Formatting guidelines
+## Formatting and style guidelines
 
-The following are some notes on formatting guidelines, just to remain consistent throughout the document and writing process:
+The following are some notes on formatting guidelines and style, just to remain consistent throughout the document and writing process:
 
 - To add a shorter caption for a figure/table in the List of Figures/Tables, add it inside square brackets before the main one, i.e., `\caption[Short caption]{Full caption}`
   - Avoid a full stop at the end of a short caption since it looks ugly in the table of contents, and omit references/citations from short captions for the same reason
-- In items that are referenced in the Table of Contents in the thesis (short captions or the regular caption if a short one isn't used, chapters, sections, subsections, etc.), try to avoid referencing glossary and acronym terms (instead just write the normal text). Othwerise, the internal links generated can take take a user to that definition in the glossary/acronym page if they accidentally click the referenced term
-- Use a tilde `~` instead of a space between words and their references, and between numbers/quantities and their units to prevent linebreaks separating them. Between a number and its unit, I can also use `\,` for a thin space (i.e., separation smaller than a traditional space)
+- For the text that appears in reference to items in the thesis' Table of Contents (short captions or the regular caption if a short one isn't used, chapters, sections, subsections, etc.), try to avoid referencing glossary and acronym terms (instead just write the normal words---`CMS` instead of `\acrshort{cms}`). Otherwise, the internal links generated can take take a user to that definition in the glossary/acronym page if they accidentally click the referenced term
+- Use a tilde `~` instead of a space between words and their references to prevent line breaks separating them
+  - Between a number and its unit, I should use `\,` for a thin space (i.e., separation smaller than a traditional space)
 - For when to write numbers in words or numerals, see <https://www.scribbr.com/academic-writing/numbers/> for help
-- For references at the end of a sentence, cite _before_ the full stop
+- For references, cite _before_ any punctuation (such as a full stop)
+  - For footnotes on the other hand, the reference should come _after_ punctuation
 - When explicitly referring to a reference with "Ref.", use `\citenum{}` instead of `\cite{}` so that the number isn't wrapped in square brackets
+- When declaring an equation environment, leave at most a single blank line between the text preceding and succeeding the equation. Otherwise, asymmetric vertical space before or after the equation may be left
 - For quotation marks, open the quote with a double backtick. Close with two single quotes so that the style of the opening and closing quotation marks match
 - When to use hyphens, en-dashes and em-dashes: <https://www.chicagomanualofstyle.org/qanda/data/faq/topics/HyphensEnDashesEmDashes/faq0002.html>
 - Where appropriate, use small caps to refer to software programs. If the software is an acronym, use lowercase letters (e.g., "CMSSW" would be `\textsc{cmssw}`)
+- When introducing new, lesser-known scientific terms or definitions, I can do so in italics, e.g., `\emph{pileup}`
+  - If, on the other hand, it is more of a colloquialism or something specific to the experiment (especially if it's a word that's used in everyday language) wrap it in quotation marks, e.g., ```barrel''`
+  - Italics are still to use for emphasis, but use them sparingly as it should, in most cases, be obvious from the syntax
 - More formatting/stylistic guildelines can be found in <https://zenodo.org/record/3228336> (also [locally](helpful_docs/thesis-writing-gotchas.pdf))
 
 ## Draft versions of the pdf

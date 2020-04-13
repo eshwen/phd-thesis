@@ -8,6 +8,8 @@ texliveonfly latexmk
 # Collections
 collection-langeuropean
 collection-fontsrecommended
+collection-latexextra  # packages for glossary
+collection-latex
 
 # LuaTeX
 luaotfload
@@ -19,3 +21,4 @@ minted fvextra upquote lineno xstring framed caption
 nag
 biber
 ly1  # required by garamondx
+babel-spanish

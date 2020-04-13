@@ -25,7 +25,7 @@ cache:
 #before_script:
 script:
   # Texliveonfly will download packages automatically
-  - texliveonfly thesismain.tex
+  - texliveonfly --engine=pdflatex --arguments="-synctex=1 -interaction=nonstopmode" thesismain.tex
   # You can use latexmk to automatically handle bibtex and references (recommended)
 #  - latexmk -pdf thesismain.tex
 

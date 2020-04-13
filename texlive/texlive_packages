@@ -17,3 +17,4 @@ minted fvextra upquote lineno xstring framed caption
 
 # thesis-specific
 nag
+biber

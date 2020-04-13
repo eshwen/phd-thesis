@@ -15,7 +15,6 @@ install:
   - source ./texlive/texlive_install.sh
   - curl -OL http://www.tug.org/fonts/getnonfreefonts/install-getnonfreefonts && texlua ./install-getnonfreefonts && rm -f install-getnonfreefonts && getnonfreefonts --sys garamondx
 #  - updmap-sys
-  - apt-get install -y biber
 
 cache:
   directories:

@@ -42,11 +42,10 @@ script:
 
 deploy:
   provider: releases
-  github_token: $GITHUB_CI_TOKEN  # Secure variable for GitHub token. Set in settings page of repository (on Travis CI)
+  api_key: $GITHUB_CI_TOKEN  # Secure variable for GitHub token. Set in settings page of repository (on Travis CI)
   file:
     - "thesismain_ci.pdf"
     - "thesismain_ci_draft.pdf"
   skip_cleanup: true
-  keep_history: true
   on:
-    branch: master
+    tags: true

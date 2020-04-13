@@ -17,21 +17,36 @@ cache:
     - /tmp/texlive
     - $HOME/.texlive
 
+before_script:
+  - cp thesismain.tex thesismain_ci.tex
+  - cp thesismain.tex thesismain_ci_draft.tex
+
 script:
   # Texliveonfly will download packages automatically
-  - echo -e "\033[1mFirst run of compiling to install packages\033[0m"
-  - texliveonfly --arguments="-synctex=1 -interaction=nonstopmode" thesismain.tex
+  - texliveonfly --arguments="-synctex=1 -interaction=nonstopmode" thesismain_ci.tex
 
   # But you could use any other compiler as well instead of latexmk. Example:
-  - echo -e "\033[1mFirst run of pdflatex\033[0m"
-  - pdflatex -synctex=1 -interaction=nonstopmode thesismain.tex
-  - echo -e "\033[1mRunning biber\033[0m"
-  - biber thesismain
-  - echo -e "\033[1mMaking glossary\033[0m"
-  - makeglossaries thesismain
-  - echo -e "\033[1mSecond run of pdflatex\033[0m"
-  - pdflatex -synctex=1 -interaction=nonstopmode thesismain.tex
-  - echo -e "\033[1mFinal run of pdflatex\033[0m"
-  - pdflatex -synctex=1 -interaction=nonstopmode thesismain.tex  # Compile twice to fix references
+  - pdflatex -synctex=1 -interaction=nonstopmode thesismain_ci.tex
+  - biber thesismain_ci
+  - makeglossaries thesismain_ci
+  - pdflatex -synctex=1 -interaction=nonstopmode thesismain_ci.tex
+  - pdflatex -synctex=1 -interaction=nonstopmode thesismain_ci.tex  # Compile twice to fix references
 
-# COPY thesismain.tex -> thesismain_draft.tex and run pdflatex commands with -draftmode option as well to create draft version of pdf. Also try to include a word counter script
+  - pdflatex -draftmode -synctex=1 -interaction=nonstopmode thesismain_ci_draft.tex
+  - biber thesismain_ci_draft
+  - makeglossaries thesismain_ci_draft
+  - pdflatex -draftmode -synctex=1 -interaction=nonstopmode thesismain_ci_draft.tex
+  - pdflatex -draftmode -synctex=1 -interaction=nonstopmode thesismain_ci_draft.tex
+
+# Also try to include a word counter script
+
+deploy:
+  provider: releases
+  github_token: $GITHUB_CI_TOKEN  # Secure variable for GitHub token. Set in settings page of repository (on Travis CI)
+  file:
+    - "thesismain_ci.pdf"
+    - "thesismain_ci_draft.pdf"
+  skip_cleanup: true
+  keep_history: true
+  on:
+    branch: master

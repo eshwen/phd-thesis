@@ -1,5 +1,7 @@
 # phd-thesis
 
+[![Build Status](https://api.travis-ci.com/eshwen/phd-thesis.svg)](https://travis-ci.com/github/eshwen/phd-thesis)
+
 Repository containing everything related to my thesis.
 
 ## Table of Contents

@@ -83,7 +83,7 @@ The following are some notes on formatting guidelines and style, just to remain 
 
 ## Continuous integration
 
-I've written a CI pipeline utilising Travis to compile the document. This includes a normal pdf, draft-mode pdf, and a rough word count. The configuration file [.travis.yml](./.travis.yml) and scripts/files from [texlive/](./texlive/) are based on <https://github.com/PHPirates/travis-ci-latex-pdf>, with some modifications by myself. On every push, the pipeline is run, so I can see whether the documents compile successfully by it passing/failing. Upon the creation of a new tag, the pipeline is run: a basic TeXLive distro is installed along with all the required packages, and then the relevant commands are run to create the pdfs as well as the word count. The output files mentioned above are uploaded to the "assets" drop down menu for the release/tag with the default source code archives.
+I've written a CI pipeline utilising Travis to compile the document. This includes a normal pdf, draft-mode pdf, and a rough word count. The configuration file [.travis.yml](./.travis.yml) and TexLive install files from [texlive/](./texlive/) are based on <https://github.com/PHPirates/travis-ci-latex-pdf>, with some modifications by myself. On every push, the pipeline is run: a basic TeXLive distro is installed along with all the required packages, and then the relevant commands are run to create the pdfs as well as the word count. I can see whether the documents compile successfully by it passing or failing. When a new tag is created, the output files mentioned above are uploaded to the "assets" drop down menu for the release/tag to accompany the default source code archives.
 
 The draft pdf includes the following:
 

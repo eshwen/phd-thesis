@@ -12,11 +12,11 @@
 
 \begin{easylist}[itemize]
     \easylistprops
-    & Give an overview of the fundamental forces and particles.
-    & Discuss the Standard Model in some amount of detail, emphasizing certain aspects as they relate to the Higgs field (and boson).
-    & May have to mention chirality and helicity in relation to "handedness" of particles.
-    & Mention resonances and widths. Each decay mode of a particle contributes a partial width (which determines its branching ratio: \BR = partial width/total width).
-    & Talk in some detail about the Higgs mechanism as that will inform the Higgs to invisible section. Mention Yukawa coupling to fermions, and that it's dependent on the squared mass of the decay products. Lends credence to suppression of direct decay to neutrinos (assuming they even couple to Higgs).
+    & Give an overview of the fundamental forces and particles in a QFT/group theory context.
+    && May have to mention chirality and helicity, briefly, in relation to ``handedness'' of particles.
+    & Discuss the \acrlong{sm} in some amount of detail, emphasizing certain aspects as they relate to the Higgs field \& boson.
+    && Mention resonances and widths. Each decay mode of a particle contributes a partial width (which determines its branching ratio: \BR = partial width/total width).
+    && Talk in some detail about the Higgs mechanism as that will inform the Higgs to invisible section. Mention Yukawa coupling to fermions, and that it's dependent on the squared mass of the decay products. Lends credence to suppression of direct decay to neutrinos (assuming they even couple to Higgs).
 \end{easylist}
 
 % Check Lancaster and other summer school notes (Postgraduate and CMS courses/ folder)
@@ -44,8 +44,6 @@ Some \acrshort{bsm} theories like \acrlong{susy} provide well-motivated cancella
 \section{Theoretical motivations for, and descriptions of, dark matter}
 \label{sec:theory_dark_matter}
 
-% Will probably be referring to things from introduction section. Try to just give overview there and describe the nitty-gritty here
-
 Dark matter may have been forged in the universe via one of many possible mechanisms. The most popular is described as a \emph{thermal freeze-out} process. In the hot, early universe when the thermal background allowed spontaneous pair production of particle dark matter, it was generated in abundance. During this period, the particles may also have frequently annihilated seeing that the cosmos was still small. Inevitably, the universe expanded and cooled; the temperature became too low to allow significant production \cite{Baldes:2017gzw}. Matter was further separated and the dark matter annihilation rate decreased, leaving a behind the ``thermal relic'' that is observed today. These remaining particles were attracted via gravity, forming filaments throughout the universe. The potential wells they induced allowed the progenitors of galaxies to form within.
 
 Full derivations of the thermal freeze-out of dark matter\footnote{Is it worth going through the derivation, maybe as an appendix? It might be superfluous considering it's already described in literature.} can be found in literature \cite{cosmic_abundances_stable_particles,Bender:2012gc}, with the \acrshort{wimp} Miracle as a consequence: with relatively few assumptions, the correct dark matter relic abundance can be recovered by requiring a \acrshort{wimp} mass of \OrderOf{\text{\tGeV} - \text{\tTeV}}, dependent on the annihilation cross section. This is a range accessible at contemporary colliders such as the \acrshort{lhc}, and perhaps coincidentally, around the electroweak energy scale. It is common for figures that depict the \acrshort{wimp} dark matter density over time to plot the yield $\sfrac{n_{\chi}}{s}$ as a function of the dimensionless parameter $x = \sfrac{m_{\chi}}{T}$. In the former variable, $n_{\chi}$ is the number density and $s$ is the entropy density. In the latter, $m_{\chi}$ is the dark matter mass and $T$ is the average temperature of the universe, which serves as a measure of its age due to the temperature decreasing over time. An example is given in Fig.~\ref{fig:theory_dm_abundance}.
@@ -59,9 +57,7 @@ Full derivations of the thermal freeze-out of dark matter\footnote{Is it worth g
 
 The time of the dark matter freeze out epoch is somewhat insensitive to the mass and annihilation cross section. Approximate solutions to the Boltzmann equation for time-dependent $n_{\chi}$---where dark matter is modelled as a weakly-interacting, diffuse gas of particles---suggest $x_f \sim 20$~\cite{Lisanti:2016jxe,Bender:2012gc}. Stronger dark matter interaction leads to decoupling at a later time and a lower number density. The approximate value of $x_f$ is significant in that it supports the electroweak-scale mass of \glspl{wimp}.
 
-Another popular mechanism, targeting low-mass dark matter, is the \emph{freeze-in} process~\cite{Hall:2009bx,Krnjaic:2017tio}. In this postulate, dark matter is not produced thermally in the early universe. Instead, it emerges through interactions between \acrshort{sm} particles such as collisions, or decays of those heavier than dark matter. The comoving density increases with time until it plateaus from of the cooling of the universe, where \acrshort{sm} particles are generally stable enough and too low energy to produce dark matter in any meaningful quantity. The relic abundance can therefore reclaimed from a combination of the initial thermal distributions, the dark matter mass, and the interaction strength, similar to the freeze-out process. In order to obey cosmological observations, particularly the fact that it is cold, the masses expected for freeze-in dark matter particles are of \OrderOf{\text{k\acrshort{ev}}} or heavier.
-
-% Could also briefly describe other interpretations of dark matter relic abundance. For all of these cases, perhaps I can explain them more qualitatively with no/few equations (but reference derivations in literature), and add footnotes questioning how much detail I _should_ go in to.
+Another popular mechanism, targeting low-mass dark matter, is the \emph{freeze-in} process~\cite{Hall:2009bx,Krnjaic:2017tio}. In this postulate, dark matter is not produced thermally in the early universe. Instead, it emerges through interactions between \acrshort{sm} particles such as collisions, or decays of those heavier than dark matter. The comoving density increases with time until it plateaus from of the cooling of the universe, where \acrshort{sm} particles are generally stable enough and too low energy to produce dark matter in any meaningful quantity. The relic abundance can therefore reclaimed from a combination of the initial thermal distributions, the dark matter mass, and the interaction strength, similar to the freeze-out process. In order to obey cosmological observations, particularly the fact that it is cold, the masses expected for freeze-in dark matter particles are of \OrderOf{\text{k\acrshort{ev}}} or heavier.\footnote{Could also briefly describe other interpretations of dark matter relic abundance? For all of these cases, not sure how much detail I should go in to, in terms of quantitative derivations.}
 
 % DON'T RENDER
 \iffalse
@@ -132,9 +128,7 @@ An electron volt is a minute quantity of energy, so when discussing properties o
 \subsection{Transverse momentum (\texorpdfstring{\pt}{pt})}
 \label{subsec:theory_pt}
 
-In the LHC (or any other collider), the longitudinal momentum of the initial state particles is typically unknown. However, the momentum transverse to the beam is zero before the collision, and must be zero afterward after due to momentum conservation. This is why the transverse momentum of a particle or physics object (\ptvec for the vector quantity, \pt for its magnitude) is a useful variable in an analysis.
-
-% Do I need a more formal/mathematical definition, or a diagram?
+In the \acrshort{lhc} (or any other collider), the longitudinal momentum of the initial state particles is typically unknown. However, the momentum transverse to the beam is zero before the collision, and must be zero afterward after due to momentum conservation. This is why the transverse momentum of a particle or physics object (\ptvec for the vector quantity, \pt for its magnitude) is a useful variable in an analysis.\footnote{Do I need a more formal/mathematical definition? Could just reference geometry section in detector chapter.}
 
 
 %=========================================================
@@ -143,14 +137,12 @@ In the LHC (or any other collider), the longitudinal momentum of the initial sta
 \subsection{\texorpdfstring{\HT}{HT}}
 \label{subsec:theory_ht}
 
-% Will need to define what a jet is here if I don't do so before
-
-The scalar sum of the transverse momentum of hadronic constituents in an event, i.e., the \glspl{jet}, is symbolised as \HT. It is often used in analyses focused on hadronic objects, such as branches of \acrlong{susy} where a large \gls{jet} multiplicity is expected. Formally,
+The outcome of a collision in the \acrshort{lhc} is referred to as an \emph{event}. The hadronic constituents in an event often shower due to colour confinement, producing collimated sprays of hadrons called \emph{\glspl{jet}}. For analyses focused on hadronic objects---such as branches of \acrlong{susy} where a large \gls{jet} multiplicity is expected---it is practical to define the total amount of hadronic activity in an event. The scalar sum of the transverse momentum of the \glspl{jet} is symbolised as \HT:
 \begin{equation}
     \HT \equiv \sum_{\mathrm{jets}} \pt
     \label{eq:ht_definition}
 \end{equation}
-Typically, a lower limit on \pt is used when calculating the \HT, so \glspl{jet} below this threshold do not factor into the sum. This is to avoid low momentum \glspl{jet} attributed to pileup events (see Chpt.~\ref{subsec:pileup}), and those from the primary vertex that can often be mismeasured.
+Typically, a lower limit on the \pt is used when calculating the \HT, so \glspl{jet} below this threshold do not factor into the sum. This is to avoid low momentum \glspl{jet} attributed to pileup events (see Chpt.~\ref{subsec:pileup}), and those from the primary vertex that can often be mismeasured.
 
 
 %=========================================================
@@ -159,7 +151,7 @@ Typically, a lower limit on \pt is used when calculating the \HT, so \glspl{jet}
 \subsection{Missing transverse momentum (\texorpdfstring{\ptmiss}{ptmiss})}
 \label{subsec:theory_met}
 
-The missing transverse momentum \ptvecmiss is defined as the negative vector sum of the \ptvec of all identified particles in an event. It is a term often used interchangeably with \gls{met} (MET, \VEtmiss). Undetected particles from neutrinos or dark matter, or mismeasured kinematic properties of identified particles, will introduce an imbalance in the vector sum of the \ptvec. Hence, the \ptvecmiss will be non-zero. Formally,
+The missing transverse momentum \ptvecmiss is defined as the negative vector sum of the \ptvec of all identified particles in an event. It is a term often used interchangeably with \gls{met} (MET, \VEtmiss). Undetected particles from neutrinos or dark matter, or mismeasured kinematic properties of identified particles, will introduce an imbalance in the vector sum of the \ptvec. Hence, the \ptvecmiss will be non-zero.\footnote{A depiction of the MET (e.g., SM particles recoiling off dark matter) might be useful for the reader.} Formally,
 \begin{equation}
     \begin{aligned}
         \ptvecmiss &\equiv - \sum_i^{N_{\mathrm{particles}}} \vec{p}_{\mathrm{T}, \, i} \\
@@ -176,8 +168,6 @@ The hadronic-only counterpart to this variable, \htvecmiss, is the negative vect
     \label{eq:mht_definition}
 \end{equation}
 As with \HT, the \mht is often calculated with a lower limit on the \gls{jet} \pt.
-
-% A depiction of the MET (e.g., SM particles recoiling off dark matter) might be useful for the reader
 
 
 %=========================================================

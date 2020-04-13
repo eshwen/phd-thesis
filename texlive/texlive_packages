@@ -18,3 +18,4 @@ minted fvextra upquote lineno xstring framed caption
 # thesis-specific
 nag
 biber
+ly1  # required by garamondx

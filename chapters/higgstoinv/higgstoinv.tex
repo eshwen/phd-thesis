@@ -10,15 +10,17 @@
 
     & Discuss the necessity of including all production modes of Higgs (invisible final state, so characterise events based on initial/additional particles). Also mention how sensitive each production mode is at contributing to the branching ratio limit. Emphasise the non-VBF modes (\ggF, \ttH, \VH\ -- \WplusH, \WminusH, \ZH) in this chapter as that's what I've been working on and another student will be covering \acrshort{vbf}.
 
-    & Add a section or subsection somewhere regarding analysis tools. Perhaps add a brief description of ROOT (and how it's entrenched in HEP even though people are tending to move away from ROOT-based analysis onto more industry-standard tools), then lead into the FAST tools and using dataframes, vectorisation, etc., with only small interfaces to ROOT (for I/O) to extract data. Potentially mention how the data tiers work in CMS (RAW, DIGI, RECO, AOD, miniAOD, nanoAOD, etc.)
+    & Add a section or subsection somewhere regarding analysis tools. Perhaps add a brief description of \ROOT (and how it's entrenched in HEP even though people are tending to move away from \ROOT-based analysis onto more industry-standard tools), then lead into the FAST tools and using dataframes, vectorisation, etc., with only small interfaces to \ROOT (for I/O) to extract data. Potentially mention how the data tiers work in CMS (RAW, DIGI, RECO, AOD, miniAOD, nanoAOD, etc.)
 
-    & Talk about what makes this analysis unique: doing a combination over all production modes from the start instead of separate analyses combined at the end. Means we can share samples, systematics, background methods and workflows, build in orthogonality between the different modes and cover as much phase space as possible (with new final states such as boosted \PZ bosons with unresolved subjets). This makes the analysis much more cohesive and consistent.
+    & Talk about what makes this analysis unique: doing a combination over all production modes from the start instead of separate analyses combined at the end.
+
+    && Means we can share samples, systematics, background methods and workflows, build in orthogonality between the different modes, simultaneously optimise the categories for different production modes, and cover as much phase space as possible (with new final states such as boosted \PZ bosons with unresolved subjets). This makes the analysis much more cohesive and consistent.
 
     & Include object definitions, overall analysis strategy, triggers, signal production (with each non-VBF mode in detail), event selection, background estimation (\glspl{CR}, \glspl{SB}) and results/limit (including comparisons to previous results).
 
     & Emphasise my contributions: control region construction and studies, background estimation, and other studies I will have conducted by the time I write up.
 
-    & Current material: no public plots as of yet. Hope to finish analysis by the time I begin writing up. We are preparing a CMS internal analysis note, documenting all aspects of the analysis. I will add all relevant information there which I can subsequently use when writing this chapter.
+    & Current material: no public plots as of yet. Hope to finish analysis soon. We are preparing a CMS internal analysis note, documenting all aspects of the analysis. I will first add all relevant information there which I can subsequently use when writing this chapter.
 
     & Since it's my thesis, I can talk about \ttH, \VH and \ggF/monojet, even though the Bristol contribution to the final, public result would only be \ttH and resolved \VH. Would need to be able to run the fit for all three modes simultaneously, ensuring we have complete (and correct) systematics for \ggF.
 \end{easylist}
@@ -143,14 +145,14 @@ where $\sigma$ is the cross section of the process at the order it was generated
 %=========================================================
 
 
-\subsubsection{Pileup}
+\subsubsection{Pileup reweighting}
 \label{subsubsec:pu_reweighting}
 
-\Gls{pileup} interactions at the \acrshort{lhc} are frequent (see Chpt.~\ref{subsec:pileup}) and must be modelled appropriately in simulation. Simulated samples are generated with a certain distribution of the number of \gls{pileup} interactions which usually does not match the data recorded by \acrshort{cms}. This is due to changing conditions in the beam over a period of data taking. In order to make them comparable, the simulated events are reweighted; in this context it is known as \emph{\gls{pileup} reweighting}. \textsc{root} files containing histograms of the number of \gls{pileup} interactions from short runs in the \acrshort{lhc} are available centrally and are used as the reference for which to reweight the simulated events.
+\Gls{pileup} interactions at the \acrshort{lhc} are frequent (see Chpt.~\ref{subsec:pileup}) and must be modelled appropriately in simulation. Simulated samples are generated with a certain distribution of the number of \gls{pileup} interactions which usually does not match the data recorded by \acrshort{cms}. This is due to changing conditions in the beam over a period of data taking. In order to make them comparable, the simulated events are reweighted; in this context it is known as \emph{\gls{pileup} reweighting}. \ROOT files containing histograms of the number of \gls{pileup} interactions from short runs in the \acrshort{lhc} are available centrally and are used as the reference for which to reweight the simulated events.
 
 In the trees of the simulated samples, the branch \texttt{Pileup\_nTrueInt} is the mean of the Poisson distribution from which random numbers are drawn. In each simulated event, these random numbers (all from the same distribution) are used to set the number of in-time \gls{pileup} interactions as well as the number of the interactions in each neighbouring bunch crossing to simulate the out-of-time \gls{pileup}. In data, the same branch gives the average number of \gls{pileup} interactions for a colliding bunch pair in a lumi section. The distribution of \texttt{Pileup\_nTrueInt} in the data is derived from the measured instantaneous luminosity for each colliding bunch pair in each lumi section and the cross section of the total inelastic $\Pp\Pp$ interaction.
 
-The nominal \gls{pileup} weight for each simulated event, as well as the up and down systematic variations, are derived in \textsc{nanoAOD-tools}. %(\url{https://github.com/cms-nanoAOD/nanoAOD-tools/blob/048a828e1d7f5ac3346e2f5e7eafba2570e84bc4/python/postprocessing/modules/common/puWeightProducer.py}). % add a note about the min bias cross sections from the samples used to derive the data distributions for each year?
+The nominal \gls{pileup} weight for each simulated event, as well as the up and down systematic variations, are derived in \nanoAODtools. %(\url{https://github.com/cms-nanoAOD/nanoAOD-tools/blob/048a828e1d7f5ac3346e2f5e7eafba2570e84bc4/python/postprocessing/modules/common/puWeightProducer.py}). % add a note about the min bias cross sections from the samples used to derive the data distributions for each year?
 
 
 %=========================================================

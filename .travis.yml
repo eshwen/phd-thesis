@@ -25,14 +25,14 @@ cache:
 #before_script:
 script:
   # Texliveonfly will download packages automatically
-  - texliveonfly --engine=pdflatex --arguments="-synctex=1 -interaction=nonstopmode" thesismain.tex
+  - texliveonfly --arguments="-synctex=1 -interaction=nonstopmode" thesismain.tex
   # You can use latexmk to automatically handle bibtex and references (recommended)
 #  - latexmk -pdf thesismain.tex
 
   # But you could use any other compiler as well instead of latexmk. Example:
   - pdflatex -synctex=1 -interaction=nonstopmode thesismain.tex
   - biber thesismain
-  - makeglossaries thesismain.tex
+  - makeglossaries thesismain
   - pdflatex -synctex=1 -interaction=nonstopmode thesismain.tex
   - pdflatex -synctex=1 -interaction=nonstopmode thesismain.tex  # Compile twice to fix references
 

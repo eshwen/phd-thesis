@@ -25,13 +25,15 @@ script:
   # Texliveonfly will download packages automatically
   - texliveonfly --arguments="-synctex=1 -interaction=nonstopmode" thesismain_ci.tex
 
-  # But you could use any other compiler as well instead of latexmk. Example:
+  # Fully compile normal version of pdf with glossary
   - pdflatex -synctex=1 -interaction=nonstopmode thesismain_ci.tex
   - biber thesismain_ci
   - makeglossaries thesismain_ci
   - pdflatex -synctex=1 -interaction=nonstopmode thesismain_ci.tex
   - pdflatex -synctex=1 -interaction=nonstopmode thesismain_ci.tex  # Compile twice to fix references
 
+  # Fully compile draft version of pdf with glossary
+  - texliveonfly --arguments="-synctex=1 -interaction=nonstopmode" thesismain_ci_draft.tex
   - pdflatex -draftmode -synctex=1 -interaction=nonstopmode thesismain_ci_draft.tex
   - biber thesismain_ci_draft
   - makeglossaries thesismain_ci_draft
@@ -42,10 +44,10 @@ script:
 
 deploy:
   provider: releases
-  api_key: $GITHUB_CI_TOKEN  # Secure variable for GitHub token. Set in settings page of repository (on Travis CI)
+  token: $GITHUB_CI_TOKEN  # Secure variable for GitHub token. Set in settings page of repository (on Travis CI)
   file:
-    - "thesismain_ci.pdf"
-    - "thesismain_ci_draft.pdf"
+    - ./thesismain_ci.pdf
+    - ./thesismain_ci_draft.pdf
   skip_cleanup: true
   on:
     tags: true

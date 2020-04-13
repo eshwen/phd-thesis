@@ -12,7 +12,7 @@ Repository containing everything related to my thesis.
   - [General questions and comments](#general-questions-and-comments)
   - [Caveats and things to note](#caveats-and-things-to-note)
   - [Formatting guidelines](#formatting-and-style-guidelines)
-  - [Draft versions of the pdf](#draft-versions-of-the-pdf)
+  - [Continuous integration](#continuous-integration)
 
 ## Immediate to-do items
 
@@ -81,9 +81,13 @@ The following are some notes on formatting guidelines and style, just to remain 
   - Italics are still to use for emphasis, but use them sparingly as it should, in most cases, be obvious from the syntax
 - More formatting/stylistic guildelines can be found in <https://zenodo.org/record/3228336> (also [locally](helpful_docs/thesis-writing-gotchas.pdf))
 
-## Draft versions of the pdf
+## Continuous integration
 
-Before sending a draft version of the pdf, e.g., to my supervisor, compile with the following:
+I've written a CI pipeline utilising Travis to compile the document. This includes a normal pdf, draft-mode pdf, and a rough word count. The configuration file [.travis.yml](./.travis.yml) and scripts/files from [texlive/](./texlive/) are based on <https://github.com/PHPirates/travis-ci-latex-pdf>, with some modifications by myself. On every push, the pipeline is run, so I can see whether the documents compile successfully by it passing/failing. Upon the creation of a new tag, the pipeline is run: a basic TeXLive distro is installed along with all the required packages, and then the relevant commands are run to create the pdfs as well as the word count. The output files mentioned above are uploaded to the "assets" drop down menu for the release/tag with the default source code archives.
 
-- Add "draft" in the `\documentclass` line with the other options. This turns on a draft watermark with the date the pdf was made, and adds line numbers for easier referencing to specific points
-- Use footnotes to mark any questions/concerns, etc. instead of comments in the tex file. Ideally, these will be in a different colour to the normal footnotes in the document. But I've been having problems coverting both the label and the text to the same colour
+The draft pdf includes the following:
+
+- The `draft` option is passed to the `memoir` class iwith the other options
+- From the `\ifdraftdoc` block, this turns on a draft watermark with the date the pdf was made, and adds line numbers for easier referencing to specific points
+
+The word count is estimated by the `texcount` package, where I just pass the chapter tex files.

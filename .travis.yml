@@ -8,7 +8,7 @@ before_install:
 # - sudo apt-get install python-pygments # If you use the minted package
   # If you use custom fonts:
  - mkdir $HOME/.fonts
- - cp -a $TRAVIS_BUILD_DIR/src/fonts/. $HOME/.fonts/
+# - cp -a $TRAVIS_BUILD_DIR/src/fonts/. $HOME/.fonts/
  - fc-cache -f -v
 
 install:

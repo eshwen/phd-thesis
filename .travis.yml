@@ -15,6 +15,7 @@ install:
   - source ./texlive/texlive_install.sh
   - curl -OL http://www.tug.org/fonts/getnonfreefonts/install-getnonfreefonts && texlua ./install-getnonfreefonts && rm -f install-getnonfreefonts && getnonfreefonts --sys garamondx
 #  - updmap-sys
+  - apt install biber
 
 cache:
   directories:
@@ -30,11 +31,11 @@ script:
 #  - latexmk -pdf thesismain.tex
 
   # But you could use any other compiler as well instead of latexmk. Example:
-  - pdflatex -synctex=1 -interaction=nonstopmode -undump=pdflatex thesismain.tex
+  - pdflatex -synctex=1 -interaction=nonstopmode thesismain.tex
   - biber thesismain
   - makeglossaries thesismain.tex
-  - pdflatex -synctex=1 -interaction=nonstopmode -undump=pdflatex thesismain.tex
-  - pdflatex -synctex=1 -interaction=nonstopmode -undump=pdflatex thesismain.tex # Compile twice to fix references
+  - pdflatex -synctex=1 -interaction=nonstopmode thesismain.tex
+  - pdflatex -synctex=1 -interaction=nonstopmode thesismain.tex  # Compile twice to fix references
 
   # You can also pass arguments to texliveonfly:
 #  - texliveonfly --arguments='-shell-escape' thesismain.tex
@@ -43,3 +44,5 @@ script:
 #after_script:
 #  - export PATH=/tmp/texlive/bin/x86_64-linux:$PATH
 #  - tlmgr list --only-installed | grep -oP 'i \K.+?(?=:)'
+
+# COPY thesismain.tex -> thesismain_draft.tex and run pdflatex commands with -draftmode option as well to create draft version of pdf. Also try to include a word counter script

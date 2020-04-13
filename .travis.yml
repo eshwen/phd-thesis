@@ -4,11 +4,7 @@ dist: bionic
 
 ## Uncomment the following lines if you require extra dependencies
 before_install:
-# - sudo apt-get install ghostscript # If you use latex > dvips > ps2pdf
-# - sudo apt-get install python-pygments # If you use the minted package
-  # If you use custom fonts:
  - mkdir $HOME/.fonts
-# - cp -a $TRAVIS_BUILD_DIR/src/fonts/. $HOME/.fonts/
  - fc-cache -f -v
 
 install:
@@ -21,27 +17,21 @@ cache:
     - /tmp/texlive
     - $HOME/.texlive
 
-# Change working directory so including files will work
-#before_script:
 script:
   # Texliveonfly will download packages automatically
+  - echo -e "\033[1mFirst run of compiling to install packages\033[0m"
   - texliveonfly --arguments="-synctex=1 -interaction=nonstopmode" thesismain.tex
-  # You can use latexmk to automatically handle bibtex and references (recommended)
-#  - latexmk -pdf thesismain.tex
 
   # But you could use any other compiler as well instead of latexmk. Example:
+  - echo -e "\033[1mFirst run of pdflatex\033[0m"
   - pdflatex -synctex=1 -interaction=nonstopmode thesismain.tex
+  - echo -e "\033[1mRunning biber\033[0m"
   - biber thesismain
+  - echo -e "\033[1mMaking glossary\033[0m"
   - makeglossaries thesismain
+  - echo -e "\033[1mSecond run of pdflatex\033[0m"
   - pdflatex -synctex=1 -interaction=nonstopmode thesismain.tex
+  - echo -e "\033[1mFinal run of pdflatex\033[0m"
   - pdflatex -synctex=1 -interaction=nonstopmode thesismain.tex  # Compile twice to fix references
-
-  # You can also pass arguments to texliveonfly:
-#  - texliveonfly --arguments='-shell-escape' thesismain.tex
-
-## Uncomment the following lines to see the packages installed in travis
-#after_script:
-#  - export PATH=/tmp/texlive/bin/x86_64-linux:$PATH
-#  - tlmgr list --only-installed | grep -oP 'i \K.+?(?=:)'
 
 # COPY thesismain.tex -> thesismain_draft.tex and run pdflatex commands with -draftmode option as well to create draft version of pdf. Also try to include a word counter script

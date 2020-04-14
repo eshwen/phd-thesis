@@ -83,7 +83,7 @@ The following are some notes on formatting guidelines and style, just to remain 
 
 ## Continuous integration
 
-I've written a CI pipeline utilising Travis to compile the document. This includes a normal pdf, draft-mode pdf, and a rough word count. The configuration file [.travis.yml](./.travis.yml) and TexLive install files from [texlive/](./texlive/) are based on <https://github.com/PHPirates/travis-ci-latex-pdf>, with some modifications by myself. On every push, the pipeline is run: a basic TeXLive distro is installed along with all the required packages, and then the relevant commands are run to create the pdfs as well as the word count. I can see whether the documents compile successfully by it passing or failing. When a new tag is created, the output files mentioned above are uploaded to the "assets" drop down menu for the release/tag to accompany the default source code archives.
+I've written a CI pipeline utilising Travis to compile the document. This includes a normal pdf, draft-mode pdf, and a rough word count. The configuration file [.travis.yml](./.travis.yml) and TexLive install files from [texlive/](./texlive/) are based on <https://github.com/PHPirates/travis-ci-latex-pdf>, with some modifications by myself. If one wishes to implement a similar pipeline, those instructions should be checked first. On every push, the pipeline is run: a basic TeXLive distro is installed along with all the required packages, and then the relevant commands are run to create the pdfs as well as the word count. I can see whether the documents compile successfully by it passing or failing. When a new tag is created, the output files mentioned above are uploaded to the "assets" drop down menu for the release/tag to accompany the default source code archives.
 
 The draft pdf includes the following:
 
@@ -91,3 +91,11 @@ The draft pdf includes the following:
 - From the `\ifdraftdoc` block, this turns on a draft watermark with the date the pdf was made, and adds line numbers for easier referencing to specific points
 
 The word count is estimated by the `texcount` package, where I just pass the chapter tex files.
+
+Note that the configuration of this CI is fairly specific to the implementation of my thesis. These are:
+
+- Adding commands to the config file to install `garamondx`, and to generate glossaries
+- Creating the draft pdf, which requires passing the draft option specifically to the memoir class. Different document classes may require a different implementation to create a draft version
+- Adding a GitHub token in the `deploy` stage of the config file. This is done to authenticate the upload of files when a new tag is made. The variable `GITHUB_CI_TOKEN` is a secure variable specific to me (Eshwen), so must be generated individually for a user to make use of the feature. More information is linked about [deployment](https://docs.travis-ci.com/user/deployment) and [GitHub tokens](https://github.com/settings/tokens)
+- The package `texliveonfly` is used to install the packages required for compiling the document. But it doesn't always seem to install the dependencies. So I've had to add some packages to [texlive/texlive_packages](./texlive/texlive_packages) through trial-and-error by checking the logs from failed builds. Using new packages in the document therefore carries this small risk. Though, it only affects the CI pipeline and can be easily debugged
+- Because of some of the design choices in the thesis (e.g., the `garamondx` font, use of a glossary), the TexLive version of the pipeline was necessary. If one is using more conventional implementations, there are several alternative instructions at <https://github.com/PHPirates/travis-ci-latex-pdf> that might be easier to carry out

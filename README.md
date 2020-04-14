@@ -1,6 +1,6 @@
 # phd-thesis
 
-[![Build Status](https://api.travis-ci.com/eshwen/phd-thesis.svg)](https://travis-ci.com/github/eshwen/phd-thesis)
+[![Build Status](https://api.travis-ci.com/eshwen/phd-thesis.svg)](https://travis-ci.com/github/eshwen/phd-thesis) [![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/eshwen/phd-thesis?include_prereleases)](https://github.com/eshwen/phd-thesis/releases/latest) ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/eshwen/phd-thesis) ![GitHub repo size](https://img.shields.io/github/repo-size/eshwen/phd-thesis) ![GitHub top language](https://img.shields.io/github/languages/top/eshwen/phd-thesis)
 
 Repository containing everything related to my thesis.
 
@@ -77,7 +77,7 @@ The following are some notes on formatting guidelines and style, just to remain 
 - When to use hyphens, en-dashes and em-dashes: <https://www.chicagomanualofstyle.org/qanda/data/faq/topics/HyphensEnDashesEmDashes/faq0002.html>
 - Where appropriate, use small caps to refer to software programs. If the software is an acronym, use lowercase letters (e.g., "CMSSW" would be `\textsc{cmssw}`)
 - When introducing new, lesser-known scientific terms or definitions, I can do so in italics, e.g., `\emph{pileup}`
-  - If, on the other hand, it is more of a colloquialism or something specific to the experiment (especially if it's a word that's used in everyday language) wrap it in quotation marks, e.g., ```barrel''`
+  - If, on the other hand, it is more of a colloquialism or something specific to the experiment (especially if it's a word that's used in everyday language) wrap it in quotation marks, e.g., ``` ``barrel'' ```
   - Italics are still to use for emphasis, but use them sparingly as it should, in most cases, be obvious from the syntax
 - More formatting/stylistic guildelines can be found in <https://zenodo.org/record/3228336> (also [locally](helpful_docs/thesis-writing-gotchas.pdf))
 

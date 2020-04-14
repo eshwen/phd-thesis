@@ -158,23 +158,24 @@ Note that the configuration of this CI is fairly specific to the implementation 
 
 The following are some notes on formatting guidelines and style, just to remain consistent throughout the document and writing process:
 
-- To add a shorter caption for a figure/table in the List of Figures/Tables, add it inside square brackets before the main one, i.e., `\caption[Short caption]{Full caption}`
-  - Avoid a full stop at the end of a short caption since it looks ugly in the table of contents, and omit references/citations from short captions for the same reason
-- For the text that appears in reference to items in the thesis' Table of Contents (short captions or the regular caption if a short one isn't used, chapters, sections, subsections, etc.), try to avoid referencing glossary and acronym terms (instead just write the normal words---`CMS` instead of `\acrshort{cms}`). Otherwise, the internal links generated can take take a user to that definition in the glossary/acronym page if they accidentally click the referenced term
-- Use a tilde `~` instead of a space between words and their references to prevent line breaks separating them
+- To add a shorter caption for a figure/table in the List of Figures/Tables, add it inside square brackets before the main one (i.e., `\caption[Short caption]{Full caption}`)
+  - Avoid a full stop at the end of a short caption since it looks ugly in the LoF/T, and omit references/citations from short captions for the same reason
+- For the text that appears in reference to items in the thesis' Table of Contents (short captions or the regular caption if a short one isn't used, chapters, sections, subsections, etc.), try to avoid referencing glossary and acronym terms (instead just write the normal words: `CMS` instead of `\acrshort{cms}`). Otherwise, the internal links generated can take take a user to that definition in the glossary/acronym page if they accidentally click the referenced term
+- Use a tilde `~` instead of a space between words and their references to prevent line breaks separating them. This includes both citations and cross-references
   - Between a number and its unit, I should use `\,` for a thin space (i.e., separation smaller than a traditional space)
 - For when to write numbers in words or numerals, see <https://www.scribbr.com/academic-writing/numbers/> for help
 - For references, cite _before_ any punctuation (such as a full stop)
   - For footnotes on the other hand, the reference should come _after_ punctuation
 - When explicitly referring to a reference with "Ref.", use `\citenum{}` instead of `\cite{}` so that the number isn't wrapped in square brackets
+  - The `\citenum` command isn't available natively in `biblatex`. I've written a re-implementation just after the package is imported in [thesismain.tex](./thesismain.tex), but it can sometimes add an erroneous space after it before subsequent puncuation (e.g., `Ref. 42 )` instead of `Ref. 42)`). So I just need to watch out for that
 - When declaring an equation environment, leave at most a single blank line between the text preceding and succeeding the equation. Otherwise, asymmetric vertical space before or after the equation may be left
-- For quotation marks, open the quote with a double backtick. Close with two single quotes so that the style of the opening and closing quotation marks match
+- For quotation marks, open the quote with a double backtick ` `` `. Close with two single quotes `''` so that the style of the opening and closing quotation marks match
 - When to use hyphens, en-dashes and em-dashes: <https://www.chicagomanualofstyle.org/qanda/data/faq/topics/HyphensEnDashesEmDashes/faq0002.html>
 - Where appropriate, use small caps to refer to software programs. If the software is an acronym, use lowercase letters (e.g., "CMSSW" would be `\textsc{cmssw}`)
 - When introducing new, lesser-known scientific terms or definitions, I can do so in italics, e.g., `\emph{pileup}`
   - If, on the other hand, it is more of a colloquialism or something specific to the experiment (especially if it's a word that's used in everyday language) wrap it in quotation marks, e.g., ``` ``barrel'' ```
-  - Italics are still to use for emphasis, but use them sparingly as it should, in most cases, be obvious from the syntax
-- More formatting/stylistic guidelines can be found in <https://zenodo.org/record/3228336> (also [locally](helpful_docs/thesis-writing-gotchas.pdf))
+  - Italics are still fine to use for emphasis, but use them sparingly as it should, in most cases, be obvious from the syntax
+- More formatting/stylistic guidelines can be found in <https://zenodo.org/record/3228336> ([local copy](helpful_docs/thesis-writing-gotchas.pdf))
 
 ### Questions regarding formatting
 

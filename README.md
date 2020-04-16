@@ -9,31 +9,36 @@ Repository containing everything related to my thesis.
 ## Table of Contents
 
 - [phd-thesis](#phd-thesis)
-  * [Table of Contents](#table-of-contents)
-  * [General information](#general-information)
-  * [Compiling the document](#compiling-the-document)
-    + [Bibliography](#bibliography)
-    + [Font](#font)
-    + [Glossary](#glossary)
-    + [HEP particles](#hep-particles)
-    + [Actually compiling](#actually-compiling)
+  - [Table of Contents](#table-of-contents)
+  - [General information](#general-information)
+    - [Structure](#structure)
+  - [Compiling the document](#compiling-the-document)
+    - [Bibliography](#bibliography)
+    - [Font](#font)
+    - [Glossary](#glossary)
+    - [HEP particles](#hep-particles)
+    - [Actually compiling](#actually-compiling)
       - [Normal compilation - Visual Studio Code](#normal-compilation---visual-studio-code)
       - [Draft compilation - Visual Studio Code](#draft-compilation---visual-studio-code)
       - [Normal compilation - CLI](#normal-compilation---cli)
       - [Draft compilation - CLI](#draft-compilation---cli)
       - [Normal compilation - TeXShop](#normal-compilation---texshop)
       - [Draft compilation - TeXShop](#draft-compilation---texshop)
-  * [Continuous integration](#continuous-integration)
-  * [Formatting and style guidelines](#formatting-and-style-guidelines)
-    + [Questions regarding formatting](#questions-regarding-formatting)
-  * [Useful links](#useful-links)
+  - [Continuous integration](#continuous-integration)
+  - [Formatting and style guidelines](#formatting-and-style-guidelines)
+    - [Questions regarding formatting](#questions-regarding-formatting)
+  - [Badges](#badges)
+  - [Useful links](#useful-links)
 
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
-
+[_Table of contents generated with markdown-toc_](http://ecotrust-canada.github.io/markdown-toc/)
 
 ## General information
 
 This thesis uses the memoir document class, based off the template from [here](https://www.overleaf.com/latex/templates/university-of-bristol-thesis-template/kzqrfvyxxcdm). It has been designed to conform with the thesis guidelines from the University of Bristol [here](http://www.bristol.ac.uk/academic-quality/pg/pgrcode/annex4/). More information on the technical details can be found below. External helpful documents regarding LaTeX, thesis writing (Bristol-specific and general), etc. can be found in [helpful_docs/](helpful_docs/) or [Useful links](#useful-links).
+
+### Structure
+
+The master TeX file to compile is [thesismain.tex](./thesismain.tex). In here, all of the required packages are defined and the structure of the document is laid out. The [frontmatter/](./frontmatter/) directory contains the tex files for the title, abstract, declaration, and dedication. The chapters themselves are contained within their own subdirectory in [chapters/](./chapters/). The [backmatter/](./backmatter/) directory contains the bibliography and glossary files. Then, additional user-defined macros are mostly consolidated in [macros.tex](macros.tex).
 
 ## Compiling the document
 
@@ -114,7 +119,7 @@ pdflatex -synctex=1 -interaction=nonstopmode thesismain.tex
 If you're using `bibtex` as a backend, just replace `biber` with `bibtex`. Also, if you're not using a glossary, you should be able to compile everything in one line with something like:
 
 ```sh
-latexmk -synctex=1 -interaction=nonstopmode thesismain.tex
+latexmk -synctex=1 -interaction=nonstopmode -pdf thesismain.tex
 ```
 
 #### Draft compilation - CLI
@@ -143,16 +148,16 @@ I've written a CI pipeline utilising Travis to compile the document. This includ
 
 If one wishes to implement a similar pipeline, those instructions should be checked first. On every push, the pipeline is run: a basic TeX Live distro is installed along with all the required packages, the commands from [Normal compilation - CLI](#normal-compilation---cli) and [Draft compilation - CLI](#draft-compilation---cli) are run to create the pdfs, and finally the word count is estimated by the `texcount` package (where I just pass the chapter tex files).
 
-I can see whether the documents compile successfully by it passing or failing. When a new tag is created, the output files mentioned above are uploaded to the "assets" drop down menu for the release/tag to accompany the default source code archives. The badges on the homepage of the repo also contain download links to the latest versions of each file.
+I can see whether the documents compile successfully or not by the pipeline passing or failing. When a new tag is created, the output files mentioned above are uploaded to the **assets** drop down menu for the release/tag to accompany the default source code archives. The badges on the homepage of the repo also contain download links to the latest versions of each file.
 
 Note that the configuration of this CI is fairly specific to the implementation of my thesis. These are:
 
 - Adding commands to the config file to install `garamondx`, and to generate glossaries
 - Creating the draft pdf, which requires passing the `draft` option specifically to the `memoir` class. Different document classes may require a different implementation to create a draft version
-- Adding a GitHub token in the `deploy` stage of the config file. This is done to authenticate the upload of files when a new tag is made.
+- Adding a GitHub token in the `deploy` stage of the config file. This is done to authenticate the upload of files when a new tag is made
   - The variable `GITHUB_CI_TOKEN` is a secure variable specific to me (Eshwen), so must be generated individually for a user to make use of the feature. More information is linked about [deployment](https://docs.travis-ci.com/user/deployment) and [GitHub tokens](https://github.com/settings/tokens)
 - The package `texliveonfly` is used to install the packages required for compiling the document. But it doesn't always seem to install the dependencies. So I've had to add some packages to [texlive/texlive_packages](./texlive/texlive_packages) through trial-and-error by checking the logs from failed builds. Using new packages in the document therefore carries this small risk of failing the pipeline. This can be easily debugged, however
-- Because of some of the design choices in the thesis (e.g., the `garamondx` font, use of a glossary), the TexLive version of the pipeline was necessary. If one is using more conventional implementations, there are several alternative instructions at <https://github.com/PHPirates/travis-ci-latex-pdf> that might be easier to carry out
+- Because of some of the design choices in the thesis (e.g., the `garamondx` font, use of a glossary), the Tex Live version of the pipeline was necessary. If one is using more conventional implementations, there are several alternative instructions at <https://github.com/PHPirates/travis-ci-latex-pdf> that might be easier to carry out
 
 ## Formatting and style guidelines
 
@@ -167,13 +172,13 @@ The following are some notes on formatting guidelines and style, just to remain 
 - For references, cite _before_ any punctuation (such as a full stop)
   - For footnotes on the other hand, the reference should come _after_ punctuation
 - When explicitly referring to a reference with "Ref.", use `\citenum{}` instead of `\cite{}` so that the number isn't wrapped in square brackets
-  - The `\citenum` command isn't available natively in `biblatex`. I've written a re-implementation just after the package is imported in [thesismain.tex](./thesismain.tex), but it can sometimes add an erroneous space after it before subsequent puncuation (e.g., `Ref. 42 )` instead of `Ref. 42)`). So I just need to watch out for that
+  - The `\citenum` command isn't available natively in `biblatex`. I've written a re-implementation just after the package is imported in [thesismain.tex](./thesismain.tex), but it can sometimes add an erroneous space after it before subsequent puncuation, e.g., `Ref. 42 )` instead of `Ref. 42)`. So I just need to watch out for that
 - When declaring an equation environment, leave at most a single blank line between the text preceding and succeeding the equation. Otherwise, asymmetric vertical space before or after the equation may be left
 - For quotation marks, open the quote with a double backtick ` `` `. Close with two single quotes `''` so that the style of the opening and closing quotation marks match
 - When to use hyphens, en-dashes and em-dashes: <https://www.chicagomanualofstyle.org/qanda/data/faq/topics/HyphensEnDashesEmDashes/faq0002.html>
 - Where appropriate, use small caps to refer to software programs. If the software is an acronym, use lowercase letters (e.g., "CMSSW" would be `\textsc{cmssw}`)
 - When introducing new, lesser-known scientific terms or definitions, I can do so in italics, e.g., `\emph{pileup}`
-  - If, on the other hand, it is more of a colloquialism or something specific to the experiment (especially if it's a word that's used in everyday language) wrap it in quotation marks, e.g., ``` ``barrel'' ```
+  - If, on the other hand, it is more of a colloquialism or something specific to the experiment (especially if it's a word that's used in everyday language) wrap it in quotation marks, e.g., ``` ``barrel''```
   - Italics are still fine to use for emphasis, but use them sparingly as it should, in most cases, be obvious from the syntax
 - More formatting/stylistic guidelines can be found in <https://zenodo.org/record/3228336> ([local copy](helpful_docs/thesis-writing-gotchas.pdf))
 
@@ -183,6 +188,10 @@ The following are some notes on formatting guidelines and style, just to remain 
 - Can I use different colours for different links (from hyperref package), e.g., urls, references, etc.? Or should it all be black/more muted colours?
 - I'm not sure of the best way to format the journal component of a bibliography entry, i.e., whether the entire journal name should be given or just the ISO4 abbreviation
 - Should I use abbreviations or the actual words when referencing items within the thesis, i.e., "Chpt." or "Chapter", "Fig." or "Figure", "Tab." or "Table"?
+
+## Badges
+
+Badges are pretty useful to highlight the important aspects of a repo to any potential forker/contributor. The build status badge is from Travis, linked to my CI pipeline. All of the others are from Shields ([webpage](https://shields.io/), [repo](https://github.com/badges/shields)). They are free to use, but obviously the badges are tied to the original fork of the repository. So to continue using them in your own fork, you can generate them yourself with these as inspiration.
 
 ## Useful links
 

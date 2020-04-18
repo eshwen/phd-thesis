@@ -165,32 +165,38 @@ Note that the configuration of this CI is fairly specific to the implementation 
 
 The following are some notes on formatting guidelines and style, just to remain consistent throughout the document and writing process:
 
-- To add a shorter caption for a figure/table in the List of Figures/Tables, add it inside square brackets before the main one (i.e., `\caption[Short caption]{Full caption}`)
-  - Avoid a full stop at the end of a short caption since it looks ugly in the LoF/T, and omit references/citations from short captions for the same reason
-- For the text that appears in reference to items in the thesis' Table of Contents (short captions or the regular caption if a short one isn't used, chapters, sections, subsections, etc.), try to avoid referencing glossary and acronym terms (instead just write the normal words: `CMS` instead of `\acrshort{cms}`). Otherwise, the internal links generated can take take a user to that definition in the glossary/acronym page if they accidentally click the referenced term
-- Use a tilde `~` instead of a space between words and their references to prevent line breaks separating them. This includes both citations and cross-references
-  - Between a number and its unit, I should use `\,` for a thin space (i.e., separation smaller than a traditional space)
-- For when to write numbers in words or numerals, see <https://www.scribbr.com/academic-writing/numbers/> for help
-- For references, cite _before_ any punctuation (such as a full stop)
+- Internal links/cross-references:
+  - For the text that appears in reference to items in the thesis' Table of Contents (short captions or the regular caption if a short one isn't used, chapters, sections, subsections, etc.), try to avoid referencing glossary and acronym terms (instead just write the normal words: `CMS` instead of `\acrshort{cms}`). Otherwise, the internal links generated can take take a user to that definition in the glossary/acronym page if they accidentally click the referenced term
+  - Use abbreviations instead of the actual words when cross referencing, i.e., Chpt./Fig./Tab. instead of Chapter/Figure/Table
+- Punctuation:
+  - For references, cite _before_ any punctuation (such as a full stop)
   - For footnotes on the other hand, the reference should come _after_ punctuation
-- When explicitly referring to a reference with "Ref.", use `\citenum{}` instead of `\cite{}` so that the number isn't wrapped in square brackets
-  - The `\citenum` command isn't available natively in `biblatex`. I've written a re-implementation just after the package is imported in [thesismain.tex](./thesismain.tex), but it can sometimes add an erroneous space after it before subsequent puncuation, e.g., `Ref. 42 )` instead of `Ref. 42)`. So I just need to watch out for that
-- When declaring an equation environment, leave at most a single blank line between the text preceding and succeeding the equation. Otherwise, asymmetric vertical space before or after the equation may be left
-- For quotation marks, open the quote with a double backtick ` `` `. Close with two single quotes `''` so that the style of the opening and closing quotation marks match
-- When to use hyphens, en-dashes and em-dashes: <https://www.chicagomanualofstyle.org/qanda/data/faq/topics/HyphensEnDashesEmDashes/faq0002.html>
-- Where appropriate, use small caps to refer to software programs. If the software is an acronym, use lowercase letters (e.g., "CMSSW" would be `\textsc{cmssw}`)
-- When introducing new, lesser-known scientific terms or definitions, I can do so in italics, e.g., `\emph{pileup}`
-  - If, on the other hand, it is more of a colloquialism or something specific to the experiment (especially if it's a word that's used in everyday language) wrap it in quotation marks, e.g., ``` ``barrel''```
-  - Italics are still fine to use for emphasis, but use them sparingly as it should, in most cases, be obvious from the syntax
-- When displaying references in the bibliography and using initials for the authors' first names, collaborations may also be rendered with initials, i.e., `C. Collaboration` instead of `CMS Collaboration`. To fix this, just wrap the author name in double curly braces instead of quotes or single braces, i.e., `author = {{CMS Collaboration}}`.
+  - For quotation marks, open the quote with a double backtick ` `` `. Close with two single quotes `''` so that the style of the opening and closing quotation marks match
+  - When to use hyphens, en-dashes and em-dashes: <https://www.chicagomanualofstyle.org/qanda/data/faq/topics/HyphensEnDashesEmDashes/faq0002.html>
+- Spacing:
+  - When declaring an equation environment, leave at most a single blank line between the text preceding and succeeding the equation. Otherwise, asymmetric vertical space before or after the equation may be left
+  - Use a tilde `~` instead of a space between words and their references to prevent line breaks separating them. This includes both citations and cross-references
+  - Between a number and its unit, I should use `\,` for a thin space (i.e., separation smaller than a traditional space)
+- Bibliography:
+  - When displaying in the bibliography and using initials for the authors' first names, collaborations may also be rendered with initials, i.e., "C. Collaboration" instead of "CMS Collaboration". To fix this, just wrap the author name in double curly braces instead of quotes or single braces, i.e., `author = {{CMS Collaboration}}`
+  - Use ISO4 abbreviations for journals instead of their full titles
+  - For journals with multiple series, e.g., Physics Letters A and Physics Letters B, make sure the series is in the `journal` rather than the `volume` field
+  - When explicitly referring to a reference with "Ref.", use `\citenum{}` instead of `\cite{}` so that the number isn't wrapped in square brackets
+    - The `\citenum` command isn't available natively in `biblatex`. I've written a re-implementation just after the package is imported in [thesismain.tex](./thesismain.tex), but it can sometimes add an erroneous space after it before subsequent puncuation, e.g., `Ref. 42 )` instead of `Ref. 42)`. So I just need to watch out for that
+- Misc. style tips:
+  - For when to write numbers in words or numerals, see <https://www.scribbr.com/academic-writing/numbers/> for help
+  - To add a shorter caption for a figure/table in the List of Figures/Tables, add it inside square brackets before the main one (i.e., `\caption[Short caption]{Full caption}`)
+    - Avoid a full stop at the end of a short caption since it looks ugly in the LoF/T, and omit references/citations from short captions for the same reason
+  - Where appropriate, use small caps to refer to software programs. If the software is an acronym, use lowercase letters (e.g., "CMSSW" would be `\textsc{cmssw}`)
+  - When introducing new, lesser-known scientific terms or definitions, I can do so in italics, e.g., `\emph{pileup}`
+    - If, on the other hand, it is more of a colloquialism or something specific to the experiment (especially if it's a word that's used in everyday language) wrap it in quotation marks, e.g., ``` ``barrel''```
+    - Italics are still fine to use for emphasis, but use them sparingly as it should, in most cases, be obvious from the syntax
 - More formatting/stylistic guidelines can be found in <https://zenodo.org/record/3228336> ([local copy](helpful_docs/thesis-writing-gotchas.pdf))
 
 ### Questions regarding formatting
 
 - What should the title of the thesis be? "Dark matter searches at CMS at sqrt(s) = 13 TeV" sounds a bit boring and generic. And should there be a subtitle?
 - Can I use different colours for different links (from hyperref package), e.g., urls, references, etc.? Or should it all be black/more muted colours?
-- I'm not sure of the best way to format the journal component of a bibliography entry, i.e., whether the entire journal name should be given or just the ISO4 abbreviation
-- Should I use abbreviations or the actual words when referencing items within the thesis, i.e., "Chpt." or "Chapter", "Fig." or "Figure", "Tab." or "Table"?
 
 ## Badges
 
@@ -206,6 +212,6 @@ Badges are pretty useful to highlight the important aspects of a repo to any pot
 - Glossary info: <https://en.wikibooks.org/wiki/LaTeX/Glossary>
 - Previous Bristol CMS theses for reference: [Lana's](https://github.com/Lana-B/Thesis), [Alex Titterton's](https://www.dropbox.com/sh/a859z9b7jlfmum4/AAC2CjjkLGmbeSIp5H5gQbEIa?dl=0)
 - The Comprehensive LaTeX Symbol List: <https://www.ctan.org/pkg/comprehensive> ([local copy](helpful_docs/symbols-a4.pdf))
-- Symbol list for particle names: [`hepnicenames`](http://mirrors.ctan.org/macros/latex/contrib/hepnames/hepnicenames-rm.pdf) ([local copy](helpful_docs/hepnicenames-rm.pdf)), [`heppennames`](http://mirrors.ctan.org/macros/latex/contrib/hepnames/heppennames-rm.pdf) ([local copy](helpful_docs/heppennames-rm.pdf)), [`ptdr-definitions` (additional macros for CMS publications)](ptdr-definitions.sty)
+- Symbol list for particle names: [`hepnicenames`](http://mirrors.ctan.org/macros/latex/contrib/hepnames/hepnicenames-rm.pdf) ([local copy](helpful_docs/hepnicenames-rm.pdf)), [`heppennames`](http://mirrors.ctan.org/macros/latex/contrib/hepnames/heppennames-rm.pdf) ([local copy](helpful_docs/heppennames-rm.pdf)), [`ptdr-definitions`](ptdr-definitions.sty) (additional macros for CMS publications)
 - Generating a table of contents automatically for a GitHub README: <https://ecotrust-canada.github.io/markdown-toc/>
 - Previewing a GitHub README: <https://jbt.github.io/markdown-editor/>

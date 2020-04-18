@@ -77,6 +77,8 @@ Note that New TX Math is not used to render mathematical symbols, The convention
 
 A glossary and list of acronyms has been added, since HEP is full of acronyms, initialisms and nomenclature. As such, the compilation requires an additional `makeglossaries` step after the bibtex/biber stage.
 
+If the glossary fails to render properly between compilations, delete files with extensions `.acn`, `.acr`, `.glo`, and `.gls`, then recompile.
+
 ### HEP particles
 
 HEP particles are typeset using the `hepnames` package. With the `italic` option, they are rendered in italics. The default is upright. To change the style, just edit the line that imports the package in [thesismain.tex](./thesismain.tex).
@@ -180,6 +182,7 @@ The following are some notes on formatting guidelines and style, just to remain 
 - When introducing new, lesser-known scientific terms or definitions, I can do so in italics, e.g., `\emph{pileup}`
   - If, on the other hand, it is more of a colloquialism or something specific to the experiment (especially if it's a word that's used in everyday language) wrap it in quotation marks, e.g., ``` ``barrel''```
   - Italics are still fine to use for emphasis, but use them sparingly as it should, in most cases, be obvious from the syntax
+- When displaying references in the bibliography and using initials for the authors' first names, collaborations may also be rendered with initials, i.e., `C. Collaboration` instead of `CMS Collaboration`. To fix this, just wrap the author name in double curly braces instead of quotes or single braces, i.e., `author = {{CMS Collaboration}}`.
 - More formatting/stylistic guidelines can be found in <https://zenodo.org/record/3228336> ([local copy](helpful_docs/thesis-writing-gotchas.pdf))
 
 ### Questions regarding formatting

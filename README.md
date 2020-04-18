@@ -181,6 +181,9 @@ The following are some notes on formatting guidelines and style, just to remain 
   - When displaying in the bibliography and using initials for the authors' first names, collaborations may also be rendered with initials, i.e., "C. Collaboration" instead of "CMS Collaboration". To fix this, just wrap the author name in double curly braces instead of quotes or single braces, i.e., `author = {{CMS Collaboration}}`
   - Use ISO4 abbreviations for journals instead of their full titles
   - For journals with multiple series, e.g., Physics Letters A and Physics Letters B, make sure the series is in the `journal` rather than the `volume` field
+  - Remove `issn` and `isbn` fields for entries that are not books
+  - Try to typeset math consistently but without the use of macros, e.g., `$\sqrt{s} = \text{13\,TeV}$`
+  - For DOIs, remove the preceding `https://doi.org/` in `doi` fields
   - When explicitly referring to a reference with "Ref.", use `\citenum{}` instead of `\cite{}` so that the number isn't wrapped in square brackets
     - The `\citenum` command isn't available natively in `biblatex`. I've written a re-implementation just after the package is imported in [thesismain.tex](./thesismain.tex), but it can sometimes add an erroneous space after it before subsequent puncuation, e.g., `Ref. 42 )` instead of `Ref. 42)`. So I just need to watch out for that
 - Misc. style tips:

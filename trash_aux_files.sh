@@ -5,8 +5,8 @@
 this_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 for file in ${this_dir}/thesismain.*; do
     if [[ $file == "${this_dir}/thesismain.tex" ]] || [[ $file == "${this_dir}/thesismain.pdf" ]]; then
-	continue
+	    continue
     else
-	rm $file
+	    rm $file
     fi
 done

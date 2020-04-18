@@ -5,7 +5,7 @@
 \newcommand{\initial}[1]{%
 	\lettrine[lines=3,lhang=0.33,nindent=0em]{
 		\color{gray}
-     		{\textsc{#1}}}{}}
+            {\textsc{#1}}}{}}
 
 % Generic
 \renewcommand{\_}{\texttt{\char`_}}
@@ -20,10 +20,10 @@
 \newcommand{\PVec}{\HepParticle{V}{}{}\xspace} % couldn't find command for generic V boson so created one
 
 % Rationale for when to use \text{} and when to use \mathrm{} in physics symbols:
-%     In math mode, wrapping something \text{} will render it in the main document font (i.e., garamond from the 'garamondx' package).
-%     In math mode, wrapping something in \mathrm{} will render it upright in the math font (i.e., the font from the 'amsfonts' package).
-%     \text{} should be used for things like control regions where the text from the macro is supposed to flow into the main text. Then it looks natural and consistent
-%     \mathrm{} should be used for subscripts and superscripts in symbols so it looks natural and consistent in that context. Even for sub/superscripts longer than one letter, e.g., the "min" in biased delta phi, it looks more natural if the font matches the rest of the symbol and equation.
+%   - In math mode, wrapping something \text{} will render it in the main document font (i.e., garamond from the 'garamondx' package).
+%   - In math mode, wrapping something in \mathrm{} will render it upright in the math font (i.e., the font from the 'amsfonts' package).
+%   - \text{} should be used for things like control regions where the text from the macro is supposed to flow into the main text. Then it looks natural and consistent.
+%   - \mathrm{} should be used for subscripts and superscripts in symbols so it looks natural and consistent in that context. Even for sub/superscripts longer than one letter, e.g., the "min" in biased delta phi, it looks more natural if the font matches the rest of the symbol and equation.
 
 % Particles are typeset using the 'hepnames' package. If given the option 'italic', it will render the particles in italics. So if I want to change style, only need to edit the line that imports the package, not the macros.
 

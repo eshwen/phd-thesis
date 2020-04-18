@@ -1,9 +1,5 @@
  %\title{University of Bristol Thesis Template}
 
-% In TeXShop, compile pdflatex, bibliography and glossary in one command by selecting "pdflatexmk" from the drop-down menu next to "Typeset".
-% If compilation with pdflatexmk fails, hit the "Trash Aux Files" button and recompile.
-% If the glossary or list of acronyms fails to render, delete files with extensions .acn, .acr, .glo, and .gls, then recompile with pdflatexmk.
-
 % ----------------------------------------
 \RequirePackage[l2tabu]{nag}        % Warns for incorrect (obsolete) LaTeX usage
 % ----------------------------------------
@@ -11,7 +7,7 @@
 % ----------------------------------------
 % File: memoirthesis.tex
 % Author: Victor Brena
-% Description: Contains the thesis template using memoir class, which is mainly based on book class but permits better control of  chapter styles for example. This template is an adaptation and modification of Oscar's.
+% Description: Contains the thesis template using memoir class, which is mainly based on book class but permits better control of chapter styles for example. This template is an adaptation and modification of Oscar's.
 % 
 % Memoir is a flexible class for typesetting poetry, fiction, non-fiction and mathematical works as books, reports, articles or manuscripts. CTAN repository is found at: http://www.ctan.org/tex-archive/macros/latex/contrib/memoir/
 %
@@ -76,12 +72,9 @@
 % ----------------------------------------
 
 % ----------------------------------------
-% Font with math support: New Century Schoolbook
-%\usepackage{fouriernc} % default font for template
-%\usepackage{courier} % this is the font I use in my lab book
-\usepackage[T1]{fontenc} % To encode the font (glyphs/characters as bits)
-\usepackage[utf8]{inputenc} % Needed to encode non-english characters directly for mac
-\usepackage{garamondx} % this is the font of the main text
+\usepackage[T1]{fontenc}                % To encode the font (glyphs/characters as bits)
+\usepackage[utf8]{inputenc}             % Needed to encode non-english characters directly for mac
+\usepackage{garamondx}                  % this is the font of the main text
 % ----------------------------------------
 
 % ----------------------------------------
@@ -89,7 +82,7 @@
 %
 % Text should be in double or 1.5 line spacing, and font size should be chosen to ensure clarity and legibility for the main text and for any quotations and footnotes. Margins should allow for eventual hard binding.
 %
-% Note: This is automatically set by memoir class. Nevertheless \OnehalfSpacing enables 1.5 line spacing but leaves single spaced for captions for instance. Double spacing can be achieved with \linespread{1.667} (value isn't 2 because of https://tex.stackexchange.com/questions/30073/why-is-the-linespread-factor-as-it-is)
+% Note: This is automatically set by memoir class. Nevertheless \OnehalfSpacing enables 1.5 line spacing but leaves single spaced for captions for instance. Double spacing can be achieved with \DoubleSpacing or \linespread{1.667} (value isn't 2 because of https://tex.stackexchange.com/questions/30073/why-is-the-linespread-factor-as-it-is)
 \OnehalfSpacing
 %
 % Sets numbering division level
@@ -163,7 +156,6 @@
 \usepackage{mathtools}                  % Loads the "amsmath" package, and contains other mathematical symbols and environments
 \usepackage{amssymb}                    % Loads the "amsfonts" package for proper rendering of math, and contains additional math symbols
 \usepackage{mathrsfs}                   % Even more math symbols
-\usepackage{layouts}                    % Layout diagrams
 \usepackage{graphicx}                   % Calls figure environment, i.e., starting figures with \includegraphics
 \usepackage{subcaption}                 % Allow use of subfigures
 \usepackage{longtable,rotating}         % Long tab environments including rotation
@@ -181,16 +173,13 @@
 % Create bibliography style similar to SIAM as it's not available in biblatex
 \renewcommand*{\newunitpunct}{\addcomma\space}
 \renewcommand*{\mkbibnamefamily}[1]{\textsc{#1}}
-
 \DeclareFieldFormat*{title}{\mkbibemph{#1}}
 \DeclareFieldFormat*{citetitle}{\mkbibemph{#1}}
 \DeclareFieldFormat{journaltitle}{#1}
-
 \renewbibmacro*{in:}{%
     \ifentrytype{article}
         {}
         {\printtext{\bibstring{in}\intitlepunct}}}
-
 \newbibmacro*{pubinstorg+location+date}[1]{%
     \printlist{#1}%
     \newunit
@@ -198,7 +187,6 @@
     \newunit
     \usebibmacro{date}%
     \newunit}
-
 \renewbibmacro*{publisher+location+date}{\usebibmacro{pubinstorg+location+date}{publisher}}
 \renewbibmacro*{institution+location+date}{\usebibmacro{pubinstorg+location+date}{institution}}
 \renewbibmacro*{organization+location+date}{\usebibmacro{pubinstorg+location+date}{organization}}
@@ -212,7 +200,7 @@
     {}
     {\usebibmacro{cite:dump}}
 
-\usepackage{xcolor}                     % Creates coloured text and background
+\usepackage[svgnames,dvipsnames]{xcolor}% Creates coloured text and backgrounds
 \usepackage[spanish,british]{babel}     % For languages characters and hyphenation
 \usepackage{csquotes}                   % Used in conjunction with babel to use quotes appropriate to language (biblatex throws warning if not used)
 \usepackage{enumerate}                  % For enumeration counter
@@ -220,7 +208,6 @@
 
 % Esh's extra packages from here
 \usepackage{physics}                    % for physics symbols, such as differential symbols
-\usepackage{cprotect}                   % so I can use \verb and other commands within captions
 \usepackage{bbold}                      % for mathematical symbols like the characters for special sets
 \usepackage[ampersand]{easylist}        % for bullet points and lists, etc. New entry starts with & character
 \newcommand{\easylistprops}{\ListProperties(Style*=-- , Style2*=$\bullet$ , Style3*=$\circ$ , Hang=true, FinalMark={)})} % Macro for list properties. FinalMark indicates the end of the list properties and must be used
@@ -231,16 +218,13 @@
 \usepackage{xfrac}                      % for nice-looking diagonal (a/b) fractions
 \usepackage{booktabs}                   % for table formatting macros. Other good formatting tips in the package manual
 
-\usepackage{array}                      % for more flexibility with tables
-\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}} % for text in table cells to be centred
-
 \usepackage{hyperref}                   % to hyperlink references, contents, etc. Change colours if required
 \hypersetup{
     colorlinks=true,
-    linkcolor=black,
+    linkcolor=black,                    % Colour of internal links (i.e., cross-references, glossary/acronym terms)
     filecolor=Fuchsia,
-    urlcolor=red,
-    citecolor=cyan,
+    urlcolor=Crimson,
+    citecolor=Cerulean,
 }
 \usepackage{memhfixc}                   % Must be used on memoir document class after hyperref
 % ----------------------------------------
@@ -255,8 +239,6 @@
 \usepackage[acronym,toc,nonumberlist]{glossaries}
 \makeglossaries
 \input{backmatter/glossary}
-% Create indexes for Table of Contents, List of Figures, List of Tables and Index
-\makeindex
 % ----------------------------------------
 
 % ----------------------------------------                            
@@ -341,8 +323,7 @@
 \import{chapters/conclusions/}{conclusions.tex}
 \clearemptydoublepage
 
-
-% And the appendix goes here
+% And the appendix/appendices go here
 \appendix
 \import{chapters/appendices/}{app0A.tex}
 \clearemptydoublepage
@@ -362,7 +343,5 @@
 \printglossary[type=\acronymtype]
 \clearemptydoublepage
 
-% Add index
-%\printindex
 
 \end{document}

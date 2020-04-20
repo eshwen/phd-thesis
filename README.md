@@ -17,6 +17,7 @@ Repository containing everything related to my thesis.
     - [Font](#font)
     - [Glossary](#glossary)
     - [HEP particles](#hep-particles)
+    - [Word count](#word-count)
     - [Actually compiling](#actually-compiling)
       - [Normal compilation - Visual Studio Code](#normal-compilation---visual-studio-code)
       - [Draft compilation - Visual Studio Code](#draft-compilation---visual-studio-code)
@@ -82,6 +83,16 @@ If the glossary fails to render properly between compilations, delete files with
 ### HEP particles
 
 HEP particles are typeset using the `hepnames` package. With the `italic` option, they are rendered in italics. The default is upright. To change the style, just edit the line that imports the package in [thesismain.tex](./thesismain.tex).
+
+### Word count
+
+A word count for the thesis can be estimated by using the `TeXcount` package. It should be installable like any other TeX/LaTeX package, but also has a website where you can manually download it: <https://app.uio.no/ifi/texcount/>. The following command can be run from the terminal (and is also run whenever my [continuous integration pipeline](#continuous-integration) is executed):
+
+```sh
+texcount -html -inc ./thesismain.tex > word_count.html
+```
+
+Spitting out a `word_count.html` file that can be viewed to get a rough idea of the thesis' footprint. The website above has more options for different metrics, and how to handle certain cases.
 
 ### Actually compiling
 

@@ -11,21 +11,20 @@ Repository containing everything related to my thesis.
 - [phd-thesis](#phd-thesis)
   - [Table of Contents](#table-of-contents)
   - [General information](#general-information)
-    - [Structure](#structure)
-  - [Compiling the document](#compiling-the-document)
-    - [Bibliography](#bibliography)
+  - [Structure and features](#structure-and-features)
     - [Font](#font)
+    - [Bibliography](#bibliography)
     - [Glossary](#glossary)
     - [HEP particles](#hep-particles)
     - [Word count](#word-count)
-    - [Actually compiling](#actually-compiling)
-      - [Normal compilation - Visual Studio Code](#normal-compilation---visual-studio-code)
-      - [Draft compilation - Visual Studio Code](#draft-compilation---visual-studio-code)
-      - [Normal compilation - CLI](#normal-compilation---cli)
-      - [Draft compilation - CLI](#draft-compilation---cli)
-      - [Normal compilation - TeXShop](#normal-compilation---texshop)
-      - [Draft compilation - TeXShop](#draft-compilation---texshop)
-  - [Continuous integration](#continuous-integration)
+    - [Continuous integration](#continuous-integration)
+  - [Compiling the document](#compiling-the-document)
+    - [Normal compilation - Visual Studio Code](#normal-compilation---visual-studio-code)
+    - [Draft compilation - Visual Studio Code](#draft-compilation---visual-studio-code)
+    - [Normal compilation - CLI](#normal-compilation---cli)
+    - [Draft compilation - CLI](#draft-compilation---cli)
+    - [Normal compilation - TeXShop](#normal-compilation---texshop)
+    - [Draft compilation - TeXShop](#draft-compilation---texshop)
   - [Formatting and style guidelines](#formatting-and-style-guidelines)
     - [Questions regarding formatting](#questions-regarding-formatting)
   - [Badges](#badges)
@@ -37,17 +36,9 @@ Repository containing everything related to my thesis.
 
 This thesis uses the memoir document class, based off the template from [here](https://www.overleaf.com/latex/templates/university-of-bristol-thesis-template/kzqrfvyxxcdm). It has been designed to conform with the thesis guidelines from the University of Bristol [here](http://www.bristol.ac.uk/academic-quality/pg/pgrcode/annex4/). More information on the technical details can be found below. External helpful documents regarding LaTeX, thesis writing (Bristol-specific and general), etc. can be found in [helpful_docs/](helpful_docs/) or [Useful links](#useful-links).
 
-### Structure
+## Structure and features
 
-The master TeX file to compile is [thesismain.tex](./thesismain.tex). In here, all of the required packages are defined and the structure of the document is laid out. The [frontmatter/](./frontmatter/) directory contains the tex files for the title, abstract, declaration, and dedication. The chapters themselves are contained within their own subdirectory in [chapters/](./chapters/). The [backmatter/](./backmatter/) directory contains the bibliography and glossary files. Then, additional user-defined macros are mostly consolidated in [macros.tex](macros.tex).
-
-## Compiling the document
-
-Disclaimer: I haven't tried compiling on Overleaf, only on my local MacTeX/TeX Live distributions. So your mileage may vary depending on your IDE/OS of choice.
-
-### Bibliography
-
-The BibTeX backend of my choice is `biber` with the `biblatex` package since it's much more modern that the `bibtex`/`natbib` combination. Therefore, it should be relatively future-proof. As of the bibliography style, I am kind of attached to SIAM, but that is only natively part of `natbib`. So I've added a minimal reimplementation of it. A custom command to replicate `natbib`'s `\citenum` command has also been added. To remove them and use a conventional style, one only needs to remove the custom commands below the `\usepackage[...]{biblatex}`, and add the desired style in the `biblatex` package options.
+The master TeX file to compile is [thesismain.tex](./thesismain.tex). In here, all of the required packages are imported and the structure of the document is laid out. The [frontmatter/](./frontmatter/) directory contains the tex files for the preliminary pages - title, abstract, declaration, and dedication. The chapters themselves are contained within their own subdirectory in [chapters/](./chapters/). The [backmatter/](./backmatter/) directory contains the bibliography and glossary files. Then, additional user-defined macros are mostly consolidated in [macros.tex](macros.tex).
 
 ### Font
 
@@ -74,6 +65,10 @@ updmap-user
 
 Note that New TX Math is not used to render mathematical symbols, The conventional AMS Math with its associated packages are instead used.
 
+### Bibliography
+
+The BibTeX backend of my choice is `biber` with the `biblatex` package since it's much more modern that the `bibtex`/`natbib` combination. Therefore, it should be relatively future-proof. As of the bibliography style, I am kind of attached to SIAM, but that is only natively part of `natbib`. So I've added a minimal reimplementation of it. A custom command to replicate `natbib`'s `\citenum` command has also been added. To remove them and use a conventional style, one only needs to remove the custom commands below the `\usepackage[...]{biblatex}`, and add the desired style in the `biblatex` package options.
+
 ### Glossary
 
 A glossary and list of acronyms has been added, since HEP is full of acronyms, initialisms and nomenclature. As such, the compilation requires an additional `makeglossaries` step after the bibtex/biber stage.
@@ -94,7 +89,26 @@ texcount -html -inc ./thesismain.tex > word_count.html
 
 Spitting out a `word_count.html` file that can be viewed to get a rough idea of the thesis' footprint. The website above has more options for different metrics, and how to handle certain cases.
 
-### Actually compiling
+### Continuous integration
+
+I've written a CI pipeline utilising Travis to compile the document. This includes a normal pdf, draft-mode pdf, and a rough word count. The configuration file [.travis.yml](./.travis.yml) and Tex Live install files from [texlive/](./texlive/) are based on <https://github.com/PHPirates/travis-ci-latex-pdf>, with some modifications by myself.
+
+If one wishes to implement a similar pipeline, those instructions should be checked first. On every push, the pipeline is run: a basic TeX Live distro is installed along with all the required packages, the commands from [Normal compilation - CLI](#normal-compilation---cli) and [Draft compilation - CLI](#draft-compilation---cli) are run to create the pdfs, and finally the word count is estimated by the `texcount` package (where I just pass the chapter tex files).
+
+I can see whether the documents compile successfully or not by the pipeline passing or failing. When a new tag is created, the output files mentioned above are uploaded to the **Assets** drop down menu for the release/tag to accompany the default source code archives. The badges on the homepage of the repo also contain download links to the latest versions of each file.
+
+Note that the configuration of this CI is fairly specific to the implementation of my thesis, and not all features may work if the repository is private. These are:
+
+- Adding commands to the config file to install `garamondx`, and to generate glossaries
+- Creating the draft pdf, which requires passing the `draft` option specifically to the `memoir` class. Different document classes may require a different implementation to create a draft version
+- Adding a GitHub token in the `deploy` stage of the config file. This is done to authenticate the upload of files when a new tag is made
+  - The variable `GITHUB_CI_TOKEN` is a secure variable specific to me (Eshwen), so must be generated individually for a user to make use of the feature. More information is linked about [deployment](https://docs.travis-ci.com/user/deployment) and [GitHub tokens](https://github.com/settings/tokens)
+- The package `texliveonfly` is used to install the packages required for compiling the document. But it doesn't always seem to install the dependencies. So I've had to add some packages to [texlive/texlive_packages](./texlive/texlive_packages) through trial-and-error by checking the logs from failed builds. Using new packages in the document therefore carries this small risk of failing the pipeline. This can be easily debugged, however
+- Because of some of the design choices in the thesis (e.g., the `garamondx` font, use of a glossary), the Tex Live version of the pipeline was necessary. If one is using more conventional implementations, there are several alternative instructions at <https://github.com/PHPirates/travis-ci-latex-pdf> that might be easier to carry out
+
+## Compiling the document
+
+**Disclaimer**: I haven't tried compiling on Overleaf, only on my local MacTeX/TeX Live distributions. So your mileage may vary depending on your IDE/OS of choice.
 
 The master TeX file to compile is [thesismain.tex](./thesismain.tex). There are essentially two types of document that can be produced: the "normal" pdf, and a draft version (e.g., for circulation to colleagues/supervisor). The draft version triggers the `\ifdraftdoc` block in [thesismain.tex](./thesismain.tex), and currently includes the following:
 
@@ -107,17 +121,17 @@ If switching between these two types, it's probably safest to delete the auxilia
 
 Documented below are some of the options that I've personally used to compile the document (in the order I would recommend). Note that your mileage may vary as per the disclaimer above.
 
-#### Normal compilation - Visual Studio Code
+### Normal compilation - Visual Studio Code
 
 To compile in Visual Studio Code, install the **LaTeX Workshop** extension. The build commands are similar to TeXShop, but can be customised, e.g., to get the glossary to compile properly. Copy the snippet from [vscode_settings.json](vscode_settings.json) into your Visual Studio Code's `settings.json`. After reloading the program, just go to the TeX sidebar -> Build LaTeX project -> Recipe: Fully compile with glossary.
 
-#### Draft compilation - Visual Studio Code
+### Draft compilation - Visual Studio Code
 
 If you don't mind editing [thesismain.tex](./thesismain.tex), add the `draft` option in the `\documentclass[...]{memoir}` line in [thesismain.tex](./thesismain.tex), then compile normally as above.
 
 If you do not wish to edit [thesismain.tex](./thesismain.tex) itself, you can just run the Visual Studio Code recipe "Fully compile draft with glossary".
 
-#### Normal compilation - CLI
+### Normal compilation - CLI
 
 In the terminal, the sequence goes
 
@@ -135,7 +149,7 @@ If you're using `bibtex` as a backend, just replace `biber` with `bibtex`. Also,
 latexmk -synctex=1 -interaction=nonstopmode -pdf thesismain.tex
 ```
 
-#### Draft compilation - CLI
+### Draft compilation - CLI
 
 ```sh
 pdflatex -synctex=1 -interaction=nonstopmode "\PassOptionsToClass{draft}{memoir}\input{thesismain}"
@@ -147,30 +161,13 @@ pdflatex -synctex=1 -interaction=nonstopmode "\PassOptionsToClass{draft}{memoir}
 
 Depending on the document class used, you may be able to change the `pdflatex` lines to `pdflatex -synctex=1 -interaction=nonstopmode -draftmode thesismain.tex`.
 
-#### Normal compilation - TeXShop
+### Normal compilation - TeXShop
 
 To compile in TeXShop on Mac, select **pdflatexmk** from the drop-down menu next to **Typeset**, then hit the **Typeset** button. This can misbehave when new references or glossary terms are added, possibly due to conflicts or file changes when the hyperlinks are applied. If this is the case, run [trash_aux_files.sh](./trash_aux_files.sh) to wipe all of the auxiliary files and recompile.
 
-#### Draft compilation - TeXShop
+### Draft compilation - TeXShop
 
 Add the `draft` option in the `\documentclass[...]{memoir}` line in [thesismain.tex](./thesismain.tex), then compile as above.
-
-## Continuous integration
-
-I've written a CI pipeline utilising Travis to compile the document. This includes a normal pdf, draft-mode pdf, and a rough word count. The configuration file [.travis.yml](./.travis.yml) and Tex Live install files from [texlive/](./texlive/) are based on <https://github.com/PHPirates/travis-ci-latex-pdf>, with some modifications by myself.
-
-If one wishes to implement a similar pipeline, those instructions should be checked first. On every push, the pipeline is run: a basic TeX Live distro is installed along with all the required packages, the commands from [Normal compilation - CLI](#normal-compilation---cli) and [Draft compilation - CLI](#draft-compilation---cli) are run to create the pdfs, and finally the word count is estimated by the `texcount` package (where I just pass the chapter tex files).
-
-I can see whether the documents compile successfully or not by the pipeline passing or failing. When a new tag is created, the output files mentioned above are uploaded to the **assets** drop down menu for the release/tag to accompany the default source code archives. The badges on the homepage of the repo also contain download links to the latest versions of each file.
-
-Note that the configuration of this CI is fairly specific to the implementation of my thesis. These are:
-
-- Adding commands to the config file to install `garamondx`, and to generate glossaries
-- Creating the draft pdf, which requires passing the `draft` option specifically to the `memoir` class. Different document classes may require a different implementation to create a draft version
-- Adding a GitHub token in the `deploy` stage of the config file. This is done to authenticate the upload of files when a new tag is made
-  - The variable `GITHUB_CI_TOKEN` is a secure variable specific to me (Eshwen), so must be generated individually for a user to make use of the feature. More information is linked about [deployment](https://docs.travis-ci.com/user/deployment) and [GitHub tokens](https://github.com/settings/tokens)
-- The package `texliveonfly` is used to install the packages required for compiling the document. But it doesn't always seem to install the dependencies. So I've had to add some packages to [texlive/texlive_packages](./texlive/texlive_packages) through trial-and-error by checking the logs from failed builds. Using new packages in the document therefore carries this small risk of failing the pipeline. This can be easily debugged, however
-- Because of some of the design choices in the thesis (e.g., the `garamondx` font, use of a glossary), the Tex Live version of the pipeline was necessary. If one is using more conventional implementations, there are several alternative instructions at <https://github.com/PHPirates/travis-ci-latex-pdf> that might be easier to carry out
 
 ## Formatting and style guidelines
 
@@ -214,7 +211,7 @@ The following are some notes on formatting guidelines and style, just to remain 
 
 ## Badges
 
-Badges are pretty useful to highlight the important aspects of a repo to any potential forker/contributor. The build status badge is from Travis, linked to my CI pipeline. All of the others are from Shields ([webpage](https://shields.io/), [repo](https://github.com/badges/shields)). They are free to use, but obviously the badges are tied to the original fork of the repository. So to continue using them in your own fork, you can generate them yourself with these as inspiration.
+Badges are pretty useful to highlight the important aspects of a repo to any potential forker/contributor. The build status badge is from [Travis](https://travis-ci.com/), linked to my CI pipeline. All of the others are from Shields ([webpage](https://shields.io/), [repo](https://github.com/badges/shields)). They are free to use, but obviously the badges are tied to the original fork of the repository. So to continue using them in your own fork, you can generate them yourself with these as inspiration. Note that not every badge may work if the repository is private.
 
 ## Useful links
 

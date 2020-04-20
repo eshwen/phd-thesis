@@ -50,7 +50,7 @@ The BibTeX backend of my choice is `biber` with the `biblatex` package since it'
 
 ### Font
 
-The font of my choice is "Garamond Expert with New TX Math" for the main text (i.e., with the package `garamondx`). If compiling the document on Overleaf, this should already be installed. However, it is not bundled with TeX Live due to licensing. To circumvent this, one can follow the instructions at <http://tug.org/fonts/getnonfreefonts/>:
+The font of my choice is "Garamond Expert with New TX Math" for the main text (i.e., with the package `garamondx` - see [here](helpful_docs/garamondx-doc.pdf)). If compiling the document on Overleaf, this should already be installed. However, it is not bundled with TeX Live due to licensing. To circumvent this, one can follow the instructions at <http://tug.org/fonts/getnonfreefonts/>:
 
 ```bash
 curl --remote-name https://www.tug.org/fonts/getnonfreefonts/install-getnonfreefonts

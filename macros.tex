@@ -17,18 +17,19 @@
 % Electron volt units
 % Re-defining ptdr symbols for better spacing, consistency and simplicity with definitions, expanding list of symbols, using math mode ^2 for consistency with other symbols
 \newcommand{\eV}{\text{e\kern-0.15ex V}\xspace}
-\newcommand{\eVnxs}{\text{e\kern-0.15ex V}} % no trailing xspace (e.g., for Gev/c or GeV/c^2)
+\newcommand{\eVnxs}{\text{e\kern-0.15ex V}}  % no trailing xspace (e.g., for Gev/c or GeV/c^2)
 \renewcommand{\keV}{\ensuremath{\,\text{k\eV}}\xspace}
-\newcommand{\keVns}{\ensuremath{\text{k\eV}}\xspace} % no leading thinspace
+\newcommand{\keVns}{\ensuremath{\text{k\eV}}\xspace}  % no leading thinspace
 \renewcommand{\MeV}{\ensuremath{\,\text{M\eV}}\xspace}
-\renewcommand{\MeVns}{\ensuremath{\text{M\eV}}\xspace} % no leading thinspace
+\renewcommand{\MeVns}{\ensuremath{\text{M\eV}}\xspace}  % no leading thinspace
 \renewcommand{\GeV}{\ensuremath{\,\text{G\eV}}\xspace}
-\renewcommand{\GeVns}{\ensuremath{\text{G\eV}}\xspace} % no leading thinspace
+\renewcommand{\GeVns}{\ensuremath{\text{G\eV}}\xspace}  % no leading thinspace
 \renewcommand{\gev}{\GeV}
-\renewcommand{\TeV}{\ensuremath{\,\text{T\kern-0.2ex\eV}}\xspace}
-\renewcommand{\TeVns}{\ensuremath{\text{T\kern-0.2ex\eV}}\xspace} % no leading thinspace
+\newcommand{\Tkern}{\text{T\kern-0.2ex}}  % reducing space between the T and eV in TeV
+\renewcommand{\TeV}{\ensuremath{\,\text{\Tkern\eV}}\xspace}
+\renewcommand{\TeVns}{\ensuremath{\text{\Tkern\eV}}\xspace}  % no leading thinspace
 \renewcommand{\PeV}{\ensuremath{\,\text{P\eV}}\xspace}
-\newcommand{\PeVns}{\ensuremath{\text{P\eV}}\xspace} % no leading thinspace
+\newcommand{\PeVns}{\ensuremath{\text{P\eV}}\xspace}  % no leading thinspace
 
 \newcommand{\overc}{\ensuremath{\text{\hspace{-0.16em}/\hspace{-0.08em}}c}}
 \newcommand{\overcc}{\ensuremath{\overc^2}}
@@ -37,13 +38,13 @@
 \renewcommand{\keVc}{\ensuremath{\,\text{k\eVnxs\overc}}\xspace}
 \renewcommand{\MeVc}{\ensuremath{\,\text{M\eVnxs\overc}}\xspace}
 \renewcommand{\GeVc}{\ensuremath{\,\text{G\eVnxs\overc}}\xspace}
-\renewcommand{\GeVcns}{\text{G\eVnxs\overc}\xspace} % no leading thinspace
-\renewcommand{\TeVc}{\ensuremath{\,\text{T\kern-0.2ex\eVnxs\overc}}\xspace}
+\renewcommand{\GeVcns}{\text{G\eVnxs\overc}\xspace}  % no leading thinspace
+\renewcommand{\TeVc}{\ensuremath{\,\text{\Tkern\eVnxs\overc}}\xspace}
 \renewcommand{\keVcc}{\ensuremath{\,\text{k\eVnxs\overcc}}\xspace}
 \renewcommand{\MeVcc}{\ensuremath{\,\text{M\eVnxs\overcc}}\xspace}
 \renewcommand{\GeVcc}{\ensuremath{\,\text{G\eVnxs\overcc}}\xspace}
-\renewcommand{\GeVccns}{\text{G\eVnxs\overcc}\xspace} % no leading thinspace
-\renewcommand{\TeVcc}{\ensuremath{\,\text{T\kern-0.2ex\eVnxs\overcc}}\xspace}
+\renewcommand{\GeVccns}{\text{G\eVnxs\overcc}\xspace}  % no leading thinspace
+\renewcommand{\TeVcc}{\ensuremath{\,\text{\Tkern\eVnxs\overcc}}\xspace}
 
 % Rationale for when to use \text{} and when to use \mathrm{} in physics symbols:
 %   - In math mode, wrapping something \text{} will render it in the main document font (i.e., garamond from the 'garamondx' package).

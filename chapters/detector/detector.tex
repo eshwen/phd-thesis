@@ -62,14 +62,14 @@ One beam consists of a ``train'' of up to 2,808 bunches spaced 25\,ns apart, eac
 \subsection{Luminosity}
 \label{subsec:luminosity}
 
-The \emph{\gls{luminosity}} of a particle accelerator is, along with centre of mass energy, a quantitative measure of its performance. It also often used to denote the amount of data delivered to, or collected by, the receiving detector. A full derivation of this quantity can be found in Ref.~\citenum{Herr:941318}, and as such, only a summary is given here. The \emph{instantaneous luminosity} $\mathcal{L}$, typically quoted in $\text{cm}^{-2}\text{s}^{-1}$, is defined as
+The \emph{\gls{luminosity}} of a particle accelerator is, along with centre of mass energy, a quantitative measure of its performance. It also often used to denote the amount of data delivered to, or collected by, the receiving detector. A full derivation of this quantity can be found in Ref.~\citenum{Herr:941318}, and as such, only a summary is given here. The \emph{instantaneous luminosity} \lumi, typically quoted in $\text{cm}^{-2}\,\text{s}^{-1}$, is defined as
 \begin{equation}
-    \mathcal{L} = \frac{1}{\sigma_{\mathrm{p}}} \frac{\mathrm{d}N}{\mathrm{d}t}
+    \lumi = \frac{1}{\sigma_{\mathrm{p}}} \dv{N}{t}
     \label{eq:lumi_instantaneous}
 \end{equation}
 where $N$ is the number of collisions and $\sigma_{\mathrm{p}}$ is the production cross section. In the \acrshort{lhc}, because many final states are possible, $\sigma_{\mathrm{p}}$ is not generally known. It can be measured, however. A recent paper from LHCb measured the extrapolated inelastic cross section (which is the important component for LHC collisions) to be $\text{75.4} \pm \text{5.4}$\,mb at \comruntwo \cite{Aaij:2018okq}, allowing an estimate of the collision rate. For two colliding beams split into bunches with the constituents in each bunch distributed according to a gaussian profile,
 \begin{equation}
-    \mathcal{L} = \frac{N_1 N_2 f N_b}{4 \pi \sigma_x \sigma_y} \cdot F % \cdot H
+    \lumi = \frac{N_1 N_2 f N_b}{4 \pi \sigma_x \sigma_y} \cdot F % \cdot H
     \label{eq:lumi_inst_head_on_colliding_beams}
 \end{equation}
 where $N_1$ and $N_2$ are the number of particles in a bunch in beams 1 and 2, respectively, $N_b$ is the number of bunches per beam, $f$ is the revolution frequency (11,245\,Hz for protons in the \acrshort{lhc}), and $\sigma_x$ and $\sigma_y$ are the horizontal and vertical sizes of the beam, respectively.\footnote{Add the $H$ factor from the hourglass effect and explain?}
@@ -78,11 +78,11 @@ The geometric reduction factor $F$ is unity for beams colliding head on.\footnot
 
 % For mathematical formula for F, see \url{https://espace.cern.ch/DG-DAT/public/Springer_Volume%20I21C/9_Lamont/luminosity/Luminosity%20Optimization.pdf}
 
-The instantaneous luminosity can be increased further by the inclusion of more bunches per beam, decreasing the size of a beam through improved quadrupole magnets, and by reducing the crossing angle. Tuning these parameters led the \acrshort{lhc} to reach is design luminosity of 10$^{34}\text{cm}^{-2}\text{s}^{-1}$ in 2016. It had more than doubled by the end of Run-2.
+The instantaneous luminosity can be increased further by the inclusion of more bunches per beam, decreasing the size of a beam through improved quadrupole magnets, and by reducing the crossing angle. Tuning these parameters led the \acrshort{lhc} to reach is design luminosity of 10$^{34}\percms$ in 2016. It had more than doubled by the end of Run-2.
 
 Integrating the the instantaneous luminosity over a period of time yields the \emph{integrated luminosity} \intlumi:
 \begin{equation}
-    \intlumi = \int \mathcal{L} \ \mathrm{d}t
+    \intlumi = \int \lumi \dd{t}
     \label{eq:lumi_integrated}
 \end{equation}
 These values are often quoted by experiments in units of ``inverse femtobarn'' ($\text{fb}^{-1}$) as an indicator of the amount of collision data collected. A ``barn'' is a unit equal to 10$^{-28}$\,m$^2$ and colloquially used to express cross sectional area in nuclear and particle physics. Thus its reciprocal, the same units as integrated luminosity, gives a good sense of scale that relates cross sections of individual processes to the total amount of data. Tab.~\ref{tab:lumis_lhc_cms} gives the integrated luminosities over Run-2 delivered by the LHC and collected by CMS. Taking 137.19\,\fbinv from this table, and assuming the inelastic $\Pp\Pp$ cross section above gives an estimate of 10$^{16}$ collisions recorded by \acrshort{cms} over Run-2 (excluding \gls{pileup} interactions).
@@ -144,7 +144,7 @@ In addition to the upgrades that have so far been performed, a much grander chan
     \begin{tabular}{lccc}
         \hline
         Parameter & End of Run-2 & \acrshort{hllhc} & Design \\ \hline
-        Beam energy (\tTeV) & 6.5 & 7 & 7 \\
+        Beam energy (\TeVns) & 6.5 & 7 & 7 \\
         Bunches per beam & 2,556 & 2,748 & 2,808 \\  % bunches per beam in Run-2 from https://home.cern/news/news/accelerators/lhc-report-lhc-full
         Protons per bunch & $\text{1.5} \times \text{10}^{\text{11}}$ & $\text{2.2} \times \text{10}^{\text{11}}$ & $\text{1.5} \times \text{10}^{\text{11}}$ \\
         Crossing angle (\si{\micro\text{rad}}) & 300 & 590 & 285 \\
@@ -197,10 +197,10 @@ The machine itself---aptly named the \acrshort{cms} Detector---lives a hundred m
 
 Collider physics tends to use certain conventions when describing the positions of particles in a detector. The azimuthal angle $\phi$ is the same variable as in cylindrical coordinates, i.e., the angle subtended from the 0$^{\circ}$ direction on the polar axis to the particle's position, with a range $[-\pi, \pi]$. Pseudorapidity, denoted by $\eta$, is a coordinate that describes the angle between a particle and the longitudinal axis of the detector (the beam line):
 \begin{equation}
-    \eta = -\ln \left[ \tan \left( \frac{\theta}{2} \right) \right]
+    \eta = -\ln \left[ \tan(\frac{\theta}{2}) \right]
     \label{eq:eta_def}
 \end{equation}
-where $\theta$ is the angle between the particle's three-momentum $\vec{p}$ and the positive direction of the beam axis. So as $\theta \rightarrow \text{0}^{\circ}$ (the beam line), $\eta \rightarrow \infty$. Generally, particles with large $\eta$ escape the detector which is why forward calorimeters are in place. The transverse momentum of a particle can be found with $\pt = \lvert \vec{p} \rvert / \cosh \eta$.
+where $\theta$ is the angle between the particle's three-momentum $\vec{p}$ and the positive direction of the beam axis. So as $\theta \rightarrow \text{0}^{\circ}$ (the beam line), $\eta \rightarrow \infty$. Generally, particles with large $\eta$ escape the detector which is why forward calorimeters are in place. The transverse momentum of a particle can be found with $\pt = \abs{\vec{p}} / \cosh \eta$.
 
 The subdetectors of \acrshort{cms} are nominally separated into several sections dependent on their geometry or layout, and it is useful to divide them into $\eta$ ranges to demonstrate their coverage. ``Barrel'' sections are cylindrical around the beam line while ``end caps'' are usually discs or plates perpendicular to it. The following subsections describe them in detail. One quadrant of \acrshort{cms} showing the $\eta$ divisions can be seen in Fig.~\ref{fig:cms_eta_bounds}.
 
@@ -269,7 +269,7 @@ Each cell of the \acrshort{hcal} maps onto a given number of \acrshort{ecal} cry
 \subsubsection{The magnet and muon chambers}
 \label{subsubsec:cms_magnet_muons}
 
-The three subsystems described above are encased in a massive superconducting solenoid~\cite{CERN-LHCC-97-010}, making up 12,500 of the 14,000 tonne detector. It generates a magnetic field of 3.8\,T and $\text{2.4} \times \text{10}^{\text{9}}$\,J of energy, making it the largest store of energy in the world for a single magnet. The field allows for the transverse momentum of a charged particle to be precisely measured, since the field propels it into a circular orbit. The magnetic force $qvB$ exerted is equal to the centripetal force $mv^2/r$, and therefore the radius of the orbit is proportional to the momentum.
+The three subsystems described above are encased in a massive superconducting solenoid~\cite{CERN-LHCC-97-010}, making up 12,500 of the 14,000 tonne detector. It generates a magnetic field of 3.8\,T and $\text{2.4} \times \text{10}^9$\,J of energy, making it the largest store of energy in the world for a single magnet. The field allows for the transverse momentum of a charged particle to be precisely measured, since the field propels it into a circular orbit. The magnetic force $qvB$ exerted is equal to the centripetal force $mv^2/r$, and therefore the radius of the orbit is proportional to the momentum.
 
 An iron return yoke interspersed with the muon chambers~\cite{Layter:343814} constitute the rest of the detector, extending from a radius of around 3\,m to 7.5\,m. The iron yoke confines the magnetic field to the volume of the detector and provides a 2\,T field in the opposite direction to that found farther inward. Since muons are much heavier than electrons and have high \pt, they penetrate farther than the bounds of the \acrshort{ecal} and deposit little energy in the process. The final states of several interesting decays include muons, such as with the Higgs boson. Consequently, constructing a dedicated subdetector is therefore essential.
 
@@ -295,7 +295,7 @@ All of the detectors in the muon chambers take advantage of gaseous ionisation, 
 \subsection{Data acquisition and triggering}
 \label{subsec:cms_recording_data}
 
-With the enormous collision rate at the \acrshort{cms} interaction point, acquiring data requires some thought and ingenuity. Today's electronics cannot handle the bandwidth from recording every single collision, \OrderOf{1 \ \text{petabyte} \ \text{s}^{-1}}. As such, a \emph{trigger} is used to select the events that may be of use to analysers. In \acrshort{cms}, a two stage trigger~\cite{Bayatyan:706847} is used: the \acrfull{l1t}, implemented in the detector hardware; and the \acrfull{hlt}~\cite{Cittolin:578006}, a software farm to further reduce the events selected at \acrlong{l1}. The trigger is part of the larger \acrfull{daq} system. An intricate network of custom electronics and commercial processors---a union of hardware, firmware, and software---are interconnected by multi-gigabit links to record the products of the highest-energy manmade collisions on Earth.
+With the enormous collision rate at the \acrshort{cms} interaction point, acquiring data requires some thought and ingenuity. Today's electronics cannot handle the bandwidth from recording every single collision, $\order{\text{1\,petabyte\,s}^{-1}}$. As such, a \emph{trigger} is used to select the events that may be of use to analysers. In \acrshort{cms}, a two stage trigger~\cite{Bayatyan:706847} is used: the \acrfull{l1t}, implemented in the detector hardware; and the \acrfull{hlt}~\cite{Cittolin:578006}, a software farm to further reduce the events selected at \acrlong{l1}. The trigger is part of the larger \acrfull{daq} system. An intricate network of custom electronics and commercial processors---a union of hardware, firmware, and software---are interconnected by multi-gigabit links to record the products of the highest-energy manmade collisions on Earth.
 
 
 %=========================================================
@@ -308,7 +308,7 @@ The \acrlong{l1t} is a set of algorithms (a trigger menu)\footnote{Do I need to 
 
 Coarsely-segmented data is read out from the \acrshort{ecal} and \acrshort{hcal} through a two-layer Calorimeter Trigger. These are arrays of custom processors located at Point 5. Layer-1 receives the calorimeter data from upwards of one thousand fibre optic links, each with multi-gigabit bandwidths. The information from the two subsystems are combined into calorimeter towers, and some simple position- and energy-dependent calibrations are applied.\footnote{Mention something about trigger primitives here?} The data from Layer-1 is then transmitted to Layer-2, again over many high-bandwidth optical links. Here, physics object candidates are identified (\glspl{jet}, \Pe, \Pphoton, \Ptau).\footnote{An overview of the latest Run-2 algorithms for object identification can be found in Ref.~\citenum{Zabi_2017}.} Additional calibrations are applied to them (for example, in Chpt.~\ref{subsec:detector_jecs}), and simple \gls{pileup} subtraction is performed.\footnote{Do I need to describe in detail how jets are formed? Jet seed, chunky donut PU subtraction, etc... Since it may be relevant for \acrshort{jec}.} Energy sums are also calculated at this stage, such as \etmiss, \HT, and \mht.
 
-In parallel, the various subdetectors in the muon chambers pass information through successive stages, and is then combined with some of the calorimeter information in a sorting/merging/isolation layer. The output from this layer is combined with the remaining information within Layer-2 in the Global Trigger, a series of \si{\micro}TCA boards with FPGAs. The trigger menu lives here, and all of the information gathered---object candidates, energy sums, beam conditions---is provided to it. These triggers may be dependent on the presence a single object or the number of objects of a single class (e.g., one muon, two \glspl{jet}), multiple classes of object (cross triggers), the energy sums, the topologies of objects, and more. The latency given to make a decision on whether to keep or reject an event is 4\,\si{\micro}s.\footnote{Mention pre-scaling of triggers, and that as $\mathcal{L}$ decreases over a fill, the pre-scales change?} A diagram of this data flow is given in Fig.~\ref{fig:cms_l1t_data_flow}.
+In parallel, the various subdetectors in the muon chambers pass information through successive stages, and is then combined with some of the calorimeter information in a sorting/merging/isolation layer. The output from this layer is combined with the remaining information within Layer-2 in the Global Trigger, a series of \si{\micro}TCA boards with FPGAs. The trigger menu lives here, and all of the information gathered---object candidates, energy sums, beam conditions---is provided to it. These triggers may be dependent on the presence a single object or the number of objects of a single class (e.g., one muon, two \glspl{jet}), multiple classes of object (cross triggers), the energy sums, the topologies of objects, and more. The latency given to make a decision on whether to keep or reject an event is 4\,\si{\micro}s.\footnote{Mention pre--scaling of triggers, and that as \lumi decreases over a fill, the pre--scales change?} A diagram of this data flow is given in Fig.~\ref{fig:cms_l1t_data_flow}.
 
 \begin{figure}[htbp]
     \centering
@@ -331,7 +331,7 @@ is executed. A larger and more complex trigger menu is available, including the 
 
 Physics objects are reconstructed further, with algorithms such as \glssymbol{antikt} used to cluster \glspl{jet}~\cite{Cacciari:2008gp}. Additional classification algorithms are also applied to objects, such as the \textsc{DeepCSV} neural network to identify \glspl{bjet}. A global event reconstruction from the \gls{particleflow} (\acrshort{pf})~\cite{CMS-PAS-PFT-09-001,CMS-PRF-14-001} is performed as well. Some of these algorithms can be computationally expensive. Consequently, only approximations/parametrisations are used at \acrshort{hlt} level. The full-scale versions of these kind of algorithms are re-run on the retained events in later stages of postprocessing.\footnote{If more detail is required here, I should make a separate subsubsection and discuss.}
 
-The \acrshort{hlt} reduces the event rate from the maximum 100\,kHz input substantially to around 1\,kHz. The data stream of \OrderOf{\text{6\,GB\,s}^{-1}} is then subject to further processing before the analysts access it. As well as the data being stored on networked hard drives at sites across the globe, back ups are made to magnetic tape for long term storage. As with the \acrlong{l1t}, some data is redirected for monitoring, object calibrations, and alignment of detector components.
+The \acrshort{hlt} reduces the event rate from the maximum 100\,kHz input substantially to around 1\,kHz. The data stream of $\order{\text{6\,GB\,s}^{-1}}$ is then subject to further processing before the analysts access it. As well as the data being stored on networked hard drives at sites across the globe, back ups are made to magnetic tape for long term storage. As with the \acrlong{l1t}, some data is redirected for monitoring, object calibrations, and alignment of detector components.
 
 % CMS Computing TDR: \cite{Bayatyan:838359}. See the Offline Data Preparation slides in the Induction Course folder. If computing/offline data prep. warrants its own subsubsection, add it.
 
@@ -366,18 +366,18 @@ When a new round of calibrations are derived, there are many steps before this o
 \subsubsection{The procedure}
 \label{subsubsec:detector_jec_procedure}
 
-\acrshort{qcd} multijet \acrshort{mc} datasets with a large \pt range used to derive the Layer-1 and Layer-2 calibrations. Corresponding \glspl{jet} in data for this process can often be mismeasured (so providing good calibrations in the most difficult scenario is a good test), and \acrshort{mc} events contain ``truth-level'' information from the generator. Ntuples are made from these which have the Layer-1 corrections applied. Referring to the processing chain in Chpt.~\ref{subsec:cms_mc}, the \glspl{jet} these calibrations are derived for are post-hadronisation, but before interaction with the detector. They will be referred to as ``\acrfull{l1} \glspl{jet}''. The reference \glspl{jet} directly from the generator (``GenJets'' as colloquialised in \acrshort{cms}) are important for matching to our \acrshort{l1} \glspl{jet} to ensure we are not mistakenly using \glspl{jet} from the parton shower that have no well-defined source.
+\acrshort{qcd} multijet \acrshort{mc} datasets with a large \pt range used to derive the Layer-1 and Layer-2 calibrations. Corresponding \glspl{jet} in data for this process can often be mismeasured (so providing good calibrations in the most difficult scenario is a good test), and \acrshort{mc} events contain ``truth-level'' information from the generator. Ntuples are made from these which have the Layer-1 corrections applied. Referring to the processing chain in Chpt.~\ref{subsec:cms_mc}, the \glspl{jet} these calibrations are derived for are post--hadronisation, but before interaction with the detector. They will be referred to as ``\acrfull{l1} \glspl{jet}''. The reference \glspl{jet} directly from the generator (``GenJets'' as colloquialised in \acrshort{cms}) are important for matching to our \acrshort{l1} \glspl{jet} to ensure we are not mistakenly using \glspl{jet} from the parton shower that have no well-defined source.
 
 The reference and \acrshort{l1} \glspl{jet} are matched using the variable $\Delta R$ (see Eq.~\ref{eq:delta_r}). The algorithm used to match the \glspl{jet} does so by inspecting each \acrshort{l1} \gls{jet} in descending \pt and searching for a reference \gls{jet} with $\Delta R < 0.25$. If there is more than one match, the reference \gls{jet} with the smallest $\Delta R$ is taken. Then the next \acrshort{l1} jet (and so on) follows the same procedure, with the previous reference \gls{jet} removed from the matching collection.
 
 The pairs of \glspl{jet} are categorised into sixteen bins of \abseta, the highest granularity available since the calibrations must run quickly on hardware. Each bin is then analysed in turn. Within each \abseta bin, the \gls{jet} pairs are subdivided into bins of the transverse momentum of the reference \gls{jet} (\ptRef).\footnote{Should I add tables somewhere of the \ptRef and \abseta bins for the calibrations?} The bin widths, like \abseta, are variable. The ratio of the transverse momentum of the \acrshort{l1} \gls{jet} (\ptLOne) to \ptRef is taken for each pair of \glspl{jet}. Our metric for measuring the detector response is the mean of these ratios:
 \begin{equation}
-    r_j = \langle \ptLOne / \ptRef \rangle
+    r_j = \expval{\ptLOne / \ptRef}
     \label{eq:jec_detector_response}
 \end{equation}
 The reciprocal of $r_j$ vs. \ptLOne is inspected and a correction curve is fitted. A gaussian captures the peak at low \pt and the following equation\footnote{Go into more detail regarding the equation? Reasoning, etc.} is used for the tail:
 \begin{equation}
-    \ptsup{{\mathrm{L1, \ corr.}}} = \ptLOne \cdot \left( p_0 + \frac{p_1}{ \left(\log_{10} \ptLOne \right) ^2 + p_2 } + p_3 \cdot \exp \left( -p_4 \left( \log_{10} \ptLOne - p_5 \right)^2 \right) \right)
+    \ptsup{{\mathrm{L1, \ corr.}}} = \ptLOne \cdot \left( p_0 + \frac{p_1}{ \left(\log_{10} \ptLOne \right) ^2 + p_2 } + p_3 \cdot \exp(-p_4 \left( \log_{10} \ptLOne - p_5 \right)^2) \right)
     \label{eq:corr_curve_jec_tail}
 \end{equation}
 The input parameters for the function may not be adequate for all cases, so they are often tuned to capture the low-\pt spike and high-\pt plateau (see Fig.~\ref{fig:detector_jecs_corr_curves} for an example). The value of this fit function in each \ptRef bin is exported.

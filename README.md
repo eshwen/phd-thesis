@@ -42,7 +42,7 @@ The master TeX file to compile is [thesismain.tex](./thesismain.tex). In here, a
 
 ### Font
 
-The font of my choice is "Garamond Expert with New TX Math" for the main text (i.e., with the package `garamondx` - see [here](helpful_docs/garamondx-doc.pdf)). If compiling the document on Overleaf, this should already be installed. However, it is not bundled with TeX Live due to licensing. To circumvent this, one can follow the instructions at <http://tug.org/fonts/getnonfreefonts/>:
+The font of my choice is **Garamond Expert with New TX Math** for the main text (i.e., with the package `garamondx` - see [here](helpful_docs/garamondx-doc.pdf)). If compiling the document on Overleaf, this should already be installed. However, it is not bundled with TeX Live due to licensing. To circumvent this, one can follow the instructions at <http://tug.org/fonts/getnonfreefonts/>:
 
 ```bash
 curl --remote-name https://www.tug.org/fonts/getnonfreefonts/install-getnonfreefonts
@@ -63,37 +63,37 @@ If those two commands don't resolve it, additionally run
 updmap-user
 ```
 
-Note that New TX Math is not used to render mathematical symbols, The conventional AMS Math with its associated packages are instead used.
+Note that New TX Math is _not_ used to render mathematical symbols in the thesis; the conventional AMS Math with its associated packages are instead used. While New TX Math may look a bit more natural inline to accompany Garamond text, I prefer the styling of AMS Math. Of course, if the font(s) are not to your taste, you can skip this step and replace the relevant preamble lines with whatever you desire.
 
 ### Bibliography
 
-The BibTeX backend of my choice is `biber` with the `biblatex` package since it's much more modern that the `bibtex`/`natbib` combination. Therefore, it should be relatively future-proof. As of the bibliography style, I am kind of attached to SIAM, but that is only natively part of `natbib`. So I've added a minimal reimplementation of it. A custom command to replicate `natbib`'s `\citenum` command has also been added. To remove them and use a conventional style, one only needs to remove the custom commands below the `\usepackage[...]{biblatex}`, and add the desired style in the `biblatex` package options.
+To process the bibliography, the backend of my choice is `biber` in conjunction with the `biblatex` package, since it's much more modern that the `bibtex`-`natbib` combination. Therefore, it should be relatively future-proof. As of the bibliography style, I am kind of attached to [SIAM](https://www.bibtex.com/s/bibliography-style-base-siam/), but that is only natively part of `bibtex`-`natbib`. So I've added a minimal, slightly-tweaked reimplementation of it. A macro to replicate `natbib`'s `\citenum` command has also been added. To remove them and use a conventional style, one only needs to remove the macros below the `\usepackage[...]{biblatex}`, and add the desired style in the `biblatex` package options.
 
 ### Glossary
 
-A glossary and list of acronyms has been added, since HEP is full of acronyms, initialisms and nomenclature. As such, the compilation requires an additional `makeglossaries` step after the bibtex/biber stage.
+A glossary and list of acronyms have been added, since HEP is full of acronyms, initialisms and nomenclature. As such, the compilation requires an additional `makeglossaries` step after the bibtex/biber stage.
 
 If the glossary fails to render properly between compilations, delete files with extensions `.acn`, `.acr`, `.glo`, and `.gls`, then recompile.
 
 ### HEP particles
 
-HEP particles are typeset using the `hepnames` package. With the `italic` option, they are rendered in italics. The default is upright. To change the style, just edit the line that imports the package in [thesismain.tex](./thesismain.tex).
+HEP particles and processes are typeset by importing the `hepnames` package (which also imports various other supporting ones). With the `italic` option, they are rendered in italics. The default is upright. To change the style, just edit the line that imports the package in [thesismain.tex](./thesismain.tex). More info. can be found in [Useful links](#useful-links). For additional symbols, quantities, units, programs, and operators commonly used in particle physics, the [`physics`](https://ctan.org/pkg/physics) package, and a copy of CMS'[`ptdr-definitions`](ptdr-definitions.sty), have also been imported.
 
 ### Word count
 
-A word count for the thesis can be estimated by using the `TeXcount` package. It should be installable like any other TeX/LaTeX package, but also has a website where you can manually download it: <https://app.uio.no/ifi/texcount/>. The following command can be run from the terminal (and is also run whenever my [continuous integration pipeline](#continuous-integration) is executed):
+A word count for the thesis can be estimated by using the `TeXcount` package. It should be installable like any other (La)TeX package, but also has a website where you can manually download it: <https://app.uio.no/ifi/texcount/>. The following command can be run from the terminal (and is also run whenever my [continuous integration pipeline](#continuous-integration) is executed):
 
 ```sh
 texcount -html -inc ./thesismain.tex > word_count.html
 ```
 
-Spitting out a `word_count.html` file that can be viewed to get a rough idea of the thesis' footprint. The website above has more options for different metrics, and how to handle certain cases.
+This spits out a `word_count.html` file that can be viewed to get a rough idea of the thesis' footprint. The website above has more options for different metrics, and how to handle certain cases.
 
 ### Continuous integration
 
 I've written a CI pipeline utilising Travis to compile the document. This includes a normal pdf, draft-mode pdf, and a rough word count. The configuration file [.travis.yml](./.travis.yml) and Tex Live install files from [texlive/](./texlive/) are based on <https://github.com/PHPirates/travis-ci-latex-pdf>, with some modifications by myself.
 
-If one wishes to implement a similar pipeline, those instructions should be checked first. On every push, the pipeline is run: a basic TeX Live distro is installed along with all the required packages, the commands from [Normal compilation - CLI](#normal-compilation---cli) and [Draft compilation - CLI](#draft-compilation---cli) are run to create the pdfs, and finally the word count is estimated by the `texcount` package (where I just pass the chapter tex files).
+If one wishes to implement a similar pipeline, those instructions should be checked first. On every push, the pipeline is run: a basic TeX Live distro is installed along with all the required packages, the commands from [Normal compilation - CLI](#normal-compilation---cli) and [Draft compilation - CLI](#draft-compilation---cli) are run to create the pdfs, and finally the word count is estimated as in [Word count](#word-count).
 
 I can see whether the documents compile successfully or not by the pipeline passing or failing. When a new tag is created, the output files mentioned above are uploaded to the **Assets** drop down menu for the release/tag to accompany the default source code archives. The badges on the homepage of the repo also contain download links to the latest versions of each file.
 
@@ -104,18 +104,19 @@ Note that the configuration of this CI is fairly specific to the implementation 
 - Adding a GitHub token in the `deploy` stage of the config file. This is done to authenticate the upload of files when a new tag is made
   - The variable `GITHUB_CI_TOKEN` is a secure variable specific to me (Eshwen), so must be generated individually for a user to make use of the feature. More information is linked about [deployment](https://docs.travis-ci.com/user/deployment) and [GitHub tokens](https://github.com/settings/tokens)
 - The package `texliveonfly` is used to install the packages required for compiling the document. But it doesn't always seem to install the dependencies. So I've had to add some packages to [texlive/texlive_packages](./texlive/texlive_packages) through trial-and-error by checking the logs from failed builds. Using new packages in the document therefore carries this small risk of failing the pipeline. This can be easily debugged, however
-- Because of some of the design choices in the thesis (e.g., the `garamondx` font, use of a glossary), the Tex Live version of the pipeline was necessary. If one is using more conventional implementations, there are several alternative instructions at <https://github.com/PHPirates/travis-ci-latex-pdf> that might be easier to carry out
+
+Because of the design choices above, the Tex Live version of the pipeline was necessary. If one is using more conventional implementations, there are several alternative instructions at <https://github.com/PHPirates/travis-ci-latex-pdf> that might be easier to pursue.
 
 ## Compiling the document
 
-**Disclaimer**: I haven't tried compiling on Overleaf, only on my local MacTeX/TeX Live distributions. So your mileage may vary depending on your IDE/OS of choice.
+**Disclaimer**: I haven't tried compiling on Overleaf, only on my local MacTeX/TeX Live distributions and in the CI pipeline. So your mileage may vary depending on your IDE/OS of choice.
 
-The master TeX file to compile is [thesismain.tex](./thesismain.tex). There are essentially two types of document that can be produced: the "normal" pdf, and a draft version (e.g., for circulation to colleagues/supervisor). The draft version triggers the `\ifdraftdoc` block in [thesismain.tex](./thesismain.tex), and currently includes the following:
+The master TeX file to compile is [thesismain.tex](./thesismain.tex). There are essentially two types of document that can be produced: the normal pdf, and a draft version (e.g., for circulation to colleagues/supervisor for review). The draft version triggers the `\ifdraftdoc` block in [thesismain.tex](./thesismain.tex), and currently includes the following:
 
 - Turns on a draft watermark with the date the pdf was made
 - Adds line numbers for easier referencing to specific points
-- Still renders figures properly (i.e., does not just render a border where the figure normally is, as is the default)
-- Should still render hyperlinks/cross-references properly (but may not, depending on your TeX distribution and packages)
+- Still renders figures properly, unlike the default (i.e., does not just render a border where the figure normally is, as is the defaut)
+- Should still render hyperlinks/cross-references properly, unlike the default (but may not, depending on your TeX distribution and packages)
 
 If switching between these two types, it's probably safest to delete the auxiliary files so the document can be freshly compiled for each case. I've written a handy little script [trash_aux_files.sh](./trash_aux_files.sh) that does this for you.
 
@@ -174,8 +175,8 @@ Add the `draft` option in the `\documentclass[...]{memoir}` line in [thesismain.
 The following are some notes on formatting guidelines and style, just to remain consistent throughout the document and writing process:
 
 - Internal links/cross-references:
-  - For the text that appears in reference to items in the thesis' Table of Contents (short captions or the regular caption if a short one isn't used, chapters, sections, subsections, etc.), try to avoid referencing glossary and acronym terms (instead just write the normal words: `CMS` instead of `\acrshort{cms}`). Otherwise, the internal links generated can take take a user to that definition in the glossary/acronym page if they accidentally click the referenced term
-  - Use abbreviations instead of the actual words when cross referencing, i.e., Chpt./Fig./Tab. instead of Chapter/Figure/Table
+  - For the text that appears in reference to items in the Table of Contents (short captions or the regular caption if a short one isn't used, chapters, sections, subsections, etc.), try to avoid referencing glossary and acronym terms. Instead, just write the normal words: `CMS` instead of `\acrshort{cms}`. Otherwise, the internal links generated can take take a user to that definition in the glossary/acronym page if they accidentally click the referenced term
+  - Use abbreviations instead of the actual words when cross referencing, i.e., Chpt./Fig./Tab./Ref. instead of Chapter/Figure/Table/Reference
 - Punctuation:
   - For references, cite _before_ any punctuation (such as a full stop)
   - For footnotes on the other hand, the reference should come _after_ punctuation
@@ -184,16 +185,16 @@ The following are some notes on formatting guidelines and style, just to remain 
 - Spacing:
   - When declaring an equation environment, leave at most a single blank line between the text preceding and succeeding the equation. Otherwise, asymmetric vertical space before or after the equation may be left
   - Use a tilde `~` instead of a space between words and their references to prevent line breaks separating them. This includes both citations and cross-references
-  - Between a number and its unit, I should use `\,` for a thin space (i.e., separation smaller than a traditional space)
+  - Between a number and its unit, use `\,` for a thin space (i.e., separation smaller than a traditional space)
 - Bibliography:
-  - When displaying in the bibliography and using initials for the authors' first names, collaborations may also be rendered with initials, i.e., "C. Collaboration" instead of "CMS Collaboration". To fix this, just wrap the author name in double curly braces instead of quotes or single braces, i.e., `author = {{CMS Collaboration}}`
+  - When the bibliography is displayed and initials for the authors' first names are used, collaborations may also be rendered with initials, i.e., "C. Collaboration" instead of "CMS Collaboration". To fix this, just wrap the author name in double curly braces instead of quotes or single braces, i.e., `author = {{CMS Collaboration}}`
   - Use ISO4 abbreviations for journals instead of their full titles
   - For journals with multiple series, e.g., Physics Letters A and Physics Letters B, make sure the series is in the `journal` rather than the `volume` field
   - Remove `issn` and `isbn` fields for entries that are not books
-  - Try to typeset math consistently but without the use of macros, e.g., `$\sqrt{s} = \text{13\,TeV}$`
+  - Try to typeset math in a consistent way to the main text but without the use of macros, e.g., `$\sqrt{s} = \text{13\,TeV}$`, so that the `.bib` file can stand alone
   - For DOIs, remove the preceding `https://doi.org/` in `doi` fields
   - When explicitly referring to a reference with "Ref.", use `\citenum{}` instead of `\cite{}` so that the number isn't wrapped in square brackets
-    - The `\citenum` command isn't available natively in `biblatex`. I've written a re-implementation just after the package is imported in [thesismain.tex](./thesismain.tex), but it can sometimes add an erroneous space after it before subsequent puncuation, e.g., `Ref. 42 )` instead of `Ref. 42)`. So I just need to watch out for that
+    - The `\citenum` command isn't available natively in `biblatex`. I've written a re-implementation just after the package is imported in [thesismain.tex](./thesismain.tex), but it can sometimes add an erroneous space after it before subsequent puncuation, e.g., `Ref. 42 )` instead of `Ref. 42)`. So just need to watch out for that
 - Misc. style tips:
   - For when to write numbers in words or numerals, see <https://www.scribbr.com/academic-writing/numbers/> for help
   - To add a shorter caption for a figure/table in the List of Figures/Tables, add it inside square brackets before the main one (i.e., `\caption[Short caption]{Full caption}`)
@@ -211,7 +212,7 @@ The following are some notes on formatting guidelines and style, just to remain 
 
 ## Badges
 
-Badges are pretty useful to highlight the important aspects of a repo to any potential forker/contributor. The build status badge is from [Travis](https://travis-ci.com/), linked to my CI pipeline. All of the others are from Shields ([webpage](https://shields.io/), [repo](https://github.com/badges/shields)). They are free to use, but obviously the badges are tied to the original fork of the repository. So to continue using them in your own fork, you can generate them yourself with these as inspiration. Note that not every badge may work if the repository is private.
+Badges are pretty useful to highlight the important aspects of a repo to any potential forker/contributor. The build status badge is from [Travis](https://travis-ci.com/), linked to my CI pipeline. All of the others are from Shields ([webpage](https://shields.io/), [repo](https://github.com/badges/shields)). They are free to use, but obviously the badges are tied to the original fork of the repository. So to continue using them in your own fork, you can generate them yourself with these as inspiration. Note that not every badge may work if the repository is private. Server load can also mean that not every badge icon may render each time the repo is viewed. Any hyperlinks should still work though, e.g., for the downloads of latest pdfs.
 
 ## Useful links
 

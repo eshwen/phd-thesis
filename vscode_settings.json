@@ -1,73 +1,89 @@
 {
-  "latex-workshop.intellisense.package.enabled": true,
-  "latex-workshop.view.pdf.viewer": "tab",
-  "latex-workshop.latex.recipes": [
-      {
-        "name": "Fully compile with glossary",
-        "tools": [
-          "pdflatex",
-          "biber",
-          "makeglossaries",
-          "pdflatex",
-          "pdflatex"
-        ]
-      },
-      {
-        "name": "Fully compile draft with glossary",
-        "tools": [
-          "pdflatexdraft",
-          "biber",
-          "makeglossaries",
-          "pdflatexdraft",
-          "pdflatexdraft"
-        ]
-      },
-      {
-        "name": "pdflatex",
-        "tools": [
-          "pdflatex"
-        ]
-      }
-    ],
-    "latex-workshop.latex.tools": [
-      {
-        "name": "pdflatex",
-        "command": "pdflatex",
-        "args": [
-          "-synctex=1",
-          "-interaction=nonstopmode",
-          "-undump=pdflatex",
-          "%DOCFILE%"
-        ]
-      },
-      {
-        "name": "pdflatexdraft",
-        "command": "pdflatex",
-        "args": [
-          "-synctex=1",
-          "-interaction=nonstopmode",
-          "-undump=pdflatex",
-          "\\PassOptionsToClass{draft}{memoir}\\input{%DOC%}"
-        ]
-      },
-      {
-        "name": "biber",
-        "command": "biber",
-        "args": [
-          "%DOC%"
-        ]
-      },
-      {
-        "name": "makeglossaries",
-        "command": "makeglossaries",
-        "args": [
-          "%DOCFILE%"
-        ]
-      }
-    ],
-    "spellright.documentTypes": [
-      "markdown",
-      "latex",
-      "plaintext"
-    ]
+    "latex-workshop.intellisense.package.enabled": true,
+    "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.latex.recipes": [
+    {
+      "name": "Fully compile with glossary",
+      "tools": [
+        "pdflatex",
+        "biber",
+        "makeglossaries",
+        "pdflatex",
+        "pdflatex"
+      ]
+    },
+    {
+      "name": "Fully compile draft with glossary",
+      "tools": [
+        "pdflatexdraft",
+        "biber",
+        "makeglossaries",
+        "pdflatexdraft",
+        "pdflatexdraft"
+      ]
+    },
+    {
+      "name": "pdflatex",
+      "tools": [
+        "pdflatex"
+      ]
+    },
+    {
+      "name": "pdflatexmk",
+      "tools": [
+        "latexmk"
+      ]
+    }
+  ],
+  "latex-workshop.latex.tools": [
+    {
+      "name": "pdflatex",
+      "command": "pdflatex",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-undump=pdflatex",
+        "%DOCFILE%"
+      ]
+    },
+    {
+      "name": "pdflatexdraft",
+      "command": "pdflatex",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-undump=pdflatex",
+        "\\PassOptionsToClass{draft}{memoir}\\input{%DOC%}"
+      ]
+    },
+    {
+      "name": "latexmk",
+      "command": "latexmk",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-pdf",
+        "%DOCFILE%"
+      ]
+    },
+    {
+      "name": "biber",
+      "command": "biber",
+      "args": [
+        "%DOC%"
+      ]
+    },
+    {
+      "name": "makeglossaries",
+      "command": "makeglossaries",
+      "args": [
+        "%DOCFILE%"
+      ]
+    }
+  ],
+  "spellright.documentTypes": [
+    "markdown",
+    "latex",
+    "plaintext"
+  ],
 }

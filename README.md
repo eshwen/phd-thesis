@@ -124,7 +124,7 @@ Documented below are some of the options that I've personally used to compile th
 
 ### Normal compilation - Visual Studio Code
 
-To compile in Visual Studio Code, install the **LaTeX Workshop** extension. The build commands are similar to TeXShop, but can be customised, e.g., to get the glossary to compile properly. Copy the snippet from [vscode_settings.json](vscode_settings.json) into your Visual Studio Code's `settings.json`. After reloading the program, just go to the TeX sidebar -> Build LaTeX project -> Recipe: Fully compile with glossary.
+To compile in Visual Studio Code, install the **LaTeX Workshop** extension. The build commands are similar to TeXShop, but can be customised, e.g., to get the glossary to compile properly. Copy the snippet from [vscode_settings.json](vscode_settings.json) into your Visual Studio Code's `settings.json`. After reloading the program, just go to the TeX sidebar -> Build LaTeX project -> **Recipe: Fully compile with glossary**. If you don't have a glossary, you can compile with **Recipe: pdflatexmk**.
 
 ### Draft compilation - Visual Studio Code
 
@@ -144,7 +144,7 @@ pdflatex -synctex=1 -interaction=nonstopmode thesismain.tex
 pdflatex -synctex=1 -interaction=nonstopmode thesismain.tex
 ```
 
-If you're using `bibtex` as a backend, just replace `biber` with `bibtex`. Also, if you're not using a glossary, you should be able to compile everything in one line with something like:
+If you're using `bibtex` as a backend, just replace `biber` with `bibtex`. Also, if you're not using a glossary, you should be able to compile everything in one line with:
 
 ```sh
 latexmk -synctex=1 -interaction=nonstopmode -pdf thesismain.tex
@@ -218,11 +218,11 @@ Badges are pretty useful to highlight the important aspects of a repo to any pot
 
 - Thesis guidelines from the University: <http://www.bristol.ac.uk/academic-quality/pg/pgrcode/annex4/>
 - Common pitfalls when writing HEP theses: <https://zenodo.org/record/3228336> ([local copy](helpful_docs/thesis-writing-gotchas.pdf))
+- Previous Bristol CMS theses for reference: [Lana's](https://github.com/Lana-B/Thesis), [Alex Titterton's](https://www.dropbox.com/sh/a859z9b7jlfmum4/AAC2CjjkLGmbeSIp5H5gQbEIa?dl=0)
 - CMS guidelines for authors: <https://twiki.cern.ch/twiki/bin/viewauth/CMS/Internal/PubGuidelines>
 - CMS procedure for approvals (in case I want to show "unapproved" results): <https://twiki.cern.ch/twiki/bin/viewauth/CMS/PhysicsApprovals>
 - For choosing fonts: <https://thesiswhisperer.com/2016/03/30/what-font-should-i-choose-for-my-thesis/>, <http://www.indesignskills.com/inspiration/fonts-for-books/>, [LaTeX Serif Font Catalogue](https://tug.org/FontCatalogue/seriffonts.html), [Google's serif font catalogue](https://fonts.google.com/?category=Serif)
 - Glossary info: <https://en.wikibooks.org/wiki/LaTeX/Glossary>
-- Previous Bristol CMS theses for reference: [Lana's](https://github.com/Lana-B/Thesis), [Alex Titterton's](https://www.dropbox.com/sh/a859z9b7jlfmum4/AAC2CjjkLGmbeSIp5H5gQbEIa?dl=0)
 - The Comprehensive LaTeX Symbol List: <https://www.ctan.org/pkg/comprehensive> ([local copy](helpful_docs/symbols-a4.pdf))
 - Symbol list for particle names: [`hepnicenames`](http://mirrors.ctan.org/macros/latex/contrib/hepnames/hepnicenames-rm.pdf) ([local copy](helpful_docs/hepnicenames-rm.pdf)), [`heppennames`](http://mirrors.ctan.org/macros/latex/contrib/hepnames/heppennames-rm.pdf) ([local copy](helpful_docs/heppennames-rm.pdf)), [`ptdr-definitions`](ptdr-definitions.sty) (additional macros for CMS publications)
 - Generating a table of contents automatically for a GitHub README: <https://ecotrust-canada.github.io/markdown-toc/>

@@ -2,7 +2,7 @@
 
 [![Build Status](https://api.travis-ci.com/eshwen/phd-thesis.svg)](https://travis-ci.com/github/eshwen/phd-thesis) [![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/eshwen/phd-thesis?include_prereleases)](https://github.com/eshwen/phd-thesis/releases/latest) ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/eshwen/phd-thesis) ![GitHub repo size](https://img.shields.io/github/repo-size/eshwen/phd-thesis) ![GitHub top language](https://img.shields.io/github/languages/top/eshwen/phd-thesis)
 
-[![GitHub Releases (by Asset - normal pdf)](https://img.shields.io/github/downloads/eshwen/phd-thesis/latest/thesismain_ci.pdf?color=ff69b4)](https://github.com/eshwen/phd-thesis/releases/latest/download/thesismain_ci.pdf) [![GitHub Releases (by Asset - draft pdf)](https://img.shields.io/github/downloads/eshwen/phd-thesis/latest/thesismain_ci_draft.pdf?color=ff69b4)](https://github.com/eshwen/phd-thesis/releases/latest/download/thesismain_ci_draft.pdf) [![GitHub Releases (by Asset - word count)](https://img.shields.io/github/downloads/eshwen/phd-thesis/latest/word_count.txt?color=ff69b4)](https://github.com/eshwen/phd-thesis/releases/latest/download/word_count.html)
+[![GitHub Releases (by Asset - normal pdf)](https://img.shields.io/github/downloads/eshwen/phd-thesis/latest/thesismain_ci.pdf?color=ff69b4)](https://github.com/eshwen/phd-thesis/releases/latest/download/thesismain_ci.pdf) [![GitHub Releases (by Asset - draft pdf)](https://img.shields.io/github/downloads/eshwen/phd-thesis/latest/thesismain_ci_draft.pdf?color=ff69b4)](https://github.com/eshwen/phd-thesis/releases/latest/download/thesismain_ci_draft.pdf) [![GitHub Releases (by Asset - word count)](https://img.shields.io/github/downloads/eshwen/phd-thesis/latest/word_count.html?color=ff69b4)](https://github.com/eshwen/phd-thesis/releases/latest/download/word_count.html)
 
 Repository containing everything related to my thesis.
 
@@ -42,7 +42,7 @@ The master TeX file to compile is [thesismain.tex](./thesismain.tex). In here, a
 
 ### Font
 
-The font of my choice is **Garamond Expert with New TX Math** for the main text (i.e., with the package `garamondx` - see [here](helpful_docs/garamondx-doc.pdf)). If compiling the document on Overleaf, this should already be installed. However, it is not bundled with TeX Live due to licensing. To circumvent this, one can follow the instructions at <http://tug.org/fonts/getnonfreefonts/>:
+The font of my choice is **Garamond Expert with New TX Math** for the main text (i.e., with the package `garamondx` - see [here](helpful_docs/garamondx-doc.pdf)). As well as being visually appealing, it supports bold, italic, and small cap styles that other Garamond variants do not. If compiling the document on Overleaf, this should already be installed. However, it is not bundled with TeX Live due to licensing. To circumvent this, one can follow the instructions at <http://tug.org/fonts/getnonfreefonts/>:
 
 ```bash
 curl --remote-name https://www.tug.org/fonts/getnonfreefonts/install-getnonfreefonts
@@ -124,7 +124,7 @@ Documented below are some of the options that I've personally used to compile th
 
 ### Normal compilation - Visual Studio Code
 
-To compile in Visual Studio Code, install the **LaTeX Workshop** extension. The build commands are similar to TeXShop, but can be customised, e.g., to get the glossary to compile properly. Copy the snippet from [vscode_settings.json](vscode_settings.json) into your Visual Studio Code's `settings.json`. After reloading the program, just go to the TeX sidebar -> Build LaTeX project -> **Recipe: Fully compile with glossary**. If you don't have a glossary, you can compile with **Recipe: pdflatexmk**.
+To compile in Visual Studio Code, install the **LaTeX Workshop** extension (see [documentation](https://github.com/James-Yu/LaTeX-Workshop/wiki)). The build commands are similar to TeXShop, but can be customised, e.g., to get the glossary to compile properly. Copy the snippet from [vscode_settings.json](vscode_settings.json) into your Visual Studio Code's `settings.json`. After reloading the program, just go to the TeX sidebar -> Build LaTeX project -> **Recipe: Fully compile with glossary**. If you don't have a glossary, you can compile with **Recipe: pdflatexmk**.
 
 ### Draft compilation - Visual Studio Code
 

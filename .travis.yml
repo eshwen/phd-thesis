@@ -30,7 +30,7 @@ script:
   - pdflatex -synctex=1 -interaction=nonstopmode thesismain_ci.tex  # Compile twice to fix references
 
   # Fully compile draft version of pdf with glossary
-  - texliveonfly --arguments="-synctex=1 -interaction=nonstopmode \"\PassOptionsToClass{draft}{memoir}\input{thesismain}\"" thesismain_ci_draft.tex
+  - texliveonfly --arguments="-synctex=1 -interaction=nonstopmode \"\PassOptionsToClass{draft}{memoir}\input{thesismain_ci_draft}\"" thesismain_ci_draft.tex
   - pdflatex -synctex=1 -interaction=nonstopmode "\PassOptionsToClass{draft}{memoir}\input{thesismain_ci_draft}"
   - biber thesismain_ci_draft
   - makeglossaries thesismain_ci_draft

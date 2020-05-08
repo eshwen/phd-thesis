@@ -6,19 +6,13 @@
 %=======
 \begin{easylist}[itemize]
     \easylistprops
-    & Discuss how the theoretical aspects from the Theory chapter translate into an experimental search.
-
-    & Discuss the necessity of including all production modes of Higgs (invisible final state, so characterise events based on initial/additional particles). Also mention how sensitive each production mode is at contributing to the branching ratio limit. Emphasize the non-VBF modes (\ggF, \ttH, \VH\ -- \WplusH, \WminusH, \ZH) in this chapter as that's what I've been working on and another group will be covering \acrshort{vbf}.
-
     & Add a section or subsection somewhere regarding analysis tools. Perhaps add a brief description of \ROOT (and how it's entrenched in HEP even though people are tending to move away from \ROOT-based analysis onto more industry-standard tools), then lead into the FAST tools and using dataframes, vectorisation, etc., with only small interfaces to \ROOT (for I/O) to extract data. Potentially mention how the data tiers work in CMS (RAW, DIGI, RECO, AOD, miniAOD, nanoAOD, etc.)
 
-    & Include object definitions, overall analysis strategy, triggers, signal production (with each non-VBF mode in detail), event selection, background estimation (\glspl{CR}, \glspl{SB}) and results/limit (including comparisons to previous results).
+    & Emphasize my contributions: control region construction and studies, background estimation, ttbar systematics, and other studies I will have conducted by the time I write up (check AN, chip and HToInv-nanoAOD-tools MRs, and git commit history).
 
-    & Emphasize my contributions: control region construction and studies, background estimation, and other studies I will have conducted by the time I write up.
+    & Maintaining CMS internal analysis note, documenting all aspects of the analysis. I will first add all relevant information there which I can subsequently use when writing this chapter.
 
-    & Current material: no public plots as of yet. Hope to finish analysis soon. We are preparing a CMS internal analysis note, documenting all aspects of the analysis. I will first add all relevant information there which I can subsequently use when writing this chapter.
-
-    & Since it's my thesis, I can talk about \ttH, \VH and \ggF/monojet, even though the Bristol contribution to the final, public result would only be \ttH and resolved \VH. Would need to be able to run the fit for all three modes simultaneously, ensuring we have complete (and correct) systematics for \ggF.
+    & Since it's my thesis, I can talk about \ttH, \VH and \ggF/monojet, even though the Bristol contribution to the final, public result may only be \ttH and resolved \VH. Would need to be able to run the fit for all three modes simultaneously, ensuring we have complete (and correct) systematics for \ggF.
 \end{easylist}
 
 % Can pull from Section 37 of my lab book, and all the talks I and other people from the team have given (Presentations and talks/ folder, also Other peoples/ subdirectory). Can also pull from AN for analysis strategy
@@ -30,7 +24,7 @@
 \section{Production modes of the Higgs boson}
 \label{sec:htoinv_production_modes}
 
-At the \acrshort{lhc}, the most common mechanisms for producing a Higgs boson are \acrfull{vbf}, gluon-gluon fusion (\ggF), associated production from top quarks (\ttH), and associated production from a vector boson (\VH). Feynman diagrams of these processes are shown in Fig.~\ref{fig:higgs_feynman_diagrams}. They have very different characteristics, production rates, and event signatures, complementing each other and allowing a single analysis to cover all bases with orthogonal parameter spaces to target the individually. \footnote{Expand on these --- what the final states are and how they can be detected (e.g., use \mjj for VBF), cross sections, etc., possibly with a separate paragraph for each mode.}
+At the \acrshort{lhc}, the most common mechanisms for producing a Higgs boson are \acrfull{vbf}, gluon-gluon fusion (\ggF), associated production from top quarks (\ttH), and associated production from a vector boson (\VH). Feynman diagrams of these processes are shown in Fig.~\ref{fig:higgs_feynman_diagrams}. They have very different characteristics, production rates, and event signatures, complementing each other and allowing a single analysis to cover all bases with orthogonal parameter spaces to target the individually.
 
 \begin{figure}[htbp]
     \centering
@@ -53,7 +47,7 @@ At the \acrshort{lhc}, the most common mechanisms for producing a Higgs boson ar
         \includegraphics[width=\textwidth]{feynman_diagrams/ggF.png}
         \caption{\ggF}
     \end{subfigure}
-\caption[The Feynman diagrams for the four predominant production mechanisms of the Higgs boson at the LHC]{The Feynman diagrams for the four predominant production mechanisms of the Higgs boson at the \acrshort{lhc}.}
+\caption[A subset of the Feynman diagrams for the four predominant production mechanisms of the Higgs boson at the LHC]{A subset of the Feynman diagrams for the four predominant production mechanisms of the Higgs boson at the \acrshort{lhc}.}
 \label{fig:higgs_feynman_diagrams}
 \end{figure}
 
@@ -104,7 +98,7 @@ Despite \ggF having the largest cross section of the four modes, its upper limit
 \section{Results of previous searches}
 \label{sec:htoinv_prev_results}
 
-Many previous analyses have investigated the \higgstoinv decay, in some cases from dedicated searches, but often as an afterthought or interpretation of the main analysis. \acrshort{vbf} is the most sensitive production mode. This is demonstrated in Tab.~\ref{tab:hinv_br_limits} by the upper limits [achieved] compared to the other mechanisms. In Ref.~\citenum{Sirunyan:2018owy}, a combination was performed over all the productions modes detailed in the table (with the exception of \ttH) using the recent 2016 measurements as well as data taken from Run-1 and 2015. This combined observed upper limit [sits at] 19\,\%, while the expected is 15\,\%.
+Many previous analyses have investigated the \higgstoinv decay, in some cases from dedicated searches, but often as an afterthought or interpretation of the main analysis. \acrshort{vbf} is the most sensitive production mode. This is demonstrated in Tab.~\ref{tab:hinv_br_limits} by the upper limits [achieved] compared to the other mechanisms. In Ref.~\citenum{Sirunyan:2018owy}, a combination was performed over all the productions modes detailed in the table (with the exception of \ttH). Using the recent 2016 measurements as well as data taken from Run-1 and 2015, this combined observed upper limit [sits at] 19\,\%, while the expected is 15\,\%. With only data from Run-1 and 2015---the previous combination---yields the observed and expected upper limits of 24\,\% and 23\,\%, respectively~\cite{Khachatryan:2016whc}.
 
 \begin{table}[htbp]
     \centering
@@ -128,10 +122,11 @@ Many previous analyses have investigated the \higgstoinv decay, in some cases fr
 \section{Overview of the analysis}
 \label{sec:htoinv_analysis_overview}
 
-% Talk about what makes this analysis unique: doing a combination over all production modes from the start instead of separate analyses combined at the end.
-% Means we can share samples, systematics, background methods and workflows, build in orthogonality between the different modes, simultaneously optimise the categories for different production modes, and cover as much phase space as possible (with new final states such as boosted \PZ bosons with unresolved subjets). This makes the analysis much more cohesive and consistent.
-% Say that we're collaborating very closely with researchers from Imperial College London (reference previous VBF analysis~\cite{Khachatryan:2016whc,Sirunyan:2018owy}) and LLR (\emph{Laboratoire Leprince-Ringuet, Ecole Polytechnique, Universit\'{e} Paris-Saclay}), and in part with Boston University (working on exotic search with interpretation in Higgs to invisible - reference previous monojet analysis~\cite{Sirunyan:2017jix})
-% Just give an overview of things that will be discussed in the analysis
+The analysis discussed in the remainder of the chapter is a dedicated search for invisibly decaying Higgs bosons in hadronic final states, incorporating all four of the production modes [discussed] above from the outset. In contrast to many of the previous analyses that separately set limits on $\BRof{\higgstoinv}$ by reinterpretation, our approach has many benefits. A simultaneous search for all of the production modes allows us to construct search regions to target each one, building in orthogonality to avoid overlap between them. Data and simulation samples, recipes for systematic uncertainties, the analysis framework, and results can all be shared to provide a cohesive and consistent environment from which to perform the analysis. As well as streamlining the process of the final combination over each production mechanism, communication when [setting up] the analysis ensures each can cover as much phase space as possible without the trouble of overlap or contamination.
+
+Direct collaboration amongst several institutes divides up the task appropriately. Researchers at the University of Bristol, such as myself, and LLR (\emph{Laboratoire Leprince-Ringuet, \'{E}cole Polytechnique, Universit\'{e} Paris-Saclay}) focus on \ttH and the resolved \VH modes. Those at Imperial College London, who have a long history with the \acrshort{vbf} search~\cite{Chatrchyan:2014tja,Sirunyan:2018owy}, assume responsibility of this mechanism. Researchers at Boston University---who have previously been involved in \acrshort{bsm} analyses with interpretations in invisibly decaying Higgs bosons~\cite{Khachatryan:2016mdm,Sirunyan:2017jix}---specialise in monojet and mono-\PVec searches. This makes them naturally suited to investigating the boosted aspect of \VH, and \ggF.
+
+Emphasis will be placed on the non-VBF modes, particularly \ttH and resolved \VH, as I have had direct involvement in those aspects of the analysis. Before Boston University joined the analysis, we also studied the boosted \VH and \ggF mechanisms. Accordingly, they will also be given some attention. The object definitions are discussed in Chpt.~\ref{sec:htoinv_objects}, followed by the event selection in Chpt.~\ref{sec:htoinv_event_selection}. Definitions of the regions and categories are illustrated in Chpts.~\ref{sec:region_definitions} and \ref{sec:htoinv_categorisation}, respectively. The data from \acrshort{cms} and from simulation, along with required corrections and systematic uncertainties are acknowledged in Chpt.~\ref{sec:htoinv_data_sim}. Methods for estimating the background processes in the signal region are described in Chpt.~\ref{sec:htoinv_background_est}. The incorporation of these and the aforementioned sections in the statistical treatment of are presented in Chpt.~\ref{sec:htoinv_satistical_treatment}, before the results of the analysis in Chpt.~\ref{sec:htoinv_results}.
 
 
 %=========================================================
@@ -200,9 +195,10 @@ Many previous analyses have investigated the \higgstoinv decay, in some cases fr
 %=========================================================
 
 
-
 \subsection{Weights and corrections for simulated processes}
 \label{subsec:htoinv_mc_corrections}
+
+% If I have to describe these in a lot of detail, it's probably worth making this a section rather than subsection (and therefore promoting the subsubsections to subsections)
 
 In order for simulated events, particularly for background processes, to resemble \acrshort{lhc} data as closely as possible, many corrections and weights are applied.\footnote{The following stuff on weights is from what I wrote in the AN. But it may be too detailed/unnecessary for that document, so I've made a copy here in case it is removed from there.} These are discussed in more detail in the following sections [REF]. A final event weight $w_{\mathrm{event}}$ is the product of the weights from all of the individual sources $i$ that provide one:
 
@@ -310,5 +306,37 @@ One thing must be noted about the migration of events, since we have many differ
 \section{Background estimation}
 \label{sec:htoinv_background_est}
 
+
+%=========================================================
+
+
+\subsection{Lost lepton}
+\label{subsec:htoinv_lost_lepton_bkg}
+
+
+%=========================================================
+
+
+\subsection{\texorpdfstring{\ztonunupjets}{Z to nunu + jets}}
+\label{subsec:htoinv_znunu_bkg}
+
+
+%=========================================================
+
+
 \subsection{QCD multijet}
-\label{subsec:htoinv_qcd_multijet}
+\label{subsec:htoinv_qcd_multijet_bkg}
+
+
+%=========================================================
+
+
+\section{Statistical model of the analysis}
+\label{sec:htoinv_satistical_treatment}
+
+
+%=========================================================
+
+
+\section{Results}
+\label{sec:htoinv_results}

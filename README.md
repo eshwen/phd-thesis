@@ -1,6 +1,6 @@
 # phd-thesis
 
-[![Build Status](https://api.travis-ci.com/eshwen/phd-thesis.svg)](https://travis-ci.com/github/eshwen/phd-thesis) [![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/eshwen/phd-thesis?include_prereleases)](https://github.com/eshwen/phd-thesis/releases/latest) ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/eshwen/phd-thesis) ![GitHub repo size](https://img.shields.io/github/repo-size/eshwen/phd-thesis) ![GitHub top language](https://img.shields.io/github/languages/top/eshwen/phd-thesis)
+[![Build Status](https://travis-ci.com/eshwen/phd-thesis.svg?token=XYfJ1ZWVhoKbK3NhXnLP&branch=master)](https://travis-ci.com/eshwen/phd-thesis) [![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/eshwen/phd-thesis?include_prereleases)](https://github.com/eshwen/phd-thesis/releases/latest) ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/eshwen/phd-thesis) ![GitHub repo size](https://img.shields.io/github/repo-size/eshwen/phd-thesis) ![GitHub top language](https://img.shields.io/github/languages/top/eshwen/phd-thesis)
 
 [![GitHub Releases (by Asset - normal pdf)](https://img.shields.io/github/downloads/eshwen/phd-thesis/latest/thesismain_ci.pdf?color=ff69b4)](https://github.com/eshwen/phd-thesis/releases/latest/download/thesismain_ci.pdf) [![GitHub Releases (by Asset - draft pdf)](https://img.shields.io/github/downloads/eshwen/phd-thesis/latest/thesismain_ci_draft.pdf?color=ff69b4)](https://github.com/eshwen/phd-thesis/releases/latest/download/thesismain_ci_draft.pdf) [![GitHub Releases (by Asset - word count)](https://img.shields.io/github/downloads/eshwen/phd-thesis/latest/word_count.html?color=ff69b4)](https://github.com/eshwen/phd-thesis/releases/latest/download/word_count.html)
 
@@ -213,6 +213,8 @@ The following are some notes on formatting guidelines and style, just to remain 
 ## Badges
 
 Badges are pretty useful to highlight the important aspects of a repo to any potential forker/contributor. The build status badge is from [Travis](https://travis-ci.com/), linked to my CI pipeline. All of the others are from Shields ([webpage](https://shields.io/), [repo](https://github.com/badges/shields)). They are free to use, but obviously the badges are tied to the original fork of the repository. So to continue using them in your own fork, you can generate them yourself with these as inspiration. Note that not every badge may work if the repository is private. Server load can also mean that not every badge icon may render each time the repo is viewed. Any hyperlinks should still work though, e.g., for the downloads of latest pdfs.
+
+**While the repository is private, the build status badge from Travis requires a security token to display properly. This can be removed once the repo is made public again**
 
 ## Useful links
 

@@ -51,6 +51,8 @@ At the \acrshort{lhc}, the most common mechanisms for producing a Higgs boson ar
 \label{fig:higgs_feynman_diagrams}
 \end{figure}
 
+% Additional diagrams for ggF are a square top loop (gluons join the two vertices on the left), where the Higgs exits at one of the vertices on the right and a gluon exits at the other. For ZH, can also have gg->ZH as well as pp->ZH. Not sure if it's worth showing them or just describing them.
+
 
 %=========================================================
 
@@ -89,8 +91,6 @@ A Higgs boson is radiated by the vector boson \PVec in the \VH mechanism. Parall
 
 Despite \ggF having the largest cross section of the four modes, its upper limit on $\BRof{\higgstoinv}$ is the weakest. This process [produces] a Higgs boson through their fusion, normally mediated by a top quark since it has the largest coupling to the Higgs. With no additional final state particles, searches for this production mode usually involve initial state radiation from the gluons or the loop. As such, the signature is at least one \gls{jet} and \ptmiss.
 
-% Given the \acrshort{lhc} is a \emph{hadron} collider, processes with hadronic channels are the natural choices.\footnote{Or should I say ``most sensitive''?} \Gls{met} from the purely-invisible decay of the Higgs---and hadronic activity from the particles associated with the production mechanism---constitute the [final state], often known as a ``\text{\glspl{jet}} + \ptmiss$'' search.
-
 
 %=========================================================
 
@@ -128,6 +128,8 @@ Direct collaboration amongst several institutes divides up the task appropriatel
 
 Emphasis will be placed on the non-VBF modes, particularly \ttH and resolved \VH, as I have had direct involvement in those aspects of the analysis. Before Boston University joined the analysis, we also studied the boosted \VH and \ggF mechanisms. Accordingly, they will also be given some attention. The object definitions are discussed in Chpt.~\ref{sec:htoinv_objects}, followed by the event selection in Chpt.~\ref{sec:htoinv_event_selection}. Definitions of the regions and categories are illustrated in Chpts.~\ref{sec:region_definitions} and \ref{sec:htoinv_categorisation}, respectively. The data from \acrshort{cms} and from simulation, along with required corrections and systematic uncertainties are acknowledged in Chpt.~\ref{sec:htoinv_data_sim}. Methods for estimating the background processes in the signal region are described in Chpt.~\ref{sec:htoinv_background_est}. The incorporation of these and the aforementioned sections in the statistical treatment of are presented in Chpt.~\ref{sec:htoinv_satistical_treatment}, before the results of the analysis in Chpt.~\ref{sec:htoinv_results}.
 
+% Given the \acrshort{lhc} is a \emph{hadron} collider, processes with hadronic channels are the natural choices.\footnote{Or should I say ``most sensitive''?} \Gls{met} from the purely-invisible decay of the Higgs---and hadronic activity from the particles associated with the production mechanism---constitute the [final state], often known as a ``\text{\glspl{jet}} + \ptmiss$'' search.
+
 
 %=========================================================
 
@@ -142,12 +144,63 @@ Emphasis will be placed on the non-VBF modes, particularly \ttH and resolved \VH
 \section{Event selection}
 \label{sec:htoinv_event_selection}
 
+The event selection aims to strike the balance between rejecting as many background events while maintaining as great a signal sensitivity as possible. The preselection, in Chpt.~\ref{subsec:htoinv_preselection}, is applied to data and simulation in all regions and categories to do just that. Filters to reject potentially-mismeasured events and those that lead to incorrect \ptmiss calculations are documented in Chpt.~\ref{subsec:htoinv_other_filters}. The region- and dataset-specific triggers are described in Chpt.~\ref{subsec:htoinv_trigger_sel}.
+
+
+%=========================================================
+
+
+\subsection{Preselection}
+\label{subsec:htoinv_preselection}
+
+
+%=========================================================
+
+
+\subsection{Additional filters}
+\label{subsec:htoinv_other_filters}
+
+
+%=========================================================
+
+
+\subsubsection{\texorpdfstring{\ptmiss}{MET} filters}
+\label{subsubsec:htoinv_met_filters}
+
+
+%=========================================================
+
+
+\subsection{Trigger selection}
+\label{subsec:htoinv_trigger_sel}
+
 
 %=========================================================
 
 
 \section{Signal region, control region, and sideband definitions}
 \label{sec:region_definitions}
+
+
+%=========================================================
+
+
+\subsection{The signal region}
+\label{subsec:htoinv_signal_region}
+
+
+%=========================================================
+
+
+\subsection{Control regions}
+\label{subsec:htoinv_control_regions}
+
+
+%=========================================================
+
+
+\subsection{Sidebands to the signal region}
+\label{subsec:htoinv_sidebands}
 
 
 %=========================================================
@@ -177,6 +230,12 @@ Emphasis will be placed on the non-VBF modes, particularly \ttH and resolved \VH
 \subsection{Data}
 \label{subsec:htoinv_data}
 
+% Briefly describe data - using 2016-18 data from CMS at \comruntwo. Integrated lumi is 137.19 total (see Tab.~\ref{tab:lumis_lhc_cms} for a breakdown by year).
+% Say which primary datasets are used (i.e., datasets that are grouped by the class of trigger used - data triggered by HLT MET triggers used for SR, sidebands and muon CRs, single electron/e-gamma for electron CRs, single photon/e-gamma for photon CR)
+% Briefly describe issues with data as well, with how it would affect things and how to mitigate:
+%  - Pre-firing in 2016 and 2017. Say what the actual problem was. Doesn't affect data too much, just applied a centrally-derived weight to MC to match the data (see Chpt...)
+%  - HEM in 2018. Affected 38.6\fbinv of the 59.7\fbinv certified. With part of the HCAL missing, more difficult to accurately record jets and their properties. Can lead to artificial \ptmiss. Required dedicated studies and cuts to mitigate (described in Chpt...)
+
 
 %=========================================================
 
@@ -184,12 +243,58 @@ Emphasis will be placed on the non-VBF modes, particularly \ttH and resolved \VH
 \subsection{Simulated signal processes}
 \label{subsec:htoinv_signal}
 
+All \acrlong{mc} datasets used in this analysis was produced centrally by experts in \acrshort{cms} as described in Chpt.~\ref{subsec:cms_mc}. The signal samples are generated at \acrshort{nlo} with the \POWHEG generator interfaced with \PYTHIAEIGHT. When reweighting events for their cross section, they are specified at \acrshort{nnlo}.\footnote{Should I give a table or something of the cross sections for the signal samples?} The samples are produced with a Higgs boson mass of $m_{\PH} = \text{125}\GeV$. The vector bosons in each of the \VH channels decay to $\Pquark\APquark$. In 2016, the \PYTHIA shower tune was the latest available \textsc{cuetp8m1}, while the 2017 and 2018 datasets used the newer \textsc{cp5} tune.
+
 
 %=========================================================
 
 
 \subsection{Simulated background processes}
 \label{subsec:htoinv_background}
+
+\acrlong{mc} datasets for many processes are used in the analysis to accurately represent the \acrlong{sm} background. They are described as follows:
+
+% What words can I use instead of "process" as I seem to use it a lot here? Decay/dataset/mechanism/background?
+
+\begin{easylist}[itemize]
+    \easylistprops
+    & Drell-Yan $(\HepProcess{\PZ \to \Plepton\Plepton}) \plusjets$: The Drell-Yan process occurs when the quark of one incident proton annihilates with the antiquark in the oncoming proton, producing a neutral vector boson (a \PZ in this case) from a \acrshort{qcd} vertex. The \PZ boson decays to a lepton pair, so while absent in the signal region, is the dominant background in the dilepton control regions used to model the \ztonunupjets process. The datasets are generated at \acrshort{lo} accuracy with \MGvATNLO---where a dilepton mass cut of 50\GeV is applied---interfaced with \PYTHIAEIGHT.
+
+    & Multiboson: This process encompasses the production two (diboson) or three (triboson) electroweak bosons from \acrshort{qcd}(?) vertices. They may decay leptonically, also producing neutrinos in the case of \PW bosons, but also hadronically, producing \glspl{jet}. A mixture of the two in an event will lead to similar signatures to that of the signal. The diboson processes are both generated and showered with \PYTHIAEIGHT at \acrshort{lo}. Triboson events, on the other hand, \MGvATNLO at \acrshort{nlo} accuracy models the hard scatter, though \PYTHIAEIGHT still acts as the hadroniser.
+
+    & Electroweak $\PVec + \text{2 jets}$: The production of electroweak bosons from an electroweak vertex is a minor background in the signal region. But as above, they may produce genuine \ptmiss from the decay of the \PVec. The datasets are generated at \acrshort{lo} with \MGvATNLO and hadronised with \PYTHIAEIGHT. % Mention something about the M-50 cut (if I can find out what it is), and maybe about the Vs only decaying into lnu, ll and nunu (perhaps that's what the 'electroweak' vertex means)
+
+    & \singlePhotonCr: Events with photons are vetoed in the signal region. However, this is the dominant background in the \singlePhotonCr \gls{CR}, that predicts the \ztonunupjets contribution to the signal region, along with the double lepton regions. This dataset is generated at \acrshort{lo} with \MGvATNLO---where the $\Delta R$ between a photon and jet of at least 0.4 is applied---and showered with \PYTHIAEIGHT.
+
+    & \acrshort{qcd} multijet: The most common type of event produced in $\Pp\Pp$ collisions at the \acrshort{lhc} is several \glspl{jet} from \acrshort{qcd} vertices. These typically do not have large \ptmiss, but are prone to mismeasurements that can artificially increase it. As such, they serve as a non-negligible background in the analysis. The datasets are produced at \acrshort{lo} by \MGvATNLO and hadronised with \PYTHIAEIGHT.
+
+    & Single top: Events with a single top quark are a subdominant background in the analysis, but are important to consider, especially in the \ttH categories. These electroweak-induced processes include \schannel and \tchannel production where a \emph{four-flavour scheme}~\cite{Krauss:2017wmx} in the event generator is used for treatment of \Pqb quarks. This approach considers the \Pqb as massive, and as such, may only enter the final state. Associated production with a \PW boson (known as $\Ptop\PW$) is also considered with a five-flavour scheme, i.e., \Pqb quarks may be considered massless and can appear in both the initial and final states. For all of these channels, the events are produced at \acrshort{nlo} and showered with \PYTHIAEIGHT. Modelling the hard scatter for the \schannel diagram is performed with \MGvATNLO. The \tchannel and $\Ptop\PW$ mechanisms are generated with \POWHEG, with the former decaying the $\PW$ exchanged by the initial state $\Pqb$ and $\Pquark$ with \MADSPIN~\cite{Artoisenet:2012st} to include spin correlations.
+
+    & \ttbarpjets: The \acrshort{qcd}-induced process presents a major background, especially in the \ttH categories. Large \ptmiss can arise in scenarios where the leptons in a decay are ``lost'' from misidentification or is outside the bounds of the detector acceptance. The three channels (hadronic, semi-leptonic, and dileptonic) are modelled with \POWHEG at \acrshort{nlo} accuracy, interfaced with \PYTHIAEIGHT.
+
+    & $\ttbar X \plusjets$: These are rare processes where a boson $X$ ($\Pphoton$, $\PW$, $\PZ$, $\PH$) is produced in association with a \ttbar pair. Several combinations of the decays of the \ttbar and $X$ are covered. All of the datasets are generated at \acrshort{nlo} and hadronised with \PYTHIAEIGHT. The $\ttbar \PVec \plusjets$ and $\ttbar \PW \plusjets$ datasets use \MGvATNLO with the ``FxFx'' merging scheme for the hard scatter, and decay the particles with \MADSPIN. $\ttbar \PZ \plusjets$ uses \MGvATNLO without the two aforementioned additions. Meanwhile, $\ttH \plusjets$ (where the \PH decays to visible states) is generated with \POWHEG.
+
+    & \wtolnupjets: A \acrshort{qcd}-induced process, this background is dominant in the single lepton \glspl{CR}. If the lepton is lost, the \ptmiss can be be inflated and lead to a significant contribution in the signal region. The datasets are produced at \acrshort{lo} with \MGvATNLO and interfaced with \PYTHIAEIGHT.
+
+    & \ztonunupjets: From the presence of neutrinos, the genuine \ptmiss from this process is a dominant background in the signal region. Its contribution is estimated using the double lepton and \singlePhotonCr \glspl{CR}. As with many of the above, the datasets are generated at \acrshort{lo} accuracy with \MGvATNLO, and showered with \PYTHIAEIGHT.
+
+\end{easylist}
+
+% Check the datasets to see the generators and hadronisers for each process. Say that, in all cases (apart from only ttbar NLO Powheg, I think), the Pythia tune is CUETP8M1 for 2016, and CP5 for 2017 and 2018. The gridpacks/hard process is exactly the same for 2017 and 2018, I think. But perhaps don't need to mention.
+
+The dominant backgrounds that appear in the signal region---\ttbarpjets, \wtolnupjets, and \ztonunupjets---are estimated using yields in \glspl{CR} (see Chpt.~\ref{subsec:htoinv_control_regions}). Contributions from \acrshort{qcd} multijet events should be adequately suppressed by the analysis-level selection requirements. However, it is still a process that must be accurately simulated considering its rate of production at \acrshort{cms}. A metric by which to estimate the number of events a dataset should require is by calculating the equivalent luminosity:
+
+\begin{equation}
+    \lumi_{\mathrm{eq.}} = \frac{N_{\mathrm{events}}}{\sigma}
+    \label{eq:equivalent_lumi}
+\end{equation}
+
+A general rule is that the equivalent luminosity of a given dataset should be comparable to, or even exceed, that of the data collected by the experiment. Since the \acrshort{qcd} multijet process has a very large cross section, simulating the required number of events to match the luminosity of the data recorded during Run-2 is not feasible. A dedicated method to predict its presence in the signal region is implemented in Chpt.~\ref{subsec:htoinv_qcd_multijet_bkg}.
+
+% Same questions as signal. Could do a breakdown by process
+%  - For the dominant backgrounds in the signal region like ttbar, W->lnu, and Z->nunu, give brief descriptions and say that dedicated methods are used to estimate their presence in the SR
+%  - Give brief descriptions of the other backgrounds (diboson, triboson, EWK V + 2 jets, gamma + jets, single top, ttbarX), and that we just take their estimations in the SR directly from the MC.
+% Again, maybe just mention the generator and hadroniser (and note that shower tune was different for 2016 and 2017/18 in most cases)
 
 
 %=========================================================
@@ -199,6 +304,7 @@ Emphasis will be placed on the non-VBF modes, particularly \ttH and resolved \VH
 \label{subsec:htoinv_mc_corrections}
 
 % If I have to describe these in a lot of detail, it's probably worth making this a section rather than subsection (and therefore promoting the subsubsections to subsections)
+% Describing the veto and selection weights in full is necessary. But describing how every single weight (and systematic?) in the analysis is derived is almost certainly too much. It might be enough to give one-line explanations of a lot of them (b-tag SFs, boosted objects, etc.), and go into a bit more detail regarding the dominant/interesting ones (NLO k-factors, ttbar systematics)
 
 In order for simulated events, particularly for background processes, to resemble \acrshort{lhc} data as closely as possible, many corrections and weights are applied.\footnote{The following stuff on weights is from what I wrote in the AN. But it may be too detailed/unnecessary for that document, so I've made a copy here in case it is removed from there.} These are discussed in more detail in the following sections [REF]. A final event weight $w_{\mathrm{event}}$ is the product of the weights from all of the individual sources $i$ that provide one:
 

@@ -1,10 +1,10 @@
  %\title{University of Bristol Thesis Template}
 
-% ----------------------------------------
+% ======================================
 \RequirePackage[l2tabu]{nag}        % Warns for incorrect (obsolete) LaTeX usage
-% ----------------------------------------
+% ======================================
 
-% ----------------------------------------
+% ======================================
 % File: memoirthesis.tex
 % Author: Victor Brena
 % Description: Contains the thesis template using memoir class, which is mainly based on book class but permits better control of chapter styles for example. This template is an adaptation and modification of Oscar's.
@@ -20,9 +20,9 @@
 %
 % Memoir class loads useful packages by default (see manual).
 \documentclass[a4paper,12pt,leqno,openbib,oldfontcommands]{memoir} % add 'draft' in options to render draft document (see below)
-% ----------------------------------------
+% ======================================
 
-% ----------------------------------------
+% ======================================
 % Adding metadata:
 \usepackage{datetime}
 \usepackage{ifpdf}
@@ -44,15 +44,15 @@
     \linenumbers
     \setkeys{Gin}{draft=false}  % allow figures to actually be displayed, not replaced by a box with the path to the figure
 \fi
-% ----------------------------------------
+% ======================================
 
-% ----------------------------------------
+% ======================================
 % Declare figure/table as a subfloat.
 \newsubfloat{figure}
 \newsubfloat{table}
-% ----------------------------------------
+% ======================================
 
-% ----------------------------------------
+% ======================================
 % Better page layout for A4 paper, see memoir manual.
 \settrimmedsize{297mm}{210mm}{*}
 \setlength{\trimtop}{0pt} 
@@ -65,19 +65,19 @@
 \setheadfoot{\onelineskip}{2\onelineskip} 
 \setheaderspaces{*}{2\onelineskip}{*} 
 \checkandfixthelayout
-% ----------------------------------------
+% ======================================
 
-% ----------------------------------------
+% ======================================
 \frenchspacing % single space after a sentence
-% ----------------------------------------
+% ======================================
 
-% ----------------------------------------
+% ======================================
 \usepackage[T1]{fontenc}                % To encode the font (glyphs/characters as bits)
 \usepackage[utf8]{inputenc}             % Needed to encode non-english characters directly for mac
 \usepackage{garamondx}                  % this is the font of the main text
-% ----------------------------------------
+% ======================================
 
-% ----------------------------------------
+% ======================================
 % UoB guidelines:
 %
 % Text should be in double or 1.5 line spacing, and font size should be chosen to ensure clarity and legibility for the main text and for any quotations and footnotes. Margins should allow for eventual hard binding.
@@ -126,9 +126,9 @@
 \makeatletter
 \g@addto@macro\bfseries\boldmath
 \makeatother
-% ----------------------------------------
+% ======================================
 
-% ----------------------------------------
+% ======================================
 % UoB guidelines:
 %
 % The pages should be numbered consecutively at the bottom centre of the page.
@@ -142,14 +142,14 @@
 %
 % Oscar's command (it works): Fills blank pages until next odd-numbered page. Used to emulate single-sided frontmatter. This will work for title, abstract and declaration. Though the contents sections will each start on an odd-numbered page they will spill over onto the even-numbered pages if extending beyond one page (hopefully, this is ok).
 \newcommand{\clearemptydoublepage}{\newpage{\thispagestyle{empty}\cleardoublepage}}
-% ----------------------------------------
+% ======================================
 
-% ----------------------------------------
+% ======================================
 % The import command enables each chapter tex file to use relative paths when accessing supplementary files. For example, to include chapters/brewing/images/figure1.png from chapters/brewing/brewing.tex we can use \includegraphics{images/figure1} instead of \includegraphics{chapters/brewing/images/figure1}
 \usepackage{import}
-% ----------------------------------------
+% ======================================
 
-% ----------------------------------------
+% ======================================
 % Add other packages needed for chapters here. For example:
 \usepackage{ptdr-definitions}           % CMS definitions and styles. Needs to come first so definitions from other packages don't cause conflicts
 \usepackage{lipsum}                     % Needed to create dummy text
@@ -226,35 +226,40 @@
     citecolor=Cerulean,
 }
 \usepackage{memhfixc}                   % Must be used on memoir document class after hyperref
-% ----------------------------------------
+% ======================================
 
-% ----------------------------------------
+% ======================================
 % New command definitions for my thesis. Put here so macros can be used in glossary entries
 \input{macros}
-% ----------------------------------------
+% ======================================
 
-% ----------------------------------------
+% ======================================
 % Create the glossary for terms and acronyms
 \usepackage[acronym,toc,nonumberlist]{glossaries}
 \makeglossaries
 \input{backmatter/glossary}
-% ----------------------------------------
+% ======================================
 
-% ----------------------------------------                            
+% ======================================                            
 % Reduce widows (the last line of a paragraph at the start of a page) and orphans (the first line of paragraph at the end of a page)
 \widowpenalty=1000
 \clubpenalty=1000
-% ----------------------------------------
+% ======================================
 
-% ----------------------------------------
-% Hyphenation for some words
-\hyphenation{res-pec-tively}
-\hyphenation{hypo-the-sis}
-\hyphenation{para-me-ters}
-\hyphenation{sol-va-bi-li-ty}
-% ----------------------------------------
+% ======================================
+% Hyphenation for some words.
+% If using the babel package, use the \babelhyphenation command. If not, instead use the \hyphenation command
+\babelhyphenation{res-pec-tively%
+    hypo-the-sis%
+    para-me-ters%
+    sol-va-bi-li-ty%
+    de-cay-ing%
+    measure-ment%
+    measure-ments%
+}
+% ======================================
 
-% ----------------------------------------
+% ======================================
 \begin{document}
 % UoB guidelines:
 %

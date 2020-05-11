@@ -144,7 +144,9 @@ Emphasis will be placed on the non-VBF modes, particularly \ttH and resolved \VH
 \section{Event selection}
 \label{sec:htoinv_event_selection}
 
-The event selection aims to strike the balance between rejecting as many background events while maintaining as great a signal sensitivity as possible. The preselection, in Chpt.~\ref{subsec:htoinv_preselection}, is applied to data and simulation in all regions and categories to do just that. Filters to reject potentially-mismeasured events and those that lead to incorrect \ptmiss calculations are documented in Chpt.~\ref{subsec:htoinv_other_filters}. The region- and dataset-specific triggers are described in Chpt.~\ref{subsec:htoinv_trigger_sel}.
+The event selection aims to strike the balance between rejecting as many background events while maintaining as great a signal sensitivity as possible. The preselection, in Chpt.~\ref{subsec:htoinv_preselection}, is applied to data and simulation in all regions and categories to do just that. Filters to reject potentially-mismeasured events and those that lead to incorrect \ptmiss calculations are documented in Chpt.~\ref{subsec:htoinv_other_filters}.
+
+% This section is up-to-date as of 11th May
 
 
 %=========================================================
@@ -153,6 +155,36 @@ The event selection aims to strike the balance between rejecting as many backgro
 \subsection{Preselection}
 \label{subsec:htoinv_preselection}
 
+The preselection is defined by applying the following cuts:
+\medskip
+\begin{easylist}[itemize]
+    \cutflowlistprops
+    & $\ptjone > \text{80} \GeV$
+    & $\HT > \text{200} \GeV$
+    & $\mht > \text{200} \GeV$
+    & $\MET > \text{200} \GeV$
+    & $\mht/\MET < \text{1.2}$ (inverted only for the QCD-enriched sidebands)
+    & Filters defined in Chpt.~\ref{subsec:htoinv_other_filters}
+\end{easylist}
+
+\medskip
+
+\noindent{}In order to ensure orthogonality with the phase space occupied by their subset of the analysis, we also require $\abs{\etajone} < \text{2.4}$, $\abs{\etajtwo} < \text{2.4}$ if $\njet > \text{1}$, and a veto of the \acrshort{vbf} kinematic selection:
+\medskip
+\begin{easylist}[itemize]
+    \cutflowlistprops
+    & $\ptjone > \text{80}\GeV$
+    & $\ptjtwo > \text{40}\GeV$
+    & $\abs{\etajone} < \text{5.0}$
+    & $\abs{\etajtwo} < \text{5.0}$
+    & $\etajone \cdot \etajtwo < \text{0}$
+    & $\ptmiss \geq \text{250}\GeV$
+    & $\abs{\Delta \eta_{\jone \jtwo}} > \text{1}$
+    & $\mjj > \text{200}\GeV$
+    & $\Delta \phi(\jone, \ \jtwo) < \text{1.5}$
+    & $\mindphiAB{\mathrm{j}}{\ptmiss} > \text{0.5}$
+\end{easylist}
+
 
 %=========================================================
 
@@ -160,19 +192,75 @@ The event selection aims to strike the balance between rejecting as many backgro
 \subsection{Additional filters}
 \label{subsec:htoinv_other_filters}
 
+Further selections are applied to all years, regions and categories to filter poorly measured or misreconstructed events in both data and MC. A ``muon jet filter" rejects events with misreconstructed muons by requiring all jets with $\pt > \text{200}\GeV$ must have a muon energy fraction $> \text{0.5}$, and $\Delta\phi(\mathrm{j}, \ \ptmiss) > \pi - \text{0.4}$.
+
+Charged (CHF) and neutral hadron energy fraction (NHF) requirements are applied to all jets via fulfillment of the ``tight" jet ID criteria (see [SEC IN OBJECT DEFS]). Furthermore, stricter requirements are placed on the leading two jets---in all categories, except the monojet categories where the requirements only apply to the leading jet---as follows:
+
+\medskip
+
+\begin{easylist}[itemize]
+    \cutflowlistprops
+    & $\text{CHF}_{\jone} > \text{0.1}$
+    & $\text{NHF}_{\jone} < \text{0.8}$
+    & $\text{CHF}_{\jtwo} > \text{0.1}$
+    & $\text{NHF}_{\jtwo} < \text{0.8}$
+\end{easylist}
+
+\medskip
+
+\noindent{}Events with anomalously energetic jets have been observed for data in the HF between $\abs{\eta} = [3.0, 3.1]$ that can lead to excess events, particularly in the QCD-enriched sidebands. As such, a requirement is placed on the ratio of the \HT formed from jets within $\abs{\eta} < \text{5}$ ($\HT^5$) and $\abs{\eta} < \text{2.4}$ ($\HT^{2.4}$), in OR with the difference in $\phi$ between the leading jet and \mht:
+\medskip
+\begin{easylist}[itemize]
+    \cutflowlistprops
+    & $\dfrac{\HT^5}{\HT^{2.4}} < \text{1.2}$ \ or \ $\Delta\phi(\jone, \mht) \geq \left( \text{5.3} \frac{\HT^5}{\HT^{2.4}} - \text{4.78} \right)$
+\end{easylist}
+
+\medskip
+
+\noindent{}where, if the former requirement is not satisfied, the latter is constructed such that $\Delta\phi(\jone, \mht) \geq \sfrac{\pi}{2}$. The \HT variable in the preselection, and in any plots showcased, only have requirements on the $\abs{\eta}$ for the two hardest jets---from the VBF orthogonality constraints in Chpt.~\ref{subsec:htoinv_preselection}.
+
+To avoid any potential horns (spikes in data and/or \acrshort{mc}) for jets at large pseudorapidity, we require
+\medskip
+\begin{easylist}[itemize]
+    \cutflowlistprops
+    & $\text{1} - \dfrac{\MET(\text{CHS})}{\MET(\text{calo})} < \text{0.8}$  % dfrac for full-size fraction in list
+\end{easylist}
+
+\medskip
+
+The filters described below were recommended to remove events with miscalculated \ptmiss:
+\medskip
+\begin{easylist}[itemize]
+    \easylistprops
+    & Primary vertex filter to remove events failing vertex quality criteria
+    & Beam halo filter
+    & \acrshort{hcal} barrel and end cap noise filters
+    & Filter for dead cells when constructing trigger primitives in the \acrshort{ecal}
+    & Filter for low-quality \gls{pf} muons
+\end{easylist}
+
+\medskip
+
+\noindent{}There are supplementary filters applied only to data. These are to generally mitigate \acrshort{ecal} end cap supercrystal noise, as well as crystals where losses of transparency would otherwise require large laser corrections.
+
 
 %=========================================================
 
 
-\subsubsection{\texorpdfstring{\ptmiss}{MET} filters}
-\label{subsubsec:htoinv_met_filters}
+\subsubsection{HEM mitigation strategy in 2018}
+\label{subsubsec:htoinv_hem_mitigation}
 
+In 2018, requirements were placed on electrons and the azimuthal angle of the \ptmiss to mitigate the HEM issue (see Sec.~\ref{subsec:htoinv_data}). As such, the preselection for 2018 was updated to remove events that met the following:
 
-%=========================================================
+\begin{easylist}[itemize]
+    \cutflowlistprops
+    & Any \texttt{VetoElectron} with $\pt > \text{10}\GeV$, $-\text{3.0} < \eta < -\text{1.4}$, and $-\text{1.57} < \phi < -\text{0.87}$
+    & $-\text{1.6} < \phi(\ptvecmiss) < -\text{0.8}$ (only applied in the signal region and \glspl{SB})
+\end{easylist}
 
+% Add a before/after plot
 
-\subsection{Trigger selection}
-\label{subsec:htoinv_trigger_sel}
+Note that while the signal region and QCD sidebands have hadronic final states, the implementation of veto weights for leptons in Sec.~\ref{subsubsec:veto_sel_weights} does not automatically reject events containing leptons. To avoid ambiguity and the inclusion of potentially misreconstructed events, an explicit veto is placed for the electrons satisfying the above criteria.
 
 
 %=========================================================
@@ -180,6 +268,8 @@ The event selection aims to strike the balance between rejecting as many backgro
 
 \section{Signal region, control region, and sideband definitions}
 \label{sec:region_definitions}
+
+% Add trigger selection as part of region definitions.
 
 
 %=========================================================
@@ -195,7 +285,7 @@ The event selection aims to strike the balance between rejecting as many backgro
 \subsection{Control regions}
 \label{subsec:htoinv_control_regions}
 
-% Mention that the leptons/photons are removed from the MET calculation.
+% Mention that the leptons/photons are removed from the MET calculation. And, obviously control regions are constructed to be, ideally, devoid of signal.
 
 
 %=========================================================
@@ -280,7 +370,6 @@ All \acrlong{mc} datasets used in this analysis was produced centrally by expert
     & \wtolnupjets: A \acrshort{qcd}-induced process, this background is dominant in the single lepton \glspl{CR}. If the lepton is lost, the \ptmiss can be be inflated and lead to a significant contribution in the signal region. The datasets are produced at \acrshort{lo} with \MGvATNLO.
 
     & \ztonunupjets: From the presence of neutrinos, the genuine \ptmiss from this process is a dominant background in the signal region. Its contribution is estimated using the double lepton and \singlePhotonCr \glspl{CR}. As with many of the above, the datasets are generated at \acrshort{lo} accuracy with \MGvATNLO.
-
 \end{easylist}
 
 % Check the datasets to see the generators and hadronisers for each process. The gridpacks/hard process are exactly the same for 2017 and 2018, I think. But perhaps don't need to mention.
@@ -348,6 +437,30 @@ Our reasoning for using Eq.~\ref{eq:uncertainty_mc_ours} for \acrshort{mc} inste
 %=========================================================
 
 
+\subsubsection{Veto and selection weights}
+\label{subsubsec:veto_sel_weights}
+
+In an analysis, events are often rejected by placing kinematic or object-based requirements. This type of selection strictly removes an event from the analysis if the requirement is not met. While kinematic requirements are either fulfilled or not, a different approach can be used when selecting the number of objects, i.e., when defining \glspl{CR}. For a set of objects, the selection weight at event level is defined as
+
+\begin{equation}
+    w_{\mathrm{sel.}} = \prod_i^{N_\mathrm{objects}} \epsilon_i
+    \label{eq:event_selection_weight}
+\end{equation}
+
+where $\epsilon_i$ is the efficiency/scale factor applied to object $i$. Only reconstructed (``reco level'') objects that have been matched to a generator level object are considered. For leptons (\Pe, \Pmu, \Ptau) and photons, these scale factors are typically from the reconstruction efficiency, identification efficiency, and \pt- or $\eta$-dependent energy corrections. In the case of \Pqb-tagged jets, it is the data-MC scale factor at the given working point of the algorithm used to identify them. These weights are calculated individually for each type of object in an event, and individually for each source since they also introduce systematic variations that cannot be trivially aggregated. A veto weight is defined as
+
+\begin{equation}
+    w_{\mathrm{veto}} = \prod_i^{N_\mathrm{objects}} 1 - \epsilon_i
+    \label{eq:event_veto_weight}
+\end{equation}
+
+The uncertainties/systematic variations follow the same prescription. With these quantities defined, an event that meets the object criteria is given the selection weight, otherwise it is given the veto weight. For example, if an event with one muon meets the criteria for the \singleMuCr region, it will enter that region with its muon-related selection weights. That same event can also enter the signal region or one of the \glspl{SB} (depending on the event kinematics) with the muon-related veto weights. The veto weights for the other leptonic objects will just be unity, as per Eq.~\ref{eq:event_veto_weight}. This ``migration'' of events, where they are able to contribute to more than one region, and the fact that weights are applied instead of event rejection, provides a noticeable decrease to the \acrlong{mc} statistical uncertainty in a given bin of a distribution.
+
+One thing must be noted about the migration of events, since we have many different regions of phase space in the analysis. The signal region and the \glspl{SB} have orthogonal kinematic requirements, so an event cannot enter the signal region \emph{and} one of the \glspl{SB}. The same is true amongst the \glspl{CR}, i.e., an event cannot enter more than one of them due to the designed orthogonality. An event \emph{is} able to enter the signal region or a \gls{SB} with $w_{\mathrm{veto}}$, and also one of the \glspl{CR} with $w_{\mathrm{sel.}}$. Since events in data are not weighted, they may only enter a single region.
+
+
+%=========================================================
+
 \subsubsection{Cross section reweighting}
 \label{subsubsec:xs_weighting}
 
@@ -376,33 +489,15 @@ The nominal \gls{pileup} weight for each simulated event, as well as the up and 
 %=========================================================
 
 
-\subsubsection{Veto and selection weights}
-\label{subsubsec:veto_sel_weights}
-
-In an analysis, events are often rejected by placing kinematic or object-based requirements. This type of selection strictly removes an event from the analysis if the requirement is not met. While kinematic requirements are either fulfilled or not, a different approach can be used when selecting the number of objects, i.e., when defining \glspl{CR}. For a set of objects, the selection weight at event level is defined as
-
-\begin{equation}
-    w_{\mathrm{sel.}} = \prod_i^{N_\mathrm{objects}} \epsilon_i
-    \label{eq:event_selection_weight}
-\end{equation}
-
-where $\epsilon_i$ is the efficiency/scale factor applied to object $i$. Only reconstructed (``reco level'') objects that have been matched to a generator level object are considered. For leptons (\Pe, \Pmu, \Ptau) and photons, these scale factors are typically from the reconstruction efficiency, identification efficiency, and \pt- or $\eta$-dependent energy corrections. In the case of \Pqb-tagged jets, it is the data-MC scale factor at the given working point of the algorithm used to identify them. These weights are calculated individually for each type of object in an event, and individually for each source since they also introduce systematic variations that cannot be trivially aggregated. A veto weight is defined as
-
-\begin{equation}
-    w_{\mathrm{veto}} = \prod_i^{N_\mathrm{objects}} 1 - \epsilon_i
-    \label{eq:event_veto_weight}
-\end{equation}
-
-The uncertainties/systematic variations follow the same prescription. With these quantities defined, an event that meets the object criteria is given the selection weight, otherwise it is given the veto weight. For example, if an event with one muon meets the criteria for the \singleMuCr region, it will enter that region with its muon-related selection weights. That same event can also enter the signal region or one of the \glspl{SB} (depending on the event kinematics) with the muon-related veto weights. The veto weights for the other leptonic objects will just be unity, as per Eq.~\ref{eq:event_veto_weight}. This ``migration'' of events, where they are able to contribute to more than one region, and the fact that weights are applied instead of event rejection, provides a noticeable decrease to the \acrlong{mc} statistical uncertainty in a given bin of a distribution.
-
-One thing must be noted about the migration of events, since we have many different regions of phase space in the analysis. The signal region and the \glspl{SB} have orthogonal kinematic requirements, so an event cannot enter the signal region \emph{and} one of the \glspl{SB}. The same is true amongst the \glspl{CR}, i.e., an event cannot enter more than one of them due to the designed orthogonality. An event \emph{is} able to enter the signal region or a \gls{SB} with $w_{\mathrm{veto}}$, and also one of the \glspl{CR} with $w_{\mathrm{sel.}}$. Since events in data are not weighted, they may only enter a single region.
+\subsubsection{Higher order corrections to \texorpdfstring{$\PVec \plusjets$}{V plus jets} samples}
+\label{subsubsec:htoinv_nlo_corrs}
 
 
 %=========================================================
 
 
 \subsubsection{Trigger efficiencies}
-\label{subsubsec:trigger_effs}
+\label{subsubsec:htoinv_trigger_effs}
 
 
 %=========================================================

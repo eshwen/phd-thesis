@@ -29,22 +29,22 @@ At the \acrshort{lhc}, the most common mechanisms for producing a Higgs boson ar
 \begin{figure}[htbp]
     \centering
     \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{feynman_diagrams/ttH.png}
+        \includegraphics[width=\textwidth]{figures/feynman_diagrams/ttH.png}
         \caption{\ttH}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{feynman_diagrams/VBF.png}
+        \includegraphics[width=\textwidth]{figures/feynman_diagrams/VBF.png}
         \caption{\acrshort{vbf}}
     \end{subfigure}
 % blank line to start new row
     \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{feynman_diagrams/VH.png}
+        \includegraphics[width=\textwidth]{figures/feynman_diagrams/VH.png}
         \caption{\VH}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{feynman_diagrams/ggF.png}
+        \includegraphics[width=\textwidth]{figures/feynman_diagrams/ggF.png}
         \caption{\ggF}
     \end{subfigure}
 \caption[A subset of the Feynman diagrams for the four predominant production mechanisms of the Higgs boson at the LHC]{A subset of the Feynman diagrams for the four predominant production mechanisms of the Higgs boson at the \acrshort{lhc}.}
@@ -195,6 +195,8 @@ The event selection aims to strike the balance between rejecting as many backgro
 \subsection{Control regions}
 \label{subsec:htoinv_control_regions}
 
+% Mention that the leptons/photons are removed from the MET calculation.
+
 
 %=========================================================
 
@@ -230,11 +232,12 @@ The event selection aims to strike the balance between rejecting as many backgro
 \subsection{Data}
 \label{subsec:htoinv_data}
 
-% Briefly describe data - using 2016-18 data from CMS at \comruntwo. Integrated lumi is 137.19 total (see Tab.~\ref{tab:lumis_lhc_cms} for a breakdown by year).
-% Say which primary datasets are used (i.e., datasets that are grouped by the class of trigger used - data triggered by HLT MET triggers used for SR, sidebands and muon CRs, single electron/e-gamma for electron CRs, single photon/e-gamma for photon CR)
-% Briefly describe issues with data as well, with how it would affect things and how to mitigate:
-%  - Pre-firing in 2016 and 2017. Say what the actual problem was. Doesn't affect data too much, just applied a centrally-derived weight to MC to match the data (see Chpt...)
-%  - HEM in 2018. Affected 38.6\fbinv of the 59.7\fbinv certified. With part of the HCAL missing, more difficult to accurately record jets and their properties. Can lead to artificial \ptmiss. Required dedicated studies and cuts to mitigate (described in Chpt...)
+The data collected by the \acrshort{cms} experiment that is used in the analysis corresponds to an integrated luminosity of 137.19\fbinv, and recorded from 2016--2018. A breakdown by year is given in Tab.~\ref{tab:lumis_lhc_cms}. Data is split into ``primary datasets'' that are grouped by the class of \acrshort{hlt} path that an event triggered. The signal region, \acrshort{qcd} sidebands, and muon \glspl{CR} use the primary dataset composed of \etmiss and \htmiss combination triggers, where muons are excluded from the sums. The datasets [used] in the electron and photon \glspl{CR} consist of triggers based on electron and photon object thresholds. These were separate for 2016 and 2017, then merged for 2018.
+
+Some serious issues arose during Run-2 that had to be mitigated after the events were reconstructed. With the high collision rate at \acrshott{cms}, in order to properly correlate the hits in the subdetectors with the correct particles and events they are attributed to, the timing infrastructure must be very precise. Timing scans are conducted frequently during runs to correct or compensate for any shifts that may occur. However, in 2016 and 2017, the gradual timing drift in the \acrshort{ecal} was not correctly propagated to the \acrlong{l1} trigger primitives. This resulted in a significant fraction of them in the forward direction (as the effect increases with $\eta$) being mistakenly associated to the previous bunch crossing: \emph{pre-firing}. One rule at \acrshort{l1} forbids two consecutive bunch crossings from firing signals to the trigger system. But, a consequence of this---in addition to not finding the primitive in the nominal bunch crossing---is that events can be vetoed if a significant amount of \acrshort{ecal} energy is found in the $\text{2} < \abseta < \text{3}$ part of the end cap. It is observed only in data, and so a correction is applied to \acrshort{mc} (see Chpt.~[REF]) to account for the effect.
+% Pre-firing: https://twiki.cern.ch/twiki/bin/viewauth/CMS/L1ECALPrefiringWeightRecipe, https://indico.cern.ch/event/764279/
+
+In 2018, a sector of the \acrshort{hcal} end cap lost power and left the approximate area $\eta = [-3.0, -1.4]$, $\phi = [-1.57, -0.87]$ uncovered for the remainder of the year. Of the 59.7\fbinv recorded and certified for use in 2018, 38.6\fbinv were affected. With this section missing, it is more difficult to accurately record the properties of \glspl{jet}, and therefore reliably calculate \ptmiss. Studies performed showed an excess in data in the affected area of the $\phi(\ptmiss)$ distribution of many of our regions and categories. To mitigate this issue, the following cuts were added to the preselection: XXX.
 
 
 %=========================================================
@@ -243,7 +246,7 @@ The event selection aims to strike the balance between rejecting as many backgro
 \subsection{Simulated signal processes}
 \label{subsec:htoinv_signal}
 
-All \acrlong{mc} datasets used in this analysis was produced centrally by experts in \acrshort{cms} as described in Chpt.~\ref{subsec:cms_mc}. The signal samples are generated at \acrshort{nlo} with the \POWHEG generator interfaced with \PYTHIAEIGHT. When reweighting events for their cross section, they are specified at \acrshort{nnlo}.\footnote{Should I give a table or something of the cross sections for the signal samples?} The samples are produced with a Higgs boson mass of $m_{\PH} = \text{125}\GeV$. The vector bosons in each of the \VH channels decay to $\Pquark\APquark$. When simulating 2016 data, the \PYTHIA shower tune was the latest available \textsc{cuetp8m1}, whilst for 2017 and 2018 datasets the newer \textsc{cp5} tune was used.
+All \acrlong{mc} datasets used in this analysis was produced centrally by experts in \acrshort{cms} as described in Chpt.~\ref{subsec:cms_mc}. The signal samples are generated at \acrshort{nlo} with the \POWHEG generator interfaced with \PYTHIAEIGHT. When reweighting events for their cross section, they are specified at \acrshort{nnlo}.\footnote{Should I give a table or something of the cross sections for the signal samples?} The samples are produced with a Higgs boson mass of $m_{\PH} = \text{125}\GeV$. The vector bosons in each of the \VH channels decay to $\Pquark\APquark$. When simulating 2016 data, the tuning of the shower parameters in \PYTHIA was labelled \textsc{cuetp8m1} (the latest available), whilst for 2017 and 2018 datasets the newer \textsc{cp5} version was used.
 
 
 %=========================================================
@@ -252,7 +255,7 @@ All \acrlong{mc} datasets used in this analysis was produced centrally by expert
 \subsection{Simulated background processes}
 \label{subsec:htoinv_background}
 
-\acrlong{mc} datasets for many processes are used in the analysis to accurately represent the \acrlong{sm} background. Every one uses \PYTHIAEIGHT to hadronise the events generated by the hard scatter. The tune applied in the hadroniser follows the same prescription as with signal---\textsc{cuetp8m1} is used for 2016 while \textsc{cp5} is used thereafter. The only exception is the $\ttbarpjets$ background, for which \emph{all} samples were generated with the \textsc{cp5} tune. They are described as follows:
+\acrlong{mc} datasets for many processes are used in the analysis to accurately represent the \acrlong{sm} background. Every one uses \PYTHIAEIGHT to hadronise the events generated by the hard scatter. The underlying event tune applied in the hadroniser follows the same prescription as with signal---\textsc{cuetp8m1} is used for 2016 while \textsc{cp5} is used thereafter. The only exception is the $\ttbarpjets$ background, for which \emph{all} samples were generated with the \textsc{cp5} tune. They are described as follows:
 
 % What words can I use instead of "process" as I seem to use it a lot here? Decay/dataset/mechanism/background?
 

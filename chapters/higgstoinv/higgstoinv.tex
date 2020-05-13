@@ -166,7 +166,7 @@ The preselection is defined by applying the following cuts:\footnote{Do I have t
     & $\mht/\MET < \text{1.2}$ (inverted only for the \acrshort{qcd}-enriched \glspl{SB})
     & Filters defined in Chpt.~\ref{subsec:htoinv_other_filters}
 \end{easylist}
-% medium skip should be 9 pt (i.e., half a line since I use 12 pt text and 1.5 line spacing)
+% medium skip to nicely separate the end of the list with the start of the next paragraph (ignored if the space would occur at the top of a new page). Should be 9 pt (i.e., half a line since I use 12 pt text and 1.5 line spacing)
 \medskip
 % No indent so it doesn't look weird just after the hanging list
 \noindent{}In order to ensure orthogonality with the phase space occupied by their subset of the analysis, we also require $\abs{\etajone} < \text{2.4}$, $\abs{\etajtwo} < \text{2.4}$ if $\njet > \text{1}$, and a veto of the \acrshort{vbf} kinematic selection:
@@ -235,8 +235,8 @@ To avoid any potential horns (spikes in data and/or \acrshort{mc}) for \glspl{je
     & Primary vertex filter to remove events failing vertex quality criteria
     & Beam halo filter
     & \acrshort{hcal} barrel and end cap noise filters
-    & Filter for dead cells when constructing trigger primitives in the \acrshort{ecal}
-    & Filter for low-quality \gls{pf} muons
+    & Filter for dead cells in the \acrshort{ecal} when constructing trigger primitives
+    & Filter for low-quality \acrlong{pf} muons
 \end{easylist}
 
 \medskip
@@ -251,7 +251,7 @@ To avoid any potential horns (spikes in data and/or \acrshort{mc}) for \glspl{je
 \label{subsubsec:htoinv_hem_mitigation}
 
 In 2018, requirements were placed on electrons and the azimuthal angle of the \ptmiss to mitigate the HEM issue (see Sec.~\ref{subsec:htoinv_data}). As such, the preselection for 2018 was updated to remove events that met the following:
-
+\medskip
 \begin{easylist}[itemize]
     \cutflowlistprops
     & Any \texttt{VetoElectron} with $\pt > \text{10}\GeV$, $-\text{3.0} < \eta < -\text{1.4}$, and $-\text{1.57} < \phi < -\text{0.87}$
@@ -262,7 +262,7 @@ In 2018, requirements were placed on electrons and the azimuthal angle of the \p
 
 \medskip
 
-\noindent{}Note that while the signal region and \acrshort{qcd} \glspl{SB} have hadronic final states, the implementation of veto weights for leptons in Sec.~\ref{subsubsec:veto_sel_weights} does not automatically reject events containing leptons. To avoid ambiguity and the inclusion of potentially misreconstructed events, an explicit veto is placed for the electrons satisfying the above criteria.
+\noindent{}Note that while the signal region and \acrshort{qcd} \glspl{SB} have hadronic final states, the implementation of veto weights for leptons in Chpt.~\ref{subsubsec:veto_sel_weights} does not automatically reject events containing leptons. To avoid ambiguity and the inclusion of potentially mis-reconstructed events, an explicit veto is placed for the electrons satisfying the above criteria.
 
 
 %=========================================================
@@ -271,7 +271,7 @@ In 2018, requirements were placed on electrons and the azimuthal angle of the \p
 \section{Signal region, control region, and sideband definitions}
 \label{sec:region_definitions}
 
-% Add trigger selection as part of region definitions.
+Several regions of phase space are explored in the analysis. The signal region is accompanied by \glspl{CR} and \glspl{SB} to aid in the prediction of certain backgrounds, as explained below. The preselection is applied to every region, so they are separated by the \acrshort{cms} datasets used, the \acrlong{hlt} requirements, and object and/or kinematic selections.
 
 
 %=========================================================
@@ -280,6 +280,30 @@ In 2018, requirements were placed on electrons and the azimuthal angle of the \p
 \subsection{The signal region}
 \label{subsec:htoinv_signal_region}
 
+The signal region is the area of parameter space where we expect the signal to manifest, and the background to be reduced sufficiently that the potential presence of signal in data can be statistically verified. In this analysis, only hadronic final states are permitted. Events with leptons, photons and taus meeting the ``loose'' or ``veto'' criteria in Chpt.~\ref{sec:htoinv_objects} are not explicitly vetoed, however, but are given a weight as described in Chpt.~\ref{subsubsec:veto_sel_weights}.
+
+Events must satisfy a logical \texttt{OR} of \acrshort{hlt} cross-triggers for \acrlong{pf} \ptmiss and \mht calculated without muons, with also at least one jet satisfying the tight ID (see Chpt.~\ref{sec:htoinv_objects}). The triggers are illustrated in Tab.~\ref{tab:htoinv_SR_triggers}.
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{ccccc}
+        \hline\hline
+        Year & $\ptmiss$ no $\mu$ (\GeVns) & $\mht$ no $\mu$ (\GeVns) & $\HT$ (\GeVns) & $\njet$ with tight ID \\ \hline
+        \multirow{4}{*}{2016} & 90 & 90 & --- & $\geq \text{1}$ \\
+        & 100 & 100 & --- & $\geq \text{1}$ \\
+        & 110 & 110 & --- & $\geq \text{1}$ \\
+        & 120 & 120 & --- & $\geq \text{1}$ \\
+        \hline
+        \multirow{2}{*}{2017} & 120 & 120 & --- & $\geq \text{1}$ \\
+        & 120 & 120 & 60 & $\geq \text{1}$ \\
+        \hline
+        2018 & 120 & 120 & --- & $\geq \text{1}$ \\
+        \hline\hline
+    \end{tabular}
+    \caption[The trigger thresholds required for events to enter the signal region in each data taking year]{The trigger thresholds required for events to enter the signal region in each data taking year. Each quantity is computed with the \gls{particleflow} at \acrshort{hlt} level.}
+    \label{tab:htoinv_SR_triggers}
+\end{table}
+
 
 %=========================================================
 
@@ -287,7 +311,57 @@ In 2018, requirements were placed on electrons and the azimuthal angle of the \p
 \subsection{Control regions}
 \label{subsec:htoinv_control_regions}
 
-% Mention that the leptons/photons are removed from the MET calculation. And, obviously control regions are constructed to be, ideally, devoid of signal.
+\Glspl{CR} serve two complementary purposes in many analyses: the prediction of certain backgrounds that dominate in the signal region, as a more accurate method than using the yields from \acrlong{mc}; and to validate the data, \acrshort{mc}, and corrections or weights applied. They are orthogonal to the signal region and to each other by way of the requirements of leptons or photons, and by triggers usually pertaining to those objects. \Glspl{CR} are also designed to, ideally, be devoid of signal. Contamination is sometimes present, but at a very small level. Five \glspl{CR} are used in the analysis: \singleMuCr, \doubleMuCr, \singleEleCr, \doubleEleCr, and \singlePhotonCr. The requirements on the objects are summarised in the list below.
+\medskip
+\begin{easylist}[itemize]
+    \easylistprops
+    & \singleMuCr: one tightly-isolated muon with $\pt > \text{20}\GeV$ and $\text{50} < \mtMuon < \text{110}\GeV$
+    & \doubleMuCr: one tightly-isolated muon with $\pt > \text{20}\GeV$, and one loosely-isolated muon with $\pt > \text{10}\GeV$ that has opposite charge, with a combined invariant mass of $\text{60} < \doubleMuMass < \text{120}\GeV$
+    & \singleEleCr: one tightly-isolated electron with $\pt > \text{40}\GeV$ and $\text{50} < \mtElectron < \text{110}\GeV$
+    & \doubleEleCr: one tightly-isolated electron with $\pt > \text{40}\GeV$, and one loosely-isolated electron with $\pt > \text{10}\GeV$ that has opposite charge, with a combined invariant mass of $\text{60} < \doubleEleMass < \text{120}\GeV$
+    & \singlePhotonCr: one tightly-isolated photon with $\pt > \text{230}\GeV$
+\end{easylist}
+
+\medskip
+% Mention that the leptons/photons are removed from the MET calculation to simulate the processes they are predicting (single lepton region predicts semi-leptonic ttbar and Wlnu, in either case where the lepton is lost, double lepton and photon regions predict Znunu, the former parallels the decay to 2 leptons as kinematics are very similar, and the latter substitutes the Z->nunu for a photon(?))
+
+\noindent{}The trigger requirements for the \singleMuCr and \doubleMuCr \glspl{CR} are the same as for the signal region (Tab.~\ref{tab:htoinv_SR_triggers}) since the same primary dataset is used.
+
+The \singleEleCr and \doubleEleCr \glspl{CR} take advantage of the increased statistical power of two primary datasets in both 2016 and 2017, characterised by electron and photon triggers. In 2018, they were merged into a single $\Pe/\Pphoton$ primary dataset. Tabs.~\ref{tab:htoinv_ele_pd_triggers} and~\ref{tab:htoinv_photon_pd_triggers} [illustrate] how the trigger requirements are specified for each year. As before, each quantity and object is defined at \acrshort{hlt} level. If an event aims to enter the \singleEleCr or \doubleEleCr, and is from the dataset of \Pe-based triggers, the criteria for either of the two triggers for the given year in Tab.~\ref{tab:htoinv_ele_pd_triggers} must be satisfied. If an event aims to enter either \gls{CR} and is from the primary dataset of \Pphoton-based triggers, the failure of both of the electron triggers in Tab.~\ref{tab:htoinv_ele_pd_triggers} and the passing of any of the photon triggers in Tab.~\ref{tab:htoinv_photon_pd_triggers} are required. This condition avoids double counting events that also appear in the electron trigger-based dataset. In 2018, any of the year's triggers in Tabs.~\ref{tab:htoinv_ele_pd_triggers} and~\ref{tab:htoinv_photon_pd_triggers} may be satisfied. For \acrlong{mc} events, as they are not categorised by trigger, they may pass any of the triggers in either table for their respective year.
+
+For the \singlePhotonCr, we take data from \acrshort{cms} originating only from the dataset of \Pphoton-based triggers. Data and \acrshort{mc} must satisfy any of the triggers from Tab.~\ref{tab:htoinv_photon_pd_triggers} for the respective year.
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{ccccc}
+        \hline\hline
+        Year & \Pe SC \ET threshold (\GeVns) & \Pe WP & Calorimeter ID & \acrshort{gsf} track-SC matching \\ \hline
+        \multirow{2}{*}{2016} & 27 & Tight & --- & --- \\
+        & 105 & --- & Very tight & Tight \\\hline
+        \multirow{2}{*}{2017} & 35 & Tight & --- & --- \\
+        & 115 & --- & Very tight & Tight \\\hline
+        \multirow{2}{*}{2018} & 32 & Tight & --- & --- \\
+        & 115 & --- & Very tight & Tight \\
+        \hline\hline
+    \end{tabular}
+    \caption[The trigger requirements for events to enter the \singleEleCr or \doubleEleCr control regions, if they originate from the dataset of \Pe-based triggers]{The trigger requirements for events to enter the \singleEleCr or \doubleEleCr \glspl{CR}, if they originate from the dataset of \Pe-based triggers. Requirements are on the transverse energy of the supercluster (SC), the working point of the candidate electron, ID of the candidate in the calorimeters,and the matching between the \acrfull{gsf}-fitted track and supercluster, all at \acrshort{hlt} level.}
+    \label{tab:htoinv_ele_pd_triggers}
+\end{table}
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{ccc}
+        \hline\hline
+        Year & \Pphoton \ET threshold (\GeVns) & $H/E$ \\\hline
+        \multirow{2}{*}{2016} & 165 & $< \text{0.1}$ \\
+        & 175 & --- \\\hline
+        2017 & 200 & --- \\\hline
+        2018 & 200 & --- \\\hline\hline
+    \end{tabular}
+    \caption[The trigger requirements for events to enter the \singleEleCr, \doubleEleCr, or \singlePhotonCr control regions, if they originate from the dataset of \Pphoton-based triggers]{The trigger requirements for events to enter the \singleEleCr, \doubleEleCr, or \singlePhotonCr \gls{CR}, if they originate from the dataset of \Pphoton-based triggers. Requirements are on the transverse energy of the candidate, and the ratio of the candidate's central energy deposits in \acrshort{hcal} and \acrshort{ecal} ($H/E$), all computed at \acrshort{hlt} level.}
+    \label{tab:htoinv_photon_pd_triggers}
+\end{table}
+% See if I can describe them in a more elegant way. Might be easier give the descriptions and actual HLT path names a bit earlier, then just reference the HLT path names in the list
 
 
 %=========================================================
@@ -295,6 +369,8 @@ In 2018, requirements were placed on electrons and the azimuthal angle of the \p
 
 \subsection{Sidebands to the signal region}
 \label{subsec:htoinv_sidebands}
+
+% Based on kinematic requirements. Mention that the sidebands which only invert one variable are kinematically similar to the signal region. So, when conducting an analysis while blind to data in the SR, inspecting these sidebands is a good indicator of, how, e.g., new cuts or corrections/weights, will affect the SR and data-MC agreement.
 
 
 %=========================================================
@@ -355,11 +431,11 @@ All \acrlong{mc} datasets used in this analysis was produced centrally by expert
     \easylistprops
     & Drell-Yan $(\HepProcess{\PZ \to \Plepton\Plepton}) \plusjets$: The Drell-Yan process occurs when the quark of one incident proton annihilates with the antiquark in the oncoming proton, producing a neutral vector boson (a \PZ in this case) from a \acrshort{qcd} vertex. The \PZ boson decays to a lepton pair, so while absent in the signal region, is the dominant background in the dilepton \glspl{CR} used to model the \ztonunupjets process. The datasets are generated at \acrshort{lo} accuracy with \MGvATNLO, where a dilepton mass cut of 50\GeV is applied.
 
-    & Multiboson: This process encompasses the production two (diboson) or three (triboson) electroweak bosons from \acrshort{qcd}(?) vertices. They may decay leptonically, also producing neutrinos in the case of \PW bosons, but also hadronically, producing \glspl{jet}. A mixture of the two in an event will lead to similar signatures to that of the signal. The diboson processes are both generated and showered with \PYTHIAEIGHT at \acrshort{lo}. Triboson events, on the other hand, \MGvATNLO at \acrshort{nlo} accuracy models the hard scatter.
+    & Multiboson: This background encompasses the production two (diboson) or three (triboson) electroweak bosons from \acrshort{qcd}(?) vertices. They may decay leptonically, also producing neutrinos in the case of \PW bosons, but also hadronically, producing \glspl{jet}. A mixture of the two in an event will lead to similar signatures to that of the signal. The diboson processes are both generated and showered with \PYTHIAEIGHT at \acrshort{lo}. Triboson events, on the other hand, \MGvATNLO at \acrshort{nlo} accuracy models the hard scatter.
 
     & Electroweak $\PVec + \text{2 jets}$: The production of electroweak bosons from an electroweak vertex is a minor background in the signal region. But as above, they may produce genuine \ptmiss from the decay of the \PVec. The datasets are generated at \acrshort{lo} with \MGvATNLO. % Mention something about the M-50 cut (if I can find out what it is), and maybe about the Vs only decaying into lnu, ll and nunu (perhaps that's what the 'electroweak' vertex means)
 
-    & \singlePhotonCr: Events with photons are vetoed in the signal region. However, this is the dominant background in the \singlePhotonCr \gls{CR}, that predicts the \ztonunupjets contribution to the signal region, along with the double lepton regions. This dataset is generated at \acrshort{lo} with \MGvATNLO, where the $\Delta R > \text{0.4}$ between a photon and jet is required.
+    & \singlePhotonCr: Events with photons are vetoed in the signal region. However, this is the dominant background in the \singlePhotonCr \gls{CR}, that predicts the \ztonunupjets contribution to the signal region, along with the dilepton \glspl{CR}. These datasets are generated at \acrshort{lo} with \MGvATNLO, requiring the $\Delta R$ between a photon and jet to be at least 0.4.
 
     & \acrshort{qcd} multijet: The most common type of event produced in $\Pp\Pp$ collisions at the \acrshort{lhc} is several \glspl{jet} from \acrshort{qcd} vertices. These typically do not have large \ptmiss, but are prone to mismeasurements that can artificially increase it. As such, they serve as a non-negligible background in the analysis. The datasets are produced at \acrshort{lo} by \MGvATNLO.
 
@@ -371,7 +447,7 @@ All \acrlong{mc} datasets used in this analysis was produced centrally by expert
 
     & \wtolnupjets: A \acrshort{qcd}-induced process, this background is dominant in the single lepton \glspl{CR}. If the lepton is lost, the \ptmiss can be be inflated and lead to a significant contribution in the signal region. The datasets are produced at \acrshort{lo} with \MGvATNLO.
 
-    & \ztonunupjets: From the presence of neutrinos, the genuine \ptmiss from this process is a dominant background in the signal region. Its contribution is estimated using the double lepton and \singlePhotonCr \glspl{CR}. As with many of the above, the datasets are generated at \acrshort{lo} accuracy with \MGvATNLO.
+    & \ztonunupjets: From the presence of neutrinos, the genuine \ptmiss from this channel is a dominant background in the signal region. Its contribution is estimated using the double lepton and \singlePhotonCr \glspl{CR}. As with many of the above, the datasets are generated at \acrshort{lo} accuracy with \MGvATNLO.
 \end{easylist}
 
 % Check the datasets to see the generators and hadronisers for each process. The gridpacks/hard process are exactly the same for 2017 and 2018, I think. But perhaps don't need to mention.
@@ -499,11 +575,13 @@ The nominal \gls{pileup} weight for each simulated event, as well as the up and 
 \section{Background estimation}
 \label{sec:htoinv_background_est}
 
+% Remake Ben's schematic for how the control regions and sidebands are used to get the estimations from the latest talk. Add the photon CR and put here
+
 
 %=========================================================
 
 
-\subsection{Lost lepton}
+\subsection{Lost lepton (\texorpdfstring{\PW}{W} and \texorpdfstring{$\ttbarpjets$}{ttbar plus jets})}
 \label{subsec:htoinv_lost_lepton_bkg}
 
 
@@ -519,6 +597,9 @@ The nominal \gls{pileup} weight for each simulated event, as well as the up and 
 
 \subsection{QCD multijet}
 \label{subsec:htoinv_qcd_multijet_bkg}
+
+% Reiterate that QCD samples have low equivalent lumi, so do not give a statistically satisfying number of events in MC. So a data-driven method is used.
+% Say somwhere that QCD is also prone to mismeasurement because the final state is a large number of jets with potentially low pt. Since there are just lots of jets, only zero to low MET is expected. If even a single jet is mismeasured, then it can introduce fake MET in the direction of that jet (so low min_dphi(jet, MET)). Jets from "cleaner" QCD and EWK processes may also be mismeasured (jet reco efficiency tends to increase with pt), but if there's real MET anyway in the event (e.g., Z->nunu), it is unlikely to significantly affect it. The enormous cross section of QCD multijet amplifies the problem as well, making the process as a whole more sensitive to, e.g., fluctuations in the calorimeter response that would affect the energy measurement.
 
 
 %=========================================================

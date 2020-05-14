@@ -209,6 +209,7 @@ The following are some notes on formatting guidelines and style, just to remain 
 
 - What should the title of the thesis be? "Dark matter searches at CMS at sqrt(s) = 13 TeV" sounds a bit boring and generic. And should there be a subtitle?
 - Can I use different colours for different links (from hyperref package), e.g., urls, references, etc.? Or should it all be black/more muted colours?
+- For certain words used often like "reweight" and "misreconstruct", should there be hyphens ("re-weight", "mis-reconstruct", etc.)?
 
 ## Badges
 

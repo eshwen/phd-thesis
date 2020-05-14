@@ -110,9 +110,9 @@
 \newcommand{\omegaTilde}{\ensuremath{\tilde{\omega}_{\text{min}}}\xspace}
 \newcommand{\minChi}{\ensuremath{\chi_{\text{min}}}\xspace}
 \newcommand{\mindphiAB}[2]{\ensuremath{\Delta\phi_{\text{min}}(#1, \ #2)}\xspace}
-\newcommand{\mindphiJetMet}{\ensuremath{\mindphiAB{\text{j}}{\MET}}\xspace}
-\newcommand{\dphiTj}{\ensuremath{\mindphiAB{\text{j}_{1, 2}}{\MET}}\xspace}
-\newcommand{\dphiFj}{\ensuremath{\mindphiAB{\text{j}_{1, 2, 3, 4}}{\MET}}\xspace}
+\newcommand{\mindphiJetMet}{\ensuremath{\mindphiAB{\text{j}}{\ptmiss}}\xspace}
+\newcommand{\dphiTj}{\ensuremath{\mindphiAB{\text{j}_{1, 2}}{\ptmiss}}\xspace}
+\newcommand{\dphiFj}{\ensuremath{\mindphiAB{\text{j}_{1, 2, 3, 4}}{\ptmiss}}\xspace}
 
 % Semi-visible jets variables. Taken from AN-19-061
 %\newcommand{\metmt}{\ensuremath{\MET/\mt}\xspace}
@@ -154,10 +154,12 @@
 \newcommand{\tchannel}{\ensuremath{t\text{-channel}}\xspace}
 
 % Background processes
-\newcommand{\lostlepton}{\ensuremath{\ell_{\text{lost}}}\xspace}
+\newcommand{\lostlepton}{\ensuremath{\Plepton_{\text{lost}}}\xspace}
 \newcommand{\ztonunu}{\ensuremath{\HepProcess{\PZ \to \Pgn\Pagn}}\xspace}
 \newcommand{\ztomumu}{\ensuremath{\HepProcess{\PZ \to \Pgm\Pgm}}\xspace}
 \newcommand{\ztonunupjets}{\ensuremath{\PZ(\to \Pgn\Pagn) \plusjets}\xspace}
+\newcommand{\ztollpjets}{\ensuremath{\PZ(\to \Plepton\Plepton) \plusjets}\xspace}
+\newcommand{\ztolplmpjets}{\ensuremath{\PZ(\to \Pleptonplus\Pleptonminus) \plusjets}\xspace}
 \newcommand{\wtolnupjets}{\ensuremath{\PW(\to \ell\Pgn) \plusjets}\xspace}
 \newcommand{\ttbarpjets}{\ensuremath{\ttbar \plusjets}\xspace}
 

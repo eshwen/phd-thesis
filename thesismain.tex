@@ -19,7 +19,7 @@
 % The dissertation must be printed on A4 white paper. Paper up to A3 may be used for maps, plans, diagrams and illustrative material. Pages (apart from the preliminary pages) should normally be double-sided.
 %
 % Memoir class loads useful packages by default (see manual).
-\documentclass[a4paper,12pt,leqno,openbib,oldfontcommands]{memoir} % add 'draft' in options to render draft document (see below)
+\documentclass[a4paper,12pt,leqno]{memoir} % 'leqno' puts equation numbers on the left (default is on the right). Add 'draft' in options to render draft document (see below)
 % ======================================
 
 % ======================================
@@ -37,12 +37,12 @@
 
 % When draft option is on. 
 \ifdraftdoc 
-    \usepackage{draftwatermark}  % Sets watermarks up
+    \usepackage{draftwatermark}         % Sets watermarks up
     \SetWatermarkScale{0.3}
     \SetWatermarkText{\textbf{Draft: \today}}
-    \usepackage[left]{lineno}  % Set line numbers for easier referencing to specific points in the document
+    \usepackage[left]{lineno}           % Set line numbers for easier referencing to specific points in the document
     \linenumbers
-    \setkeys{Gin}{draft=false}  % allow figures to actually be displayed, not replaced by a box with the path to the figure
+    \setkeys{Gin}{draft=false}          % allow figures to actually be displayed, not replaced by a box with the path to the figure
 \fi
 % ======================================
 
@@ -68,7 +68,7 @@
 % ======================================
 
 % ======================================
-\frenchspacing % single space after a sentence
+\frenchspacing                          % single space after a sentence
 % ======================================
 
 % ======================================
@@ -204,8 +204,6 @@
 \usepackage{csquotes}                   % Used in conjunction with babel to use quotes appropriate to language (biblatex throws warning if not used)
 \usepackage{enumerate}                  % For enumeration counter
 \usepackage{microtype}                  % Makes pdf look better (affects font and line spacing, fewer overfull/underfull hbox warnings)
-
-% Esh's extra packages from here
 \usepackage{physics}                    % for physics symbols, such as differential symbols
 \usepackage{bbold}                      % for mathematical symbols like the characters for special sets
 \usepackage[ampersand]{easylist}        % for bullet points and lists, etc. New entry starts with & character
@@ -310,27 +308,27 @@
 %\import{./}{tests.tex}
 %\clearemptydoublepage
 
-\import{chapters/introduction/}{introduction.tex}
+\import{chapters/introduction}{introduction.tex}
 \clearemptydoublepage
 
-\import{chapters/theory/}{theory.tex}
+\import{chapters/theory}{theory.tex}
 \clearemptydoublepage
 
-\import{chapters/detector/}{detector.tex}
+\import{chapters/detector}{detector.tex}
 \clearemptydoublepage
 
-\import{chapters/higgstoinv/}{higgstoinv.tex}
+\import{chapters/higgstoinv}{higgstoinv.tex}
 \clearemptydoublepage
 
-\import{chapters/svj/}{svj.tex}
+\import{chapters/svj}{svj.tex}
 \clearemptydoublepage
 
-\import{chapters/conclusions/}{conclusions.tex}
+\import{chapters/conclusions}{conclusions.tex}
 \clearemptydoublepage
 
 % And the appendix/appendices go here
 \appendix
-\import{chapters/appendices/}{app0A.tex}
+\import{chapters/appendices}{app0A.tex}
 \clearemptydoublepage
 
 

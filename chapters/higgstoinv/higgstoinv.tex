@@ -554,7 +554,7 @@ We employ the following selections to AK8 \glspl{jet} to classify them, as recom
 \subsection{Binning}
 \label{subsec:htoinv_binning}
 
-% Mention that we bin in MET (MET no lep/photon for the CRs), that the binning differs by category, but is consistent for each region so transfer factors and such from the background estimation methods can be bin-by-bin.
+In addition to the categories above, events are placed in bins of \ptmiss as that distribution is expected to maximally differentiate signal and background in the final fit (see Chpt.~\ref{sec:htoinv_satistical_treatment}). Since the number of events can significantly differ between categories in the different regions of the analysis, a global binning configuration is inadequate. For each category, the number and widths of the bins are tuned to ensure sufficient statistical precision. These schemes are tied to the category, so are reflected in all regions such that transfer factors from the background estimation methods are calculated on a bin-by-bin basis.\footnote{Not sure if this subsection should instead go in the fit discussion. But as I haven't written any of that, I'll leave it here for now.}
 
 
 %=========================================================
@@ -657,7 +657,7 @@ For the \singlePhotonCr \gls{CR}, we take data from \acrshort{cms} originating o
 
 % See if I can describe the trigger requirements in a more elegant way. Might be easier give the descriptions and actual HLT path names a bit earlier, then just reference the HLT path names in the list
 
-In each of the \glspl{CR}, the \ptvecmiss is recalculated without the objects used to define said region to model the process it is predicting. Using the \singleMuCr \gls{CR} as an example, the new \ptvecmiss is the vector sum of the old \ptvecmiss and the tight muon \ptvec. Requirements in the event selection that refer to \ptmiss use the recalculated quantity when applied to the \glspl{CR}. The single lepton \glspl{CR} estimate the semi-leptonic $\ttbarpjets$ and $\wtolnupjets$ backgrounds. In both cases, they may enter the signal region if the lepton is lost. The dilepton and \singlePhotonCr regions consider \ztonunupjets. The former parallels the decay as it is enriched in \ztolplmpjets---possessing very similar kinematic properties while being much easier to detect, improving statistical accuracy. The latter region substitutes the \ztonunu decay with a photon.
+In each of the \glspl{CR}, the \ptvecmiss is recalculated without the objects used to define said region to model the process it is predicting. Using the \singleMuCr \gls{CR} as an example, the new \ptvecmiss is the vector sum of the old \ptvecmiss and the tight muon \ptvec. Requirements in the event selection and binning that refer to \ptmiss use the recalculated quantity when applied to the \glspl{CR}. The single lepton \glspl{CR} estimate the semi-leptonic $\ttbarpjets$ and $\wtolnupjets$ backgrounds. In both cases, they may enter the signal region if the lepton is lost. The dilepton and \singlePhotonCr regions consider \ztonunupjets. The former parallels the decay as it is enriched in \ztolplmpjets---possessing very similar kinematic properties while being much easier to detect, improving statistical accuracy. The latter region substitutes the \ztonunu decay with a photon.
 
 
 %=========================================================

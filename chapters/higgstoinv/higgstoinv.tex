@@ -136,8 +136,217 @@ Emphasis will be placed on the non-VBF modes, particularly \ttH and resolved \VH
 %=========================================================
 
 
-\section{Object definitions}
+\section{Definitions of physics objects and variables}
 \label{sec:htoinv_objects}
+
+The physics that occurs at the high energies the \acrshort{lhc} is capable of is not simple. That makes the recording of particles and events overall a non-trivial undertaking. Based on complex hardware and software, research, and the experience of previous experiments, defining physics objects and variables from an analyst's standpoint is thankfully straightforward. The basic [definitions] are already included into the \ROOT files we use, with [additional] selections on top to select the analysis-level objects.
+
+Different working points for the identification of many objects are available from the respective \glspl{pog}, trading inclusivity for purity the tighter the selections are. ``Veto'' and ``loose'' criteria are used to specify the secondary leptons in the dilepton \glspl{CR}, and when vetoing leptons and photons (or applying their corresponding veto weights) in the signal region. The ``medium'' and ``tight'' selections are used to construct the primary objects in the \glspl{CR}. We denote these objects with a subscript corresponding to the working point. The requirements elaborated upon in the subsequent subsections.
+
+% Mention the use of ``veto'', ``loose'', ``medium'' and ``tight'' working points and objects. Define them in the respective subsections
+
+% For each set of objects, might be able to just define one table for the basic requirements that apply to all years. Then for each year, just note the things that have changed with respect to the base/previous year. Dependent on how much the criteria changes year to year
+
+
+%=========================================================
+
+
+\subsection{Jets}
+\label{subsec:htoinv_jet_objs}
+
+In the \nanoAOD data tier, a \gls{jet} is defined as an AK4-clustered, charged hadron-subtracted object reconstructed with the \gls{particleflow}, with \acrlong{jec} applied and a requirement of $\pt > \text{15}\GeV$. For the analysis, we raise the threshold to $\pt > \text{30}\GeV$ and explicitly require $\abseta < 5.0$. Either the tight, or tight $+$ lepton veto, \acrshort{pf} identification requirements are [also] mandatory to establish a sufficient degree of purity with a very high efficiency ($> \text{98\,\%}$ in all $\abseta$ regions). These are documented in Tabs.~\ref{tab:htoinv_jet_id_def_2016}, \ref{tab:htoinv_jet_id_def_2017}, and \ref{tab:htoinv_jet_id_def_2018}. Finally, \glspl{jet} must not overlap (i.e., $\Delta R > \text{0.4}$) with any $\Pe_{\mathrm{veto}}$, $\Pgm_{\mathrm{loose}}$, or $\Pphoton_{\mathrm{loose}}$ in the event to avoid potential misidentification.
+
+AK8 \glspl{jet} follow the same reconstruction and identification prescription as AK4 \glspl{jet}, only differing in the cone size.\footnote{I'm not what/if the minimum \pt of an AK8 \gls{jet} is, and whether they have an $\eta$ restriction (I've seen $\abseta < 2.4$ in a few places, but nothing confirmed).}
+
+A \gls{bjet} is defined as a \nanoAOD \gls{jet} with $\pt > \text{20}\GeV$, $\abseta < 2.5$ (2.4 in 2016), and to satisfy the medium working point (a mis-tag rate of 1\,\%) from the \deepcsv algorithm~\cite{Sirunyan:2017ezt}.
+
+% Might need to say we use pt_nom for all instances of pt thresholds (except noisy EE jets in 2017 where the raw pt is used)
+
+%=========================================================
+
+
+\subsubsection{2016}
+\label{subsubsec:htoinv_jet_objs_2016}
+
+The tight and tight $+$ lepton veto ID requirements are detailed in Tab.~\ref{tab:htoinv_jet_id_def_2016}. Specifically to this year, all \glspl{jet} are required to satisfy the criteria for the tight pileup ID to ensure they do not originate from pileup vertices.
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{lcccc}
+        \hline
+        Criterion & $\abseta \leq \text{2.4}$ & $\text{2.4} < \abseta \leq \text{2.7}$ & $\text{2.7} < \abseta \leq \text{3.0}$ & $\abseta \geq \text{3.0}$ \\\hline
+        Neutral hadron fraction & $< \text{0.90}$ & $< \text{0.90}$ & $< \text{0.98}$ & --- \\
+        Neutral EM fraction & $< \text{0.90}$ & $< \text{0.90}$ & $> \text{0.01}$ & $< \text{0.90}$ \\
+        \# constituents & $> \text{1}$ & $> \text{1}$ & --- & --- \\
+        Muon energy fraction & $< \text{0.80}$* & $< \text{0.80}$* & --- & --- \\
+        Charged hadron fraction & $> \text{0}$ & --- & --- & --- \\
+        Charged multiplicity & $> \text{0}$ & --- & --- & --- \\
+        Charged EM fraction & $< \text{0.99}$ (0.90*) & --- & --- & --- \\
+        \# neutral particles & --- & --- & $> \text{2}$ & $\text{10}$ \\\hline
+    \end{tabular}
+    \caption[The requirements for a jet to pass tight identification for data taken in 2016, and to \acrlong{mc} events emulating that year]{The requirements for a \gls{jet} to pass tight identification for data taken in 2016, and to \acrlong{mc} events emulating that year. Information taken from Ref.~\citenum{cms_jet_ID_2016}.
+        
+    * Only applies to the tight $+$ lepton veto ID.}
+    \label{tab:htoinv_jet_id_def_2016}
+\end{table}
+
+
+%=========================================================
+
+
+\subsubsection{2017}
+\label{subsubsec:htoinv_jet_objs_2017}
+
+The tight and tight $+$ lepton veto ID requirements are detailed in Tab.~\ref{tab:htoinv_jet_id_def_2017}. \Glspl{jet} with $\pt < \text{50}\GeV$ are required to satisfy the tight pileup ID criteria. Any \glspl{jet} with a raw (uncorrected) $\pt < \text{50}\GeV$ within the region $2.65 < \abseta < 3.139$ are vetoed due to noise in the \acrshort{ecal} end cap.
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{lcccc}
+        \hline
+        Criterion & $\abseta \leq \text{2.4}$ & $\text{2.4} < \abseta \leq \text{2.7}$ & $\text{2.7} < \abseta \leq \text{3.0}$ & $\abseta \geq \text{3.0}$ \\\hline
+        Neutral hadron fraction & $< \text{0.90}$ & $< \text{0.90}$ & --- & $> \text{0.02}$ \\
+        Neutral EM fraction & $< \text{0.90}$ & $< \text{0.90}$ & $> \text{0.02}$, $< \text{0.99}$ & $< \text{0.90}$ \\
+        \# constituents & $> \text{1}$ & $> \text{1}$ & --- & --- \\
+        Muon energy fraction & $< \text{0.80}$* & $< \text{0.80}$* & --- & --- \\
+        Charged hadron fraction & $> \text{0}$ & --- & --- & --- \\
+        Charged multiplicity & $> \text{0}$ & --- & --- & --- \\
+        Charged EM fraction & $< \text{0.80}$* & --- & --- & --- \\
+        \# neutral particles & --- & --- & $> \text{2}$ & $\text{10}$ \\\hline
+    \end{tabular}
+    \caption[The requirements for a jet to pass tight identification for data taken in 2017, and to \acrlong{mc} events emulating that year]{The requirements for a \gls{jet} to pass tight identification for data taken in 2017, and to \acrlong{mc} events emulating that year. Information taken from Ref.~\citenum{cms_jet_ID_2017}.
+        
+    * Only applies to the tight $+$ lepton veto ID.}
+    \label{tab:htoinv_jet_id_def_2017}
+\end{table}
+
+
+%=========================================================
+
+
+\subsubsection{2018}
+\label{subsubsec:htoinv_jet_objs_2018}
+
+The tight and tight $+$ lepton veto ID requirements are detailed in Tab.~\ref{tab:htoinv_jet_id_def_2018}.\footnote{There's probably a more elegant way to write the ID criteria, since the same variables are used for all years and the same thresholds in many cases. But until I figure it out, separate tables for each year will have to do} As in 2017, \glspl{jet} with $\pt < \text{50}\GeV$ must [satisfy] the tight pileup ID requirements.
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{lcccc}
+        \hline
+        Criterion & $\abseta \leq \text{2.6}$ & $\text{2.6} < \abseta \leq \text{2.7}$ & $\text{2.7} < \abseta \leq \text{3.0}$ & $\text{3.0} < \abseta \leq \text{5.0}$ \\\hline
+        Neutral hadron fraction & $< \text{0.90}$ & $< \text{0.90}$ & --- & $> \text{0.20}$ \\
+        Neutral EM fraction & $< \text{0.90}$ & $< \text{0.99}$ & $> \text{0.02}$, $< \text{0.99}$ & $< \text{0.90}$ \\
+        \# constituents & $> \text{1}$ & --- & --- & --- \\
+        Muon energy fraction & $< \text{0.80}$* & $< \text{0.80}$* & --- & --- \\
+        Charged hadron fraction & $> \text{0}$ & --- & --- & --- \\
+        Charged multiplicity & $> \text{0}$ & $> \text{0}$ & --- & --- \\
+        Charged EM fraction & $< \text{0.80}$* & $< \text{0.80}$* & --- & --- \\
+        \# neutral particles & --- & --- & $> \text{2}$ & $\text{10}$ \\\hline
+    \end{tabular}
+    \caption[The requirements for a jet to pass tight identification for data taken in 2018, and to \acrlong{mc} events emulating that year]{The requirements for a \gls{jet} to pass tight identification for data taken in 2018, and to \acrlong{mc} events emulating that year.  Information taken from Ref.~\citenum{cms_jet_ID_2018}.
+        
+    * Only applies to the tight $+$ lepton veto ID.}
+    \label{tab:htoinv_jet_id_def_2018}
+\end{table}
+
+
+%=========================================================
+
+
+\subsection{Muons}
+\label{subsec:htoinv_muon_objs}
+
+The reconstruction and identification criteria for muons is described in significant detail in Ref.~\citenum{Sirunyan:2018fpa}. A loose muon $\Pgm_{\mathrm{loose}}$ satisfies the ``loose muon identification'' criteria from the paper, $\abseta < \text{2.4}$, $\pt > \text{10}\GeV$, and the loose working point of the \acrlong{pf} relative isolation parameter (Eq.~5.4 in Ref.~\citenum{CMS-PRF-14-001}$\!\!$) $I_{\mathrm{PF}} < \text{0.25}$. A tight muon $\Pgm_{\mathrm{tight}}$ meets the ``tight muon ID'' requirements from the same paper, $\abseta < \text{2.4}$, $\pt > \text{20}\GeV$, and the tight working point for the relative isolation ($I_{\mathrm{PF}} < \text{0.15}$).
+
+The relative isolation parameter is the ratio of the sum of track, \acrshort{hcal} and \acrshort{ecal} energies within $\Delta R < \text{0.4}$ of the muon to its momentum. The loose and tight working points are designed to give efficiencies of 95\,\% and 98\,\%, respectively.
+
+
+%=========================================================
+
+
+\subsection{Electrons}
+\label{subsec:htoinv_electron_objs}
+
+In the analysis, electrons are labelled as veto ($\Pe_{\mathrm{veto}}$) or tight electrons ($\Pe_{\mathrm{tight}}$), depending on which \acrshort{pog} ID requirements are fulfilled. For 2016--18, version 2 of the cut-based identification technique (tuned using 2017 samples), is applied. These are defined for the barrel region in Tab.~\ref{tab:htoinv_electron_ID_barrel}, and end cap region in Tab.~\ref{tab:htoinv_electron_ID_endcap}. The veto and tight ID requirements are designed to have average efficiencies of 95\,\% and 70\,\%, respectively.
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{lcc}
+    \hline
+    Criterion & Veto & Tight \\\hline
+    Full $\text{5} \times \text{5}$ $\sigma_{i\eta i\eta}$ & $< \text{0.0126}$ & $< \text{0.0104}$    \\
+    $\abs{\Delta\eta_{\mathrm{in}}^{\mathrm{seed}}}$ & $< \text{0.00463}$ & $< \text{0.00255}$ \\
+    $\abs{\Delta\phi_{\mathrm{in}}}$ & $< \text{0.148}$ & $< \text{0.022}$ \\
+    $H/E$ & $<\text{0.05} + \frac{\text{1.16}}{E_{\mathrm{SC}}} + \frac{\text{0.0324}\rho}{E_{\mathrm{SC}}}$ & $<$ $\text{0.026} + \frac{\text{1.15}}{E_{\mathrm{SC}}} + \frac{\text{0.0324}\rho}{E_{\mathrm{SC}}}$ \\
+    Relative isolation with $A_{\mathrm{eff.}}$ & $< \text{0.198} + \frac{\text{0.506}}{\pt}$ & $< \text{0.0287} + \frac{\text{0.506}}{\pt}$\\
+    $\abs{E^{-1}_{\mathrm{ECAL}} - p^{-1}_{\mathrm{Tracker}}}$ & $< \text{0.209}$ & $< \text{0.159}$\\
+    Expected missing inner hits & $\leq \text{2}$ & $\leq \text{1}$\\
+    Pass conversion veto & yes & yes \\
+    \hline
+    \end{tabular}
+    \caption[Requirements used to define the veto and tight electron IDs in the barrel region (supercluster $\abs{\eta} \leq \text{1.479}$)]{Requirements used to define the veto and tight electron IDs in the barrel region (supercluster $\abs{\eta} \leq \text{1.479}$). Information taken from Ref.~\citenum{cms_ele_ID_Run2}.}
+    \label{tab:htoinv_electron_ID_barrel}
+\end{table}
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{lcc}
+    \hline
+    Criterion & Veto & Tight \\\hline
+    Full $\text{5} \times \text{5}$ $\sigma_{i\eta i\eta}$ & $< \text{0.0457}$ & $< \text{0.0353}$    \\
+    $\abs{\Delta\eta_{\mathrm{in}}^{\mathrm{seed}}}$ & $< \text{0.00814}$ & $< \text{0.00501}$ \\
+    $\abs{\Delta\phi_{\mathrm{in}}}$ & $< \text{0.19}$ & $< \text{0.0236}$ \\
+    $H/E$ & $<\text{0.05} + \frac{\text{2.54}}{E_{\mathrm{SC}}} + \frac{\text{0.183}\rho}{E_{\mathrm{SC}}}$ & $<$ $\text{0.0188} + \frac{\text{2.06}}{E_{\mathrm{SC}}} + \frac{\text{0.183}\rho}{E_{\mathrm{SC}}}$ \\
+    Relative isolation with $A_{\mathrm{eff.}}$ & $< \text{0.203} + \frac{\text{0.963}}{\pt}$ & $< \text{0.0445} + \frac{\text{0.963}}{\pt}$\\
+    $\abs{E^{-1}_{\mathrm{ECAL}} - p^{-1}_{\mathrm{Tracker}}}$ & $< \text{0.132}$ & $< \text{0.0197}$\\
+    Expected missing inner hits & $\leq \text{3}$ & $\leq \text{1}$\\
+    Pass conversion veto & yes & yes \\
+    \hline
+    \end{tabular}
+    \caption[Requirements used to define the veto and tight electron IDs in the end cap region (supercluster $\abs{\eta} > \text{1.479}$)]{Requirements used to define the veto and tight electron IDs in the end cap region (supercluster $\abs{\eta} > \text{1.479}$). Information taken from Ref.~\citenum{cms_ele_ID_Run2}.}
+    \label{tab:htoinv_electron_ID_endcap}
+\end{table}
+
+The variable $\sigma_{i\eta i\eta}$ is the energy-weighted standard deviation of the \acrshort{ecal} crystal $\eta$, centred on the local energy maximum, in this case using the full $\text{5} \times \text{5}$ calorimeter tower. $\Delta\eta_{\mathrm{in}}{\mathrm{seed}}$ and $\Delta\phi_{\mathrm{in}}$ are the differences in pseudorapidity and azimuthal angle, respectively, between the supercluster (seed in the case of $\Delta\eta$) and the track, at the point of closest approach to the supercluster, extrapolated from the innermost track state.\footnote{Consider rewording last part of sentence. Currently lifted verbatim from a public twiki page.} The relative isolation parameter is computed in the same way as muons (Eq.~5.4 in Ref.~\citenum{CMS-PRF-14-001}$\!\!$), but uses a $\Delta R < \text{0.3}$ instead of 0.4. The threshold takes the effective area $A_{\mathrm{eff.}}$ into account. Along with $\rho$, these are used for estimating the contributions to pileup in an event. From material interactions within the tracker, photons may convert into $\Pelectron\Ppositron$ pairs. A veto aims to mitigate this effect.
+% rho and A_eff: https://iopscience.iop.org/article/10.1088/1748-0221/10/08/P08010/pdf
+% More electron stuff in reference to tables above: https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideGsfElectronObject
+
+Common to all electrons in the analysis, we place a cut of $\abseta < 2.5$ so they are reconstructed with tracker information. To further utilise the subdetector, impact parameter requirements on the transverse and longitudinal directions ensure they originate sufficiently close to the primary vertex: $d_0 < \text{0.05}$\,cm and $dz < \text{0.1}$\,cm in the barrel, and $d_0 < \text{0.1}$\,cm and $dz < \text{0.2}$\,cm in the end cap. The $\Pe_{\mathrm{veto}}$ and $\Pe_{\mathrm{tight}}$ in the analysis are only separated by the ID requirements above, and transverse momentum. A veto electron requires $\pt > \text{10}\GeV$, and a tight electron $\pt > \text{40}\GeV$.
+
+
+%=========================================================
+
+
+\subsection{Photons}
+\label{subsec:htoinv_photon_objs}
+
+% ID tables: https://twiki.cern.ch/twiki/bin/view/CMS/CutBasedPhotonIdentificationRun2
+
+
+\subsection{Taus}
+\label{subsec:htoinv_tau_objs}
+
+\subsubsection{2016}
+\label{subsubsec:htoinv_tau_objs_2016}
+
+\subsubsection{2017}
+\label{subsubsec:htoinv_tau_objs_2017}
+
+\subsubsection{2018}
+\label{subsubsec:htoinv_tau_objs_2018}
+
+\subsection{\texorpdfstring{\ptmiss}{ptmiss}}
+\label{subsec:htoinv_met_obj}
+% Using Type-1 corrected MET, etc. Maybe move the recalculated MET from the control regions to here
+
+\subsubsection{2017}
+\label{subsubsec:htoinv_met_obj_2017}
+
+In 2017, significant noise in the \acrshort{ecal} end cap affected \glspl{jet} and \ptmiss, leading to potentially large energy mismeasurements. These quantities were recomputed after reconstruction, and were applied correctly in the analysis.
+
+
+\subsection{\texorpdfstring{\HT}{HT}}
+\label{subsec:htoinv_ht}
+% Just say it's computed with jets that have pt > 30 GeV for all years
 
 
 %=========================================================
@@ -153,12 +362,12 @@ Emphasis will be placed on the non-VBF modes, particularly \ttH and resolved \VH
 \subsection{Data}
 \label{subsec:htoinv_data}
 
-The data collected by the \acrshort{cms} experiment that is used in the analysis corresponds to an integrated luminosity of 137.19\fbinv, and recorded from 2016--2018. A breakdown by year is given in Tab.~\ref{tab:lumis_lhc_cms}. At over three times the volume at \comruntwo analysed in the previous search, there is potential to sustantially lower the ceiling of $\BRof{\higgstoinv}$. Data is split into ``primary datasets'' that are grouped by the class of \acrshort{hlt} path that an event triggered. The signal region, \acrshort{qcd} \glspl{SB}, and muon \glspl{CR} use the primary dataset composed of \etmiss\footnote{I try to be consistent in most places and use \ptmiss instead of \etmiss. But since the HLT paths use ``MET'', which is the more correct symbol here? And should I update Tab.~\ref{tab:htoinv_SR_triggers} accordingly?} and \htmiss combination triggers, where muons are excluded from the sums. The datasets made use of in the electron and photon \glspl{CR} consist of triggers based on the properties of those objects. These were separate for 2016 and 2017, then merged for 2018.
+The data collected by the \acrshort{cms} experiment that is used in the analysis corresponds to an integrated luminosity of 137.19\fbinv, and recorded from 2016--2018. A breakdown by year is given in Tab.~\ref{tab:lumis_lhc_cms}. At over three times the volume at \comruntwo analysed in the previous search, there is potential to substantially lower the ceiling of $\BRof{\higgstoinv}$. Data is split into ``primary datasets'' that are grouped by the class of \acrshort{hlt} path that an event triggered. The signal region, \acrshort{qcd} \glspl{SB}, and muon \glspl{CR} use the primary dataset composed of \etmiss\footnote{I try to be consistent in most places and use \ptmiss instead of \etmiss. But since the HLT paths use ``MET'', which is the more correct symbol here? And should I update Tab.~\ref{tab:htoinv_SR_triggers} accordingly?} and \htmiss combination triggers, where muons are excluded from the sums. The datasets made use of in the electron and photon \glspl{CR} consist of triggers based on the properties of those objects. These were separate for 2016 and 2017, then merged for 2018.
 
 Some serious issues arose during Run-2 that had to be mitigated after the events were reconstructed. With the high collision rate at \acrshort{cms}, in order to properly correlate the hits in the subdetectors with the correct particles and events they are attributed to, the timing infrastructure must be very precise. Timing scans are conducted frequently during runs to correct or compensate for any shifts that may occur. However, in 2016 and 2017, the gradual timing drift in the \acrshort{ecal} was not correctly propagated to the \acrlong{l1} trigger primitives. This resulted in a significant fraction of them in the forward direction (as the effect increases with $\eta$) being mistakenly associated to the previous bunch crossing: \emph{pre-firing}. One rule at \acrlong{l1} forbids two consecutive bunch crossings from firing signals to the trigger system. But, a consequence of this---in addition to not finding the primitive in the nominal bunch crossing---is that events can be vetoed if a significant amount of \acrshort{ecal} energy is found in the $\text{2} < \abseta < \text{3}$ part of the end cap. It is observed only in data, and so a correction is applied to \acrshort{mc} (see Chpt.~[REF]) to account for the effect.
 % Pre-firing: https://twiki.cern.ch/twiki/bin/viewauth/CMS/L1ECALPrefiringWeightRecipe, https://indico.cern.ch/event/764279/
 
-In 2018, a sector of the \acrshort{hcal} end cap lost power, leaving the approximate area bound by $\eta \in [-\text{3.0}, -\text{1.4}]$ and $\phi \in [-\text{1.57}, -\text{0.87}]$ uncovered for the remainder of the year. Of the 59.7\fbinv recorded and certified for use in 2018, 38.6\fbinv were affected. With this section missing, it is more difficult to accurately record the properties of \glspl{jet}, and therefore reliably calculate \ptmiss. Studies performed showed an excess in data in the affected area of the $\phi(\ptmiss)$ distribution of many of our regions and categories. To mitigate this issue, the cuts in Chpt.~\ref{subsubsec:htoinv_hem_mitigation} were added to the preselection.
+In 2018, a sector of the \acrshort{hcal} end cap lost power, leaving the approximate area bound by $\eta \in [-\text{3.0}, -\text{1.4}]$ and $\phi \in [-\text{1.57}, -\text{0.87}]$ uncovered for the remainder of the year. Of the 59.7\fbinv recorded and certified for use in 2018, 38.6\fbinv were affected. With this section missing, it is more difficult to accurately record the properties of \glspl{jet}, and therefore reliably calculate \ptmiss. Studies performed showed an excess in data in the affected area of the $\phi(\ptmiss)$ distribution of many of our regions and categories. To mitigate this issue, the cuts in Chpt.~\ref{subsec:htoinv_hem_mitigation} were added to the preselection.
 
 
 %=========================================================

@@ -24,7 +24,7 @@
 \section{Production modes of the Higgs boson}
 \label{sec:htoinv_production_modes}
 
-At the \acrshort{lhc}, the most common mechanisms for producing a Higgs boson are \acrfull{vbf}, gluon-gluon fusion (\ggF), associated production from top quarks (\ttH), and associated production from a vector boson (\VH). Feynman diagrams of these processes are shown in Fig.~\ref{fig:higgs_feynman_diagrams}. They have very different characteristics, production rates, and event signatures, complementing each other and allowing a single analysis to cover all bases with orthogonal parameter spaces to target them individually.
+At the \acrshort{lhc}, the most common mechanisms for producing a Higgs boson are \acrfull{vbf}, gluon-gluon fusion (\ggF), associated production from top quarks (\ttH), and associated production from a vector boson (\VH). Feynman diagrams of these processes are shown in Fig.~\ref{fig:higgs_feynman_diagrams}.\footnote{Additional diagrams for ggF are a square top loop (gluons join the two vertices on the left), where the Higgs exits at one of the vertices on the right and a gluon exits at the other. For ZH, can also have $gg\to ZH$ as well as $pp\to ZH$. Not sure if it's worth showing them or just describing them.} They have very different characteristics, production rates, and event signatures, complementing each other and allowing a single analysis to cover all bases with orthogonal parameter spaces to target them individually.
 
 \begin{figure}[htbp]
     \centering
@@ -50,8 +50,6 @@ At the \acrshort{lhc}, the most common mechanisms for producing a Higgs boson ar
 \caption[A subset of the Feynman diagrams for the four predominant production mechanisms of the Higgs boson at the LHC]{A subset of the Feynman diagrams for the four predominant production mechanisms of the Higgs boson at the \acrshort{lhc}.}
 \label{fig:higgs_feynman_diagrams}
 \end{figure}
-
-% Additional diagrams for ggF are a square top loop (gluons join the two vertices on the left), where the Higgs exits at one of the vertices on the right and a gluon exits at the other. For ZH, can also have gg->ZH as well as pp->ZH. Not sure if it's worth showing them or just describing them.
 
 
 %=========================================================
@@ -98,7 +96,7 @@ Despite \ggF having the largest cross section of the four modes, its upper limit
 \section{Results of previous searches}
 \label{sec:htoinv_prev_results}
 
-Many previous analyses have investigated the \higgstoinv decay, in some cases from dedicated searches, but often as an afterthought or interpretation of the main analysis. \acrshort{vbf} is the most sensitive production mode. This is demonstrated in Tab.~\ref{tab:hinv_br_limits} by the upper limits attained compared to the other mechanisms. In Ref.~\citenum{Sirunyan:2018owy}, a combination was performed by \acrshort{cms} over all the productions modes detailed in the table (with the exception of \ttH). Using the recent 2016 measurements as well as data taken from Run-1 and 2015, this combined observed upper limit sits at 19\,\%, while the expected is 15\,\%. With only data from Run-1 and 2015 (the previous combination) the observed and expected upper limits of 24\,\% and 23\,\%, respectively, were found~\cite{Khachatryan:2016whc}.
+Many previous analyses have investigated the \higgstoinv decay, in some cases from dedicated searches, but often as an afterthought or interpretation of the main analysis. \acrshort{vbf} is the most sensitive production mode. This is demonstrated in Tab.~\ref{tab:hinv_br_limits}\footnote{Might be good to add a row with the combined (bar ttH) result with only 2016 data.} by the upper limits attained compared to the other mechanisms. In Ref.~\citenum{Sirunyan:2018owy}, a combination was performed by \acrshort{cms} over all the productions modes detailed in the table (with the exception of \ttH). Using the recent 2016 measurements as well as data taken from Run-1 and 2015, this combined observed upper limit sits at 19\,\%, while the expected is 15\,\%. With only data from Run-1 and 2015 (the previous combination) the observed and expected upper limits of 24\,\% and 23\,\%, respectively, were found~\cite{Khachatryan:2016whc}.
 
 \begin{table}[htbp]
     \centering
@@ -114,8 +112,6 @@ Many previous analyses have investigated the \higgstoinv decay, in some cases fr
     \caption[The most recent searches for invisibly decaying Higgs bosons with 2016 data from CMS, and the upper limits on the \higgstoinv branching ratio at 95\,\% confidence level achieved]{The most recent searches for invisibly decaying Higgs bosons with 2016 data from \acrshort{cms}, and the upper limits (UL) on the \higgstoinv branching ratio at 95\,\% confidence level achieved. Only the \acrshort{vbf} analysis is a dedicated search, while the others are interpretations of the results obtained in their respective primary analyses. For the $\ttH$ analysis, the hadronic (\glspl{jet}), semi-leptonic (\Plepton), and dileptonic ($\Plepton\Plepton$) channels were combined.}
     \label{tab:hinv_br_limits}
 \end{table}
-
-% Might be nice to add a row with the combined (bar ttH) result with only 2016 data.
 
 
 %=========================================================
@@ -150,13 +146,11 @@ Different working points for the identification of many objects are available fr
 \subsection{Jets}
 \label{subsec:htoinv_jet_objs}
 
-In the \nanoAOD data tier, a \gls{jet} is defined as an AK4-clustered, charged hadron-subtracted object reconstructed with the \gls{particleflow}, with \acrlong{jec} applied and a $\pt > \text{15}\GeV$ prerequisite. For the analysis, we raise the \pt threshold to 30\GeV and explicitly restrict the pseudorapidity range to $\abseta < 5.0$. Either the tight, or tight $+$ lepton veto, \acrshort{pf} identification requirements are also mandatory to establish a sufficient degree of purity with a very high efficiency ($> \text{98\,\%}$ in all $\abseta$ regions).\footnote{For all objects, should I also give the background rejection efficiency?} These are documented in Tabs.~\ref{tab:htoinv_jet_id_def_2016}, \ref{tab:htoinv_jet_id_def_2017}, and \ref{tab:htoinv_jet_id_def_2018}. Finally, \glspl{jet} must not overlap (i.e., exhibit $\Delta R > \text{0.4}$) with any \vetoEle, \looseMuon, and \loosePhoton in the event to avoid potential misidentification.
+In the \nanoAOD data tier, a \gls{jet} is defined as an AK4-clustered, charged hadron-subtracted object reconstructed with the \gls{particleflow}, with \acrlong{jec} applied and a $\pt > \text{15}\GeV$ prerequisite. For the analysis, we raise the \pt threshold to 30\GeV\footnote{Might need to specify we use the JER-corrected \pt for all instances of AK4 jet and b-jet \pt (except noisy EE jets in 2017 where we examine raw \pt). JER-corrected \pt is applied offline in nanoAOD-tools (so would need to find specifics there).} and explicitly restrict the pseudorapidity range to $\abseta < 5.0$. Either the tight, or tight $+$ lepton veto, \acrshort{pf} identification requirements are also mandatory to establish a sufficient degree of purity with a very high efficiency ($> \text{98\,\%}$ in all $\abseta$ regions).\footnote{For all objects, should I also give the background rejection efficiency?} These are documented in Tabs.~\ref{tab:htoinv_jet_id_def_2016}, \ref{tab:htoinv_jet_id_def_2017}, and \ref{tab:htoinv_jet_id_def_2018}. Finally, \glspl{jet} must not overlap (i.e., exhibit $\Delta R > \text{0.4}$) with any \vetoEle, \looseMuon, and \loosePhoton in the event to avoid potential misidentification.
 
 AK8 \glspl{jet} follow the same reconstruction and identification prescription as AK4 \glspl{jet}, only differing in the cone size.\footnote{I'm not what/if the minimum \pt of an AK8 \gls{jet} is, and whether they have an $\eta$ restriction (I've seen $\abseta < 2.4$ in a few places, but nothing confirmed).}
 
 A \gls{bjet} is described by a \nanoAOD AK4 \gls{jet} with $\pt > \text{20}\GeV$, $\abseta < \text{2.5}$ (2.4 in 2016), and to satisfy the medium working point (a mis-tag rate of 1\,\%) from the \deepcsv algorithm~\cite{Sirunyan:2017ezt}.
-
-% Might need to say we use pt_nom for all instances of pt thresholds (except noisy EE jets in 2017 where the raw pt is used). pt_nom is created offline and is additionally jet energy resolution-corrected (maybe check nanoAOD-tools for specifics)
 
 
 %=========================================================
@@ -416,9 +410,7 @@ All \acrlong{mc} datasets used in this analysis were produced centrally by exper
 \subsection{Simulated background processes}
 \label{subsec:htoinv_background}
 
-\acrlong{mc} datasets for many processes are used in the analysis to accurately represent the \acrlong{sm} background. Every one uses \PYTHIAEIGHT to hadronise the events generated by the hard scatter. The underlying event tune applied in the hadroniser follows the same prescription as with signal---\textsc{cuetp8m1} for simulating 2016 while \textsc{cp5} is used thereafter. The only exception is the $\ttbarpjets$ background, for which \emph{all} samples were generated with the \textsc{cp5} tune. They are described as follows:\footnote{Not sure if I should use a long, sprawling list, or just have a separate paragraph for each process, maybe with the process name in bold.}
-
-% What words can I use instead of "process" as I seem to use it a lot here? Decay/dataset/mechanism/background?
+\acrlong{mc} datasets for many processes\footnote{In this subsection, I use the word ``process'' a lot. What alternatives can I use? Decay/dataset/mechanism/background?} are used in the analysis to accurately represent the \acrlong{sm} background. Every one uses \PYTHIAEIGHT to hadronise the events generated by the hard scatter. The underlying event tune applied in the hadroniser follows the same prescription as with signal---\textsc{cuetp8m1} for simulating 2016 while \textsc{cp5} is used thereafter. The only exception is the $\ttbarpjets$ background, for which \emph{all} samples were generated with the \textsc{cp5} tune. They are described as follows:\footnote{Not sure if I should use a long, sprawling list, or just have a separate paragraph for each process, maybe with the process name in bold.}
 
 \begin{easylist}[itemize]
     \easylistprops
@@ -440,11 +432,8 @@ All \acrlong{mc} datasets used in this analysis were produced centrally by exper
 
     & \wtolnupjets: A \acrshort{qcd}-induced process, this background is dominant in the single lepton \glspl{CR}. If the lepton is lost, the \ptmiss can be be inflated and lead to a significant contribution in the signal region. The datasets are produced at \acrshort{lo} with \MGvATNLO.
 
-    & \ztonunupjets: From the presence of neutrinos, the genuine \ptmiss from this channel is a dominant background in the signal region. Its contribution is estimated using the double lepton and \singlePhotonCr \glspl{CR}. As with many of the above, the datasets are generated at \acrshort{lo} accuracy with \MGvATNLO.
+    & \ztonunupjets: From the presence of neutrinos, the genuine \ptmiss from this channel is a dominant background in the signal region. Its contribution is estimated using the double lepton and \singlePhotonCr \glspl{CR}. As with many of the above, the datasets are generated at \acrshort{lo} accuracy with \MGvATNLO.\footnote{The gridpacks/hard process are exactly the same for all samples in 2017 and 2018 (i.e., the same files), I think. But perhaps don't need to mention.}\footnote{In all of the processes where the datasets are split by generator-level \HT (with the exception of \ztonunupjets), the ``MLM'' jet matching scheme applied in \madgraph. Not sure if I need to mention either of these.}
 \end{easylist}
-
-% The gridpacks/hard process are exactly the same for 2017 and 2018 (i.e., the same files), I think. But perhaps don't need to mention.
-% In all of the processes where the datasets are split by generator-level \HT (with the exception of \ztonunupjets), the ``MLM'' jet matching scheme applied in \madgraph. Not sure if I need to mention either of these
 
 % medium skip to nicely separate the end of the list with the start of the next paragraph (ignored if the space would occur at the top of a new page). Should be 9 pt (i.e., half a line since I use 12 pt text and 1.5 line spacing)
 \medskip
@@ -467,7 +456,7 @@ A general rule is that the equivalent luminosity of a given dataset should be co
 % If I have to describe these in a lot of detail, it's probably worth making this a section rather than subsection (and therefore promoting the subsubsections to subsections)
 % Describing the veto and selection weights in full is necessary. But describing how every single weight (and systematic?) in the analysis is derived is almost certainly too much. It might be enough to go into a bit more detail regarding the dominant/interesting ones (NLO k-factors, ttbar systematics), then add a subsubsection on "other weights and corrections" where I just give very short explanations for the rest of them (b-tag SFs, boosted objects, lepton ID/isolation efficiencies, pre-firing, etc.)
 
-In order for simulated events, particularly for background processes, to resemble \acrshort{lhc} data as closely as possible, many corrections and weights are applied.\footnote{The following stuff on weights is from what I wrote in the AN. But it may be too detailed/unnecessary for that document, so I've made a copy here in case it is removed from there.} These are discussed in more detail in the subsequent sections. A final event weight $w_{\mathrm{event}}$ is the product of the weights from all of the individual sources $i$ that provide one:
+In order for simulated events, particularly for background processes, to resemble \acrshort{lhc} data as closely as possible, many corrections and weights are applied.\footnote{The following stuff on weights is from what I wrote in the AN. But it may be too detailed/unnecessary for that document, so I've made a copy here in case it is removed from there.} These are discussed in more detail in the subsequent sections. A final event weight $w_{\mathrm{event}}$ is the product of the weights from all of the individual sources $i$ that provide one:\footnote{If I have to describe all corrections/weights in detail, probably best to promote this to a section rather than subsection. I think describing veto/selection weights in full is necessary, but I imagine not \emph{every single} weight in the analysis. Maybe have a subsection for each of the dominant/important ones, then have a subsection comprised of the other weights where I just list/talk briefly about them.}
 \begin{equation}
     w_{\mathrm{event}} = \prod_i w_i
     \label{eq:event_weight}
@@ -750,9 +739,7 @@ In the \ttH and \VH categories, ancillary groupings of subcategories may be of i
 \subsection{Classifying boosted topologies from top quarks, and \texorpdfstring{\PW}{W} and \texorpdfstring{\PZ}{Z} bosons}
 \label{subsec:htoinv_deepak8}
 
-Many traditional methods have been developed to tag \glspl{jet} originating from heavy particles, such as top quarks, vector bosons and Higgs bosons. Though, there are limitations with all of these, and in the era of machine learning a plethora of new tools have arisen. One such algorithm---\deepakeight---has been developed by physicists in \acrshort{cms} to classify \glspl{jet} that originate from numerous heavy particles. In this analysis, we pay specific interest to those coming from top quarks and vector bosons in order to assist the categorisation of the \ttH and \VH signals. The number of tagged \glspl{jet} in an event inform the boosted subcategories, as seen in Tab.~\ref{tab:htoinv_categories}. The design and optimisation of the algorithm is described in Ref.~\citenum{CMS-PAS-JME-18-002}.
-
-% Not sure if I need to go into more detail regarding the algorithm
+Many traditional methods have been developed to tag \glspl{jet} originating from heavy particles, such as top quarks, vector bosons and Higgs bosons. Though, there are limitations with all of these, and in the era of machine learning a plethora of new tools have arisen. One such algorithm---\deepakeight---has been developed by physicists in \acrshort{cms} to classify \glspl{jet} that originate from numerous heavy particles. In this analysis, we pay specific interest to those coming from top quarks and vector bosons in order to assist the categorisation of the \ttH and \VH signals. The number of tagged \glspl{jet} in an event inform the boosted subcategories, as seen in Tab.~\ref{tab:htoinv_categories}. The design and optimisation of the algorithm is described in Ref.~\citenum{CMS-PAS-JME-18-002}.\footnote{Not sure if I should give a summary of the development and features of the algorithm here.}
 
 We employ the ensuing selections to AK8 \glspl{jet} to classify them, as recommended by the DeepAK8 developers:
 \medskip
@@ -782,7 +769,7 @@ We employ the ensuing selections to AK8 \glspl{jet} to classify them, as recomme
 \subsection{Optimisation of the categories}
 \label{subsec:htoinv_cat_optimisation}
 
-% Might be best to leave this bit for now, since optimisations are still ongoing. When including, only write about it briefly since I didn't actually do these studies. Would have to mention min_dphi/Tai's variables
+Might be best to leave this bit for now, since optimisations are still ongoing. When including, only write about it briefly since I didn't actually do these studies. Would have to mention $\Delta\phi_{\text{min}}$/Tai's variables
 
 
 %=========================================================
@@ -857,7 +844,7 @@ Events must satisfy a logical \texttt{OR} of \acrshort{hlt} cross-triggers for \
 
 \noindent{}The trigger requirements for the \singleMuCr and \doubleMuCr \glspl{CR} are the same as for the signal region (Tab.~\ref{tab:htoinv_SR_triggers}) since the same primary dataset is used.
 
-The \singleEleCr and \doubleEleCr \glspl{CR} take advantage of the increased statistical power of two primary datasets in both 2016 and 2017, characterised by electron and photon triggers. In 2018, they were merged into a single $\Pe/\Pphoton$ primary dataset. Tabs.~\ref{tab:htoinv_ele_pd_triggers} and~\ref{tab:htoinv_photon_pd_triggers} elucidate how the trigger requirements are specified for each year. As before, each quantity and object is defined at \acrshort{hlt} level. If an event aims to enter the \singleEleCr or \doubleEleCr, and is from the dataset of \Pe-based triggers, the criteria for either of the two triggers for the given year in Tab.~\ref{tab:htoinv_ele_pd_triggers} must be satisfied. If an event aims to enter either \gls{CR} and is from the primary dataset of \Pphoton-based triggers, the failure of both of the electron triggers in Tab.~\ref{tab:htoinv_ele_pd_triggers} and the passing of any of the photon triggers in Tab.~\ref{tab:htoinv_photon_pd_triggers} are required. This condition avoids double counting events that also appear in the electron trigger-based dataset. In 2018, any of the year's triggers in Tabs.~\ref{tab:htoinv_ele_pd_triggers} and~\ref{tab:htoinv_photon_pd_triggers} may be satisfied. For \acrlong{mc} events, as they are not categorised by trigger, they may pass any of the triggers in either table for their respective year.
+The \singleEleCr and \doubleEleCr \glspl{CR} take advantage of the increased statistical power of two primary datasets in both 2016 and 2017, characterised by electron and photon triggers. In 2018, they were merged into a single $\Pe/\Pphoton$ primary dataset. Tabs.~\ref{tab:htoinv_ele_pd_triggers} and~\ref{tab:htoinv_photon_pd_triggers} elucidate how the trigger requirements are specified for each year. As before, each quantity and object is defined at \acrshort{hlt} level. If an event aims to enter the \singleEleCr or \doubleEleCr, and is from the dataset of \Pe-based triggers, the criteria for either of the two triggers for the given year in Tab.~\ref{tab:htoinv_ele_pd_triggers} must be satisfied. If an event aims to enter either \gls{CR} and is from the primary dataset of \Pphoton-based triggers, the failure of both of the electron triggers in Tab.~\ref{tab:htoinv_ele_pd_triggers} and the passing of any of the photon triggers in Tab.~\ref{tab:htoinv_photon_pd_triggers} are required. This condition avoids double counting events that also appear in the electron trigger-based dataset. In 2018, any of the year's triggers in Tabs.~\ref{tab:htoinv_ele_pd_triggers} and~\ref{tab:htoinv_photon_pd_triggers} may be satisfied. For \acrlong{mc} events, as they are not categorised by trigger, they may pass any of the triggers in either table for their respective year.\footnote{See if I can describe the trigger requirements in a more elegant way. Might be easier give the descriptions and actual HLT path names a bit earlier, then just reference the HLT path names in the list.}
 
 \begin{table}[htbp]
     \centering
@@ -891,8 +878,6 @@ For the \singlePhotonCr \gls{CR}, we take data from \acrshort{cms} originating o
     \caption[The trigger requirements for events to enter the \singleEleCr, \doubleEleCr, or \singlePhotonCr control regions, if they originate from the dataset of \Pphoton-based triggers]{The trigger requirements for events to enter the \singleEleCr, \doubleEleCr, or \singlePhotonCr \gls{CR}, if they originate from the dataset of \Pphoton-based triggers. Selections are on the transverse energy \ET of the candidate, and the ratio of the candidate's central energy deposit in the \acrshort{hcal} to the \acrshort{ecal} ($H/E$), all computed at \acrshort{hlt} level.}
     \label{tab:htoinv_photon_pd_triggers}
 \end{table}
-
-% See if I can describe the trigger requirements in a more elegant way. Might be easier give the descriptions and actual HLT path names a bit earlier, then just reference the HLT path names in the list
 
 As explained in Chpt.~\ref{subsec:htoinv_met_obj}, the \ptvecmiss is recalculated for the \glspl{CR}. Using the \singleMuCr \gls{CR} as an example, the new \ptvecmiss is the vector sum of the old \ptvecmiss and the tight muon \ptvec. The single lepton \glspl{CR} estimate the semi-leptonic $\ttbarpjets$ and $\wtolnupjets$ backgrounds. In both cases, they may enter the signal region if the lepton is lost, becoming a source of \ptmiss. The dilepton and \singlePhotonCr regions consider \ztonunupjets. The former parallels the decay as it is enriched in \ztolplmpjets---possessing very similar kinematic properties while being much easier to detect, improving statistical accuracy. The latter region substitutes the \ztonunu decay with a photon.
 

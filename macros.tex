@@ -12,7 +12,7 @@
 \newcommand{\plusjets}{\ensuremath{+ \text{jets}}\xspace}
 \newcommand{\jone}{\ensuremath{\mathrm{j}_1}\xspace}
 \newcommand{\jtwo}{\ensuremath{\mathrm{j}_2}\xspace}
-\newcommand{\PVec}{\HepParticle{V}{}{}\xspace} % couldn't find command for generic V boson so created one
+\newcommand{\PVec}{\ensuremath{\mkern-2mu}\HepParticle{V}{}{}\xspace} % couldn't find command for generic V boson so created one. Removing a small amount of leading horizontal space, otherwise with the particle in italics, enclosing in brackets or spaces before/after it look a little asymmetrical
 
 % Electron volt units
 % Re-defining ptdr symbols for better spacing, consistency and simplicity with definitions, expanding list of symbols, using math mode ^2 for consistency with other symbols
@@ -54,16 +54,16 @@
 
 % Particles are typeset using the 'hepnames' package. If given the option 'italic', it will render the particles in italics. So if I want to change style, only need to edit the line that imports the package, not the macros.
 
-% Higgs to inv. modes
+% Higgs to inv. modes. Using negative horizontal space so that, with the symbols rendered in italics, the spacing looks better
 \renewcommand{\ttbar}{\ensuremath{\Ptop\APtop}\xspace}
-\newcommand{\ttH}{\ensuremath{\ttbar\PH}\xspace}
-\newcommand{\ggF}{\ensuremath{\cPg\cPg\mathrm{F}}\xspace}
-\newcommand{\ggH}{\ensuremath{\cPg\cPg\PH}\xspace}
-\newcommand{\VH}{\ensuremath{\PVec\PH}\xspace}
-\newcommand{\WH}{\ensuremath{\PW\PH}\xspace}
-\newcommand{\WplusH}{\ensuremath{\PWp\PH}\xspace}
-\newcommand{\WminusH}{\ensuremath{\PWm\PH}\xspace}
-\newcommand{\ZH}{\ensuremath{\PZ\PH}\xspace}
+\newcommand{\ttH}{\ensuremath{\ttbar\mkern-1mu\PH}\xspace}
+\newcommand{\ggF}{\ensuremath{\Pgluon\mkern-1mu\Pgluon\mathrm{F}}\xspace}
+\newcommand{\ggH}{\ensuremath{\Pgluon\mkern-1mu\Pgluon\PH}\xspace}
+\newcommand{\VH}{\ensuremath{\PVec\mkern-2mu\PH}\xspace}
+\newcommand{\WH}{\ensuremath{\PW\mkern-2mu\PH}\xspace}
+\newcommand{\WplusH}{\ensuremath{\PWp\mkern-2mu\PH}\xspace}
+\newcommand{\WminusH}{\ensuremath{\PWm\mkern-2mu\PH}\xspace}
+\newcommand{\ZH}{\ensuremath{\PZ\mkern-2mu\PH}\xspace}
 
 % Higgs to inv. control regions
 \newcommand{\singleMuCr}{\ensuremath{\Pmu \plusjets}\xspace}
@@ -193,6 +193,7 @@
 \newcommand{\BRof}[1]{\ensuremath{\BR(#1)}\xspace} % branching ratio of a process
 \newcommand{\LSP}{\PSneutralinoOne}
 \newcommand{\comruntwo}{\ensuremath{\sqrt{s} = \text{13}\TeV}\xspace}
+\newcommand{\pp}{\ensuremath{\Pp\mkern-1mu\Pp}\xspace}  % define macro with tighter spacing between each p. Looks nicer when rendering symbols in italics
 \newcommand{\higgstoinv}{\ensuremath{\HepProcess{\PH \to \text{inv.}}}\xspace}
 \newcommand{\ptLOne}{\ensuremath{\ptsup{{\mathrm{L1}}}}\xspace}
 \newcommand{\ptRef}{\ensuremath{\ptsup{{\mathrm{ref.}}}}\xspace}

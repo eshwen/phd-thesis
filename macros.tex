@@ -66,22 +66,23 @@
 \newcommand{\ZH}{\ensuremath{\PZ\PH}\xspace}
 
 % Higgs to inv. control regions
-\newcommand{\singleMuCr}{\ensuremath{\Pgm \plusjets}\xspace}
-\newcommand{\doubleMuCr}{\ensuremath{\Pgm\Pgm \plusjets}\xspace}
+\newcommand{\singleMuCr}{\ensuremath{\Pmu \plusjets}\xspace}
+\newcommand{\doubleMuCr}{\ensuremath{\Pmu\Pmu \plusjets}\xspace}
 \newcommand{\singleEleCr}{\ensuremath{\Pe \plusjets}\xspace}
 \newcommand{\doubleEleCr}{\ensuremath{\Pe\Pe \plusjets}\xspace}
 \newcommand{\singlePhotonCr}{\ensuremath{\Pphoton \plusjets}\xspace}
-\newcommand{\tightMuon}{\ensuremath{\Pgm_{\mathrm{tight}}}\xspace}
-\newcommand{\looseMuon}{\ensuremath{\Pgm_{\mathrm{loose}}}\xspace}
+\newcommand{\tightMuon}{\ensuremath{\Pmu_{\mathrm{tight}}}\xspace}
+\newcommand{\looseMuon}{\ensuremath{\Pmu_{\mathrm{loose}}}\xspace}
 \newcommand{\tightEle}{\ensuremath{\Pe_{\mathrm{tight}}}\xspace}
 \newcommand{\vetoEle}{\ensuremath{\Pe_{\mathrm{veto}}}\xspace}
 \newcommand{\mediumPhoton}{\ensuremath{\Pphoton_{\mathrm{medium}}}\xspace}
 \newcommand{\loosePhoton}{\ensuremath{\Pphoton_{\mathrm{loose}}}\xspace}
+\newcommand{\vlooseTau}{\ensuremath{\Ptau_{\mathrm{v. \ loose}}}\xspace}
 
 % Variables/physics symbols
-\newcommand{\doubleMuMass}{\ensuremath{m_{\Pgm\Pgm}}\xspace}
+\newcommand{\doubleMuMass}{\ensuremath{m_{\Pmu\Pmu}}\xspace}
 \newcommand{\doubleEleMass}{\ensuremath{m_{\Pe\Pe}}\xspace}
-\newcommand{\doubleLepMass}{\ensuremath{m_{\ell\ell}}\xspace}
+\newcommand{\doubleLepMass}{\ensuremath{m_{\Plepton\Plepton}}\xspace}
 
 \newcommand{\etmiss}{\MET}
 \newcommand{\met}{\MET}
@@ -94,7 +95,7 @@
 \newcommand{\mt}{\mT}
 
 \newcommand{\mTsup}[1]{\ensuremath{\mT^{#1}}\xspace}  % to add a superscript in mT. Call like \mTsup{foo} to get m_T^{foo}
-\newcommand{\mtMuon}{\ensuremath{\mTsup{\Pgm}}\xspace}
+\newcommand{\mtMuon}{\ensuremath{\mTsup{\Pmu}}\xspace}
 \newcommand{\mtElectron}{\ensuremath{\mTsup{\Pe}}\xspace}
 \newcommand{\mjj}{\ensuremath{m_{\mathrm{jj}}}\xspace}
 \newcommand{\ptsup}[1]{\ensuremath{\pt^{#1}}\xspace}  % to add a superscript in pT
@@ -161,12 +162,12 @@
 
 % Background processes
 \newcommand{\lostlepton}{\ensuremath{\Plepton_{\text{lost}}}\xspace}
-\newcommand{\ztonunu}{\ensuremath{\HepProcess{\PZ \to \Pgn\Pagn}}\xspace}
-\newcommand{\ztomumu}{\ensuremath{\HepProcess{\PZ \to \Pgm\Pgm}}\xspace}
-\newcommand{\ztonunupjets}{\ensuremath{\PZ(\to \Pgn\Pagn) \plusjets}\xspace}
+\newcommand{\ztonunu}{\ensuremath{\HepProcess{\PZ \to \Pnu\APnu}}\xspace}
+\newcommand{\ztomumu}{\ensuremath{\HepProcess{\PZ \to \Pmu\Pmu}}\xspace}
+\newcommand{\ztonunupjets}{\ensuremath{\PZ(\to \Pnu\APnu) \plusjets}\xspace}
 \newcommand{\ztollpjets}{\ensuremath{\PZ(\to \Plepton\Plepton) \plusjets}\xspace}
 \newcommand{\ztolplmpjets}{\ensuremath{\PZ(\to \Pleptonplus\Pleptonminus) \plusjets}\xspace}
-\newcommand{\wtolnupjets}{\ensuremath{\PW(\to \ell\Pgn) \plusjets}\xspace}
+\newcommand{\wtolnupjets}{\ensuremath{\PW(\to \Plepton\Pnu) \plusjets}\xspace}
 \newcommand{\ttbarpjets}{\ensuremath{\ttbar \plusjets}\xspace}
 
 % Software

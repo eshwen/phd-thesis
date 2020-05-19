@@ -69,7 +69,7 @@ A \acrshort{vbf} topology is exhibited by a \tchannel exchange of two vector bos
 \subsection{Associated production from top quarks (\texorpdfstring{\ttH}{ttH})}
 \label{subsec:htoinv_ttH}
 
-In \ttH, two \ttbar pairs are produced. A top quark \Ptop from one pair and antiquark \APtop from the other annihilate to produce the Higgs boson. As it decays invisibly, it is the remaining \Ptop and \APtop in the event that lead to three classes of final state. The \Ptop quark decays almost exclusively to $\Pqb\PWplus$ (and $\HepProcess{\APtop \to \APqb\PWminus}$)~\cite{PhysRevD.98.030001}. In a resolved system where top quarks possess low to moderate momentum, the multitude of available \Pqb-tagging algorithms can distinguish the decays of the \Pqb quark. The products of the \PW boson is the determining factor of the final state. Hadronically-decaying $\PW\text{s}$ ($\HepProcess{\PW \to \Pquark\APquark}$), of course, produce pairs of \glspl{jet}. But they can also decay into a lepton and neutrino. The final states then all have \ptmiss and up to two \glspl{bjet} in common. Several \glspl{jet} may accompany them (the hadronic channel), or fewer \glspl{jet} with a single lepton (the \emph{semi-leptonic} channel), or two leptons (the dileptonic channel). The magnitude and direction of the \ptmiss in the latter two channels may be affected by the neutrinos, depending on their direction and energy.
+In \ttH, two \ttbar pairs are produced. A top quark \Ptop from one pair and antiquark \APtop from the other annihilate to produce the Higgs boson. As it decays invisibly, it is the remaining \Ptop and \APtop in the event that lead to three classes of final state. The \Ptop quark decays almost exclusively to $\Pbottom\PWplus$ (and $\HepProcess{\APtop \to \APbottom\PWminus}$)~\cite{PhysRevD.98.030001}. In a resolved system where top quarks possess low to moderate momentum, the multitude of available \Pbottom-tagging algorithms can distinguish the decays of the \Pbottom quark. The products of the \PW boson is the determining factor of the final state. Hadronically-decaying $\PW\text{s}$ ($\HepProcess{\PW \to \Pquark\APquark}$), of course, produce pairs of \glspl{jet}. But they can also decay into a lepton and neutrino. The final states then all have \ptmiss and up to two \glspl{bjet} in common. Several \glspl{jet} may accompany them (the hadronic channel), or fewer \glspl{jet} with a single lepton (the \emph{semi-leptonic} channel), or two leptons (the dileptonic channel). The magnitude and direction of the \ptmiss in the latter two channels may be affected by the neutrinos, depending on their direction and energy.
 
 In a boosted system where the top quarks have significant \pt, it is often difficult to tag \glspl{bjet}, especially if one is searching in the hadronic channel. Recently-developed algorithms can assist in this case by inspecting AK8 \glspl{jet}---objects clustered with the \gls{antikt} using a radius parameter of 0.8 instead of the usual 0.4. The \deepakeight tagger, explained in Chpt.~\ref{subsec:htoinv_deepak8}, is used in the analysis to classify boosted topologies originating from \Ptop quarks as well as \PVec bosons to identify \ttH events.
 
@@ -80,7 +80,7 @@ In a boosted system where the top quarks have significant \pt, it is often diffi
 \subsection{Associated production from a vector boson (\texorpdfstring{\VH}{VH})}
 \label{subsec:htoinv_VH}
 
-A Higgs boson is radiated by the vector boson \PVec in the \VH mechanism. Parallels can be drawn with \ttH as the decay of the \PVec determines the search channel. Resolved and boosted systems are also possible. In the resolved case, a dijet pair with an invariant mass close to that of the parent boson would distinguish the hadronic channel. \Pqb-taggers can be exploited if the decay is to a \Pqb quark, i.e., $\HepProcess{\PWplus \to \APqb\Pquark_{\Pup}}$,\footnote{I'm not sure what the symbol is (if there even is one) for an up-type quark. Maybe $\Pquark_{\Pup, \Pcharm}$ to be more specific, or $\Pquark_{\uparrow}$?} $\HepProcess{\PWminus \to \Pqb\APquark_{\Pup}}$, or $\HepProcess{\PZ \to \Pqb\APqb}$. Single lepton channels are possible for \WH and dilepton for \ZH. For a boosted \PVec, one expects the products to the collimated into a single AK8 \gls{jet}, at least in the hadronic channel. As with \ttH, we take advantage of \deepakeight to capture these scenarios. 
+A Higgs boson is radiated by the vector boson \PVec in the \VH mechanism. Parallels can be drawn with \ttH as the decay of the \PVec determines the search channel. Resolved and boosted systems are also possible. In the resolved case, a dijet pair with an invariant mass close to that of the parent boson would distinguish the hadronic channel. \Pbottom-taggers can be exploited if the decay is to a \Pbottom quark, i.e., $\HepProcess{\PWplus \to \APbottom\Pquark_{\Pup}}$,\footnote{I'm not sure what the symbol is (if there even is one) for an up-type quark. Maybe $\Pquark_{\Pup, \Pcharm}$ to be more specific, or $\Pquark_{\uparrow}$?} $\HepProcess{\PWminus \to \Pbottom\APquark_{\Pup}}$, or $\HepProcess{\PZ \to \Pbottom\APbottom}$. Single lepton channels are possible for \WH and dilepton for \ZH. For a boosted \PVec, one expects the products to the collimated into a single AK8 \gls{jet}, at least in the hadronic channel. As with \ttH, we take advantage of \deepakeight to capture these scenarios. 
 
 
 %=========================================================
@@ -266,7 +266,7 @@ The relative isolation parameter is the ratio of the sum of track, \acrshort{hca
 \subsection{Electrons}
 \label{subsec:htoinv_electron_objs}
 
-In the analysis, electrons are labelled as veto (\vetoEle) or tight electrons (\tightEle), depending on which \acrshort{pog} ID requirements are fulfilled. For 2016--18, version 2 of the cut-based identification technique (tuned using 2017 samples), is applied. These are defined for the barrel region in Tab.~\ref{tab:htoinv_electron_ID_barrel}, and end cap region in Tab.~\ref{tab:htoinv_electron_ID_endcap}. The veto and tight ID requirements are designed to have average efficiencies of 95\,\% and 70\,\%, respectively.
+In the analysis, electrons are labelled as veto (\vetoEle) or tight electrons (\tightEle), depending on which \acrshort{pog} ID requirements are fulfilled. For 2016--18, version 2 of the cut-based identification scheme (tuned using 2017 samples), is applied. These are defined for the barrel region in Tab.~\ref{tab:htoinv_electron_ID_barrel}, and end cap region in Tab.~\ref{tab:htoinv_electron_ID_endcap}. The veto and tight ID requirements are designed to have average efficiencies of 95\,\% and 70\,\%, respectively.
 
 \begin{table}[htbp]
     \centering
@@ -306,11 +306,11 @@ In the analysis, electrons are labelled as veto (\vetoEle) or tight electrons (\
     \label{tab:htoinv_electron_ID_endcap}
 \end{table}
 
-The variable $\sigma_{i\eta i\eta}$ is the energy-weighted standard deviation of the \acrshort{ecal} crystal $\eta$, centred on the local energy maximum, in this case using the full $\text{5} \times \text{5}$ calorimeter tower. $\Delta\eta_{\mathrm{in}}{\mathrm{seed}}$ and $\Delta\phi_{\mathrm{in}}$ are the differences in pseudorapidity and azimuthal angle, respectively, between the supercluster (seed in the case of $\Delta\eta$) and the track, at the point of closest approach to the supercluster, extrapolated from the innermost track state.\footnote{Consider rewording last part of sentence. Currently lifted verbatim from a public twiki page.} The relative isolation parameter is computed in the same way as muons (Eq.~5.4 in Ref.~\citenum{CMS-PRF-14-001}$\!\!$), but uses a $\Delta R < \text{0.3}$ instead of 0.4. The threshold takes the effective area $A_{\mathrm{eff.}}$ into account. Along with $\rho$, these are used for estimating the contributions to pileup in an event. From material interactions within the tracker, photons may convert into $\Pelectron\Ppositron$ pairs. A veto aims to mitigate this effect.
+The variable $\sigma_{i\eta i\eta}$ is the energy-weighted standard deviation of the \acrshort{ecal} crystal $\eta$, centred on the local energy maximum, in this case using the full $\text{5} \times \text{5}$ calorimeter tower. $\Delta\eta_{\mathrm{in}}^{\mathrm{seed}}$ and $\Delta\phi_{\mathrm{in}}$ are the differences in pseudorapidity and azimuthal angle, respectively, between the supercluster (seed in the case of $\Delta\eta$) and the track, at the point of closest approach to the supercluster, extrapolated from the innermost track state.\footnote{Consider rewording last part of sentence. Currently lifted verbatim from a public twiki page.} The relative isolation parameter is computed in the same way as muons (Eq.~5.4 in Ref.~\citenum{CMS-PRF-14-001}$\!\!$), but uses a $\Delta R < \text{0.3}$ instead of 0.4. The threshold takes the effective area $A_{\mathrm{eff.}}$ into account. Along with $\rho$---a parameter in the \textsc{FastJet} package~\cite{Cacciari:2011fastjet} used for \gls{jet} finding---these are used for estimating the contributions to pileup in an event. From material interactions within the tracker, photons may convert into $\Ppositron\Pelectron$ pairs. A veto aims to mitigate this effect.
 % rho and A_eff: https://iopscience.iop.org/article/10.1088/1748-0221/10/08/P08010/pdf
 % More electron stuff in reference to tables above: https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideGsfElectronObject
 
-Common to all electrons in the analysis, we place a cut of $\abseta < 2.5$ so they are reconstructed with tracker information. To further utilise the subdetector, impact parameter requirements on the transverse and longitudinal directions ensure they originate sufficiently close to the primary vertex: $d_0 < \text{0.05}$\,cm and $dz < \text{0.1}$\,cm in the barrel, and $d_0 < \text{0.1}$\,cm and $dz < \text{0.2}$\,cm in the end cap. The \vetoEle and \tightEle in the analysis are only separated by the ID requirements above, and transverse momentum. A veto electron requires $\pt > \text{10}\GeV$, and a tight electron $\pt > \text{40}\GeV$.
+Common to all electrons in the analysis, we place a cut of $\abseta < 2.5$ so they are reconstructed with tracker information. To further utilise the subdetector, impact parameter requirements on the transverse and longitudinal directions ensure they originate sufficiently close to the primary vertex: $d_0 < \text{0.05}$\,cm and $dz < \text{0.1}$\,cm in the barrel, and $d_0 < \text{0.1}$\,cm and $dz < \text{0.2}$\,cm in the end cap. Cross cleaning is also performed against the \looseMuon collection of objects, so are not counted in the event if they are within $\Delta R < \text{0.3}$ of one. The \vetoEle and \tightEle in the analysis are only separated by the ID requirements above, and transverse momentum. A veto electron requires $\pt > \text{10}\GeV$, and a tight electron $\pt > \text{40}\GeV$.
 
 
 %=========================================================
@@ -319,11 +319,56 @@ Common to all electrons in the analysis, we place a cut of $\abseta < 2.5$ so th
 \subsection{Photons}
 \label{subsec:htoinv_photon_objs}
 
-% ID tables: https://twiki.cern.ch/twiki/bin/view/CMS/CutBasedPhotonIdentificationRun2
+Photons are identified in a similar manner to electrons---using version 2 of the cut-based scheme for 2016--18, optimised with 2017 \acrlong{mc}. For inclusivity, we define loose \loosePhoton and medium photons \mediumPhoton that satisfy the corresponding working points for identification. These are detailed in Tab.~\ref{tab:htoinv_photon_ID_barrel} and Tab.~\ref{tab:htoinv_photon_ID_endcap} for the barrel and end cap regions, respectively. The loose photon ID specification is designed to be 90\,\% efficient, and the medium ID 80\,\%.\footnote{Should I give the background rejection efficiencies as well?} Both the \loosePhoton and \mediumPhoton collections are cross-cleaned against \looseMuon and \vetoEle objects in the event with $\Delta R < \text{0.3}$. They must also pass the electron conversion veto to ensure they originate promptly from the primary vertex.
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{lcc}
+        \hline
+        Criterion & Loose & Medium \\\hline
+        $H/E$ & $< \text{0.04596}$ & $< \text{0.02197}$ \\
+        $\sigma_{i\eta i\eta}$ & $< \text{0.0106}$ & $< \text{0.01015}$ \\
+        $\rho$-corrected \acrshort{pf} charged hadron isolation & $< \text{1.694}$ & $< \text{1.141}$ \\
+        $\rho$-corrected \acrshort{pf} neutral hadron isolation & $< \text{24.032} + X + Y$ & $< \text{1.189} + X + Y$ \\
+        $\rho$-corrected \acrshort{pf} photon isolation & $< \text{2.876} + Z$ & $< \text{2.08} + Z$ \\\hline
+    \end{tabular}
+    \caption[Requirements used to define the loose and medium photon IDs in the barrel region of the detector ($\abs{\eta} \leq \text{1.479}$)]{Requirements used to define the loose and medium photon IDs in the barrel region of the detector ($\abs{\eta} \leq \text{1.479}$). The factors $X = \text{0.01512}\pt$, $Y = \text{10}^{-5}\pt^2$, and $Z = \text{0.004017}\pt$ in the isolation criteria scale with powers of the transverse momentum. Information taken from Ref.~\citenum{cms_photon_ID_Run2}.}
+    \label{tab:htoinv_photon_ID_barrel}
+\end{table}
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{lcc}
+        \hline
+        Criterion & Loose & Medium \\\hline
+        $H/E$ & $< \text{0.0590}$ & $< \text{0.0326}$ \\
+        $\sigma_{i\eta i\eta}$ & $< \text{0.0272}$ & $< \text{0.0272}$ \\
+        $\rho$-corrected \acrshort{pf} charged hadron isolation & $< \text{2.089}$ & $< \text{1.051}$ \\
+        $\rho$-corrected \acrshort{pf} neutral hadron isolation & $< \text{1.922} + X + Y$ & $< \text{2.718} + X + Y$ \\
+        $\rho$-corrected \acrshort{pf} photon isolation & $< \text{4.162} + Z$ & $< \text{3.867} + Z$ \\\hline
+    \end{tabular}
+    \caption[Requirements used to define the loose and medium photon IDs in the end cap region of the detector ($\abs{\eta} > \text{1.479}$)]{Requirements used to define the loose and medium photon IDs in the end cap region of the detector ($\abs{\eta} > \text{1.479}$). The factors $X = \text{0.0117}\pt$, $Y = \text{2.3}\times \text{10}^{-5}\pt^2$, and $Z = \text{0.0037}\pt$ in the isolation criteria scale with powers of the transverse momentum. Information taken from Ref.~\citenum{cms_photon_ID_Run2}.}
+    \label{tab:htoinv_photon_ID_endcap}
+\end{table}
+
+The variables $\sigma_{i\eta i\eta}$, and $\rho$ follow the same definitions as in Chpt.~\ref{subsec:htoinv_electron_objs}. The $\rho$-corrected isolation is calculated by taking the maximum of zero, and the difference between the \acrlong{pf} isolation and the contribution from pileup:
+\begin{equation}
+I_{\mathrm{PF}}^{\mathrm{corr.}} = \max (I_{\mathrm{PF}} - \rho A_{\mathrm{eff.}}, \text{0})
+\end{equation}
+
+[In addition] to the ID, the two collections further diverge due to $\eta$ and \pt requirements. A loose photon is [defined] with $\abseta < \text{2.5}$ and $\pt > \text{15}\GeV$, while a medium photon must be central ($\abseta < \text{1.442}$) and possess $\pt > \text{230}\GeV$.
+
+
+% Find other words for 'requirement' and 'criteria'
+
+%=========================================================
 
 
 \subsection{Taus}
 \label{subsec:htoinv_tau_objs}
+
+The only purpose tau leptons \Ptau serve is to veto (or apply veto weights to) events that contain them. We denote these as ``very loose'' taus \vlooseTau...
+
 
 \subsubsection{2016}
 \label{subsubsec:htoinv_tau_objs_2016}
@@ -401,7 +446,7 @@ All \acrlong{mc} datasets used in this analysis were produced centrally by exper
 
     & \acrshort{qcd} multijet: The most common type of event produced in $\Pp\Pp$ collisions at the \acrshort{lhc} is several \glspl{jet} from \acrshort{qcd} vertices. These typically do not have large \ptmiss, but are prone to mismeasurements that can artificially increase it. As such, they serve as a non-negligible background in the analysis. The datasets are produced at \acrshort{lo} by \MGvATNLO.
 
-    & Single top: Events with one final-state top quark are a subdominant background in the analysis, but are important to consider, especially in the \ttH categories. These electroweak-induced processes include \schannel and \tchannel production where a \emph{four-flavour scheme}~\cite{Krauss:2017wmx} in the event generator is used for treatment of \Pqb quarks. This approach considers the \Pqb as massive, and as such, may only enter the final state. Associated production with a \PW boson (known as $\Ptop\PW$) is also considered with a five-flavour scheme, i.e., \Pqb quarks may be considered massless and can appear in both the initial and final states. For all of these channels, the events are produced at \acrshort{nlo}. Modelling the hard scatter for the \schannel diagram is performed with \MGvATNLO. The \tchannel and $\Ptop\PW$ mechanisms are generated with \POWHEG, with the former decaying the $\PW$ exchanged by the initial state $\Pqb$ and $\Pquark$ with \MADSPIN~\cite{Artoisenet:2012st} to include spin correlations.
+    & Single top: Events with one final-state top quark are a subdominant background in the analysis, but are important to consider, especially in the \ttH categories. These electroweak-induced processes include \schannel and \tchannel production where a \emph{four-flavour scheme}~\cite{Krauss:2017wmx} in the event generator is used for treatment of \Pbottom quarks. This approach considers the \Pbottom as massive, and as such, may only enter the final state. Associated production with a \PW boson (known as $\Ptop\PW$) is also considered with a five-flavour scheme, i.e., \Pbottom quarks may be considered massless and can appear in both the initial and final states. For all of these channels, the events are produced at \acrshort{nlo}. Modelling the hard scatter for the \schannel diagram is performed with \MGvATNLO. The \tchannel and $\Ptop\PW$ mechanisms are generated with \POWHEG, with the former decaying the $\PW$ exchanged by the initial state $\Pbottom$ and $\Pquark$ with \MADSPIN~\cite{Artoisenet:2012st} to include spin correlations.
 
     & \ttbarpjets: The \acrshort{qcd}-induced process presents a major background, largely in the \ttH categories. Large \ptmiss can arise in scenarios where the leptons in the decay are ``lost'' (\lostlepton) from misidentification or are outside the bounds of the detector acceptance. The three channels (hadronic, semi-leptonic, and dileptonic) are modelled with \POWHEG at \acrshort{nlo} accuracy.
 
@@ -483,7 +528,7 @@ In an analysis, events are often rejected by placing kinematic or object-based r
     \label{eq:event_selection_weight}
 \end{equation}
 
-where $\epsilon_i$ is the efficiency/scale factor applied to object $i$. Only reconstructed (``reco level'') objects that have been matched to a generator level object are considered. For leptons (\Pe, \Pmu, \Ptau) and photons, these scale factors are typically from the reconstruction efficiency, identification efficiency, and \pt- or $\eta$-dependent energy corrections. In the case of \Pqb-tagged \glspl{jet}, it is the data-MC scale factor at the given working point from the algorithm used to identify them. These weights are calculated individually for each type of object in an event, and individually for each source since they also introduce systematic variations that cannot be trivially aggregated. A veto weight is defined as
+where $\epsilon_i$ is the efficiency/scale factor applied to object $i$. Only reconstructed (``reco level'') objects that have been matched to a generator level object are considered. For leptons (\Pe, \Pmu, \Ptau) and photons, these scale factors are typically from the reconstruction efficiency, identification efficiency, and \pt- or $\eta$-dependent energy corrections. In the case of \Pbottom-tagged \glspl{jet}, it is the data-MC scale factor at the given working point from the algorithm used to identify them. These weights are calculated individually for each type of object in an event, and individually for each source since they also introduce systematic variations that cannot be trivially aggregated. A veto weight is defined as
 \begin{equation}
     w_{\mathrm{veto}} = \prod_i^{N_\mathrm{objects}} 1 - \epsilon_i
     \label{eq:event_veto_weight}
@@ -589,7 +634,7 @@ The preselection is defined by applying the following cuts:\footnote{Do I have t
 \subsection{Additional filters}
 \label{subsec:htoinv_other_filters}
 
-Further selections are applied to all years, regions and categories to filter poorly measured or mis-reconstructed events in both data and MC. A ``muon \gls{jet} filter'' rejects events with mis-reconstructed muons by requiring all \glspl{jet} with $\pt > \text{200}\GeV$ to have a muon energy fraction $f_{\mathrm{E}}^{\Pgm} < \text{0.5}$, and $\Delta\phi(\mathrm{j}, \ \ptmiss) < \pi - \text{0.4}$.
+Further selections are applied to all years, regions and categories to filter poorly measured or mis-reconstructed events in both data and MC. A ``muon \gls{jet} filter'' rejects events with mis-reconstructed muons by requiring all \glspl{jet} with $\pt > \text{200}\GeV$ to have a muon energy fraction $f_{\mathrm{E}}^{\Pmu} < \text{0.5}$, and $\Delta\phi(\mathrm{j}, \ \ptmiss) < \pi - \text{0.4}$.
 
 Charged ($f_{\mathrm{E}}^{\pm}$) and neutral hadron energy fraction ($f_{\mathrm{E}}^{0}$) requirements are applied to all \glspl{jet} via fulfillment of the ``tight'' \gls{jet} ID criteria (see [SEC IN OBJECT DEFS]). Furthermore, stricter requirements are placed on the leading two \glspl{jet}---applied in all categories except the monojet category, where they only apply to the leading \gls{jet}---as follows:
 
@@ -708,7 +753,7 @@ The number of boosted top quark- and vector boson-tagged \glspl{jet} (\nBoostedT
 
 In the table, the number of \glspl{jet} \njet refers specifically to the number of AK4-clustered \glspl{jet} that do not overlap with a boosted \Ptop or \PVec \gls{jet} to avoid double counting objects, i.e., an AK4 \gls{jet} within $\Delta R < \text{0.8}$ of a boosted object does not count toward the \njet requirement in the subcategory definition. The same treatment is applied to \glspl{bjet} as well. This only applies to the categorisation and does not affect selections made on \glspl{jet} or \glspl{bjet} in Chpt.~\ref{sec:htoinv_event_selection}.
 
-For categorisation and the analysis altogether, \njet and \nbjet are counted independently, so no overlap removal is performed. For example, the \VH 2j2b requires two \glspl{jet}, both of which are \Pqb-tagged.
+For categorisation and the analysis altogether, \njet and \nbjet are counted independently, so no overlap removal is performed. For example, the \VH 2j2b requires two \glspl{jet}, both of which are \Pbottom-tagged.
 
 % Make sure I say in the object definitions section that a b-jet is defined by the \deepcsv algorithm with the medium working point.
 
@@ -818,7 +863,7 @@ Events must satisfy a logical \texttt{OR} of \acrshort{hlt} cross-triggers for \
 \medskip
 \begin{easylist}[itemize]
     \easylistprops
-    & \singleMuCr: one tight muon \tightMuon with $\pt > \text{20}\GeV$ and $\text{50} < \mtMuon < \text{110}\GeV$
+    & \singleMuCr: one tight muon \tightMuon with $\pt > \text{20}\GeV$ and a transverse mass in the range $\text{50} < \mtMuon < \text{110}\GeV$
     & \doubleMuCr: one tight muon \tightMuon with $\pt > \text{20}\GeV$, and one loose muon \looseMuon with $\pt > \text{10}\GeV$ that has opposite charge, with a combined invariant mass of $\text{60} < \doubleMuMass < \text{120}\GeV$
     & \singleEleCr: one tight electron \tightEle with $\pt > \text{40}\GeV$ and $\text{50} < \mtElectron < \text{110}\GeV$
     & \doubleEleCr: one tight electron \tightEle with $\pt > \text{40}\GeV$, and one veto electron \vetoEle with $\pt > \text{10}\GeV$ that has opposite charge, with a combined invariant mass of $\text{60} < \doubleEleMass < \text{120}\GeV$

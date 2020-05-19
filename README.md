@@ -194,7 +194,7 @@ The following are some notes on formatting guidelines and style, just to remain 
   - Try to typeset math in a consistent way to the main text but without the use of macros, e.g., `$\sqrt{s} = \text{13\,TeV}$`, so that the `.bib` file can stand alone
   - For DOIs, remove the preceding `https://doi.org/` in `doi` fields
   - When explicitly referring to a reference with "Ref.", use `\citenum{}` instead of `\cite{}` so that the number isn't wrapped in square brackets
-    - The `\citenum` command isn't available natively in `biblatex`. I've written a re-implementation just after the package is imported in [thesismain.tex](./thesismain.tex), but it can sometimes add an erroneous space after it before subsequent puncuation, e.g., `Ref. 42 )` instead of `Ref. 42)`. So just need to watch out for that
+    - The `\citenum` command isn't available natively in `biblatex`. I've written a re-implementation just after the package is imported in [thesismain.tex](./thesismain.tex), but it can sometimes add an erroneous space after it before subsequent puncuation, e.g., `Ref. 42 )` instead of `Ref. 42)`. I've added another macro to input a small amount of negative space (`\citnumNegSpace`), so just need to watch out for that and use it if necessary
 - Misc. style tips:
   - For when to write numbers in words or numerals, see <https://www.scribbr.com/academic-writing/numbers/> for help
   - To add a shorter caption for a figure/table in the List of Figures/Tables, add it inside square brackets before the main one (i.e., `\caption[Short caption]{Full caption}`)

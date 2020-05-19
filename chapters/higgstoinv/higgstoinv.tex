@@ -128,7 +128,7 @@ The analysis discussed in the remainder of the chapter is a dedicated search for
 
 Direct collaboration amongst several institutes divides up the task appropriately. Researchers at the University of Bristol, including as myself, and LLR (\emph{Laboratoire Leprince-Ringuet, \'{E}cole Polytechnique, Universit\'{e} Paris-Saclay}) focus on \ttH and the resolved \VH modes. Those at Imperial College London, who have a long history with the \acrshort{vbf} search~\cite{Chatrchyan:2014tja,Sirunyan:2018owy}, assume responsibility of this process. Researchers at Boston University---who have previously been involved in \acrshort{bsm} analyses with interpretations in invisibly decaying Higgs bosons~\cite{Khachatryan:2016mdm,Sirunyan:2017jix}---specialize in monojet and mono-\PVec searches. This makes them naturally suited to investigating the boosted aspect of \VH, and \ggF.
 
-Emphasis will be placed on the non-VBF modes, particularly \ttH and resolved \VH, as I had direct involvement in those aspects of the analysis. Before Boston University joined our effort, we also studied the boosted \VH and \ggF mechanisms. Accordingly, they will also be given some attention. Definitions of the physics objects used analysis-wide are discussed in Chpt.~\ref{sec:htoinv_objects}. The data from \acrshort{cms} and from simulation, along with required corrections and systematic uncertainties, are acknowledged in Chpt.~\ref{sec:htoinv_data_sim}. These are followed by the event selection in Chpt.~\ref{sec:htoinv_event_selection}. Definitions of the categorisation of production modes and phase space regions are illustrated in Chpts.~\ref{sec:htoinv_categorisation} and \ref{sec:region_definitions}, respectively. Methods for accurately estimating the background processes in the signal region are delineated in Chpt.~\ref{sec:htoinv_background_est}. The incorporation of these and the aforementioned sections in the statistical treatment are presented in Chpt.~\ref{sec:htoinv_satistical_treatment}, before the results of the analysis in Chpt.~\ref{sec:htoinv_results}.
+Emphasis will be placed on the non-VBF modes, particularly \ttH and resolved \VH, as I had direct involvement in those aspects of the analysis. Before Boston University joined our effort, we also studied the boosted \VH and \ggF mechanisms. Accordingly, they will also be given some attention. Definitions of the physics objects used analysis-wide are discussed in Chpt.~\ref{sec:htoinv_objects}. The data from \acrshort{cms} and from simulation, along with required corrections and systematic uncertainties, are acknowledged in Chpt.~\ref{sec:htoinv_data_sim}. These are followed by the event selection in Chpt.~\ref{sec:htoinv_event_selection}. Characterisation of the categorisation of production modes and phase space regions are illustrated in Chpts.~\ref{sec:htoinv_categorisation} and \ref{sec:region_definitions}, respectively. Methods for accurately estimating the background processes in the signal region are delineated in Chpt.~\ref{sec:htoinv_background_est}. The incorporation of these and the aforementioned sections in the statistical treatment are presented in Chpt.~\ref{sec:htoinv_satistical_treatment}, before the results of the analysis in Chpt.~\ref{sec:htoinv_results}.
 
 % Given the \acrshort{lhc} is a \emph{hadron} collider, processes with hadronic channels are the natural choices.\footnote{Or should I say ``most sensitive''?} \Gls{met} from the purely-invisible decay of the Higgs---and hadronic activity from the particles associated with the production mechanism---constitute the [final state], often known as a ``\text{\glspl{jet}} + \ptmiss$'' search.
 
@@ -139,9 +139,9 @@ Emphasis will be placed on the non-VBF modes, particularly \ttH and resolved \VH
 \section{Definitions of physics objects and variables}
 \label{sec:htoinv_objects}
 
-The physics that occurs at the high energies the \acrshort{lhc} is capable of is not simple. That makes the recording of particles and events overall a non-trivial undertaking. Based on complex hardware and software, research, and the experience of previous experiments, defining physics objects and variables from an analyst's standpoint is thankfully straightforward. The basic [definitions] are already included into the \ROOT files we use, with [additional] selections on top to select the analysis-level objects.
+The physics that occurs at the high energies the \acrshort{lhc} is capable of is not simple. That makes the recording of particles and events overall a non-trivial undertaking. Based on complex hardware and software, research, and the experience of previous experiments, establishing physics objects and variables from an analyst's standpoint is thankfully straightforward. The basic definitions are already included into the \ROOT files we use, with ancillary selections on top for the analysis-level objects. All of the descriptions that follow apply both to data and simulated samples, unless otherwise stated.
 
-Different working points for the identification of many objects are available from the respective \glspl{pog}, trading inclusivity for purity the tighter the selections are. ``Veto'' and ``loose'' criteria are used to specify the secondary leptons in the dilepton \glspl{CR}, and when vetoing leptons and photons (or applying their corresponding veto weights) in the signal region. The ``medium'' and ``tight'' selections are used to construct the primary objects in the \glspl{CR}. We denote these objects with a subscript corresponding to the working point. The requirements elaborated upon in the subsequent subsections.
+Different working points for the identification of many objects are available from the respective \glspl{pog}, trading inclusivity for purity the tighter the selections are. ``Veto'' and ``loose'' criteria are used to specify the secondary leptons in the dilepton \glspl{CR}, and when vetoing leptons and photons (or applying their corresponding veto weights) in the signal region. The ``medium'' and ``tight'' selections are used to construct the primary objects in the \glspl{CR}. We denote these particles with a subscript that signifies the working point. The requirements elaborated upon in the ensuing subsections.
 
 
 %=========================================================
@@ -150,11 +150,11 @@ Different working points for the identification of many objects are available fr
 \subsection{Jets}
 \label{subsec:htoinv_jet_objs}
 
-In the \nanoAOD data tier, a \gls{jet} is defined as an AK4-clustered, charged hadron-subtracted object reconstructed with the \gls{particleflow}, with \acrlong{jec} applied and a requirement of $\pt > \text{15}\GeV$. For the analysis, we raise the threshold to $\pt > \text{30}\GeV$ and explicitly require $\abseta < 5.0$. Either the tight, or tight $+$ lepton veto, \acrshort{pf} identification requirements are [also] mandatory to establish a sufficient degree of purity with a very high efficiency ($> \text{98\,\%}$ in all $\abseta$ regions). These are documented in Tabs.~\ref{tab:htoinv_jet_id_def_2016}, \ref{tab:htoinv_jet_id_def_2017}, and \ref{tab:htoinv_jet_id_def_2018}. Finally, \glspl{jet} must not overlap (i.e., $\Delta R > \text{0.4}$) with any \vetoEle, \looseMuon, or \loosePhoton in the event to avoid potential misidentification.
+In the \nanoAOD data tier, a \gls{jet} is defined as an AK4-clustered, charged hadron-subtracted object reconstructed with the \gls{particleflow}, with \acrlong{jec} applied and a $\pt > \text{15}\GeV$ prerequisite. For the analysis, we raise the \pt threshold to 30\GeV and explicitly restrict the pseudorapidity range to $\abseta < 5.0$. Either the tight, or tight $+$ lepton veto, \acrshort{pf} identification requirements are also mandatory to establish a sufficient degree of purity with a very high efficiency ($> \text{98\,\%}$ in all $\abseta$ regions).\footnote{For all objects, should I also give the background rejection efficiency?} These are documented in Tabs.~\ref{tab:htoinv_jet_id_def_2016}, \ref{tab:htoinv_jet_id_def_2017}, and \ref{tab:htoinv_jet_id_def_2018}. Finally, \glspl{jet} must not overlap (i.e., exhibit $\Delta R > \text{0.4}$) with any \vetoEle, \looseMuon, and \loosePhoton in the event to avoid potential misidentification.
 
 AK8 \glspl{jet} follow the same reconstruction and identification prescription as AK4 \glspl{jet}, only differing in the cone size.\footnote{I'm not what/if the minimum \pt of an AK8 \gls{jet} is, and whether they have an $\eta$ restriction (I've seen $\abseta < 2.4$ in a few places, but nothing confirmed).}
 
-A \gls{bjet} is defined as a \nanoAOD \gls{jet} with $\pt > \text{20}\GeV$, $\abseta < 2.5$ (2.4 in 2016), and to satisfy the medium working point (a mis-tag rate of 1\,\%) from the \deepcsv algorithm~\cite{Sirunyan:2017ezt}.
+A \gls{bjet} is described by a \nanoAOD AK4 \gls{jet} with $\pt > \text{20}\GeV$, $\abseta < \text{2.5}$ (2.4 in 2016), and to satisfy the medium working point (a mis-tag rate of 1\,\%) from the \deepcsv algorithm~\cite{Sirunyan:2017ezt}.
 
 % Might need to say we use pt_nom for all instances of pt thresholds (except noisy EE jets in 2017 where the raw pt is used). pt_nom is created offline and is additionally jet energy resolution-corrected (maybe check nanoAOD-tools for specifics)
 
@@ -165,7 +165,7 @@ A \gls{bjet} is defined as a \nanoAOD \gls{jet} with $\pt > \text{20}\GeV$, $\ab
 \subsubsection{2016}
 \label{subsubsec:htoinv_jet_objs_2016}
 
-The tight and tight $+$ lepton veto ID requirements are detailed in Tab.~\ref{tab:htoinv_jet_id_def_2016}. Specifically to this year, all \glspl{jet} are required to satisfy the criteria for the tight pileup ID to ensure they do not originate from pileup vertices.
+The tight and tight $+$ lepton veto ID specifications are detailed in Tab.~\ref{tab:htoinv_jet_id_def_2016}. Specifically to this year, all \glspl{jet} are required to fulfill the criteria for the tight pileup ID to ensure they do not originate from pileup vertices.
 
 \begin{table}[htbp]
     \centering
@@ -194,7 +194,7 @@ The tight and tight $+$ lepton veto ID requirements are detailed in Tab.~\ref{ta
 \subsubsection{2017}
 \label{subsubsec:htoinv_jet_objs_2017}
 
-The tight and tight $+$ lepton veto ID requirements are detailed in Tab.~\ref{tab:htoinv_jet_id_def_2017}. \Glspl{jet} with $\pt < \text{50}\GeV$ are required to satisfy the tight pileup ID criteria. Any \glspl{jet} with a raw (uncorrected) $\pt < \text{50}\GeV$ within the region $2.65 < \abseta < 3.139$ are vetoed due to noise in the \acrshort{ecal} end cap.
+The tight and tight $+$ lepton veto ID conditions are detailed in Tab.~\ref{tab:htoinv_jet_id_def_2017}. \Glspl{jet} with $\pt < \text{50}\GeV$ are required to meet the tight pileup ID criteria. Any \glspl{jet} with a raw (uncorrected) transverse momentum $\pt^{\mathrm{raw}} < \text{50}\GeV$ within the region $\text{2.65} < \abseta < \text{3.139}$ are vetoed due to noise in the \acrshort{ecal} end cap.
 
 \begin{table}[htbp]
     \centering
@@ -223,7 +223,7 @@ The tight and tight $+$ lepton veto ID requirements are detailed in Tab.~\ref{ta
 \subsubsection{2018}
 \label{subsubsec:htoinv_jet_objs_2018}
 
-The tight and tight $+$ lepton veto ID requirements are detailed in Tab.~\ref{tab:htoinv_jet_id_def_2018}.\footnote{There's probably a more elegant way to write the ID criteria, since the same variables are used for all years and the same thresholds in many cases. But until I figure it out, separate tables for each year will have to do} As in 2017, \glspl{jet} with $\pt < \text{50}\GeV$ must [satisfy] the tight pileup ID requirements.
+The tight and tight $+$ lepton veto ID specifications are detailed in Tab.~\ref{tab:htoinv_jet_id_def_2018}.\footnote{There's probably a more elegant way to write the ID criteria, since the same variables are used for all years and the same thresholds in many cases. But until I figure it out, separate tables for each year will have to do} As in 2017, \glspl{jet} with $\pt < \text{50}\GeV$ must fulfill the tight pileup ID conditions.\footnote{Is it worth going into the pileup ID spec.?}
 
 \begin{table}[htbp]
     \centering
@@ -252,9 +252,9 @@ The tight and tight $+$ lepton veto ID requirements are detailed in Tab.~\ref{ta
 \subsection{Muons}
 \label{subsec:htoinv_muon_objs}
 
-The reconstruction and identification criteria for muons is described in significant detail in Ref.~\citenum{Sirunyan:2018fpa}. A loose muon \looseMuon satisfies the ``loose muon identification'' criteria from the paper, $\abseta < \text{2.4}$, $\pt > \text{10}\GeV$, and the loose working point of the \acrlong{pf} relative isolation parameter (Eq.~5.4 in Ref.~\citenum{CMS-PRF-14-001}$\!\!$) $I_{\mathrm{PF}} < \text{0.25}$. A tight muon \tightMuon meets the ``tight muon ID'' requirements from the same paper, $\abseta < \text{2.4}$, $\pt > \text{20}\GeV$, and the tight working point for the relative isolation ($I_{\mathrm{PF}} < \text{0.15}$).
+The reconstruction and identification criteria for muons is described in significant detail in Ref.~\citenum{Sirunyan:2018fpa}. A loose muon \looseMuon satisfies the ``loose muon identification'' requirements from the paper, $\abseta < \text{2.4}$, $\pt > \text{10}\GeV$, and the loose working point of the \acrlong{pf} relative isolation parameter (Eq.~5.4 in Ref.~\citenum{CMS-PRF-14-001}\citenumNegSpace) $I_{\mathrm{PF}} < \text{0.25}$. A tight muon \tightMuon meets the ``tight muon ID'' requirements from the same paper, $\abseta < \text{2.4}$, $\pt > \text{20}\GeV$, and the tight working point for the relative isolation ($I_{\mathrm{PF}} < \text{0.15}$).
 
-The relative isolation parameter is the ratio of the sum of track, \acrshort{hcal} and \acrshort{ecal} energies within $\Delta R < \text{0.4}$ of the muon to its momentum. The loose and tight working points are designed to give efficiencies of 95\,\% and 98\,\%, respectively.
+The relative isolation parameter is the ratio of the sum of track, \acrshort{hcal} and \acrshort{ecal} energies within $\Delta R < \text{0.4}$ of the muon to the particle's momentum. The loose and tight working points are designed to give efficiencies of 98\,\% and 95\,\%, respectively.
 
 
 %=========================================================
@@ -263,7 +263,7 @@ The relative isolation parameter is the ratio of the sum of track, \acrshort{hca
 \subsection{Electrons}
 \label{subsec:htoinv_electron_objs}
 
-In the analysis, electrons are labelled as veto (\vetoEle) or tight electrons (\tightEle), depending on which \acrshort{pog} ID requirements are fulfilled. For 2016--18, version 2 of the cut-based identification scheme (tuned using 2017 samples), is applied. These are defined for the barrel region in Tab.~\ref{tab:htoinv_electron_ID_barrel}, and end cap region in Tab.~\ref{tab:htoinv_electron_ID_endcap}. The veto and tight ID requirements are designed to have average efficiencies of 95\,\% and 70\,\%, respectively.
+In the analysis, electrons are labelled as veto (\vetoEle) or tight electrons (\tightEle), depending on which \acrshort{pog} ID requirements are fulfilled. For 2016--18, version 2 of the cut-based identification scheme (tuned using 2017 samples), is applied. These are distinguished for the barrel region in Tab.~\ref{tab:htoinv_electron_ID_barrel}, and end cap region in Tab.~\ref{tab:htoinv_electron_ID_endcap}. The veto and tight ID specifications are designed for average efficiencies of 95\,\% and 70\,\%, respectively.
 
 \begin{table}[htbp]
     \centering
@@ -303,11 +303,11 @@ In the analysis, electrons are labelled as veto (\vetoEle) or tight electrons (\
     \label{tab:htoinv_electron_ID_endcap}
 \end{table}
 
-The variable $\sigma_{i\eta i\eta}$ is the energy-weighted standard deviation of the \acrshort{ecal} crystal $\eta$, centred on the local energy maximum, in this case using the full $\text{5} \times \text{5}$ calorimeter tower. $\Delta\eta_{\mathrm{in}}^{\mathrm{seed}}$ and $\Delta\phi_{\mathrm{in}}$ are the differences in pseudorapidity and azimuthal angle, respectively, between the supercluster (seed in the case of $\Delta\eta$) and the track, at the point of closest approach to the supercluster, extrapolated from the innermost track state.\footnote{Consider rewording last part of sentence. Currently lifted verbatim from a public twiki page.} The relative isolation parameter is computed in the same way as muons (Eq.~5.4 in Ref.~\citenum{CMS-PRF-14-001}$\!\!$), but uses a $\Delta R < \text{0.3}$ instead of 0.4. The threshold takes the effective area $A_{\mathrm{eff.}}$ into account. Along with $\rho$---a parameter in the \textsc{FastJet} package~\cite{Cacciari:2011fastjet} used for \gls{jet} finding---these are used for estimating the contributions to pileup in an event. $E_{\mathrm{SC}}$ is the energy of the supercluster. From material interactions within the tracker, photons may convert into $\Ppositron\Pelectron$ pairs. A veto aims to mitigate this effect.
+The variable $\sigma_{i\eta i\eta}$ is the energy-weighted standard deviation of the \acrshort{ecal} crystal $\eta$, centred on the local energy maximum, in this case using the full $\text{5} \times \text{5}$ crystal information from the calorimeter tower. $\Delta\eta_{\mathrm{in}}^{\mathrm{seed}}$ and $\Delta\phi_{\mathrm{in}}$ are the differences in pseudorapidity and azimuthal angle, respectively, between the supercluster (seed in the case of $\Delta\eta$) and the track. They are taken at the point of closest approach to the supercluster, extrapolated from the innermost track state.\footnote{Consider rewording this sentence. Currently lifted verbatim from a public twiki page.} $H/E$ is the ratio of the candidate's central energy deposit in the \acrshort{hcal} to the \acrshort{ecal}. The relative isolation parameter is computed in the same way as muons (Eq.~5.4 in Ref.~\citenum{CMS-PRF-14-001}\citenumNegSpace), but uses a cone of $\Delta R < \text{0.3}$ instead of 0.4. The isolation threshold takes the effective area $A_{\mathrm{eff.}}$ into account. Along with $\rho$---a parameter in the \textsc{FastJet} package~\cite{Cacciari:2011fastjet} used for \gls{jet} finding---these are used for estimating the contamination from pileup in an event. $E_{\mathrm{SC}}$ is the energy of the supercluster, and is used to scale the isolation requirement. From material interactions within the tracker, photons may convert into $\Ppositron\Pelectron$ pairs. A dedicated veto aims to mitigate this effect.
 % rho and A_eff: https://iopscience.iop.org/article/10.1088/1748-0221/10/08/P08010/pdf
 % More electron stuff in reference to tables above: https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideGsfElectronObject
 
-Common to all electrons in the analysis, we place a cut of $\abseta < 2.5$ so they are reconstructed with tracker information. To further utilise the subdetector, impact parameter requirements on the transverse and longitudinal directions ensure they originate sufficiently close to the primary vertex: $d_0 < \text{0.05}$\,cm and $dz < \text{0.1}$\,cm in the barrel, and $d_0 < \text{0.1}$\,cm and $dz < \text{0.2}$\,cm in the end cap. Cross cleaning is also performed against the \looseMuon collection of objects, so are not counted in the event if they are within $\Delta R < \text{0.3}$ of one. The \vetoEle and \tightEle in the analysis are only separated by the ID requirements above, and transverse momentum. A veto electron requires $\pt > \text{10}\GeV$, and a tight electron $\pt > \text{40}\GeV$.
+Common to all electrons in the analysis, we place a cut of $\abseta < \text{2.5}$ so they are reconstructed with tracker information. To further utilise the subdetector, impact parameter conditions on the transverse and longitudinal directions ensure they originate sufficiently close to the primary vertex: $d_0 < \text{0.05}$\,cm and $dz < \text{0.1}$\,cm in the barrel, with $d_0 < \text{0.1}$\,cm and $dz < \text{0.2}$\,cm in the end cap. Cross cleaning is also performed against the \looseMuon collection of objects, so electrons are not counted in the event if they are within $\Delta R < \text{0.3}$ of one. The \vetoEle and \tightEle sets are only separated by the identification prerequisites above, and transverse momentum. A veto electron requires $\pt > \text{10}\GeV$, and a tight electron $\pt > \text{40}\GeV$.
 
 
 %=========================================================
@@ -316,7 +316,7 @@ Common to all electrons in the analysis, we place a cut of $\abseta < 2.5$ so th
 \subsection{Photons}
 \label{subsec:htoinv_photon_objs}
 
-Photons are identified in a similar manner to electrons---using version 2 of the cut-based scheme for 2016--18, optimised with 2017 \acrlong{mc}. For inclusivity, we define loose \loosePhoton and medium photons \mediumPhoton that satisfy the corresponding working points for identification. These are detailed in Tab.~\ref{tab:htoinv_photon_ID_barrel} and Tab.~\ref{tab:htoinv_photon_ID_endcap} for the barrel and end cap regions, respectively. The loose photon ID specification is designed to be 90\,\% efficient, and the medium ID 80\,\%.\footnote{Should I give the background rejection efficiencies as well?} Both the \loosePhoton and \mediumPhoton collections are cross-cleaned against \looseMuon and \vetoEle objects in the event with $\Delta R < \text{0.3}$. They must also pass the electron conversion veto to ensure they originate promptly from the primary vertex.
+Photons are identified in a similar manner to electrons---using version 2 of the cut-based scheme for 2016--18, optimised with 2017 \acrlong{mc}. We define loose \loosePhoton and medium photons \mediumPhoton that fulfill the corresponding working point criteria for identification. For inclusivity, the latter is used instead of the tight working point. These are detailed in Tab.~\ref{tab:htoinv_photon_ID_barrel} and Tab.~\ref{tab:htoinv_photon_ID_endcap} for the barrel and end cap regions, respectively. The loose photon ID specification is designed to be 90\,\% efficient, and the medium ID 80\,\%.\footnote{Should I give the background rejection efficiencies as well?} Both the \loosePhoton and \mediumPhoton collections are cross-cleaned against \looseMuon and \vetoEle objects in the event with $\Delta R < \text{0.3}$. They must also pass the electron conversion veto to ensure they originate promptly from the primary vertex.
 
 \begin{table}[htbp]
     \centering
@@ -329,7 +329,7 @@ Photons are identified in a similar manner to electrons---using version 2 of the
         $\rho$-corrected \acrshort{pf} neutral hadron isolation & $< \text{24.032} + X + Y$ & $< \text{1.189} + X + Y$ \\
         $\rho$-corrected \acrshort{pf} photon isolation & $< \text{2.876} + Z$ & $< \text{2.08} + Z$ \\\hline
     \end{tabular}
-    \caption[Requirements used to define the loose and medium photon IDs in the barrel region of the detector ($\abs{\eta} \leq \text{1.479}$)]{Requirements used to define the loose and medium photon IDs in the barrel region of the detector ($\abs{\eta} \leq \text{1.479}$). The factors $X = \text{0.01512}\pt$, $Y = \text{10}^{-5}\pt^2$, and $Z = \text{0.004017}\pt$ in the isolation criteria scale with powers of the transverse momentum. Information taken from Ref.~\citenum{cms_photon_ID_Run2}.}
+    \caption[Requirements used to define the loose and medium photon IDs in the barrel region of the detector ($\abs{\eta} \leq \text{1.479}$)]{Requirements used to define the loose and medium photon IDs in the barrel region of the detector ($\abs{\eta} \leq \text{1.479}$). The factors $X = \text{0.01512}\pt$, $Y = \text{2.259} \times \text{10}^{-5}\pt^2$, and $Z = \text{0.004017}\pt$ in the isolation criteria are used to scale the threshold. Information taken from Ref.~\citenum{cms_photon_ID_Run2}.}
     \label{tab:htoinv_photon_ID_barrel}
 \end{table}
 
@@ -344,18 +344,16 @@ Photons are identified in a similar manner to electrons---using version 2 of the
         $\rho$-corrected \acrshort{pf} neutral hadron isolation & $< \text{1.922} + X + Y$ & $< \text{2.718} + X + Y$ \\
         $\rho$-corrected \acrshort{pf} photon isolation & $< \text{4.162} + Z$ & $< \text{3.867} + Z$ \\\hline
     \end{tabular}
-    \caption[Requirements used to define the loose and medium photon IDs in the end cap region of the detector ($\abs{\eta} > \text{1.479}$)]{Requirements used to define the loose and medium photon IDs in the end cap region of the detector ($\abs{\eta} > \text{1.479}$). The factors $X = \text{0.0117}\pt$, $Y = \text{2.3}\times \text{10}^{-5}\pt^2$, and $Z = \text{0.0037}\pt$ in the isolation criteria scale with powers of the transverse momentum. Information taken from Ref.~\citenum{cms_photon_ID_Run2}.}
+    \caption[Requirements used to define the loose and medium photon IDs in the end cap region of the detector ($\abs{\eta} > \text{1.479}$)]{Requirements used to define the loose and medium photon IDs in the end cap region of the detector ($\abs{\eta} > \text{1.479}$). The factors $X = \text{0.0117}\pt$, $Y = \text{2.3} \times \text{10}^{-5}\pt^2$, and $Z = \text{0.0037}\pt$ in the isolation criteria are used to scale the threshold. Information taken from Ref.~\citenum{cms_photon_ID_Run2}.}
     \label{tab:htoinv_photon_ID_endcap}
 \end{table}
 
-The variables $\sigma_{i\eta i\eta}$, and $\rho$ follow the same definitions as in Chpt.~\ref{subsec:htoinv_electron_objs}. The $\rho$-corrected isolation is calculated by taking the maximum of zero, and the difference between the \acrlong{pf} isolation and the contribution from pileup:
+The variables $\sigma_{i\eta i\eta}$ and $\rho$ follow the same definitions as in Chpt.~\ref{subsec:htoinv_electron_objs}. The $\rho$-corrected isolation is calculated by taking the maximum of zero, and the difference between the \acrlong{pf} isolation and possible contamination from pileup:
 \begin{equation}
 I_{\mathrm{PF}}^{\mathrm{corr.}} = \max (I_{\mathrm{PF}} - \rho A_{\mathrm{eff.}}, \text{0})
 \end{equation}
 
-[In addition] to the ID, the two collections further diverge due to $\eta$ and \pt requirements. A loose photon is [defined] with $\abseta < \text{2.5}$ and $\pt > \text{15}\GeV$, while a medium photon must be central ($\abseta < \text{1.442}$) and possess $\pt > \text{230}\GeV$.
-
-% Find other words for 'requirement' and 'criteria'
+As well as the ID, the two collections diverge further due to $\eta$ and \pt requirements. A loose photon is characterised by $\abseta < \text{2.5}$ and $\pt > \text{15}\GeV$, while a medium photon must be central ($\abseta < \text{1.442}$) and possess $\pt > \text{230}\GeV$.
 
 
 %=========================================================
@@ -373,11 +371,11 @@ The only purpose tau leptons \Ptau serve is to veto (or apply veto weights to) e
 \subsection{Energy sums \texorpdfstring{\ptvecmiss}{ptmiss}, \texorpdfstring{\HT}{HT}, and \texorpdfstring{\htvecmiss}{MHT}}
 \label{subsec:htoinv_met_obj}
 
-Most \acrshort{cms} analyses, including this one, define the missing transverse momentum with the ``type-I correction'': corrections to the \gls{jet} energy scale are applied, and so the corrected \gls{jet} \ptvec are propagated to the calculation of \ptvecmiss. In each of the \glspl{CR} defined in Chpt.~\ref{subsec:htoinv_control_regions}, the \ptvecmiss is recalculated without the objects used to define said region to model the process it is predicting. Requirements in the event selection and binning that refer to \ptmiss use the recalculated quantity when applied to the \glspl{CR}.
+Most \acrshort{cms} analyses, including this one, we define the missing transverse momentum with the ``type-I correction'': corrections to the \gls{jet} energy scale are applied, and so the corrected \gls{jet} \ptvec are propagated to the calculation of \ptvecmiss. In each of the \glspl{CR} detailed in Chpt.~\ref{subsec:htoinv_control_regions}, the \ptvecmiss is recalculated without the objects used to define said region to model the process it is predicting. Conditions in the event selection and binning that refer to \ptmiss use the recalculated quantity when applied to the \glspl{CR}.
 
 In 2017, significant noise in the \acrshort{ecal} end cap affected \glspl{jet} and \ptmiss, leading to potentially large energy mismeasurements. These quantities were recomputed after reconstruction, and carried through the analysis.
 
-The scalar sum \HT and negative vector sum of hadronic transverse momentum \htvecmiss are broadly defined in Chpts.~\ref{subsec:theory_ht} and \ref{subsec:theory_met}, respectively. They are calculated from the analysis-level AK4 jets with $\pt > \text{30}\GeV$, as described in Chpt.~\ref{subsec:htoinv_jet_objs}.
+The scalar sum \HT and negative vector sum of hadronic transverse momentum \htvecmiss are broadly defined in Chpts.~\ref{subsec:theory_ht} and \ref{subsec:theory_met}, respectively. They are calculated from the analysis-level AK4 jets with $\pt > \text{30}\GeV$, as detailed in Chpt.~\ref{subsec:htoinv_jet_objs}.
 
 Regarding the \ptvecmiss and \htvecmiss, in most cases the magnitudes (\ptmiss and \mht, respectively) are the important quantities used in the event selection and other aspects of the analysis.
 
@@ -469,7 +467,7 @@ A general rule is that the equivalent luminosity of a given dataset should be co
 % If I have to describe these in a lot of detail, it's probably worth making this a section rather than subsection (and therefore promoting the subsubsections to subsections)
 % Describing the veto and selection weights in full is necessary. But describing how every single weight (and systematic?) in the analysis is derived is almost certainly too much. It might be enough to go into a bit more detail regarding the dominant/interesting ones (NLO k-factors, ttbar systematics), then add a subsubsection on "other weights and corrections" where I just give very short explanations for the rest of them (b-tag SFs, boosted objects, lepton ID/isolation efficiencies, pre-firing, etc.)
 
-In order for simulated events, particularly for background processes, to resemble \acrshort{lhc} data as closely as possible, many corrections and weights are applied.\footnote{The following stuff on weights is from what I wrote in the AN. But it may be too detailed/unnecessary for that document, so I've made a copy here in case it is removed from there.} These are discussed in more detail in the following sections [REF]. A final event weight $w_{\mathrm{event}}$ is the product of the weights from all of the individual sources $i$ that provide one:
+In order for simulated events, particularly for background processes, to resemble \acrshort{lhc} data as closely as possible, many corrections and weights are applied.\footnote{The following stuff on weights is from what I wrote in the AN. But it may be too detailed/unnecessary for that document, so I've made a copy here in case it is removed from there.} These are discussed in more detail in the subsequent sections. A final event weight $w_{\mathrm{event}}$ is the product of the weights from all of the individual sources $i$ that provide one:
 \begin{equation}
     w_{\mathrm{event}} = \prod_i w_i
     \label{eq:event_weight}
@@ -510,13 +508,13 @@ Our reasoning for using Eq.~\ref{eq:uncertainty_mc_ours} for \acrshort{mc} inste
 \subsubsection{Veto and selection weights}
 \label{subsubsec:veto_sel_weights}
 
-In an analysis, events are often rejected by placing kinematic or object-based requirements. This type of selection strictly removes an event from the analysis if the requirement is not met. While kinematic requirements are either fulfilled or not, a different approach can be used when selecting the number of objects, i.e., when defining \glspl{CR}. For a set of objects, the selection weight at event level is defined as
+In an analysis, events are often rejected by placing kinematic or object-based requirements. This type of selection strictly removes an event from the analysis if the condition is not met. While kinematic requirements are either fulfilled or not, a different approach can be used when selecting the number of objects, i.e., when defining \glspl{CR}. For a set of objects, the selection weight at event level is defined as
 \begin{equation}
     w_{\mathrm{sel.}} = \prod_i^{N_\mathrm{objects}} \epsilon_i
     \label{eq:event_selection_weight}
 \end{equation}
 
-where $\epsilon_i$ is the efficiency/scale factor applied to object $i$. Only reconstructed (``reco level'') objects that have been matched to a generator level object are considered. For leptons (\Pe, \Pmu, \Ptau) and photons, these scale factors are typically from the reconstruction efficiency, identification efficiency, and \pt- or $\eta$-dependent energy corrections. In the case of \Pbottom-tagged \glspl{jet}, it is the data-MC scale factor at the given working point from the algorithm used to identify them. These weights are calculated individually for each type of object in an event, and individually for each source since they also introduce systematic variations that cannot be trivially aggregated. A veto weight is defined as
+where $\epsilon_i$ is the efficiency/scale factor applied to object $i$. Only reconstructed (``reco level'') objects that have been matched to a generator level object are considered. For leptons (\Pe, \Pmu, \Ptau) and photons, these scale factors are typically from the reconstruction efficiency, identification efficiency, and \pt- or $\eta$-dependent energy corrections. In the case of \Pbottom-tagged \glspl{jet}, it is the data-MC scale factor at the given working point from the algorithm used to identify them. These weights are calculated individually for each type of object in an event, and individually for each source since they also introduce systematic variations that cannot be trivially aggregated. A veto weight is represented as
 \begin{equation}
     w_{\mathrm{veto}} = \prod_i^{N_\mathrm{objects}} 1 - \epsilon_i
     \label{eq:event_veto_weight}
@@ -524,7 +522,7 @@ where $\epsilon_i$ is the efficiency/scale factor applied to object $i$. Only re
 
 which is essentially the probability to mis-tag the objects and allow it to enter the signal region as a consequence. The uncertainties/systematic variations follow the same prescription. With these quantities defined, an event that meets the object criteria is given the selection weight, otherwise it is given the veto weight. For example, if an event with one muon meets the criteria for the \singleMuCr region, it will enter that region with its muon-related selection weights. That same event can also enter the signal region or one of the \glspl{SB} (depending on the event kinematics) with the muon-related veto weights. The veto weights for the other leptonic objects will just be unity, as per Eq.~\ref{eq:event_veto_weight}. This ``migration'' of events, where they are able to contribute to more than one region, and the fact that weights are applied instead of event rejection, provides a noticeable decrease to the \acrlong{mc} statistical uncertainty in a given bin of a distribution.
 
-One thing must be noted about the migration of events, since we have many different regions of phase space in the analysis. The signal region and the \glspl{SB} have orthogonal kinematic requirements, so an event cannot enter the signal region \emph{and} one of the \glspl{SB}. The same is true amongst the \glspl{CR}, i.e., an event cannot enter more than one of them due to the designed orthogonality. An event \emph{is} able to enter the signal region or a \gls{SB} with $w_{\mathrm{veto}}$, and also one of the \glspl{CR} with $w_{\mathrm{sel.}}$. Since events in data are not weighted, they may only enter a single region.
+One thing must be noted about the migration of events, since we have many different regions of phase space in the analysis. The signal region and the \glspl{SB} have orthogonal kinematic prerequesites, so an event cannot enter the signal region \emph{and} one of the \glspl{SB}. The same is true amongst the \glspl{CR}, i.e., an event cannot enter more than one of them due to the designed orthogonality. An event \emph{is} able to enter the signal region or a \gls{SB} with $w_{\mathrm{veto}}$, and also one of the \glspl{CR} with $w_{\mathrm{sel.}}$. Since events in data are not weighted, they may only enter a single region.
 
 
 %=========================================================
@@ -585,7 +583,7 @@ The event selection aims to strike a balance between rejecting as many backgroun
 \subsection{Preselection}
 \label{subsec:htoinv_preselection}
 
-The preselection is defined by applying the following cuts:\footnote{Do I have to explain the reasoning behind each cut in the preselection?}
+The preselection is characterised by applying the following cuts:\footnote{Do I have to explain the reasoning behind each cut in the preselection?}
 \medskip
 \begin{easylist}[itemize]
     \cutflowlistprops
@@ -624,7 +622,7 @@ The preselection is defined by applying the following cuts:\footnote{Do I have t
 
 Further selections are applied to all years, regions and categories to filter poorly measured or mis-reconstructed events in both data and MC. A ``muon \gls{jet} filter'' rejects events with mis-reconstructed muons by requiring all \glspl{jet} with $\pt > \text{200}\GeV$ to have a muon energy fraction $f_{\mathrm{E}}^{\Pmu} < \text{0.5}$, and $\Delta\phi(\mathrm{j}, \ \ptmiss) < \pi - \text{0.4}$.
 
-Charged ($f_{\mathrm{E}}^{\pm}$) and neutral hadron energy fraction ($f_{\mathrm{E}}^{0}$) requirements are applied to all \glspl{jet} via fulfillment of the ``tight'' \gls{jet} ID criteria (see [SEC IN OBJECT DEFS]). Furthermore, stricter requirements are placed on the leading two \glspl{jet}---applied in all categories except the monojet category, where they only apply to the leading \gls{jet}---as follows:
+Charged ($f_{\mathrm{E}}^{\pm}$) and neutral hadron energy fraction ($f_{\mathrm{E}}^{0}$) requirements are applied to all \glspl{jet} via fulfillment of the ``tight'' \gls{jet} ID criteria (see Chpt.~\ref{subsec:htoinv_jet_objs}). Furthermore, stricter selections are placed on the leading two \glspl{jet}---applied in all categories except the monojet category, where they only apply to the leading \gls{jet}---as follows:
 
 \medskip
 
@@ -638,7 +636,7 @@ Charged ($f_{\mathrm{E}}^{\pm}$) and neutral hadron energy fraction ($f_{\mathrm
 
 \medskip
 
-\noindent{}Events with anomalously energetic \glspl{jet} have been observed for data in the HF between $\abs{\eta} \in [\text{3.0}, \text{3.1}]$ that can lead to excess events, particularly in the \acrshort{qcd}-enriched \glspl{SB}. As such, a requirement is placed on the ratio of the \HT formed from \glspl{jet} within $\abs{\eta} < \text{5}$ ($\HT^5$) and $\abs{\eta} < \text{2.4}$ ($\HT^{2.4}$), in OR with the difference in $\phi$ between the leading \gls{jet} and \mht:
+\noindent{}Events with anomalously energetic \glspl{jet} have been observed for data in the HF between $\abs{\eta} \in [\text{3.0}, \text{3.1}]$ that can lead to excess events, particularly in the \acrshort{qcd}-enriched \glspl{SB}. As such, a stipulation is placed on the ratio of the \HT formed from \glspl{jet} within $\abs{\eta} < \text{5}$ ($\HT^5$) and $\abs{\eta} < \text{2.4}$ ($\HT^{2.4}$), in OR with the difference in $\phi$ between the leading \gls{jet} and \mht:
 \medskip
 \begin{easylist}[itemize]
     \cutflowlistprops
@@ -647,7 +645,7 @@ Charged ($f_{\mathrm{E}}^{\pm}$) and neutral hadron energy fraction ($f_{\mathrm
 
 \medskip
 
-\noindent{}where, if the former requirement is not satisfied, the latter is constructed such that the $\Delta\phi \geq \sfrac{\pi}{2}$. The \HT used in the analysis (i.e, in the preselection) only places $\abs{\eta}$ restrictions on the two hardest \glspl{jet} from to the VBF orthogonality constraints in Chpt.~\ref{subsec:htoinv_preselection}.
+\noindent{}where, if the former requirement is not met, the latter is constructed such that the $\Delta\phi \geq \sfrac{\pi}{2}$. The \HT used in the analysis (i.e, in the preselection) only places $\abs{\eta}$ circumscriptions on the two hardest \glspl{jet} from to the VBF orthogonality constraints in Chpt.~\ref{subsec:htoinv_preselection}.
 
 To avoid any potential horns (spikes in data and/or \acrshort{mc}) for \glspl{jet} at large pseudorapidity, we require the agreement between the charged hadron-subtracted \MET and calorimeter-calculated \MET to be within 20\,\%:
 \medskip
@@ -743,9 +741,7 @@ In the table, the number of \glspl{jet} \njet refers specifically to the number 
 
 For categorisation and the analysis altogether, \njet and \nbjet are counted independently, so no overlap removal is performed. For example, the \VH 2j2b requires two \glspl{jet}, both of which are \Pbottom-tagged.
 
-% Make sure I say in the object definitions section that a b-jet is defined by the \deepcsv algorithm with the medium working point.
-
-In the \ttH and \VH categories, additional groupings of subcategories may be of interest: 2Boosted, 1t0b, 1t1b, 1W1b, and 1W2b target boosted decays of the top quark and may be collectively designated the ``\ttH boosted'' category; resolved decays are the focus of the remaining subcategories, appropriately named the ``\ttH resolved'' category; then, assembling the 2j0b, 2j1b, and 2j2b \VH subcategories elicits the ``\VH resolved'' moniker. Low yields may be observed in individual subcategories, so using these grouped alternatives is useful to quickly inspect the wider effect of changes to the analysis.
+In the \ttH and \VH categories, ancillary groupings of subcategories may be of interest: 2Boosted, 1t0b, 1t1b, 1W1b, and 1W2b target boosted decays of the top quark and may be collectively designated the ``\ttH boosted'' category; resolved decays are the focus of the remaining subcategories, appropriately named the ``\ttH resolved'' category; then, assembling the 2j0b, 2j1b, and 2j2b \VH subcategories elicits the ``\VH resolved'' moniker. Low yields may be observed in individual subcategories, so using these grouped alternatives is useful to quickly inspect the wider effect of changes to the analysis.
 
 
 %=========================================================
@@ -758,7 +754,7 @@ Many traditional methods have been developed to tag \glspl{jet} originating from
 
 % Not sure if I need to go into more detail regarding the algorithm
 
-We employ the following selections to AK8 \glspl{jet} to classify them, as recommended by the DeepAK8 developers:
+We employ the ensuing selections to AK8 \glspl{jet} to classify them, as recommended by the DeepAK8 developers:
 \medskip
 \begin{easylist}[itemize]
     \ListProperties(Style*=-- , Style2*=$\circ$ , Hang=true, FinalMark={)})
@@ -774,11 +770,10 @@ We employ the following selections to AK8 \glspl{jet} to classify them, as recom
     && \PW vs. \acrshort{qcd} discriminator score with the ``loose'' working point (5\,\% mis-tag rate)
     && Tight ID requirement for AK8 \glspl{jet}
 \end{easylist}
-% Mention something about tight ID for AK8 jets in the object definitions section
 
 \medskip
 
-\noindent{}Orthogonality is ensured between the two classifications through the softdrop mass $m_{\mathrm{SD}}$~\cite{Larkoski:2014wba} requirement. We also use the loose working points to maximise the number of events that remain in the relevant categories. Otherwise, we suffer from very poor statistics in some of the \glspl{CR}. The boosted \PVec \glspl{jet} are not further separated into \PW- and \PZ-tagged since the mass degeneracy makes this inherently difficult. After correspondence with the \deepakeight developers, we were reassured that we could use the \PW vs. \acrshort{qcd} discriminator to tag both \PW and \PZ \glspl{jet}. An additional recommendation was to use the nominal version of the tagger as opposed to the mass-decorrelated version. The performance improvements are noticeable, as shown in Ref.~\citenum{CMS-PAS-JME-18-002}, and we do not use a mass dimension for our fitting variable which would otherwise preclude the use of the latter version. Data-\acrshort{mc} scale factors to weight events containing these objects are described in Chpt.~[REF].
+\noindent{}Orthogonality is ensured between the two classifications through the softdrop mass $m_{\mathrm{SD}}$~\cite{Larkoski:2014wba} window. We also use the loose working points to maximise the number of events that remain in the relevant categories. Otherwise, we suffer from very poor statistics in some of the \glspl{CR}. The boosted \PVec \glspl{jet} are not further separated into \PW- and \PZ-tagged since the mass degeneracy makes this inherently difficult. After correspondence with the \deepakeight developers, we were reassured that we could use the \PW vs. \acrshort{qcd} discriminator to tag both \PW and \PZ \glspl{jet}. An additional recommendation was to use the nominal version of the tagger as opposed to the mass-decorrelated version. The performance improvements are noticeable, as shown in Ref.~\citenum{CMS-PAS-JME-18-002}, and we do not use a mass dimension for our fitting variable which would otherwise preclude the use of the latter version. Data-\acrshort{mc} scale factors to weight events containing these objects are described in Chpt.~[REF].
 
 
 %=========================================================
@@ -818,7 +813,7 @@ Several regions of phase space are explored in the analysis. The signal region i
 
 The signal region is the area of parameter space where we expect the signal to manifest, and the background to be reduced sufficiently that the potential presence of signal in data can be statistically verified. In this analysis, only hadronic final states are permitted. Events with leptons, photons and taus meeting the ``loose'' or ``veto'' criteria in Chpt.~\ref{sec:htoinv_objects} are not explicitly vetoed, however, but are given a weight as described in Chpt.~\ref{subsubsec:veto_sel_weights}.
 
-Events must satisfy a logical \texttt{OR} of \acrshort{hlt} cross-triggers for \acrlong{pf} \ptmiss and \mht calculated without muons, with also at least one \gls{jet} satisfying the tight ID criteria (see Chpt.~\ref{sec:htoinv_objects}). The triggers are illustrated in Tab.~\ref{tab:htoinv_SR_triggers}.
+Events must satisfy a logical \texttt{OR} of \acrshort{hlt} cross-triggers for \acrlong{pf} \ptmiss and \mht calculated without muons, with also at least one \gls{jet} fulfilling the tight ID criteria (see Chpt.~\ref{sec:htoinv_objects}). The triggers are illustrated in Tab.~\ref{tab:htoinv_SR_triggers}.
 
 \begin{table}[htbp]
     \centering
@@ -847,7 +842,7 @@ Events must satisfy a logical \texttt{OR} of \acrshort{hlt} cross-triggers for \
 \subsection{Control regions}
 \label{subsec:htoinv_control_regions}
 
-\Glspl{CR} serve two complementary purposes in many analyses: the prediction of certain backgrounds that dominate in the signal region, as a more accurate method than using the yields directly from \acrlong{mc}; and to validate the data, \acrshort{mc}, and corrections or weights applied. They are orthogonal to the signal region and to each other by way of lepton or photon requirements, and by triggers that often pertain to those objects. \Glspl{CR} are also designed to, ideally, be devoid of signal. Contamination is sometimes present, but at a very small level. Five \glspl{CR} are used in the analysis: \singleMuCr, \doubleMuCr, \singleEleCr, \doubleEleCr, and \singlePhotonCr. The requirements on the objects---which are defined explicitly in Chpt.~\ref{sec:htoinv_objects}---are summarised in the list below.
+\Glspl{CR} serve two complementary purposes in many analyses: the prediction of certain backgrounds that dominate in the signal region, as a more accurate method than using the yields directly from \acrlong{mc}; and to validate the data, \acrshort{mc}, and corrections or weights applied. They are orthogonal to the signal region and to each other by way of lepton or photon requirements, and by triggers that may pertain to those objects. \Glspl{CR} are also designed to, ideally, be devoid of signal. Contamination is sometimes present, but at a very small level. Five \glspl{CR} are used in the analysis: \singleMuCr, \doubleMuCr, \singleEleCr, \doubleEleCr, and \singlePhotonCr. The criteria for the objects---which are defined explicitly in Chpt.~\ref{sec:htoinv_objects}---are summarised in the list below.
 \medskip
 \begin{easylist}[itemize]
     \easylistprops
@@ -877,7 +872,7 @@ The \singleEleCr and \doubleEleCr \glspl{CR} take advantage of the increased sta
         & 115 & --- & Very tight & Tight \\
         \hline\hline
     \end{tabular}
-    \caption[The trigger requirements for events to enter the \singleEleCr or \doubleEleCr control regions, if they originate from the dataset of \Pe-based triggers]{The trigger requirements for events to enter the \singleEleCr or \doubleEleCr \glspl{CR}, if they originate from the dataset of \Pe-based triggers. Requirements are on the transverse energy \ET of the supercluster (SC), the working point of the candidate electron, ID of the candidate in the calorimeters, and the matching between the \acrfull{gsf}-fitted track and supercluster, all at \acrshort{hlt} level.}
+    \caption[The trigger requirements for events to enter the \singleEleCr or \doubleEleCr control regions, if they originate from the dataset of \Pe-based triggers]{The trigger requirements for events to enter the \singleEleCr or \doubleEleCr \glspl{CR}, if they originate from the dataset of \Pe-based triggers. Selections are on the transverse energy \ET of the supercluster (SC), the working point of the candidate electron, ID of the candidate in the calorimeters, and the matching between the \acrfull{gsf}-fitted track and supercluster, all at \acrshort{hlt} level.}
     \label{tab:htoinv_ele_pd_triggers}
 \end{table}
 
@@ -893,7 +888,7 @@ For the \singlePhotonCr \gls{CR}, we take data from \acrshort{cms} originating o
         2017 & 200 & --- \\\hline
         2018 & 200 & --- \\\hline\hline
     \end{tabular}
-    \caption[The trigger requirements for events to enter the \singleEleCr, \doubleEleCr, or \singlePhotonCr control regions, if they originate from the dataset of \Pphoton-based triggers]{The trigger requirements for events to enter the \singleEleCr, \doubleEleCr, or \singlePhotonCr \gls{CR}, if they originate from the dataset of \Pphoton-based triggers. Requirements are on the transverse energy \ET of the candidate, and the ratio of the candidate's central energy deposit in the \acrshort{hcal} to the \acrshort{ecal} ($H/E$), all computed at \acrshort{hlt} level.}
+    \caption[The trigger requirements for events to enter the \singleEleCr, \doubleEleCr, or \singlePhotonCr control regions, if they originate from the dataset of \Pphoton-based triggers]{The trigger requirements for events to enter the \singleEleCr, \doubleEleCr, or \singlePhotonCr \gls{CR}, if they originate from the dataset of \Pphoton-based triggers. Selections are on the transverse energy \ET of the candidate, and the ratio of the candidate's central energy deposit in the \acrshort{hcal} to the \acrshort{ecal} ($H/E$), all computed at \acrshort{hlt} level.}
     \label{tab:htoinv_photon_pd_triggers}
 \end{table}
 

@@ -143,10 +143,6 @@ The physics that occurs at the high energies the \acrshort{lhc} is capable of is
 
 Different working points for the identification of many objects are available from the respective \glspl{pog}, trading inclusivity for purity the tighter the selections are. ``Veto'' and ``loose'' criteria are used to specify the secondary leptons in the dilepton \glspl{CR}, and when vetoing leptons and photons (or applying their corresponding veto weights) in the signal region. The ``medium'' and ``tight'' selections are used to construct the primary objects in the \glspl{CR}. We denote these objects with a subscript corresponding to the working point. The requirements elaborated upon in the subsequent subsections.
 
-% Mention the use of ``veto'', ``loose'', ``medium'' and ``tight'' working points and objects. Define them in the respective subsections
-
-% For each set of objects, might be able to just define one table for the basic requirements that apply to all years. Then for each year, just note the things that have changed with respect to the base/previous year. Dependent on how much the criteria changes year to year
-
 
 %=========================================================
 
@@ -160,7 +156,8 @@ AK8 \glspl{jet} follow the same reconstruction and identification prescription a
 
 A \gls{bjet} is defined as a \nanoAOD \gls{jet} with $\pt > \text{20}\GeV$, $\abseta < 2.5$ (2.4 in 2016), and to satisfy the medium working point (a mis-tag rate of 1\,\%) from the \deepcsv algorithm~\cite{Sirunyan:2017ezt}.
 
-% Might need to say we use pt_nom for all instances of pt thresholds (except noisy EE jets in 2017 where the raw pt is used)
+% Might need to say we use pt_nom for all instances of pt thresholds (except noisy EE jets in 2017 where the raw pt is used). pt_nom is created offline and is additionally jet energy resolution-corrected (maybe check nanoAOD-tools for specifics)
+
 
 %=========================================================
 
@@ -306,7 +303,7 @@ In the analysis, electrons are labelled as veto (\vetoEle) or tight electrons (\
     \label{tab:htoinv_electron_ID_endcap}
 \end{table}
 
-The variable $\sigma_{i\eta i\eta}$ is the energy-weighted standard deviation of the \acrshort{ecal} crystal $\eta$, centred on the local energy maximum, in this case using the full $\text{5} \times \text{5}$ calorimeter tower. $\Delta\eta_{\mathrm{in}}^{\mathrm{seed}}$ and $\Delta\phi_{\mathrm{in}}$ are the differences in pseudorapidity and azimuthal angle, respectively, between the supercluster (seed in the case of $\Delta\eta$) and the track, at the point of closest approach to the supercluster, extrapolated from the innermost track state.\footnote{Consider rewording last part of sentence. Currently lifted verbatim from a public twiki page.} The relative isolation parameter is computed in the same way as muons (Eq.~5.4 in Ref.~\citenum{CMS-PRF-14-001}$\!\!$), but uses a $\Delta R < \text{0.3}$ instead of 0.4. The threshold takes the effective area $A_{\mathrm{eff.}}$ into account. Along with $\rho$---a parameter in the \textsc{FastJet} package~\cite{Cacciari:2011fastjet} used for \gls{jet} finding---these are used for estimating the contributions to pileup in an event. From material interactions within the tracker, photons may convert into $\Ppositron\Pelectron$ pairs. A veto aims to mitigate this effect.
+The variable $\sigma_{i\eta i\eta}$ is the energy-weighted standard deviation of the \acrshort{ecal} crystal $\eta$, centred on the local energy maximum, in this case using the full $\text{5} \times \text{5}$ calorimeter tower. $\Delta\eta_{\mathrm{in}}^{\mathrm{seed}}$ and $\Delta\phi_{\mathrm{in}}$ are the differences in pseudorapidity and azimuthal angle, respectively, between the supercluster (seed in the case of $\Delta\eta$) and the track, at the point of closest approach to the supercluster, extrapolated from the innermost track state.\footnote{Consider rewording last part of sentence. Currently lifted verbatim from a public twiki page.} The relative isolation parameter is computed in the same way as muons (Eq.~5.4 in Ref.~\citenum{CMS-PRF-14-001}$\!\!$), but uses a $\Delta R < \text{0.3}$ instead of 0.4. The threshold takes the effective area $A_{\mathrm{eff.}}$ into account. Along with $\rho$---a parameter in the \textsc{FastJet} package~\cite{Cacciari:2011fastjet} used for \gls{jet} finding---these are used for estimating the contributions to pileup in an event. $E_{\mathrm{SC}}$ is the energy of the supercluster. From material interactions within the tracker, photons may convert into $\Ppositron\Pelectron$ pairs. A veto aims to mitigate this effect.
 % rho and A_eff: https://iopscience.iop.org/article/10.1088/1748-0221/10/08/P08010/pdf
 % More electron stuff in reference to tables above: https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideGsfElectronObject
 
@@ -358,8 +355,8 @@ I_{\mathrm{PF}}^{\mathrm{corr.}} = \max (I_{\mathrm{PF}} - \rho A_{\mathrm{eff.}
 
 [In addition] to the ID, the two collections further diverge due to $\eta$ and \pt requirements. A loose photon is [defined] with $\abseta < \text{2.5}$ and $\pt > \text{15}\GeV$, while a medium photon must be central ($\abseta < \text{1.442}$) and possess $\pt > \text{230}\GeV$.
 
-
 % Find other words for 'requirement' and 'criteria'
+
 
 %=========================================================
 
@@ -367,31 +364,22 @@ I_{\mathrm{PF}}^{\mathrm{corr.}} = \max (I_{\mathrm{PF}} - \rho A_{\mathrm{eff.}
 \subsection{Taus}
 \label{subsec:htoinv_tau_objs}
 
-The only purpose tau leptons \Ptau serve is to veto (or apply veto weights to) events that contain them. We denote these as ``very loose'' taus \vlooseTau...
+The only purpose tau leptons \Ptau serve is to veto (or apply veto weights to) events that contain them. We denote these as ``very loose'' taus \vlooseTau.\footnote{Tau definition still not finalised so leave out this subsection for now.}
 
 
-\subsubsection{2016}
-\label{subsubsec:htoinv_tau_objs_2016}
+%=========================================================
 
-\subsubsection{2017}
-\label{subsubsec:htoinv_tau_objs_2017}
 
-\subsubsection{2018}
-\label{subsubsec:htoinv_tau_objs_2018}
-
-\subsection{\texorpdfstring{\ptmiss}{ptmiss}}
+\subsection{Energy sums \texorpdfstring{\ptvecmiss}{ptmiss}, \texorpdfstring{\HT}{HT}, and \texorpdfstring{\htvecmiss}{MHT}}
 \label{subsec:htoinv_met_obj}
-% Using Type-1 corrected MET, etc. Maybe move the recalculated MET from the control regions to here
 
-\subsubsection{2017}
-\label{subsubsec:htoinv_met_obj_2017}
+Most \acrshort{cms} analyses, including this one, define the missing transverse momentum with the ``type-I correction'': corrections to the \gls{jet} energy scale are applied, and so the corrected \gls{jet} \ptvec are propagated to the calculation of \ptvecmiss. In each of the \glspl{CR} defined in Chpt.~\ref{subsec:htoinv_control_regions}, the \ptvecmiss is recalculated without the objects used to define said region to model the process it is predicting. Requirements in the event selection and binning that refer to \ptmiss use the recalculated quantity when applied to the \glspl{CR}.
 
-In 2017, significant noise in the \acrshort{ecal} end cap affected \glspl{jet} and \ptmiss, leading to potentially large energy mismeasurements. These quantities were recomputed after reconstruction, and were applied correctly in the analysis.
+In 2017, significant noise in the \acrshort{ecal} end cap affected \glspl{jet} and \ptmiss, leading to potentially large energy mismeasurements. These quantities were recomputed after reconstruction, and carried through the analysis.
 
+The scalar sum \HT and negative vector sum of hadronic transverse momentum \htvecmiss are broadly defined in Chpts.~\ref{subsec:theory_ht} and \ref{subsec:theory_met}, respectively. They are calculated from the analysis-level AK4 jets with $\pt > \text{30}\GeV$, as described in Chpt.~\ref{subsec:htoinv_jet_objs}.
 
-\subsection{\texorpdfstring{\HT}{HT}}
-\label{subsec:htoinv_ht}
-% Just say it's computed with jets that have pt > 30 GeV for all years
+Regarding the \ptvecmiss and \htvecmiss, in most cases the magnitudes (\ptmiss and \mht, respectively) are the important quantities used in the event selection and other aspects of the analysis.
 
 
 %=========================================================
@@ -911,7 +899,7 @@ For the \singlePhotonCr \gls{CR}, we take data from \acrshort{cms} originating o
 
 % See if I can describe the trigger requirements in a more elegant way. Might be easier give the descriptions and actual HLT path names a bit earlier, then just reference the HLT path names in the list
 
-In each of the \glspl{CR}, the \ptvecmiss is recalculated without the objects used to define said region to model the process it is predicting. Using the \singleMuCr \gls{CR} as an example, the new \ptvecmiss is the vector sum of the old \ptvecmiss and the tight muon \ptvec. Requirements in the event selection and binning that refer to \ptmiss use the recalculated quantity when applied to the \glspl{CR}. The single lepton \glspl{CR} estimate the semi-leptonic $\ttbarpjets$ and $\wtolnupjets$ backgrounds. In both cases, they may enter the signal region if the lepton is lost. The dilepton and \singlePhotonCr regions consider \ztonunupjets. The former parallels the decay as it is enriched in \ztolplmpjets---possessing very similar kinematic properties while being much easier to detect, improving statistical accuracy. The latter region substitutes the \ztonunu decay with a photon.
+As explained in Chpt.~\ref{subsec:htoinv_met_obj}, the \ptvecmiss is recalculated for the \glspl{CR}. Using the \singleMuCr \gls{CR} as an example, the new \ptvecmiss is the vector sum of the old \ptvecmiss and the tight muon \ptvec. The single lepton \glspl{CR} estimate the semi-leptonic $\ttbarpjets$ and $\wtolnupjets$ backgrounds. In both cases, they may enter the signal region if the lepton is lost, becoming a source of \ptmiss. The dilepton and \singlePhotonCr regions consider \ztonunupjets. The former parallels the decay as it is enriched in \ztolplmpjets---possessing very similar kinematic properties while being much easier to detect, improving statistical accuracy. The latter region substitutes the \ztonunu decay with a photon.
 
 
 %=========================================================

@@ -379,7 +379,7 @@ To extract maximum sensitivity to the \higgstoinv decay from the analysis, categ
         \multirow{2}{*}{Monojet}& 0b & 1 & 0 & 0 & 0 & \multirow{2}{*}{---} & \multirow{2}{*}{$\mindphiJetMet > \text{2.5}$}\\ % Replaced \dphiFj with this to prevent overfull hbox
         & 1b & 1 & 1 & 0 & 0 &  \\\hline\hline
     \end{tabular}
-    \caption{Categorisation of the \ttH, \VH and \ggF production modes in the analysis. Each subcategory highlights one of the possible final states of the mechanism, accounting for inefficiencies in object tagging or reconstruction. In the \ggF 2jM subcategory, the dijet mass requirement ensures orthogonality with \VH 2j0b.}
+    \caption[Categorisation of the \ttH, \VH and \ggF production modes in the analysis]{Categorisation of the \ttH, \VH and \ggF production modes in the analysis. Each subcategory highlights one of the possible final states of the mechanism, accounting for inefficiencies in object tagging or reconstruction. In the \ggF 2jM subcategory, the dijet mass requirement ensures orthogonality with \VH 2j0b.}
     \label{tab:htoinv_categories}
 \end{table}
 
@@ -461,13 +461,13 @@ Several regions of phase space are explored in the analysis. The signal region i
 
 The signal region is the area of parameter space where we expect the signal to manifest, and the background to be reduced sufficiently that the potential presence of signal in data can be statistically verified. In this analysis, only hadronic final states are permitted. Events with leptons, photons and taus meeting the ``loose'' or ``veto'' criteria in Chpt.~\ref{sec:analysis_objects} are not explicitly vetoed, however, but are given a weight as described in Chpt.~\ref{subsubsec:veto_sel_weights}.
 
-Events must satisfy a logical \texttt{OR} of \acrshort{hlt} cross-triggers for \acrlong{pf} \ptmiss and \mht calculated without muons, with also at least one \gls{jet} fulfilling the tight ID criteria (see Chpt.~\ref{sec:analysis_objects}). The triggers are illustrated in Tab.~\ref{tab:htoinv_SR_triggers}.
+Events must satisfy a logical \texttt{OR} of \acrshort{hlt} cross-triggers for \acrlong{pf} \ptmiss and \mht calculated without muons, and at least one \gls{jet} fulfilling the tight ID criteria (see Chpt.~\ref{sec:analysis_objects}). The triggers are illustrated in Tab.~\ref{tab:htoinv_SR_triggers}.
 
 \begin{table}[htbp]
     \centering
     \begin{tabular}{ccccc}
         \hline\hline
-        Year & $\ptmiss$ no $\mu$ (\GeVns) & $\mht$ no $\mu$ (\GeVns) & $\HT$ (\GeVns) & $\njet$ with tight ID \\ \hline
+        Year & $p_{\mathrm{T}}^{\mathrm{miss,\, \not\Pmu}}$ (\GeVns) & $H_{\mathrm{T}}^{\mathrm{miss,\, \not\Pmu}}$ (\GeVns) & $\HT$ (\GeVns) & $\njet$ with tight ID \\ \hline
         \multirow{4}{*}{2016} & 90 & 90 & --- & $\geq \text{1}$ \\
         & 100 & 100 & --- & $\geq \text{1}$ \\
         & 110 & 110 & --- & $\geq \text{1}$ \\
@@ -479,7 +479,7 @@ Events must satisfy a logical \texttt{OR} of \acrshort{hlt} cross-triggers for \
         2018 & 120 & 120 & --- & $\geq \text{1}$ \\
         \hline\hline
     \end{tabular}
-    \caption[The trigger thresholds required for events to enter the signal region in each data taking year]{The trigger thresholds required for events to enter the signal region in each data taking year. Each quantity is computed with the \gls{particleflow} at \acrshort{hlt} level.}
+    \caption[The trigger thresholds required for events to enter the signal region in each data taking year]{The trigger thresholds required for events to enter the signal region in each data taking year. Each quantity is computed with the \gls{particleflow} at \acrshort{hlt} level. The variables \ptmiss and \mht do not include muons in the calculations.}
     \label{tab:htoinv_SR_triggers}
 \end{table}
 

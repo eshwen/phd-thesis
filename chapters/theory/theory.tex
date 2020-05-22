@@ -1,4 +1,4 @@
-\chapter{Theory}  % think of an alternative title. Maybe "The standard model and theoretical interpretations of dark matter"
+\chapter{The standard model and beyond}  % think of an alternative title. Maybe "The standard model and theoretical interpretations of dark matter"
 \label{chap:theory}
 
 \epigraph{``It doesn’t stop being magic just because you know how it works.''}{--- Terry Pratchett.}
@@ -111,79 +111,6 @@ Papers to look at regarding SUSY and dark matter:
 %=========================================================
 
 
-\section{Important observables and quantities in collider physics}
-\label{sec:theory_important_observables}
-
-The following section discusses some ubiquitous variables and units in high energy physics, particularly in the context of colliders. Accordingly, it is practical to consolidate their definitions here.\footnote{The theory chapter is probably not the right place to put this section. Maybe a separate section or appendix would be better.}
-
-
-%=========================================================
-
-
-\subsection{The electron volt}
-\label{subsec:theory_electron_volt}
-
-In highly relativistic systems, such as beams of particles in accelerators, the ability to simply equate mass, energy, and momentum is desirable. In the \acrshort{lhc}, when protons are accelerated to an enormous Lorentz boost factor, their invariant mass $m_0$ contributes little to their total energy $E$. With Einstein's energy-momentum relation from the special theory of relativity, one can express the energy as functions of intrinsic mass and relativistic momentum:
-\begin{equation}
-    E = \sqrt{ (pc)^2 + (m_0c^2)^2 }
-    \label{eq:theory_e_mc2}
-\end{equation}
-where $p$ is the magnitude of the momentum and $c$ is the speed of light. For highly relativistic objects, $pc \gg m_0c^2$ and so $E \approx pc$. At rest, $E = m_0c^2$. The \acrfull{ev} unit is common in high energy physics. Its value is the energy supplied to (or removed from) an electron accelerated through a potential difference of 1\,V: $\text{1.6}\times \text{10}^{-19}$\,J. The momentum gained is then $\text{1}\eVc$ and relativistic mass $\text{1}\eVcc$. The factors of $c$ and $c^2$ are often dropped in less formal contexts, or when using natural units (where $c = \text{1}$).
-
-An \acrlong{ev} is a minute quantity of energy, so when discussing properties of high energy particles and accelerators, a long string of digits may be required to express them. SI prefixes mitigate this problem and provide an intuitive sense of scale to scientists. The most frequently used in the context of \acrshort{lhc} physics are \emph{mega} (M, $\text{10}^6$), \emph{giga} (G, $\text{10}^9$), and \emph{tera} (T, $\text{10}^{12}$). For example, the mass of a proton is $\text{0.93}\GeVcc$ and the present centre of mass energy of the \acrshort{lhc} is $\text{13}\TeV$, which are much more natural and understandable numbers than $\text{1.78}\times \text{10}^{-27}$\,kg or $\text{1.6}\times \text{10}^{-7}$\,J, respectively.
-
-
-%=========================================================
-
-
-\subsection{Transverse momentum (\texorpdfstring{\pt}{pt})}
-\label{subsec:theory_pt}
-
-In the \acrshort{lhc} (or any other collider), the longitudinal momentum of the initial state particles is typically unknown. However, the momentum transverse to the beam is zero before the collision, and must be zero afterward after due to momentum conservation. This is why the transverse momentum of a particle or physics object (\ptvec for the vector quantity, \pt for its magnitude) is a useful variable in an analysis.\footnote{Do I need a more formal/mathematical definition? Could just reference geometry section in detector chapter.}
-
-
-%=========================================================
-
-
-\subsection{\texorpdfstring{\HT}{HT}}
-\label{subsec:theory_ht}
-
-The outcome of a collision in the \acrshort{lhc} is referred to as an \emph{event}. The hadronic constituents in an event often shower due to colour confinement, producing collimated sprays of hadrons called \emph{\glspl{jet}}. For analyses focused on hadronic objects---such as branches of \acrlong{susy} where a large \gls{jet} multiplicity is expected---it is practical to define the total amount of hadronic activity in an event. The scalar sum of the transverse momentum of the \glspl{jet} is symbolised as \HT:
-\begin{equation}
-    \HT \equiv \sum_{\mathrm{jets}} \pt
-    \label{eq:ht_definition}
-\end{equation}
-Typically, a lower limit on the \pt is used when calculating the \HT, so \glspl{jet} below this threshold do not factor into the sum. This is to avoid low momentum \glspl{jet} attributed to pileup events (see Chpt.~\ref{subsec:pileup}), and those from the primary vertex that can often be mismeasured.
-
-
-%=========================================================
-
-
-\subsection{Missing transverse momentum (\texorpdfstring{\ptmiss}{ptmiss})}
-\label{subsec:theory_met}
-
-The missing transverse momentum \ptvecmiss is defined as the negative vector sum of the \ptvec of all identified particles in an event. It is a term often used interchangeably with \gls{met} (MET, \VEtmiss). Undetected particles from neutrinos or dark matter, or mismeasured kinematic properties of identified particles, will introduce an imbalance in the vector sum of the \ptvec. Hence, the \ptvecmiss will be non-zero.\footnote{A depiction of the MET (e.g., SM particles recoiling off dark matter) might be useful for the reader.} Formally,
-\begin{equation}
-    \begin{aligned}
-        \ptvecmiss &\equiv - \sum_i^{N_{\mathrm{particles}}} \vec{p}_{\mathrm{T}, \, i} \\
-        \ptmiss &\equiv \abs{\ptvecmiss}
-    \end{aligned}
-    \label{eq:met_definition}
-\end{equation}
-The hadronic-only counterpart to this variable, \htvecmiss, is the negative vector sum of the \gls{jet} transverse momenta in an event:
-\begin{equation}
-    \begin{aligned}
-        \htvecmiss &\equiv - \sum_j^{N_{\mathrm{jets}}} \vec{p}_{\mathrm{T}, \, j} \\
-        \mht &\equiv \abs{\htvecmiss}
-    \end{aligned}
-    \label{eq:mht_definition}
-\end{equation}
-As with \HT, the \mht is often calculated with a lower limit on the \gls{jet} \pt.
-
-
-%=========================================================
-
-
 \section{Measuring the branching ratio of invisibly decaying Higgs bosons}
 \label{sec:theory_higgs_to_inv}
 
@@ -195,7 +122,105 @@ The only \acrshort{sm} process in which Higgs boson can decay invisibly\footnote
 
 There is no reason to assume dark matter does \emph{not} interact with the Higgs field, since it bestows mass to all known elementary particles (a small caveat, perhaps, being neutrinos).\footnote{Do I need to give some mathematical motivation as to \emph{why} dark matter would couple to the Higgs? Or is the fact that it has mass enough justification?} Higgs ``portal'' models have been theorised that connect the visible sector of the \acrlong{sm} to a dark sector where particle dark matter resides~\cite{higgs_portal_singlet_dm,Arcadi:2019lka}. Certain models also predict a detectable presence at the \acrshort{lhc} from a sufficient production rate~\cite{Boveia:2018yeb}, perhaps even with data obtained during Run-2~\cite{Abercrombie:2015wmb}.
 
+An analysis in search of this decay is provided thoroughly in Chpt.~\ref{chap:higgstoinv}. Constraints on the experimental side stem largely from the different channels in which a Higgs boson can be produced. These are outlined in Chpt.~\ref{subsec:theory_higgs_production_modes}. Previous results from searches for individual modes, including subsequent combinations, are documented in Chpt.~\ref{subsec:theory_hinv_prev_results}.
+
 % If models exist, mention briefly about potential theories with dark matter candidates being able to fix the hierarchy problem (present in a mathematical context if possible).
+
+
+%=========================================================
+
+
+\subsection{Production modes of the Higgs boson}
+\label{subsec:theory_higgs_production_modes}
+
+At the \acrshort{lhc}, the most common mechanisms for producing a Higgs boson are \acrfull{vbf}, gluon-gluon fusion (\ggF or \ggH), associated production from top quarks (\ttH), and associated production from a vector boson (\VH). Feynman diagrams of these processes are shown in Fig.~\ref{fig:higgs_feynman_diagrams}.\footnote{Additional diagrams for ggF are a square top loop (gluons join the two vertices on the left), where the Higgs exits at one of the vertices on the right and a gluon exits at the other. For ZH, can also have $gg\to ZH$ as well as $pp\to ZH$. Not sure if it's worth showing them or just describing them.} They have very different characteristics, production rates, and event signatures, complementing each other and allowing a single analysis to cover all bases with orthogonal parameter spaces to target them individually.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{figures/feynman_diagrams/ttH.png}
+        \caption{\ttH}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{figures/feynman_diagrams/VBF.png}
+        \caption{\acrshort{vbf}}
+    \end{subfigure}
+% blank line to start new row
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{figures/feynman_diagrams/VH.png}
+        \caption{\VH}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{figures/feynman_diagrams/ggF.png}
+        \caption{\ggF}
+    \end{subfigure}
+\caption[A subset of the Feynman diagrams for the four predominant production mechanisms of the Higgs boson at the LHC]{A subset of the Feynman diagrams for the four predominant production mechanisms of the Higgs boson at the \acrshort{lhc}.}
+\label{fig:higgs_feynman_diagrams}
+\end{figure}
+
+
+%=========================================================
+
+
+\subsubsection{Vector boson fusion (VBF)}
+\label{subsubsec:theory_hinv_VBF_mode}
+
+A \acrshort{vbf} topology is exhibited by a \tchannel exchange of two vector bosons radiated by the incident quarks, which then combine to form a new particle such as a Higgs boson. Since the masses of the \PW and \PZ bosons are more than half the Higgs mass, it can easily be produced on shell. The recoil of the quarks characterises the visible system: two \glspl{jet} with a large combined invariant mass, usually with a large separation in pseudorapidity but small in azimuthal angle. The \glspl{jet} move in opposite directions, one in $+\eta$ and the other in $-\eta$, but are usually contained in the same horizontal half of the detector.
+
+
+%=========================================================
+
+
+\subsubsection{Associated production from top quarks (\texorpdfstring{\ttH}{ttH})}
+\label{subsubsec:theory_hinv_ttH_mode}
+
+In \ttH, two \ttbar pairs are produced. A top quark \Ptop from one pair and antiquark \APtop from the other annihilate to produce the Higgs boson. As it decays invisibly, it is the remaining \Ptop and \APtop in the event that lead to three classes of final state. The \Ptop quark decays almost exclusively to $\Pbottom\PWplus$ (and $\HepProcess{\APtop \to \APbottom\PWminus}$)~\cite{PhysRevD.98.030001}. In a resolved system where top quarks possess low to moderate momentum, the multitude of available \Pbottom-tagging algorithms can distinguish the decays of the \Pbottom quark. The products of the \PW boson is the determining factor of the final state. Hadronically-decaying $\PW\text{s}$ ($\HepProcess{\PW \to \Pquark\APquark}$), of course, produce pairs of \glspl{jet}. But they can also decay into a lepton and neutrino. The final states then all have \ptmiss and up to two \glspl{bjet} in common. Several \glspl{jet} may accompany them (the hadronic channel), or fewer \glspl{jet} with a single lepton (the \emph{semi-leptonic} channel), or two leptons (the \emph{dileptonic} channel). The magnitude and direction of the \ptmiss in the latter two channels may be affected by the neutrinos, depending on their direction and energy.
+
+In a boosted system where the top quarks have significant \pt, it is often difficult to tag \glspl{bjet}, especially if one is searching in the hadronic channel. Recently-developed algorithms can assist in this case by inspecting AK8 \glspl{jet}---objects clustered with the \gls{antikt} using a radius parameter of 0.8 instead of the usual 0.4. The \deepakeight tagger, explained in Chpt.~\ref{subsec:htoinv_deepak8}, is used in the analysis to classify boosted topologies originating from \Ptop quarks as well as \PVec bosons to identify \ttH events.
+
+
+%=========================================================
+
+
+\subsubsection{Associated production from a vector boson (\texorpdfstring{\VH}{VH})}
+\label{subsubsec:theory_hinv_VH_mode}
+
+A Higgs boson is radiated by the vector boson \PVec in the \VH mechanism. Parallels can be drawn with \ttH as the decay of the \PVec determines the search channel. Resolved and boosted systems are also possible. In the resolved case, a dijet pair with an invariant mass close to that of the parent boson would distinguish the hadronic channel. \Pbottom-taggers can be exploited if the decay is to a \Pbottom quark, i.e., $\HepProcess{\PWplus \to \APbottom\Pquark_{\Pup}}$,\footnote{I'm not sure what the symbol is (if there even is one) for an up-type quark. Maybe $\Pquark_{\Pup, \Pcharm}$ to be more specific, or $\Pquark_{\uparrow}$?} $\HepProcess{\PWminus \to \Pbottom\APquark_{\Pup}}$, or $\HepProcess{\PZ \to \Pbottom\APbottom}$. Single lepton channels are possible for \WH and dilepton for \ZH. For a boosted \PVec, one expects the products to the collimated into a single AK8 \gls{jet}, at least in the hadronic channel. As with \ttH, we take advantage of \deepakeight to capture these scenarios. 
+
+
+%=========================================================
+
+
+\subsubsection{Gluon-gluon fusion (\texorpdfstring{\ggF}{ggF})}
+\label{subsubsec:theory_hinv_ggF_mode}
+
+Despite \ggF having the largest cross section of the four modes, its upper limit on $\BRof{\higgstoinv}$ is the weakest. The Higgs boson is created through the loop-level fusion of the initial state gluons, normally mediated by a top quark since it has the largest coupling to the Higgs. With no additional final state particles at first order, searches for this production mode usually involve initial state radiation from the gluons or the loop. As such, the signature is at least one \gls{jet} and \ptmiss.
+
+
+%=========================================================
+
+
+\subsection{Results of previous searches}
+\label{subsec:theory_hinv_prev_results}
+
+Many previous analyses have investigated the \higgstoinv decay, in some cases from dedicated searches, but often as an afterthought or interpretation of the main analysis. \acrshort{vbf} is the most sensitive production mode. This is demonstrated in Tab.~\ref{tab:hinv_br_limits}\footnote{Might be good to add a row with the combined (bar ttH) result with only 2016 data.} by the upper limits attained compared to the other mechanisms. In Ref.~\citenum{Sirunyan:2018owy}, a combination was performed by \acrshort{cms} over all the productions modes detailed in the table (with the exception of \ttH). Using the recent 2016 measurements as well as data taken from Run-1 and 2015, this combined observed upper limit sits at 19\,\%, while the expected is 15\,\%. With only data from Run-1 and 2015 (the previous combination) the observed and expected upper limits of 24\,\% and 23\,\%, respectively, were found~\cite{Khachatryan:2016whc}.
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{lllcc}
+        \hline
+        Targeted mode & Analysis & Final state & Observed UL & Expected UL\\\hline
+        \acrshort{vbf} & Ref.~\citenum{Sirunyan:2018owy} & $\text{\acrshort{vbf}-\glspl{jet}} + \ptmiss$ & 33\,\% & 25\,\% \\
+        $\ZH(\HepProcess{\PZ \to \Plepton\Plepton})$ & Ref.~\citenum{Sirunyan:2017qfc} & $\PZ(\HepProcess{\to \Plepton\Plepton}) + \ptmiss$ & 40\,\% & 42\,\% \\
+        $\ttH$ & Ref.~\citenum{CMS-PAS-HIG-18-008} & $\ttbar(\HepProcess{\to \text{\glspl{jet}}/\Plepton/\Plepton\Plepton}) + \ptmiss$ & 46\,\% & 48\,\% \\
+        $\VH(\HepProcess{\PVec \to \Pquark\APquark})$ & Ref.~\citenum{Sirunyan:2017jix} & $\PVec(\HepProcess{\to \Pquark\Pquark}) + \ptmiss$ & 50\,\% & 48\,\% \\
+        $\ggF$ & Ref.~\citenum{Sirunyan:2017jix} & $\text{\glspl{jet}} + \ptmiss$ & 66\,\% & 59\,\% \\\hline
+    \end{tabular}
+    \caption[The most recent searches for invisibly decaying Higgs bosons with 2016 data from CMS, and the upper limits on the \higgstoinv branching ratio at 95\,\% confidence level achieved]{The most recent searches for invisibly decaying Higgs bosons with 2016 data from \acrshort{cms}, and the upper limits (UL) on the \higgstoinv branching ratio at 95\,\% confidence level achieved. Only the \acrshort{vbf} analysis is a dedicated search, while the others are interpretations of the results obtained in their respective primary analyses. For the $\ttH$ analysis, the hadronic (\glspl{jet}), semi-leptonic (\Plepton), and dileptonic ($\Plepton\Plepton$) channels were combined.}
+    \label{tab:hinv_br_limits}
+\end{table}
 
 
 %=========================================================

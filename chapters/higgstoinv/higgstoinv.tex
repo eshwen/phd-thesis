@@ -23,102 +23,6 @@
 %=========================================================
 
 
-\section{Production modes of the Higgs boson}
-\label{sec:htoinv_production_modes}
-
-At the \acrshort{lhc}, the most common mechanisms for producing a Higgs boson are \acrfull{vbf}, gluon-gluon fusion (\ggF), associated production from top quarks (\ttH), and associated production from a vector boson (\VH). Feynman diagrams of these processes are shown in Fig.~\ref{fig:higgs_feynman_diagrams}.\footnote{Additional diagrams for ggF are a square top loop (gluons join the two vertices on the left), where the Higgs exits at one of the vertices on the right and a gluon exits at the other. For ZH, can also have $gg\to ZH$ as well as $pp\to ZH$. Not sure if it's worth showing them or just describing them.} They have very different characteristics, production rates, and event signatures, complementing each other and allowing a single analysis to cover all bases with orthogonal parameter spaces to target them individually.
-
-\begin{figure}[htbp]
-    \centering
-    \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{figures/feynman_diagrams/ttH.png}
-        \caption{\ttH}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{figures/feynman_diagrams/VBF.png}
-        \caption{\acrshort{vbf}}
-    \end{subfigure}
-% blank line to start new row
-    \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{figures/feynman_diagrams/VH.png}
-        \caption{\VH}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{figures/feynman_diagrams/ggF.png}
-        \caption{\ggF}
-    \end{subfigure}
-\caption[A subset of the Feynman diagrams for the four predominant production mechanisms of the Higgs boson at the LHC]{A subset of the Feynman diagrams for the four predominant production mechanisms of the Higgs boson at the \acrshort{lhc}.}
-\label{fig:higgs_feynman_diagrams}
-\end{figure}
-
-
-%=========================================================
-
-
-\subsection{Vector boson fusion (VBF)}
-\label{subsec:htoinv_VBF}
-
-A \acrshort{vbf} topology is exhibited by a \tchannel exchange of two vector bosons radiated by the incident quarks, which then combine to form a new particle such as a Higgs boson. Since the masses of the \PW and \PZ bosons are more than half the Higgs mass, it can easily be produced on shell. The recoil of the quarks characterises the visible system: two \glspl{jet} with a large combined invariant mass, usually with a large separation in pseudorapidity but small in azimuthal angle. The \glspl{jet} move in opposite directions, one in $+\eta$ and the other in $-\eta$, but are usually contained in the same horizontal half of the detector.
-
-
-%=========================================================
-
-
-\subsection{Associated production from top quarks (\texorpdfstring{\ttH}{ttH})}
-\label{subsec:htoinv_ttH}
-
-In \ttH, two \ttbar pairs are produced. A top quark \Ptop from one pair and antiquark \APtop from the other annihilate to produce the Higgs boson. As it decays invisibly, it is the remaining \Ptop and \APtop in the event that lead to three classes of final state. The \Ptop quark decays almost exclusively to $\Pbottom\PWplus$ (and $\HepProcess{\APtop \to \APbottom\PWminus}$)~\cite{PhysRevD.98.030001}. In a resolved system where top quarks possess low to moderate momentum, the multitude of available \Pbottom-tagging algorithms can distinguish the decays of the \Pbottom quark. The products of the \PW boson is the determining factor of the final state. Hadronically-decaying $\PW\text{s}$ ($\HepProcess{\PW \to \Pquark\APquark}$), of course, produce pairs of \glspl{jet}. But they can also decay into a lepton and neutrino. The final states then all have \ptmiss and up to two \glspl{bjet} in common. Several \glspl{jet} may accompany them (the hadronic channel), or fewer \glspl{jet} with a single lepton (the \emph{semi-leptonic} channel), or two leptons (the dileptonic channel). The magnitude and direction of the \ptmiss in the latter two channels may be affected by the neutrinos, depending on their direction and energy.
-
-In a boosted system where the top quarks have significant \pt, it is often difficult to tag \glspl{bjet}, especially if one is searching in the hadronic channel. Recently-developed algorithms can assist in this case by inspecting AK8 \glspl{jet}---objects clustered with the \gls{antikt} using a radius parameter of 0.8 instead of the usual 0.4. The \deepakeight tagger, explained in Chpt.~\ref{subsec:htoinv_deepak8}, is used in the analysis to classify boosted topologies originating from \Ptop quarks as well as \PVec bosons to identify \ttH events.
-
-
-%=========================================================
-
-
-\subsection{Associated production from a vector boson (\texorpdfstring{\VH}{VH})}
-\label{subsec:htoinv_VH}
-
-A Higgs boson is radiated by the vector boson \PVec in the \VH mechanism. Parallels can be drawn with \ttH as the decay of the \PVec determines the search channel. Resolved and boosted systems are also possible. In the resolved case, a dijet pair with an invariant mass close to that of the parent boson would distinguish the hadronic channel. \Pbottom-taggers can be exploited if the decay is to a \Pbottom quark, i.e., $\HepProcess{\PWplus \to \APbottom\Pquark_{\Pup}}$,\footnote{I'm not sure what the symbol is (if there even is one) for an up-type quark. Maybe $\Pquark_{\Pup, \Pcharm}$ to be more specific, or $\Pquark_{\uparrow}$?} $\HepProcess{\PWminus \to \Pbottom\APquark_{\Pup}}$, or $\HepProcess{\PZ \to \Pbottom\APbottom}$. Single lepton channels are possible for \WH and dilepton for \ZH. For a boosted \PVec, one expects the products to the collimated into a single AK8 \gls{jet}, at least in the hadronic channel. As with \ttH, we take advantage of \deepakeight to capture these scenarios. 
-
-
-%=========================================================
-
-
-\subsection{Gluon-gluon fusion (\texorpdfstring{\ggF}{ggF})}
-\label{subsec:htoinv_ggF}
-
-Despite \ggF having the largest cross section of the four modes, its upper limit on $\BRof{\higgstoinv}$ is the weakest. The Higgs boson is created through the loop-level fusion of the initial state gluons, normally mediated by a top quark since it has the largest coupling to the Higgs. With no additional final state particles at first order, searches for this production mode usually involve initial state radiation from the gluons or the loop. As such, the signature is at least one \gls{jet} and \ptmiss.
-
-
-%=========================================================
-
-
-\section{Results of previous searches}
-\label{sec:htoinv_prev_results}
-
-Many previous analyses have investigated the \higgstoinv decay, in some cases from dedicated searches, but often as an afterthought or interpretation of the main analysis. \acrshort{vbf} is the most sensitive production mode. This is demonstrated in Tab.~\ref{tab:hinv_br_limits}\footnote{Might be good to add a row with the combined (bar ttH) result with only 2016 data.} by the upper limits attained compared to the other mechanisms. In Ref.~\citenum{Sirunyan:2018owy}, a combination was performed by \acrshort{cms} over all the productions modes detailed in the table (with the exception of \ttH). Using the recent 2016 measurements as well as data taken from Run-1 and 2015, this combined observed upper limit sits at 19\,\%, while the expected is 15\,\%. With only data from Run-1 and 2015 (the previous combination) the observed and expected upper limits of 24\,\% and 23\,\%, respectively, were found~\cite{Khachatryan:2016whc}.
-
-\begin{table}[htbp]
-    \centering
-    \begin{tabular}{lllcc}
-        \hline
-        Targeted mode & Analysis & Final state & Observed UL & Expected UL\\\hline
-        \acrshort{vbf} & Ref.~\citenum{Sirunyan:2018owy} & $\text{\acrshort{vbf}-\glspl{jet}} + \ptmiss$ & 33\,\% & 25\,\% \\
-        $\ZH(\HepProcess{\PZ \to \Plepton\Plepton})$ & Ref.~\citenum{Sirunyan:2017qfc} & $\PZ(\HepProcess{\to \Plepton\Plepton}) + \ptmiss$ & 40\,\% & 42\,\% \\
-        $\ttH$ & Ref.~\citenum{CMS-PAS-HIG-18-008} & $\ttbar(\HepProcess{\to \text{\glspl{jet}}/\Plepton/\Plepton\Plepton}) + \ptmiss$ & 46\,\% & 48\,\% \\
-        $\VH(\HepProcess{\PVec \to \Pquark\APquark})$ & Ref.~\citenum{Sirunyan:2017jix} & $\PVec(\HepProcess{\to \Pquark\Pquark}) + \ptmiss$ & 50\,\% & 48\,\% \\
-        $\ggF$ & Ref.~\citenum{Sirunyan:2017jix} & $\text{\glspl{jet}} + \ptmiss$ & 66\,\% & 59\,\% \\\hline
-    \end{tabular}
-    \caption[The most recent searches for invisibly decaying Higgs bosons with 2016 data from CMS, and the upper limits on the \higgstoinv branching ratio at 95\,\% confidence level achieved]{The most recent searches for invisibly decaying Higgs bosons with 2016 data from \acrshort{cms}, and the upper limits (UL) on the \higgstoinv branching ratio at 95\,\% confidence level achieved. Only the \acrshort{vbf} analysis is a dedicated search, while the others are interpretations of the results obtained in their respective primary analyses. For the $\ttH$ analysis, the hadronic (\glspl{jet}), semi-leptonic (\Plepton), and dileptonic ($\Plepton\Plepton$) channels were combined.}
-    \label{tab:hinv_br_limits}
-\end{table}
-
-
-%=========================================================
-
-
 \section{Overview of the analysis}
 \label{sec:htoinv_analysis_overview}
 
@@ -126,254 +30,9 @@ The analysis discussed in the remainder of the chapter is a dedicated search for
 
 Direct collaboration amongst several institutes divides up the task appropriately. Researchers at the University of Bristol, including as myself, and LLR (\emph{Laboratoire Leprince-Ringuet, \'{E}cole Polytechnique, Universit\'{e} Paris-Saclay}) focus on \ttH and the resolved \VH modes. Those at Imperial College London, who have a long history with the \acrshort{vbf} search~\cite{Chatrchyan:2014tja,Sirunyan:2018owy}, assume responsibility of this process. Researchers at Boston University---who have previously been involved in \acrshort{bsm} analyses with interpretations in invisibly decaying Higgs bosons~\cite{Khachatryan:2016mdm,Sirunyan:2017jix}---specialize in monojet and mono-\PVec searches. This makes them naturally suited to investigating the boosted aspect of \VH, and \ggF.
 
-Emphasis will be placed on the non-VBF modes, particularly \ttH and resolved \VH, as I had direct involvement in those aspects of the analysis. Before Boston University joined our effort, we also studied the boosted \VH and \ggF mechanisms. Accordingly, they will also be given some attention. Definitions of the physics objects used analysis-wide are discussed in Chpt.~\ref{sec:htoinv_objects}. The data from \acrshort{cms} and from simulation, along with required corrections and systematic uncertainties, are acknowledged in Chpt.~\ref{sec:htoinv_data_sim}. These are followed by the event selection in Chpt.~\ref{sec:htoinv_event_selection}. Characterisation of the categorisation of production modes and phase space regions are illustrated in Chpts.~\ref{sec:htoinv_categorisation} and \ref{sec:region_definitions}, respectively. Methods for accurately estimating the background processes in the signal region are delineated in Chpt.~\ref{sec:htoinv_background_est}. The incorporation of these and the aforementioned sections in the statistical treatment are presented in Chpt.~\ref{sec:htoinv_satistical_treatment}, before the results of the analysis in Chpt.~\ref{sec:htoinv_results}.
+Emphasis will be placed on the non-VBF modes, particularly \ttH and resolved \VH, as I had direct involvement in those aspects of the analysis. Before Boston University joined our effort, we also studied the boosted \VH and \ggF mechanisms. Accordingly, they will also be given some attention. Definitions of the physics objects used analysis-wide have already been discussed in Chpt.~\ref{sec:analysis_objects}. The data from \acrshort{cms} and from simulation, along with required corrections and systematic uncertainties, are acknowledged in Chpt.~\ref{sec:htoinv_data_sim}. These are followed by the event selection in Chpt.~\ref{sec:htoinv_event_selection}. Characterisation of the categorisation of production modes and phase space regions are illustrated in Chpts.~\ref{sec:htoinv_categorisation} and \ref{sec:region_definitions}, respectively. Methods for accurately estimating the background processes in the signal region are delineated in Chpt.~\ref{sec:htoinv_background_est}. The incorporation of these and the aforementioned sections in the statistical treatment are presented in Chpt.~\ref{sec:htoinv_satistical_treatment}, before the results of the analysis in Chpt.~\ref{sec:htoinv_results}.
 
 % Given the \acrshort{lhc} is a \emph{hadron} collider, processes with hadronic channels are the natural choices.\footnote{Or should I say ``most sensitive''?} \Gls{met} from the purely-invisible decay of the Higgs---and hadronic activity from the particles associated with the production mechanism---constitute the [final state], often known as a ``\text{\glspl{jet}} + \ptmiss$'' search.
-
-
-%=========================================================
-
-
-\section{Definitions of physics objects and variables}
-\label{sec:htoinv_objects}
-
-The physics that occurs at the high energies the \acrshort{lhc} is capable of is not simple. That makes the recording of particles and events overall a non-trivial undertaking. Based on complex hardware and software, research, and the experience of previous experiments, establishing physics objects and variables from an analyst's standpoint is thankfully straightforward. The basic definitions are already included into the \ROOT files we use, with ancillary selections on top for the analysis-level objects. All of the descriptions that follow apply both to data and simulated samples, unless otherwise stated.
-
-Different working points for the identification of many objects are available from the respective \glspl{pog}, trading inclusivity for purity the tighter the selections are. ``Veto'' and ``loose'' criteria are used to specify the secondary leptons in the dilepton \glspl{CR}, and when vetoing leptons and photons (or applying their corresponding veto weights) in the signal region. The ``medium'' and ``tight'' selections are used to construct the primary objects in the \glspl{CR}. We denote these particles with a subscript that signifies the working point. The requirements elaborated upon in the ensuing subsections.\footnote{The following subsections take up a good few pages. I'm not sure if I need to go into this much detail regarding the object definitions. For the ``basic'' requirements for each object, should I instead just write a summary paragraph or two, like they do in CMS papers?}
-
-
-%=========================================================
-
-
-\subsection{Jets}
-\label{subsec:htoinv_jet_objs}
-
-In the \nanoAOD data tier, a \gls{jet} is defined as an AK4-clustered, charged hadron-subtracted object reconstructed with the \gls{particleflow}, with \acrlong{jec} applied and a $\pt > \text{15}\GeV$ prerequisite. For the analysis, we raise the \pt threshold to 30\GeV\footnote{Might need to specify we use the JER-corrected \pt for all instances of AK4 jet and b-jet \pt (except noisy EE jets in 2017 where we examine raw \pt). JER-corrected \pt is applied offline in nanoAOD-tools (so would need to find specifics there).} and explicitly restrict the pseudorapidity range to $\abseta < 5.0$. Either the tight, or tight $+$ lepton veto, \acrshort{pf} identification requirements are also mandatory to establish a sufficient degree of purity with a very high efficiency ($> \text{98\,\%}$ in all $\abseta$ regions).\footnote{For all objects, should I also give the background rejection efficiency?} These are documented in Tabs.~\ref{tab:htoinv_jet_id_def_2016}, \ref{tab:htoinv_jet_id_def_2017}, and \ref{tab:htoinv_jet_id_def_2018}. Finally, \glspl{jet} must not overlap (i.e., exhibit $\Delta R > \text{0.4}$) with any \vetoEle, \looseMuon, and \loosePhoton in the event to avoid potential misidentification.
-
-AK8 \glspl{jet} follow the same reconstruction and identification prescription as AK4 \glspl{jet}, only differing in the cone size.\footnote{I'm not what/if the minimum \pt of an AK8 \gls{jet} is, and whether they have an $\eta$ restriction (I've seen $\abseta < 2.4$ in a few places, but nothing confirmed).}
-
-A \gls{bjet} is described by a \nanoAOD AK4 \gls{jet} with $\pt > \text{20}\GeV$, $\abseta < \text{2.5}$ (2.4 in 2016), and to satisfy the medium working point (a mis-tag rate of 1\,\%) from the \deepcsv algorithm~\cite{Sirunyan:2017ezt}.
-
-
-%=========================================================
-
-
-\subsubsection{2016}
-\label{subsubsec:htoinv_jet_objs_2016}
-
-The tight and tight $+$ lepton veto ID specifications are detailed in Tab.~\ref{tab:htoinv_jet_id_def_2016}. Specifically to this year, all \glspl{jet} are required to fulfill the criteria for the tight pileup ID to ensure they do not originate from pileup vertices.
-
-\begin{table}[htbp]
-    \centering
-    \begin{tabular}{lcccc}
-        \hline
-        Criterion & $\abseta \leq \text{2.4}$ & $\text{2.4} < \abseta \leq \text{2.7}$ & $\text{2.7} < \abseta \leq \text{3.0}$ & $\abseta \geq \text{3.0}$ \\\hline
-        Neutral hadron fraction & $< \text{0.90}$ & $< \text{0.90}$ & $< \text{0.98}$ & --- \\
-        Neutral EM fraction & $< \text{0.90}$ & $< \text{0.90}$ & $> \text{0.01}$ & $< \text{0.90}$ \\
-        \# constituents & $> \text{1}$ & $> \text{1}$ & --- & --- \\
-        Muon energy fraction & $< \text{0.80}$* & $< \text{0.80}$* & --- & --- \\
-        Charged hadron fraction & $> \text{0}$ & --- & --- & --- \\
-        Charged multiplicity & $> \text{0}$ & --- & --- & --- \\
-        Charged EM fraction & $< \text{0.99}$ (0.90*) & --- & --- & --- \\
-        \# neutral particles & --- & --- & $> \text{2}$ & $\text{10}$ \\\hline
-    \end{tabular}
-    \caption[The requirements for a jet to pass tight identification for data taken in 2016, and to \acrlong{mc} events emulating that year]{The requirements for a \gls{jet} to pass tight identification for data taken in 2016, and to \acrlong{mc} events emulating that year. Information taken from Ref.~\citenum{cms_jet_ID_2016}.
-        
-    * Only applies to the tight $+$ lepton veto ID.}
-    \label{tab:htoinv_jet_id_def_2016}
-\end{table}
-
-
-%=========================================================
-
-
-\subsubsection{2017}
-\label{subsubsec:htoinv_jet_objs_2017}
-
-The tight and tight $+$ lepton veto ID conditions are detailed in Tab.~\ref{tab:htoinv_jet_id_def_2017}. \Glspl{jet} with $\pt < \text{50}\GeV$ are required to meet the tight pileup ID criteria. Any \glspl{jet} with a raw (uncorrected) transverse momentum $\pt^{\mathrm{raw}} < \text{50}\GeV$ within the region $\text{2.65} < \abseta < \text{3.139}$ are vetoed due to noise in the \acrshort{ecal} end cap.
-
-\begin{table}[htbp]
-    \centering
-    \begin{tabular}{lcccc}
-        \hline
-        Criterion & $\abseta \leq \text{2.4}$ & $\text{2.4} < \abseta \leq \text{2.7}$ & $\text{2.7} < \abseta \leq \text{3.0}$ & $\abseta \geq \text{3.0}$ \\\hline
-        Neutral hadron fraction & $< \text{0.90}$ & $< \text{0.90}$ & --- & $> \text{0.02}$ \\
-        Neutral EM fraction & $< \text{0.90}$ & $< \text{0.90}$ & $> \text{0.02}$, $< \text{0.99}$ & $< \text{0.90}$ \\
-        \# constituents & $> \text{1}$ & $> \text{1}$ & --- & --- \\
-        Muon energy fraction & $< \text{0.80}$* & $< \text{0.80}$* & --- & --- \\
-        Charged hadron fraction & $> \text{0}$ & --- & --- & --- \\
-        Charged multiplicity & $> \text{0}$ & --- & --- & --- \\
-        Charged EM fraction & $< \text{0.80}$* & --- & --- & --- \\
-        \# neutral particles & --- & --- & $> \text{2}$ & $\text{10}$ \\\hline
-    \end{tabular}
-    \caption[The requirements for a jet to pass tight identification for data taken in 2017, and to \acrlong{mc} events emulating that year]{The requirements for a \gls{jet} to pass tight identification for data taken in 2017, and to \acrlong{mc} events emulating that year. Information taken from Ref.~\citenum{cms_jet_ID_2017}.
-        
-    * Only applies to the tight $+$ lepton veto ID.}
-    \label{tab:htoinv_jet_id_def_2017}
-\end{table}
-
-
-%=========================================================
-
-
-\subsubsection{2018}
-\label{subsubsec:htoinv_jet_objs_2018}
-
-The tight and tight $+$ lepton veto ID specifications are detailed in Tab.~\ref{tab:htoinv_jet_id_def_2018}.\footnote{There's probably a more elegant way to write the ID criteria, since the same variables are used for all years and the same thresholds in many cases. But until I figure it out, separate tables for each year will have to do} As in 2017, \glspl{jet} with $\pt < \text{50}\GeV$ must fulfill the tight pileup ID conditions.\footnote{Is it worth going into the pileup ID spec.?}
-
-\begin{table}[htbp]
-    \centering
-    \begin{tabular}{lcccc}
-        \hline
-        Criterion & $\abseta \leq \text{2.6}$ & $\text{2.6} < \abseta \leq \text{2.7}$ & $\text{2.7} < \abseta \leq \text{3.0}$ & $\text{3.0} < \abseta \leq \text{5.0}$ \\\hline
-        Neutral hadron fraction & $< \text{0.90}$ & $< \text{0.90}$ & --- & $> \text{0.20}$ \\
-        Neutral EM fraction & $< \text{0.90}$ & $< \text{0.99}$ & $> \text{0.02}$, $< \text{0.99}$ & $< \text{0.90}$ \\
-        \# constituents & $> \text{1}$ & --- & --- & --- \\
-        Muon energy fraction & $< \text{0.80}$* & $< \text{0.80}$* & --- & --- \\
-        Charged hadron fraction & $> \text{0}$ & --- & --- & --- \\
-        Charged multiplicity & $> \text{0}$ & $> \text{0}$ & --- & --- \\
-        Charged EM fraction & $< \text{0.80}$* & $< \text{0.80}$* & --- & --- \\
-        \# neutral particles & --- & --- & $> \text{2}$ & $\text{10}$ \\\hline
-    \end{tabular}
-    \caption[The requirements for a jet to pass tight identification for data taken in 2018, and to \acrlong{mc} events emulating that year]{The requirements for a \gls{jet} to pass tight identification for data taken in 2018, and to \acrlong{mc} events emulating that year.  Information taken from Ref.~\citenum{cms_jet_ID_2018}.
-        
-    * Only applies to the tight $+$ lepton veto ID.}
-    \label{tab:htoinv_jet_id_def_2018}
-\end{table}
-
-
-%=========================================================
-
-
-\subsection{Muons}
-\label{subsec:htoinv_muon_objs}
-
-The reconstruction and identification criteria for muons is described in significant detail in Ref.~\citenum{Sirunyan:2018fpa}. A loose muon \looseMuon satisfies the ``loose muon identification'' requirements from the paper, $\abseta < \text{2.4}$, $\pt > \text{10}\GeV$, and the loose working point of the \acrlong{pf} relative isolation parameter (Eq.~5.4 in Ref.~\citenum{CMS-PRF-14-001}\citenumNegSpace) $I_{\mathrm{PF}} < \text{0.25}$. A tight muon \tightMuon meets the ``tight muon ID'' requirements from the same paper, $\abseta < \text{2.4}$, $\pt > \text{20}\GeV$, and the tight working point for the relative isolation ($I_{\mathrm{PF}} < \text{0.15}$).
-
-The relative isolation parameter is the ratio of the sum of track, \acrshort{hcal} and \acrshort{ecal} energies within $\Delta R < \text{0.4}$ of the muon to the particle's momentum. The loose and tight working points are designed to give efficiencies of 98\,\% and 95\,\%, respectively.
-
-
-%=========================================================
-
-
-\subsection{Electrons}
-\label{subsec:htoinv_electron_objs}
-
-In the analysis, electrons are labelled as veto (\vetoEle) or tight electrons (\tightEle), depending on which \acrshort{pog} ID requirements are fulfilled. For 2016--18, version 2 of the cut-based identification scheme (tuned using 2017 samples), is applied. These are distinguished for the barrel region in Tab.~\ref{tab:htoinv_electron_ID_barrel}, and end cap region in Tab.~\ref{tab:htoinv_electron_ID_endcap}. The veto and tight ID specifications are designed for average efficiencies of 95\,\% and 70\,\%, respectively.
-
-\begin{table}[htbp]
-    \centering
-    \begin{tabular}{lcc}
-    \hline
-    Criterion & Veto & Tight \\\hline
-    Full $\text{5} \times \text{5}$ $\sigma_{i\eta i\eta}$ & $< \text{0.0126}$ & $< \text{0.0104}$    \\
-    $\abs{\Delta\eta_{\mathrm{in}}^{\mathrm{seed}}}$ & $< \text{0.00463}$ & $< \text{0.00255}$ \\
-    $\abs{\Delta\phi_{\mathrm{in}}}$ & $< \text{0.148}$ & $< \text{0.022}$ \\
-    $H/E$ & $<\text{0.05} + \frac{\text{1.16}}{E_{\mathrm{SC}}} + \frac{\text{0.0324}\rho}{E_{\mathrm{SC}}}$ & $<$ $\text{0.026} + \frac{\text{1.15}}{E_{\mathrm{SC}}} + \frac{\text{0.0324}\rho}{E_{\mathrm{SC}}}$ \\
-    Relative isolation with $A_{\mathrm{eff.}}$ & $< \text{0.198} + \frac{\text{0.506}}{\pt}$ & $< \text{0.0287} + \frac{\text{0.506}}{\pt}$\\
-    $\abs{E^{-1}_{\mathrm{ECAL}} - p^{-1}_{\mathrm{Tracker}}}$ & $< \text{0.209}$ & $< \text{0.159}$\\
-    Expected missing inner hits & $\leq \text{2}$ & $\leq \text{1}$\\
-    Pass conversion veto & yes & yes \\
-    \hline
-    \end{tabular}
-    \caption[Requirements used to define the veto and tight electron IDs in the barrel region (supercluster $\abs{\eta} \leq \text{1.479}$)]{Requirements used to define the veto and tight electron IDs in the barrel region (supercluster $\abs{\eta} \leq \text{1.479}$). Information taken from Ref.~\citenum{cms_ele_ID_Run2}.}
-    \label{tab:htoinv_electron_ID_barrel}
-\end{table}
-
-\begin{table}[htbp]
-    \centering
-    \begin{tabular}{lcc}
-    \hline
-    Criterion & Veto & Tight \\\hline
-    Full $\text{5} \times \text{5}$ $\sigma_{i\eta i\eta}$ & $< \text{0.0457}$ & $< \text{0.0353}$    \\
-    $\abs{\Delta\eta_{\mathrm{in}}^{\mathrm{seed}}}$ & $< \text{0.00814}$ & $< \text{0.00501}$ \\
-    $\abs{\Delta\phi_{\mathrm{in}}}$ & $< \text{0.19}$ & $< \text{0.0236}$ \\
-    $H/E$ & $<\text{0.05} + \frac{\text{2.54}}{E_{\mathrm{SC}}} + \frac{\text{0.183}\rho}{E_{\mathrm{SC}}}$ & $<$ $\text{0.0188} + \frac{\text{2.06}}{E_{\mathrm{SC}}} + \frac{\text{0.183}\rho}{E_{\mathrm{SC}}}$ \\
-    Relative isolation with $A_{\mathrm{eff.}}$ & $< \text{0.203} + \frac{\text{0.963}}{\pt}$ & $< \text{0.0445} + \frac{\text{0.963}}{\pt}$\\
-    $\abs{E^{-1}_{\mathrm{ECAL}} - p^{-1}_{\mathrm{Tracker}}}$ & $< \text{0.132}$ & $< \text{0.0197}$\\
-    Expected missing inner hits & $\leq \text{3}$ & $\leq \text{1}$\\
-    Pass conversion veto & yes & yes \\
-    \hline
-    \end{tabular}
-    \caption[Requirements used to define the veto and tight electron IDs in the end cap region (supercluster $\abs{\eta} > \text{1.479}$)]{Requirements used to define the veto and tight electron IDs in the end cap region (supercluster $\abs{\eta} > \text{1.479}$). Information taken from Ref.~\citenum{cms_ele_ID_Run2}.}
-    \label{tab:htoinv_electron_ID_endcap}
-\end{table}
-
-The variable $\sigma_{i\eta i\eta}$ is the energy-weighted standard deviation of the \acrshort{ecal} crystal $\eta$, centred on the local energy maximum, in this case using the full $\text{5} \times \text{5}$ crystal information from the calorimeter tower. $\Delta\eta_{\mathrm{in}}^{\mathrm{seed}}$ and $\Delta\phi_{\mathrm{in}}$ are the differences in pseudorapidity and azimuthal angle, respectively, between the supercluster (seed in the case of $\Delta\eta$) and the track. They are taken at the point of closest approach to the supercluster, extrapolated from the innermost track state.\footnote{Consider rewording this sentence. Currently lifted verbatim from a public twiki page.} $H/E$ is the ratio of the candidate's central energy deposit in the \acrshort{hcal} to the \acrshort{ecal}. The relative isolation parameter is computed in the same way as muons (Eq.~5.4 in Ref.~\citenum{CMS-PRF-14-001}\citenumNegSpace), but uses a cone of $\Delta R < \text{0.3}$ instead of 0.4. The isolation threshold takes the effective area $A_{\mathrm{eff.}}$ into account. Along with $\rho$---a parameter in the \textsc{FastJet} package~\cite{Cacciari:2011fastjet} used for \gls{jet} finding---these are used for estimating the contamination from pileup in an event. $E_{\mathrm{SC}}$ is the energy of the supercluster, and is used to scale the isolation requirement. From material interactions within the tracker, photons may convert into $\Ppositron\Pelectron$ pairs. A dedicated veto aims to mitigate this effect.
-% rho and A_eff: https://iopscience.iop.org/article/10.1088/1748-0221/10/08/P08010/pdf
-% More electron stuff in reference to tables above: https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideGsfElectronObject
-
-Common to all electrons in the analysis, we place a cut of $\abseta < \text{2.5}$ so they are reconstructed with tracker information. To further utilise the subdetector, impact parameter conditions on the transverse and longitudinal directions ensure they originate sufficiently close to the primary vertex: $d_0 < \text{0.05}$\,cm and $dz < \text{0.1}$\,cm in the barrel, with $d_0 < \text{0.1}$\,cm and $dz < \text{0.2}$\,cm in the end cap. Cross cleaning is also performed against the \looseMuon collection of objects, so electrons are not counted in the event if they are within $\Delta R < \text{0.3}$ of one. The \vetoEle and \tightEle sets are only separated by the identification prerequisites above, and transverse momentum. A veto electron requires $\pt > \text{10}\GeV$, and a tight electron $\pt > \text{40}\GeV$.
-
-
-%=========================================================
-
-
-\subsection{Photons}
-\label{subsec:htoinv_photon_objs}
-
-Photons are identified in a similar manner to electrons---using version 2 of the cut-based scheme for 2016--18, optimised with 2017 \acrlong{mc}. We define loose \loosePhoton and medium photons \mediumPhoton that fulfill the corresponding working point criteria for identification. For inclusivity, the latter is used instead of the tight working point. These are detailed in Tab.~\ref{tab:htoinv_photon_ID_barrel} and Tab.~\ref{tab:htoinv_photon_ID_endcap} for the barrel and end cap regions, respectively. The loose photon ID specification is designed to be 90\,\% efficient, and the medium ID 80\,\%.\footnote{Should I give the background rejection efficiencies as well?} Both the \loosePhoton and \mediumPhoton collections are cross-cleaned against \looseMuon and \vetoEle objects in the event with $\Delta R < \text{0.3}$. They must also pass the electron conversion veto to ensure they originate promptly from the primary vertex.
-
-\begin{table}[htbp]
-    \centering
-    \begin{tabular}{lcc}
-        \hline
-        Criterion & Loose & Medium \\\hline
-        $H/E$ & $< \text{0.04596}$ & $< \text{0.02197}$ \\
-        $\sigma_{i\eta i\eta}$ & $< \text{0.0106}$ & $< \text{0.01015}$ \\
-        $\rho$-corrected \acrshort{pf} charged hadron isolation & $< \text{1.694}$ & $< \text{1.141}$ \\
-        $\rho$-corrected \acrshort{pf} neutral hadron isolation & $< \text{24.032} + X + Y$ & $< \text{1.189} + X + Y$ \\
-        $\rho$-corrected \acrshort{pf} photon isolation & $< \text{2.876} + Z$ & $< \text{2.08} + Z$ \\\hline
-    \end{tabular}
-    \caption[Requirements used to define the loose and medium photon IDs in the barrel region of the detector ($\abs{\eta} \leq \text{1.479}$)]{Requirements used to define the loose and medium photon IDs in the barrel region of the detector ($\abs{\eta} \leq \text{1.479}$). The factors $X = \text{0.01512}\pt$, $Y = \text{2.259} \times \text{10}^{-5}\pt^2$, and $Z = \text{0.004017}\pt$ in the isolation criteria are used to scale the threshold. Information taken from Ref.~\citenum{cms_photon_ID_Run2}.}
-    \label{tab:htoinv_photon_ID_barrel}
-\end{table}
-
-\begin{table}[htbp]
-    \centering
-    \begin{tabular}{lcc}
-        \hline
-        Criterion & Loose & Medium \\\hline
-        $H/E$ & $< \text{0.0590}$ & $< \text{0.0326}$ \\
-        $\sigma_{i\eta i\eta}$ & $< \text{0.0272}$ & $< \text{0.0272}$ \\
-        $\rho$-corrected \acrshort{pf} charged hadron isolation & $< \text{2.089}$ & $< \text{1.051}$ \\
-        $\rho$-corrected \acrshort{pf} neutral hadron isolation & $< \text{1.922} + X + Y$ & $< \text{2.718} + X + Y$ \\
-        $\rho$-corrected \acrshort{pf} photon isolation & $< \text{4.162} + Z$ & $< \text{3.867} + Z$ \\\hline
-    \end{tabular}
-    \caption[Requirements used to define the loose and medium photon IDs in the end cap region of the detector ($\abs{\eta} > \text{1.479}$)]{Requirements used to define the loose and medium photon IDs in the end cap region of the detector ($\abs{\eta} > \text{1.479}$). The factors $X = \text{0.0117}\pt$, $Y = \text{2.3} \times \text{10}^{-5}\pt^2$, and $Z = \text{0.0037}\pt$ in the isolation criteria are used to scale the threshold. Information taken from Ref.~\citenum{cms_photon_ID_Run2}.}
-    \label{tab:htoinv_photon_ID_endcap}
-\end{table}
-
-The variables $\sigma_{i\eta i\eta}$ and $\rho$ follow the same definitions as in Chpt.~\ref{subsec:htoinv_electron_objs}. The $\rho$-corrected isolation is calculated by taking the maximum of zero, and the difference between the \acrlong{pf} isolation and possible contamination from pileup:
-\begin{equation}
-I_{\mathrm{PF}}^{\mathrm{corr.}} = \max (I_{\mathrm{PF}} - \rho A_{\mathrm{eff.}}, \text{0})
-\end{equation}
-
-As well as the ID, the two collections diverge further due to $\eta$ and \pt requirements. A loose photon is characterised by $\abseta < \text{2.5}$ and $\pt > \text{15}\GeV$, while a medium photon must be central ($\abseta < \text{1.442}$) and possess $\pt > \text{230}\GeV$.
-
-
-%=========================================================
-
-
-\subsection{Taus}
-\label{subsec:htoinv_tau_objs}
-
-The only purpose tau leptons \Ptau serve is to veto (or apply veto weights to) events that contain them. We denote these as ``very loose'' taus \vlooseTau.\footnote{Tau definition still not finalised so leave out this subsection for now.}
-
-
-%=========================================================
-
-
-\subsection{Energy sums \texorpdfstring{\ptvecmiss}{ptmiss}, \texorpdfstring{\HT}{HT}, and \texorpdfstring{\htvecmiss}{MHT}}
-\label{subsec:htoinv_met_obj}
-
-Most \acrshort{cms} analyses, including this one, we define the missing transverse momentum with the ``type-I correction'': corrections to the \gls{jet} energy scale are applied, and so the corrected \gls{jet} \ptvec are propagated to the calculation of \ptvecmiss. In each of the \glspl{CR} detailed in Chpt.~\ref{subsec:htoinv_control_regions}, the \ptvecmiss is recalculated without the objects used to define said region to model the process it is predicting. Conditions in the event selection and binning that refer to \ptmiss use the recalculated quantity when applied to the \glspl{CR}.
-
-In 2017, significant noise in the \acrshort{ecal} end cap affected \glspl{jet} and \ptmiss, leading to potentially large energy mismeasurements. These quantities were recomputed after reconstruction, and carried through the analysis.
-
-The scalar sum \HT and negative vector sum of hadronic transverse momentum \htvecmiss are broadly defined in Chpts.~\ref{subsec:theory_ht} and \ref{subsec:theory_met}, respectively. They are calculated from the analysis-level AK4 jets with $\pt > \text{30}\GeV$, as detailed in Chpt.~\ref{subsec:htoinv_jet_objs}.
-
-Regarding the \ptvecmiss and \htvecmiss, in most cases the magnitudes (\ptmiss and \mht, respectively) are the important quantities used in the event selection and other aspects of the analysis.
 
 
 %=========================================================
@@ -412,7 +71,7 @@ All \acrlong{mc} datasets used in this analysis were produced centrally by exper
 \subsection{Simulated background processes}
 \label{subsec:htoinv_background}
 
-\acrlong{mc} datasets for many processes\footnote{In this subsection, I use the word ``process'' a lot. What alternatives can I use? Decay/dataset/mechanism/background?} are used in the analysis to accurately represent the \acrlong{sm} background. Every one uses \PYTHIAEIGHT to hadronise the events generated by the hard scatter. The underlying event tune applied in the hadroniser follows the same prescription as with signal---\textsc{cuetp8m1} for simulating 2016 while \textsc{cp5} is used thereafter. The only exception is the $\ttbarpjets$ background, for which \emph{all} samples were generated with the \textsc{cp5} tune. They are described as follows:\footnote{Not sure if I should use a long, sprawling list, or just have a separate paragraph for each process, maybe with the process name in bold.}
+\acrlong{mc} datasets for many processes\footnote{In this subsection, I use the word ``process'' a lot. What alternatives can I use? Decay, dataset, mechanism, background?} are used in the analysis to accurately represent the \acrlong{sm} background. Every one uses \PYTHIAEIGHT to hadronise the events generated by the hard scatter. The underlying event tune applied in the hadroniser follows the same prescription as with signal---\textsc{cuetp8m1} for simulating 2016 while \textsc{cp5} is used thereafter. The only exception is the $\ttbarpjets$ background, for which \emph{all} samples were generated with the \textsc{cp5} tune. They are described as follows:\footnote{Not sure if I should use a long, sprawling list, or just have a separate paragraph for each process, maybe with the process name in bold.}
 
 \begin{easylist}[itemize]
     \easylistprops
@@ -613,7 +272,7 @@ The preselection is characterised by applying the following cuts:\footnote{Do I 
 
 Further selections are applied to all years, regions and categories to filter poorly measured or mis-reconstructed events in both data and MC. A ``muon \gls{jet} filter'' rejects events with mis-reconstructed muons by requiring all \glspl{jet} with $\pt > \text{200}\GeV$ to have a muon energy fraction $f_{\mathrm{E}}^{\Pmu} < \text{0.5}$, and $\Delta\phi(\mathrm{j}, \ \ptmiss) < \pi - \text{0.4}$.
 
-Charged ($f_{\mathrm{E}}^{\pm}$) and neutral hadron energy fraction ($f_{\mathrm{E}}^{0}$) requirements are applied to all \glspl{jet} via fulfillment of the ``tight'' \gls{jet} ID criteria (see Chpt.~\ref{subsec:htoinv_jet_objs}). Furthermore, stricter selections are placed on the leading two \glspl{jet}---applied in all categories except the monojet category, where they only apply to the leading \gls{jet}---as follows:
+Charged ($f_{\mathrm{E}}^{\pm}$) and neutral hadron energy fraction ($f_{\mathrm{E}}^{0}$) requirements are applied to all \glspl{jet} via fulfillment of the ``tight'' \gls{jet} ID criteria (see Chpt.~\ref{subsec:objects_jets}). Furthermore, stricter selections are placed on the leading two \glspl{jet}---applied in all categories except the monojet category, where they only apply to the leading \gls{jet}---as follows:
 
 \medskip
 
@@ -692,7 +351,7 @@ In 2018, requirements were placed on electrons and the azimuthal angle of the \p
 
 % This section is up-to-date as of 15th May.
 
-To extract maximum sensitivity to the \higgstoinv decay from the analysis, categories are established to target each of the production modes. From first principles, the topologies outlined in Chpt.~\ref{sec:htoinv_production_modes} provide an initial direction of the expected structure. Steps are taken to ensure the categories that target the production mechanism---and the subcategories that capitalise on specific topologies within the mechanism---are orthogonal. An additional angular variable cut based on optimisation studies in Chpt.~\ref{subsec:htoinv_cat_optimisation} is also implemented, devising the categories in Tab.~\ref{tab:htoinv_categories}.
+To extract maximum sensitivity to the \higgstoinv decay from the analysis, categories are established to target each of the production modes. From first principles, the topologies outlined in Chpt.~\ref{subsec:theory_higgs_production_modes} provide an initial direction of the expected structure. Steps are taken to ensure the categories that target the production mechanism---and the subcategories that capitalise on specific topologies within the mechanism---are orthogonal. An additional angular variable cut based on optimisation studies in Chpt.~\ref{subsec:htoinv_cat_optimisation} is also implemented, devising the categories in Tab.~\ref{tab:htoinv_categories}.
 
 \begin{table}[htbp]
     \centering
@@ -800,9 +459,9 @@ Several regions of phase space are explored in the analysis. The signal region i
 \subsection{The signal region}
 \label{subsec:htoinv_signal_region}
 
-The signal region is the area of parameter space where we expect the signal to manifest, and the background to be reduced sufficiently that the potential presence of signal in data can be statistically verified. In this analysis, only hadronic final states are permitted. Events with leptons, photons and taus meeting the ``loose'' or ``veto'' criteria in Chpt.~\ref{sec:htoinv_objects} are not explicitly vetoed, however, but are given a weight as described in Chpt.~\ref{subsubsec:veto_sel_weights}.
+The signal region is the area of parameter space where we expect the signal to manifest, and the background to be reduced sufficiently that the potential presence of signal in data can be statistically verified. In this analysis, only hadronic final states are permitted. Events with leptons, photons and taus meeting the ``loose'' or ``veto'' criteria in Chpt.~\ref{sec:analysis_objects} are not explicitly vetoed, however, but are given a weight as described in Chpt.~\ref{subsubsec:veto_sel_weights}.
 
-Events must satisfy a logical \texttt{OR} of \acrshort{hlt} cross-triggers for \acrlong{pf} \ptmiss and \mht calculated without muons, with also at least one \gls{jet} fulfilling the tight ID criteria (see Chpt.~\ref{sec:htoinv_objects}). The triggers are illustrated in Tab.~\ref{tab:htoinv_SR_triggers}.
+Events must satisfy a logical \texttt{OR} of \acrshort{hlt} cross-triggers for \acrlong{pf} \ptmiss and \mht calculated without muons, with also at least one \gls{jet} fulfilling the tight ID criteria (see Chpt.~\ref{sec:analysis_objects}). The triggers are illustrated in Tab.~\ref{tab:htoinv_SR_triggers}.
 
 \begin{table}[htbp]
     \centering
@@ -831,7 +490,7 @@ Events must satisfy a logical \texttt{OR} of \acrshort{hlt} cross-triggers for \
 \subsection{Control regions}
 \label{subsec:htoinv_control_regions}
 
-\Glspl{CR} serve two complementary purposes in many analyses: the prediction of certain backgrounds that dominate in the signal region, as a more accurate method than using the yields directly from \acrlong{mc}; and to validate the data, \acrshort{mc}, and corrections or weights applied. They are orthogonal to the signal region and to each other by way of lepton or photon requirements, and by triggers that may pertain to those objects. \Glspl{CR} are also designed to, ideally, be devoid of signal. Contamination is sometimes present, but at a very small level. Five \glspl{CR} are used in the analysis: \singleMuCr, \doubleMuCr, \singleEleCr, \doubleEleCr, and \singlePhotonCr. The criteria for the objects---which are defined explicitly in Chpt.~\ref{sec:htoinv_objects}---are summarised in the list below.
+\Glspl{CR} serve two complementary purposes in many analyses: the prediction of certain backgrounds that dominate in the signal region, as a more accurate method than using the yields directly from \acrlong{mc}; and to validate the data, \acrshort{mc}, and corrections or weights applied. They are orthogonal to the signal region and to each other by way of lepton or photon requirements, and by triggers that may pertain to those objects. \Glspl{CR} are also designed to, ideally, be devoid of signal. Contamination is sometimes present, but at a very small level. Five \glspl{CR} are used in the analysis: \singleMuCr, \doubleMuCr, \singleEleCr, \doubleEleCr, and \singlePhotonCr. The criteria for the objects---which are defined explicitly in Chpt.~\ref{sec:analysis_objects}---are summarised in the list below.
 \medskip
 \begin{easylist}[itemize]
     \easylistprops
@@ -881,7 +540,7 @@ For the \singlePhotonCr \gls{CR}, we take data from \acrshort{cms} originating o
     \label{tab:htoinv_photon_pd_triggers}
 \end{table}
 
-As explained in Chpt.~\ref{subsec:htoinv_met_obj}, the \ptvecmiss is recalculated for the \glspl{CR}. Using the \singleMuCr \gls{CR} as an example, the new \ptvecmiss is the vector sum of the old \ptvecmiss and the tight muon \ptvec. The single lepton \glspl{CR} estimate the semi-leptonic $\ttbarpjets$ and $\wtolnupjets$ backgrounds. In both cases, they may enter the signal region if the lepton is lost, becoming a source of \ptmiss. The dilepton and \singlePhotonCr regions consider \ztonunupjets. The former parallels the decay as it is enriched in \ztolplmpjets---possessing very similar kinematic properties while being much easier to detect, improving statistical accuracy. The latter region substitutes the \ztonunu decay with a photon.
+As explained in Chpt.~\ref{subsec:objects_analysis_energy_sums}, the \ptvecmiss is recalculated for the \glspl{CR}. Using the \singleMuCr \gls{CR} as an example, the new \ptvecmiss is the vector sum of the old \ptvecmiss and the tight muon \ptvec. The single lepton \glspl{CR} estimate the semi-leptonic $\ttbarpjets$ and $\wtolnupjets$ backgrounds. In both cases, they may enter the signal region if the lepton is lost, becoming a source of \ptmiss. The dilepton and \singlePhotonCr regions consider \ztonunupjets. The former parallels the decay as it is enriched in \ztolplmpjets---possessing very similar kinematic properties while being much easier to detect, improving statistical accuracy. The latter region substitutes the \ztonunu decay with a photon.
 
 
 %=========================================================

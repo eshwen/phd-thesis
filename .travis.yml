@@ -15,27 +15,27 @@ cache:
     - $HOME/.texlive
 
 before_script:
-  - cp thesismain.tex thesismain_ci.tex
-  - cp thesismain.tex thesismain_ci_draft.tex
+  - cp thesismain.tex Eshwen_Bhal_thesis.tex
+  - cp thesismain.tex Eshwen_Bhal_thesis_draft.tex
 
 script:
   # Texliveonfly will download packages automatically
-  - texliveonfly --arguments="-synctex=1 -interaction=nonstopmode" thesismain_ci.tex
+  - texliveonfly --arguments="-synctex=1 -interaction=nonstopmode" Eshwen_Bhal_thesis.tex
 
   # Fully compile normal version of pdf with glossary
-  - pdflatex -synctex=1 -interaction=nonstopmode thesismain_ci.tex
-  - biber thesismain_ci
-  - makeglossaries thesismain_ci
-  - pdflatex -synctex=1 -interaction=nonstopmode thesismain_ci.tex
-  - pdflatex -synctex=1 -interaction=nonstopmode thesismain_ci.tex  # Compile twice to fix references
+  - pdflatex -synctex=1 -interaction=nonstopmode Eshwen_Bhal_thesis.tex
+  - biber Eshwen_Bhal_thesis
+  - makeglossaries Eshwen_Bhal_thesis
+  - pdflatex -synctex=1 -interaction=nonstopmode Eshwen_Bhal_thesis.tex
+  - pdflatex -synctex=1 -interaction=nonstopmode Eshwen_Bhal_thesis.tex  # Compile twice to fix references
 
   # Fully compile draft version of pdf with glossary
-  - texliveonfly --arguments="-synctex=1 -interaction=nonstopmode \"\PassOptionsToClass{draft}{memoir}\input{thesismain_ci_draft}\"" thesismain_ci_draft.tex
-  - pdflatex -synctex=1 -interaction=nonstopmode "\PassOptionsToClass{draft}{memoir}\input{thesismain_ci_draft}"
-  - biber thesismain_ci_draft
-  - makeglossaries thesismain_ci_draft
-  - pdflatex -synctex=1 -interaction=nonstopmode "\PassOptionsToClass{draft}{memoir}\input{thesismain_ci_draft}"
-  - pdflatex -synctex=1 -interaction=nonstopmode "\PassOptionsToClass{draft}{memoir}\input{thesismain_ci_draft}"
+  - texliveonfly --arguments="-synctex=1 -interaction=nonstopmode \"\PassOptionsToClass{draft}{memoir}\input{Eshwen_Bhal_thesis_draft}\"" Eshwen_Bhal_thesis_draft.tex
+  - pdflatex -synctex=1 -interaction=nonstopmode "\PassOptionsToClass{draft}{memoir}\input{Eshwen_Bhal_thesis_draft}"
+  - biber Eshwen_Bhal_thesis_draft
+  - makeglossaries Eshwen_Bhal_thesis_draft
+  - pdflatex -synctex=1 -interaction=nonstopmode "\PassOptionsToClass{draft}{memoir}\input{Eshwen_Bhal_thesis_draft}"
+  - pdflatex -synctex=1 -interaction=nonstopmode "\PassOptionsToClass{draft}{memoir}\input{Eshwen_Bhal_thesis_draft}"
 
   # Word count
   - texcount -html -inc ./thesismain.tex > word_count.html
@@ -45,8 +45,8 @@ deploy:
   provider: releases
   token: $GITHUB_CI_TOKEN  # Secure variable for GitHub token. Set in settings page of repository (on Travis CI)
   file:
-    - ./thesismain_ci.pdf
-    - ./thesismain_ci_draft.pdf
+    - ./Eshwen_Bhal_thesis.pdf
+    - ./Eshwen_Bhal_thesis_draft.pdf
     - ./word_count.html
   skip_cleanup: true
   on:

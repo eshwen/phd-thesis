@@ -1,4 +1,4 @@
-\chapter{Search for dark matter through the production of semi-visible jets}
+\chapter{Search for semi-visible jets}  % might want to be more specific with the title if it only considers the generator-level studies
 \label{chap:svj}
 
 \initial{T}his is the analysis chapter on \glspl{svj}.
@@ -6,15 +6,17 @@
 %=======
 \begin{easylist}[itemize]
     \easylistprops
-    & Discuss how the theoretical aspects from the Theory chapter translate into an experimental search.
-    & Include object definitions, triggers, overall analysis strategy, signal production, event selection, background estimation and results/limit (including comparisons to similar searches -- monojet/dijet exotic searches). Go through everything as more of a summary/overview rather than describing everything in as much detail as Higgs to invisible.
-    & Emphasise my contributions: $s$- and \tchannel signal model production and understanding. Angular variable study for \acrshort{qcd} background rejection (if used).
-    & Current material: no public plots as of yet. Hope to finish \schannel analysis soon (see previous section for caveats regarding inclusion), no timeline on \tchannel or boosted \PZprime analysis.
+    & Not 100\% sure whether this should go between theory and detector chapters, between detector and objects, or between objects and Hinv. && This could even be appended onto to the SVJ bit in the theory chapter, instead. Though, there would be a reasonable amount of material and discussion, so probably deserves its own (short) chapter
+    & Only really discuss my contributions: $s$- and \tchannel signal model production and understanding. Can go into reasonable detail -- at the level of the AN or perhaps deeper
+    && Show \schannel comparisons between \MADGRAPH and \PYTHIA, as shown in the AN, and discuss merits of using either method (easier to specify in \PYTHIA and matrix element calculations should be equivalent to \MADGRAPH, but latter is required for \tchannel and makes sense to have consistency)
+    && Show a few distributions from \tchannel signal if I can (incorporate Kevin's fixes), just for some insight as to how they differ from \schannel. Not sure if they need some sort of approval since they're generated with \acrshort{cmssw}
+    && Also say that my \MADGRAPH implementation has been built upon for the upcoming \tchannel and boosted \PZprime searches
+    & Perhaps give a brief summary of the analysis: dijet search, using an SVJ tagger, transverse mass as fit variable. Say that details/complete description is discussed in the paper/Giorgia's thesis (with references)
 \end{easylist}
 
 % Can pull from Section 35 of my lab book, and all the talks I and other people from the team have given (Presentations and talks/ folder, also Other peoples/ subdirectory). Can also pull from AN for theory, translation of some theory stuff into experiment, and analysis strategy
 
-\section{Analysis overview}
+\section{Analysis summary}
 \label{sec:svj_overview}
 
 
@@ -30,15 +32,3 @@
 \label{subsec:svj_signal_madgraph}
 
 % Generating s-channel samples from my repo should be pretty consistent with Kevin's. But if making t-channel plots, make sure I incorporate the fixes Kevin has in his repository before running the samples.
-
-
-\subsection{Triggers}
-\label{sec:svj_triggers}
-
-
-%\section{Tagging semi-visible jets with a boosted decision tree}
-%\label{sec:svj_bdt}
-% Not sure whether to include as it's not my work. Maybe a small section describing it as it's integral to the analysis
-
-\section{Background estimation}
-\label{sec:svj_background_est}

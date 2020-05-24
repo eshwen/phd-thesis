@@ -598,7 +598,12 @@ A \gls{SB} composed of the inversion of only one variable maintains similar kine
 \section{Background estimation}
 \label{sec:htoinv_background_est}
 
-% Remake Ben's schematic for how the control regions and sidebands are used to get the estimations from the latest talk. Add the photon CR and put here
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figures/fit_overview.pdf}
+    \caption[An infographic showcasing the role of each analysis region in the final fit]{An infographic showcasing the role of each analysis region in the final fit. The \glspl{CR} predict the lost lepton and \ztonunu backgrounds, and a \gls{CR}-only fit informs the \acrshort{qcd} multijet prediction that contributes to the eventual background determination in the signal region.}
+    \label{fig:htoinv_fit_overview}
+\end{figure}
 
 
 %=========================================================
@@ -621,8 +626,9 @@ A \gls{SB} composed of the inversion of only one variable maintains similar kine
 \subsection{QCD multijet}
 \label{subsec:htoinv_qcd_multijet_bkg}
 
-% Reiterate that QCD samples have low equivalent lumi, so do not give a statistically satisfying number of events in MC. So a data-driven method is used.
-% Say somwhere that QCD is also prone to mismeasurement because the final state is a large number of jets with potentially low pt. Since there are just lots of jets, only zero to low MET is expected. If even a single jet is mismeasured, then it can introduce fake MET in the direction of that jet (so low min_dphi(jet, MET)). Jets from "cleaner" QCD and EWK processes may also be mismeasured (jet reco efficiency tends to increase with pt), but if there's real MET anyway in the event (e.g., Z->nunu), it is unlikely to significantly affect it. The enormous cross section of QCD multijet amplifies the problem as well, making the process as a whole more sensitive to, e.g., fluctuations in the calorimeter response that would affect the energy measurement.
+To reiterate what has been mentioned previously, estimating \acrshort{qcd} multijet occupancy directly from simulation does not provide an adequate representation of the process. This can be mitigated by using a data-driven method to estimate it from the multijet-enriched sidebands described in Chpt.~\ref{subsec:htoinv_sidebands}.
+
+The effects of \gls{jet} mismeasurements are, however, difficult to quantify. With a final state of several \glspl{jet}, low, or even no, \ptmiss is expected. Therefore, a single mismeasured jet will introduce artificial \ptvecmiss in the direction of that jet. A low $\mindphiAB{\mathrm{j}}{\ptvecmiss}$ is therefore expected. Though it is not just this process that suffers---\glspl{jet} from ``cleaner'' processes may also be affected---those with real \ptmiss in an event (e.g., $\ztonunupjets$) are unlikely to be significantly affected by one stray object. The enormous cross section of \acrshort{qcd} multijet also amplifies the problem, making the process as a whole more sensitive to, e.g., fluctuations in the calorimeter response that would affect the energy measurement.
 
 
 %=========================================================

@@ -8,13 +8,13 @@
 %=======
 \begin{easylist}[itemize]
     \easylistprops
-    & Add a section or subsection somewhere regarding analysis tools. Perhaps add a brief description of \ROOT (and how it's entrenched in HEP even though people are tending to move away from \ROOT-based analysis onto more industry-standard tools), then lead into the FAST tools and using dataframes, vectorisation, etc., with only small interfaces to \ROOT (for I/O) to extract data. Potentially mention how the data tiers work in CMS (RAW, DIGI, RECO, AOD, miniAOD, nanoAOD, etc.)
-
     & Emphasize my contributions: control region construction and studies, background estimation, ttbar systematics, and other studies I will have conducted by the time I write up (check AN, chip and HToInv-nanoAOD-tools MRs, and git commit history).
 
     & Maintaining CMS internal analysis note, documenting all aspects of the analysis. I will first add all relevant information there which I can subsequently use when writing this chapter.
 
     & Since it's my thesis, I can talk about \ttH, \VH and \ggF/monojet, even though the Bristol contribution to the final, public result may only be \ttH and resolved \VH. Would need to be able to run the fit for all three modes simultaneously, ensuring we have complete (and correct) systematics for \ggF.
+
+    & Since this is a dark matter search, I guess we should have some dark matter model interpretations after the main results. Not too sure how we'd accomplish it, though.
 \end{easylist}
 
 % Can pull from Section 37 of my lab book, and all the talks I and other people from the team have given (Presentations and talks/ folder, also Other peoples/ subdirectory). Can also pull from AN for analysis strategy
@@ -38,6 +38,19 @@ Emphasis will be placed on the non-VBF modes, particularly \ttH and resolved \VH
 %=========================================================
 
 
+\section{Only tools and forces: software and toolkits}
+\label{sec:htoinv_software}
+
+The high energy physics community is well-acquainted with the software package \ROOT. The extensive suite of functions and tools it offers makes it the de facto standard in many analyses. Even though it is entrenched in particle physics, the native C\texttt{++} implementation and difficulty in integrating it with Python make \ROOT often cumbersome for newcomers to learn, and can be difficult to develop an analysis around it. In recent years, focus has started to shift toward industry-standard Python libraries such as \textsf{numpy} and \textsf{pandas} for analysis, and \textsf{matplotlib} or \textsf{seaborn} for plotting.
+
+The FAST set of tools utilise these, along with vectorisation, to perform an analysis very quickly with simple YAML-controlled config files. Jobs can be submitted on the batch system at a given site, running the full analysis on the upwards of 15 billion events in as little as thirty minutes. Developed by colleagues at Bristol, a set of packages harmoniously work together to run most components of an analysis. Dataset information is gathered with \textsf{fast-curator} and stored in YAML configs. With \textsf{fast-carpenter}, modules (both custom and internal) for the different stages of the analysis process the datasets. Output is in the form of binned \textsf{pandas} dataframes of user-specified variables. They may be subsequently be fed into \textsf{fast-plotter} for visualisation as 1D histograms. All of the stages are controlled by YAML configs and are interpreted by \textsf{fast-flow}. Only a simple interface to \ROOT is required to extract the data. Further information on these packages are available at \url{http://fast-hep.web.cern.ch/fast-hep/}.
+
+Before the main analysis is run with the above tools, a light skim---or reduction of events---of the remotely-available datasets is effectuated with \nanoAODtools.\footnote{See \url{https://github.com/cms-nanoAOD/nanoAOD-tools} for the original fork of the repository.} Operating on the nanoAOD data tier, the repository contains corrections, scale factors, and systematic uncertainties for \acrshort{cms} data and simulation. They are maintained by members of the Collaboration, so it is ensured they remain up to date. Our custom modules are applied on top of this: introducing additional scale factors and systematic uncertainties, classification of some physics objects, and add supplementary variables. Running over the datasets on the Worldwide LHC Computing Grid, output is stored on networked university storage elements. The primary benefit of this is a quicker input-output stream that improves the performance of the later stages of the analysis.\footnote{Link to our HToInv-nanoAOD-tools and chip repos? Would have to say they're restricted.}\footnote{Also not sure if I need to mention the later steps---\textsf{fast-datacard}, and Combine for the fit. Perhaps in the statistical treatment section?}
+
+
+%=========================================================
+
+
 \section{Data and simulation}
 \label{sec:htoinv_data_sim}
 
@@ -48,7 +61,7 @@ Emphasis will be placed on the non-VBF modes, particularly \ttH and resolved \VH
 \subsection{Data}
 \label{subsec:htoinv_data}
 
-The data collected by the \acrshort{cms} experiment that is used in the analysis corresponds to an integrated luminosity of 137.19\fbinv, and recorded from 2016--2018. A breakdown by year is given in Tab.~\ref{tab:lumis_lhc_cms}. At over three times the volume at \comruntwo analysed in the previous search, there is potential to substantially lower the ceiling of $\BRof{\higgstoinv}$. Data is split into ``primary datasets'' that are grouped by the class of \acrshort{hlt} path that an event triggered. The signal region, \acrshort{qcd} \glspl{SB}, and muon \glspl{CR} use the primary dataset composed of \etmiss\footnote{I try to be consistent in most places and use \ptmiss instead of \etmiss. But since the HLT paths use ``MET'', which is the more correct symbol here? And should I update Tab.~\ref{tab:htoinv_SR_triggers} accordingly?} and \htmiss combination triggers, where muons are excluded from the sums. The datasets made use of in the electron and photon \glspl{CR} consist of triggers based on the properties of those objects. These were separate for 2016 and 2017, then merged for 2018.
+The data collected by the \acrshort{cms} experiment that is used in the analysis corresponds to an integrated luminosity of 137.19\fbinv, and recorded from 2016--2018. A breakdown by year is given in Tab.~\ref{tab:lumis_lhc_cms}. At over three times the volume at \comruntwo analysed in the previous search, there is potential to substantially lower the ceiling of $\BRof{\higgstoinv}$. Data is split into ``primary datasets'' that are grouped by the class of \acrshort{hlt} path that an event triggered. The signal region, \acrshort{qcd} \glspl{SB}, and muon \glspl{CR} use the primary dataset composed of \etmiss and \htmiss combination triggers,\footnote{I try to be consistent in most places and use \ptmiss instead of \etmiss. But since the HLT paths refer to \etmiss, which is the more correct symbol here? And should I update Tab.~\ref{tab:htoinv_SR_triggers} accordingly?} where muons are excluded from the sums. The datasets made use of in the electron and photon \glspl{CR} consist of triggers based on the properties of those objects. These were separate for 2016 and 2017, then merged for 2018.
 
 Some serious issues arose during Run-2 that had to be mitigated after the events were reconstructed. With the high collision rate at \acrshort{cms}, in order to properly correlate the hits in the subdetectors with the correct particles and events they are attributed to, the timing infrastructure must be very precise. Timing scans are conducted frequently during runs to correct or compensate for any shifts that may occur. However, in 2016 and 2017, the gradual timing drift in the \acrshort{ecal} was not correctly propagated to the \acrlong{l1} trigger primitives. This resulted in a significant fraction of them in the forward direction (as the effect increases with $\eta$) being mistakenly associated to the previous bunch crossing: \emph{pre-firing}. One rule at \acrlong{l1} forbids two consecutive bunch crossings from firing signals to the trigger system. But, a consequence of this---in addition to not finding the primitive in the nominal bunch crossing---is that events can be vetoed if a significant amount of \acrshort{ecal} energy is found in the $\text{2} < \abseta < \text{3}$ part of the end cap. It is observed only in data, and so a correction is applied to \acrshort{mc} (see Chpt.~[REF]) to account for the effect.
 % Pre-firing: https://twiki.cern.ch/twiki/bin/viewauth/CMS/L1ECALPrefiringWeightRecipe, https://indico.cern.ch/event/764279/
@@ -93,7 +106,7 @@ All \acrlong{mc} datasets used in this analysis were produced centrally by exper
 
     & \wtolnupjets: A \acrshort{qcd}-induced process, this background is dominant in the single lepton \glspl{CR}. If the lepton is lost, the \ptmiss can be be inflated and lead to a significant contribution in the signal region. The datasets are produced at \acrshort{lo} with \MGvATNLO.
 
-    & \ztonunupjets: From the presence of neutrinos, the genuine \ptmiss from this channel is a dominant background in the signal region. Its contribution is estimated using the double lepton and \singlePhotonCr \glspl{CR}. As with many of the above, the datasets are generated at \acrshort{lo} accuracy with \MGvATNLO.\footnote{The gridpacks/hard process are exactly the same for all samples in 2017 and 2018 (i.e., the same files), I think. But perhaps don't need to mention.}\footnote{In all of the processes where the datasets are split by generator-level \HT (with the exception of \ztonunupjets), the ``MLM'' jet matching scheme applied in \madgraph. Not sure if I need to mention either of these.}
+    & \ztonunupjets: From the presence of neutrinos, the genuine \ptmiss from this channel is a dominant background in the signal region. Its contribution is estimated using the double lepton and \singlePhotonCr \glspl{CR}. As with many of the above, the datasets are generated at \acrshort{lo} accuracy with \MGvATNLO.\footnote{The gridpacks/hard process are exactly the same for all samples in 2017 and 2018 (i.e., the same files), I think. But perhaps don't need to mention.}\footnote{In all of the processes where the datasets are split by generator-level \HT (with the exception of \ztonunupjets), the ``MLM'' \gls{jet} matching scheme applied in \madgraph. Not sure if I need to mention either of these.}
 \end{easylist}
 
 % medium skip to nicely separate the end of the list with the start of the next paragraph (ignored if the space would occur at the top of a new page). Should be 9 pt (i.e., half a line since I use 12 pt text and 1.5 line spacing)
@@ -295,7 +308,7 @@ Charged ($f_{\mathrm{E}}^{\pm}$) and neutral hadron energy fraction ($f_{\mathrm
 
 \medskip
 
-\noindent{}Events with anomalously energetic \glspl{jet} have been observed for data in the HF between $\abs{\eta} \in [\text{3.0}, \text{3.1}]$ that can lead to excess events, particularly in the \acrshort{qcd}-enriched \glspl{SB}. As such, a stipulation is placed on the ratio of the \HT formed from \glspl{jet} within $\abs{\eta} < \text{5}$ ($\HT^5$) and $\abs{\eta} < \text{2.4}$ ($\HT^{2.4}$), in OR with the difference in $\phi$ between the leading \gls{jet} and \mht:
+\noindent{}Events with anomalously energetic \glspl{jet} have been observed for data in the \acrshort{hf} between $\abs{\eta} \in [\text{3.0}, \text{3.1}]$ that can lead to excess events, particularly in the \acrshort{qcd}-enriched \glspl{SB}. As such, a stipulation is placed on the ratio of the \HT formed from \glspl{jet} within $\abs{\eta} < \text{5}$ ($\HT^5$) and $\abs{\eta} < \text{2.4}$ ($\HT^{2.4}$), in OR with the difference in $\phi$ between the leading \gls{jet} and \mht:
 \medskip
 \begin{easylist}[itemize]
     \cutflowlistprops
@@ -306,7 +319,7 @@ Charged ($f_{\mathrm{E}}^{\pm}$) and neutral hadron energy fraction ($f_{\mathrm
 
 \noindent{}where, if the former requirement is not met, the latter is constructed such that the $\Delta\phi \geq \sfrac{\pi}{2}$. The \HT used in the analysis (i.e, in the preselection) only places $\abs{\eta}$ circumscriptions on the two hardest \glspl{jet} from to the VBF orthogonality constraints in Chpt.~\ref{subsec:htoinv_preselection}.
 
-To avoid any potential horns (spikes in data and/or \acrshort{mc}) for \glspl{jet} at large pseudorapidity, we require the agreement between the charged hadron-subtracted \MET and calorimeter-calculated \MET to be within 20\,\%:
+To avoid any potential horns (spikes in data and/or \acrshort{mc}) for \glspl{jet} at large pseudorapidity, we require the agreement between the charged hadron-subtracted \MET and calorimeter-calculated \MET to be within 20\,\%:\footnote{Again, I try to use the symbol \ptmiss everywhere. But every instance of the CHS and calo MET has used \MET symbol, as far as I can tell. Should I swap to \ptmiss?}
 \medskip
 \begin{easylist}[itemize]
     \cutflowlistprops
@@ -639,7 +652,7 @@ A \gls{SB} composed of the inversion of only one variable maintains similar kine
 
 To reiterate what has been mentioned previously, estimating \acrshort{qcd} multijet occupancy directly from simulation does not provide an adequate representation of the process. This can be mitigated by using a data-driven method to estimate it from the multijet-enriched sidebands described in Chpt.~\ref{subsec:htoinv_sidebands}.
 
-The effects of \gls{jet} mismeasurements are, however, difficult to quantify. With a final state of several \glspl{jet}, low, or even no, \ptmiss is expected. Therefore, a single mismeasured jet will introduce artificial \ptvecmiss in the direction of that jet. A low $\mindphiAB{\mathrm{j}}{\ptvecmiss}$ is therefore expected. Though it is not just this process that suffers---\glspl{jet} from ``cleaner'' processes may also be affected---those with real \ptmiss in an event (e.g., $\ztonunupjets$) are unlikely to be significantly affected by one stray object. The enormous cross section of \acrshort{qcd} multijet also amplifies the problem, making the process as a whole more sensitive to, e.g., fluctuations in the calorimeter response that would affect the energy measurement.
+The effects of \gls{jet} mismeasurements are, however, difficult to quantify. With a final state of several \glspl{jet}, low, or even no, \ptmiss is expected. Therefore, a single mismeasured \gls{jet} will introduce artificial \ptvecmiss in the direction of that jet. A low $\mindphiAB{\mathrm{j}}{\ptvecmiss}$ is therefore expected. Though it is not just this process that suffers---\glspl{jet} from ``cleaner'' processes may also be affected---those with real \ptmiss in an event (e.g., $\ztonunupjets$) are unlikely to be significantly affected by one stray object. The enormous cross section of \acrshort{qcd} multijet also amplifies the problem, making the process as a whole more sensitive to, e.g., fluctuations in the calorimeter response that would affect the energy measurement.
 
 
 %=========================================================

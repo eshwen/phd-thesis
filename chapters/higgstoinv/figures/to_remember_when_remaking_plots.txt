@@ -1,0 +1,4 @@
+Remember:
+- Add the variable replacements (region, category, lepton)
+- Use the right x-axis limits so there's no horizontal space between the histograms and axis limits
+- Add the bin widths on the y-axis label

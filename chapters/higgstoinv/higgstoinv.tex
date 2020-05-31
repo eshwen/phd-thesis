@@ -187,6 +187,9 @@ which is essentially the probability to mis-tag the objects and allow it to ente
 
 One thing must be noted about the migration of events, since we have many different regions of phase space in the analysis. The signal region and the \glspl{SB} have orthogonal kinematic prerequesites, so an event cannot enter the signal region \emph{and} one of the \glspl{SB}. The same is true amongst the \glspl{CR}, i.e., an event cannot enter more than one of them due to the designed orthogonality. An event \emph{is} able to enter the signal region or a \gls{SB} with $w_{\mathrm{veto}}$, and also one of the \glspl{CR} with $w_{\mathrm{sel.}}$. Since events in data are not weighted, they may only enter a single region.
 
+% Use of veto weights can have a non-negligible impact on the MC stat. uncertainty in the fit and noticeably affect the limit. If using Eq.~\ref{eq:uncertainty_mc_ours}, then allowing events to enter a region with a veto weight can only reduce the stat. uncertainty, since it enters with a small weight compared to the other events, and adds to the number of events with the same pull as the other events.
+% See https://indico.cern.ch/event/904981/contributions/3878540/attachments/2044999/3425840/magnan_hinv_200526.pdf for a more detailed look
+
 
 %=========================================================
 
@@ -350,19 +353,52 @@ To avoid any potential horns (spikes in data and/or \acrshort{mc}) for \glspl{je
 \subsection{Mitigating the HEM issue}
 \label{subsec:htoinv_hem_mitigation}
 
-In 2018, requirements were placed on electrons and the azimuthal angle of the \ptvecmiss to mitigate the HEM issue (see Chpt.~\ref{subsec:htoinv_data}). As such, the preselection for 2018 was updated to remove events that met the following:
+In 2018, requirements were placed on electrons and the azimuthal angle of the \ptvecmiss to mitigate the HEM issue (see Chpt.~\ref{subsec:htoinv_data}). As such, the region-dependent selections for 2018 were updated to remove events that met the following:
 \medskip
 \begin{easylist}[itemize]
     \cutflowlistprops
-    & Any veto electron \vetoEle with $\pt > \text{10}\GeV$, $-\text{3.0} < \eta < -\text{1.4}$, and $-\text{1.57} < \phi < -\text{0.87}$
-    & $-\text{1.6} < \phi(\ptvecmiss) < -\text{0.8}$ (only applied in the signal region and \glspl{SB})
+    & $-\text{1.8} < \phi(\ptvecmiss) < -\text{0.6}$ in the signal region and \glspl{SB}
+    & Any veto electron \vetoEle with $\pt > \text{10}\GeV$, $-\text{3.0} < \eta < -\text{1.4}$, and $-\text{1.57} < \phi < -\text{0.87}$ in the \singleEleCr \gls{CR}
+    & Any loose photon \loosePhoton with $\pt > \text{15}\GeV$, $-\text{3.0} < \eta < -\text{1.4}$, and $-\text{1.57} < \phi < -\text{0.87}$ in the \singlePhotonCr \gls{CR}
 \end{easylist}
-
-% Add a before/after plot
 
 \medskip
 
-\noindent{}Note that while the signal region and \acrshort{qcd} \glspl{SB} have hadronic final states, the implementation of veto weights for leptons in Chpt.~\ref{subsubsec:veto_sel_weights} does not automatically reject events containing leptons. To avoid ambiguity and the inclusion of potentially mis-reconstructed events, an explicit veto is placed for the electrons satisfying the above criteria.
+%\noindent{}Note that while the signal region and \acrshort{qcd} \glspl{SB} have hadronic final states, the implementation of veto weights for leptons in Chpt.~\ref{subsubsec:veto_sel_weights} does not automatically reject events containing leptons. To avoid ambiguity and the inclusion of potentially mis-reconstructed events, an explicit veto is placed for the electrons satisfying the above criteria.
+% Put the above paragraph back in (and reword the paragraph before the list) if we end up using veto weights, and apply the electron and photon requirements to all regions
+\noindent{}The effect of these cuts can be seen in Figs.~\ref{fig:htoinv_hem_issue_met_phi} and \ref{}.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.34\textwidth}
+        \includegraphics[width=\textwidth]{figures/hem_issue/sideband_4/met_phi_ttH_before_annotated.pdf}
+        \caption{\ttH category}
+    \end{subfigure}
+    \hspace{0.05\textwidth}
+    \begin{subfigure}[b]{0.34\textwidth}
+        \includegraphics[width=\textwidth]{figures/hem_issue/sideband_4/met_phi_VH_before_annotated.pdf}
+        \caption{\VH category}
+    \end{subfigure}
+    \caption[The azimuthal angle of the \ptvecmiss in the \ttH and \VH categories before applying the selections designed to mitigate the HEM issue in 2018]{The azimuthal angle of the \ptvecmiss in the \ttH and \VH categories before applying the selections designed to mitigate the HEM issue in 2018. The loose \omegaTilde \gls{SB} is used to demonstrate the effect since it kinematically resembles the signal region, and the data--simulation discrepancy can be removed while still blind in said region. A cyan box encloses the sector that is removed by the selection applied in the signal region and \glspl{SB}.}
+    \label{fig:htoinv_hem_issue_met_phi}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.34\textwidth}
+        \includegraphics[width=\textwidth]{figures/hem_issue/region_3/leadLepton_eta_VH_before.pdf}
+        \caption{$\eta_{\Pe}$ before cut}
+    \end{subfigure}
+    \hspace{0.05\textwidth}
+    \begin{subfigure}[b]{0.34\textwidth}
+        \includegraphics[width=\textwidth]{figures/hem_issue/region_3/leadLepton_eta_VH_after.pdf}
+        \caption{$\eta_{\Pe}$ after cut}
+    \end{subfigure}
+    \caption[The psuedorapidity of the electron in the \VH category of the \singleEleCr \gls{CR} before applying the selection designed to mitigate the HEM issue in 2018]{The psuedorapidity of the electron in the \VH category of the \singleEleCr \gls{CR} before applying the selection designed to mitigate the HEM issue in 2018.}
+    \label{fig:htoinv_hem_issue_lepton_eta}
+\end{figure}
+
+% Figures from 29th May, 2020
 
 
 %=========================================================
@@ -452,7 +488,7 @@ We employ the ensuing selections to AK8 \glspl{jet} to classify them, as recomme
 \subsection{Optimisation of the categories}
 \label{subsec:htoinv_cat_optimisation}
 
-Might be best to leave this bit for now, since optimisations are still ongoing. When including, only write about it briefly since I didn't actually do these studies. Would have to mention $\Delta\phi_{\text{min}}$/Tai's variables
+Might be best to leave this bit for now, since optimisations are still ongoing. When including, only write about it briefly since I didn't actually do these studies. Would have to mention $\Delta\phi_{\text{min}}$/Tai's variables.
 
 
 %=========================================================
@@ -505,6 +541,32 @@ Events must satisfy a logical \texttt{OR} of \acrshort{hlt} cross-triggers for \
     \label{tab:htoinv_SR_triggers}
 \end{table}
 
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{figures/region_plots/2016to18/region_0/ttH_boosted.pdf}
+        \caption{\ttH boosted}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{figures/region_plots/2016to18/region_0/ttH_resolved.pdf}
+        \caption{\ttH resolved}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{figures/region_plots/2016to18/region_0/VH_1V.pdf}
+        \caption{\VH 1V}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{figures/region_plots/2016to18/region_0/VH_resolved.pdf}
+        \caption{\VH resolved}
+    \end{subfigure}
+    \caption[Pre-fit yields of the \ptmiss distribution in the signal region for the combined boosted and resolved categories for the \ttH and \VH processes, using simulation derived for each year in Run-2 and scaled to the required luminosity]{Pre-fit yields of the \ptmiss distribution in the \singleMuCr \gls{CR} for the combined boosted and resolved categories for the \ttH and \VH processes, using simulation derived for each year in Run-2 and scaled to the required luminosity.}
+    \label{fig:htoinv_sr_yields_comb2016to18}
+\end{figure}
+
+% Figures from 29th May, 2020
+
 
 %=========================================================
 
@@ -525,7 +587,7 @@ Events must satisfy a logical \texttt{OR} of \acrshort{hlt} cross-triggers for \
 
 \medskip
 
-\noindent{}The trigger requirements for the \singleMuCr and \doubleMuCr \glspl{CR} are the same as for the signal region (Tab.~\ref{tab:htoinv_SR_triggers}) since the same primary dataset is used.
+\noindent{}The transverse mass cuts in the single lepton \glspl{CR} reduce the effect of signal contamination, specifically from \ttH since its \mT generally eclipses that of \ttbar. The trigger requirements for the \singleMuCr and \doubleMuCr \glspl{CR} are the same as for the signal region (Tab.~\ref{tab:htoinv_SR_triggers}) since the same primary dataset is used.
 
 The \singleEleCr and \doubleEleCr \glspl{CR} take advantage of the increased statistical power of two primary datasets in both 2016 and 2017, characterised by electron and photon triggers. In 2018, they were merged into a single $\Pe/\Pphoton$ primary dataset. Tabs.~\ref{tab:htoinv_ele_pd_triggers} and~\ref{tab:htoinv_photon_pd_triggers} elucidate how the trigger requirements are specified for each year. As before, each quantity and object is defined at \acrshort{hlt} level. If an event aims to enter the \singleEleCr or \doubleEleCr, and is from the dataset of \Pe-based triggers, the criteria for either of the two triggers for the given year in Tab.~\ref{tab:htoinv_ele_pd_triggers} must be satisfied. If an event aims to enter either \gls{CR} and is from the primary dataset of \Pphoton-based triggers, the failure of both of the electron triggers in Tab.~\ref{tab:htoinv_ele_pd_triggers} and the passing of any of the photon triggers in Tab.~\ref{tab:htoinv_photon_pd_triggers} are required. This condition avoids double counting events that also appear in the electron trigger-based dataset. In 2018, any of the year's triggers in Tabs.~\ref{tab:htoinv_ele_pd_triggers} and~\ref{tab:htoinv_photon_pd_triggers} may be satisfied. For \acrlong{mc} events, as they are not categorised by trigger, they may pass any of the triggers in either table for their respective year.\footnote{See if I can describe the trigger requirements in a more elegant way. Might be easier give the descriptions and actual HLT path names a bit earlier, then just reference the HLT path names in the list.}
 
@@ -563,6 +625,130 @@ For the \singlePhotonCr \gls{CR}, we take data from \acrshort{cms} originating o
 \end{table}
 
 As explained in Chpt.~\ref{subsec:objects_analysis_energy_sums}, the \ptvecmiss is recalculated for the \glspl{CR}. Using the \singleMuCr \gls{CR} as an example, the new \ptvecmiss is the vector sum of the old \ptvecmiss and the tight muon \ptvec. The single lepton \glspl{CR} estimate the semi-leptonic $\ttbarpjets$ and $\wtolnupjets$ backgrounds. In both cases, they may enter the signal region if the lepton is lost, becoming a source of \ptmiss. The dilepton and \singlePhotonCr regions consider \ztonunupjets. The former parallels the decay as it is enriched in \ztolplmpjets---possessing very similar kinematic properties while being much easier to detect, improving statistical accuracy. The latter region substitutes the \ztonunu decay with a photon.
+
+The following figures reveal the pre-fit \ptmiss distributions in each \gls{CR} after the analysis-level selections with the full Run-2 dataset. The combined \ttH and \VH subcategories for boosted and resolved topologies are used to demonstrate the shapes and data--simulation agreement. Background estimation is performed separately for each year due to the differing running conditions, detector configuration, and the different effects or problems seen in the data.\footnote{Might not need to show all of these plots. They're just here for now, and can be tidied up later.}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{figures/region_plots/2016to18/region_1/ttH_boosted.pdf}
+        \caption{\ttH boosted}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{figures/region_plots/2016to18/region_1/ttH_resolved.pdf}
+        \caption{\ttH resolved}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{figures/region_plots/2016to18/region_1/VH_1V.pdf}
+        \caption{\VH 1V}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{figures/region_plots/2016to18/region_1/VH_resolved.pdf}
+        \caption{\VH resolved}
+    \end{subfigure}
+    \caption[Pre-fit yields of the \ptmiss distribution in the \singleMuCr control region for the combined boosted and resolved categories for the \ttH and \VH processes, using the full Run-2 dataset for data and simulation]{Pre-fit yields of the \ptmiss distribution in the \singleMuCr \gls{CR} for the combined boosted and resolved categories for the \ttH and \VH processes, using the full Run-2 dataset for data and simulation.}
+    \label{fig:htoinv_cr_yields_comb2016to18_single_muon}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{figures/region_plots/2016to18/region_2/ttH_boosted.pdf}
+        \caption{\ttH boosted}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{figures/region_plots/2016to18/region_2/ttH_resolved.pdf}
+        \caption{\ttH resolved}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{figures/region_plots/2016to18/region_2/VH_1V.pdf}
+        \caption{\VH 1V}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{figures/region_plots/2016to18/region_2/VH_resolved.pdf}
+        \caption{\VH resolved}
+    \end{subfigure}
+    \caption[Pre-fit yields of the \ptmiss distribution in the \doubleMuCr control region for the combined boosted and resolved categories for the \ttH and \VH processes, using the full Run-2 dataset for data and simulation]{Pre-fit yields of the \ptmiss distribution in the \doubleMuCr \gls{CR} for the combined boosted and resolved categories for the \ttH and \VH processes, using the full Run-2 dataset for data and simulation.}
+    \label{fig:htoinv_cr_yields_comb2016to18_double_muon}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{figures/region_plots/2016to18/region_3/ttH_boosted.pdf}
+        \caption{\ttH boosted}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{figures/region_plots/2016to18/region_3/ttH_resolved.pdf}
+        \caption{\ttH resolved}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{figures/region_plots/2016to18/region_3/VH_1V.pdf}
+        \caption{\VH 1V}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{figures/region_plots/2016to18/region_3/VH_resolved.pdf}
+        \caption{\VH resolved}
+    \end{subfigure}
+    \caption[Pre-fit yields of the \ptmiss distribution in the \singleEleCr control region for the combined boosted and resolved categories for the \ttH and \VH processes, using the full Run-2 dataset for data and simulation]{Pre-fit yields of the \ptmiss distribution in the \singleEleCr \gls{CR} for the combined boosted and resolved categories for the \ttH and \VH processes, using the full Run-2 dataset for data and simulation.}
+    \label{fig:htoinv_cr_yields_comb2016to18_single_electron}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{figures/region_plots/2016to18/region_4/ttH_boosted.pdf}
+        \caption{\ttH boosted}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{figures/region_plots/2016to18/region_4/ttH_resolved.pdf}
+        \caption{\ttH resolved}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{figures/region_plots/2016to18/region_4/VH_1V.pdf}
+        \caption{\VH 1V}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{figures/region_plots/2016to18/region_4/VH_resolved.pdf}
+        \caption{\VH resolved}
+    \end{subfigure}
+    \caption[Pre-fit yields of the \ptmiss distribution in the \doubleEleCr control region for the combined boosted and resolved categories for the \ttH and \VH processes, using the full Run-2 dataset for data and simulation]{Pre-fit yields of the \ptmiss distribution in the \doubleEleCr \gls{CR} for the combined boosted and resolved categories for the \ttH and \VH processes, using the full Run-2 dataset for data and simulation.}
+    \label{fig:htoinv_cr_yields_comb2016to18_double_electron}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{figures/region_plots/2016to18/region_5/ttH_boosted.pdf}
+        \caption{\ttH boosted}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{figures/region_plots/2016to18/region_5/ttH_resolved.pdf}
+        \caption{\ttH resolved}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{figures/region_plots/2016to18/region_5/VH_1V.pdf}
+        \caption{\VH 1V}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{figures/region_plots/2016to18/region_5/VH_resolved.pdf}
+        \caption{\VH resolved}
+    \end{subfigure}
+    \caption[Pre-fit yields of the \ptmiss distribution in the \singlePhotonCr control region for the combined boosted and resolved categories for the \ttH and \VH processes, using the full Run-2 dataset for data and simulation]{Pre-fit yields of the \ptmiss distribution in the \singlePhotonCr \gls{CR} for the combined boosted and resolved categories for the \ttH and \VH processes, using the full Run-2 dataset for data and simulation. The \singlePhotonCr is more useful in predicting \ztonunupjets in the \VH subcategories, and may not be used for the \ttH subcategories.}
+    \label{fig:htoinv_cr_yields_comb2016to18_single_photon}
+\end{figure}
+
+% Figures from 29th May, 2020
 
 
 %=========================================================
@@ -613,6 +799,130 @@ We invert the requirements on $\mht/\ptmiss$---where a ceiling is placed at $\mh
 The \glspl{SB} follow the same categorisation as for the other regions, i.e., Tab.~\ref{tab:htoinv_categories}, and are binned in \ptmiss with the same scheme as the other regions.
 
 A \gls{SB} composed of the inversion of only one variable maintains similar kinematic properties to the signal region. When performing analysis while still blind to data in the signal region, inspecting one of these \glspl{SB} is a good indicator of how new cuts or corrections will affect the signal region composition, and compatibility between data and \acrshort{mc}. Like the \glspl{CR}, \glspl{SB} serve a secondary purpose.
+
+The following figures reveal the pre-fit \ptmiss distributions in each \gls{SB} after the analysis-level selections with the full Run-2 dataset. The combined \ttH and \VH subcategories for boosted and resolved topologies are used to demonstrate the shapes and data--simulation (dis)agreement. Background estimation is performed separately for each year due to the differing running conditions, detector configuration, and the different effects or problems seen in the data.\footnote{Might not need to show all of these plots. They're just here for now, and can be tidied up later.}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{figures/region_plots/2016to18/sideband_0/ttH_boosted.pdf}
+        \caption{\ttH boosted}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{figures/region_plots/2016to18/sideband_0/ttH_resolved.pdf}
+        \caption{\ttH resolved}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{figures/region_plots/2016to18/sideband_0/VH_1V.pdf}
+        \caption{\VH 1V}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{figures/region_plots/2016to18/sideband_0/VH_resolved.pdf}
+        \caption{\VH resolved}
+    \end{subfigure}
+    \caption[Pre-fit yields of the \ptmiss distribution in the tight double sideband for the combined boosted and resolved categories for the \ttH and \VH processes, using the full Run-2 dataset for data and simulation]{Pre-fit yields of the \ptmiss distribution in the tight double \gls{SB} for the combined boosted and resolved categories for the \ttH and \VH processes, using the full Run-2 dataset for data and simulation.}
+    \label{fig:htoinv_sb_yields_comb2016to18_tight_double}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{figures/region_plots/2016to18/sideband_1/ttH_boosted.pdf}
+        \caption{\ttH boosted}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{figures/region_plots/2016to18/sideband_1/ttH_resolved.pdf}
+        \caption{\ttH resolved}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{figures/region_plots/2016to18/sideband_1/VH_1V.pdf}
+        \caption{\VH 1V}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{figures/region_plots/2016to18/sideband_1/VH_resolved.pdf}
+        \caption{\VH resolved}
+    \end{subfigure}
+    \caption[Pre-fit yields of the \ptmiss distribution in the loose double sideband for the combined boosted and resolved categories for the \ttH and \VH processes, using the full Run-2 dataset for data and simulation]{Pre-fit yields of the \ptmiss distribution in the loose double \gls{SB} for the combined boosted and resolved categories for the \ttH and \VH processes, using the full Run-2 dataset for data and simulation.}
+    \label{fig:htoinv_sb_yields_comb2016to18_loose_double}
+\end{figure}
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{figures/region_plots/2016to18/sideband_2/ttH_boosted.pdf}
+        \caption{\ttH boosted}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{figures/region_plots/2016to18/sideband_2/ttH_resolved.pdf}
+        \caption{\ttH resolved}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{figures/region_plots/2016to18/sideband_2/VH_1V.pdf}
+        \caption{\VH 1V}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{figures/region_plots/2016to18/sideband_2/VH_resolved.pdf}
+        \caption{\VH resolved}
+    \end{subfigure}
+    \caption[Pre-fit yields of the \ptmiss distribution in the $/mht/ptmiss$ sideband for the combined boosted and resolved categories for the \ttH and \VH processes, using the full Run-2 dataset for data and simulation]{Pre-fit yields of the \ptmiss distribution in the $/mht/ptmiss$ \gls{SB} for the combined boosted and resolved categories for the \ttH and \VH processes, using the full Run-2 dataset for data and simulation.}
+    \label{fig:htoinv_sb_yields_comb2016to18_mht_met}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{figures/region_plots/2016to18/sideband_3/ttH_boosted.pdf}
+        \caption{\ttH boosted}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{figures/region_plots/2016to18/sideband_3/ttH_resolved.pdf}
+        \caption{\ttH resolved}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{figures/region_plots/2016to18/sideband_3/VH_1V.pdf}
+        \caption{\VH 1V}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{figures/region_plots/2016to18/sideband_3/VH_resolved.pdf}
+        \caption{\VH resolved}
+    \end{subfigure}
+    \caption[Pre-fit yields of the \ptmiss distribution in the tight \omegaTilde sideband for the combined boosted and resolved categories for the \ttH and \VH processes, using the full Run-2 dataset for data and simulation]{Pre-fit yields of the \ptmiss distribution in the tight \omegaTilde \gls{SB} for the combined boosted and resolved categories for the \ttH and \VH processes, using the full Run-2 dataset for data and simulation.}
+    \label{fig:htoinv_sb_yields_comb2016to18_tight_minOmegaTilde}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{figures/region_plots/2016to18/sideband_4/ttH_boosted.pdf}
+        \caption{\ttH boosted}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{figures/region_plots/2016to18/sideband_4/ttH_resolved.pdf}
+        \caption{\ttH resolved}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{figures/region_plots/2016to18/sideband_4/VH_1V.pdf}
+        \caption{\VH 1V}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{figures/region_plots/2016to18/sideband_4/VH_resolved.pdf}
+        \caption{\VH resolved}
+    \end{subfigure}
+    \caption[Pre-fit yields of the \ptmiss distribution in the loose \omegaTilde sideband for the combined boosted and resolved categories for the \ttH and \VH processes, using the full Run-2 dataset for data and simulation]{Pre-fit yields of the \ptmiss distribution in the loose \omegaTilde \gls{SB} for the combined boosted and resolved categories for the \ttH and \VH processes, using the full Run-2 dataset for data and simulation.}
+    \label{fig:htoinv_sb_yields_comb2016to18_loose_minOmegaTilde}
+\end{figure}
+
+% Figures from 29th May, 2020
+
 
 %=========================================================
 

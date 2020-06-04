@@ -54,7 +54,8 @@ double dmNucleonXSECFermion(float dmMass, float width, int scale = 0){
 TGraph* superCDMS();
 TGraph* lux();
 TGraph* cdmslite();
-TGraph* xenon();
+TGraph* xenon_1txyr();
+TGraph* xenon_s2();
 TGraph* panda();
 TGraph* cresst();
 //TGraph* superCDMS();
@@ -183,12 +184,13 @@ void makeHiggsPortalPlot(float observedBR, string outputDIR){
   observed_scalar_shade->SetLineWidth(nominal_line_width);
 
   // Create lines for direct detection limits and draw
-  TGraph *lM0 = xenon();
+  TGraph *lM0 = xenon_1txyr();
   TGraph *lM1 = lux();
   TGraph *lM2 = panda();
   TGraph *lM3 = cdmslite();
   TGraph *lM4 = cresst();
   //TGraph *lM5 = superCDMS();
+  TGraph *lM6 = xenon_s2();
 
   lM0->SetLineColor(kAzure+8);
   lM1->SetLineColor(kBlue+2);
@@ -196,8 +198,10 @@ void makeHiggsPortalPlot(float observedBR, string outputDIR){
   lM3->SetLineColor(kGreen);
   lM4->SetLineColor(kGreen+2);
   //lM5->SetLineColor(kSpring+8);
+  lM6->SetLineColor(kViolet);
 
   lM0->Draw("L SAME");
+  lM6->Draw("L SAME");
   lM1->Draw("L SAME");
   lM2->Draw("L SAME");
   lM3->Draw("L SAME");
@@ -250,11 +254,12 @@ void makeHiggsPortalPlot(float observedBR, string outputDIR){
   leg_2->SetFillStyle(0);
   leg_2->SetBorderSize(0);
   leg_2->SetFillColor(0);
-  leg_2->AddEntry(lM0, "XENON-1T", "L");
+  leg_2->AddEntry(lM0, "XENON1T", "L");
+  leg_2->AddEntry(lM6, "XENON1T (S2)", "L");
   leg_2->AddEntry(lM1, "LUX", "L");
   leg_2->AddEntry(lM2, "PandaX-II", "L");
-  leg_2->AddEntry(lM3, "CDMSlite Run 3", "L");
-  leg_2->AddEntry(lM4, "CRESST-II", "L");
+  leg_2->AddEntry(lM3, "CDMSlite", "L");
+  leg_2->AddEntry(lM4, "CRESST-III", "L");
   //leg_2->AddEntry(lM5, "SuperCDMS", "L");
   leg_2->Draw("same");
   
@@ -295,41 +300,27 @@ TGraph *cresst(){
   int i0 = -1;
   double *lX = new double[1000];
   double *lY = new double[1000];
-    
-  i0++; lX[i0] = 0.502; lY[i0] =  1.929e-36;
-  i0++; lX[i0] = 0.535; lY[i0] =  1.164e-36;
-  i0++; lX[i0] = 0.566; lY[i0] =  6.032e-37;
-  i0++; lX[i0] = 0.603; lY[i0] =  2.755e-37;
-  i0++; lX[i0] = 0.638; lY[i0] =  1.428e-37;
-  i0++; lX[i0] = 0.675; lY[i0] =  7.402e-38;
-  i0++; lX[i0] = 0.720; lY[i0] =  4.036e-38;
-  i0++; lX[i0] = 0.767; lY[i0] =  2.257e-38;
-  i0++; lX[i0] = 0.811; lY[i0] =  1.468e-38;
-  i0++; lX[i0] = 0.879; lY[i0] =  9.317e-39;
-  i0++; lX[i0] = 0.942; lY[i0] =  6.708e-39;
-  i0++; lX[i0] = 1.004; lY[i0] =  4.953e-39;
-  i0++; lX[i0] = 1.106; lY[i0] =  3.390e-39;
-  i0++; lX[i0] = 1.242; lY[i0] =  2.206e-39;
-  i0++; lX[i0] = 1.405; lY[i0] =  1.629e-39;
-  i0++; lX[i0] = 1.517; lY[i0] =  1.331e-39;
-  i0++; lX[i0] = 1.727; lY[i0] =  1.087e-39;
-  i0++; lX[i0] = 2.000; lY[i0] =  8.442e-40;
-  i0++; lX[i0] = 2.159; lY[i0] =  7.073e-40;
-  i0++; lX[i0] = 2.339; lY[i0] =  5.223e-40;
-  i0++; lX[i0] = 2.483; lY[i0] =  3.760e-40;
-  i0++; lX[i0] = 2.992; lY[i0] =  1.237e-40;
-  i0++; lX[i0] = 3.285; lY[i0] =  6.914e-41;
-  i0++; lX[i0] = 3.523; lY[i0] =  4.978e-41;
-  i0++; lX[i0] = 4.273; lY[i0] =  3.079e-41;
-  i0++; lX[i0] = 5.166; lY[i0] =  2.274e-41;
-  i0++; lX[i0] = 6.184; lY[i0] =  1.637e-41;
-  i0++; lX[i0] = 7.703; lY[i0] =  1.209e-41;
-  i0++; lX[i0] = 10.393; lY[i0] =  1.065e-41;
-  i0++; lX[i0] = 13.654; lY[i0] =  1.149e-41;
-  i0++; lX[i0] = 17.466; lY[i0] =  1.304e-41;
-  i0++; lX[i0] = 23.330; lY[i0] =  1.637e-41;
-  i0++; lX[i0] = 26.476; lY[i0] =  1.480e-41;
-  i0++; lX[i0] = 29.748; lY[i0] =  9.628e-42;
+
+  i0++; lX[i0] = 0.16; lY[i0] = 4.73589e-34;
+  i0++; lX[i0] = 0.208; lY[i0] = 5.72634e-36;
+  i0++; lX[i0] = 0.2704; lY[i0] = 7.3854e-37;
+  i0++; lX[i0] = 0.35152; lY[i0] = 2.62798e-37;
+  i0++; lX[i0] = 0.456976; lY[i0] = 1.06657e-37;
+  i0++; lX[i0] = 0.594069; lY[i0] = 4.2227e-38;
+  i0++; lX[i0] = 0.772289; lY[i0] = 1.66904e-38;
+  i0++; lX[i0] = 1; lY[i0] = 7.35987e-39;
+  i0++; lX[i0] = 1.5; lY[i0] = 2.7698e-39;
+  i0++; lX[i0] = 2.25; lY[i0] = 5.6334e-40;
+  i0++; lX[i0] = 3.375; lY[i0] = 1.12663e-40;
+  i0++; lX[i0] = 5.0625; lY[i0] = 3.79581e-41;
+  i0++; lX[i0] = 7.59375; lY[i0] = 1.11803e-41;
+  i0++; lX[i0] = 11.3906; lY[i0] = 3.26202e-42;
+  i0++; lX[i0] = 17.0859; lY[i0] = 1.48371e-42;
+  i0++; lX[i0] = 25.6289; lY[i0] = 1.06977e-42;
+  i0++; lX[i0] = 38.4434; lY[i0] = 1.03226e-42;
+  i0++; lX[i0] = 57.665; lY[i0] = 1.22993e-42;
+  i0++; lX[i0] = 86.4976; lY[i0] = 1.64711e-42;
+  i0++; lX[i0] = 129.746; lY[i0] = 2.33581e-42;
      
   TGraph *lLimit = new TGraph(i0,lX,lY);
   lLimit->SetLineWidth(3.);
@@ -451,7 +442,7 @@ TGraph *cdmslite(){
 }
 
 
-TGraph *xenon(){
+TGraph *xenon_1txyr(){
   
   int i0 = -1;
   double *lX = new double[1000];
@@ -556,6 +547,56 @@ TGraph *panda(){
   i0++; lX[i0] = 4748.818; lY[i0]=  5.088e-45;
   i0++; lX[i0] = 6484.752; lY[i0]=  7.024e-45;
   i0++; lX[i0] = 8792.397; lY[i0]=  9.902e-45;
+
+  TGraph *lLimit = new TGraph(i0,lX,lY);
+  lLimit->SetLineWidth(3.);
+  return lLimit;
+}
+
+
+TGraph *xenon_s2(){
+  int i0 = -1;
+  double *lX = new double[1000];
+  double *lY = new double[1000];
+
+  i0++; lX[i0] = 2.73; lY[i0] = 9.288431945297944e-40;
+  i0++; lX[i0] = 2.75; lY[i0] = 6.319272619037612e-40;
+  i0++; lX[i0] = 2.8; lY[i0] = 2.8374278176528733e-40;
+  i0++; lX[i0] = 3.0; lY[i0] = 3.622317320468634e-41;
+  i0++; lX[i0] = 3.2; lY[i0] = 1.0093733554860686e-41;
+  i0++; lX[i0] = 3.5; lY[i0] = 2.7078662672268526e-42;
+  i0++; lX[i0] = 3.7; lY[i0] = 1.4053651850630283e-42;
+  i0++; lX[i0] = 4.0; lY[i0] = 6.436687726874196e-43;
+  i0++; lX[i0] = 4.2; lY[i0] = 4.211830689805871e-43;
+  i0++; lX[i0] = 4.5; lY[i0] = 2.4748344962496106e-43;
+  i0++; lX[i0] = 4.7; lY[i0] = 1.8331569741040645e-43;
+  i0++; lX[i0] = 5.0; lY[i0] = 1.244977011390317e-43;
+  i0++; lX[i0] = 5.2; lY[i0] = 9.956897569635043e-44;
+  i0++; lX[i0] = 5.5; lY[i0] = 7.426357511849602e-44;
+  i0++; lX[i0] = 5.7; lY[i0] = 6.016687556292615e-44;
+  i0++; lX[i0] = 6.0; lY[i0] = 4.782726128564601e-44;
+  i0++; lX[i0] = 6.5; lY[i0] = 3.477937573119966e-44;
+  i0++; lX[i0] = 7.0; lY[i0] = 2.6917403365161047e-44;
+  i0++; lX[i0] = 7.3; lY[i0] = 2.3633842242886736e-44;
+  i0++; lX[i0] = 7.5; lY[i0] = 2.1851572197470983e-44;
+  i0++; lX[i0] = 7.6; lY[i0] = 9.507393484521254e-45;
+  i0++; lX[i0] = 8.0; lY[i0] = 8.121970339723199e-45;
+  i0++; lX[i0] = 9.0; lY[i0] = 5.225694212368943e-45;
+  i0++; lX[i0] = 10.0; lY[i0] = 3.88510370427872e-45;
+  i0++; lX[i0] = 12.0; lY[i0] = 2.7031851636518367e-45;
+  i0++; lX[i0] = 14.0; lY[i0] = 2.069587083451545e-45;
+  i0++; lX[i0] = 17.0; lY[i0] = 1.81961709679351e-45;
+  i0++; lX[i0] = 17.25; lY[i0] = 1.8095084702151397e-45;
+  i0++; lX[i0] = 17.35; lY[i0] = 5.666378567261857e-46;
+  i0++; lX[i0] = 18.0; lY[i0] = 5.2416538497478174e-46;
+  i0++; lX[i0] = 19.0; lY[i0] = 4.9590827190295596e-46;
+  i0++; lX[i0] = 20.0; lY[i0] = 4.777418769166447e-46;
+  i0++; lX[i0] = 30.0; lY[i0] = 4.123409777894107e-46;
+  i0++; lX[i0] = 35.0; lY[i0] = 4.331329363201274e-46;
+  i0++; lX[i0] = 40.0; lY[i0] = 4.561705661798635e-46;
+  i0++; lX[i0] = 50.0; lY[i0] = 5.1651794764129515e-46;
+  i0++; lX[i0] = 80.0; lY[i0] = 7.373854045315929e-46;
+  i0++; lX[i0] = 100.0; lY[i0] = 8.95490641313236e-46;
 
   TGraph *lLimit = new TGraph(i0,lX,lY);
   lLimit->SetLineWidth(3.);

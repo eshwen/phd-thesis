@@ -7,7 +7,7 @@ static float maxDM = 62.49;
 static float minX = 1;
 static float maxX = 1000;
 static double minY_dd = 1e-47;
-static double maxY_dd = 1e-37;
+static double maxY_dd = 2e-37;
 // step in DM mass for making the plot
 static float stepDM = 0.2; // 100 MeV
 double const CV = 1e-36;
@@ -50,12 +50,14 @@ double dmNucleonXSECFermion(float dmMass, float width, int scale = 0){
   
 }
 
+
 TGraph* superCDMS();
 TGraph* lux();
 TGraph* cdmslite();
 TGraph* xenon();
 TGraph* panda();
 TGraph* cresst();
+//TGraph* superCDMS();
 
 
 void makeHiggsPortalPlot(float observedBR, string outputDIR){
@@ -181,23 +183,26 @@ void makeHiggsPortalPlot(float observedBR, string outputDIR){
   observed_scalar_shade->SetLineWidth(nominal_line_width);
 
   // Create lines for direct detection limits and draw
-  TGraph *lM0 = lux();
-  TGraph *lM1 = cdmslite();
-  TGraph *lM2 = xenon();
-  TGraph *lM3 = cresst();
-  TGraph *lM4 = panda();
+  TGraph *lM0 = xenon();
+  TGraph *lM1 = lux();
+  TGraph *lM2 = panda();
+  TGraph *lM3 = cdmslite();
+  TGraph *lM4 = cresst();
+  //TGraph *lM5 = superCDMS();
 
-  lM0->SetLineColor(kBlue+2);
-  lM1->SetLineColor(kGreen);
-  lM2->SetLineColor(kAzure+8);
-  lM3->SetLineColor(kGreen+2);
-  lM4->SetLineColor(kBlue);
+  lM0->SetLineColor(kAzure+8);
+  lM1->SetLineColor(kBlue+2);
+  lM2->SetLineColor(kBlue);
+  lM3->SetLineColor(kGreen);
+  lM4->SetLineColor(kGreen+2);
+  //lM5->SetLineColor(kSpring+8);
 
   lM0->Draw("L SAME");
   lM1->Draw("L SAME");
   lM2->Draw("L SAME");
   lM3->Draw("L SAME");
   lM4->Draw("L SAME");
+  //lM5->Draw("L SAME");
 
   // Draw fermion and scalar lines and bands on top
   observed_scalar_shade->Draw("F same");
@@ -245,11 +250,12 @@ void makeHiggsPortalPlot(float observedBR, string outputDIR){
   leg_2->SetFillStyle(0);
   leg_2->SetBorderSize(0);
   leg_2->SetFillColor(0);
-  leg_2->AddEntry(lM2 ,"XENON-1T","L");
-  leg_2->AddEntry(lM0 ,"LUX","L");
-  leg_2->AddEntry(lM4 ,"PandaX-II","L");
-  leg_2->AddEntry(lM1 ,"CDMSlite","L");
-  leg_2->AddEntry(lM3 ,"CRESST-II","L");
+  leg_2->AddEntry(lM0, "XENON-1T", "L");
+  leg_2->AddEntry(lM1, "LUX", "L");
+  leg_2->AddEntry(lM2, "PandaX-II", "L");
+  leg_2->AddEntry(lM3, "CDMSlite Run 3", "L");
+  leg_2->AddEntry(lM4, "CRESST-II", "L");
+  //leg_2->AddEntry(lM5, "SuperCDMS", "L");
   leg_2->Draw("same");
   
   CMS_lumi(canvas,"137");
@@ -264,6 +270,7 @@ TGraph *superCDMS() {
   int i0 = -1;
   double *lX = new double[1000];
   double *lY = new double[1000];
+
   i0++; lX[i0] = 3.5946953342351033; lY[i0]= 9.848667679721256e-40;
   i0++; lX[i0] = 3.75095871431554;   lY[i0] = 4.7369269651270765e-40;
   i0++; lX[i0] = 4.055296786109914;  lY[i0] = 1.731452556791703e-40;
@@ -276,6 +283,7 @@ TGraph *superCDMS() {
   i0++; lX[i0] = 18.04552501288121;  lY[i0] = 2.0321090962591862e-43;
   i0++; lX[i0] = 23.377104302070727; lY[i0] = 1.941241066769181e-43;
   i0++; lX[i0] = 29.857390063416926; lY[i0] = 2.0321090962591862e-43;
+
   TGraph *lLimit = new TGraph(i0,lX,lY);
   lLimit->SetLineWidth(3.);
   return lLimit;
@@ -409,31 +417,32 @@ TGraph *cdmslite(){
   int i0 = -1;
   double *lX = new double[1000];
   double *lY = new double[1000];
-  i0++; lX[i0] =1.654 ; lY[i0]= 4.334e-39;
-  i0++; lX[i0] =1.731 ; lY[i0]= 1.924e-39;
-  i0++; lX[i0] =1.838 ; lY[i0]= 8.338e-40;
-  i0++; lX[i0] =1.986 ; lY[i0]= 3.279e-40;
-  i0++; lX[i0] =2.169 ; lY[i0]= 1.566e-40;
-  i0++; lX[i0] =2.384 ; lY[i0]= 8.338e-41;
-  i0++; lX[i0] =2.632 ; lY[i0]= 5.012e-41;
-  i0++; lX[i0] =2.857 ; lY[i0]= 3.527e-41;
-  i0++; lX[i0] =3.093 ; lY[i0]= 2.701e-41;
-  i0++; lX[i0] =3.415 ; lY[i0]= 2.120e-41;
-  i0++; lX[i0] =3.827 ; lY[i0]= 1.789e-41;
-  i0++; lX[i0] =4.207 ; lY[i0]= 1.566e-41;
-  i0++; lX[i0] =4.625 ; lY[i0]= 1.492e-41;
-  i0++; lX[i0] =5.106 ; lY[i0]= 1.438e-41;
-  i0++; lX[i0] =5.613 ; lY[i0]= 1.321e-41;
-  i0++; lX[i0] =6.157 ; lY[i0]= 1.143e-41;
-  i0++; lX[i0] =6.768 ; lY[i0]= 9.527e-42;
-  i0++; lX[i0] =7.504 ; lY[i0]= 8.040e-42;
-  i0++; lX[i0] =8.161 ; lY[i0]= 7.122e-42;
-  i0++; lX[i0] =9.009 ; lY[i0]= 6.387e-42;
-  i0++; lX[i0] =9.968 ; lY[i0]= 5.796e-42;
-  i0++; lX[i0] =11.100 ; lY[i0]= 5.261e-42;
-  i0++; lX[i0] =12.307 ; lY[i0]= 5.073e-42;
-  i0++; lX[i0] =13.645 ; lY[i0]= 4.775e-42;
-  i0++; lX[i0] =14.871 ; lY[i0]= 4.892e-42;
+
+  // From CDMSlite Run 3 (https://arxiv.org/abs/1808.09098)
+  i0++; lX[i0] = 1.500; lY[i0] = 1.7839e-38;
+  i0++; lX[i0] = 1.600; lY[i0] = 5.3022e-39;
+  i0++; lX[i0] = 1.700; lY[i0] = 1.7048e-39;
+  i0++; lX[i0] = 1.900; lY[i0] = 3.7503e-40;
+  i0++; lX[i0] = 2.000; lY[i0] = 2.0532e-40;
+  i0++; lX[i0] = 2.200; lY[i0] = 8.3277e-41;
+  i0++; lX[i0] = 2.500; lY[i0] = 3.2145e-41;
+  i0++; lX[i0] = 2.700; lY[i0] = 2.3265e-41;
+  i0++; lX[i0] = 3.000; lY[i0] = 1.6343e-41;
+  i0++; lX[i0] = 3.200; lY[i0] = 1.4104e-41;
+  i0++; lX[i0] = 3.500; lY[i0] = 1.1584e-41;
+  i0++; lX[i0] = 3.700; lY[i0] = 1.0323e-41;
+  i0++; lX[i0] = 4.000; lY[i0] = 8.6569e-42;
+  i0++; lX[i0] = 4.200; lY[i0] = 7.5927e-42;
+  i0++; lX[i0] = 4.500; lY[i0] = 6.6421e-42;
+  i0++; lX[i0] = 4.700; lY[i0] = 5.8828e-42;
+  i0++; lX[i0] = 5.000; lY[i0] = 5.3553e-42;
+  i0++; lX[i0] = 5.500; lY[i0] = 4.5599e-42;
+  i0++; lX[i0] = 6.000; lY[i0] = 4.1868e-42;
+  i0++; lX[i0] = 6.500; lY[i0] = 3.9183e-42;
+  i0++; lX[i0] = 7.000; lY[i0] = 3.7979e-42;
+  i0++; lX[i0] = 8.000; lY[i0] = 3.6132e-42;
+  i0++; lX[i0] = 9.000; lY[i0] = 3.5806e-42;
+  i0++; lX[i0] = 10.00; lY[i0] = 3.6453e-42;
     
   TGraph *lLimit = new TGraph(i0,lX,lY);
   lLimit->SetLineWidth(3.);

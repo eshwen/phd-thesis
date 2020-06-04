@@ -10,4 +10,8 @@ where `limitvalue` is a decimal, not percentage. The backslashes are required to
 
 The direct detection limits are old (since the values are from around the time HIG-17-023 was published), so will need to be updated:
 
-- CDMSlite values from <https://arxiv.org/abs/1509.02448> (Run 2?). Update to <https://arxiv.org/abs/1808.09098> (Run 3).
+- CDMSlite values from <https://arxiv.org/abs/1808.09098>
+- LUX values from <https://arxiv.org/abs/1608.07648>
+- XENON-1T values from <https://arxiv.org/abs/1805.12562>
+- CRESST-II values from <https://arxiv.org/abs/1509.01515>
+- PandaX-II values from <https://arxiv.org/abs/1607.07400>

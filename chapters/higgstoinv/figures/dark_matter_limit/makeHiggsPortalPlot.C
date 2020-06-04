@@ -79,7 +79,7 @@ void makeHiggsPortalPlot(float observedBR, string outputDIR){
   TGraph* observedBound_fermion_min = new TGraph();
   TGraph* observedBound_fermion_max = new TGraph();
 
-  // loop on DM mass values
+  // loop on DM mass values, getting nominal values for lines, and min. and max. values for bands
   int ipoint_fermion = 0;
   int ipoint_scalar = 0;
   for(float dmMass = minDM; dmMass <= maxDM; dmMass = dmMass+stepDM){
@@ -95,7 +95,7 @@ void makeHiggsPortalPlot(float observedBR, string outputDIR){
     ipoint_scalar++;
   }
   
-  
+  // Draw canvas
   TH1* frame = canvas->DrawFrame(minX,minY_dd,maxX,maxY_dd,"");
   frame->GetYaxis()->SetTitle("#sigma^{SI}_{DM-nucleon} [cm^{2}]");
   frame->GetXaxis()->SetTitle("m_{DM} [GeV]");
@@ -112,18 +112,28 @@ void makeHiggsPortalPlot(float observedBR, string outputDIR){
   gPad->SetLeftMargin(0.14);
   frame->Draw();
 
-  observedBound_fermion->SetLineColor(kRed);
-  observedBound_fermion->SetLineWidth(3);
-  observedBound_fermion_min->SetLineColor(kRed);
-  observedBound_fermion_min->SetLineWidth(2);
-  observedBound_fermion_max->SetLineColor(kRed);
-  observedBound_fermion_max->SetLineWidth(2);
-  observedBound_scalar->SetLineColor(kOrange-3);
-  observedBound_scalar->SetLineWidth(3);
-  observedBound_scalar_min->SetLineColor(kOrange-3);
-  observedBound_scalar_min->SetLineWidth(2);
-  observedBound_scalar_max->SetLineColor(kOrange-3);
-  observedBound_scalar_max->SetLineWidth(2);
+  // Set aesthetics for fermion and scalar lines and bands
+  int fermion_line_colour = kRed;
+  int scalar_line_colour = kOrange - 3;
+  int fermion_shade_colour = kRed - 9;
+  int scalar_shade_colour = kOrange - 9;
+  int nominal_line_width = 3;
+  int band_line_width = 0;
+  double shade_alpha = 0.5;  // transparency (0. = fully transparent, 1. = opaque)
+
+  observedBound_fermion->SetLineColorAlpha(fermion_line_colour, 1.);
+  observedBound_fermion->SetLineWidth(nominal_line_width);
+  observedBound_fermion_min->SetLineColorAlpha(fermion_shade_colour, shade_alpha);
+  observedBound_fermion_min->SetLineWidth(band_line_width);
+  observedBound_fermion_max->SetLineColorAlpha(fermion_shade_colour, shade_alpha);
+  observedBound_fermion_max->SetLineWidth(band_line_width);
+
+  observedBound_scalar->SetLineColor(scalar_line_colour);
+  observedBound_scalar->SetLineWidth(nominal_line_width);
+  observedBound_scalar_min->SetLineColorAlpha(scalar_shade_colour, shade_alpha);
+  observedBound_scalar_min->SetLineWidth(band_line_width);
+  observedBound_scalar_max->SetLineColorAlpha(scalar_shade_colour, shade_alpha);
+  observedBound_scalar_max->SetLineWidth(band_line_width);
 
   TGraph* observed_fermion_shade = new TGraph();
   TGraph* observed_scalar_shade = new TGraph();
@@ -159,28 +169,18 @@ void makeHiggsPortalPlot(float observedBR, string outputDIR){
     observed_scalar_shade->SetPoint(ipoint+ipoint_offset,x,y);    
     ipoint++;
   }
-    
 
-  observed_fermion_shade->SetFillStyle(3001);
-  observed_fermion_shade->SetFillColor(kRed);
-  observed_fermion_shade->SetLineColor(kRed);
-  observed_fermion_shade->SetLineWidth(3);
-  observed_scalar_shade->SetFillStyle(3001);
-  observed_scalar_shade->SetFillColor(kOrange-3);
-  observed_scalar_shade->SetLineColor(kOrange-3);
-  observed_scalar_shade->SetLineWidth(3);
-  
-  observed_fermion_shade->Draw("F same");
-  observed_scalar_shade->Draw("F same");
+  int shade_style = 1001;  // solid fill
+  observed_fermion_shade->SetFillStyle(shade_style);
+  observed_fermion_shade->SetFillColorAlpha(fermion_shade_colour, shade_alpha);
+  observed_fermion_shade->SetLineColor(fermion_line_colour);  // Sets line colour in legend
+  observed_fermion_shade->SetLineWidth(nominal_line_width);  // Sets line width in legend
+  observed_scalar_shade->SetFillStyle(shade_style);
+  observed_scalar_shade->SetFillColorAlpha(scalar_shade_colour, shade_alpha);
+  observed_scalar_shade->SetLineColor(scalar_line_colour);
+  observed_scalar_shade->SetLineWidth(nominal_line_width);
 
-  observedBound_fermion->Draw("L SAME");
-  observedBound_fermion_min->Draw("L SAME");
-  observedBound_fermion_max->Draw("L SAME");
-
-  observedBound_scalar->Draw("L SAME");
-  observedBound_scalar_min->Draw("L SAME");
-  observedBound_scalar_max->Draw("L SAME");
-
+  // Create lines for direct detection limits and draw
   TGraph *lM0 = lux();
   TGraph *lM1 = cdmslite();
   TGraph *lM2 = xenon();
@@ -199,9 +199,18 @@ void makeHiggsPortalPlot(float observedBR, string outputDIR){
   lM3->Draw("L SAME");
   lM4->Draw("L SAME");
 
+  // Draw fermion and scalar lines and bands on top
+  observed_scalar_shade->Draw("F same");
+  observedBound_scalar_min->Draw("L SAME");
+  observedBound_scalar_max->Draw("L SAME");
+
+  observed_fermion_shade->Draw("F same");
+  observedBound_fermion_min->Draw("L SAME");
+  observedBound_fermion_max->Draw("L SAME");
   observedBound_fermion->Draw("L SAME");
   observedBound_scalar->Draw("L SAME");
 
+  // Add annotations and legends
   TLatex* tex = new TLatex();
   tex->SetNDC();
   tex->SetTextFont(72);
@@ -243,7 +252,6 @@ void makeHiggsPortalPlot(float observedBR, string outputDIR){
   leg_2->AddEntry(lM3 ,"CRESST-II","L");
   leg_2->Draw("same");
   
-
   CMS_lumi(canvas,"137");
   canvas->RedrawAxis("samesaxis");
    
@@ -433,6 +441,7 @@ TGraph *cdmslite(){
   
 }
 
+
 TGraph *xenon(){
   
   int i0 = -1;
@@ -491,6 +500,7 @@ TGraph *xenon(){
   return lLimit;
 
 }
+
 
 TGraph *panda(){
 

@@ -379,7 +379,7 @@ In 2018, requirements were placed on electrons and the azimuthal angle of the \p
         \includegraphics[width=\textwidth]{figures/hem_issue/sideband_4/met_phi_VH_before_annotated.pdf}
         \caption{\VH category}
     \end{subfigure}
-    \caption[The azimuthal angle of the \ptvecmiss in the \ttH and \VH categories before applying the selections designed to mitigate the HEM issue in 2018]{The azimuthal angle of the \ptvecmiss in the \ttH and \VH categories before applying the selections designed to mitigate the HEM issue in 2018. The loose \omegaTilde \gls{SB} is used to demonstrate the effect since it kinematically resembles the signal region, and the data--simulation discrepancy can be removed while still blind in said region. A cyan box encloses the sector that is removed by the selection applied in the signal region and \glspl{SB}.}
+    \caption[The azimuthal angle of the \ptvecmiss in the \ttH and \VH categories before applying the selections designed to mitigate the HEM issue in 2018]{The azimuthal angle of the \ptvecmiss in the \ttH and \VH categories before applying the selections designed to mitigate the HEM issue in 2018. The loose \omegaTilde \gls{SB} is used to demonstrate the effect since it kinematically resembles the signal region, and the data--simulation discrepancy can be removed while still blind in said region. A red box encloses the sector that is removed by the selection applied in the signal region and \glspl{SB}.}
     \label{fig:htoinv_hem_issue_met_phi}
 \end{figure}
 
@@ -488,7 +488,79 @@ We employ the ensuing selections to AK8 \glspl{jet} to classify them, as recomme
 \subsection{Optimisation of the categories}
 \label{subsec:htoinv_cat_optimisation}
 
-Might be best to leave this bit for now, since optimisations are still ongoing. When including, only write about it briefly since I didn't actually do these studies. Would have to mention $\Delta\phi_{\text{min}}$/Tai's variables.
+% The material in this subsection is up-to-date as of 1st June. This, more than most, may be subject to change
+
+While first principles are a good starting point to categorise events and accentuate the Higgs production modes, they allow much room for improvement. \acrshort{qcd} multijet is still a prominent background, especially in the \ttH and \ggF categories. Historically, variables such as \biasedDPhi and \alphat have been used to suppress it, as in the previous \acrlong{susy} analysis I was a part of.
+
+Recently, more elaborate variables have been developed to better remove multijet background events in analyses with hadronic final states. Colleagues at the University of Bristol have designed a family of them: \minChi, \omegaHat, and \omegaTilde~\cite{Sakuma:2018xrq}. These show noticeable improvement over previous variables (particularly \biasedDPhi, which is used as a benchmark for comparisons). Optimisation was performed for these variables on a per-category, over a per-subcategory, basis to avoid excessive fine tuning for the many subcategories in the analysis. After investigating each variable, \omegaTilde was chosen for the \ttH, \VH, and \ggF categories. A more traditional \mindphiJetMet was selected for the monojet category, as the aforementioned ones typically perform better at higher \gls{jet} multiplicity.
+
+Various metrics (or figures of merit) were considered for the threshold to cut on the given angular variable. In a counting experiment, a known Possion-distributed background $B$ yields a statistical uncertainty---assuming one standard deviation---of $\sqrt{B}$. A signal count $S$ can then be statistically significant (i.e., unlikely to be a statistical fluctuation of the background) if it is greater than the uncertainty on the background. This, somewhat simplistic, method gives the standard deviation for the expected signal with respect to background---often just referred to as the \emph{expected significance} $Z$---as
+\begin{equation}
+Z_{\mathrm{Poisson}} = \frac{S}{\sqrt{B}}
+\label{eq:s_over_root_b}
+\end{equation}
+
+An estimate of the overall effect of systematic uncertainties on the background $\bkgsystuncert$ can also be incorporated, leading to
+\begin{equation}
+Z_{\mathrm{Poisson}} = \frac{S}{\sqrt{B + (\bkgsystuncert B)^2}}
+\label{eq:s_over_root_b_systs}
+\end{equation}
+
+Another figure of merit is to use the significance from an ``Asimov dataset''---which replaces the [ensemble] of different datasets by a single representative one~\cite{Cowan:2010js}. The median significance can then be extracted. Colloquially ascribed the \emph{Asimov significance}. In many fields, including particle physics, a likelihood ratio is used for hypothesis testing. This is described in the context of the analysis in Chpt.~\ref{sec:htoinv_satistical_treatment}. The asymptotic limit, where the sample size is large (as in the case for \acrshort{lhc} data and simulation), can also be exploited as a property within the likelihood model. In this regime, the Asimov significance $Z_{\mathrm{Asimov}}$ can be expressed as  % EXPLAIN. LOOK IN statistical_significance/ folder in Downloads/
+\begin{equation}
+Z_{\mathrm{Asimov}} = \sqrt{2 \left( (S + B) \cdot \ln\left(1 + \frac{S}{B} \right) - S \right)}
+\label{eq:asimov_significance}
+\end{equation}
+
+reducing to Eq.~\ref{eq:s_over_root_b} for $S \ll B$. Including a systematic uncertainty expands Eq.~\ref{eq:asimov_significance} to
+\begin{equation}
+    \begin{gathered}  % use gathered environment to centre each row in the equation, while avoiding each row having its own equation number
+Z_{\mathrm{Asimov}} = \sqrt{2 \left( (S + B) c_1 - \frac{B^2}{\bkgsystuncert^2}c_2 \right)}, \ \text{where} \\[1em]
+c_1 = \ln\left( \frac{(S + B) \cdot (B + \bkgsystuncert^2)}{B^2 + (S + B)\bkgsystuncert^2} \right), \ c_2 = \ln\left( 1 + \frac{\bkgsystuncert^2 S}{B(B + \bkgsystuncert^2)} \right)
+    \end{gathered}
+\label{eq:asimov_significance_systs}
+\end{equation}
+
+While these are quantitative measures of the sensitivity with an given analysis configuration, they are only a guide to inform an analyst of a more specific area of phase space to consider, rather than providing a precise cut for the given variable. To derive the appropriate cut for each category in the final column of Tab.~\ref{tab:htoinv_categories}, we first processed all simulated signal and background events through the analysis. They were categorised according to the aforementioned table (of course, excluding the angular variable cut). For each subcategory, the significances for both methods were calculated, with and without an estimated 5\,\% systematic uncertainty on the background distribution. To estimate the significance for a category, the significances for each subcategory were summed in quadrature. Fig.~\ref{fig:htoinv_category_optimisations_significances} demonstrates the results as a function of \omegaTilde for the \ttH, \VH, and \ggF categories with the 2017 datasets.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.27\textwidth}
+        \includegraphics[width=\textwidth]{figures/category_optimisations/min_omega_tilde_ttH.pdf}
+        \caption{\ttH category}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.27\textwidth}
+        \includegraphics[width=\textwidth]{figures/category_optimisations/min_omega_tilde_VH.pdf}
+        \caption{\VH category}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.27\textwidth}
+        \includegraphics[width=\textwidth]{figures/category_optimisations/min_omega_tilde_ggF.pdf}
+        \caption{\ggF category}
+    \end{subfigure}
+
+    \begin{subfigure}[b]{0.27\textwidth}
+        \includegraphics[width=\textwidth]{figures/category_optimisations/significance_ttH_min_omega_tilde_all.pdf}
+        \caption{Significance of cut in \ttH category}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.27\textwidth}
+        \includegraphics[width=\textwidth]{figures/category_optimisations/significance_VH_min_omega_tilde_all.pdf}
+        \caption{Significance of cut in \VH category}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.27\textwidth}
+        \includegraphics[width=\textwidth]{figures/category_optimisations/significance_ggF_min_omega_tilde_all.pdf}
+        \caption{Significance of cut in \ggF category}
+    \end{subfigure}
+    \caption[Distributions of \omegaTilde in the signal region in the \ttH, \VH, and \ggF categories, along with the significance---using several figures of merit---if a cut is placed to the right of a given value]{Top row: distributions of \omegaTilde in the signal region in the \ttH, \VH, and \ggF categories. Bottom row: the significance---using several figures of merit---if a cut is placed to the right of a given value of \omegaTilde in each category. The black dotted line indicates the threshold used in the analysis. These are showcased after the analysis-level selection on signal and background simulation for the 2017 data-taking era.}
+    \label{fig:htoinv_category_optimisations_significances}
+\end{figure}
+
+% Figures from 1st June 2020. When remaking, ensure the colours of the signal lines are consistent, and the legend doesn't overlap with the distribution
+
+It is obvious that the shapes and magnitudes of the significance distributions are sensitive to the inclusion of an estimated systematic uncertainty. Increasing its size affects the shape little, though impacts the magnitude more significantly. In bins with high background occupancy, even a small systematic uncertainty can wash out traces of signal. The thresholds chosen for \omegaTilde do not necessarily maximise the significance---where the Asimov method with $\bkgsystuncert = \text{5\,\%}$ was the leading choice---but to sufficiently separate signal and background, while not removing too many events. The \glspl{CR} in the analysis perform better estimations of their responsible backgrounds when adequately populated. Reducing the background too greatly with the \omegaTilde cut can therefore cause problems in multiple aspects of the analysis.
 
 
 %=========================================================
@@ -639,6 +711,7 @@ The following figures reveal the pre-fit \ptmiss distributions in each \gls{CR} 
         \includegraphics[width=\textwidth]{figures/region_plots/2016to18/region_1/ttH_resolved.pdf}
         \caption{\ttH resolved}
     \end{subfigure}
+    \hfill
     \begin{subfigure}[b]{0.24\textwidth}
         \includegraphics[width=\textwidth]{figures/region_plots/2016to18/region_1/VH_1V.pdf}
         \caption{\VH 1V}
@@ -663,6 +736,7 @@ The following figures reveal the pre-fit \ptmiss distributions in each \gls{CR} 
         \includegraphics[width=\textwidth]{figures/region_plots/2016to18/region_2/ttH_resolved.pdf}
         \caption{\ttH resolved}
     \end{subfigure}
+    \hfill
     \begin{subfigure}[b]{0.24\textwidth}
         \includegraphics[width=\textwidth]{figures/region_plots/2016to18/region_2/VH_1V.pdf}
         \caption{\VH 1V}
@@ -687,6 +761,7 @@ The following figures reveal the pre-fit \ptmiss distributions in each \gls{CR} 
         \includegraphics[width=\textwidth]{figures/region_plots/2016to18/region_3/ttH_resolved.pdf}
         \caption{\ttH resolved}
     \end{subfigure}
+    \hfill
     \begin{subfigure}[b]{0.24\textwidth}
         \includegraphics[width=\textwidth]{figures/region_plots/2016to18/region_3/VH_1V.pdf}
         \caption{\VH 1V}
@@ -711,6 +786,7 @@ The following figures reveal the pre-fit \ptmiss distributions in each \gls{CR} 
         \includegraphics[width=\textwidth]{figures/region_plots/2016to18/region_4/ttH_resolved.pdf}
         \caption{\ttH resolved}
     \end{subfigure}
+    \hfill
     \begin{subfigure}[b]{0.24\textwidth}
         \includegraphics[width=\textwidth]{figures/region_plots/2016to18/region_4/VH_1V.pdf}
         \caption{\VH 1V}
@@ -735,6 +811,7 @@ The following figures reveal the pre-fit \ptmiss distributions in each \gls{CR} 
         \includegraphics[width=\textwidth]{figures/region_plots/2016to18/region_5/ttH_resolved.pdf}
         \caption{\ttH resolved}
     \end{subfigure}
+    \hfill
     \begin{subfigure}[b]{0.24\textwidth}
         \includegraphics[width=\textwidth]{figures/region_plots/2016to18/region_5/VH_1V.pdf}
         \caption{\VH 1V}
@@ -813,6 +890,7 @@ The following figures reveal the pre-fit \ptmiss distributions in each \gls{SB} 
         \includegraphics[width=\textwidth]{figures/region_plots/2016to18/sideband_0/ttH_resolved.pdf}
         \caption{\ttH resolved}
     \end{subfigure}
+    \hfill
     \begin{subfigure}[b]{0.24\textwidth}
         \includegraphics[width=\textwidth]{figures/region_plots/2016to18/sideband_0/VH_1V.pdf}
         \caption{\VH 1V}
@@ -837,6 +915,7 @@ The following figures reveal the pre-fit \ptmiss distributions in each \gls{SB} 
         \includegraphics[width=\textwidth]{figures/region_plots/2016to18/sideband_1/ttH_resolved.pdf}
         \caption{\ttH resolved}
     \end{subfigure}
+    \hfill
     \begin{subfigure}[b]{0.24\textwidth}
         \includegraphics[width=\textwidth]{figures/region_plots/2016to18/sideband_1/VH_1V.pdf}
         \caption{\VH 1V}
@@ -860,6 +939,7 @@ The following figures reveal the pre-fit \ptmiss distributions in each \gls{SB} 
         \includegraphics[width=\textwidth]{figures/region_plots/2016to18/sideband_2/ttH_resolved.pdf}
         \caption{\ttH resolved}
     \end{subfigure}
+    \hfill
     \begin{subfigure}[b]{0.24\textwidth}
         \includegraphics[width=\textwidth]{figures/region_plots/2016to18/sideband_2/VH_1V.pdf}
         \caption{\VH 1V}
@@ -884,6 +964,7 @@ The following figures reveal the pre-fit \ptmiss distributions in each \gls{SB} 
         \includegraphics[width=\textwidth]{figures/region_plots/2016to18/sideband_3/ttH_resolved.pdf}
         \caption{\ttH resolved}
     \end{subfigure}
+    \hfill
     \begin{subfigure}[b]{0.24\textwidth}
         \includegraphics[width=\textwidth]{figures/region_plots/2016to18/sideband_3/VH_1V.pdf}
         \caption{\VH 1V}
@@ -1006,3 +1087,5 @@ The effects of \gls{jet} mismeasurements are, however, difficult to quantify. Wi
 
 \section{Interpretations in simplified dark matter scenarios}
 \label{sec:htoinv_dark_matter_models}
+
+% Include dark matter limit plot using the BR limit we obtain for a SM Higgs, with explanations. Will potentially also look at signal samples with non-Standard Model Higgs masses. Some useful info on those: https://twiki.cern.ch/twiki/bin/view/LHCPhysics/CERNYellowReportPageBSMAt13TeV

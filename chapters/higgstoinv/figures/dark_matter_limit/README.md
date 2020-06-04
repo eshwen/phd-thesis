@@ -8,4 +8,6 @@ root -l -b -q makeHiggsPortalPlot.C\(<limitvalue>,\"<output_dir>\"\)
 
 where `limitvalue` is a decimal, not percentage. The backslashes are required to escape the brackets and allow argument parsing.
 
-The direct detection limits are old (since the values are from around the time HIG-17-023 was published), so will need to be updated.
+The direct detection limits are old (since the values are from around the time HIG-17-023 was published), so will need to be updated:
+
+- CDMSlite values from <https://arxiv.org/abs/1509.02448> (Run 2?). Update to <https://arxiv.org/abs/1808.09098> (Run 3).

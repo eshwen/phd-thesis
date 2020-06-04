@@ -1,4 +1,4 @@
-#include "../CMS_lumi.h"
+#include "./CMS_lumi.h"
 
 // for re-cast of the limit --> not valid off-shell
 static float minDM = 1;
@@ -6,8 +6,8 @@ static float maxDM = 62.49;
 // for plotting
 static float minX = 1;
 static float maxX = 1000;
-static double minY_dd = 1e-48;
-static double maxY_dd = 1e-36;
+static double minY_dd = 1e-47;
+static double maxY_dd = 1e-37;
 // step in DM mass for making the plot
 static float stepDM = 0.2; // 100 MeV
 double const CV = 1e-36;
@@ -112,21 +112,21 @@ void makeHiggsPortalPlot(float observedBR, string outputDIR){
   gPad->SetLeftMargin(0.14);
   frame->Draw();
 
-  observedBound_fermion->SetLineColor(kOrange-1);
+  observedBound_fermion->SetLineColor(kRed);
   observedBound_fermion->SetLineWidth(3);
-  observedBound_fermion_min->SetLineColor(kOrange-1);
+  observedBound_fermion_min->SetLineColor(kRed);
   observedBound_fermion_min->SetLineWidth(2);
-  observedBound_fermion_max->SetLineColor(kOrange-1);
+  observedBound_fermion_max->SetLineColor(kRed);
   observedBound_fermion_max->SetLineWidth(2);
-  observedBound_scalar->SetLineColor(kRed+1);
+  observedBound_scalar->SetLineColor(kOrange-3);
   observedBound_scalar->SetLineWidth(3);
-  observedBound_scalar_min->SetLineColor(kRed+1);
+  observedBound_scalar_min->SetLineColor(kOrange-3);
   observedBound_scalar_min->SetLineWidth(2);
-  observedBound_scalar_max->SetLineColor(kRed+1);
+  observedBound_scalar_max->SetLineColor(kOrange-3);
   observedBound_scalar_max->SetLineWidth(2);
 
-  TGraph* observed_scalar_shade = new TGraph();
   TGraph* observed_fermion_shade = new TGraph();
+  TGraph* observed_scalar_shade = new TGraph();
   
   int ipoint_offset = 0;
   for(int n = 0; n < observedBound_fermion_max->GetN(); n++){
@@ -162,12 +162,12 @@ void makeHiggsPortalPlot(float observedBR, string outputDIR){
     
 
   observed_fermion_shade->SetFillStyle(3001);
-  observed_fermion_shade->SetFillColor(kOrange-1);
-  observed_fermion_shade->SetLineColor(kOrange-1);
+  observed_fermion_shade->SetFillColor(kRed);
+  observed_fermion_shade->SetLineColor(kRed);
   observed_fermion_shade->SetLineWidth(3);
   observed_scalar_shade->SetFillStyle(3001);
-  observed_scalar_shade->SetFillColor(kRed+1);
-  observed_scalar_shade->SetLineColor(kRed+1);
+  observed_scalar_shade->SetFillColor(kOrange-3);
+  observed_scalar_shade->SetLineColor(kOrange-3);
   observed_scalar_shade->SetLineWidth(3);
   
   observed_fermion_shade->Draw("F same");
@@ -187,11 +187,11 @@ void makeHiggsPortalPlot(float observedBR, string outputDIR){
   TGraph *lM3 = cresst();
   TGraph *lM4 = panda();
 
-  lM0->SetLineColor(kBlue);
-  lM1->SetLineColor(kBlue+2);
-  lM2->SetLineColor(kAzure+1);
-  lM3->SetLineColor(kAzure+8);
-  lM4->SetLineColor(kBlue+3);
+  lM0->SetLineColor(kBlue+2);
+  lM1->SetLineColor(kGreen);
+  lM2->SetLineColor(kAzure+8);
+  lM3->SetLineColor(kGreen+2);
+  lM4->SetLineColor(kBlue);
 
   lM0->Draw("L SAME");
   lM1->Draw("L SAME");
@@ -207,10 +207,17 @@ void makeHiggsPortalPlot(float observedBR, string outputDIR){
   tex->SetTextFont(72);
   tex->SetLineWidth(2);
   tex->SetTextSize(0.034);
-  tex->DrawLatex(0.65,0.86,"90% CL Limits");
-  tex->DrawLatex(0.65,0.81,Form("B(H#rightarrow inv) < %.2f",observedBR));
+  tex->DrawLatex(0.67,0.86,"#it{90% CL Limits}");
+  tex->DrawLatex(0.67,0.81,Form("#it{B(H#rightarrow inv) < %.2f}",observedBR));
 
-  TLegend *leg_1 = new TLegend(0.65,0.69,0.87,0.78,NULL,"brNDC");
+  TLatex* tex1 = new TLatex();
+  tex1->SetNDC();
+  tex1->SetTextFont(72);
+  tex1->SetLineWidth(2);
+  tex1->SetTextSize(0.034);
+  tex1->DrawLatex(0.65,0.75,"#it{Higgs portal models}");
+
+  TLegend *leg_1 = new TLegend(0.69,0.64,0.91,0.73,NULL,"brNDC");
   leg_1->SetFillStyle(0);
   leg_1->SetBorderSize(0);
   leg_1->SetFillColor(0);
@@ -223,17 +230,17 @@ void makeHiggsPortalPlot(float observedBR, string outputDIR){
   tex2->SetTextFont(72);
   tex2->SetLineWidth(2);
   tex2->SetTextSize(0.034);
-  tex2->DrawLatex(0.68,0.61,"Direct Detection");
+  tex2->DrawLatex(0.65,0.59,"#it{Direct Detection}");
   
-  TLegend *leg_2 = new TLegend(0.68,0.39,0.92,0.59,NULL,"brNDC");
+  TLegend *leg_2 = new TLegend(0.69,0.37,0.93,0.57,NULL,"brNDC");
   leg_2->SetFillStyle(0);
   leg_2->SetBorderSize(0);
   leg_2->SetFillColor(0);
-  leg_2->AddEntry(lM0 ,"LUX","L");
-  leg_2->AddEntry(lM1 ,"CDMSLite","L");
   leg_2->AddEntry(lM2 ,"XENON-1T","L");
-  leg_2->AddEntry(lM3 ,"CRESST-II","L");
+  leg_2->AddEntry(lM0 ,"LUX","L");
   leg_2->AddEntry(lM4 ,"PandaX-II","L");
+  leg_2->AddEntry(lM1 ,"CDMSlite","L");
+  leg_2->AddEntry(lM3 ,"CRESST-II","L");
   leg_2->Draw("same");
   
 

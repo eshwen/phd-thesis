@@ -16,10 +16,10 @@ double const CV = 1e-36;
 double dmNucleonXSECScalar(float dmMass, float width, int scale = 0){
 
   float mN = 0.939;
-  float fN = 0.326;
+  float fN = 0.308;
 
-  if(scale == -1)     fN = 0.629;
-  else if(scale == 1) fN = 0.260;
+  if(scale == -1)     fN = 0.326;
+  else if(scale == 1) fN = 0.290;
   
   float mH = 125;
   float vev = 246;
@@ -35,15 +35,15 @@ double dmNucleonXSECScalar(float dmMass, float width, int scale = 0){
 double dmNucleonXSECFermion(float dmMass, float width, int scale = 0){
 
   float mN = 0.939;
-  float fN = 0.326;
+  float fN = 0.308;
 
-  if(scale == -1)     fN = 0.629;
-  else if(scale == 1) fN = 0.260;
+  if(scale == -1)     fN = 0.326;
+  else if(scale == 1) fN = 0.290;
 
   float mH = 125;
   float vev = 246;
   float beta = sqrt(1-4*dmMass*dmMass/(mH*mH));
-  float numerator = (8*width*pow(dmMass,2)*pow(mN,4)*pow(fN,2));
+  float numerator = (16*width*pow(dmMass,2)*pow(mN,4)*pow(fN,2));
   float denominator = pow(mH,5)*pow(vev,2)*pow(beta,3)*pow(dmMass+mN,2);
 
   return CV*0.3894*1.0e+9*numerator/denominator;
@@ -115,29 +115,6 @@ void makeHiggsPortalPlot(float observedBR, string outputDIR){
   gPad->SetLeftMargin(0.14);
   frame->Draw();
 
-  // Set aesthetics for fermion and scalar lines and bands
-  int fermion_line_colour = kRed;
-  int scalar_line_colour = kOrange - 3;
-  int fermion_shade_colour = kRed - 9;
-  int scalar_shade_colour = kOrange - 9;
-  int nominal_line_width = 3;
-  int band_line_width = 0;
-  double shade_alpha = 0.5;  // transparency (0. = fully transparent, 1. = opaque)
-
-  observedBound_fermion->SetLineColorAlpha(fermion_line_colour, 1.);
-  observedBound_fermion->SetLineWidth(nominal_line_width);
-  observedBound_fermion_min->SetLineColorAlpha(fermion_shade_colour, shade_alpha);
-  observedBound_fermion_min->SetLineWidth(band_line_width);
-  observedBound_fermion_max->SetLineColorAlpha(fermion_shade_colour, shade_alpha);
-  observedBound_fermion_max->SetLineWidth(band_line_width);
-
-  observedBound_scalar->SetLineColor(scalar_line_colour);
-  observedBound_scalar->SetLineWidth(nominal_line_width);
-  observedBound_scalar_min->SetLineColorAlpha(scalar_shade_colour, shade_alpha);
-  observedBound_scalar_min->SetLineWidth(band_line_width);
-  observedBound_scalar_max->SetLineColorAlpha(scalar_shade_colour, shade_alpha);
-  observedBound_scalar_max->SetLineWidth(band_line_width);
-
   TGraph* observed_fermion_shade = new TGraph();
   TGraph* observed_scalar_shade = new TGraph();
   
@@ -173,14 +150,45 @@ void makeHiggsPortalPlot(float observedBR, string outputDIR){
     ipoint++;
   }
 
+  // Set aesthetics for fermion and scalar lines and bands
+  int fermion_colour = kRed;
+  int scalar_colour = kOrange - 3;
+  int nominal_line_width = 3;
+  int band_line_width = 0;
+  int fermion_line_style = 7;  // dashed line so can see band
+  double shade_alpha = 0.35;  // transparency (0. = fully transparent, 1. = opaque)
   int shade_style = 1001;  // solid fill
+
+  observedBound_fermion->SetLineColorAlpha(fermion_colour, 1.);
+  observedBound_fermion->SetLineWidth(nominal_line_width);
+  observedBound_fermion->SetLineStyle(fermion_line_style);
+
+  observedBound_fermion_min->SetLineColorAlpha(fermion_colour, shade_alpha);
+  observedBound_fermion_min->SetLineWidth(band_line_width);
+  observedBound_fermion_min->SetLineStyle(fermion_line_style);
+
+  observedBound_fermion_max->SetLineColorAlpha(fermion_colour, shade_alpha);
+  observedBound_fermion_max->SetLineWidth(band_line_width);
+  observedBound_fermion_max->SetLineStyle(fermion_line_style);
+
   observed_fermion_shade->SetFillStyle(shade_style);
-  observed_fermion_shade->SetFillColorAlpha(fermion_shade_colour, shade_alpha);
-  observed_fermion_shade->SetLineColor(fermion_line_colour);  // Sets line colour in legend
+  observed_fermion_shade->SetFillColorAlpha(fermion_colour, shade_alpha);
+  observed_fermion_shade->SetLineColor(fermion_colour);  // Sets line colour in legend
   observed_fermion_shade->SetLineWidth(nominal_line_width);  // Sets line width in legend
+  observed_fermion_shade->SetLineStyle(fermion_line_style);
+
+  observedBound_scalar->SetLineColor(scalar_colour);
+  observedBound_scalar->SetLineWidth(nominal_line_width);
+
+  observedBound_scalar_min->SetLineColorAlpha(scalar_colour, shade_alpha);
+  observedBound_scalar_min->SetLineWidth(band_line_width);
+
+  observedBound_scalar_max->SetLineColorAlpha(scalar_colour, shade_alpha);
+  observedBound_scalar_max->SetLineWidth(band_line_width);
+
   observed_scalar_shade->SetFillStyle(shade_style);
-  observed_scalar_shade->SetFillColorAlpha(scalar_shade_colour, shade_alpha);
-  observed_scalar_shade->SetLineColor(scalar_line_colour);
+  observed_scalar_shade->SetFillColorAlpha(scalar_colour, shade_alpha);
+  observed_scalar_shade->SetLineColor(scalar_colour);
   observed_scalar_shade->SetLineWidth(nominal_line_width);
 
   // Create lines for direct detection limits and draw

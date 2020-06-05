@@ -16,3 +16,5 @@ The direct detection limits are old (since the values are from around the time H
 - XENON-S2 values from <https://arxiv.org/abs/1907.11485> (latest results). CSV file from <https://arxiv.org/src/1907.11485v2/anc/5a_results_si_nr.csv>
 - CRESST-III values from <https://arxiv.org/abs/1904.00498> (latest results). CSV file from <https://arxiv.org/src/1905.07335v3/anc/C3P1_DetA_DataRelease_SI.xy>
 - PandaX-II values from <https://arxiv.org/abs/1708.06917> (latest results)
+- CDEX-10 values from <https://arxiv.org/abs/1802.09016> (latest results)
+- Try to get DarkSide-50 values from <https://arxiv.org/abs/1802.06994> (latest results) as they show strong limit < 10 GeV

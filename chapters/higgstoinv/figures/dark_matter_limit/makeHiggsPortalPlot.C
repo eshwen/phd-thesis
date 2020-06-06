@@ -101,8 +101,8 @@ void makeHiggsPortalPlot(float observedBR, string outputDIR){
   
   // Draw canvas
   TH1* frame = canvas->DrawFrame(minX,minY_dd,maxX,maxY_dd,"");
-  frame->GetYaxis()->SetTitle("#sigma^{SI}_{DM-nucleon} [cm^{2}]");
-  frame->GetXaxis()->SetTitle("m_{DM} [GeV]");
+  frame->GetYaxis()->SetTitle("#it{#sigma}^{SI}_{#it{#chi}-nucleon} [cm^{2}]");
+  frame->GetXaxis()->SetTitle("#it{m_{#chi}} [GeV]");
   frame->GetXaxis()->SetLabelSize(0.032);
   frame->GetYaxis()->SetLabelSize(0.032);
   frame->GetXaxis()->SetTitleSize(0.042);
@@ -251,8 +251,8 @@ void makeHiggsPortalPlot(float observedBR, string outputDIR){
   leg_1->SetFillStyle(0);
   leg_1->SetBorderSize(0);
   leg_1->SetFillColor(0);
-  leg_1->AddEntry(observed_fermion_shade,"Fermion DM","FL");
-  leg_1->AddEntry(observed_scalar_shade,"Scalar DM","FL");
+  leg_1->AddEntry(observed_fermion_shade,"Fermion #it{#chi}","FL");
+  leg_1->AddEntry(observed_scalar_shade,"Scalar #it{#chi}","FL");
   leg_1->Draw("same");
 
   TLatex* tex2 = new TLatex();
@@ -279,7 +279,7 @@ void makeHiggsPortalPlot(float observedBR, string outputDIR){
   CMS_lumi(canvas,"137");
   canvas->RedrawAxis("samesaxis");
    
-  canvas->SaveAs((outputDIR+"/higgsPortalDM.png").c_str(),"png");
+  //canvas->SaveAs((outputDIR+"/higgsPortalDM.png").c_str(),"png");
   canvas->SaveAs((outputDIR+"/higgsPortalDM.pdf").c_str(),"pdf");  
 }
 

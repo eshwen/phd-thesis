@@ -13,8 +13,6 @@
     & Maintaining CMS internal analysis note, documenting all aspects of the analysis. I will first add all relevant information there which I can subsequently use when writing this chapter.
 
     & Since it's my thesis, I can talk about \ttH, \VH and \ggF/monojet, even though the Bristol contribution to the final, public result may only be \ttH and resolved \VH. Would need to be able to run the fit for all three modes simultaneously, ensuring we have complete (and correct) systematics for \ggF.
-
-    & Since this is a dark matter search, I guess we should have some dark matter model interpretations after the main results. Not too sure how we'd accomplish it, though.
 \end{easylist}
 
 % Can pull from Section 37 of my lab book, and all the talks I and other people from the team have given (Presentations and talks/ folder, also Other peoples/ subdirectory). Can also pull from AN for analysis strategy
@@ -193,6 +191,7 @@ One thing must be noted about the migration of events, since we have many differ
 
 %=========================================================
 
+
 \subsubsection{Cross section reweighting}
 \label{subsubsec:xs_weighting}
 
@@ -202,7 +201,7 @@ Since an arbitrary number of events can be generated for simulation, and a large
     \label{eq:xs_weight}
 \end{equation}
 
-where $\sigma$ is the cross section of the process at the order it was generated, \intlumi is the integrated luminosity of the \acrshort{lhc} data it is being compared to, $N$ is the number of events in the dataset before any analysis-level cuts are applied (or the sum of the generator weights), and $\varepsilon$ is the filter efficiency (assumed to be unity for all datasets since no generator-level cuts are applied).\footnote{This statement on filter efficiency might not be strictly true, since the Drell-Yan datasets do apply a generator-level cut/requirment.} If a dataset is generated at leading order, higher order corrections are usually applied on an event-by-event basis that changes the shapes of distributions (see [SEC ON NLO CORRECTIONS]). In some circumstances, ``flat'' $k$-factors can be applied to a dataset that only alters the normalisation (i.e., its cross section).
+where $\sigma$ is the cross section of the process at the order it was generated, \intlumi is the integrated luminosity of the \acrshort{lhc} data it is being compared to, $N$ is the number of events in the dataset before any analysis-level cuts are applied (or the sum of the generator weights), and $\varepsilon$ is the filter efficiency (assumed to be unity for all datasets since no generator-level cuts are applied).\footnote{This statement on filter efficiency might not be strictly true, since the Drell-Yan datasets do apply a generator-level cut/requirment.} If a dataset is generated at leading order, higher order corrections are usually applied on an event-by-event basis that changes the shapes of distributions (see Chpt.~\ref{subsubsec:htoinv_nlo_corrs}). In some circumstances, ``flat'' $k$-factors can be applied to a dataset that only alters the normalisation (i.e., its cross section).
 
 
 %=========================================================
@@ -315,7 +314,7 @@ Charged ($f_{\mathrm{E}}^{\pm}$) and neutral hadron energy fraction ($f_{\mathrm
 \medskip
 \begin{easylist}[itemize]
     \cutflowlistprops
-    & $\dfrac{\HT^5}{\HT^{2.4}} < \text{1.2}$ \ or \ $\Delta\phi(\jone, \mht) \geq \left( \text{5.3} \dfrac{\HT^5}{\HT^{2.4}} - \text{4.78} \right)$
+    & $\dfrac{\HT^5}{\HT^{2.4}} < \text{1.2}$ \ or \ $\Delta\phi(\jone, \mht) \geq \left( \text{5.3} \dfrac{\HT^5}{\HT^{2.4}} - \text{4.78} \right)$  % dfrac for full-size fraction in list
 \end{easylist}
 
 \medskip
@@ -326,7 +325,7 @@ To avoid any potential horns (spikes in data and/or \acrshort{mc}) for \glspl{je
 \medskip
 \begin{easylist}[itemize]
     \cutflowlistprops
-    & $\text{1} - \dfrac{\MET(\text{CHS})}{\MET(\text{calo})} < \text{0.8}$  % dfrac for full-size fraction in list
+    & $\text{1} - \dfrac{\MET(\text{CHS})}{\MET(\text{calo})} < \text{0.8}$
 \end{easylist}
 
 \medskip
@@ -488,7 +487,7 @@ We employ the ensuing selections to AK8 \glspl{jet} to classify them, as recomme
 \subsection{Optimisation of the categories}
 \label{subsec:htoinv_cat_optimisation}
 
-% The material in this subsection is up-to-date as of 1st June. This, more than most, may be subject to change
+% This subsection, more than most, may be subject to change
 
 While first principles are a good starting point to categorise events and accentuate the Higgs production modes, they allow much room for improvement. \acrshort{qcd} multijet is still a prominent background, especially in the \ttH and \ggF categories. Historically, variables such as \biasedDPhi and \alphat have been used to suppress it, as in the previous \acrlong{susy} analysis I was a part of.
 
@@ -949,7 +948,7 @@ The following figures reveal the pre-fit \ptmiss distributions in each \gls{SB} 
         \includegraphics[width=\textwidth]{figures/region_plots/2016to18/sideband_2/VH_resolved.pdf}
         \caption{\VH resolved}
     \end{subfigure}
-    \caption[Pre-fit yields of the \ptmiss distribution in the $/mht/ptmiss$ sideband for the combined boosted and resolved categories for the \ttH and \VH processes, using the full Run-2 dataset for data and simulation]{Pre-fit yields of the \ptmiss distribution in the $/mht/ptmiss$ \gls{SB} for the combined boosted and resolved categories for the \ttH and \VH processes, using the full Run-2 dataset for data and simulation.}
+    \caption[Pre-fit yields of the \ptmiss distribution in the $\mht/\ptmiss$ sideband for the combined boosted and resolved categories for the \ttH and \VH processes, using the full Run-2 dataset for data and simulation]{Pre-fit yields of the \ptmiss distribution in the $\mht/\ptmiss$ \gls{SB} for the combined boosted and resolved categories for the \ttH and \VH processes, using the full Run-2 dataset for data and simulation.}
     \label{fig:htoinv_sb_yields_comb2016to18_mht_met}
 \end{figure}
 
@@ -1096,8 +1095,6 @@ The results of the analysis fail to accurately constrain the branching ratio on 
 
 \subsection{Higgs portal model with the standard model Higgs boson}
 \label{subsec:htoinv_dark_matter_higgs_portal}
-
-% Tidy up the language and flow/ordering of things in this subsection
 
 One interpretation of our results may be in terms of a simplified Higgs portal model---coupling the dark sector to the visible where the \acrshort{sm} Higgs boson acts as the mediator bridging them. An effective field theory approach assumes that the invisible decays of the Higgs boson results in the pair production of dark matter particles \Pqdark, with a frequency constrained by the upper limit on $\BRof{\higgstoinv}$. If $\mqdark < m_{\PH}/\text{2}$, on-shell production allows the translation of the \higgstoinv width $\Gamma_{\mathrm{inv.}}$ into the spin-independent $\Pqdark$-nucleon scattering cross section \xsecSI, as in Ref.~\citenum{Djouadi:2011aa}. The interaction between dark and baryonic matter may be mediated by a Higgs boson, making direct detection experiments particularly sensitive to the recoil. The sensitivity of these experiments is typically parametrised by \xsecSI as a function of dark matter mass $\mqdark$. Comparisons can therefore be made between direct detection and collider experiments.
 

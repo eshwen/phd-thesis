@@ -1051,7 +1051,14 @@ The effects of \gls{jet} mismeasurements are, however, difficult to quantify. Wi
 \section{Statistical model and fit}
 \label{sec:htoinv_satistical_treatment}
 
-% Give an outline of the how the fit is done and how the background estimation methods factor in, etc. Like background estimation, describe it generally
+% Give an outline of the how the fit is done (likelihood model, writing it out in full and highlighting each aspect) and how the background estimation methods factor in, etc. Like background estimation, describe it generally since I didn't explicitly work on it
+
+% In the following sections, talk more about the specific aspects for each mode (e.g., dropping dilepton CRs for ttH, using photon CR only for VH). Show limit plots:
+%  - Potentially by sub-category for each mode and for each year, i.e., one plot year and per mode, each bin in the plot shows the limit from each category, then the left-most bin is the combination over all those subcategories for that mode.
+%  - By year, for each mode. For a given mode, each bin shows the limit (combined over all subcategories) for one of the years, with the left-most bin showing the combination over all years
+%  - By production mode, perhaps also for each year. The main limit plot in the analysis will be over the full Run-2 dataset. Each bin will show the limit from a production mode (full Run-2 result, perhaps also with VBF), and the left-most bin is the combination over all modes
+
+% Toys (verbatim from Henning): toys are repeat experiments where you draw new values for your observed signal and bg based on the uncertainties associated with both. The parameters values are randomly drawn according to some pdf. I.e. if we talk about large event counts this would be gaussian with width equal to uncertainty,  small event counts Poissonian, for syst uncert possibly log-normal.
 
 
 %=========================================================
@@ -1062,6 +1069,28 @@ The effects of \gls{jet} mismeasurements are, however, difficult to quantify. Wi
 
 % Describe the specifics of the background estimation and fit for the ttH subcategories, since they may differ for the other modes
 
+Fig.~\ref{fig:htoinv_limit_ttH} showcases the median expected limit on $\BRof{\higgstoinv}$ with 1$\sigma$ and 2$\sigma$ bounds for the \ttH category and its subcategories.\footnote{Just placeholder plots for now for scenario 4. Plots made on 13th June.}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{figures/limits/ttH/limit_2016_ttH_Scenario4.pdf}
+        \caption{\ttH --- 2016}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{figures/limits/ttH/limit_2017_ttH_Scenario4.pdf}
+        \caption{\ttH --- 2017}
+    \end{subfigure}
+
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{figures/limits/ttH/limit_2018_ttH_Scenario4.pdf}
+        \caption{\ttH --- 2018}
+    \end{subfigure}
+    \caption[Expected 95\,\% CL upper limits on the Higgs boson to invisible state branching fraction in the \ttH category, for both the individual subcategories, and the combination of them, for each data-taking year in Run-2]{Expected 95\,\% CL upper limits on the Higgs boson to invisible state branching fraction in the \ttH category, for both the individual subcategories, and the combination of them, for each data-taking year in Run-2.}
+    \label{fig:htoinv_limit_ttH}
+\end{figure}
+
 
 %=========================================================
 
@@ -1071,6 +1100,28 @@ The effects of \gls{jet} mismeasurements are, however, difficult to quantify. Wi
 
 % Describe the specifics of the background estimation and fit for the VH subcategories, since they may differ for the other modes
 
+Fig.~\ref{fig:htoinv_limit_VH} showcases the median expected limit on $\BRof{\higgstoinv}$ with 1$\sigma$ and 2$\sigma$ bounds for the \VH category and its subcategories.\footnote{Just placeholder plots for now for scenario 4. Plots made on 13th June.}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{figures/limits/VH/limit_2016_VH_Scenario4.pdf}
+        \caption{\VH --- 2016}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{figures/limits/VH/limit_2017_VH_Scenario4.pdf}
+        \caption{\VH --- 2017}
+    \end{subfigure}
+
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{figures/limits/VH/limit_2018_VH_Scenario4.pdf}
+        \caption{\VH --- 2018}
+    \end{subfigure}
+    \caption[Expected 95\,\% CL upper limits on the Higgs boson to invisible state branching fraction in the \VH category, for both the individual subcategories, and the combination of them, for each data-taking year in Run-2]{Expected 95\,\% CL upper limits on the Higgs boson to invisible state branching fraction in the \VH category, for both the individual subcategories, and the combination of them, for each data-taking year in Run-2.}
+    \label{fig:htoinv_limit_VH}
+\end{figure}
+
 
 %=========================================================
 
@@ -1079,6 +1130,86 @@ The effects of \gls{jet} mismeasurements are, however, difficult to quantify. Wi
 \label{sec:htoinv_analysis_ggF}
 
 % Describe the specifics of the background estimation and fit for ggF subcategories, since they may differ for the other modes
+
+Fig.~\ref{fig:htoinv_limit_ggF} showcases the median expected limit on $\BRof{\higgstoinv}$ with 1$\sigma$ and 2$\sigma$ bounds for the \ggF category and its subcategories. The corresponding results from the monojet category are also given in Fig.~\ref{fig:htoinv_limit_monojet}.\footnote{Just placeholder plots for now for scenario 4. Plots made on 13th June.}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{figures/limits/ggF/limit_2016_ggF_Scenario4.pdf}
+        \caption{\ggF --- 2016}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{figures/limits/ggF/limit_2017_ggF_Scenario4.pdf}
+        \caption{\ggF --- 2017}
+    \end{subfigure}
+
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{figures/limits/ggF/limit_2018_ggF_Scenario4.pdf}
+        \caption{\ggF --- 2018}
+    \end{subfigure}
+    \caption[Expected 95\,\% CL upper limits on the Higgs boson to invisible state branching fraction in the \ggF category, for both the individual subcategories, and the combination of them, for each data-taking year in Run-2]{Expected 95\,\% CL upper limits on the Higgs boson to invisible state branching fraction in the \ggF category, for both the individual subcategories, and the combination of them, for each data-taking year in Run-2.}
+    \label{fig:htoinv_limit_ggF}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{figures/limits/monojet/limit_2016_monojet_Scenario4.pdf}
+        \caption{Monojet --- 2016}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{figures/limits/monojet/limit_2017_monojet_Scenario4.pdf}
+        \caption{Monojet --- 2017}
+    \end{subfigure}
+
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{figures/limits/monojet/limit_2018_monojet_Scenario4.pdf}
+        \caption{Monojet --- 2018}
+    \end{subfigure}
+    \caption[Expected 95\,\% CL upper limits on the Higgs boson to invisible state branching fraction in the monojet category, for both the individual subcategories, and the combination of them, for each data-taking year in Run-2]{Expected 95\,\% CL upper limits on the Higgs boson to invisible state branching fraction in the monojet category, for both the individual subcategories, and the combination of them, for each data-taking year in Run-2.}
+    \label{fig:htoinv_limit_monojet}
+\end{figure}
+
+
+%=========================================================
+
+
+\section{Combined results}
+\label{sec:htoinv_combined_results}
+
+% Show the results combined over all production modes (one plot for each year), then the full combination for Run-2, ideally with VBF results as well
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{figures/limits/limit_2016_comb_Scenario4.pdf}
+        \caption{Combined -- 2016}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{figures/limits/limit_2017_comb_Scenario4.pdf}
+        \caption{Combined -- 2017}
+    \end{subfigure}
+
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{figures/limits/limit_2018_comb_Scenario4.pdf}
+        \caption{Combined -- 2018}
+    \end{subfigure}
+    \caption[Expected 95\,\% CL upper limits on the Higgs boson to invisible state branching fraction, for both the individual categories that target a specific production mode, and the combination of them, for each data-taking year in Run-2]{Expected 95\,\% CL upper limits on the Higgs boson to invisible state branching fraction, for both the individual categories that target a specific production mode, and the combination of them, for each data-taking year in Run-2.}
+    \label{fig:htoinv_limit_each_year}
+\end{figure}
+
+%\begin{figure}[htbp]
+%    \centering
+%    \includegraphics[width=\textwidth]{figures/limits/limit_Run2_comb_Scenario4.pdf}
+%    \caption{Expected 95\,\% CL upper limits on the Higgs boson to invisible state branching fraction for the full Run-2 dataset, shown for each year and the combined result.}
+%    \label{fig:htoinv_limit_full_Run2}
+%\end{figure}
+
+% Expected limits only, for Scenario 4. No VBF result yet. All limit plots from 13th June.
 
 
 %=========================================================
@@ -1134,7 +1265,7 @@ For $\BRof{\higgstoinv} < XX$, the Higgs portal models assuming scalar and fermi
 \subsection{Constraints on a standard model-like Higgs boson}
 \label{subsec:htoinv_dark_matter_bsm_higgs}
 
-If the \acrshort{sm} Higgs boson does not decay into invisible particles beside the neutrino, one may still hypothesize a scenario in which the Higgs field [is related to] dark matter. The next-to-minimal branch of \acrlong{susy} and models with two Higgs doublets are examples that accommodate an additional Higgs boson with a different mass that does not couple to the \acrshort{sm} variant. It is denoted as ``\acrlong{sm}-like'', since it may be produced via the same mechanisms as the \acrshort{sm} Higgs boson (\ttH, \VH, \ggF, and \acrshort{VBF}) with the same relative contributions from each one. This extra Higgs is assumed to decay exclusively to invisible states.
+If the \acrshort{sm} Higgs boson does not decay into invisible particles beside the neutrino, one may still hypothesize a scenario in which the Higgs field [is related to] dark matter. The next-to-minimal branch of \acrlong{susy} and models with two Higgs doublets are examples that accommodate an additional Higgs boson with a different mass that does not couple to the \acrshort{sm} variant. It is denoted as ``\acrlong{sm}-like'', since it may be produced via the same mechanisms as the \acrshort{sm} Higgs boson (\ttH, \VH, \ggF, and \acrshort{vbf}) with the same relative contributions from each one. This extra Higgs is assumed to decay exclusively to invisible states.
 
 We perform our analysis where we assume an additional Higgs boson, and show the limit on the branching ratio as a function of mass.
 

@@ -12,7 +12,7 @@
 
     & Maintaining CMS internal analysis note, documenting all aspects of the analysis. I will first add all relevant information there which I can subsequently use when writing this chapter.
 
-    & Since it's my thesis, I can talk about \ttH, \VH and \ggF/monojet, even though the Bristol contribution to the final, public result may only be \ttH and resolved \VH. Would need to be able to run the fit for all three modes simultaneously, ensuring we have complete (and correct) systematics for \ggF.
+    & Since it's my thesis, I can talk about \ttH, \VH and \ggH/monojet, even though the Bristol contribution to the final, public result may only be \ttH and resolved \VH. Would need to be able to run the fit for all three modes simultaneously, ensuring we have complete (and correct) systematics for \ggH.
 \end{easylist}
 
 % Can pull from Section 37 of my lab book, and all the talks I and other people from the team have given (Presentations and talks/ folder, also Other peoples/ subdirectory). Can also pull from AN for analysis strategy
@@ -26,9 +26,9 @@
 
 The analysis discussed in the remainder of the chapter is a dedicated search for invisibly decaying Higgs bosons in hadronic final states, incorporating all four of the production modes from the outset. In contrast to many of the previous analyses that separately set limits on $\BRof{\higgstoinv}$ by reinterpretation, our approach has many benefits. A simultaneous search for all of the production modes allows us to construct search regions to target each one, building in orthogonality to avoid overlap between them. Data and simulation samples, recipes for corrections and systematic uncertainties, the analysis framework, and results can all be shared to provide a cohesive and consistent environment from which to perform the analysis. As well as streamlining the process of the final combination over each production mechanism, communication when establishing the analysis ensures each can cover as much phase space as possible without the trouble of overlap or contamination.
 
-Direct collaboration amongst several institutes divides up the task appropriately. Researchers at the University of Bristol, including as myself, and LLR (\emph{Laboratoire Leprince-Ringuet, \'{E}cole Polytechnique, Universit\'{e} Paris-Saclay}) focus on \ttH and the resolved \VH modes. Those at Imperial College London, who have a long history with the \acrshort{vbf} search~\cite{Chatrchyan:2014tja,Sirunyan:2018owy}, assume responsibility of this process. Researchers at Boston University---who have previously been involved in \acrshort{bsm} analyses with interpretations in invisibly decaying Higgs bosons~\cite{Khachatryan:2016mdm,Sirunyan:2017jix}---specialize in monojet and mono-\PVec searches. This makes them naturally suited to investigating the boosted aspect of \VH, and \ggF.
+Direct collaboration amongst several institutes divides up the task appropriately. Researchers at the University of Bristol, including as myself, and LLR (\emph{Laboratoire Leprince-Ringuet, \'{E}cole Polytechnique, Universit\'{e} Paris-Saclay}) focus on \ttH and the resolved \VH modes. Those at Imperial College London, who have a long history with the \acrshort{vbf} search~\cite{Chatrchyan:2014tja,Sirunyan:2018owy}, assume responsibility of this process. Researchers at Boston University---who have previously been involved in \acrshort{bsm} analyses with interpretations in invisibly decaying Higgs bosons~\cite{Khachatryan:2016mdm,Sirunyan:2017jix}---specialize in monojet and mono-\PVec searches. This makes them naturally suited to investigating the boosted aspect of \VH, and \ggH.
 
-Emphasis will be placed on the non-VBF modes, particularly \ttH and resolved \VH, as I had direct involvement in those aspects of the analysis. Before Boston University joined our effort, we also studied the boosted \VH and \ggF mechanisms. Accordingly, they will also be given some attention. Definitions of the physics objects used analysis-wide have already been discussed in Chpt.~\ref{sec:analysis_objects}. The data from \acrshort{cms} and from simulation, along with required corrections and systematic uncertainties, are acknowledged in Chpt.~\ref{sec:htoinv_data_sim}. These are followed by the event selection in Chpt.~\ref{sec:htoinv_event_selection}. Characterisation of the categorisation of production modes and phase space regions are illustrated in Chpts.~\ref{sec:htoinv_categorisation} and \ref{sec:region_definitions}, respectively. Methods for accurately estimating the background processes in the signal region are delineated in Chpt.~\ref{sec:htoinv_background_est}. The incorporation of these and the aforementioned sections in the statistical treatment are presented in Chpt.~\ref{sec:htoinv_satistical_treatment}, before the results of the analysis of the \ttH, \VH, and \ggF modes in Chpts.~\ref{sec:htoinv_analysis_ttH}, \ref{sec:htoinv_analysis_VH} and \ref{sec:htoinv_analysis_ggF}, respectively.
+Emphasis will be placed on the non-VBF modes, particularly \ttH and resolved \VH, as I had direct involvement in those aspects of the analysis. Before Boston University joined our effort, we also studied the boosted \VH and \ggH mechanisms. Accordingly, they will also be given some attention. Definitions of the physics objects used analysis-wide have already been discussed in Chpt.~\ref{sec:analysis_objects}. The data from \acrshort{cms} and from simulation, along with required corrections and systematic uncertainties, are acknowledged in Chpt.~\ref{sec:htoinv_data_sim}. These are followed by the event selection in Chpt.~\ref{sec:htoinv_event_selection}. Characterisation of the categorisation of production modes and phase space regions are illustrated in Chpts.~\ref{sec:htoinv_categorisation} and \ref{sec:region_definitions}, respectively. Methods for accurately estimating the background processes in the signal region are delineated in Chpt.~\ref{sec:htoinv_background_est}. The incorporation of these and the aforementioned sections in the statistical treatment are presented in Chpt.~\ref{sec:htoinv_satistical_treatment}, before the results of the analysis of the \ttH, \VH, and \ggH modes in Chpts.~\ref{sec:htoinv_analysis_ttH}, \ref{sec:htoinv_analysis_VH} and \ref{sec:htoinv_analysis_ggF}, respectively.
 
 % Given the \acrshort{lhc} is a \emph{hadron} collider, processes with hadronic channels are the natural choices.\footnote{Or should I say ``most sensitive''?} \Gls{met} from the purely-invisible decay of the Higgs---and hadronic activity from the particles associated with the production mechanism---constitute the [final state], often known as a ``\text{\glspl{jet}} + \ptmiss$'' search.
 
@@ -429,18 +429,18 @@ To extract maximum sensitivity to the \higgstoinv decay from the analysis, categ
         & 2j1b & 2 & 1 & 0 & 0 & $\in [\text{65}, \text{105})$ \\
         & 2j2b & 2 & 2 & 0 & 0 & $\in [\text{65}, \text{105})$ \\
         & 1V & 0 & 0 & 0 & 1 & ---\\\hline
-        \multirow{4}{*}{\ggF}& 2jM & 2 & 0 & 0 & 0 & $\notin [\text{65}, \text{105})$ & \multirow{4}{*}{$\omegaTilde > \text{0.7}$} \\
+        \multirow{4}{*}{\ggH}& 2jM & 2 & 0 & 0 & 0 & $\notin [\text{65}, \text{105})$ & \multirow{4}{*}{$\omegaTilde > \text{0.7}$} \\
         & 3j & 3 & 0 & 0 & 0 & ---\\
         & 4j & 4 & 0 & 0 & 0 & ---\\
         & 5j & $\geq \text{5}$ & 0 & 0 & 0 & ---\\\hline
         \multirow{2}{*}{Monojet}& 0b & 1 & 0 & 0 & 0 & \multirow{2}{*}{---} & \multirow{2}{*}{$\mindphiJetMet > \text{2.5}$}\\ % Replaced \dphiFj with this to prevent overfull hbox
         & 1b & 1 & 1 & 0 & 0 &  \\\hline\hline
     \end{tabular}
-    \caption[Categorisation of the \ttH, \VH and \ggF production modes in the analysis]{Categorisation of the \ttH, \VH and \ggF production modes in the analysis. Each subcategory highlights one of the possible final states of the mechanism, accounting for inefficiencies in object tagging or reconstruction. In the \ggF 2jM subcategory, the dijet mass requirement ensures orthogonality with \VH 2j0b.}
+    \caption[Categorisation of the \ttH, \VH and \ggH production modes in the analysis]{Categorisation of the \ttH, \VH and \ggH production modes in the analysis. Each subcategory highlights one of the possible final states of the mechanism, accounting for inefficiencies in object tagging or reconstruction. In the \ggH 2jM subcategory, the dijet mass requirement ensures orthogonality with \VH 2j0b.}
     \label{tab:htoinv_categories}
 \end{table}
 
-The monojet category resembles the search in Ref.~\citenum{Sirunyan:2017jix}and primarily targets the \ggF mode, but is separated to distinguish it from the categories we have developed specifically for the analysis.
+The monojet category resembles the search in Ref.~\citenum{Sirunyan:2017jix}and primarily targets the \ggH mode, but is separated to distinguish it from the categories we have developed specifically for the analysis.
 
 The number of boosted top quark- and vector boson-tagged \glspl{jet} (\nBoostedTop and \nBoostedV, respectively) are defined in Chpt.~\ref{subsec:htoinv_deepak8}. In the \ttH 2Boosted category, if $\nBoostedV = \text{2}$ we also require $\nbjet \geq \text{1}$ for confidence that the \PVec boson originates from a decaying \Ptop quark.
 
@@ -489,9 +489,9 @@ We employ the ensuing selections to AK8 \glspl{jet} to classify them, as recomme
 
 % This subsection, more than most, may be subject to change
 
-While first principles are a good starting point to categorise events and accentuate the Higgs production modes, they allow much room for improvement. \acrshort{qcd} multijet is still a prominent background, especially in the \ttH and \ggF categories. Historically, variables such as \biasedDPhi and \alphat have been used to suppress it, as in the previous \acrlong{susy} analysis I was a part of.
+While first principles are a good starting point to categorise events and accentuate the Higgs production modes, they allow much room for improvement. \acrshort{qcd} multijet is still a prominent background, especially in the \ttH and \ggH categories. Historically, variables such as \biasedDPhi and \alphat have been used to suppress it, as in the previous \acrlong{susy} analysis I was a part of.
 
-Recently, more elaborate variables have been developed to better remove multijet background events in analyses with hadronic final states. Colleagues at the University of Bristol have designed a family of them: \minChi, \omegaHat, and \omegaTilde~\cite{Sakuma:2018xrq}. These show noticeable improvement over previous variables (particularly \biasedDPhi, which is used as a benchmark for comparisons). Optimisation was performed for these variables on a per-category, over a per-subcategory, basis to avoid excessive fine tuning for the many subcategories in the analysis. After investigating each variable, \omegaTilde was chosen for the \ttH, \VH, and \ggF categories. A more traditional \mindphiJetMet was selected for the monojet category, as the aforementioned ones typically perform better at higher \gls{jet} multiplicity.
+Recently, more elaborate variables have been developed to better remove multijet background events in analyses with hadronic final states. Colleagues at the University of Bristol have designed a family of them: \minChi, \omegaHat, and \omegaTilde~\cite{Sakuma:2018xrq}. These show noticeable improvement over previous variables (particularly \biasedDPhi, which is used as a benchmark for comparisons). Optimisation was performed for these variables on a per-category, over a per-subcategory, basis to avoid excessive fine tuning for the many subcategories in the analysis. After investigating each variable, \omegaTilde was chosen for the \ttH, \VH, and \ggH categories. A more traditional \mindphiJetMet was selected for the monojet category, as the aforementioned ones typically perform better at higher \gls{jet} multiplicity.
 
 Various metrics (or figures of merit) were considered for the threshold to cut on the given angular variable. In a counting experiment, a known Possion-distributed background $B$ yields a statistical uncertainty---assuming one standard deviation---of $\sqrt{B}$. A signal count $S$ can then be statistically significant (i.e., unlikely to be a statistical fluctuation of the background) if it is greater than the uncertainty on the background. This, somewhat simplistic, method gives the standard deviation for the expected signal with respect to background---often just referred to as the \emph{expected significance} $Z$---as
 \begin{equation}
@@ -520,7 +520,7 @@ c_1 = \ln\left( \frac{(S + B) \cdot (B + \bkgsystuncert^2)}{B^2 + (S + B)\bkgsys
 \label{eq:asimov_significance_systs}
 \end{equation}
 
-While these are quantitative measures of the sensitivity with an given analysis configuration, they are only a guide to inform an analyst of a more specific area of phase space to consider, rather than providing a precise cut for the given variable. To derive the appropriate cut for each category in the final column of Tab.~\ref{tab:htoinv_categories}, we first processed all simulated signal and background events through the analysis. They were categorised according to the aforementioned table (of course, excluding the angular variable cut). For each subcategory, the significances for both methods were calculated, with and without an estimated 5\,\% systematic uncertainty on the background distribution. To estimate the significance for a category, the significances for each subcategory were summed in quadrature. Fig.~\ref{fig:htoinv_category_optimisations_significances} demonstrates the results as a function of \omegaTilde for the \ttH, \VH, and \ggF categories with the 2017 datasets.
+While these are quantitative measures of the sensitivity with an given analysis configuration, they are only a guide to inform an analyst of a more specific area of phase space to consider, rather than providing a precise cut for the given variable. To derive the appropriate cut for each category in the final column of Tab.~\ref{tab:htoinv_categories}, we first processed all simulated signal and background events through the analysis. They were categorised according to the aforementioned table (of course, excluding the angular variable cut). For each subcategory, the significances for both methods were calculated, with and without an estimated 5\,\% systematic uncertainty on the background distribution. To estimate the significance for a category, the significances for each subcategory were summed in quadrature. Fig.~\ref{fig:htoinv_category_optimisations_significances} demonstrates the results as a function of \omegaTilde for the \ttH, \VH, and \ggH categories with the 2017 datasets.
 
 \begin{figure}[htbp]
     \centering
@@ -536,7 +536,7 @@ While these are quantitative measures of the sensitivity with an given analysis 
     \hfill
     \begin{subfigure}[b]{0.27\textwidth}
         \includegraphics[width=\textwidth]{figures/category_optimisations/min_omega_tilde_ggF.pdf}
-        \caption{\ggF category}
+        \caption{\ggH category}
     \end{subfigure}
 
     \begin{subfigure}[b]{0.27\textwidth}
@@ -551,9 +551,9 @@ While these are quantitative measures of the sensitivity with an given analysis 
     \hfill
     \begin{subfigure}[b]{0.27\textwidth}
         \includegraphics[width=\textwidth]{figures/category_optimisations/significance_ggF_min_omega_tilde_all.pdf}
-        \caption{Significance of cut in \ggF category}
+        \caption{Significance of cut in \ggH category}
     \end{subfigure}
-    \caption[Distributions of \omegaTilde in the signal region in the \ttH, \VH, and \ggF categories, along with the significance---using several figures of merit---if a cut is placed to the right of a given value]{Top row: distributions of \omegaTilde in the signal region in the \ttH, \VH, and \ggF categories. Bottom row: the significance---using several figures of merit---if a cut is placed to the right of a given value of \omegaTilde in each category. The black dotted line indicates the threshold used in the analysis. These are showcased after the analysis-level selection on signal and background simulation for the 2017 data-taking era.}
+    \caption[Distributions of \omegaTilde in the signal region in the \ttH, \VH, and \ggH categories, along with the significance---using several figures of merit---if a cut is placed to the right of a given value]{Top row: distributions of \omegaTilde in the signal region in the \ttH, \VH, and \ggH categories. Bottom row: the significance---using several figures of merit---if a cut is placed to the right of a given value of \omegaTilde in each category. The black dotted line indicates the threshold used in the analysis. These are showcased after the analysis-level selection on signal and background simulation for the 2017 data-taking era.}
     \label{fig:htoinv_category_optimisations_significances}
 \end{figure}
 
@@ -855,7 +855,7 @@ We invert the requirements on $\mht/\ptmiss$---where a ceiling is placed at $\mh
         $\mht/\ptmiss < 1.2$ & ``Tight'' \omegaTilde SB & ``Loose'' \omegaTilde SB & Signal region \\\hline
         $1.2 \leq \mht/\ptmiss < 4$ & ``Tight'' double SB & ``Loose'' double SB & $\mht/\ptmiss$ SB \\
     \end{tabular}
-    \caption[Definitions of the data sidebands used to determine the QCD multijet background in the signal region for the \ggF categories]{Definitions of the \glspl{SB} (SBs) used to determine the \acrshort{qcd} multijet background in the signal region for the \ggF categories.}
+    \caption[Definitions of the data sidebands used to determine the QCD multijet background in the signal region for the \ggH categories]{Definitions of the \glspl{SB} (SBs) used to determine the \acrshort{qcd} multijet background in the signal region for the \ggH categories.}
     \label{tab:sidebanddefs_ggF}
 \end{table}
 
@@ -1126,30 +1126,30 @@ Fig.~\ref{fig:htoinv_limit_VH} showcases the median expected limit on $\BRof{\hi
 %=========================================================
 
 
-\section{Analysis of the \texorpdfstring{\ggF}{ggF} mode}
+\section{Analysis of the \texorpdfstring{\ggH}{ggH} mode}
 \label{sec:htoinv_analysis_ggF}
 
 % Describe the specifics of the background estimation and fit for ggF subcategories, since they may differ for the other modes
 
-Fig.~\ref{fig:htoinv_limit_ggF} showcases the median expected limit on $\BRof{\higgstoinv}$ with 1$\sigma$ and 2$\sigma$ bounds for the \ggF category and its subcategories. The corresponding results from the monojet category are also given in Fig.~\ref{fig:htoinv_limit_monojet}.\footnote{Just placeholder plots for now for scenario 4. Plots made on 13th June.}
+Fig.~\ref{fig:htoinv_limit_ggF} showcases the median expected limit on $\BRof{\higgstoinv}$ with 1$\sigma$ and 2$\sigma$ bounds for the \ggH category and its subcategories. The corresponding results from the monojet category are also given in Fig.~\ref{fig:htoinv_limit_monojet}.\footnote{Just placeholder plots for now for scenario 4. Plots made on 13th June.}
 
 \begin{figure}[htbp]
     \centering
     \begin{subfigure}[b]{0.45\textwidth}
         \includegraphics[width=\textwidth]{figures/limits/ggF/limit_2016_ggF_Scenario4.pdf}
-        \caption{\ggF --- 2016}
+        \caption{\ggH --- 2016}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.45\textwidth}
         \includegraphics[width=\textwidth]{figures/limits/ggF/limit_2017_ggF_Scenario4.pdf}
-        \caption{\ggF --- 2017}
+        \caption{\ggH --- 2017}
     \end{subfigure}
 
     \begin{subfigure}[b]{0.45\textwidth}
         \includegraphics[width=\textwidth]{figures/limits/ggF/limit_2018_ggF_Scenario4.pdf}
-        \caption{\ggF --- 2018}
+        \caption{\ggH --- 2018}
     \end{subfigure}
-    \caption[Expected 95\,\% CL upper limits on the Higgs boson to invisible state branching fraction in the \ggF category, for both the individual subcategories, and the combination of them, for each data-taking year in Run-2]{Expected 95\,\% CL upper limits on the Higgs boson to invisible state branching fraction in the \ggF category, for both the individual subcategories, and the combination of them, for each data-taking year in Run-2.}
+    \caption[Expected 95\,\% CL upper limits on the Higgs boson to invisible state branching fraction in the \ggH category, for both the individual subcategories, and the combination of them, for each data-taking year in Run-2]{Expected 95\,\% CL upper limits on the Higgs boson to invisible state branching fraction in the \ggH category, for both the individual subcategories, and the combination of them, for each data-taking year in Run-2.}
     \label{fig:htoinv_limit_ggF}
 \end{figure}
 
@@ -1265,7 +1265,7 @@ For $\BRof{\higgstoinv} < XX$, the Higgs portal models assuming scalar and fermi
 \subsection{Constraints on a standard model-like Higgs boson}
 \label{subsec:htoinv_dark_matter_bsm_higgs}
 
-If the \acrshort{sm} Higgs boson does not decay into invisible particles beside the neutrino, one may still hypothesize a scenario in which the Higgs field [is related to] dark matter. The next-to-minimal branch of \acrlong{susy} and models with two Higgs doublets are examples that accommodate an additional Higgs boson with a different mass that does not couple to the \acrshort{sm} variant. It is denoted as ``\acrlong{sm}-like'', since it may be produced via the same mechanisms as the \acrshort{sm} Higgs boson (\ttH, \VH, \ggF, and \acrshort{vbf}) with the same relative contributions from each one. This extra Higgs is assumed to decay exclusively to invisible states.
+If the \acrshort{sm} Higgs boson does not decay into invisible particles beside the neutrino, one may still hypothesize a scenario in which the Higgs field [is related to] dark matter. The next-to-minimal branch of \acrlong{susy} and models with two Higgs doublets are examples that accommodate an additional Higgs boson with a different mass that does not couple to the \acrshort{sm} variant. It is denoted as ``\acrlong{sm}-like'', since it may be produced via the same mechanisms as the \acrshort{sm} Higgs boson (\ttH, \VH, \ggH, and \acrshort{vbf}) with the same relative contributions from each one. This extra Higgs is assumed to decay exclusively to invisible states.
 
 We perform our analysis where we assume an additional Higgs boson, and show the limit on the branching ratio as a function of mass.
 

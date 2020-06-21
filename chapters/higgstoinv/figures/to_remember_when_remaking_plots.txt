@@ -4,3 +4,4 @@ Remember:
 - Add the bin widths on the y-axis label
 - Make sure signal line colours are consistent
 - Make sure status annotation next to "CMS" is correct, i.e., Preliminary/Work in progress/no annotation
+- Make sure any plots in the ggF categories are labelled/annotated with "ggH", not "ggF"

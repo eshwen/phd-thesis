@@ -3,7 +3,7 @@
 
 \epigraph{It doesn’t stop being magic just because you know how it works.}{--- Terry Pratchett}
 
-\initial{T}his thesis is comprised of experimental searches for dark matter and new physics. The experimental chapters Chpt.~\ref{chap:higgstoinv} and Chpt.~\ref{chap:svj} delve deeply into the analyses. Before which, the theoretical and phenomenological motivations must be understood to corroborate the need for them at the \acrlong{lhc}. In this chapter, a brief recap of the \acrlong{sm} will be presented along with its shortcomings, foremost the lack of a dark matter candidate. Theoretical descriptions of dark matter that best fit the relic density and astrophysical observations will then be discussed. Specific interpretations in the forms of \glspl{svj} and invisibly decaying Higgs bosons are examined that provide the background for the respective analysis chapters.
+\initial{T}his thesis is comprised of experimental searches for dark matter and new physics. The experimental chapter Chpt.~\ref{chap:higgstoinv} delves deeply into the predominantly-featured search for an invisibly decaying Higgs boson. A small chapter is dedicated to the pursuit of \glspl{svj} with Chpt.~\ref{chap:svj}. Before either of which, the theoretical and phenomenological motivations must be understood to corroborate the need for them at the \acrlong{lhc}. In this chapter, a brief recap of the \acrlong{sm}---with emphasis on the Higgs mechanism---will be presented along with its shortcomings, foremost the lack of a dark matter candidate. Theoretical descriptions of dark matter that best fit the relic density and astrophysical observations will then be discussed. Specific interpretations in the forms of \glspl{svj} and invisibly decaying Higgs bosons are examined that provide the background for the respective analysis chapters.
 
 
 %=========================================================
@@ -11,6 +11,33 @@
 
 \section{The standard model of particle physics}
 \label{sec:standardmodel}
+
+% Link to objects chapter on electron volts somewhere here (Chpt.~\ref{subsec:objects_electron_volt})
+
+The \acrlong{sm} of particle physics (\acrshort{sm}) is the best description of nature the human race has to offer. Three of the four fundamental forces are encapsulated by it: the strong (nuclear) force, the weak (nuclear) force, and electromagnetism. The latter two may instead be considered aspects of a single \emph{electroweak} force, unified above an energy $\order{\text{100}\GeV}$. All of the elementary particles---the quarks, leptons, gauge bosons, and the Higgs boson---and their interactions with each other are considered in the \acrlong{sm}. The mathematical representation is often [given] in terms of the Lagrangian density
+\begin{equation}
+\mathcal{L}_{\mathrm{SM}} = \mathcal{L}_{\mathrm{Gauge}} + \mathcal{L}_{\mathrm{Fermions}} + \mathcal{L}_{\mathrm{Yukawa}} + \mathcal{L}_{\mathrm{Higgs}} \\
+\label{eq:sm_lagrangian_compressed}
+\end{equation}
+
+before the manifestation of electroweak symmetry breaking. where each term can be expanded to yield
+\begin{equation}
+    \begin{aligned}
+\mathcal{L}_{\mathrm{SM}} = &-\frac{1}{4}F_{\mu\nu}F^{\mu\nu} \\
+&+ i\bar{\psi}\!\Dslash \psi + \mathrm{h.c.} \\
+&+ \bar{\psi}_i y_{ij} \psi_j \phi + \mathrm{h.c.}\\
+&+ \abs{D_{\mu} \phi}^2 - V(\phi)
+    \end{aligned}
+    \label{eq:sm_lagrangian_expanded}
+\end{equation}
+% When using 'aligned' environment, don't indent each equation line, otherwise it complains
+
+The boson fields and their couplings are represented by $F_{\mu\nu}F^{\mu\nu}$ and $D$, respectively. Feynman slash notation is used, i.e., $\Dslash \equiv \gamma^{\mu} D_{\mu}$, with $\gamma^{\mu}$ as the Dirac ``gamma'' matrices. The fermion fields are denoted by $\psi$, with the Yukawa coupling $y_{ij}$.\footnote{Make sure this is correct.} Finally, the Higgs field is represented with $\phi$ and potential $V(\phi)$. 
+
+% Explain what each term means (in its own paragraph/subsection?), and how it relates to the particle interactions. See https://en.wikipedia.org/wiki/Electroweak_interaction and Lancaster notes for more info
+% Give overviews of each of the forces (with QFT descriptions) and which particles interact with which force(s)
+% Add a table of the relative strengths and ranges of the forces?
+% Maybe add a plot similar to Dwayne's for the particles
 
 \begin{easylist}[itemize]
     \easylistprops
@@ -42,7 +69,7 @@
 
 Despite the \acrlong{sm} providing precise predictions of three of the four fundamental forces and the particles that they interact with, there are many experimental observations that it cannot currently explain. Neutrino masses, dark matter, dark energy, and gravity all escape its description.
 
-The Hierarchy Problem is one of the more serious issues facing the \acrlong{sm}. It may be explained in different manners that emphasize certain aspects. But inherently, it is a question of the disparity between energy scales of the fundamental forces---particularly relating to the weak force and gravity. The masses of the intermediate vector, and Higgs, bosons of $\order{\text{100}\GeVcc}$ are much smaller than than the Planck mass of $\order{\text{10}^{19}\GeVcc}$. The mass term for the Higgs boson is $m^2 H^{\dagger} H$ in the \acrshort{sm}. Invariance under a gauge or global symmetry in the Higgs field $H$ leads to the mass being open to radiative corrections up to the Plank scale.\footnote{Justify this more?} It appears that, in nature, these very large terms cancel to give the familiar $m_{\PH} = \text{125}\GeVcc$~\cite{Chatrchyan:2012xdj,Aad:2012tfa}. It is deemed unnatural to expect cancellations to such a degree, i.e., one part in 10$^{17}$. This ``fine-tuning'' of parameters in the \acrlong{sm} is something that unified or natural theories desperately try to avoid.
+The Hierarchy Problem is one of the more serious issues facing the \acrlong{sm}. It may be explained in different manners that emphasize certain aspects. But inherently, it is a question of the disparity between energy scales of the fundamental forces---particularly relating to the weak force and gravity. The masses of the intermediate vector, and Higgs, bosons of $\order{\text{100}\GeVcc}$ are much smaller than than the Planck mass of $\order{\text{10}^{19}\GeVcc}$. The mass term for the Higgs boson is $m^2 \phi^{\dagger} \phi$ in the \acrshort{sm}. Invariance under a gauge or global symmetry in the Higgs field $H$ leads to the mass being open to radiative corrections up to the Plank scale.\footnote{Justify this more?} It appears that, in nature, these very large terms cancel to give the familiar $m_{\PH} = \text{125}\GeVcc$~\cite{Chatrchyan:2012xdj,Aad:2012tfa}. It is deemed unnatural to expect cancellations to such a degree, i.e., one part in 10$^{17}$. This ``fine-tuning'' of parameters in the \acrlong{sm} is something that unified or natural theories desperately try to avoid.
 
 Some \acrshort{bsm} theories like \acrlong{susy} provide well-motivated cancellations by introducing supersymmetric particles. In certain scenarios, some of these particles should exist at the \TeVns scale. In the \acrshort{sm}, the largest correction to the Higgs mass derives from the top quark, since its Yukawa coupling to the Higgs is the strongest. At one-loop order, new physics at $\order{\TeVns}$ scale is required, with new particles coupling to the Higgs field to prevent these corrections from being unreasonably large~\cite{Farina:2013ssa}. Arguments such as this give credence to new physics being discoverable at particle accelerators such as the \acrlong{lhc}.
 
@@ -237,15 +264,15 @@ Proposed in Refs.~\citenum{Cohen:2015toa,Cohen:2017pzm}, a strongly-coupled dark
 
 \begin{figure}[htbp]
     \centering
-    \begin{subfigure}[c]{0.45\textwidth}
+    \begin{subfigure}[c]{0.32\textwidth}
     \centering
-        \includegraphics[width=0.7\textwidth]{figures/svj/portals_s.pdf}
+        \includegraphics[width=\textwidth]{figures/svj/portals_s.pdf}
         \caption{\schannel}
     \end{subfigure}
-    \hfill
-    \begin{subfigure}[c]{0.45\textwidth}
+    \hspace{0.1\textwidth}
+    \begin{subfigure}[c]{0.32\textwidth}
     \centering
-        \includegraphics[width=0.7\textwidth]{figures/svj/portals_t.pdf}
+        \includegraphics[width=\textwidth]{figures/svj/portals_t.pdf}
         \caption{\tchannel}
     \end{subfigure}
 \caption[Example Feynman diagrams for the two main production modes of semi-visible jets. A \PZprime boson mediates the \schannel process while a bi-fundamental $\Phi$ mediates the \tchannel process]{Example Feynman diagrams for the two main production modes of \glspl{svj}. A \PZprime boson mediates the \schannel process while a bi-fundamental $\Phi$ mediates the \tchannel process. Figure from Ref.~\citenum{Cohen:2017pzm}.}

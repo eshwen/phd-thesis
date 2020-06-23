@@ -1,4 +1,4 @@
-#include "./CMS_lumi.h"
+#include "../CMS_lumi.h"
 
 // for re-cast of the limit --> not valid off-shell
 static float minDM = 1;
@@ -231,21 +231,24 @@ void makeHiggsPortalPlot(float observedBR, string outputDIR){
   observedBound_fermion->Draw("L SAME");
   observedBound_scalar->Draw("L SAME");
 
+  int legend_text_font = 62;  // Arial bold
+  int legend_line_width = 2;
+
   // Add annotations and legends
   TLatex* tex = new TLatex();
   tex->SetNDC();
-  tex->SetTextFont(72);
-  tex->SetLineWidth(2);
+  tex->SetTextFont(legend_text_font);
+  tex->SetLineWidth(legend_line_width);
   tex->SetTextSize(0.034);
-  tex->DrawLatex(0.67,0.86,"#it{90% CL Limits}");
-  tex->DrawLatex(0.67,0.81,Form("#it{B(H#rightarrow inv) < %.2f}",observedBR));
+  tex->DrawLatex(0.67,0.86,"90% CL Limits");
+  tex->DrawLatex(0.67,0.81,Form("B(H #rightarrow inv) < %.2f",observedBR));
 
   TLatex* tex1 = new TLatex();
   tex1->SetNDC();
-  tex1->SetTextFont(72);
-  tex1->SetLineWidth(2);
+  tex1->SetTextFont(legend_text_font);
+  tex1->SetLineWidth(legend_line_width);
   tex1->SetTextSize(0.034);
-  tex1->DrawLatex(0.65,0.75,"#it{Higgs portal models}");
+  tex1->DrawLatex(0.65,0.75,"Higgs portal models");
 
   TLegend *leg_1 = new TLegend(0.69,0.64,0.91,0.73,NULL,"brNDC");
   leg_1->SetFillStyle(0);
@@ -257,10 +260,10 @@ void makeHiggsPortalPlot(float observedBR, string outputDIR){
 
   TLatex* tex2 = new TLatex();
   tex2->SetNDC();
-  tex2->SetTextFont(72);
-  tex2->SetLineWidth(2);
+  tex2->SetTextFont(legend_text_font);
+  tex2->SetLineWidth(legend_line_width);
   tex2->SetTextSize(0.034);
-  tex2->DrawLatex(0.65,0.59,"#it{Direct Detection}");
+  tex2->DrawLatex(0.65,0.59,"Direct Detection");
   
   TLegend *leg_2 = new TLegend(0.69,0.37,0.93,0.57,NULL,"brNDC");
   leg_2->SetFillStyle(0);

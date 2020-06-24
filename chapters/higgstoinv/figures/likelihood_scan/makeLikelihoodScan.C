@@ -48,7 +48,7 @@ TGraph* get_points_and_sort(TTree* limit_tree, TGraph* limit_graph){
 }
 
 
-//// code to plot likelihood scans
+// code to plot likelihood scans
 void makeLikelihoodScan(string outputPlots){
 
   gROOT->SetBatch(kTRUE);
@@ -59,14 +59,15 @@ void makeLikelihoodScan(string outputPlots){
   TCanvas* canvas = new TCanvas ("canvas","",600,600);
   canvas->cd();
 
+  TFile* file_scan_combined_exp = new TFile("./2017/combined_exp.root", "READ");
   TFile* file_scan_ttH_exp = new TFile("./2017/ttH_exp.root", "READ");
   TFile* file_scan_VH_exp = new TFile("./2017/VH_exp.root", "READ");
   TFile* file_scan_ggH_exp = new TFile("./2017/ggH_exp.root", "READ");
   TFile* file_scan_monojet_exp = new TFile("./2017/Monojet_exp.root", "READ");
   // TFile* file_scan_monojet_obs = new TFile("higgsCombineTest_monojet_obs.MultiDimFit.mH125.root", "READ");
 
-
   // Define TTrees that get the limit
+  TTree* limit_scan_combined_exp = (TTree*) file_scan_combined_exp->Get("limit");
   TTree* limit_scan_ttH_exp = (TTree*) file_scan_ttH_exp->Get("limit");
   TTree* limit_scan_VH_exp = (TTree*) file_scan_VH_exp->Get("limit");
   TTree* limit_scan_ggH_exp = (TTree*) file_scan_ggH_exp->Get("limit");
@@ -74,6 +75,7 @@ void makeLikelihoodScan(string outputPlots){
   //TTree* limit_scan_monojet_obs = (TTree*) file_scan_monojet_obs->Get("limit");
 
   // Define TGraphs that are formatted and actually plotted
+  TGraph* scan_combined_exp = new TGraph();
   TGraph* scan_ttH_exp = new TGraph();
   TGraph* scan_VH_exp = new TGraph();
   TGraph* scan_ggH_exp = new TGraph();
@@ -81,6 +83,7 @@ void makeLikelihoodScan(string outputPlots){
   //TGraph* scan_monojet_obs = new TGraph();
 
   // Add points to the graphs
+  scan_combined_exp = get_points_and_sort(limit_scan_combined_exp, scan_combined_exp);
   scan_ttH_exp = get_points_and_sort(limit_scan_ttH_exp, scan_ttH_exp);
   scan_VH_exp = get_points_and_sort(limit_scan_VH_exp, scan_VH_exp);
   scan_ggH_exp = get_points_and_sort(limit_scan_ggH_exp, scan_ggH_exp);
@@ -92,32 +95,24 @@ void makeLikelihoodScan(string outputPlots){
   double exp_line_style = 7;  // dashed
 
   //// Produce the final plot
-  //scan_combined_exp->GetXaxis()->SetTitle("BR(H #rightarrow inv)");
-  //scan_combined_exp->GetXaxis()->SetTitleOffset(1.1);
-  //scan_combined_exp->GetYaxis()->SetTitle("-2 #Delta Log(L)");
-  //scan_combined_exp->GetYaxis()->SetTitleOffset(1.1);
-  //scan_combined_exp->GetXaxis()->SetRangeUser(0,1);
-  //scan_combined_exp->GetYaxis()->SetRangeUser(0,10);
-  //scan_combined_exp->SetLineColor(kBlack);
-  //scan_combined_exp->SetLineWidth(line_width);
-  //scan_combined_exp->SetLineStyle(exp_line_style);
+  scan_combined_exp->GetXaxis()->SetTitle("B(H #rightarrow inv)");
+  scan_combined_exp->GetXaxis()->SetTitleOffset(1.1);
+  scan_combined_exp->GetYaxis()->SetTitle("-2 #Delta Log(L)");
+  scan_combined_exp->GetYaxis()->SetTitleOffset(1.1);
+  scan_combined_exp->GetXaxis()->SetRangeUser(0, 1);
+  scan_combined_exp->GetYaxis()->SetRangeUser(0, 10);
+  scan_combined_exp->SetLineColor(kBlack);
+  scan_combined_exp->SetLineWidth(line_width);
+  scan_combined_exp->SetLineStyle(exp_line_style);
+  scan_combined_exp->Draw("AL");
   //scan_combined_obs->SetLineColor(kBlack);
   //scan_combined_obs->SetLineWidth(obs_line_style);
-  //scan_combined_exp->Draw("AL");
   //scan_combined_obs->Draw("Lsame");
-
-  // No combined plot
-  scan_ttH_exp->GetXaxis()->SetTitle("B(H #rightarrow inv)");
-  scan_ttH_exp->GetXaxis()->SetTitleOffset(1.1);
-  scan_ttH_exp->GetYaxis()->SetTitle("-2 #Delta Log(L)");
-  scan_ttH_exp->GetYaxis()->SetTitleOffset(1.1);
-  scan_ttH_exp->GetXaxis()->SetRangeUser(0,1);
-  scan_ttH_exp->GetYaxis()->SetRangeUser(0,10);
 
   scan_ttH_exp->SetLineColor(kBlue);
   scan_ttH_exp->SetLineWidth(line_width - 1);
   scan_ttH_exp->SetLineStyle(exp_line_style);
-  scan_ttH_exp->Draw("AL");
+  scan_ttH_exp->Draw("Lsame");
 
   scan_VH_exp->SetLineColor(kRed);
   scan_VH_exp->SetLineWidth(line_width - 1);
@@ -139,7 +134,8 @@ void makeLikelihoodScan(string outputPlots){
   //scan_monoj_obs->SetLineStyle(obs_line_style);
   //scan_monoj_obs->Draw("Lsame");
 
-  TLegend leg (0.78,0.17,0.93,0.37);
+  // Legend for each process
+  TLegend leg (0.75, 0.17, 0.93, 0.37);
   leg.SetFillColor(0);
   leg.SetFillStyle(0);
   leg.SetBorderSize(0);
@@ -152,14 +148,15 @@ void makeLikelihoodScan(string outputPlots){
   //leg.AddEntry(scan_monoj_obs, "ggH-tagged", "L");
   leg.Draw("same");
 
-  //TLegend leg2 (0.50,0.17,0.66,0.24);
-  //leg2.SetFillColor(0);
-  //leg2.SetFillStyle(0);
-  //leg2.SetBorderSize(0);
+  // Legend for combined curves
+  TLegend leg2 (0.58, 0.17, 0.74, 0.37);
+  leg2.SetFillColor(0);
+  leg2.SetFillStyle(0);
+  leg2.SetBorderSize(0);
   //leg2.AddEntry(scan_combined_obs, "Observed", "L");
-  //leg2.AddEntry(scan_combined_exp, "Expected", "L");
-  //leg2.Draw("same");
+  leg2.AddEntry(scan_combined_exp, "Expected", "L");
+  leg2.Draw("same");
 
-  CMS_lumi(canvas,"41.5");
-  canvas->SaveAs((outputPlots+"/scan_profile_likelihood.pdf").c_str(),"pdf");  
+  CMS_lumi(canvas, "41.5");
+  canvas->SaveAs((outputPlots+"/scan_profile_likelihood.pdf").c_str(), "pdf");  
 }

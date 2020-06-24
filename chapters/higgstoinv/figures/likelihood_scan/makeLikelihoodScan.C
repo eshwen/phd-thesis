@@ -56,7 +56,7 @@ void makeLikelihoodScan(string outputPlots){
 
   system(("mkdir -p "+outputPlots).c_str());
 
-  TCanvas* canvas = new TCanvas ("canvas","",600,600);
+  TCanvas* canvas = new TCanvas ("canvas", "", 1200, 1200);
   canvas->cd();
 
   TFile* file_scan_combined_exp = new TFile("./2017/combined_exp.root", "READ");
@@ -90,15 +90,18 @@ void makeLikelihoodScan(string outputPlots){
   scan_monojet_exp = get_points_and_sort(limit_scan_monojet_exp, scan_monojet_exp);
   //scan_monojet_obs = get_points_and_sort(limit_scan_monojet_obs, scan_monojet_obs);
 
-  double line_width = 3;
-  double obs_line_style = 3;  // solid
-  double exp_line_style = 7;  // dashed
+  int line_width = 3;
+  int obs_line_style = 3;  // solid
+  int exp_line_style = 7;  // dashed
+  double axis_label_size = 0.03;
 
   //// Produce the final plot
   scan_combined_exp->GetXaxis()->SetTitle("B(H #rightarrow inv)");
   scan_combined_exp->GetXaxis()->SetTitleOffset(1.1);
+  scan_combined_exp->GetXaxis()->SetLabelSize(axis_label_size);
   scan_combined_exp->GetYaxis()->SetTitle("-2 #Delta Log(L)");
   scan_combined_exp->GetYaxis()->SetTitleOffset(1.1);
+  scan_combined_exp->GetYaxis()->SetLabelSize(axis_label_size);
   scan_combined_exp->GetXaxis()->SetRangeUser(0, 1);
   scan_combined_exp->GetYaxis()->SetRangeUser(0, 10);
   scan_combined_exp->SetLineColor(kBlack);
@@ -157,6 +160,9 @@ void makeLikelihoodScan(string outputPlots){
   leg2.AddEntry(scan_combined_exp, "Expected", "L");
   leg2.Draw("same");
 
-  CMS_lumi(canvas, "41.5");
+//  CMS_lumi(canvas, "35.92");
+  CMS_lumi(canvas, "41.53");
+//  CMS_lumi(canvas, "59.74");
+//  CMS_lumi(canvas, "137.1");
   canvas->SaveAs((outputPlots+"/scan_profile_likelihood.pdf").c_str(), "pdf");  
 }

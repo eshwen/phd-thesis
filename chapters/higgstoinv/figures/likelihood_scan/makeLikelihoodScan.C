@@ -59,10 +59,10 @@ void makeLikelihoodScan(string outputPlots){
   TCanvas* canvas = new TCanvas ("canvas","",600,600);
   canvas->cd();
 
-  TFile* file_scan_ttH_exp = new TFile("higgsCombineTest.ttH_exp.MultiDimFit.mH125.root", "READ");
-  TFile* file_scan_VH_exp = new TFile("higgsCombineTest.VH_exp.MultiDimFit.mH125.root", "READ");
-  TFile* file_scan_ggH_exp = new TFile("higgsCombineTest.ggH_exp.MultiDimFit.mH125.root", "READ");
-  TFile* file_scan_monojet_exp = new TFile("higgsCombineTest.Monojet_exp.MultiDimFit.mH125.root", "READ");
+  TFile* file_scan_ttH_exp = new TFile("./2017/ttH_exp.root", "READ");
+  TFile* file_scan_VH_exp = new TFile("./2017/VH_exp.root", "READ");
+  TFile* file_scan_ggH_exp = new TFile("./2017/ggH_exp.root", "READ");
+  TFile* file_scan_monojet_exp = new TFile("./2017/Monojet_exp.root", "READ");
   // TFile* file_scan_monojet_obs = new TFile("higgsCombineTest_monojet_obs.MultiDimFit.mH125.root", "READ");
 
 

@@ -1,4 +1,4 @@
-#include "../CMS_lumi.h"
+#include "./CMS_lumi.h"
 
 // for re-cast of the limit --> not valid off-shell
 static float minDM = 1;

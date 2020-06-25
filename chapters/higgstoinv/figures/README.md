@@ -23,8 +23,9 @@ This should be documented in [dark_matter_limit/](dark_matter_limit/), as it is 
 For all plots:
 
 - Make sure status annotation next to "CMS" is correct, i.e., Preliminary/Work in progress/no annotation
+- Make sure they're in pdf format if possible, since they're likely to be vector graphics. Especially if coming from `ROOT`, use pdfs as pngs are quite low resolution
 
-For region plots with `fast-plotter` (perhaps within <https://gitlab.cern.ch/cms-chip/chip/-/blob/master/chip_code/make_nonVBF_plots.py>):
+For plots with `fast-plotter` (perhaps within <https://gitlab.cern.ch/cms-chip/chip/-/blob/master/chip_code/make_nonVBF_plots.py>):
 
 - Add the variable replacements (region, category, lepton) when making region plots with `fast-plotter`
 - Use the right x-axis limits so there's no horizontal space between the histograms and axis limits. This might be achievable generally within the plotting config by setting `limits: {x: 0%}` and `show_over_underflow: False`. So I may not have to manually set the limits for each plot

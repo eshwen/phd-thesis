@@ -13,9 +13,8 @@
     & Only really discuss my contributions: $s$- and \tchannel signal model production and understanding. Can go into reasonable detail -- at the level of the AN or perhaps deeper
     && Show \schannel comparisons between \MADGRAPH and \PYTHIA, as shown in the AN, and discuss merits of using either method (easier to specify in \PYTHIA and matrix element calculations should be equivalent to \MADGRAPH, but latter is required for \tchannel and makes sense to have consistency)
     && Show a few distributions from \tchannel signal, just for some insight as to how they differ from \schannel. Not sure if they need some sort of approval since they're generated with \acrshort{cmssw}
-    && Note that these are before any cuts, so comparing right what comes out of the generator + \acrshort{cmssw} processing pipeline. Could even potentially make some plots after applying analysis preselection that could clean up some events
     && Objects (AK4 jets, AK8 jets, MET) are straight out of nanoAOD, without the further processing and quality cuts that go into the Hinv objects. Though, since the objects have gone through the full CMSSW processing pipeline, there should be at least some intrinsic level of quality of the objects.
-    && Note that we use SVJ\_3000\_20\_0.3\_peak in the analysis as benchmark point (see AN for \emph{why}). Theorists use 1000\_10 (rinv ?, alpha\_d ?). Tending to vary points around that. Note the convention for labelling the mass points: SVJ\_$\expval{m_{\mathrm{mediator}}}$\_$\expval{\mDark}$\_$\expval{\rinv}$\_$\expval{\aDark}$.
+    && Note that we use SVJ\_\-3000\_\-20\_\-0.3\_\-peak in the analysis as benchmark point (see AN for \emph{why}). Theorists use 1000\_10 (rinv ?, alpha\_d ?). Tending to vary points around that. Note the convention for labelling the mass points: SVJ\_\-$\expval{m_{\mathrm{mediator}}}$\_\-$\expval{\mDark}$\_\-$\expval{\rinv}$\_\-$\expval{\aDark}$.
     && Also say that my \MADGRAPH implementation has been built upon for the upcoming \tchannel and boosted \PZprime searches
     & Perhaps give a brief summary of the analysis: dijet search, using an SVJ tagger, transverse mass as fit variable. Say that details/complete description is discussed in the paper/Giorgia's thesis (with references)
 \end{easylist}
@@ -36,9 +35,9 @@
 \section{Signal simulation}
 \label{sec:signal_sim}
 
-In the main analysis for the \schannel signal model, \PYTHIA is used as it can parametrise all the relevant aspects of the model in a simple manner with high efficiency. \MADGRAPH is the often-preferred generator as it can handle more complex models and decays. For the \schannel mode, the scattering matrix element calculations that model the hard process are identical between \PYTHIA and \MADGRAPH. In the former, the characterisation, interactions, and decays of the dark sector particles are implemented via the \texttt{Hidden Valley} module, available from \PYTHIA~8.226. Samples generated with \MADGRAPH are hadronised by \PYTHIA as part of the full simulation chain within \acrshort{cmssw}. \Gls{jet} matching and filter efficiencies may noticeably reduce the final number of events . The \tchannel model is possible to parametrise in \PYTHIA, but due to its complexity, we opt to do so in \MADGRAPH. Hadronisation, however, is still performed by \PYTHIA. % large number of subprocesses and potential diagrams in t-channel
+In the main analysis for the \schannel signal model, \PYTHIA is used as it can parametrise all the relevant aspects of the model in a simple manner with high efficiency. \MADGRAPH is the often-preferred generator as it can handle more complex models and decays. For the \schannel mode, the scattering matrix element calculations that model the hard process are identical between \PYTHIA and \MADGRAPH. In the former, the characterisation, interactions, and decays of the dark sector particles are implemented via the \texttt{Hidden Valley} module, available from \PYTHIA~8.226. Samples generated with \MADGRAPH are hadronised by \PYTHIA as part of the full simulation chain within \acrshort{cmssw}. \Gls{jet} matching and filter efficiencies may noticeably reduce the final number of events. The \tchannel model is possible to parametrise in \PYTHIA, but due to its complexity, we opt to do so in \MADGRAPH. Hadronisation, however, is still performed by \PYTHIA. % large number of subprocesses and potential diagrams in t-channel
 
-The full description of \schannel signal generation with \PYTHIAEIGHT is given in Chpt.~\ref{subsec:svj_signal_pythia}. An equivalent implementation where the hard scatter is modelled in \MGvATNLO, as both an alternative and cross-check to the \PYTHIA [version], is [described] in Chpt.~\ref{subsec:svj_signal_madgraph}. A description of the \tchannel process is also present. Comparisons between the \PYTHIA and \MADGRAPH implementations are [given] in Chpt.~\ref{subsec:svj_schannel_comparisons}.
+The full description of \schannel signal generation with \PYTHIAEIGHT is given in Chpts.~\ref{subsec:svj_signal_pythia} and \ref{subsec:svj_showering_pythia}. An equivalent implementation where the hard scatter is modelled in \MGvATNLO, as both an alternative and cross-check to the \PYTHIA [version], is [described] in Chpt.~\ref{subsec:svj_signal_madgraph}. A description of the \tchannel process is also present. Comparisons between the \PYTHIA and \MADGRAPH implementations are [given] in Chpt.~\ref{subsec:svj_schannel_comparisons}.
 
 % Mention these signals are generated privately?
 
@@ -51,7 +50,7 @@ The full description of \schannel signal generation with \PYTHIAEIGHT is given i
 
 % Generating s-channel samples from my repo should be pretty consistent with Kevin's
 
-% Mention xqcut as it relates to the qCut in Pythia. See https://answers.launchpad.net/mg5amcnlo/+question/264266
+% Mention xqcut as it relates to the qCut in Pythia. See http://hep.ucsb.edu/people/cag/Matching.pdf and https://answers.launchpad.net/mg5amcnlo/+question/264266
 
 % Mention that only the hard scatter of qq -> Z' -> chi chi + (nothing, j, jj) is done in MadGraph. All hadronisation is done in Pythia. Check MadGraph run cards and FeynRules files for any interesting info
 
@@ -67,6 +66,8 @@ The full description of \schannel signal generation with \PYTHIAEIGHT is given i
 \label{subsubsec:svj_signal_madgraph_schannel}
 
 % Might not be any point showing only s-channel MadGraph signal since the curves are given in the comparison plots. Though, I could instead showcase some plots from the benchmark mass point, and variations around that (e.g., vary mZp up and down by a factor of 2, then same with m_dq, r_inv, and then alpha_d_low and alpha_d_high)
+
+% Mention that cross sections in any plots are not taken from MadGraph. For s-channel, they are calculated as a function of Z' mass with a quark coupling of 1.0. 
 
 
 %=========================================================
@@ -92,8 +93,6 @@ The \texttt{Hidden Valley} module allows for simulating $\HepProcess{\Pquark\APq
 
 \subsection{Showering in \texorpdfstring{\PYTHIA}{Pythia}}
 \label{subsec:svj_showering_pythia}
-
-% Applies to both MadGraph- and Pythia-generated samples
 
 Once the hard process has been simulated, hadronisation of the dark and visible particles is performed. Dark quarks hadronise into one of two types of dark meson that correspond to particles from the \texttt{Hidden Valley} module: \Ppidark and \Prhodark, that are pseudoscalar and vector, respectively. Each possess flavour-diagonal and off-diagonal variants. They are generated with a ratio of 1:3 as the theory specifies the number of dark flavours $\Nf = \text{2}$. Dark hadrons are set to decay invisibly with a branching fraction \rinv. Remaining decay modes are to \acrshort{sm} quarks via a virtual \PZprime since it is the leptophobic portal between the dark and visible sectors. Decays of \Prhodark are democratic, i.e., with equal probability to accessible \acrshort{sm} quark-antiquark pairs.\footnote{Top quarks are excluded in all cases, since in the scan of model parameters where we predict the greatest sensitivity, the dark mesons are always too light to decay on shell to a \ttbar pair.} Specifically, \Prhodark particles with $\mDark > \text{2}m_{\Pbottom}$ have a $\text{1}/\text{5}$ probability to decay to a \Pup, \Pdown, \Pcharm, \Pstrange, or \Pbottom. For $2m_{\Pcharm} < \mDark < 2m_{\Pbottom}$, \Pbottom quarks are excluded and the branching ratio increases to $\text{1}/\text{4}$ for the remaining species. The \Pcharm quark is removed, and branching ratio modified, in the same manner for $\mDark < 2m_{\Pcharm}$.
 
@@ -147,55 +146,59 @@ Two filters are implemented that reject events with unrealistic decays: a $Z_2$ 
 \subsection{\texorpdfstring{\PYTHIA}{Pythia}-\texorpdfstring{\MADGRAPH}{MadGraph} comparisons for \texorpdfstring{\schannel}{s-channel} signal}
 \label{subsec:svj_schannel_comparisons}
 
-% A "jet" here is a AK8 jet
+% Adding discretionary hyphen to split the long SVJ labels and avoid overfull hboxes
+
+To verify that both \PYTHIA and \MADGRAPH are suitable generators, 100,000 events were generated for a selection of parameter points with each program independently. Six models encompassing a sufficient range of \mZprime, \mDark, and \rinv were chosen: SVJ\_\-1000\_\-20\_\-0.3\_\-peak, SVJ\_\-3000\_\-20\_\-0.1\_peak, SVJ\_\-3000\_\-20\_\-0.5\_\-peak, SVJ\_\-3000\_\-20\_\-0.9\_\-peak, SVJ\_\-3000\_\-50\_\-0.3\_\-peak, and SVJ\_\-4000\_\-20\_\-0.3\_\-peak. For all the simulation steps after the initial generation (described in more detail in Chpt.~\ref{subsec:cms_mc}), identical implementations were used. This was to compare the differences due only to the generator. No analysis-level selections were applied either for the same purpose.
+
+Below are some of the important and insightful distributions for the \schannel production mode: the transverse mass of the dijet system \mT, the number of jets (with the large cone size equivalent to AK8 jets in the \gls{antikt}), the ratio of \MET to \mT, and the minimum azimuthal angle between the \MET and two leading \glspl{jet} $\dijetMindphi$. The ratio between the \MADGRAPH-generated and \PYTHIA-generated sample for a given model is also shown. For readability, plots are split into two sets comprising three models each. Fig.~\ref{fig:svj_mg_pythia_comparison_set1} showcases SVJ\_\-1000\_\-20\_\-0.3\_\-peak, SVJ\_\-3000\_\-20\_\-0.1\_\-peak, and SVJ\_\-3000\_\-20\_\-0.9\_\-peak, while Fig.~\ref{fig:svj_mg_pythia_comparison_set2} shows SVJ\_\-3000\_\-20\_\-0.5\_\-peak, SVJ\_\-3000\_\-50\_\-0.3\_\-peak, and SVJ\_\-4000\_\-20\_\-0.3\_\-peak.
 
 \begin{figure}[htbp]
     \centering
-    \begin{subfigure}[b]{0.45\textwidth}
+    \begin{subfigure}[b]{0.48\textwidth}
         \includegraphics[width=\textwidth]{figures/madgraph_pythia_comparisons/with_ratios/part1/dijet_mt.pdf}
         \caption{Transverse mass of the dijet system}
     \end{subfigure}
     \hfill
-    \begin{subfigure}[b]{0.45\textwidth}
+    \begin{subfigure}[b]{0.48\textwidth}
         \includegraphics[width=\textwidth]{figures/madgraph_pythia_comparisons/with_ratios/part1/njet.pdf}
         \caption{\njet}
     \end{subfigure}
 
-    \begin{subfigure}[b]{0.45\textwidth}
+    \begin{subfigure}[b]{0.48\textwidth}
         \includegraphics[width=\textwidth]{figures/madgraph_pythia_comparisons/with_ratios/part1/met_over_mt.pdf}
         \caption{$\MET/\mT$}
     \end{subfigure}
     \hfill
-    \begin{subfigure}[b]{0.45\textwidth}
+    \begin{subfigure}[b]{0.48\textwidth}
         \includegraphics[width=\textwidth]{figures/madgraph_pythia_comparisons/with_ratios/part1/min_dphi.pdf}
         \caption{\mindphi between \MET and two leading \glspl{jet}}
     \end{subfigure}
-    \caption[Distributions of several observables for the models SVJ\_1000\_20\_0.3\_peak, SVJ\_3000\_20\_0.1\_peak, and SVJ\_3000\_20\_0.9\_peak]{Distributions of several observables for the models SVJ\_1000\_20\_0.3\_peak, SVJ\_3000\_20\_0.1\_peak, and SVJ\_3000\_20\_0.9\_peak. Generation in \MGvATNLO is compared to \PYTHIAEIGHT, with the ratios between them for each model displayed in the respective subplot.}
+    \caption[Distributions of several observables for the models SVJ\_\-1000\_\-20\_\-0.3\_\-peak, SVJ\_\-3000\_\-20\_\-0.1\_\-peak, and SVJ\_\-3000\_\-20\_\-0.9\_\-peak]{Distributions of several observables for the models SVJ\_\-1000\_\-20\_\-0.3\_\-peak, SVJ\_\-3000\_\-20\_\-0.1\_\-peak, and SVJ\_\-3000\_\-20\_\-0.9\_\-peak. Generation in \MGvATNLO is compared to \PYTHIAEIGHT, with the ratios between them for each model displayed in the respective subplot.}
     \label{fig:svj_mg_pythia_comparison_set1}
 \end{figure}
 
 \begin{figure}[htbp]
     \centering
-    \begin{subfigure}[b]{0.45\textwidth}
+    \begin{subfigure}[b]{0.48\textwidth}
         \includegraphics[width=\textwidth]{figures/madgraph_pythia_comparisons/with_ratios/part2/dijet_mt.pdf}
         \caption{Transverse mass of the dijet system}
     \end{subfigure}
     \hfill
-    \begin{subfigure}[b]{0.45\textwidth}
+    \begin{subfigure}[b]{0.48\textwidth}
         \includegraphics[width=\textwidth]{figures/madgraph_pythia_comparisons/with_ratios/part2/njet.pdf}
         \caption{\njet}
     \end{subfigure}
 
-    \begin{subfigure}[b]{0.45\textwidth}
+    \begin{subfigure}[b]{0.48\textwidth}
         \includegraphics[width=\textwidth]{figures/madgraph_pythia_comparisons/with_ratios/part2/met_over_mt.pdf}
         \caption{$\MET/\mT$}
     \end{subfigure}
     \hfill
-    \begin{subfigure}[b]{0.45\textwidth}
+    \begin{subfigure}[b]{0.48\textwidth}
         \includegraphics[width=\textwidth]{figures/madgraph_pythia_comparisons/with_ratios/part2/min_dphi.pdf}
         \caption{\mindphi between \MET and two leading \glspl{jet}}
     \end{subfigure}
-    \caption[Distributions of several observables for the models SVJ\_3000\_20\_0.5\_peak, SVJ\_3000\_50\_0.3\_peak, and SVJ\_4000\_20\_0.3\_peak]{Distributions of several observables for the models SVJ\_3000\_20\_0.5\_peak, SVJ\_3000\_50\_0.3\_peak, and SVJ\_4000\_20\_0.3\_peak. Generation in \MGvATNLO is compared to \PYTHIAEIGHT, with the ratios between them for each model displayed in the respective subplot.}
+    \caption[Distributions of several observables for the models SVJ\_\-3000\_\-20\_\-0.5\_\-peak, SVJ\_\-3000\_\-50\_\-0.3\_\-peak, and SVJ\_\-4000\_\-20\_\-0.3\_\-peak]{Distributions of several observables for the models SVJ\_\-3000\_\-20\_\-0.5\_\-peak, SVJ\_\-3000\_\-50\_\-0.3\_\-peak, and SVJ\_\-4000\_\-20\_\-0.3\_\-peak. Generation in \MGvATNLO is compared to \PYTHIAEIGHT, with the ratios between them for each model displayed in the respective subplot.}
     \label{fig:svj_mg_pythia_comparison_set2}
 \end{figure}
 

@@ -202,15 +202,20 @@ Collider physics tends to use certain conventions when describing the positions 
     \eta = -\ln \left[ \tan(\frac{\theta}{2}) \right]
     \label{eq:eta_def}
 \end{equation}
-where $\theta$ is the angle between the particle's three-momentum $\vec{p}$ and the positive direction of the beam axis. So as $\theta \rightarrow \text{0}^{\circ}$ (the beam line), $\eta \rightarrow \infty$. Generally, particles with large $\eta$ escape the detector which is why forward calorimeters are in place. The transverse momentum of a particle can be found with $\pt = \abs{\vec{p}} / \cosh \eta$.
+where $\theta$ is the angle between the particle's three-momentum $\vec{p}$ and the positive direction of the beam axis. So as $\theta \rightarrow \text{0}^{\circ}$ (the beam line), $\eta \rightarrow \infty$. Generally, particles with large $\eta$ escape the detector which is why forward calorimeters are in place. The transverse momentum of a particle can be found with $\pt = \abs{\vec{p}} / \cosh \eta$. The convention in hadron colliders is to use $\eta$ over the rapidity $y$, where the latter is Lorentz invariant and tends to the former in the limit $\abs{\vec{p}} \gg m$. However, in cases such as jet clustering, soft particles are included and so $y$ is defined:
+\begin{equation}
+    y = \frac{1}{2} \ln (\frac{ E + p_{\mathrm{L}} }{ E - p_{\mathrm{L}} })
+    \label{eq:rapidity_def}
+\end{equation}
 
-The subdetectors of \acrshort{cms} are nominally separated into several sections dependent on their geometry or layout, and it is useful to divide them into $\eta$ ranges to demonstrate their coverage. ``Barrel'' sections are cylindrical around the beam line while ``end caps'' are usually discs or plates perpendicular to it. The following subsections describe them in detail. One quadrant of \acrshort{cms} showing the $\eta$ divisions can be seen in Fig.~\ref{fig:cms_eta_bounds}.
+where $p_{\mathrm{L}}$ is the longitudinal component of the momentum. The subdetectors of \acrshort{cms} are nominally separated into several sections dependent on their geometry or layout, and it is useful to divide them into $\eta$ ranges to demonstrate their coverage. ``Barrel'' sections are cylindrical around the beam line while ``end caps'' are usually discs or plates perpendicular to it. The following subsections describe them in detail. One quadrant of \acrshort{cms} showing the $\eta$ divisions can be seen in Fig.~\ref{fig:cms_eta_bounds}.
 
 The distance between two objects can be found with the variable $\Delta R$:
 \begin{equation}
 \Delta R = \sqrt{(\Delta \eta)^2 + (\Delta \phi)^2}
 \label{eq:delta_r}
 \end{equation}
+
 It is often used as a distance parameter in jet clustering, or between individual objects in highly-boosted decays.
 
 \begin{figure}[htbp]

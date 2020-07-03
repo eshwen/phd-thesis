@@ -24,7 +24,7 @@ On sc01, I've set up the environment under `/software/eb16003/miniconda3_esh_svj
 Dataset configs can be produced with `fast-curator` if not done so already. Run
 
 ```bash
-fast_curator -d <dataset name> -o ./samples/svj/<dataset name>.yaml -m "stitching_flag=False" -m "filter_efficiency=1.0" <path to ROOT file>
+fast_curator -d <dataset name> -o ./samples/svj/<dataset name>.yaml -m "stitching_flag=False" -m "filter_efficiency=1.0" --mc <path to ROOT file>
 ```
 
 for each sample. To properly interface with the cross section reweighting scribbler, the above metadata arguments are required in the dataset config, as well as the entries
@@ -48,52 +48,34 @@ fast_carpenter --ncores 2 --outdir ./svj_comparisons_AN/dfs_part2/ ./samples/svj
 Run over each dataframe with plotting configs tailored to them (for correct x-axis ranges and y-axis bin widths):
 
 ```bash
+parts=( "1" "2" )
 plot_config_dir="$PWD/plotting_configs/svj_plotting_configs"
-plots_outdir_part1="$PWD/svj_comparisons_AN/plots_part1/"
-dfs_dir_part1="$PWD/svj_comparisons_AN/dfs_part1"
+for part in "${parts[@]}"; do
+    plots_outdir="$PWD/svj_comparisons_AN/plots_part${part}/"
+    dfs_dir="$PWD/svj_comparisons_AN/dfs_part${part}"
 
-fast_plotter -c ${plot_config_dir}/svj_plot_config_part1_dijet_deta.yaml -o $plots_outdir_part1 ${dfs_dir_part1}/tbl_dataset.dijet_deta--dijet_deta_df.csv
-fast_plotter -c ${plot_config_dir}/svj_plot_config_part1_dijet_mt.yaml -o $plots_outdir_part1 ${dfs_dir_part1}/tbl_dataset.dijet_mt--dijet_mt_df.csv
-fast_plotter -c ${plot_config_dir}/svj_plot_config_part1_ht.yaml -o $plots_outdir_part1 ${dfs_dir_part1}/tbl_dataset.ht--HT_df.csv
-fast_plotter -c ${plot_config_dir}/svj_plot_config_part1_jet_eta.yaml -o $plots_outdir_part1 ${dfs_dir_part1}/{tbl_dataset.leadFatJet_eta--lead_jet_eta.csv,tbl_dataset.sublFatJet_eta--subl_jet_eta.csv}
-fast_plotter -c ${plot_config_dir}/svj_plot_config_part1_jet_phi.yaml -o $plots_outdir_part1 ${dfs_dir_part1}/{tbl_dataset.leadFatJet_phi--lead_jet_phi.csv,tbl_dataset.sublFatJet_phi--subl_jet_phi.csv}
-fast_plotter -c ${plot_config_dir}/svj_plot_config_part1_jet_pt.yaml -o $plots_outdir_part1 ${dfs_dir_part1}/{tbl_dataset.dijet_pt--dijet_pt_df.csv,tbl_dataset.leadFatJet_pt--lead_jet.csv,tbl_dataset.sublFatJet_pt--subl_jet.csv}
-fast_plotter -c ${plot_config_dir}/svj_plot_config_part1_metovermt.yaml -o $plots_outdir_part1 ${dfs_dir_part1}/tbl_dataset.met_over_mt--met_mt_df.csv
-fast_plotter -c ${plot_config_dir}/svj_plot_config_part1_mht_met.yaml -o $plots_outdir_part1 ${dfs_dir_part1}/{tbl_dataset.met--MET_df.csv,tbl_dataset.mht_pt--MHT_df.csv}
-fast_plotter -c ${plot_config_dir}/svj_plot_config_part1_min_dphi.yaml -o $plots_outdir_part1 ${dfs_dir_part1}/tbl_dataset.min_dphi--min_dphi_df.csv
-fast_plotter -c ${plot_config_dir}/svj_plot_config_part1_njet.yaml -o $plots_outdir_part1 ${dfs_dir_part1}/tbl_dataset.njet--n_jets.csv
+    fast_plotter -c $plot_config_dir/svj_plot_config_part${part}_dijet_deta.yaml -o $plots_outdir $dfs_dir/tbl_dataset.dijet_deta--dijet_deta_df.csv
+    fast_plotter -c $plot_config_dir/svj_plot_config_part${part}_dijet_mt.yaml -o $plots_outdir $dfs_dir/tbl_dataset.dijet_mt--dijet_mt_df.csv
+    fast_plotter -c $plot_config_dir/svj_plot_config_part${part}_ht.yaml -o $plots_outdir $dfs_dir/tbl_dataset.ht--HT_df.csv
+    fast_plotter -c $plot_config_dir/svj_plot_config_part${part}_jet_eta.yaml -o $plots_outdir $dfs_dir/{tbl_dataset.leadFatJet_eta--lead_jet_eta.csv,tbl_dataset.sublFatJet_eta--subl_jet_eta.csv}
+    fast_plotter -c $plot_config_dir/svj_plot_config_part${part}_jet_phi.yaml -o $plots_outdir $dfs_dir/{tbl_dataset.leadFatJet_phi--lead_jet_phi.csv,tbl_dataset.sublFatJet_phi--subl_jet_phi.csv}
+    fast_plotter -c $plot_config_dir/svj_plot_config_part${part}_jet_pt.yaml -o $plots_outdir $dfs_dir/{tbl_dataset.dijet_pt--dijet_pt_df.csv,tbl_dataset.leadFatJet_pt--lead_jet.csv,tbl_dataset.sublFatJet_pt--subl_jet.csv}
+    fast_plotter -c $plot_config_dir/svj_plot_config_part${part}_metovermt.yaml -o $plots_outdir $dfs_dir/tbl_dataset.met_over_mt--met_mt_df.csv
+    fast_plotter -c $plot_config_dir/svj_plot_config_part${part}_mht_met.yaml -o $plots_outdir $dfs_dir/{tbl_dataset.met--MET_df.csv,tbl_dataset.mht_pt--MHT_df.csv}
+    fast_plotter -c $plot_config_dir/svj_plot_config_part${part}_min_dphi.yaml -o $plots_outdir $dfs_dir/tbl_dataset.min_dphi--min_dphi_df.csv
+    fast_plotter -c $plot_config_dir/svj_plot_config_part${part}_njet.yaml -o $plots_outdir $dfs_dir/tbl_dataset.njet--n_jets.csv
 
-plots_outdir_part2="$PWD/svj_comparisons_AN/plots_part2/"
-dfs_dir_part2="$PWD/svj_comparisons_AN/dfs_part2"
-
-fast_plotter -c ${plot_config_dir}/svj_plot_config_part2_dijet_deta.yaml -o $plots_outdir_part2 ${dfs_dir_part2}/tbl_dataset.dijet_deta--dijet_deta_df.csv
-fast_plotter -c ${plot_config_dir}/svj_plot_config_part2_dijet_mt.yaml -o $plots_outdir_part2 ${dfs_dir_part2}/tbl_dataset.dijet_mt--dijet_mt_df.csv
-fast_plotter -c ${plot_config_dir}/svj_plot_config_part2_ht.yaml -o $plots_outdir_part2 ${dfs_dir_part2}/tbl_dataset.ht--HT_df.csv
-fast_plotter -c ${plot_config_dir}/svj_plot_config_part2_jet_eta.yaml -o $plots_outdir_part2 ${dfs_dir_part2}/{tbl_dataset.leadFatJet_eta--lead_jet_eta.csv,tbl_dataset.sublFatJet_eta--subl_jet_eta.csv}
-fast_plotter -c ${plot_config_dir}/svj_plot_config_part2_jet_phi.yaml -o $plots_outdir_part2 ${dfs_dir_part2}/{tbl_dataset.leadFatJet_phi--lead_jet_phi.csv,tbl_dataset.sublFatJet_phi--subl_jet_phi.csv}
-fast_plotter -c ${plot_config_dir}/svj_plot_config_part2_jet_pt.yaml -o $plots_outdir_part2 ${dfs_dir_part2}/{tbl_dataset.dijet_pt--dijet_pt_df.csv,tbl_dataset.leadFatJet_pt--lead_jet.csv,tbl_dataset.sublFatJet_pt--subl_jet.csv}
-fast_plotter -c ${plot_config_dir}/svj_plot_config_part2_metovermt.yaml -o $plots_outdir_part2 ${dfs_dir_part2}/tbl_dataset.met_over_mt--met_mt_df.csv
-fast_plotter -c ${plot_config_dir}/svj_plot_config_part2_mht_met.yaml -o $plots_outdir_part2 ${dfs_dir_part2}/{tbl_dataset.met--MET_df.csv,tbl_dataset.mht_pt--MHT_df.csv}
-fast_plotter -c ${plot_config_dir}/svj_plot_config_part2_min_dphi.yaml -o $plots_outdir_part2 ${dfs_dir_part2}/tbl_dataset.min_dphi--min_dphi_df.csv
-fast_plotter -c ${plot_config_dir}/svj_plot_config_part2_njet.yaml -o $plots_outdir_part2 ${dfs_dir_part2}/tbl_dataset.njet--n_jets.csv
+    # Rename the plots, stripping parts of the long filenames
+    pushd $plots_outdir
+    for f in $(ls plot_dataset.*.pdf); do mv $f "${f#plot_dataset.*}"; done
+    for g in $(ls *--*.pdf); do mv $g "${g%%-*}.pdf"; done
+    popd
+done
 ```
 
-which will make two sets of plots in `$plots_outdir_part1` and `$plots_outdir_part2`. By default, they will include the ratio sub-plot for MadGraph/Pythia if "MadGraph" is any of the dataset names. To remove this, edit [this bit](https://github.com/eshwen/fast-plotter/blob/8ddf1bbf367f69a1fcad150f0771409876f03e81/fast_plotter/plotting.py#L182-L186) to uncomment the first line and comment the others. Plots made without the ratio subplot should be identical to those in the semi-visible jets analysis note (AN-19-061), the only differences being different signal line colours and widths, and smaller margins.
+which will make two sets of plots in `svj_comparisons_AN/plots_part{1,2}`. By default, they will include the ratio sub-plot for MadGraph/Pythia if "MadGraph" is any of the dataset names. To remove this, edit [this bit](https://github.com/eshwen/fast-plotter/blob/8ddf1bbf367f69a1fcad150f0771409876f03e81/fast_plotter/plotting.py#L182-L186) to uncomment the first line and comment the others. Plots made without the ratio subplot should be identical to those in the semi-visible jets analysis note (AN-19-061), the only differences being different signal line colours and widths, and smaller margins.
 
-If I was using a later version of `fast-plotter` (where I'd still have to fix the signal line ordering and solidity, and maybe the `bbox_inches='tight'` option when saving), I could possibly use variable replacements to set the x-axis ranges and y-axis label so I only need one plotting config. But maybe that's something for the future.
-
-To semi-automate the renaming of plots, do
-
-```bash
-cd $plots_outdir_part1
-for f in $(ls plot_dataset.*.pdf); do mv $f "${f#plot_dataset.*}"; done
-for g in $(ls *--*.pdf); do mv $g "${g%%-*}.pdf"; done
-cd -
-cd $plots_outdir_part2
-for f in $(ls plot_dataset.*.pdf); do mv $f "${f#plot_dataset.*}"; done
-for g in $(ls *--*.pdf); do mv $g "${g%%-*}.pdf"; done
-cd -
-```
+If I was using a later version of `fast-plotter` (where I'd still have to fix the signal line ordering and solidity, and maybe the reduced padding), I could possibly use variable replacements to set the x-axis ranges and y-axis label so I only need one plotting config. But maybe that's something for the future.
 
 These plots should be stored in [madgraph_pythia_comparisons/](madgraph_pythia_comparisons/). Copies of the dataframes used to make the plots should also be stored in the event the plots themselves need to be regenerated.
 
@@ -119,3 +101,42 @@ fast_carpenter --outdir svj_s_t_thesis_set2 ./samples/svj/svj_signals_esh_2016_t
 #### Getting the plots
 
 WIP.
+
+### Variations on the s-channel benchmark model
+
+#### Getting the dataframes (again)
+
+To run the s-channel signal samples with variations on the benchmark point SVJ_3000_20_0.3_peak, from the top-level directory of the chip repo, run
+
+```bash
+fast_carpenter --ncores 3 --outdir svj_s_thesis_benchmark_variations_aD ./samples/svj/svj_signals_esh_2016_thesis_benchmark_variations_aD.yaml ./configs/svj_comparisons_2016.yaml
+fast_carpenter --ncores 3 --outdir svj_s_thesis_benchmark_variations_mD ./samples/svj/svj_signals_esh_2016_thesis_benchmark_variations_mD.yaml ./configs/svj_comparisons_2016.yaml
+fast_carpenter --ncores 3 --outdir svj_s_thesis_benchmark_variations_mZp ./samples/svj/svj_signals_esh_2016_thesis_benchmark_variations_mZp.yaml ./configs/svj_comparisons_2016.yaml
+fast_carpenter --ncores 3 --outdir svj_s_thesis_benchmark_variations_rinv ./samples/svj/svj_signals_esh_2016_thesis_benchmark_variations_rinv.yaml ./configs/svj_comparisons_2016.yaml
+```
+
+The same processing config as the MadGraph-Pythia comparisons is used for simplicity.
+
+#### Getting the plots (again)
+
+To make the plots, run
+
+```bash
+df="tbl_dataset.dijet_mt--dijet_mt_df.csv"
+plotting_cfg=$(readlink -m plotting_configs/svj_plotting_configs/svj_plot_config_benchmark_variations_dijet_mt.yaml)
+out_dirs=( "svj_s_thesis_benchmark_variations_aD" "svj_s_thesis_benchmark_variations_mD" "svj_s_thesis_benchmark_variations_mZp" "svj_s_thesis_benchmark_variations_rinv" )
+for dir in "${out_dirs[@]}"; do
+    fast_plotter -c $plotting_cfg -o $dir $dir/$df
+done
+```
+
+If not plotting any variables other than the dijet MT, delete the other dataframes with
+
+```bash
+shopt -s extglob
+for redundant_file in svj_s_thesis_benchmark_variations_aD/!($df|*.pdf);do
+    echo $redundant_file
+done
+```
+
+COULD INSTEAD PUT ALL OUTPUT PLOTS IN ONE NEW DIRECTORY, WHERE AFTER EACH PLOT IS CREATED, IT'S RENAMED AS ABOVE. PULL THE DATAFRAME IN FROM THE RESPECTIVE DIRECTORY AND RENAME THAT ACCORDINGLY AS WELL, SO I HAVE ONE DIRECTORY CONTAINING ALL THE VARIATION PLOTS AND DATAFRAMES.

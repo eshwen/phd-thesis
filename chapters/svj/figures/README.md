@@ -1,6 +1,6 @@
-# Making signal plots
+# Making plots
 
-To make signal MC distributions for my thesis, see the instructions below.
+To make signal MC distributions for my thesis, see the instructions in [Making the samples](#making-the-samples). To make the plot(s) of Lambda_dark vs m_dark, see [Lambda_dark vs m_dark](#lambdadark-vs-mdark).
 
 ## Making the samples
 
@@ -139,4 +139,14 @@ for redundant_file in svj_s_thesis_benchmark_variations_aD/!($df|*.pdf);do
 done
 ```
 
-COULD INSTEAD PUT ALL OUTPUT PLOTS IN ONE NEW DIRECTORY, WHERE AFTER EACH PLOT IS CREATED, IT'S RENAMED AS ABOVE. PULL THE DATAFRAME IN FROM THE RESPECTIVE DIRECTORY AND RENAME THAT ACCORDINGLY AS WELL, SO I HAVE ONE DIRECTORY CONTAINING ALL THE VARIATION PLOTS AND DATAFRAMES.
+**COULD INSTEAD PUT ALL OUTPUT PLOTS IN ONE NEW DIRECTORY, WHERE AFTER EACH PLOT IS CREATED, IT'S RENAMED AS ABOVE. PULL THE DATAFRAME IN FROM THE RESPECTIVE DIRECTORY AND RENAME THAT ACCORDINGLY AS WELL, SO I HAVE ONE DIRECTORY CONTAINING ALL THE VARIATION PLOTS AND DATAFRAMES.**
+
+## Lambda_dark vs m_dark
+
+I have a little script in my [SemivisibleJets](https://github.com/eshwen/SemivisibleJets) repo to plot this with `matplotlib`: <https://github.com/eshwen/SemivisibleJets/blob/master/utils/plot_lambdaD_v_mDH.py>. It can just be executed with
+
+```bash
+python plot_lambdaD_v_mDH.py
+```
+
+Since the script is so small, everything within it should be pretty self-explanatory.

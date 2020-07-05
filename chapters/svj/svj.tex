@@ -10,7 +10,6 @@
     \easylistprops
     & Not 100\% sure whether this should go between theory and detector chapters, between detector and objects, or between objects and Hinv.
     && This could even be appended onto to the SVJ bit in the theory chapter, instead. Though, there would be a reasonable amount of material and discussion, so probably deserves its own (short) chapter
-    & Only really discuss my contributions: $s$- and \tchannel signal model production and understanding. Can go into reasonable detail -- at the level of the AN or perhaps deeper
     && Show a few distributions from \tchannel signal, just for some insight as to how they differ from \schannel. Not sure if they need some sort of approval since they're generated with \acrshort{cmssw}
     && Objects (AK4 jets, AK8 jets, MET) are straight out of nanoAOD, without the further processing and quality cuts that go into the Hinv objects. Though, since the objects have gone through the full CMSSW processing pipeline, there should be at least some intrinsic level of quality of the objects.
     && Also say that my \MADGRAPH implementation has been built upon for the upcoming \tchannel and boosted \PZprime searches
@@ -37,9 +36,7 @@
 \section{Signal simulation}
 \label{sec:signal_sim}
 
-In the main analysis for the \schannel signal model, \PYTHIA is used as it can parametrise all the relevant aspects of the model in a simple manner with high signal efficiency. \MADGRAPH is the often-preferred generator as it can handle more complex models and decays. A higher degree of customisation and tuning of parameters is also possible. For the \schannel mode, the scattering matrix element calculations that model the hard process are identical between \PYTHIA and \MADGRAPH. In the former, the characterisation, interactions, and decays of the dark sector particles are implemented via the \texttt{Hidden Valley} module, available from \PYTHIA~8.226. Samples generated with \MADGRAPH are hadronised by \PYTHIA as part of the full simulation chain within \acrshort{cmssw}. \Gls{jet} matching and filter efficiencies may noticeably reduce the final number of events. The \tchannel model is possible to parametrise in \PYTHIA, but due to its complexity, we opt to do so in \MADGRAPH. Hadronisation, however, is still performed by \PYTHIA. In all cases, signal samples are generated at \acrfull{lo}.
-
-% Not sure if Pythia actually does a matrix element computation, I basically just got the phrase from Kevin. Maybe I should change it to something like "the hard process should be equivalent between \PYTHIA and \MADGRAPH at LO", or smth.
+In the main analysis for the \schannel signal model, \PYTHIA is used as it can parametrise all the relevant aspects of the model in a simple manner with high signal efficiency. \MADGRAPH is the often-preferred generator as it can handle more complex models and decays. A higher degree of customisation and tuning of parameters is also possible. For the \schannel mode, modelling of the hard process should be equivalent between \PYTHIA and \MADGRAPH at \acrshort{lo}. In the former, the characterisation, interactions, and decays of the dark sector particles are implemented via the \texttt{Hidden Valley} module, available from \PYTHIA~8.226. Samples generated with \MADGRAPH are hadronised by \PYTHIA as part of the full simulation chain within \acrshort{cmssw}. \Gls{jet} matching and filter efficiencies may noticeably reduce the final number of events. The \tchannel model is possible to parametrise in \PYTHIA, but due to its complexity, we opt to do so in \MADGRAPH. Hadronisation, however, is still performed by \PYTHIA. In all cases, signal samples are generated at \acrfull{lo}.
 
 The full description of \schannel signal generation with \PYTHIAEIGHT is given in Chpts.~\ref{subsec:svj_signal_pythia} and \ref{subsec:svj_showering_pythia}. An equivalent implementation where the hard scatter is modelled in \MGvATNLO, as both an alternative and cross-check to the \PYTHIA [version], is [described] in Chpt.~\ref{subsec:svj_signal_madgraph}. A description of the \tchannel process is also present. Comparisons between the \PYTHIA and \MADGRAPH implementations are [given] in Chpt.~\ref{subsec:svj_schannel_comparisons}.
 
@@ -91,9 +88,7 @@ In the description of the \schannel model, the leptophobic \PZprime is a spin-1 
 
 Cross sections for this process are calculated as a function of \mZprime, assuming resonant production and a universal quark coupling. Those given by \MADGRAPH are far too large and appear unrealistic. % Tracing back through the code used to calculate the cross sections, and what I think is the paper Nhan Tran was on for the dijet search, I think the cross section calculation comes from https://arxiv.org/abs/1306.2629, maybe more explicitly from slide 68 of https://indico.cern.ch/event/818454/contributions/3418046/attachments/1866479/3069375/CMS_PF_June20.pdf
 
-It is important to understand the influence each free parameter of the model exerts on the kinematics of the final state particles. In which observables the variations of a given parameter manifest can aid in disentangling potential signal from background. The sensitivity, or lack thereof, of a parameter on the search variable also creates a sensible range for which to constrain the set of signal samples that must be generated. Signal models are given a label as SVJ\_\-$\expval{m_{\mathrm{mediator}}}$\_\-$\expval{\mDark}$\_\-$\expval{\rinv}$\_\-$\expval{\aDark}$. A benchmark point was chosen in the analysis with $\mZprime = \text{3000}\GeV$, $\mDark = \text{20}\GeV$, $\rinv = \text{0.3}$, and $\aDark = \text{peak}$, labelled as SVJ\_\-3000\_\-20\_\-0.3\_\-peak. Fig.~\ref{fig:svj_mg_benchmark_variations} shows the transverse mass of the dijet system \mT in the case where a single free parameter was varied with respect to the benchmark point. A glimpse into the sensitivity of the parameter on the kinematics is evident.
-
-% Why do we use SVJ_3000_20_0.3_peak as a benchmark? Check the AN
+It is important to understand the influence each free parameter of the model exerts on the kinematics of the final state particles. In which observables the variations of a given parameter manifest can aid in disentangling potential signal from background. The sensitivity, or lack thereof, of a parameter on the search variable also creates a sensible range for which to constrain the set of signal samples that must be generated. Signal models are given a label as SVJ\_\-$\expval{m_{\mathrm{mediator}}}$\_\-$\expval{\mDark}$\_\-$\expval{\rinv}$\_\-$\expval{\aDark}$. A benchmark point was chosen in the analysis with $\mZprime = \text{3000}\GeV$, $\mDark = \text{20}\GeV$, $\rinv = \text{0.3}$, and $\aDark = \text{peak}$, labelled as SVJ\_\-3000\_\-20\_\-0.3\_\-peak. The choice of the benchmark point is motivated by Ref.~\citenum{Cohen:2015toa} and considerations given to modelling signal in this chapter. Fig.~\ref{fig:svj_mg_benchmark_variations} shows the transverse mass of the dijet system \mT in the case where a single free parameter was varied with respect to the benchmark point. A glimpse into the sensitivity of the parameter on the kinematics is evident.
 
 \begin{figure}[htbp]
     \centering
@@ -120,6 +115,8 @@ It is important to understand the influence each free parameter of the model exe
     \label{fig:svj_mg_benchmark_variations}
 \end{figure}
 
+% Describe results
+
 % To help fill out parameter space, maybe add the following models (remember second variable is dark HADRON mass, not dark QUARK mass):
 %   - Z' mass: 1000_20_0p3_peak (already have sample), 5000_20_0p3_peak
 %   - dark hadron mass: 3000_4_0p3_peak, 3000_100_0p3_peak
@@ -138,9 +135,13 @@ It is important to understand the influence each free parameter of the model exe
 \subsubsection{\texorpdfstring{\tchannel}{t-channel}}
 \label{subsubsec:svj_signal_madgraph_tchannel}
 
-% Here, I would describe the main properties of the t-channel model (the bifundamentals, dark quarks, couplings, etc.)
+For the \tchannel model, several pseudoscalar bifundamentals $\PBifund$ couple to fermionic dark quarks. While only one flavour of mediator exists for \schannel process, several exist for \tchannel. Each flavour of $\PBifund$ couples to a given \acrshort{sm} quark flavour, and is charged under electromagnetism with a value matching that of its coupled quark.
 
-% Will have to decide whether to show s-channel and t-channel on same axes, or separately
+% Need to talk about how cross section is calculated
+
+The \tchannel aspect of the \gls{svj} theory has not been studied in as great a detail as \schannel. It also has less distinguishing kinematic characteristics, making it more difficult to determine the phase space and discriminating variables to separate it from the \acrlong{sm} background. Nevertheless, simple distributions with a range of parameter points are presented below. These are intended to [see] how it manifests in the \acrshort{lhc}, and how different the signature is from the \schannel model.
+
+% Show t-channel plots in a similar fashion to s-channel, and discuss findings
 
 
 %=========================================================
@@ -173,9 +174,7 @@ The decays of the \Ppidark mesons, however, are through a mass insertion. They c
     \label{fig:svj_mass_insertion}
 \end{figure}
 
-We encode the dark confinement scale \lamDark and running dark coupling \aDark, based on the dark quark mass. \PYTHIA is now aware of the energy scales by which to hadronise and decay the dark sector particles. Final state dark radiation is also allowed, with a minimum \pt of $\text{1.1}\lamDark$.
-
-% Why do we choose 1.1*Lambda_d for pt_min FSR?
+We encode the dark confinement scale \lamDark and running dark coupling \aDark, based on the dark quark mass. \PYTHIA is now aware of the energy scales by which to hadronise and decay the dark sector particles. Final state dark radiation is also allowed, with a minimum \pt of $\text{1.1}\lamDark$ as imposed by \PYTHIA.
 
 The softer, visible radiation is simulated, and the clustering of \acrshort{sm} hadrons into \glspl{jet} happens. The procedure for clustering is known as ``sequential recombination'', where particles are successively combined until certain criteria are met. In \PYTHIA, clustering stops above the merging scale known as the \texttt{qCut}, which we set to 125\GeV. For events generated in \MADGRAPH and interfaced with \PYTHIA for the parton shower, it is recommended that $\texttt{qCut} > 1.1 \texttt{xqcut}$. Referring to the transverse momentum, the symbol $\kt$ is traditionally used in naming algorithms such as the \gls{antikt}. For consistency within this thesis, however, $\pt$ will be used.
 

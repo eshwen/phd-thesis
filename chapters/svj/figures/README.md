@@ -2,6 +2,21 @@
 
 To make signal MC distributions for my thesis, see the instructions in [Making the samples](#making-the-samples). To make the plot(s) of Lambda_dark vs m_dark, see [Lambda_dark vs m_dark](#lambdadark-vs-mdark).
 
+- [Making plots](#making-plots)
+  - [Making the samples](#making-the-samples)
+  - [Analysis](#analysis)
+    - [Setup](#setup)
+    - [MadGraph vs Pythia comparisons](#madgraph-vs-pythia-comparisons)
+      - [Running `fast-carpenter` to get the dataframes](#running-fast-carpenter-to-get-the-dataframes)
+      - [Running `fast-plotter` to get the plots](#running-fast-plotter-to-get-the-plots)
+    - [s-channel and t-channel MadGraph plots](#s-channel-and-t-channel-madgraph-plots)
+      - [Getting the dataframes](#getting-the-dataframes)
+      - [Getting the plots](#getting-the-plots)
+    - [Variations on the s-channel benchmark model](#variations-on-the-s-channel-benchmark-model)
+      - [Getting the dataframes (again)](#getting-the-dataframes-again)
+      - [Getting the plots (again)](#getting-the-plots-again)
+  - [Lambda_dark vs m_dark](#lambdadark-vs-mdark)
+
 ## Making the samples
 
 To produce the actual nanoAOD samples, follow the instructions at <https://github.com/eshwen/SemivisibleJets>. But since the setup of the code only seems to work on lxplus, after making the files transfer them over to Bristol's server with `rsync`. It's probably also a good idea to keep them on hdfs. See <https://hadoop.apache.org/docs/r2.4.1/hadoop-project-dist/hadoop-common/FileSystemShell.html> for commands (e.g., creating directories and copying files over). After the samples are in their proper place, the analysis and plotting is done with the FAST tools within the chip repository.
@@ -133,15 +148,19 @@ done
 Because of the fact I'm only including 4 lines instead of 5 for the alpha_dark variation, if I want the the colours to be consistent, I'll have to change [this line](https://github.com/eshwen/fast-plotter/blob/esh_v0.2.1_fixes/fast_plotter/plotting.py#L57) in `fast-plotter`, changing `.96` to `.808` and re-run the plotting with
 
 ```bash
+sed -i 's/.96/.808/g' ../src/fast-plotter/fast_plotter/plotting.py
 fast_plotter -c $plotting_cfg -o svj_s_thesis_benchmark_variations_aD svj_s_thesis_benchmark_variations_aD/$df
+sed -i 's/.808/.96/g' ../src/fast-plotter/fast_plotter/plotting.py
 ```
 
 If not plotting any variables other than the dijet MT, delete the other dataframes with, e.g.,
 
 ```bash
 shopt -s extglob
-for redundant_file in svj_s_thesis_benchmark_variations_aD/!($df|*.pdf); do
-    rm $redundant_file
+for dir in "${out_dirs[@]}"; do
+    for redundant_file in $dir/!($df|*.pdf); do
+        rm $redundant_file
+    done
 done
 ```
 

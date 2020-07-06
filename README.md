@@ -4,7 +4,7 @@
 
 [![GitHub Releases (by Asset - normal pdf)](https://img.shields.io/github/downloads/eshwen/phd-thesis/latest/Eshwen_Bhal_thesis.pdf?color=ff69b4)](https://github.com/eshwen/phd-thesis/releases/latest/download/Eshwen_Bhal_thesis.pdf) [![GitHub Releases (by Asset - draft pdf)](https://img.shields.io/github/downloads/eshwen/phd-thesis/latest/Eshwen_Bhal_thesis_draft.pdf?color=ff69b4)](https://github.com/eshwen/phd-thesis/releases/latest/download/Eshwen_Bhal_thesis_draft.pdf) [![GitHub Releases (by Asset - word count)](https://img.shields.io/github/downloads/eshwen/phd-thesis/latest/word_count.html?color=ff69b4)](https://github.com/eshwen/phd-thesis/releases/latest/download/word_count.html)
 
-Repository containing everything related to my thesis.
+Repository containing everything related to my thesis. **The hyperlinks for the badges still work while the repo is private, so quick links to the pdf downloads of the thesis are still accessible.**
 
 ## Table of Contents
 

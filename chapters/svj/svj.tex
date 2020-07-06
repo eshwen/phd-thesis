@@ -88,7 +88,7 @@ In the description of the \schannel model, the leptophobic \PZprime is a spin-1 
 
 Cross sections for this process are calculated as a function of \mZprime, assuming resonant production and a universal quark coupling. Those given by \MADGRAPH are far too large and appear unrealistic. % Tracing back through the code used to calculate the cross sections, and what I think is the paper Nhan Tran was on for the dijet search, I think the cross section calculation comes from https://arxiv.org/abs/1306.2629, maybe more explicitly from slide 68 of https://indico.cern.ch/event/818454/contributions/3418046/attachments/1866479/3069375/CMS_PF_June20.pdf
 
-It is important to understand the influence each free parameter of the model exerts on the kinematics of the final state particles. In which observables the variations of a given parameter manifest can aid in disentangling potential signal from background. The sensitivity, or lack thereof, of a parameter on the search variable also creates a sensible range for which to constrain the set of signal samples that must be generated. Signal models are given a label as SVJ\_\-$\expval{m_{\mathrm{mediator}}}$\_\-$\expval{\mDark}$\_\-$\expval{\rinv}$\_\-$\expval{\aDark}$. A benchmark point was chosen in the analysis with $\mZprime = \text{3000}\GeV$, $\mDark = \text{20}\GeV$, $\rinv = \text{0.3}$, and $\aDark = \text{peak}$, labelled as SVJ\_\-3000\_\-20\_\-0.3\_\-peak. The choice of the benchmark point is motivated by Ref.~\citenum{Cohen:2015toa} and considerations given to modelling signal in this chapter. Fig.~\ref{fig:svj_mg_benchmark_variations} shows the transverse mass of the dijet system \mT in the case where a single free parameter was varied with respect to the benchmark point. A glimpse into the sensitivity of the parameter on the kinematics is evident.
+It is important to understand the influence each free parameter of the model exerts on the kinematics of the final state particles. In which observables the variations of a given parameter manifest can aid in disentangling potential signal from background. The sensitivity, or lack thereof, of a parameter on the search variable also creates a sensible range for which to constrain the set of signal samples that must be generated. Signal models are given a label as SVJ\_\-$\expval{m_{\mathrm{mediator}}}$\_\-$\expval{\mDark}$\_\-$\expval{\rinv}$\_\-$\expval{\aDark}$. A benchmark point was chosen in the analysis with $\mZprime = \text{3000}\GeV$, $\mDark = \text{20}\GeV$, $\rinv = \text{0.3}$, and $\aDark = \text{peak}$, labelled as SVJ\_\-3000\_\-20\_\-0.3\_\-peak. The choice of the benchmark point is motivated by Ref.~\citenum{Cohen:2015toa} and considerations given to modelling signal in this chapter. Fig.~\ref{fig:svj_mg_benchmark_variations} shows the transverse mass of the dijet system \mT in the case where a single free parameter was varied with respect to the benchmark point. A glimpse into the sensitivity of the parameter on the kinematics is evident.\footnote{Not sure if the legends are too small for the plots in this chapter. Can enlarge them if need be.}
 
 \begin{figure}[htbp]
     \centering
@@ -111,18 +111,11 @@ It is important to understand the influence each free parameter of the model exe
         \includegraphics[width=\textwidth]{figures/s_channel_benchmark_variations/aD.pdf}
         \caption{Varying \aDark}
     \end{subfigure}
-    \caption[Distributions of the transverse mass of the dijet system \mT for \schannel signal samples emulating the 2016 data taking period. In each panel, one of the free parameters of the semi-visible jets model is varied with respect to the benchmark point SVJ\_\-3000\_\-20\_\-0.3\_\-peak]{Distributions of the transverse mass of the dijet system \mT for \schannel signal samples emulating the 2016 data taking period. In each panel, one of the free parameters of the \glspl{svj} model is varied with respect to the benchmark point SVJ\_\-3000\_\-20\_\-0.3\_\-peak (red line).}
+    \caption[Distributions of the transverse mass of the dijet system \mT for \schannel signal samples emulating the 2016 data taking period. In each panel, one of the free parameters of the semi-visible jets model is varied with respect to the benchmark point SVJ\_\-3000\_\-20\_\-0.3\_\-peak]{Distributions of the transverse mass of the dijet system \mT for \schannel signal samples emulating the 2016 data taking period. In each panel, one of the free parameters of the \glspl{svj} model is varied with respect to the benchmark point SVJ\_\-3000\_\-20\_\-0.3\_\-peak (bright green line).}
     \label{fig:svj_mg_benchmark_variations}
 \end{figure}
 
 % Describe results
-
-% To help fill out parameter space, maybe add the following models (remember second variable is dark HADRON mass, not dark QUARK mass):
-%   - Z' mass: 1000_20_0p3_peak (already have sample), 5000_20_0p3_peak
-%   - dark hadron mass: 3000_4_0p3_peak, 3000_100_0p3_peak
-%   - r_inv: 3000_20_0p0_peak, 3000_20_0p9_peak (already have sample)
-%   - alpha dark: 3000_20_0p3_vlow (set to 0.25 * peak), 3000_20_0p3_vhigh (set to 2 * peak)
-% Then I'd have 5 points per parameter. For colours, set dataset order such that it goes [lowest, low, benchmark, high, highest] for a given parameter. So benchmark is always the middle one and will be the same colour (green), and at least visually, the more red you go, the lower the parameter, and the more blue, the higher the parameter
 
 % Dijet MT might not be the best to showcase the differences for some parameters, since MT essentially includes the met (and therefore the dark shower, which is clearly dependent on the Z' mass), and may not be sensitive to other changes. Could be good in the analysis, so we don't have to think too carefully about dark quark/hadron mass or alpha_d. Though, even though dark quark mass varied by factors of 2, still small compared to Z' mass which seems to be the most influential parameter. Other plots might be more telling, like showing how min_dphi changes with r_inv
 
@@ -161,6 +154,13 @@ The \texttt{Hidden Valley} module allows for simulating $\HepProcess{\Pquark\APq
 
 Once the hard process has been simulated, showering of the dark and visible particles is performed. This can be separated into three separate steps. The \emph{parton shower} itself is where undecayed quarks and gluons fragment due to colour confinement. At \emph{hadronisation}, the showered partons coalesce into composite hadrons. Finally, the \emph{underlying event} is the simulation of the previous two steps for additional, softer collisions from the hard scatter between initial state particles. Often, one just calls the sum of all of these steps the \emph{parton shower} or \emph{hadronisation}.
 
+
+%=========================================================
+
+
+\subsubsection{Hadronisation of dark quarks}
+\label{subsubsec:svj_dark_hadronisation}
+
 Dark quarks hadronise into one of two types of dark meson that correspond to particles from the \texttt{Hidden Valley} module: \Ppidark and \Prhodark, that are pseudoscalar and vector, respectively. Each possess flavour-diagonal and off-diagonal variants. They are generated with a ratio of 1:3 as the theory specifies the number of dark flavours $\Nf = \text{2}$. Dark hadrons are set to decay invisibly with a branching fraction \rinv. Remaining decay modes are to \acrshort{sm} quarks via a virtual \PZprime since it is the leptophobic portal between the dark and visible sectors. Decays of \Prhodark are democratic, i.e., with equal probability to accessible \acrshort{sm} quark-antiquark pairs.\footnote{Top quarks are excluded in all cases, since in the scan of model parameters where we predict the greatest sensitivity, the dark mesons are always too light to decay on shell to a \ttbar pair.} Specifically, \Prhodark particles with $\mDark > \text{2}m_{\Pbottom}$ have a $\text{1}/\text{5}$ probability to decay to a \Pup, \Pdown, \Pcharm, \Pstrange, or \Pbottom. For $2m_{\Pcharm} < \mDark < 2m_{\Pbottom}$, \Pbottom quarks are excluded and the branching ratio increases to $\text{1}/\text{4}$ for the remaining species. The \Pcharm quark is removed, and branching ratio modified, in the same manner for $\mDark < 2m_{\Pcharm}$.
 
 The decays of the \Ppidark mesons, however, are through a mass insertion. They couple to the longitudinal component of the \PZprime, assumed to arise from a leptophobic Higgs sector in an analogous manner to the electroweak bosons. Running quark masses are accounted for---as calculated in Ref.~\citenum{QCD_ESW}--since the decays are produced at the Higgs mass scale. Branching fractions to the \acrshort{sm} quarks are therefore based on the squares of the \emph{running} masses over the \emph{pole} masses. A graphical representation of the mass insertion decay is provided in Fig.~\ref{fig:svj_mass_insertion}.
@@ -175,6 +175,12 @@ The decays of the \Ppidark mesons, however, are through a mass insertion. They c
 \end{figure}
 
 We encode the dark confinement scale \lamDark and running dark coupling \aDark, based on the dark quark mass. \PYTHIA is now aware of the energy scales by which to hadronise and decay the dark sector particles. Final state dark radiation is also allowed, with a minimum \pt of $\text{1.1}\lamDark$ as imposed by \PYTHIA.
+
+
+%=========================================================
+
+\subsubsection{Jet clustering}
+\label{svj:pythia_jet_clustering}
 
 The softer, visible radiation is simulated, and the clustering of \acrshort{sm} hadrons into \glspl{jet} happens. The procedure for clustering is known as ``sequential recombination'', where particles are successively combined until certain criteria are met. In \PYTHIA, clustering stops above the merging scale known as the \texttt{qCut}, which we set to 125\GeV. For events generated in \MADGRAPH and interfaced with \PYTHIA for the parton shower, it is recommended that $\texttt{qCut} > 1.1 \texttt{xqcut}$. Referring to the transverse momentum, the symbol $\kt$ is traditionally used in naming algorithms such as the \gls{antikt}. For consistency within this thesis, however, $\pt$ will be used.
 
@@ -195,12 +201,24 @@ If $d_{ij} < d_{iB}$, the particles $i$ and $j$ are combined, replacing the indi
 
 % Look in AN for more description regarding the dark hadrons, decays of dark mesons, etc. (https://gitlab.cern.ch/tdr/notes/AN-19-061/-/blob/master/sections/sigsamples.tex)
 
-% Describe effective parametrisation of Lambda_dark we use (and why - maximise number of dark hadrons?): Lambda_dark^peak = 3.2 * m_dark^0.8. Then use Eq.~\ref{eq:lambda_dark} to convert to alpha_dark^peak. Then we designate alpha_dark^low = 0.5 * alpha_dark^peak, and alpha_dark^high = 1.5 * alpha_dark^peak. Check the AN to ask exactly why we do this. Also note, that while we use low, peak and high, and they seem reasonably intuitive, there is support in my repository to just specify a number for alpha_d
+
+%=========================================================
+
+\subsubsection{Simpler parametrisation of \texorpdfstring{\aDark}{alpha\_dark}}
+\label{subsubsec:svj_effective_alpha_dark}
+
+For simplicity, the values of \aDark used in the scan of parameter points are based on the value of \lamDark that maximises the dark hadron multiplicity in an event. The dependence was very small on \mZprime, and instead was modelled as a function of \mDark by performing a fit. The value of \lamDark that leads to the largest number of dark hadrons (\lamDarkPeak) is
+\begin{equation}
+    \lamDarkPeak = 3.2 \mDark^{0.8}
+    \label{eq:lambda_dark_peak_v_m_dark}
+\end{equation}
+
+which gives the parameter $\aDarkPeak = \aDark(\lamDarkPeak)$, calculated according to Eq.~\ref{eq:lambda_dark}. Variations on \aDark are calculated by scaling it by a factor 0.5 and 1.5, yielding $\aDarkLow = 0.5\aDarkPeak$ and $\aDarkHigh = 1.5\aDarkPeak$. For the purposes of emphasizing the effect of the choice of \aDark on the kinematics of the signal, I have introduced an additional point by which to vary it: $\aDarkVHigh = 2\aDarkPeak$. The advantage of denoting different values of the dark coupling with ``peak'', ``low'', and ``high'', allows a more intuitive understanding of the parameter over a numerical value. Eq.~\ref{eq:lambda_dark_peak_v_m_dark} also means that we can simply vary \lamDark and \aDark as a function of \mDark for each set of parameters. In the cases where a numerical value of \aDark is preferred, my signal production repository supports it as well as the string identifiers. Fig.~\ref{fig:svj_lamDark_vs_mDark} illustrates the evolution of \lamDark as a function of \mDark for each variant of \aDark.
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.5\textwidth]{figures/lambda_dark_vs_mDark.pdf}
-    \caption[The dependence of the dark force scale \lamDark as a function of the dark hadron mass \mDark for each value of \aDark used in the analysis]{The dependence of the dark force scale \lamDark as a function of the dark hadron mass \mDark for each value of \aDark used in the analysis.}
+    \includegraphics[width=0.5\textwidth]{figures/lambda_dark_vs_mDark_with_vHigh.pdf}
+    \caption[The dependence of the dark force scale \lamDark as a function of the dark hadron mass \mDark for each value of \aDark used in the chapter]{The dependence of the dark force scale \lamDark as a function of the dark hadron mass \mDark for each value of \aDark used in the chapter.}
     \label{fig:svj_lamDark_vs_mDark}
 \end{figure}
 

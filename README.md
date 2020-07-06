@@ -181,6 +181,7 @@ The following are some notes on formatting guidelines and style, just to remain 
   - For references, cite _before_ any punctuation (such as a full stop)
   - For footnotes on the other hand, the reference should come _after_ punctuation
   - For quotation marks, open the quote with a double backtick ` `` `. Close with two single quotes `''` so that the style of the opening and closing quotation marks match
+  - If I'm using quotation marks (e.g., when defining nomenclature like "muon station"), put punctuation within the quote ("muon station," rather than "muon station",). Explained better in [this Guardian article](https://www.theguardian.com/media/mind-your-language/2011/may/19/mind-your-language-punctuation-quotations)
   - When to use hyphens, en-dashes and em-dashes: <https://www.chicagomanualofstyle.org/qanda/data/faq/topics/HyphensEnDashesEmDashes/faq0002.html>
 - Spacing:
   - When declaring an equation environment, leave at most a single blank line between the text preceding and succeeding the equation. Otherwise, asymmetric vertical space before or after the equation may be left

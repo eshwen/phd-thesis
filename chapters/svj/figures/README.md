@@ -109,10 +109,10 @@ WIP.
 To run the s-channel signal samples with variations on the benchmark point SVJ_3000_20_0.3_peak, from the top-level directory of the chip repo, run
 
 ```bash
-fast_carpenter --ncores 3 --outdir svj_s_thesis_benchmark_variations_aD ./samples/svj/svj_signals_esh_2016_thesis_benchmark_variations_aD.yaml ./configs/svj_comparisons_2016.yaml
-fast_carpenter --ncores 3 --outdir svj_s_thesis_benchmark_variations_mD ./samples/svj/svj_signals_esh_2016_thesis_benchmark_variations_mD.yaml ./configs/svj_comparisons_2016.yaml
-fast_carpenter --ncores 3 --outdir svj_s_thesis_benchmark_variations_mZp ./samples/svj/svj_signals_esh_2016_thesis_benchmark_variations_mZp.yaml ./configs/svj_comparisons_2016.yaml
-fast_carpenter --ncores 3 --outdir svj_s_thesis_benchmark_variations_rinv ./samples/svj/svj_signals_esh_2016_thesis_benchmark_variations_rinv.yaml ./configs/svj_comparisons_2016.yaml
+fast_carpenter --ncores 2 --outdir svj_s_thesis_benchmark_variations_aD ./samples/svj/svj_signals_esh_2016_thesis_benchmark_variations_aD.yaml ./configs/svj_comparisons_2016.yaml
+fast_carpenter --ncores 2 --outdir svj_s_thesis_benchmark_variations_mD ./samples/svj/svj_signals_esh_2016_thesis_benchmark_variations_mD.yaml ./configs/svj_comparisons_2016.yaml
+fast_carpenter --ncores 2 --outdir svj_s_thesis_benchmark_variations_mZp ./samples/svj/svj_signals_esh_2016_thesis_benchmark_variations_mZp.yaml ./configs/svj_comparisons_2016.yaml
+fast_carpenter --ncores 2 --outdir svj_s_thesis_benchmark_variations_rinv ./samples/svj/svj_signals_esh_2016_thesis_benchmark_variations_rinv.yaml ./configs/svj_comparisons_2016.yaml
 ```
 
 The same processing config as the MadGraph-Pythia comparisons is used for simplicity.
@@ -130,12 +130,18 @@ for dir in "${out_dirs[@]}"; do
 done
 ```
 
-If not plotting any variables other than the dijet MT, delete the other dataframes with
+Because of the fact I'm only including 4 lines instead of 5 for the alpha_dark variation, if I want the the colours to be consistent, I'll have to change [this line](https://github.com/eshwen/fast-plotter/blob/esh_v0.2.1_fixes/fast_plotter/plotting.py#L57) in `fast-plotter`, changing `.96` to `.808` and re-run the plotting with
+
+```bash
+fast_plotter -c $plotting_cfg -o svj_s_thesis_benchmark_variations_aD svj_s_thesis_benchmark_variations_aD/$df
+```
+
+If not plotting any variables other than the dijet MT, delete the other dataframes with, e.g.,
 
 ```bash
 shopt -s extglob
-for redundant_file in svj_s_thesis_benchmark_variations_aD/!($df|*.pdf);do
-    echo $redundant_file
+for redundant_file in svj_s_thesis_benchmark_variations_aD/!($df|*.pdf); do
+    rm $redundant_file
 done
 ```
 

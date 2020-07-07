@@ -3,15 +3,7 @@
 
 \epigraph{Of darkness visible so much be lent, as half to show, half veil, the deep intent.}{--- Alexander Pope}
 
-\initial{A}ccess to the dark side of the universe is under a complex lock, seemingly unbreakable judging by the efforts of the past. A portal bridging the visible world to a realm of dark \acrshort{qcd}, however, may be discoverable at the \acrshort{lhc}. This chapter is dedicated to a novel search for \glspl{svj}, characterised by hadronic final states and moderate missing transverse momentum.
-
-%=======
-\begin{easylist}[itemize]
-    \easylistprops
-    & Not 100\% sure whether this should go between theory and detector chapters, between detector and objects, or between objects and Hinv.
-    && This could even be appended onto to the SVJ bit in the theory chapter, instead. Though, there would be a reasonable amount of material and discussion, so probably deserves its own (short) chapter
-    && Show a few distributions from \tchannel signal, just for some insight as to how they differ from \schannel. Not sure if they need some sort of approval since they're generated with \acrshort{cmssw}
-\end{easylist}
+\initial{A}ccess to the dark side of the universe is under a complex lock, seemingly unbreakable judging by the efforts of the past. A portal bridging the visible world to a realm of dark \acrshort{qcd}, however, may be discoverable at the \acrshort{lhc}. This chapter is dedicated to a novel search for \glspl{svj}, characterised by hadronic final states and moderate missing transverse momentum.\footnote{Not 100\% sure whether this should go between theory and detector chapters, between detector and objects, or between objects and Hinv. With a fair bit of material and discussion, probably deserves its own (short) chapter rather than maybe being tacked on to theory chapter.}
 
 % Can pull from Section 35 of my lab book, and all the talks I and other people from the team have given (Presentations and talks/ folder, also Other peoples/ subdirectory). Can also pull from AN for theory, translation of some theory stuff into experiment, and analysis strategy
 
@@ -24,69 +16,164 @@
 \section{Analysis summary}
 \label{sec:svj_overview}
 
-The analysis in search for \glspl{svj} is formed from a collaboration amongst the University of Bristol, University of Maryland, University of Rochester, Universit\"{a}t Z\"{u}rich, and the \acrfull{fnal}. The \schannel production mode with the full Run-2 dataset of \acrshort{cms} is the subject of the current analysis. A dijet final state with moderate \ptmiss is expected. The transverse mass of the dijet system \mT---calculated with Eq.~\ref{eq:transverse_mass_massive}---is used as the search variable. The distributions in this chapter for simulated signal tend to show a peak close to \mZprime, and the resolution of \mT is better than simply the dijet mass. Novel techniques are utilised, such as the development of a boosted decision tree to tag \glspl{svj} and distinguish them from mismeasured \acrshort{qcd} \glspl{jet}. A complete description of the \schannel analysis as of September 2019 can be found in Ref.~\citenum{GiorgiaRaucoThesis}.
+The analysis in search for \glspl{svj} is formed of a collaboration amongst the University of Bristol, University of Maryland, University of Rochester, Universit\"{a}t Z\"{u}rich, and the \acrfull{fnal}. The \schannel production mode with the full Run-2 dataset of \acrshort{cms} is the subject of the current analysis. A dijet final state with moderate \ptmiss is expected. The transverse mass of the dijet system \mT---calculated with Eq.~\ref{eq:transverse_mass_massive}---is used as the search variable. Confirmed by the distributions in this chapter for simulated signal, a peak close to \mZprime can be captured. With the inclusion of the \ptmiss, the resolution of \mT is better than simply the dijet mass (\mjj) which would otherwise be used to recover the peak. The authors of Ref.~\citenum{Cohen:2017pzm} also demonstrate that sensitivity is stronger with \mT over \mjj. Novel techniques are utilised, such as the development of a boosted decision tree to tag \glspl{svj} and distinguish them from mismeasured \acrshort{qcd} \glspl{jet}. A complete description of the \schannel analysis as of September 2019 can be found in Ref.~\citenum{GiorgiaRaucoThesis}.
 
-My contribution is predominantly the development and understanding of signal simulation in \MGvATNLO for both the \schannel and \tchannel aspects of the model. As such, the remainder of the chapter is dedicated to its discussion. The code I developed to perform the simulation is being used for the future analysis of the \tchannel mode as well as a low-mass boosted \PZprime search.
+My contribution is predominantly the development and understanding of signal simulation in \MGvATNLO~\cite{Alwall:2011madgraph} for both the \schannel and \tchannel aspects of the model. As such, the remainder of the chapter is focused on its discussion. The code I developed to perform the simulation is being used for the future analysis of the \tchannel mode as well as a low-mass boosted \PZprime search.
 
 
 %=========================================================
 
 
-\section{Signal simulation}
+\section{Signal simulation overview}
 \label{sec:signal_sim}
 
-In the main analysis for the \schannel signal model, \PYTHIA is used as it can parametrise all the relevant aspects of the model in a simple manner with high signal efficiency. \MADGRAPH is the often-preferred generator as it can handle more complex models and decays. A higher degree of customisation and tuning of parameters is also possible. For the \schannel mode, modelling of the hard process should be equivalent between \PYTHIA and \MADGRAPH at \acrshort{lo}. In the former, the characterisation, interactions, and decays of the dark sector particles are implemented via the \texttt{Hidden Valley} module, available from \PYTHIA~8.226. Samples generated with \MADGRAPH are hadronised by \PYTHIA as part of the full simulation chain within \acrshort{cmssw}. \Gls{jet} matching and filter efficiencies may noticeably reduce the final number of events. The \tchannel model is possible to parametrise in \PYTHIA, but due to its complexity, we opt to do so in \MADGRAPH. Hadronisation, however, is still performed by \PYTHIA. In all cases, signal samples are generated at \acrfull{lo}.
+In the main analysis, \PYTHIAEIGHT~\cite{pythia82} is employed to generate the \schannel signal as it can parametrise all the relevant aspects of the model in a simple manner with high signal efficiency. \MADGRAPH is the often-preferred generator as it can handle more complex models and decays. A higher degree of customisation and tuning of parameters is also possible. For the \schannel mode, modelling of the hard process should be equivalent between \PYTHIA and \MADGRAPH at \acrfull{lo}. In the former the properties, interactions, and decays of the dark sector particles are implemented via the \texttt{Hidden Valley} module, available from \PYTHIA~8.226. Samples generated with \MADGRAPH are hadronised by \PYTHIA as part of the full simulation chain within \acrshort{cmssw}. \Gls{jet} matching and filter efficiencies may noticeably reduce the final number of events. The \tchannel model is possible to parametrise in \PYTHIA, but due to its complexity we favour \MADGRAPH. Hadronisation, however, is still performed by \PYTHIA. In all cases, signal samples are generated at \acrshort{lo}.
 
-The full description of \schannel signal generation with \PYTHIAEIGHT is given in Chpts.~\ref{subsec:svj_signal_pythia} and \ref{subsec:svj_showering_pythia}. This was developed primarily by collaborators at \acrshort{fnal}. An equivalent implementation from myself where the hard scatter is modelled in \MGvATNLO, as both an alternative and cross-check to the \PYTHIA [version], is [described] in Chpt.~\ref{subsec:svj_signal_madgraph}. The parameters defining the shower were synchronised between myself and the \acrshort{fnal} colleagues. A description of the \tchannel process is also present. Comparisons between the \PYTHIA and \MADGRAPH implementations are [given] in Chpt.~\ref{subsec:svj_schannel_comparisons}.
+All the details for \schannel signal generation with \PYTHIAEIGHT is given in Chpts.~\ref{sec:svj_signal_pythia} and \ref{sec:svj_showering_pythia}. This avenue was developed primarily by collaborators at \acrshort{fnal}. An equivalent implementation from myself where the hard scatter is modelled in \MGvATNLO, as both an alternative and cross-check to the \PYTHIA version, is chronicled in Chpt.~\ref{sec:svj_signal_madgraph}. A description of the \tchannel process is also present in the section. The parameters defining the shower were synchronised between myself and the \acrshort{fnal} colleagues. Comparisons between the \PYTHIA and \MADGRAPH implementations are discussed in Chpt.~\ref{sec:svj_schannel_comparisons}.
 
-For all spectra, no additional object corrections or selections are performed and are direct from the simulation pipeline. Reconstructed \glspl{jet} satisfy the tight identification criteria given in Tabs.~\ref{tab:htoinv_jet_id_def_2016}, \ref{tab:htoinv_jet_id_def_2017}, or \ref{tab:htoinv_jet_id_def_2017} depending on the data taking year. The missing transverse momentum \ptmiss contains the ``type-I correction'' as outlined in Chpt.~\ref{subsec:objects_analysis_energy_sums}. Similarly, the rest of the objects in the ntuples contain at least minimal quality assurances prior to any analysis-level selection.
+For all spectra, no additional object corrections or selections were performed and were direct from the simulation pipeline. Reconstructed \glspl{jet} satisfy the tight identification criteria given in Tabs.~\ref{tab:htoinv_jet_id_def_2016}, \ref{tab:htoinv_jet_id_def_2017}, or \ref{tab:htoinv_jet_id_def_2017} depending on the data taking year. The missing transverse momentum \ptmiss contains the type-I correction as outlined in Chpt.~\ref{subsec:objects_analysis_energy_sums}. Similarly, the rest of the objects in the ntuples contain at least minimal quality assurances prior to any analysis-level selection.
 
-The distributions that pepper the remainder of the chapter are generated with 2016 detector conditions and reconstructions. As the analysis began in 2017, the 2016 dataset was the only complete one intending to be used. Since it was the most mature and had been studied in depth by the Collaboration, it was a good starting point. Selecting one year also ensures consistency across all of the plots even though they should not significantly change year-to-year.\footnote{I could just scale the 2016 plots to 137\fbinv to avoid writing the above. Or, for realism, also generate 2017 and 2018 samples for the mass points and scale them to their respective lumis, then combine them for a full Run-2 picture.}
+The distributions that pepper the remainder of the chapter are generated with 2016 detector conditions and reconstruction. As the analysis began in 2017, the 2016 dataset was the only complete one intending to be used. Since it was the most mature and had been studied in depth by the Collaboration, the simulation should be highly representative of what could be observed in the data from that period. Selecting one year also ensures consistency across all of the plots even though they should not significantly change year-to-year.\footnote{I could just scale the 2016 plots to 137\fbinv to avoid writing the above. Or, for realism, also generate 2017 and 2018 samples for the mass points and scale them to their respective lumis, then combine them for a full Run-2 picture.}
 
 
 %=========================================================
 
 
-\subsection{Generation in \texorpdfstring{\MADGRAPH}{MadGraph}}
-\label{subsec:svj_signal_madgraph}
+\section{Generation in \texorpdfstring{\PYTHIA}{Pythia}}
+\label{sec:svj_signal_pythia}
 
-The \MADGRAPHFULL event generator~\cite{Alwall:2011madgraph} is able to simulate the hard scatter for both the $s$- and \tchannel aspects of the \gls{svj} signal, i.e., the decay of the \PZprime into $\Pqdark\Paqdark$ in the \schannel mode, and the exchange of the $\PBifund$ to transform $\Pquark\APquark$ into $\Pqdark\Paqdark$ in the \tchannel mode. Up to two additional \acrlong{sm} quarks or gluons may accompany the final state for both modes. The particles, couplings, and other parameters required to describe the models are defined using the \FEYNRULES package~\cite{Alloul:2013bka}. Of the four principal free parameters the model in Chpt.~\ref{subsec:theory_svj_free_params}, the mediator mass and \mqdark are defined at this stage.
+The \texttt{Hidden Valley} module allows for simulating $\HepProcess{\Pquark\APquark \to \PZprime \to \Pqdark\Paqdark}$, where the $\PZprime$ is acts as intended---a vector portal between the visible and dark sectors. Since we expect a small percentage of them to decay visibly, a branching ratio to each of the six \acrshort{sm} quarks is set to 0.003. The remaining fraction of 0.982 decay to $\Pqdark\Paqdark$, where $\Pqdark$ is a Hidden Valley particle charged only under that gauge group. The masses of the \PZprime and \Pqdark, and the narrow width of the \PZprime for resonant production can be given. Showering in the dark and visible sectors is then performed as in Chpt.~\ref{sec:svj_showering_pythia}. For both the complete event generation, and for hadronisation in the case of \MADGRAPH generation, \PYTHIA~8.230 was used.
+
+
+%=========================================================
+
+
+\section{Showering in \texorpdfstring{\PYTHIA}{Pythia}}
+\label{sec:svj_showering_pythia}
+
+Once the hard process has been simulated, showering of the dark and visible particles is performed. This can be separated into three separate steps. The \emph{parton shower} itself is where undecayed free quarks and gluons fragment and radiate due to their high energies. At \emph{hadronisation}, the showered partons coalesce into composite hadrons due to colour confinement. Finally, the \emph{underlying event} is the simulation of the previous two steps for any additional, softer collisions that occur between constituents of the incident particles, separate from the hard interaction. Often, the sum of all of these steps is just referred to as the \emph{parton shower} or \emph{hadronisation}.
+
+
+%=========================================================
+
+
+\subsection{Hadronisation of dark quarks}
+\label{subsec:svj_dark_hadronisation}
+
+Dark quarks hadronise into one of two species of dark meson (as the number of dark flavours $\Nf = \text{2}$) that correspond to particles from the \texttt{Hidden Valley} module: \Ppidark and \Prhodark, that are pseudoscalar and vector, respectively. Each possess flavour-diagonal and off-diagonal variants. They are generated probabilistically with a ratio of 1:3. Dark hadrons are set to decay invisibly with a branching fraction \rinv. Remaining decay modes are to \acrshort{sm} quarks via a virtual \PZprime since it is the leptophobic portal between the dark and visible sectors. Decays of \Prhodark are democratic, i.e., with equal probability to accessible \acrshort{sm} quark-antiquark pairs.\footnote{Top quarks are excluded in all cases, since in the scan of model parameters where we predict the greatest sensitivity, the dark mesons are always too light to decay on shell to a \ttbar pair.} Specifically, \Prhodark particles with $\mDark > \text{2}m_{\Pbottom}$ have a $\text{1}/\text{5}$ probability to decay to a \Pup, \Pdown, \Pcharm, \Pstrange, or \Pbottom. For $\text{2}m_{\Pcharm} < \mDark < \text{2}m_{\Pbottom}$, \Pbottom quarks are excluded and the branching ratio increases to $\text{1}/\text{4}$ for the remaining species. The \Pcharm quark is removed---and branching ratio modified---in the same manner for $\mDark < \text{2}m_{\Pcharm}$.
+
+The decays of the \Ppidark mesons, however, are through a mass insertion. They couple to the longitudinal component of the \PZprime, assumed to arise from a leptophobic Higgs sector in an analogous manner to the electroweak bosons. Running quark masses are accounted for, as calculated in Ref.~\citenum{QCD_ESW}, since the decays are produced at the Higgs mass scale. Branching fractions to the \acrshort{sm} quarks are therefore based on the squares of the \emph{running} masses over the \emph{pole} masses. A graphical representation of the mass insertion decay is provided in Fig.~\ref{fig:svj_mass_insertion}.
+
+% The mass insertion is briefly mentioned in the theory paper. Vector dark hadrons can decay promptly to SM quarks through the vector portal via the Z'. But scalar and pseudoscalar decays are suppressed by the mass insertion. Not sure how this affects the t-channel
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figures/mass_insertion_diagram.pdf}
+    \caption[A diagram of the mass insertion decay of \Ppidark mesons in the \schannel semi-visible jet model]{A diagram of the mass insertion decay of \Ppidark mesons in the \schannel \gls{svj} model.}
+    \label{fig:svj_mass_insertion}
+\end{figure}
+
+We encode the dark confinement scale \lamDark and running dark coupling \aDark, based on the dark hadron mass as given below. \PYTHIA is now aware of the energy scales by which to hadronise and decay the dark sector particles. Final state dark radiation is also permitted, with a minimum \pt of $\text{1.1}\lamDark$ as imposed by \PYTHIA.
+
+
+%=========================================================
+
+
+\subsubsection{Simpler parametrisation of \texorpdfstring{\aDark}{alpha\_dark}}
+\label{subsubsec:svj_effective_alpha_dark}
+
+For simplicity, the values of \aDark used in the scan of parameter points are based on the value of \lamDark that maximises the dark hadron multiplicity in an event. The dependence was very small on \mZprime, and instead was modelled as a function of \mDark by performing a fit. The value of \lamDark that leads to the largest number of dark hadrons (\lamDarkPeak) is
+\begin{equation}
+    \lamDarkPeak = 3.2 \mDark^{0.8}
+    \label{eq:lambda_dark_peak_v_m_dark}
+\end{equation}
+
+which gives the parameter $\aDarkPeak = \aDark(\lamDarkPeak)$ calculated according to Eq.~\ref{eq:lambda_dark}. Variations on \aDark are calculated by scaling it by a factor 0.5 and 1.5, yielding $\aDarkLow = \text{0.5}\aDarkPeak$ and $\aDarkHigh = \text{1.5}\aDarkPeak$. For the purposes of emphasizing the effect of the choice of \aDark on the kinematics of the signal, I have introduced an additional point by which to vary it: $\aDarkVHigh = \text{2}\aDarkPeak$. The advantage of denoting the dark coupling strength with ``peak,'' ``low,'' and ``high,'' enables a more intuitive understanding of the parameter over a numerical value. Eq.~\ref{eq:lambda_dark_peak_v_m_dark} also means that we can simply vary \lamDark (and therefore \aDark) as a function of \mDark for each configuration of parameters in a scan of the model. In the cases where a numerical value of \aDark is preferred, my signal production repository supports that as well as the string identifiers. Fig.~\ref{fig:svj_lamDark_vs_mDark} illustrates the evolution of \lamDark as a function of \mDark for each value of \aDark we consider.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figures/lambda_dark_vs_mDark_with_vHigh.pdf}
+    \caption[The dependence of the dark force scale \lamDark on the dark hadron mass \mDark for each value of \aDark used in the thesis]{The dependence of the dark force scale \lamDark on the dark hadron mass \mDark for each value of \aDark used in the thesis.}
+    \label{fig:svj_lamDark_vs_mDark}
+\end{figure}
+
+
+%=========================================================
+
+
+\subsection{Jet clustering}
+\label{subsec:svj_pythia_jet_clustering}
+
+The softer, visible radiation is simulated, and the clustering of \acrshort{sm} hadrons into \glspl{jet} happens in the hadroniser. The algorithm logic is known as ``sequential recombination,'' where particles are successively combined until certain criteria are met. In \PYTHIA, clustering stops above the merging scale known as the \texttt{qCut}, which we set to 125\GeV. For events generated in \MADGRAPH and interfaced with \PYTHIA for the parton shower, it is recommended that $\texttt{qCut} > 1.1 \texttt{xqcut}$. The \texttt{xqcut} denotes the merging scale in \MADGRAPH. Referring to the transverse momentum, the symbol $\kt$ is traditionally used in naming algorithms such as the \gls{antikt}. For consistency within this thesis, however, $\pt$ will be used.
+
+For given particles $i$ and $j$, distance between them $d_{ij}$, and to the beam $d_{iB}$, are calculated as in Ref.~\citenum{schramm2016searching}:
+\begin{equation}
+    \begin{aligned}
+d_{ij} &= \min(p_{\mathrm{T}i}^{2k}, \ p_{\mathrm{T}j}^{2k}) \frac{\Delta R_{ij}}{R^2},\\
+d_{iB} &= p_{\mathrm{T}i}^{2k}
+    \end{aligned}
+    \label{eq:distances_kt_pythia}
+\end{equation}
+
+where, in the rapidity-azimuthal ($y$-$\phi$) plane, $R$ is the radius of the cone---defined as 1.0 to match the merging parameters used in \MADGRAPH. $\Delta R_{ij}$ is the separation between $i$ and $j$,\footnote{This is calculated with Eq.~\ref{eq:delta_r} where $\eta$ is replaced with $y$ from Eq.~\ref{eq:rapidity_def}.} and $k$ defines the algorithm choice: $k = -\text{1}$ in the \gls{antikt}, $k = \text{0}$ in the Cambridge-Aachen algorithm, and $k = \text{1}$ in the $\kt$ algorithm. Our choice is the latter for the same reason as the cone radius size.
+
+If $d_{ij} < d_{iB}$, the particles $i$ and $j$ are combined, replacing the individual constituents in the list of inputs. Otherwise, particle $i$ is designated as a jet and removed from list of inputs. For all combinations of particles remaining in the input list, the distances are recalculated until all objects possess a \pt above the merging scale. Once the algorithm has finished, we are left with fully-clustered \glspl{jet}. Matching is performed between the clustered \glspl{jet} and original partons to avoid double counting. Events with insufficiently-matched \glspl{jet} are rejected. A minimum number of \glspl{jet} may also be specified and events with fewer than this are rejected. A larger $\rinv$ tends to reduce the merging and matching efficiencies since more energy is locked in the dark sector and fewer \glspl{jet} are clustered above the merging scale.
+
+% Look in AN for more description regarding the dark hadrons, decays of dark mesons, etc. (https://gitlab.cern.ch/tdr/notes/AN-19-061/-/blob/master/sections/sigsamples.tex)
+
+
+%=========================================================
+
+
+\subsection{Filtering events}
+\label{subsec:svj_pythia_filters}
+
+Two filters are implemented in \PYTHIA that reject events with unrealistic decays: a $Z_2$ symmetry in the model requires invisibly decaying dark hadrons to produce the dark matter particles in pairs, and an invisibly decaying \PZprime must do so into a $\Pqdark\Paqdark$ pair. Coupled with the efficiency of the \gls{jet} matching and clustering algorithms---which only significantly affects events generated externally and decayed with \PYTHIA---there are multiple sources of inefficiency in the generation.
+
+
+%=========================================================
+
+
+\section{Generation in \texorpdfstring{\MADGRAPH}{MadGraph}}
+\label{sec:svj_signal_madgraph}
+
+The \MADGRAPHFULL event generator is able to simulate the hard scatter for both the $s$- and \tchannel UV completions of the model, i.e., the decay of the \PZprime into $\Pqdark\Paqdark$ in the \schannel mode, and the exchange of the $\PBifund$ to transform $\Pquark\APquark$ into $\Pqdark\Paqdark$ in the \tchannel mode. Up to two additional \acrlong{sm} quarks or gluons may accompany the final state for either mode. The particles, couplings, and other parameters required to describe the models are defined using the \FEYNRULES package~\cite{Alloul:2013bka}. Of the four principal free parameters from Chpt.~\ref{subsec:theory_svj_free_params}, the mediator mass and \mqdark are defined at this stage.
 
 The \schannel process is a modified version of the spin-1 ``DMsimp'' class of simplified dark matter models~\cite{Backovic:2015soa}. The \tchannel description is completely custom. Both were initially acquired by the analysis team from one of the authors of Ref.~\citenum{Cohen:2017pzm}at \url{https://github.com/smsharma/SemivisibleJets}. At the time, it contained only one set of mass points. I have since greatly expanded on both models, allowing any combination of \PZprime, $\PBifund$, and \Pqdark masses and couplings. All signal samples produced with \MADGRAPH that feature in this thesis were done so with \url{https://github.com/eshwen/SemivisibleJets}. % Removing space between "Ref.~\citenum{Cohen:2017pzm}" and "at" otherwise it adds double space
 
-In addition to the hard process, the full \acrshort{cmssw} simulation pipeline can also be executed. This enables hadronisation and decays of both the \acrshort{sm} and dark quarks in \PYTHIA (as detailed in Chpt.~\ref{subsec:svj_showering_pythia}). The remaining free parameters of the model---\aDark and \rinv---are specified there. Subsequently, detector conditions and material interactions can be modelled in the 2016, 2017, and 2018 data taking periods of \acrshort{cms}. The parton distribution functions used in centrally-produced \acrshort{cms} simulation for each data taking period are also applied to these \gls{svj} samples for consistency.
+In addition to the hard process, the full \acrshort{cmssw} simulation pipeline can also be executed. This enables hadronisation and decays of both the \acrshort{sm} and dark quarks in \PYTHIA (as detailed in Chpt.~\ref{sec:svj_showering_pythia}). The remaining free parameters of the model---\aDark and \rinv---are specified there. Subsequently, detector conditions and material interactions can be modelled in the 2016, 2017, and 2018 data taking periods of \acrshort{cms}. The parton distribution functions used in centrally-produced \acrshort{cms} simulation for each data taking period are also applied to these \gls{svj} samples for consistency.
 
-Common to both the $s$- and \tchannel signal models generated for these studies, the couplings between the mediator and \acrshort{sm} quarks \gq---also the mediator and dark quarks \gqdark---are set to 1.0. Coupling strengths are furthermore independent of the dark and \acrshort{sm} quark flavours. The number of dark flavours \Nf and dark colours \Nc each have values of 2. Both affect the dark force scale as per Eq.~\ref{eq:lambda_dark}. Individually, former parameter allows for the production of two types of dark hadron, described in Chpt.~\ref{subsec:svj_showering_pythia}, while the latter sets the dark colour composition of the dark gluon \Pgdark. 
+Common to both the $s$- and \tchannel signal models generated for these studies, the couplings between the mediator and \acrshort{sm} quarks \gq---also the mediator and dark quarks \gqdark---are set to 1.0. Coupling strengths are furthermore independent of the dark and \acrshort{sm} quark flavours. The number of dark flavours \Nf and dark colours \Nc each have values of 2. Both affect the dark force scale as per Eq.~\ref{eq:lambda_dark}. Individually, former parameter allows for the production of two types of dark hadron, described in Chpt.~\ref{sec:svj_showering_pythia}, while the latter sets the dark colour composition of the dark gluon \Pgdark. 
 
 
 %=========================================================
 
 
-\subsubsection{\texorpdfstring{\MADGRAPH}{MadGraph} run settings}
-\label{subsubsec:svj_mg_run_settings}
+\subsection{\texorpdfstring{\MADGRAPH}{MadGraph} run settings}
+\label{subsec:svj_mg_run_settings}
 
 Somewhat decoupled from the parameters of the signal models themselves, there are many important, adjustable settings controlled by the run card that affect the behaviour of \MADGRAPH. The most notable of which is the parton/\gls{jet} merging scale, denoted as the \texttt{xqcut}. \MADGRAPH has difficulty simulating soft, collinear physics. To avoid this, a threshold may be placed on the \texttt{xqcut} to only generate sufficiently energetic events. Between two partons $i$ and $j$, the \kt is given as
 \begin{equation}
-    \kt^2 = 2 \min(p_{\mathrm{Ti}}, \ p_{\mathrm{Tj}}) [\cosh(\eta_i - \eta_j) - \cos(\phi_i - \phi_j)]
+    \kt^2 = 2 \min(p_{\mathrm{T}i}, \ p_{\mathrm{T}j}) [\cosh(\eta_i - \eta_j) - \cos(\phi_i - \phi_j)]
     \label{eq:svj_mg_kt}
 \end{equation}
 
-where $\eta$ and $\phi$ are the pseudorapidity and azimuthal angle, respectively. Complete definitions are presented in Chpt.~\ref{subsubsec:geometry}. Events with $\kt < \texttt{xqcut}$ are not simulated. In essence, the \texttt{xqcut} is a measure of the required separation between partons in the event. We set a value of 100\GeV in the analysis for consistency with Ref.~\citenum{Cohen:2017pzm}. This interpretation of a merging scale is similar, but not quite the same, as \PYTHIA's discussed in Chpt.~\ref{subsec:svj_showering_pythia}.
+where $\eta$ and $\phi$ are the pseudorapidity and azimuthal angle, respectively. Complete definitions are presented in Chpt.~\ref{subsubsec:geometry}. Events with $\kt < \texttt{xqcut}$ are not simulated. In essence, the \texttt{xqcut} is a measure of the required separation between partons in the event. We set a value of 100\GeV in the analysis for consistency with Ref.~\citenum{Cohen:2017pzm}. This interpretation of a merging scale is similar, but not quite the same, as \PYTHIA's discussed in Chpt.~\ref{sec:svj_showering_pythia}.
 
-The choice of the parton distribution function also lives in the run card. As stated above, this parameter changes based on the data taking period we emulate. Preferences for particle separation, momentum and direction cuts, beam energy, and the \acrshort{qcd} renormalisation and factorisation scales are some of the additional settings that can be customised.
+The choice of parton distribution function also lives in the run card. As stated above, this changes to reflected the data taking period we emulate. Preferences for particle separation, momentum and direction cuts, beam energy, and the \acrshort{qcd} renormalisation and factorisation scales are some of the additional settings that can be customised.
 
 
 %=========================================================
 
 
-\subsubsection{\texorpdfstring{\schannel}{s-channel}}
-\label{subsubsec:svj_signal_madgraph_schannel}
+\subsection{\texorpdfstring{\schannel}{s-channel}}
+\label{subsec:svj_signal_madgraph_schannel}
 
-In the description of the \schannel model, the leptophobic \PZprime is a spin-1 boson with vector couplings to the dark and \acrshort{sm} quarks. A width $\Gamma_{\PZprime} = \text{10}\GeV$ is specified. The dark quarks themselves are Dirac spinors with dark colour quantum numbers. Real and complex scalar dark quarks also exist in the files [describing] the model, but are decoupled and not generated in our implementation. Consideration of these [additional] types of particle are beyond the scope of this thesis.
+In the description of the \schannel model, the leptophobic \PZprime is a spin-1 boson with vector couplings to the dark and \acrshort{sm} quarks. A width $\Gamma_{\PZprime} = \text{10}\GeV$ is specified; small enough to allow its resonant production. The dark quarks themselves are Dirac spinors with dark colour quantum numbers. Real and complex scalar dark quarks also exist in the files detailing the model, but are decoupled and not generated in our implementation. Consideration of these supplementary species of particle are beyond the scope of this thesis.
 
-Cross sections for this process are calculated as a function of \mZprime, assuming resonant production and a universal quark coupling. Those given by \MADGRAPH are far too large and appear unrealistic. % Tracing back through the code used to calculate the cross sections, and what I think is the paper Nhan Tran was on for the dijet search, I think the cross section calculation comes from https://arxiv.org/abs/1306.2629, maybe more explicitly from slide 68 of https://indico.cern.ch/event/818454/contributions/3418046/attachments/1866479/3069375/CMS_PF_June20.pdf
+Cross sections for this process are calculated as a function of \mZprime, assuming resonant production and a universal quark coupling.\footnote{Do I need to explicitly mention events are weighted by cross section of the model, then all scaled to the integrated lumi?} Those given by \MADGRAPH are far too large and appear unrealistic. % Tracing back through the code used to calculate the cross sections, and what I think is the paper Nhan Tran was on for the dijet search, I think the cross section calculation comes from https://arxiv.org/abs/1306.2629, maybe more explicitly from slide 68 of https://indico.cern.ch/event/818454/contributions/3418046/attachments/1866479/3069375/CMS_PF_June20.pdf
 
-It is important to understand the influence each free parameter of the model exerts on the kinematics of the final state particles. In which observables the variations of a given parameter manifest can aid in disentangling potential signal from background. The sensitivity, or lack thereof, of a parameter on the search variable also creates a sensible range for which to constrain the set of signal samples that must be generated. Signal models are given a label as SVJ\_\-$\expval{m_{\mathrm{mediator}}}$\_\-$\expval{\mDark}$\_\-$\expval{\rinv}$\_\-$\expval{\aDark}$. A benchmark point was chosen in the analysis with $\mZprime = \text{3000}\GeV$, $\mDark = \text{20}\GeV$, $\rinv = \text{0.3}$, and $\aDark = \text{peak}$, labelled as SVJ\_\-3000\_\-20\_\-0.3\_\-peak. The choice of the benchmark point is motivated by Ref.~\citenum{Cohen:2015toa} and considerations given to modelling signal in this chapter. Fig.~\ref{fig:svj_mg_benchmark_variations} shows the \mT in the case where a single free parameter was varied with respect to the benchmark point. A glimpse into the sensitivity of the parameter on the kinematics is evident.\footnote{Not sure if the legends are too small for the plots in this chapter. Can enlarge them if need be.}
+It is important to understand the influence each free parameter of the model exerts on the kinematics of the final state. In which observables the variations of a given parameter manifest can aid in disentangling potential signal from background. The sensitivity, or lack thereof, of a parameter on the search variable also creates a sensible range for which to constrain the set of signal samples that must be generated. Signal models are given a label as SVJ\_\-$\expval{m_{\mathrm{mediator}}}$\_\-$\expval{\mDark}$\_\-$\expval{\rinv}$\_\-$\expval{\aDark}$. A benchmark point was chosen in the analysis with $\mZprime = \text{3000}\GeV$, $\mDark = \text{20}\GeV$, $\rinv = \text{0.3}$, and $\aDark = \text{peak}$, labelled as SVJ\_\-3000\_\-20\_\-0.3\_\-peak. The choice is motivated by Ref.~\citenum{Cohen:2015toa}and considerations of the other attributes of the signal provided in this chapter. Fig.~\ref{fig:svj_mg_benchmark_variations} shows the \mT in the case where a single free parameter was varied with respect to the benchmark point. A glimpse into the sensitivity of the parameter on the kinematics is evident.\footnote{Not sure if the legends are too small for the plots in this chapter. Can enlarge them if need be.}
 
 \begin{figure}[htbp]
     \centering
@@ -109,138 +196,51 @@ It is important to understand the influence each free parameter of the model exe
         \includegraphics[width=\textwidth]{figures/s_channel_benchmark_variations/aD.pdf}
         \caption{Varying \aDark}
     \end{subfigure}
-    \caption[Distributions of the transverse mass of the dijet system \mT for \schannel signal samples emulating the 2016 data taking period. In each panel, one of the free parameters of the semi-visible jets model is varied with respect to the benchmark point SVJ\_\-3000\_\-20\_\-0.3\_\-peak]{Distributions of the transverse mass of the dijet system \mT for \schannel signal samples emulating the 2016 data taking period. In each panel, one of the free parameters of the \glspl{svj} model is varied with respect to the benchmark point SVJ\_\-3000\_\-20\_\-0.3\_\-peak (bright green line).}
+    \caption[Distributions of the transverse mass of the dijet system \mT for \schannel \gls{svj} samples emulating the 2016 data taking period. In each panel, one of the free parameters of the model is varied with respect to the benchmark point SVJ\_\-3000\_\-20\_\-0.3\_\-peak]{Distributions of the transverse mass of the dijet system \mT for \schannel \gls{svj} samples emulating the 2016 data taking period. In each panel, one of the free parameters of the model is varied with respect to the benchmark point SVJ\_\-3000\_\-20\_\-0.3\_\-peak (bright green line).}
     \label{fig:svj_mg_benchmark_variations}
 \end{figure}
 
-Perhaps expectedly, \mZprime appears to have the largest influence on the kinematics of the signal. Both the normalisation and shape are significantly affected. A lower \mZprime recovers the peak close to the mediator mass more effectively. Surprisingly, varying the dark hadron mass did little to the distribution. Though, the transverse mass is more sensitive to the clustered \glspl{jet} and \ptmiss as a whole rather than the shower constituents themselves. The momentum of the \glspl{jet} will also be highly correlated to \mZprime since \mDark is usually small in comparison, boosting the dark hadrons significantly. Varying \rinv shows an interesting trend. A smaller value reshapes the \mT distribution toward the \mZprime peak. Since the visible \glspl{jet} in the system are naturally resolved better than the \ptmiss, recovering \mZprime is an easier task. Similarly to \mDark, the choices of \aDark featured only have a small impact on the \mT spectrum. As with \rinv, a smaller value leans more toward the \mZprime peak. This can only happen to a point, however, because an \aDark value too small fails the showering stage in \PYTHIA.
+Perhaps expectedly, \mZprime appears to have the largest influence on the kinematics of the signal. Both the normalisation and shape of the distributions are significantly affected. A lower \mZprime recovers the peak near the mediator mass more effectively. Surprisingly, varying the dark hadron mass did little to the distribution. Though, the transverse mass is more sensitive to the clustered \glspl{jet} and \ptmiss as a whole rather than the shower constituents themselves. The momentum of the \glspl{jet} will also be highly correlated to \mZprime since \mDark is usually small in comparison, boosting the dark hadrons significantly. Varying \rinv shows an interesting trend. A smaller value reshapes the \mT distribution toward the \mZprime peak. Since the visible \glspl{jet} in the system are naturally resolved better than the \ptmiss, recovering \mZprime is an easier task. Similarly to \mDark, the choices of \aDark featured only have a small impact on the \mT spectrum. As with \rinv, a smaller value leans more toward the \mZprime peak. This can only happen to a point, however, because a model with an \aDark value too small refuses to shower in \PYTHIA.
 
 For both \mDark and \aDark, checking many other observables leads to the same conclusion given above: the kinematics of the model do not appear particularly sensitive to changes in those parameters. This can be a positive consequence as it reduces the phase space required in the search for \glspl{svj} and permits optimisation of the analysis for \mZprime and \rinv.
 
+% Could also qualitatively compare to the 2017 theory paper, e.g., plotting min_dphi and showing that the shapes are the same.
+
 
 %=========================================================
 
 
-\subsubsection{\texorpdfstring{\tchannel}{t-channel}}
-\label{subsubsec:svj_signal_madgraph_tchannel}
+\subsection{\texorpdfstring{\tchannel}{t-channel}}
+\label{subsec:svj_signal_madgraph_tchannel}
 
-For the \tchannel model, several pseudoscalar bifundamentals $\PBifund$ couple to fermionic dark quarks. While only one flavour of mediator exists for \schannel process, several exist for \tchannel. Each flavour of $\PBifund$ couples to a given \acrshort{sm} quark flavour, and is charged under electromagnetism with a value matching that of its coupled quark.
+For the \tchannel model, several pseudoscalar bifundamentals $\PBifund$ couple to fermionic dark quarks. While only one flavour of mediator exists for \schannel process, numerous exist for \tchannel. Each flavour of $\PBifund$ couples to a given \acrshort{sm} quark flavour, and is charged under electromagnetism with a value matching that of its coupled quark.\footnote{Is this for charge conservation?}
 
 % Need to talk about how cross section is calculated
 
-The \tchannel aspect of the \gls{svj} theory has not been studied in as great a detail as \schannel. It also has less distinguishing kinematic characteristics, making it more difficult to determine the phase space and discriminating variables to separate it from the \acrlong{sm} background. Nevertheless, simple distributions with a range of parameter points are presented below. These are intended to [see] how it manifests in the \acrshort{lhc}, and how different the signature is from the \schannel model.
+The \tchannel aspect of the signal has not been studied in as great a detail as \schannel. It also exhibits less distinguishing kinematic characteristics, making it more difficult to determine the phase space and discriminating variables to separate it from the \acrlong{sm} background. Nevertheless, simple distributions with a range of parameter points are presented below. These are intended to demonstrate how it would manifest in the \acrshort{lhc}, and how different the signature is from the \schannel model.\footnote{Remember to actually make the \tchannel plots and discuss them in the same vein as \schannel. Need to settle on cross section.}
 
-% Show t-channel plots in a similar fashion to s-channel, and discuss findings
-
-
-%=========================================================
-
-
-\subsection{Generation in \texorpdfstring{\PYTHIA}{Pythia}}
-\label{subsec:svj_signal_pythia}
-
-The \texttt{Hidden Valley} module allows for simulating $\HepProcess{\Pquark\APquark \to \PZprime \to \Pqdark\Paqdark}$, where the $\PZprime$ is acts as intended---a vector portal between the visible and dark sectors. Since we expect a small percentage of them to decay visibly, a branching ratio to each of the six \acrshort{sm} quarks is set to 0.003. The remaining fraction of 0.982 decays to $\Pqdark\Paqdark$, where $\Pqdark$ is a Hidden Valley particle charged only under that gauge group. The masses of the \PZprime and \Pqdark, and the narrow width of the \PZprime for resonance can be given. Showering in the dark and visible sectors is then performed as in Chpt.~\ref{subsec:svj_showering_pythia}. For both the complete event generation, and for hadronisation in the case of \MADGRAPH generation, \PYTHIA~8.230 was used.
+% Show t-channel plots in a similar fashion to s-channel, and discuss findings. Choosing benchmark model SVJ_2000_20_0.5_peak, motivated by the sensitivities obtained by the theorists in Ref.~\citenum{Cohen:2017pzm}. Vary parameters as follows:
+%  - mPhi: 500_20_0.5_peak (running gridpack gen), 1000_20_0.5_peak (running gridpack gen), 3000_20_0.5_peak (done), 4000_20_0.5_peak (running gridpack gen)
+%  - mDark: 2000_4_0.5_peak, 2000_10_0.5_peak, 2000_40_0.5_peak, 2000_100_0.5_peak
+%  - rinv: 2000_20_0.0_peak, 2000_20_0.3_peak, 2000_20_0.7_peak, 2000_20_0.9_peak
+%  - alpha_dark: 2000_20_0.5_low, 2000_20_0.5_high, 2000_20_0.5_vhigh
 
 
 %=========================================================
 
 
-\subsection{Showering in \texorpdfstring{\PYTHIA}{Pythia}}
-\label{subsec:svj_showering_pythia}
-
-Once the hard process has been simulated, showering of the dark and visible particles is performed. This can be separated into three separate steps. The \emph{parton shower} itself is where undecayed quarks and gluons fragment due to colour confinement. At \emph{hadronisation}, the showered partons coalesce into composite hadrons. Finally, the \emph{underlying event} is the simulation of the previous two steps for additional, softer collisions from the hard scatter between initial state particles. Often, one just calls the sum of all of these steps the \emph{parton shower} or \emph{hadronisation}.
-
-
-%=========================================================
-
-
-\subsubsection{Hadronisation of dark quarks}
-\label{subsubsec:svj_dark_hadronisation}
-
-Dark quarks hadronise into one of two types of dark meson that correspond to particles from the \texttt{Hidden Valley} module: \Ppidark and \Prhodark, that are pseudoscalar and vector, respectively. Each possess flavour-diagonal and off-diagonal variants. They are generated with a ratio of 1:3 as the theory specifies the number of dark flavours $\Nf = \text{2}$. Dark hadrons are set to decay invisibly with a branching fraction \rinv. Remaining decay modes are to \acrshort{sm} quarks via a virtual \PZprime since it is the leptophobic portal between the dark and visible sectors. Decays of \Prhodark are democratic, i.e., with equal probability to accessible \acrshort{sm} quark-antiquark pairs.\footnote{Top quarks are excluded in all cases, since in the scan of model parameters where we predict the greatest sensitivity, the dark mesons are always too light to decay on shell to a \ttbar pair.} Specifically, \Prhodark particles with $\mDark > \text{2}m_{\Pbottom}$ have a $\text{1}/\text{5}$ probability to decay to a \Pup, \Pdown, \Pcharm, \Pstrange, or \Pbottom. For $2m_{\Pcharm} < \mDark < 2m_{\Pbottom}$, \Pbottom quarks are excluded and the branching ratio increases to $\text{1}/\text{4}$ for the remaining species. The \Pcharm quark is removed, and branching ratio modified, in the same manner for $\mDark < 2m_{\Pcharm}$.
-
-The decays of the \Ppidark mesons, however, are through a mass insertion. They couple to the longitudinal component of the \PZprime, assumed to arise from a leptophobic Higgs sector in an analogous manner to the electroweak bosons. Running quark masses are accounted for---as calculated in Ref.~\citenum{QCD_ESW}--since the decays are produced at the Higgs mass scale. Branching fractions to the \acrshort{sm} quarks are therefore based on the squares of the \emph{running} masses over the \emph{pole} masses. A graphical representation of the mass insertion decay is provided in Fig.~\ref{fig:svj_mass_insertion}.
-
-% The mass insertion is briefly mentioned in the theory paper. Vector dark hadrons can decay promptly to SM quarks through the vector portal via the Z'. But scalar and pseudoscalar decays are suppressed by the mass insertion. Not sure how this affects the t-channel
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.5\textwidth]{figures/mass_insertion_diagram.pdf}
-    \caption[A diagram of the mass insertion decay of \Ppidark mesons in the \schannel semi-visible jet model]{A diagram of the mass insertion decay of \Ppidark mesons in the \schannel \gls{svj} model.}
-    \label{fig:svj_mass_insertion}
-\end{figure}
-
-We encode the dark confinement scale \lamDark and running dark coupling \aDark, based on the dark quark mass. \PYTHIA is now aware of the energy scales by which to hadronise and decay the dark sector particles. Final state dark radiation is also permitted, with a minimum \pt of $\text{1.1}\lamDark$ as imposed by \PYTHIA.
-
-
-%=========================================================
-
-\subsubsection{Jet clustering}
-\label{svj:pythia_jet_clustering}
-
-The softer, visible radiation is simulated, and the clustering of \acrshort{sm} hadrons into \glspl{jet} happens. The procedure for clustering is known as ``sequential recombination,'' where particles are successively combined until certain criteria are met. In \PYTHIA, clustering stops above the merging scale known as the \texttt{qCut}, which we set to 125\GeV. For events generated in \MADGRAPH and interfaced with \PYTHIA for the parton shower, it is recommended that $\texttt{qCut} > 1.1 \texttt{xqcut}$. Referring to the transverse momentum, the symbol $\kt$ is traditionally used in naming algorithms such as the \gls{antikt}. For consistency within this thesis, however, $\pt$ will be used.
-
-For given particles $i$ and $j$, distance between them $d_{ij}$, and to the beam $d_{iB}$, are calculated as in Ref.~\citenum{schramm2016searching}:
-\begin{equation}
-    \begin{aligned}
-d_{ij} &= \min(p_{\mathrm{T}i}^{2k}, \ p_{\mathrm{T}j}^{2k}) \frac{\Delta R_{ij}}{R^2},\\
-d_{iB} &= p_{\mathrm{T}i}^{2k}
-    \end{aligned}
-    \label{eq:distances_kt_pythia}
-\end{equation}
-
-where, in the rapidity $y$-$\phi$ plane, $R$ is the radius of the cone (defined as 1.0 to match the merging parameters used in \MADGRAPH), $\Delta R_{ij}$ is the separation between $i$ and $j$,\footnote{This is calculated with Eq.~\ref{eq:delta_r} where $\eta$ is replaced with $y$ from Eq.~\ref{eq:rapidity_def}.} and $k$ defines the algorithm choice: $k = -\text{1}$ in the \gls{antikt}, $k = \text{0}$ in the Cambridge-Aachen algorithm, and $k = \text{1}$ in the $\kt$ algorithm. Our choice is the latter for the same purpose as as the cone radius size.
-
-If $d_{ij} < d_{iB}$, the particles $i$ and $j$ are combined, replacing the individual constituents in the list of inputs. Otherwise, particle $i$ is designated as a jet and removed from list of inputs. For all combinations of particles remaining in the input list, the distances are recalculated until all objects possess a \pt above the merging scale. Once the algorithm has finished, we are left with fully-clustered \glspl{jet}. Matching is performed between the clustered \glspl{jet} and original partons to avoid double counting. Events with insufficiently-matched \glspl{jet} are rejected. A minimum number of \glspl{jet} may also be specified---two for this signal, since we expect a dijet final state---and events with fewer than this are rejected. A larger $\rinv$ tends to reduce the merging and matching efficiencies since more energy is locked in the dark sector and fewer \glspl{jet} are clustered above the merging scale.
-
-% Look in AN for more description regarding the dark hadrons, decays of dark mesons, etc. (https://gitlab.cern.ch/tdr/notes/AN-19-061/-/blob/master/sections/sigsamples.tex)
-
-
-%=========================================================
-
-\subsubsection{Simpler parametrisation of \texorpdfstring{\aDark}{alpha\_dark}}
-\label{subsubsec:svj_effective_alpha_dark}
-
-For simplicity, the values of \aDark used in the scan of parameter points are based on the value of \lamDark that maximises the dark hadron multiplicity in an event. The dependence was very small on \mZprime, and instead was modelled as a function of \mDark by performing a fit. The value of \lamDark that leads to the largest number of dark hadrons (\lamDarkPeak) is
-\begin{equation}
-    \lamDarkPeak = 3.2 \mDark^{0.8}
-    \label{eq:lambda_dark_peak_v_m_dark}
-\end{equation}
-
-which gives the parameter $\aDarkPeak = \aDark(\lamDarkPeak)$, calculated according to Eq.~\ref{eq:lambda_dark}. Variations on \aDark are calculated by scaling it by a factor 0.5 and 1.5, yielding $\aDarkLow = 0.5\aDarkPeak$ and $\aDarkHigh = 1.5\aDarkPeak$. For the purposes of emphasizing the effect of the choice of \aDark on the kinematics of the signal, I have introduced an additional point by which to vary it: $\aDarkVHigh = 2\aDarkPeak$. The advantage of denoting different values of the dark coupling with ``peak,'' ``low,'' and ``high,'' enables a more intuitive understanding of the parameter over a numerical value. Eq.~\ref{eq:lambda_dark_peak_v_m_dark} also means that we can simply vary \lamDark and \aDark as a function of \mDark for each set of parameters. In the cases where a numerical value of \aDark is preferred, my signal production repository supports it as well as the string identifiers. Fig.~\ref{fig:svj_lamDark_vs_mDark} illustrates the evolution of \lamDark as a function of \mDark for each variant of \aDark.
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.5\textwidth]{figures/lambda_dark_vs_mDark_with_vHigh.pdf}
-    \caption[The dependence of the dark force scale \lamDark as a function of the dark hadron mass \mDark for each value of \aDark used in the chapter]{The dependence of the dark force scale \lamDark as a function of the dark hadron mass \mDark for each value of \aDark used in the chapter.}
-    \label{fig:svj_lamDark_vs_mDark}
-\end{figure}
-
-
-%=========================================================
-
-
-\subsubsection{Filtering events}
-\label{subsubsec:svj_pythia_filters}
-
-Two filters are implemented that reject events with unrealistic decays: a $Z_2$ symmetry in the model requires invisibly decaying dark hadrons to produce the dark matter particles in pairs, and an invisibly decaying \PZprime must do so into a $\Pqdark\Paqdark$ pair. Coupled with the efficiency of the \gls{jet} matching and clustering algorithms---which only significantly affects events generated externally and decayed with \PYTHIA---there are multiple sources of inefficiency in the generation.
-
-
-%=========================================================
-
-
-\subsection{\texorpdfstring{\PYTHIA}{Pythia}-\texorpdfstring{\MADGRAPH}{MadGraph} comparisons for \texorpdfstring{\schannel}{s-channel} signal}
-\label{subsec:svj_schannel_comparisons}
+\section{\texorpdfstring{\PYTHIA}{Pythia}-\texorpdfstring{\MADGRAPH}{MadGraph} comparisons for \texorpdfstring{\schannel}{s-channel} signal}
+\label{sec:svj_schannel_comparisons}
 
 % Adding discretionary hyphen to split the long SVJ labels and avoid overfull hboxes
 
-\PYTHIAEIGHT is described as a multipurpose generator, meaning it has the flexibility to simulate many kinds of processes from \acrshort{qcd} and electroweak \acrshort{sm}, \acrshort{susy}, technicolour, and leptoquarks. Its status as the de facto standard for the parton shower and hadronisation means interfacing between that step and the hard process is simple. The use of Sudakov form factors and resummation also yield realistic jet structure. However, it is difficult to simulate processes more complex than \acrshort{lo}, and support for generating new models must sometimes be specifically added.
+\PYTHIAEIGHT is described as a multipurpose generator, meaning it has the flexibility to simulate many kinds of processes from \acrshort{qcd} and electroweak \acrshort{sm}, \acrshort{susy}, technicolour, and leptoquarks. Its status as the de facto standard for the parton shower and hadronisation means interfacing between that step and the hard process is simple. The use of Sudakov form factors and resummation also yield realistic jet structure. However, it is difficult to simulate processes more complex than \acrshort{lo}, and support for generating new models must sometimes be specifically added to the program.
 
-\MGvATNLO, on the other hand, is an automatic matrix element generator. It calculates the scattering matrix element for each subprocess for a given final state,\footnote{With our \glspl{svj} model, around 50 subprocesses exist for the \schannel mode, while approximately 820 exist for \tchannel.} with Feynman rules to generate each diagram within a subprocess. Integration if performed over the phase space for each subprocess to give the cross section. Generator and phase space level cuts are easy to implement, so that only signal in the phase space regions of interest are simulated. Systematic uncertainties from the generation step are also simple to extract, in the cases they are important to an analysis. High order processes, such as \acrshort{nlo}, and \acrshort{nnlo} can be simulated. While extremely taxing computationally, it is a straightforward implementation on the user side.
+\MGvATNLO, on the other hand, is an automatic matrix element generator. It calculates the scattering matrix element for each subprocess for a given final state,\footnote{With our \glspl{svj} model, around 50 subprocesses exist for the \schannel mode, while approximately 820 exist for \tchannel.} with Feynman rules to generate each diagram within a subprocess. Integration is performed over the phase space for each subprocess to give the cross section. Generator- and phase space-level cuts are easy to implement, so that only signal in the phase space regions of interest are simulated. Systematic uncertainties from the generation step are also simple to extract in the situations they are important to an analysis. High order processes, such as \acrshort{nlo} and \acrshort{nnlo}, can be simulated. While extremely taxing computationally, it is a straightforward implementation on the user side.
 
 To verify that both \PYTHIA and \MADGRAPH are suitable generators, 100,000 events were generated for a selection of parameter points with each program independently. Six models encompassing a sufficient range of \mZprime, \mDark, and \rinv were chosen: SVJ\_\-1000\_\-20\_\-0.3\_\-peak, SVJ\_\-3000\_\-20\_\-0.1\_peak, SVJ\_\-3000\_\-20\_\-0.5\_\-peak, SVJ\_\-3000\_\-20\_\-0.9\_\-peak, SVJ\_\-3000\_\-50\_\-0.3\_\-peak, and SVJ\_\-4000\_\-20\_\-0.3\_\-peak. For all the simulation steps after the initial generation (described in more detail in Chpt.~\ref{subsec:cms_mc}), identical implementations were used. This was to compare the differences due only to the generator. No analysis-level selections were applied either for the same purpose.
 
-Below are some of the important and insightful distributions for the \schannel production mode: the transverse mass of the dijet system \mT, the number of \glspl{jet} (with the large cone size equivalent to AK8 \glspl{jet} in the \gls{antikt}), the ratio of \ptmiss to \mT, and the minimum azimuthal angle between the \ptmiss and two leading \glspl{jet} $\dijetMindphi$. The ratio between the \MADGRAPH-generated and \PYTHIA-generated sample for a given model is also shown. For readability, plots are split into two sets comprising three models each. Fig.~\ref{fig:svj_mg_pythia_comparison_set1} showcases SVJ\_\-1000\_\-20\_\-0.3\_\-peak, SVJ\_\-3000\_\-20\_\-0.1\_\-peak, and SVJ\_\-3000\_\-20\_\-0.9\_\-peak, while Fig.~\ref{fig:svj_mg_pythia_comparison_set2} shows SVJ\_\-3000\_\-20\_\-0.5\_\-peak, SVJ\_\-3000\_\-50\_\-0.3\_\-peak, and SVJ\_\-4000\_\-20\_\-0.3\_\-peak.
+Below are some of the important and insightful distributions for the \schannel production mode: \mT, the number of \glspl{jet} (with the large cone size equivalent to AK8 \glspl{jet} in the \gls{antikt}), the ratio of \ptmiss to \mT, and the minimum azimuthal angle between the \ptmiss and two leading \glspl{jet} $\dijetMindphi$. The ratio between the \MADGRAPH-generated and \PYTHIA-generated sample for a given model is also shown. For readability, plots are split into two sets comprising three models each. Fig.~\ref{fig:svj_mg_pythia_comparison_set1} showcases SVJ\_\-1000\_\-20\_\-0.3\_\-peak, SVJ\_\-3000\_\-20\_\-0.1\_\-peak, and SVJ\_\-3000\_\-20\_\-0.9\_\-peak, while Fig.~\ref{fig:svj_mg_pythia_comparison_set2} shows SVJ\_\-3000\_\-20\_\-0.5\_\-peak, SVJ\_\-3000\_\-50\_\-0.3\_\-peak, and SVJ\_\-4000\_\-20\_\-0.3\_\-peak.
 
 \begin{figure}[htbp]
     \centering
@@ -292,13 +292,13 @@ Below are some of the important and insightful distributions for the \schannel p
     \label{fig:svj_mg_pythia_comparison_set2}
 \end{figure}
 
-In general, the distributions above---as well as the others investigated such as \ptmiss, \mht, and \gls{jet} \pt---show reasonable agreement between the \PYTHIA and \MADGRAPH-generated samples. In particular, position variables such as $\eta$ and $\phi$ of the \glspl{jet} and energy sums harmonise well. This is to be expected since those variables can be largely model-independent. A noticeable difference is in the \mT spectrum, where the shapes look similar but shifted to higher energies for the \MADGRAPH samples. This may be attributed to the \texttt{xqcut}, or differences in the \acrshort{qcd} scale. Tuning the \texttt{xqcut} in \MADGRAPH or \texttt{qCut} in \PYTHIA may be able to reduce the gap between them, especially if a relationship between the two merging scales can be derived for this model. For both generators, the peak close to the \PZprime mass can be recovered if the invisible fraction is small enough. This makes the transverse mass a more appealing search variable.
+In general, the distributions above---as well as the others investigated such as \ptmiss, \mht, and \gls{jet} \pt---show reasonable agreement between the two generators. In particular, position variables such as $\eta$ and $\phi$ of the \glspl{jet} and energy sums harmonise well. This is to be expected since those variables can be largely model-independent. A noticeable difference is in the \mT spectrum, where the shapes look similar but shifted to higher energies for the \MADGRAPH samples. This may be attributed to the \texttt{xqcut}, or differences in the \acrshort{qcd} scale. Tuning the \texttt{xqcut} in \MADGRAPH or \texttt{qCut} in \PYTHIA may be able to reduce the gap between them, especially if a relationship between the two merging scales can be derived for this model. For both generators, the peak close to the \PZprime mass can be recovered if the invisible fraction is small enough. This makes the transverse mass a more appealing search variable.
 
-Both the \njet and $\ptmiss/\mT$ show trends in the \MADGRAPH/\PYTHIA ratio. A higher \gls{jet} multiplicity is seen in the \MADGRAPH samples, possibly due to the additional \glspl{jet} allowed in the matrix element calculation. For lower values of \rinv, a peak is seen at $\njet = \text{2}$, as expected given the theory. More \glspl{jet} may be generated from initial or final state radiation, or the dark shower prompting large widths of the leading or subleading \gls{svj} causing it to be clustered as two. The larger invisible content of the high \rinv samples naturally show a lower number of \glspl{jet}; fewer are likely to pass the \texttt{qCut} threshold since a larger momentum fraction of each \gls{svj} is invisible.
+Both the \njet and $\ptmiss/\mT$ show trends in the \MADGRAPH/\PYTHIA ratio. A higher \gls{jet} multiplicity is seen in the \MADGRAPH samples, possibly due to the additional \glspl{jet} allowed in the matrix element calculation. For lower values of \rinv, a peak is seen at $\njet = \text{2}$, as expected given the theory. More \glspl{jet} may be generated from initial or final state radiation, or the dark shower prompting large-width leading or subleading \gls{svj} causing one to be clustered as two. The larger invisible content of the high \rinv samples naturally shows a lower number of \glspl{jet}; fewer are likely to pass the \texttt{qCut} threshold since a larger momentum fraction of each \gls{svj} is invisible.
 
-Larger values of \rinv in Fig.~\ref{fig:svj_mg_pythia_comparison_set1} manifest in an interesting \mindphi spectrum. A double peak structure is demonstrated in samples with lower values. In the case of dijet events, differing invisible fractions in each \gls{svj} would cause the \ptmiss to be aligned with the one containing the largest invisible fraction. In other cases, one of the two \glspl{svj} may not be clustered if its invisible content is too large (i.e., if its visible content is too small). Then, in these single jet events, the \ptmiss would appear to recoil from the only clustered jet. Higher values of \rinv would cause this to happen more frequently, mimicking a \acrshort{wimp} signature. Failing to cluster a \gls{svj} may also result in the muddied \mT distribution as the \ptmiss may not be resolved well enough.
+Larger values of \rinv in Fig.~\ref{fig:svj_mg_pythia_comparison_set1} manifest in an interesting \mindphi spectrum. A double peak structure is demonstrated in samples with lower values. In the case of dijet events, an imbalance in the invisible content of each \gls{svj} may cause the \ptmiss to be aligned with the one containing the largest invisible fraction. In other scenarios, one of the two \glspl{svj} may not be clustered if its invisible content is too large (i.e., if its visible content is too small). Then, in these single \gls{jet} events, the \ptmiss would appear to recoil from the only clustered jet. Higher values of \rinv would cause this to happen more frequently, mimicking a \acrshort{wimp} signature. Failing to cluster a \gls{svj} may also result in the muddied \mT distribution as the \ptmiss may not be resolved well enough.
 
-For all of these comparisons, statistical limitation is an issue as it is only feasible to generated a rather limited number of events. Since the samples \PYTHIA will, by design, a higher \gls{jet} matching and clustering efficiency, statistical power suffers partially for the \MADGRAPH samples. Higher efficiencies are usually achieved by samples with a lower \rinv; expected since jet matching depends solely on the visible portion of the event. Tuning the merging scale and matching parameters based on \rinv may yield in better efficiency. Combined with the filters in Chpt.~\ref{subsubsec:svj_pythia_filters}, efficiencies on the order of 15--20\,\% are expected for most \MADGRAPH samples.
+For all of these comparisons, statistical limitation is an issue as it is only feasible to generated a rather limited sample size. Since those from \PYTHIA have, by design, a higher \gls{jet} matching and clustering efficiency, statistical power suffers partially for the \MADGRAPH samples. Higher efficiencies are usually achieved by samples with a lower \rinv---expected since \gls{jet} matching depends solely on the visible portion of the event. Tuning the merging scale and matching parameters based on \rinv may yield in better efficiency. Combined with the filters in Chpt.~\ref{subsec:svj_pythia_filters}, efficiencies on the order of 15--20\,\% are expected for most \MADGRAPH samples.
 
 % For njet, typically see 2 jets as expected. Sometimes, the shower of one dark quark can spread large enough to be clustered as two jets. Then there's ISR and FSR. 2D plots of dphi(j1/2/3, MET) vs njet or something might be interesting to see where the MET is aligned 
 

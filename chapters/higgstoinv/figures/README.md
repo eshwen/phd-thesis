@@ -18,6 +18,22 @@ For the code and inputs required to make the limit and likelihood scan plots (in
 
 This should be documented in [dark_matter_limit/](dark_matter_limit/), as it is a self-contained `ROOT` macro that makes it.
 
+## ttbar scale plots
+
+To make the plots showing the variations for the variations on the QCD renormalisation and factorisation scale with the ttbar samples, run any of the configs in the chip repo over the NLO ttbar Powheg samples. Then, run `top_systs_postproc.py` to make the plots that include the combinations of individual variations with
+
+```bash
+python chip_code/top_systs_postproc.py -e pdf <outdir from carpenter> <year>
+```
+
+To make the plots that exclude those variations, comment them out in the `weights_to_plot` dictionary. It might also be worth changing the `matplotlib` colour map to something more contrasting with
+
+```bash
+sed -i 's/Set3/tab10/g' chip_code/top_systs_postproc.py
+```
+
+Then run the command above to regenerate the plots.
+
 ## Things to remember when remaking plots
 
 For all plots:

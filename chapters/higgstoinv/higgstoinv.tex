@@ -129,13 +129,12 @@ A general rule is that the equivalent luminosity of a given dataset should be co
 
 % Weights/SFs and systematics in the analysis I need to still describe:
 %   - JES/JER
-%   - pileup (how variations are calculated)
 %   - b-tagging
 %   - electron/photon ID-isolation and reco
 %   - muon ID and isolation
 %   - pre-firing (in 2016/17)
 %   - DeepAK8
-%   - NLO QCD for QCD and EWK V + jets processes
+%   - NLO QCD for QCD and EWK V + jets processes (+ the renormalisation, factorisation, and PDF systematics for NLO QCD for QCD procs)
 %   - NLO EWK for QCD V + jets processes
 %   - trigger
 
@@ -225,7 +224,9 @@ where $\sigma$ is the cross section of the process at the order it was generated
 
 In the trees of the simulated samples, the branch \texttt{Pileup\_nTrueInt} is the mean of the Poisson distribution from which random numbers are drawn. In each simulated event, these random numbers (all from the same distribution) are used to set the number of in-time \gls{pileup} interactions as well as the number of the interactions in each neighbouring bunch crossing to simulate the out-of-time \gls{pileup}. In data, the same branch gives the average number of \gls{pileup} interactions for a colliding bunch pair in a luminosity section.\footnote{A luminosity section is the duration (approximately 23 seconds) over which the instantaneous luminosity in colliding bunches remains constant.} The distribution of \texttt{Pileup\_nTrueInt} in the data is derived from the measured instantaneous luminosity for each colliding bunch pair in each lumi section and the cross section of the total inelastic \pp interaction.\footnote{Add a note about the min bias cross sections from the samples used to derive the data distributions for each year?}
 
-The nominal \gls{pileup} weight for each simulated event, as well as the up and down systematic variations, are derived in \nanoAODtools.\footnote{Not sure how much detail I actually need to go into for this section. Just pulled it from the AN (since I wrote it) and tidied it up.} %(\url{https://github.com/cms-nanoAOD/nanoAOD-tools/blob/048a828e1d7f5ac3346e2f5e7eafba2570e84bc4/python/postprocessing/modules/common/puWeightProducer.py}).
+Simulated events are nominally reweighted according to data, where the ineslatic $\pp$ cross section is measured to be 69.2\,mb. An uncertainty of $\pm \text{4.6}$\,\% in the measurement is used to calculate the systematic uncertainty on this weight. The pileup distributions, and therefore the weights, are different for each data taking year. However, the inelastic cross section and associated uncertainty are consistent for the entirety of Run-2.
+
+% https://github.com/cms-nanoAOD/nanoAOD-tools/blob/048a828e1d7f5ac3346e2f5e7eafba2570e84bc4/python/postprocessing/modules/common/puWeightProducer.py for implmentation
 
 
 %=========================================================
@@ -354,6 +355,8 @@ For a top or antitop, the scale factor is given by the value of the fit function
 
 \subsection{Minor weights and systematic uncertainties}
 \label{subsec:htoinv_minor_weights_systs}
+
+% Put JES/JER, pre-firing here
 
 
 %=========================================================

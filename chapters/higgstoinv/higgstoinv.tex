@@ -61,8 +61,7 @@ Before the main analysis is run with the above tools, a light skim---or reductio
 
 The data collected by the \acrshort{cms} experiment that is used in the analysis corresponds to an integrated luminosity of 137.19\fbinv, and recorded from 2016--2018. A breakdown by year is given in Tab.~\ref{tab:lumis_lhc_cms}. At over three times the volume at \comruntwo analysed in the previous search, there is potential to substantially lower the ceiling of $\BRof{\higgstoinv}$. Data is split into ``primary datasets'' that are grouped by the class of \acrshort{hlt} path that an event triggered. The signal region, \acrshort{qcd} \glspl{SB}, and muon \glspl{CR} use the primary dataset composed of \etmiss and \htmiss combination triggers,\footnote{I try to be consistent in most places and use \ptmiss instead of \etmiss. But since the HLT paths refer to \etmiss, which is the more correct symbol here? And should I update Tab.~\ref{tab:htoinv_SR_triggers} accordingly?} where muons are excluded from the sums. The datasets made use of in the electron and photon \glspl{CR} consist of triggers based on the properties of those objects. These were separate for 2016 and 2017, then merged for 2018.
 
-Some serious issues arose during Run-2 that had to be mitigated after the events were reconstructed. With the high collision rate at \acrshort{cms}, in order to properly correlate the hits in the subdetectors with the correct particles and events they are attributed to, the timing infrastructure must be very precise. Timing scans are conducted frequently during runs to correct or compensate for any shifts that may occur. However, in 2016 and 2017, the gradual timing drift in the \acrshort{ecal} was not correctly propagated to the \acrlong{l1} trigger primitives. This resulted in a significant fraction of them in the forward direction (as the effect increases with $\eta$) being mistakenly associated to the previous bunch crossing: \emph{pre-firing}. One rule at \acrlong{l1} forbids two consecutive bunch crossings from firing signals to the trigger system. But, a consequence of this---in addition to not finding the primitive in the nominal bunch crossing---is that events can be vetoed if a significant amount of \acrshort{ecal} energy is found in the $\text{2} < \abseta < \text{3}$ part of the end cap. It is observed only in data, and so a correction is applied to \acrshort{mc} (see Chpt.~[REF]) to account for the effect.
-% Pre-firing: https://twiki.cern.ch/twiki/bin/viewauth/CMS/L1ECALPrefiringWeightRecipe, https://indico.cern.ch/event/764279/
+Some serious issues arose during Run-2 that had to be mitigated after the events were reconstructed. With the high collision rate at \acrshort{cms}, in order to properly correlate the hits in the subdetectors with the correct particles and events they are attributed to, the timing infrastructure must be very precise. Timing scans are conducted frequently during runs to correct or compensate for any shifts that may occur. However, in 2016 and 2017, the gradual timing drift in the \acrshort{ecal} was not correctly propagated to the \acrlong{l1} trigger primitives. This resulted in a significant fraction of them in the forward direction (as the effect increases with $\eta$) being mistakenly associated to the previous bunch crossing: \emph{pre-firing}. One rule at \acrlong{l1} forbids two consecutive bunch crossings from firing signals to the trigger system. But, a consequence of this---in addition to not finding the primitive in the nominal bunch crossing---is that events can be vetoed if a significant amount of \acrshort{ecal} energy is found in the $\text{2} < \abseta < \text{3}$ part of the end cap. It is observed only in data, and so a correction is applied to \acrshort{mc} (see Chpt.~\ref{subsec:htoinv_minor_weights_systs}) to account for the effect.
 
 In 2018, a sector of the \acrshort{hcal} end cap lost power, leaving the approximate area bound by $\eta \in [-\text{3.0}, -\text{1.4}]$ and $\phi \in [-\text{1.57}, -\text{0.87}]$ uncovered for the remainder of the year. Of the 59.7\fbinv recorded and certified for use in 2018, 38.6\fbinv were affected. With this section missing, it is more difficult to accurately record the properties of \glspl{jet}, and therefore reliably calculate \ptmiss. Studies performed showed an excess in data in the affected area of the $\phi(\ptmiss)$ distribution of many of our regions and categories. To mitigate this issue, the cuts in Chpt.~\ref{subsec:htoinv_hem_mitigation} were added to the preselection.
 
@@ -129,14 +128,10 @@ A general rule is that the equivalent luminosity of a given dataset should be co
 
 % Weights/SFs and systematics in the analysis I need to still describe:
 %   - JES/JER
-%   - b-tagging
-%   - electron/photon ID-isolation and reco
-%   - muon ID and isolation
-%   - pre-firing (in 2016/17)
-%   - DeepAK8
 %   - NLO QCD for QCD and EWK V + jets processes (+ the renormalisation, factorisation, and PDF systematics for NLO QCD for QCD procs)
 %   - NLO EWK for QCD V + jets processes
 %   - trigger
+%   - lumi
 
 In order for simulated events, particularly for background processes, to resemble \acrshort{lhc} data as closely as possible, many corrections and weights are applied.\footnote{The following stuff on weights is from what I wrote in the AN. But it may be too detailed/unnecessary for that document, so I've made a copy here in case it is removed from there.} These are discussed in more detail in the subsequent sections. All weights and associated systematic uncertainties are applied to all samples for all data taking years, unless stated otherwise. A final event weight $w_{\mathrm{event}}$ is the product of the weights from all of the individual sources $i$ that provide one:\footnote{If I have to describe all corrections/weights in detail, probably best to promote this to a section rather than subsection. I think describing veto/selection weights in full is necessary, but I imagine not \emph{every single} weight in the analysis. Maybe have a subsection for each of the dominant/important ones, then have a subsection comprised of the other weights where I just list/talk briefly about them.}
 \begin{equation}
@@ -226,7 +221,7 @@ In the trees of the simulated samples, the branch \texttt{Pileup\_nTrueInt} is t
 
 Simulated events are nominally reweighted according to data, where the ineslatic $\pp$ cross section is measured to be 69.2\,mb. An uncertainty of $\pm \text{4.6}$\,\% in the measurement is used to calculate the systematic uncertainty on this weight. The pileup distributions, and therefore the weights, are different for each data taking year. However, the inelastic cross section and associated uncertainty are consistent for the entirety of Run-2.
 
-% https://github.com/cms-nanoAOD/nanoAOD-tools/blob/048a828e1d7f5ac3346e2f5e7eafba2570e84bc4/python/postprocessing/modules/common/puWeightProducer.py for implmentation
+% https://github.com/cms-nanoAOD/nanoAOD-tools/blob/048a828e1d7f5ac3346e2f5e7eafba2570e84bc4/python/postprocessing/modules/common/puWeightProducer.py for implementation
 
 
 %=========================================================
@@ -241,20 +236,6 @@ Simulated events are nominally reweighted according to data, where the ineslatic
 
 \subsection{Efficiency of the triggers}
 \label{subsec:htoinv_trigger_effs}
-
-
-%=========================================================
-
-
-\subsection{Boosted jets tagged by the \texorpdfstring{\deepakeight}{DeepAK8} algorithm}
-\label{subsec:htoinv_deepak8_sfs}
-
-
-%=========================================================
-
-
-\subsection{\texorpdfstring{\Pbottom-jets}{b-jets} tagged by the \texorpdfstring{\deepcsv}{DeepCSV} algorithm}
-\label{subsec:htoinv_btagging_sfs}
 
 
 %=========================================================
@@ -353,10 +334,66 @@ For a top or antitop, the scale factor is given by the value of the fit function
 %=========================================================
 
 
+\subsection{Object-level scale factors and systematic uncertainties}
+\label{subsec:htoinv_SFs_systs_objects}
+
+There are multiple corrections applied to simulation based on the physics objects with an event, as opposed to the event topology as a whole. One example of which is Chpt.~\ref{subsubsec:htoinv_top_pt_reweighting}. In the following sections, weights attributed to objects themselves are referred to as \emph{scale factors}, while the event weight is the product of the scale factors as in Eq.~\ref{eq:event_weight}. Systematic uncertainties are aggregated in the same manner. Unless stated otherwise, the following scale factors and systematics are derived separately for each year in Run-2.
+
+
+%=========================================================
+
+
+\subsubsection{Lepton and photon identification, isolation, and reconstruction}
+\label{subsubsec:htoinv_lepton_id_iso_reco_systs}
+
+Electrons and photons are identified using the cut-based identification described in Chpts.~\ref{subsec:objects_electrons} and \ref{subsec:objects_photons}, repsectively. Scale factors are applied separately to each of these objects in simulation that account for the efficiency of identification, isolation, and reconstruction in data. They are derived as a function of $\eta$ and \acrshort{ecal} supercluster \pt and binned as such. Uncertainties are given as the error in the $(\eta, \pt)$ bin of the histogram that describes the efficiencies. The ID and isolation are grouped as a single uncertainty, while reconstruction is another.\footnote{Not sure how we correlate between years.} Event weights simply are the products of the individual object scale factors. The uncertainty on the event weight is the product of the scale factor plus/minus its uncertainty.
+
+% While photon reconstruction efficiency is assumed to be 100\,\% for $H/E < \text{0.5}$, that is not the case for electrons. A tag and probe method is used to select electrons, distinguishing them from background objects. A gaussian is then fit to the invariant mass of the electron to capture the \PZ peak. 
+
+% e/gamma reco SFs and systs documented here: https://twiki.cern.ch/twiki/bin/view/CMS/EgammaRunIIRecommendations#E_gamma_RECO
+
+Muons follow a similar prescription, where the ID and isolation efficiencies are calculated in bins of $\eta$ and \pt. The systematic uncertainties for each of the two sources are separated, contrary to electrons and photons. An equivalent reconstruction efficiency is not given as the dedicated muon chambers and reconstruction algorithms are more than sufficient.\footnote{For electrons, muons, and photons, not really sure of the actual procedures for getting the scale factors for each source. Twikis do a pretty poor job of explaining them.}
+
+% Muon ID/ISO info: 2016 (https://twiki.cern.ch/twiki/bin/view/CMS/MuonReferenceEffs2016LegacyRereco), 2017 (https://twiki.cern.ch/twiki/bin/view/CMS/MuonReferenceEffs2017), 2018 (https://twiki.cern.ch/twiki/bin/view/CMS/MuonReferenceEffs2018)
+
+
+%=========================================================
+
+
+\subsubsection{\texorpdfstring{\Pbottom-jets}{b-jets} tagged by the \texorpdfstring{\deepcsv}{DeepCSV} algorithm}
+\label{subsubsec:htoinv_btagging_sfs}
+
+Data-simulation scale factors are calculated for each \gls{bjet} as tagged by the \deepcsv algorithm. They are defined as the tagging efficiency in data divided by the efficiency for simulation for a given working point, and as a function of \gls{jet} \pt. Various methods are employed to derive separate scale factors for separate topologies, such as \acrshort{qcd} multijet or \ttbar events, and are described in Sec.~8.4 of Ref.~\citenum{Sirunyan:2017ezt}. A weighted average of the scale factors computed by each method are then taken to yield the final scale factor for a \Pbottom-tagged \gls{jet}.\footnote{We don't seem to take any explicit systematics at the skimming stage where our b-jets are defined and SFs taken. So I don't really know where the up and down variations come from.}
+
+% This talk goes through the methods and SFs in more detail: https://cds.cern.ch/record/2627468/files/DP2018_033.pdf
+
+
+%=========================================================
+
+
+\subsubsection{Boosted jets tagged by the \texorpdfstring{\deepakeight}{DeepAK8} algorithm}
+\label{subsubsec:htoinv_deepak8_sfs}
+
+In a similar fashion to the section above, objects classified by the \deepakeight algorithm are given scale factors according to the data/\acrshort{mc} efficiencies as a function of AK8 \gls{jet} \pt. Scale factors are derived separately for \glspl{jet} tagged as originating from a top quark and \PVec boson. Systematic uncertainties associated with the scale factors are also derived separately, according to Sec.~8.1 of Ref.~\citenum{CMS-PAS-JME-18-002}.
+
+
+%=========================================================
+
+
 \subsection{Minor weights and systematic uncertainties}
 \label{subsec:htoinv_minor_weights_systs}
 
-% Put JES/JER, pre-firing here
+% Put JES/JER, lumi here
+
+Derived by members of the Collaboration, the nominal weight applied to events in simulation that emulates the effect of pre-firing in 2016 and 2017 data, is given in Ref.~\citenum{prefiring_weight}:
+\begin{equation}
+    w_{\text{pre-firing}} = \prod_{i = \Pphoton,\, \mathrm{jet}} 1 - \epsilon_i^{\text{pre-firing}}(\eta, \pt^{\mathrm{EM}})
+    \label{eq:prefiring_weight}
+\end{equation}
+
+where $\epsilon$ is the probability for an object to pre-fire as a function of its $\eta$ and electromagnetic \pt (simply \pt for photons, and \pt multiplied by the sum of the charged and neutral electromagnetic energy fractions for \glspl{jet}). The systematic uncertainty in the event weight is found by taking the uncertainty on $\epsilon$: the maximum of $\text{0.2}\epsilon$ and the statistical uncertainty in the $(\eta, \pt^{\mathrm{EM}})$ bin of the pre-firing map from which $\epsilon$ is extracted. Pre-firing probabilities are assumed to be uncorrelated between photons and jets.\footnote{Do we correlate the systematic between years?}
+
+% Pre-firing: https://twiki.cern.ch/twiki/bin/viewauth/CMS/L1ECALPrefiringWeightRecipe, https://indico.cern.ch/event/764279/
 
 
 %=========================================================

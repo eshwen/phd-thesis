@@ -57,7 +57,7 @@ mv merged_kfactors_gjets.pdf 1D_gjets_qcd.pdf
 and to plot all the electroweak k-factor together, run
 
 ```bash
-python plot_k_factors.py -d kfactor_monojet_ewk ../input_weight_data/nloSF_files/merged_kfactors_*.root
+python plot_k_factors.py -d kfactor_monojet_ewk ../input_weight_data/nloSF_files/merged_kfactors_{g,w,z}jets.root
 mv merged_kfactors_zjets.pdf 1D_all_ewk.pdf
 ```
 

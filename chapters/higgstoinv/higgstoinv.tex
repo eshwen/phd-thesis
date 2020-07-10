@@ -72,7 +72,27 @@ In 2018, a sector of the \acrshort{hcal} end cap lost power, leaving the approxi
 \subsection{Simulated signal processes}
 \label{subsec:htoinv_signal}
 
-All \acrlong{mc} datasets used in this analysis were produced centrally by experts in \acrshort{cms} as outlined in Chpt.~\ref{subsec:cms_mc}. The signal samples are generated at \acrshort{nlo} with the \POWHEG generator interfaced with \PYTHIAEIGHT. When reweighting events for their cross section, they are specified at \acrshort{nnlo}.\footnote{Should I give a table or something of the cross sections for the signal samples? Would note that they are at 100\,\% \BR so $\sigma = \sigma_{\mathrm{prod.}}$.} The samples are produced with a Higgs boson mass of $m_{\PH} = \text{125}\GeV$. The vector bosons in each of the \VH channels decay to $\Pquark\APquark$. When simulating 2016 data, the tuning of the shower parameters in \PYTHIA was labelled \textsc{cuetp8m1} (the latest available), whilst for 2017 and 2018 datasets the newer \textsc{cp5} version was used.
+All \acrlong{mc} datasets used in this analysis were produced centrally by experts in \acrshort{cms} as outlined in Chpt.~\ref{subsec:cms_mc}. The signal samples are generated at \acrshort{nlo} with the \POWHEG generator interfaced with \PYTHIAEIGHT. When reweighting events for their cross section, they are specified at \acrshort{nnlo}. The samples are produced with a Higgs boson mass of $m_{\PH} = \text{125}\GeV$. The vector bosons in each of the \VH channels decay to $\Pquark\APquark$. When simulating 2016 data, the tuning of the shower parameters in \PYTHIA was labelled \textsc{cuetp8m1} (the latest available), whilst for 2017 and 2018 datasets the newer \textsc{cp5} version was used.
+
+The cross section of each mechanism at \comruntwo is detailed in Tab.~\ref{tab:htoinv_signal_xsecs}. The signal simulation assumes a 100\,\% branching ratio to invisible states.
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{cll}
+        \hline
+        Dataset (\higgstoinv) & Cross section (pb) & Accuracy \\\hline
+        $\ttH$ & $\text{5.07} \times \text{10}^{-1}$ & \acrshort{nlo} \acrshort{qcd} and \acrshort{nlo} electroweak \\
+        $\WplusH$ & $\text{8.31} \times \text{10}^{-1}$ & \acrshort{nnlo} \acrshort{qcd} and \acrshort{nlo} electroweak \\
+        $\WminusH$ & $\text{5.27} \times \text{10}^{-1}$ & \acrshort{nnlo} \acrshort{qcd} and \acrshort{nlo} electroweak \\
+        $\HepProcess{\pp \to \ZH}$ & $\text{8.84} \times \text{10}^{-1}$ & \acrshort{nnlo} \acrshort{qcd} and \acrshort{nlo} electroweak \\
+        $\HepProcess{\Pgluon\Pgluon \to \ZH}$ & $\text{1.23} \times \text{10}^{-1}$ & \acrshort{lo} \acrshort{qcd} (\acrshort{nlo} + NLL corrections) \\
+        \ggH & $\text{4.86} \times \text{10}^1$ & N3LO \acrshort{qcd} and \acrshort{nlo} electroweak \\\hline
+    \end{tabular}
+    \caption[Cross sections of the \higgstoinv signal processes in the analysis]{Cross sections of the \higgstoinv signal processes in the analysis. They are calculated at \comruntwo at the highest orders available. The simulation datasets are generated with a 100\,\% branching ratio of the Higgs boson to invisible states, and in the \VH processes the \PVec decays in all cases to $\Pquark\APquark$.}
+    \label{tab:htoinv_signal_xsecs}
+\end{table}
+
+% Xsecs from https://twiki.cern.ch/twiki/bin/view/LHCPhysics/CERNYellowReportPageAt13TeV and https://twiki.cern.ch/twiki/bin/view/LHCPhysics/CERNHLHE2019
 
 
 %=========================================================
@@ -229,6 +249,55 @@ Simulated events are nominally reweighted according to data, where the inelastic
 
 \subsection{Higher order corrections to \texorpdfstring{$\PVec \plusjets$}{V plus jets} samples}
 \label{subsec:htoinv_nlo_corrs}
+
+Vector boson \plusjets processes present a sizeable background in some of the categories and regions of the analysis. At the dataset sizes required to provide sufficient statistical coverage of the phase space, \acrshort{nlo} \acrshort{mc} samples are not available with the complete detector simulation applied. To circumvent this, \acrshort{lo} samples are used in the analysis and reweighted at generator level on an event-by-event basis to \acrshort{nlo} accuracy. This method is usually referred to as a ``$k$-factor'' correction, where $k$ is the ratio of the \acrshort{nlo} to \acrshort{lo} cross section.
+
+Two types of reweighting are applied: \acrshort{qcd} corrections to \acrshort{qcd} and electroweak processes, and electroweak corrections to \acrshort{qcd} processes. For both cases, NLO $\PW \plusjets$, Drell-Yan $\HepProcess{\PZ (\to \Plepton\APlepton)} \plusjets$, and $\singlePhotonCr$ \acrshort{mc} are used to derive $k$-factors for the respective \acrshort{lo} processes. One or two additional \glspl{jet} in the matrix element calculations are permitted. The \acrshort{nlo} Drell-Yan \acrshort{mc} is also used to derive corrections for \acrshort{lo} $\ztonunupjets$, where the cross sections are modified for that process. The \acrshort{nlo} samples are processed through the following generator-level event selection to ensure they are in a similar phase space to the analysis:
+
+\medskip
+\begin{easylist}[itemize]
+    \cutflowlistprops
+    & $\ptjone > \text{80}\GeV$
+    & $\pt^{\PVec} > \text{200}\GeV$
+    & $\HT^{\mathrm{Gen}} > \text{200}\GeV$
+    & $\HT^{\mathrm{Gen}}/\pt^{\PVec} < \text{1.2}$\footnote{Not sure if we'll need updated k-factors if we switch to another scenario where we don't use the MHT/MET cut.}
+\end{easylist}
+
+\medskip
+
+\noindent{}where $\pt^{\PVec}$ is the generator-level boson \pt, and $\HT^{\mathrm{Gen}}$ is the scalar sum of generator-level \gls{jet} \pt. The final selection in the list mimics the $\mht/\ptmiss$ cut in Chpt.~\ref{subsec:htoinv_preselection}. The $k$-factors are binned in two dimensions for the \acrshort{qcd} corrections to \PW and \PZ processes, $\pt^{\PVec}$ and $\ptjone$. For those corrections to \Pphoton process and for all electroweak corrections, they are binned solely in $\pt^{\PVec}$ as they were derived by Boston University in the monojet phase space.
+
+Uncertainties for the \acrshort{qcd} renormalisation scale, factorisation scale, and in the parton distribution function are treated as individual, uncorrelated sources. The same values for the nominal $k$-factors and uncertainties are used for each data taking year in Run-2. Distributions of all of the $k$-factors are presented is Fig.~\ref{fig:htoinv_nlo_k_factors}.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.33\textwidth}
+        \includegraphics[width=\textwidth]{figures/k_factors/2D_wjets.pdf}
+        \caption{NLO QCD (\PW)}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.33\textwidth}
+        \includegraphics[width=\textwidth]{figures/k_factors/2D_zll.pdf}
+        \caption{NLO QCD ($\HepProcess{\PZ \to \Plepton\APlepton}$)}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.33\textwidth}
+        \includegraphics[width=\textwidth]{figures/k_factors/2D_znunu.pdf}
+        \caption{NLO QCD ($\ztonunu$)}
+    \end{subfigure}
+
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{figures/k_factors/1D_gjets_qcd.pdf}
+        \caption{NLO QCD ($\Pphoton$)}
+    \end{subfigure}
+    \hspace{0.05\textwidth}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{figures/k_factors/1D_all_ewk.pdf}
+        \caption{NLO electroweak ($\Pphoton$, $\PW$, $\PZ$)}
+    \end{subfigure}
+    \caption[NLO QCD and electroweak $k$-factors used to reweight events in the LO $\PVec \plusjets$ background samples]{\acrshort{nlo} \acrshort{qcd} and electroweak $k$-factors used to reweight events in the \acrshort{lo} $\PVec \plusjets$ background samples.}
+    \label{fig:htoinv_nlo_k_factors}
+\end{figure}
 
 
 %=========================================================
@@ -1207,12 +1276,9 @@ The effects of \gls{jet} mismeasurements are, however, difficult to quantify. Wi
 \section{Statistical model and fit}
 \label{sec:htoinv_satistical_treatment}
 
-% Give an outline of the how the fit is done (likelihood model, writing it out in full and highlighting each aspect) and how the background estimation methods factor in, etc. Like background estimation, describe it generally since I didn't explicitly work on it
+% Give an outline of the how the fit is done (likelihood model, writing it out in full and highlighting each aspect) and how the background estimation methods factor in, etc. Like background estimation, describe it generally since I didn't explicitly work on it. Current fit model is given at https://indico.cern.ch/event/934008/contributions/3924639/attachments/2065231/3465892/2020_06_15_CHIP_Meeting_nonVBF_fit.pdf
 
-% In the following sections, talk more about the specific aspects for each mode (e.g., dropping dilepton CRs for ttH, using photon CR only for VH). Show limit plots:
-%  - Potentially by sub-category for each mode and for each year, i.e., one plot year and per mode, each bin in the plot shows the limit from each category, then the left-most bin is the combination over all those subcategories for that mode.
-%  - By year, for each mode. For a given mode, each bin shows the limit (combined over all subcategories) for one of the years, with the left-most bin showing the combination over all years
-%  - By production mode, perhaps also for each year. The main limit plot in the analysis will be over the full Run-2 dataset. Each bin will show the limit from a production mode (full Run-2 result, perhaps also with VBF), and the left-most bin is the combination over all modes
+% In the following sections, talk more about the specific aspects for each mode (e.g., dropping dilepton CRs for ttH, using photon CR only for VH)
 
 % Toys (verbatim from Henning): toys are repeat experiments where you draw new values for your observed signal and bg based on the uncertainties associated with both. The parameters values are randomly drawn according to some pdf. I.e. if we talk about large event counts this would be gaussian with width equal to uncertainty,  small event counts Poissonian, for syst uncert possibly log-normal.
 

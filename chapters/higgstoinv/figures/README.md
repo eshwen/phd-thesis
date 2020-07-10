@@ -34,6 +34,33 @@ sed -i 's/Set3/tab10/g' chip_code/top_systs_postproc.py
 
 Then run the command above to regenerate the plots.
 
+## k-factors
+
+In the chip repo, navigate to the `chip_code/` directory. For the 2D NLO QCD k-factor plots, just run
+
+```bash
+python plot_k_factors.py -p ../input_weight_data/nloSF_files/2Dkfactor_nonVBF_wjet.root
+mv 2Dkfactor_nonVBF_wjet.pdf 2D_wjets.pdf
+python plot_k_factors.py -p ../input_weight_data/nloSF_files/2Dkfactor_nonVBF_zjet.root
+mv 2Dkfactor_nonVBF_zjet.pdf 2D_zll.pdf
+python plot_k_factors.py -p ../input_weight_data/nloSF_files/2Dkfactor_nonVBF_znn.root
+mv 2Dkfactor_nonVBF_znn.pdf 2D_znunu.pdf
+```
+
+For the 1D NLO QCD k-factor for gamma + jets, run
+
+```bash
+python plot_k_factors.py -d kfactor_monojet_qcd ../input_weight_data/nloSF_files/merged_kfactors_gjets.root
+mv merged_kfactors_gjets.pdf 1D_gjets_qcd.pdf
+```
+
+and to plot all the electroweak k-factor together, run
+
+```bash
+python plot_k_factors.py -d kfactor_monojet_ewk ../input_weight_data/nloSF_files/merged_kfactors_*.root
+mv merged_kfactors_zjets.pdf 1D_all_ewk.pdf
+```
+
 ## Things to remember when remaking plots
 
 For all plots:

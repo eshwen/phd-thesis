@@ -94,52 +94,29 @@ If I was using a later version of `fast-plotter` (where I'd still have to fix th
 
 These plots should be stored in [madgraph_pythia_comparisons/](madgraph_pythia_comparisons/). Copies of the dataframes used to make the plots should also be stored in the event the plots themselves need to be regenerated.
 
-### s-channel and t-channel MadGraph plots
-
-#### Getting the dataframes
-
-To run all s-channel and t-channel signals together, from the top-level directory of the chip repo, run
-
-```bash
-fast_carpenter --outdir svj_s_t_thesis_all ./samples/svj/svj_signals_esh_2016_thesis_all.yaml ./configs/svj_s_t_channel_thesis_2016.yaml
-```
-
-The main processing config is `configs/svj_s_t_channel_thesis_2016.yaml`. Only cross section reweighting and the definitions of necessary variables should be performed.
-
-The signal samples can also be split into two "sets", i.e., each set will be on a separate plot to avoid too many signal lines cluttering things. Run these sets with
-
-```bash
-fast_carpenter --outdir svj_s_t_thesis_set1 ./samples/svj/svj_signals_esh_2016_thesis_set1.yaml ./configs/svj_s_t_channel_thesis_2016.yaml
-fast_carpenter --outdir svj_s_t_thesis_set2 ./samples/svj/svj_signals_esh_2016_thesis_set2.yaml ./configs/svj_s_t_channel_thesis_2016.yaml
-```
-
-#### Getting the plots
-
-WIP.
-
 ### Variations on the s-channel benchmark model
 
-#### Getting the dataframes (again)
+#### Getting the dataframes
 
 To run the s-channel signal samples with variations on the benchmark point SVJ_3000_20_0.3_peak, from the top-level directory of the chip repo, run
 
 ```bash
-fast_carpenter --ncores 2 --outdir svj_s_thesis_benchmark_variations_aD ./samples/svj/svj_signals_esh_2016_thesis_benchmark_variations_aD.yaml ./configs/svj_comparisons_2016.yaml
-fast_carpenter --ncores 2 --outdir svj_s_thesis_benchmark_variations_mD ./samples/svj/svj_signals_esh_2016_thesis_benchmark_variations_mD.yaml ./configs/svj_comparisons_2016.yaml
-fast_carpenter --ncores 2 --outdir svj_s_thesis_benchmark_variations_mZp ./samples/svj/svj_signals_esh_2016_thesis_benchmark_variations_mZp.yaml ./configs/svj_comparisons_2016.yaml
-fast_carpenter --ncores 2 --outdir svj_s_thesis_benchmark_variations_rinv ./samples/svj/svj_signals_esh_2016_thesis_benchmark_variations_rinv.yaml ./configs/svj_comparisons_2016.yaml
+fast_carpenter --ncores 2 --outdir svj_s_thesis_benchmark_variations_aD ./samples/svj/svj_signals_esh_s_2016_thesis_benchmark_variations_aD.yaml ./configs/svj_comparisons_2016.yaml
+fast_carpenter --ncores 2 --outdir svj_s_thesis_benchmark_variations_mD ./samples/svj/svj_signals_esh_s_2016_thesis_benchmark_variations_mD.yaml ./configs/svj_comparisons_2016.yaml
+fast_carpenter --ncores 2 --outdir svj_s_thesis_benchmark_variations_mZp ./samples/svj/svj_signals_esh_s_2016_thesis_benchmark_variations_mZp.yaml ./configs/svj_comparisons_2016.yaml
+fast_carpenter --ncores 2 --outdir svj_s_thesis_benchmark_variations_rinv ./samples/svj/svj_signals_esh_s_2016_thesis_benchmark_variations_rinv.yaml ./configs/svj_comparisons_2016.yaml
 ```
 
 The same processing config as the MadGraph-Pythia comparisons is used for simplicity.
 
-#### Getting the plots (again)
+#### Getting the plots
 
 To make the plots, run
 
 ```bash
 df="tbl_dataset.dijet_mt--dijet_mt_df.csv"
 plotting_cfg=$(readlink -m plotting_configs/svj_plotting_configs/svj_plot_config_benchmark_variations_dijet_mt.yaml)
-out_dirs=( "svj_s_thesis_benchmark_variations_aD" "svj_s_thesis_benchmark_variations_mD" "svj_s_thesis_benchmark_variations_mZp" "svj_s_thesis_benchmark_variations_rinv" )
+out_dirs=( "svj_s_thesis_benchmark_variations_mD" "svj_s_thesis_benchmark_variations_mZp" "svj_s_thesis_benchmark_variations_rinv" )
 for dir in "${out_dirs[@]}"; do
     fast_plotter -c $plotting_cfg -o $dir $dir/$df
 done
@@ -165,6 +142,53 @@ done
 ```
 
 **COULD INSTEAD PUT ALL OUTPUT PLOTS IN ONE NEW DIRECTORY, WHERE AFTER EACH PLOT IS CREATED, IT'S RENAMED AS ABOVE. PULL THE DATAFRAME IN FROM THE RESPECTIVE DIRECTORY AND RENAME THAT ACCORDINGLY AS WELL, SO I HAVE ONE DIRECTORY CONTAINING ALL THE VARIATION PLOTS AND DATAFRAMES.**
+
+### Variations on the t-channel benchmark model
+
+#### Getting the dataframes (again)
+
+To run the t-channel signal samples with variations on the benchmark point SVJ_2000_20_0.5_peak, from the top-level directory of the chip repo, run
+
+```bash
+fast_carpenter --ncores 2 --outdir svj_t_thesis_benchmark_variations_aD ./samples/svj/svj_signals_esh_t_2016_thesis_benchmark_variations_aD.yaml ./configs/svj_comparisons_2016.yaml
+fast_carpenter --ncores 2 --outdir svj_t_thesis_benchmark_variations_mD ./samples/svj/svj_signals_esh_t_2016_thesis_benchmark_variations_mD.yaml ./configs/svj_comparisons_2016.yaml
+fast_carpenter --ncores 2 --outdir svj_t_thesis_benchmark_variations_mPhi ./samples/svj/svj_signals_esh_t_2016_thesis_benchmark_variations_mPhi.yaml ./configs/svj_comparisons_2016.yaml
+fast_carpenter --ncores 2 --outdir svj_t_thesis_benchmark_variations_rinv ./samples/svj/svj_signals_esh_t_2016_thesis_benchmark_variations_rinv.yaml ./configs/svj_comparisons_2016.yaml
+```
+
+The same processing config as the MadGraph-Pythia comparisons is used for simplicity.
+
+#### Getting the plots (again)
+
+To make the plots, run
+
+```bash
+df="tbl_dataset.met--MET_df.csv"
+plotting_cfg=$(readlink -m plotting_configs/svj_plotting_configs/svj_plot_config_benchmark_variations_met.yaml)
+out_dirs=( "svj_t_thesis_benchmark_variations_mD" "svj_t_thesis_benchmark_variations_mPhi" "svj_t_thesis_benchmark_variations_rinv" )
+for dir in "${out_dirs[@]}"; do
+    fast_plotter -c $plotting_cfg -o $dir $dir/$df
+done
+```
+
+Because of the fact I'm only including 4 lines instead of 5 for the alpha_dark variation, if I want the the colours to be consistent, I'll have to change [this line](https://github.com/eshwen/fast-plotter/blob/esh_v0.2.1_fixes/fast_plotter/plotting.py#L57) in `fast-plotter`, changing `.96` to `.808` and re-run the plotting with
+
+```bash
+sed -i 's/.96/.808/g' ../src/fast-plotter/fast_plotter/plotting.py
+fast_plotter -c $plotting_cfg -o svj_t_thesis_benchmark_variations_aD svj_t_thesis_benchmark_variations_aD/$df
+sed -i 's/.808/.96/g' ../src/fast-plotter/fast_plotter/plotting.py
+```
+
+If not plotting any variables other than the dijet MT, delete the other dataframes with, e.g.,
+
+```bash
+shopt -s extglob
+for dir in "${out_dirs[@]}"; do
+    for redundant_file in $dir/!($df|*.pdf); do
+        rm $redundant_file
+    done
+done
+```
 
 ## Lambda_dark vs m_dark
 

@@ -147,7 +147,6 @@ A general rule is that the equivalent luminosity of a given dataset should be co
 % Weights/SFs and systematics in the analysis I need to still describe:
 %   - JES/JER
 %   - trigger
-%   - lumi
 
 In order for simulated events, particularly for background processes, to resemble \acrshort{lhc} data as closely as possible, many corrections and weights are applied. These are discussed in more detail in the subsequent sections. All weights and associated systematic uncertainties are applied to all samples for all data taking years, unless stated otherwise. A final event weight $w_{\mathrm{event}}$ is the product of the weights from all of the individual sources $i$ that provide one:
 \begin{equation}
@@ -480,6 +479,27 @@ where $\epsilon$ is the probability for an object to pre-fire as a function of i
 
 \subsubsection{Luminosity}
 \label{subsubsec:htoinv_lumi_syst}
+
+Uncertainties are associated with the various methods designed to measure the luminosity received by \acrshort{cms}. For 2016, 2017, and 2018, the total systematic uncertainties on certified data are 2.5\,\%, 2.3\,\%, and 2.5\,\%, respectively. They may be decomposed into several individual sources, some of which are correlated between years. These are documented in Tab.~\ref{tab:lumi_systs} with further information available in Refs.~\citenum{CMS-PAS-LUM-17-001}, \citenum{CMS-PAS-LUM-17-004}, and \citenum{CMS-PAS-LUM-18-002}.\footnote{Not sure if I even need the table, to be honest. It may ask more questions regarding each source rather than answering anything.}
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{lccc}
+        \hline
+        Uncertainty source & Impact in 2016 & Impact in 2017 & Impact in 2018 \\\hline
+        Uncorrelated sources & 2.2 & 2.0 & 1.5 \\
+        $x$-$y$ factorisation & 0.9 & 0.8 & 2.0 \\
+        Length scale & --- & 0.3 & 0.2 \\
+        Beam-beam deflection & 0.4 & 0.4 & --- \\
+        Dynamic $\beta$ & 0.5 & 0.5 & --- \\
+        Beam current calibration & --- & 0.3 & 0.2 \\
+        Ghosts and satellites & 0.4 & 0.1 & ---  \\\hline
+    \end{tabular}
+    \caption[Sources of uncertainty in the luminosity measurements for each year of Run-2]{Sources of uncertainty in the luminosity measurements for each year of Run-2, and their impacts in percent. For each row except the first, the source of uncertainty is assumed to be correlated between years for which it was present.}
+    \label{tab:lumi_systs}
+\end{table}
+
+% Lumi POG page: https://twiki.cern.ch/twiki/bin/view/CMS/TWikiLUM
 
 
 %=========================================================

@@ -1,18 +1,18 @@
-# Making plots
+# Making plots for the semi-visible jets chapter
 
 To make signal MC distributions for my thesis, see the instructions in [Making the samples](#making-the-samples). To make the plot(s) of Lambda_dark vs m_dark, see [Lambda_dark vs m_dark](#lambdadark-vs-mdark).
 
-- [Making plots](#making-plots)
+- [Making plots for the semi-visible jets chapter](#making-plots-for-the-semi-visible-jets-chapter)
   - [Making the samples](#making-the-samples)
   - [Analysis](#analysis)
     - [Setup](#setup)
     - [MadGraph vs Pythia comparisons](#madgraph-vs-pythia-comparisons)
       - [Running `fast-carpenter` to get the dataframes](#running-fast-carpenter-to-get-the-dataframes)
       - [Running `fast-plotter` to get the plots](#running-fast-plotter-to-get-the-plots)
-    - [s-channel and t-channel MadGraph plots](#s-channel-and-t-channel-madgraph-plots)
+    - [Variations on the s-channel benchmark model](#variations-on-the-s-channel-benchmark-model)
       - [Getting the dataframes](#getting-the-dataframes)
       - [Getting the plots](#getting-the-plots)
-    - [Variations on the s-channel benchmark model](#variations-on-the-s-channel-benchmark-model)
+    - [Variations on the t-channel benchmark model](#variations-on-the-t-channel-benchmark-model)
       - [Getting the dataframes (again)](#getting-the-dataframes-again)
       - [Getting the plots (again)](#getting-the-plots-again)
   - [Lambda_dark vs m_dark](#lambdadark-vs-mdark)

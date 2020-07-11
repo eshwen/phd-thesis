@@ -1,6 +1,14 @@
-# Making plots
+# Making plots for the Higgs to invisible analysis chapter
 
 This README should be an indicator of how to make some of the plots included in the Higgs to invisible analysis chapter, in case they need to be regenerated or I need more context for them.
+
+- [Making plots for the Higgs to invisible analysis chapter](#making-plots-for-the-higgs-to-invisible-analysis-chapter)
+  - [`fast-plotter` plots](#-fast-plotter-plots)
+  - [Limit and likelihood scan plots](#limit-and-likelihood-scan-plots)
+  - [Dark matter limit plot](#dark-matter-limit-plot)
+  - [ttbar scale plots](#ttbar-scale-plots)
+  - [k-factors](#k-factors)
+  - [Things to remember when remaking plots](#things-to-remember-when-remaking-plots)
 
 ## `fast-plotter` plots
 

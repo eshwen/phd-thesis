@@ -144,12 +144,8 @@ A general rule is that the equivalent luminosity of a given dataset should be co
 \section{Weights, corrections, and systematic uncertainties for simulation}
 \label{sec:htoinv_mc_corrections}
 
-% ttbar will have a couple of important weights and systematics that I've looked into personally: renormalisation and factorisation scale syst, and top pt reweighting. Could have a section/subsection on "Corrections to the ttbar background" where I discuss them, since it's super important for the ttH analysis to get this right. Depends on how I organise the weights and systematics. Could also do a similar thing regarding corrections to V + jets, as they impact VH quite a lot. But since I didn't personally do the NLO corrections, would only briefly mention. But separation might be good for organisational purposes
-
 % Weights/SFs and systematics in the analysis I need to still describe:
 %   - JES/JER
-%   - NLO QCD for QCD and EWK V + jets processes (+ the renormalisation, factorisation, and PDF systematics for NLO QCD for QCD procs)
-%   - NLO EWK for QCD V + jets processes
 %   - trigger
 %   - lumi
 
@@ -391,13 +387,16 @@ The envelope is characterised by the correlated variations $\muRAmuFB{\uparrow}{
 \subsubsection{Top quark \texorpdfstring{\pt}{pT} reweighting}
 \label{subsubsec:htoinv_top_pt_reweighting}
 
-The top quark \pt distribution has been shown to be harder in simulation than data~\cite{Sirunyan:2018ucr}. Developed by members of the \acrshort{cms} Collaboration, the distribution of the \acrshort{nnlo} to \acrshort{nlo} ratio against the generator-level top \pt is fit with an exponential function.\footnote{If the paper/PAS for HIG-19-008 with this fit function in, reference it.} The same function is used for all \ttbarpjets samples for all data taking years.
+The top quark \pt distribution has been shown to be harder in simulation than data~\cite{Sirunyan:2018ucr}. Developed by members of the \acrshort{cms} Collaboration, the ratio is taken between the \ttbar cross section computed at \acrshort{nnlo} \acrshort{qcd} $+$ \acrshort{nlo} electroweak accuracy to the \acrshort{nlo} \POWHEG \acrshort{mc} as function of top quark \pt. An analytic function is used to fit the distribution.\footnote{If the paper/PAS for HIG-19-008 with this fit function in, reference it instead of giving the equation.} The same function is used for all \ttbarpjets samples for all data taking years:
+\begin{equation}
+    f(\pt) = \exp(a + b \cdot \pt + c \cdot \pt^2 + \frac{d}{\pt + e})
+\end{equation}
 
-For a top or antitop, the scale factor is given by the value of the fit function. The event weight is then the square root of the product of the top and antitop scale factors. We assume the uncertainty on the weight is equal to it, making the downward variation equal to unity and the upward variation the square of the weight.\footnote{Not sure if I should actually give the equation of the fit function.}
+where the coefficients are $a = -2.02274 \times 10^{-1}$, $b = 1.09734 \times 10^{-4}$, $c -1.30088 \times 10^{-7}$, $d = 5.83494 \times 10^1$, and $e = 1.96252 \times 10^2$. For a top or antitop quark, the scale factor is given by the value of $f$ for the particle's generator-level \pt. The event weight is then the square root of the product of the top and antitop scale factors. We assume the uncertainty on the weight is equal to it, making the downward variation equal to unity and the upward variation the square of the weight.
+
+We aimed to remove the dependence on normalisation in the same fashion as for the \acrshort{qcd} scale to consider the correction only to the shape of the distributions and not also the normalisation. However, the normalisation factors were found to be unity for all datasets. Hence, no additional factor was required.
 
 % See https://indico.cern.ch/event/904971/contributions/3857701/attachments/2036949/3410728/TopPt_20.05.12.pdf for more info
-
-% Could say that we also remove the dependence on normalisation, as with the scale variations, by taking the integral of the weight for unskimmed samples and dividing by the number of events. But this was just 1 for all samples for all years
 
 
 %=========================================================
@@ -406,7 +405,7 @@ For a top or antitop, the scale factor is given by the value of the fit function
 \subsection{Object-level scale factors and systematic uncertainties}
 \label{subsec:htoinv_SFs_systs_objects}
 
-There are multiple corrections applied to simulation based on the physics objects with an event, as opposed to the event topology as a whole. One example of which is Chpt.~\ref{subsubsec:htoinv_top_pt_reweighting}. In the following sections, weights attributed to objects themselves are referred to as \emph{scale factors}, while the event weight is the product of the scale factors as in Eq.~\ref{eq:event_weight}. Systematic uncertainties are aggregated in the same manner. Unless stated otherwise, the following scale factors and systematics are derived separately for each year in Run-2.
+There are multiple corrections applied to simulation based on the physics objects with an event, as opposed to the event topology as a whole. One example of which is Chpt.~\ref{subsubsec:htoinv_top_pt_reweighting}. In the following sections, weights attributed to objects themselves are referred to as \emph{scale factors}, while the event-level weight is the product of the scale factors as in Eq.~\ref{eq:event_weight}. Systematic uncertainties are aggregated in the same manner. Unless stated otherwise, the following scale factors and systematics are derived separately for each year in Run-2.
 
 
 %=========================================================
@@ -452,7 +451,12 @@ In a similar fashion to the section above, objects classified by the \deepakeigh
 \subsection{Minor weights and systematic uncertainties}
 \label{subsec:htoinv_minor_weights_systs}
 
-% Put JES/JER, lumi here
+
+%=========================================================
+
+
+\subsubsection{Pre-firing in the ECAL}
+\label{subsubsec:htoinv_ecal_prefiring_weight}
 
 Derived by members of the Collaboration, the nominal weight applied to events in simulation that emulates the effect of pre-firing in 2016 and 2017 data, is given in Ref.~\citenum{prefiring_weight}:
 \begin{equation}
@@ -463,6 +467,19 @@ Derived by members of the Collaboration, the nominal weight applied to events in
 where $\epsilon$ is the probability for an object to pre-fire as a function of its $\eta$ and electromagnetic \pt (simply \pt for photons, and \pt multiplied by the sum of the charged and neutral electromagnetic energy fractions for \glspl{jet}). The systematic uncertainty in the event weight is found by taking the uncertainty on $\epsilon$: the maximum of $\text{0.2}\epsilon$ and the statistical uncertainty in the $(\eta, \pt^{\mathrm{EM}})$ bin of the pre-firing map from which $\epsilon$ is extracted. Pre-firing probabilities are assumed to be uncorrelated between photons and jets.\footnote{Do we correlate the systematic between years?}
 
 % Pre-firing: https://twiki.cern.ch/twiki/bin/viewauth/CMS/L1ECALPrefiringWeightRecipe, https://indico.cern.ch/event/764279/
+
+
+%=========================================================
+
+\subsubsection{Jet energy scale and resolution}
+\label{subsubsec:htoinv_JES_JER_systs}
+
+
+%=========================================================
+
+
+\subsubsection{Luminosity}
+\label{subsubsec:htoinv_lumi_syst}
 
 
 %=========================================================

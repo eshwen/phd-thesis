@@ -135,7 +135,7 @@ The upper-limit on the y-axis needs to be changed for t-channel because the cros
 
 ```bash
 sed -i 's/.96/.808/g' ../src/fast-plotter/fast_plotter/plotting.py
-fast_plotter -c $plotting_cfg -o svj_s_thesis_benchmark_variations_aD svj_s_thesis_benchmark_variations_aD/$df
+fast_plotter -c $plotting_cfg -o svj_${svj_model}_thesis_benchmark_variations_aD svj_${svj_model}_thesis_benchmark_variations_aD/$df
 sed -i 's/.808/.96/g' ../src/fast-plotter/fast_plotter/plotting.py
 if [[ $svj_model == "t" ]]; then
     sed -i 's/2e7/2e6/g' $plotting_cfg

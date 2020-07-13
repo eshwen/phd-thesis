@@ -704,43 +704,13 @@ To extract maximum sensitivity to the \higgstoinv decay from the analysis, categ
 
 The monojet category resembles the search in Ref.~\citenum{Sirunyan:2017jix}and primarily targets the \ggH mode, but is separated to distinguish it from the categories we have developed specifically for the analysis.
 
-The number of boosted top quark- and vector boson-tagged \glspl{jet} (\nBoostedTop and \nBoostedV, respectively) are defined in Chpt.~\ref{subsec:htoinv_deepak8}. In the \ttH 2Boosted category, if $\nBoostedV = \text{2}$ we also require $\nbjet \geq \text{1}$ for confidence that the \PVec boson originates from a decaying \Ptop quark.
+The number of boosted top quark- and vector boson-tagged \glspl{jet} (\nBoostedTop and \nBoostedV, respectively) are defined in Chpt.~\ref{subsec:objects_deepak8}. In the \ttH 2Boosted category, if $\nBoostedV = \text{2}$ we also require $\nbjet \geq \text{1}$ for confidence that the \PVec boson originates from a decaying \Ptop quark.
 
 In the table, the number of \glspl{jet} \njet refers specifically to the number of AK4-clustered \glspl{jet} that do not overlap with a boosted \Ptop or \PVec \gls{jet} to avoid double counting objects, i.e., an AK4 \gls{jet} within $\Delta R < \text{0.8}$ of a boosted object does not count toward the \njet requirement in the subcategory definition. The same treatment is applied to \glspl{bjet} as well. This only applies to the categorisation and does not affect selections made on \glspl{jet} or \glspl{bjet} in Chpt.~\ref{sec:htoinv_event_selection}.
 
 For categorisation and the analysis altogether, \njet and \nbjet are counted independently, so no overlap removal is performed. For example, the \VH 2j2b requires two \glspl{jet}, both of which are \Pbottom-tagged.
 
 In the \ttH and \VH categories, ancillary groupings of subcategories may be of interest: 2Boosted, 1t0b, 1t1b, 1W1b, and 1W2b target boosted decays of the top quark and may be collectively designated the ``\ttH boosted'' category; resolved decays are the focus of the remaining subcategories, appropriately named the ``\ttH resolved'' category; then, assembling the 2j0b, 2j1b, and 2j2b \VH subcategories elicits the ``\VH resolved'' moniker. Low yields may be observed in individual subcategories, so using these grouped alternatives is useful to quickly inspect the wider effect of changes to the analysis.
-
-
-%=========================================================
-
-
-\subsection{Classifying boosted topologies from top quarks, and \texorpdfstring{\PW}{W} and \texorpdfstring{\PZ}{Z} bosons}
-\label{subsec:htoinv_deepak8}
-
-Many traditional methods have been developed to tag \glspl{jet} originating from heavy particles, such as top quarks, vector bosons and Higgs bosons. Though, there are limitations with all of these, and in the era of machine learning a plethora of new tools have arisen. One such algorithm---\deepakeight---has been developed by physicists in \acrshort{cms} to classify \glspl{jet} that originate from numerous heavy particles. In this analysis, we pay specific interest to those coming from top quarks and vector bosons in order to assist the categorisation of the \ttH and \VH signals. The number of tagged \glspl{jet} in an event inform the boosted subcategories, as seen in Tab.~\ref{tab:htoinv_categories}. The design and optimisation of the algorithm is described in Ref.~\citenum{CMS-PAS-JME-18-002}.\footnote{Not sure if I should give a summary of the development and features of the algorithm here.}
-
-We employ the ensuing selections to AK8 \glspl{jet} to classify them, as recommended by the DeepAK8 developers:
-\medskip
-\begin{easylist}[itemize]
-    \ListProperties(Style*=-- , Style2*=$\circ$ , Hang=true, FinalMark={)})
-    & Boosted top:
-    && $\pt > \text{400}\GeV$
-    && $\text{105} < m_{\mathrm{SD}} < \text{210} \GeV$
-    && \Ptop vs. \acrshort{qcd} discriminator score with the ``loose'' working point (2.5\,\% mis-tag rate)
-    && Tight ID requirement for AK8 \glspl{jet}
-
-    & Boosted \PVec:
-    && $\pt > \text{200}\GeV$
-    && $\text{65} < m_{\mathrm{SD}} < \text{105} \GeV$
-    && \PW vs. \acrshort{qcd} discriminator score with the ``loose'' working point (5\,\% mis-tag rate)
-    && Tight ID requirement for AK8 \glspl{jet}
-\end{easylist}
-
-\medskip
-
-\noindent{}Orthogonality is ensured between the two classifications through the soft drop mass $m_{\mathrm{SD}}$~\cite{Larkoski:2014wba} window. We also use the loose working points to maximise the number of events that remain in the relevant categories. Otherwise, we suffer from very poor statistics in some of the \glspl{CR}. The boosted \PVec \glspl{jet} are not further separated into \PW- and \PZ-tagged since the mass degeneracy makes this inherently difficult. After correspondence with the \deepakeight developers, we were reassured that we could use the \PW vs. \acrshort{qcd} discriminator to tag both \PW and \PZ \glspl{jet}. An additional recommendation was to use the nominal version of the tagger as opposed to the mass-decorrelated version. The performance improvements are noticeable, as shown in Ref.~\citenum{CMS-PAS-JME-18-002}, and we do not use a mass dimension for our fitting variable which would otherwise preclude the use of the latter version. Data-\acrshort{mc} scale factors to weight events containing these objects are described in Chpt.~\ref{subsubsec:htoinv_deepak8_sfs}.
 
 
 %=========================================================

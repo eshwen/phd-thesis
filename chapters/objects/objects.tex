@@ -230,12 +230,12 @@ The tight and tight $+$ lepton veto ID specifications are detailed in Tab.~\ref{
 %=========================================================
 
 
-\subsection{Classifying boosted topologies from top quarks, and \texorpdfstring{\PW}{W} and \texorpdfstring{\PZ}{Z} bosons}
+\subsection{Boosted topologies originating from top quarks and electroweak bosons}
 \label{subsec:objects_deepak8}
 
-Many traditional methods have been developed to tag \glspl{jet} originating from heavy particles, such as top quarks, vector bosons and Higgs bosons. Though, there are limitations with all of these, and in the era of machine learning a plethora of new tools have arisen. One such algorithm---\deepakeight---has been developed by physicists in \acrshort{cms} to classify \glspl{jet} that originate from numerous heavy particles. In this analysis, we pay specific interest to those coming from top quarks and vector bosons in order to assist the categorisation of the \ttH and \VH signals. The number of tagged \glspl{jet} in an event inform the boosted subcategories, as seen in Tab.~\ref{tab:htoinv_categories}. The design and optimisation of the algorithm is described in Ref.~\citenum{CMS-PAS-JME-18-002}.\footnote{Not sure if I should give a summary of the development and features of the algorithm here.}
+Many traditional methods have been developed to tag \glspl{jet} originating from heavy particles, such as top quarks, vector bosons and Higgs bosons. Though, there are limitations with all of these, and in the era of machine learning a plethora of new tools have arisen. One such algorithm---\deepakeight---has been developed by physicists in \acrshort{cms} to classify \glspl{jet} that originate from numerous heavy flavour decays. In this analysis, we pay specific interest to those coming from top quarks and vector bosons in order to assist the categorisation of the \ttH and \VH signals. The number of tagged \glspl{jet} in an event inform the boosted subcategories, as seen in Tab.~\ref{tab:htoinv_categories}. The design and optimisation of the algorithm is described in Ref.~\citenum{CMS-PAS-JME-18-002}.\footnote{Not sure if I should give a summary of the development and features of the algorithm here.}
 
-We employ the ensuing selections to AK8 \glspl{jet} to classify them, as recommended by the DeepAK8 developers:
+We employ the ensuing selections to AK8 \glspl{jet} to classify them, as recommended by the \deepakeight developers:
 \medskip
 \begin{easylist}[itemize]
     \ListProperties(Style*=-- , Style2*=$\circ$ , Hang=true, FinalMark={)})
@@ -243,18 +243,16 @@ We employ the ensuing selections to AK8 \glspl{jet} to classify them, as recomme
     && $\pt > \text{400}\GeV$
     && $\text{105} < m_{\mathrm{SD}} < \text{210} \GeV$
     && \Ptop vs. \acrshort{qcd} discriminator score with the ``loose'' working point (2.5\,\% mis-tag rate)
-    && Tight ID requirement for AK8 \glspl{jet}
 
     & Boosted \PVec:
     && $\pt > \text{200}\GeV$
     && $\text{65} < m_{\mathrm{SD}} < \text{105} \GeV$
     && \PW vs. \acrshort{qcd} discriminator score with the ``loose'' working point (5\,\% mis-tag rate)
-    && Tight ID requirement for AK8 \glspl{jet}
 \end{easylist}
 
 \medskip
 
-\noindent{}Orthogonality is ensured between the two classifications through the soft drop mass $m_{\mathrm{SD}}$~\cite{Larkoski:2014wba} window. We also use the loose working points to maximise the number of events that remain in the relevant categories. Otherwise, we suffer from very poor statistics in some of the \glspl{CR}. The boosted \PVec \glspl{jet} are not further separated into \PW- and \PZ-tagged since the mass degeneracy makes this inherently difficult. After correspondence with the \deepakeight developers, we were reassured that we could use the \PW vs. \acrshort{qcd} discriminator to tag both \PW and \PZ \glspl{jet}. An additional recommendation was to use the nominal version of the tagger as opposed to the mass-decorrelated version. The performance improvements are noticeable, as shown in Ref.~\citenum{CMS-PAS-JME-18-002}, and we do not use a mass dimension for our fitting variable which would otherwise preclude the use of the latter version. Data-\acrshort{mc} scale factors to weight events containing these objects are described in Chpt.~\ref{subsubsec:objects_deepak8_sfs}.
+\noindent{}Orthogonality is ensured between the two classifications from the soft drop mass $m_{\mathrm{SD}}$~\cite{Larkoski:2014wba} window. We also use the loose working points to maximise the number of events that remain in the relevant categories. Otherwise, we suffer from very poor statistics in some of the \glspl{CR}. The boosted \PVec \glspl{jet} are not further separated into \PW- and \PZ-tagged since the mass degeneracy makes this inherently difficult. After correspondence with the \deepakeight developers, we were reassured that we could use the \PW vs. \acrshort{qcd} discriminator to tag both \PW and \PZ \glspl{jet}. An additional recommendation was to use the nominal version of the tagger as opposed to the mass-decorrelated version. The performance improvements are noticeable, as shown in Ref.~\citenum{CMS-PAS-JME-18-002}, and we do not use a mass dimension for our fitting variable which would otherwise preclude the use of the latter version. Data-\acrshort{mc} scale factors to weight events containing these objects are described in Chpt.~\ref{subsubsec:htoinv_deepak8_sfs}.
 
 
 %=========================================================

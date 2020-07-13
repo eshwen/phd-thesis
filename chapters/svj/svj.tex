@@ -217,32 +217,38 @@ For the \tchannel model, several pseudoscalar bifundamentals $\PBifund$ couple t
 
 % Need to talk about how cross section is calculated
 
-The \tchannel aspect of the signal has not been studied in as great a detail as \schannel. It also exhibits less distinguishing kinematic characteristics, making it more difficult to determine the phase space and discriminating variables to separate it from the \acrlong{sm} background. Nevertheless, simple distributions with a range of parameter points are presented. These are intended to demonstrate how it would manifest in the \acrshort{lhc}, and how different the signature is from the \schannel model. Motivated by the sensitivities demonstrated by the theorists in Ref.~\citenum{Cohen:2017pzm}, the benchmark point SVJ\_\-2000\_\-20\_\-0.5\_\-peak is chosen. As with the \schannel UV completion, each free parameter is varied individually with respect to the benchmark point, the results of which for the \ptmiss distribution are shown in Fig.~\ref{fig:svj_mg_benchmark_variations_tchannel}.\footnote{In these plots, just using the MadGraph cross sections for the moment. 4000\_20\_0.5\_peak also looks a bit janky so remaking that MC. Remake plots once that's fixed and settled on cross section. Then, discuss. Also, only looking at MET as it seems the most discriminatory of all the ones I've made so far.}
+The \tchannel aspect of the signal has not been studied in as great a detail as \schannel. It also exhibits less distinguishing kinematic characteristics, making it more difficult to determine the phase space and discriminating variables to separate it from the \acrlong{sm} background. Nevertheless, simple distributions with a range of parameter points are presented. These are intended to demonstrate how it would manifest in the \acrshort{lhc}, and how different the signature is from the \schannel model. Motivated by the sensitivities demonstrated by the theorists in Ref.~\citenum{Cohen:2017pzm}, the benchmark point SVJ\_\-2000\_\-20\_\-0.5\_\-peak is chosen. As with the \schannel UV completion, each free parameter is varied individually with respect to the benchmark point, the results of which for the \mT distribution are shown in Fig.~\ref{fig:svj_mg_benchmark_variations_tchannel}.\footnote{In these plots, just using the MadGraph cross sections for the moment. Also, only looking at \mT as it seems the most discriminatory of all the ones I've made so far (\ptmiss comes close, though).}
 
 \begin{figure}[htbp]
     \centering
     \begin{subfigure}[b]{0.48\textwidth}
-        \includegraphics[width=\textwidth]{figures/t_channel_benchmark_variations/mPhi.pdf}
+        \includegraphics[width=\textwidth]{figures/t_channel_benchmark_variations/dijet_mt/mPhi.pdf}
         \caption{Varying \mBifund}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.48\textwidth}
-        \includegraphics[width=\textwidth]{figures/t_channel_benchmark_variations/mD.pdf}
+        \includegraphics[width=\textwidth]{figures/t_channel_benchmark_variations/dijet_mt/mD.pdf}
         \caption{Varying \mDark}
     \end{subfigure}
 
     \begin{subfigure}[b]{0.48\textwidth}
-        \includegraphics[width=\textwidth]{figures/t_channel_benchmark_variations/rinv.pdf}
+        \includegraphics[width=\textwidth]{figures/t_channel_benchmark_variations/dijet_mt/rinv.pdf}
         \caption{Varying \rinv}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.48\textwidth}
-        \includegraphics[width=\textwidth]{figures/t_channel_benchmark_variations/aD.pdf}
+        \includegraphics[width=\textwidth]{figures/t_channel_benchmark_variations/dijet_mt/aD.pdf}
         \caption{Varying \aDark}
     \end{subfigure}
-    \caption[Distributions of the missing transverse momentum for \schannel \gls{svj} samples emulating the 2016 data taking period. In each panel, one of the free parameters of the model is varied with respect to the benchmark point SVJ\_\-2000\_\-20\_\-0.5\_\-peak]{Distributions of the missing transverse momentum for \tchannel \gls{svj} samples emulating the 2016 data taking period. In each panel, one of the free parameters of the model is varied with respect to the benchmark point SVJ\_\-2000\_\-20\_\-0.5\_\-peak (bright green line).}
+    \caption[Distributions of the transverse mass of the dijet system \mT for \schannel \gls{svj} samples emulating the 2016 data taking period. In each panel, one of the free parameters of the model is varied with respect to the benchmark point SVJ\_\-2000\_\-20\_\-0.5\_\-peak]{Distributions of the transverse mass of the dijet system \mT for \tchannel \gls{svj} samples emulating the 2016 data taking period. In each panel, one of the free parameters of the model is varied with respect to the benchmark point SVJ\_\-2000\_\-20\_\-0.5\_\-peak (bright green line).}
     \label{fig:svj_mg_benchmark_variations_tchannel}
 \end{figure}
+
+Analogously to the \schannel signal, the kinematics of the \tchannel aspect of the model are dominated by the mediator mass and invisible fraction. The transverse mass exhibits a peak, but consistently at 700--1000\GeV, seemingly regardless of \mBifund.\footnote{Not entirely sure where this comes from.} Higher values of \mBifund show a second peak at that value, this one broader and shallower. The initial peak also appears more pronounced than at lower \mPhi. Though this distribution is not as distinguishing as with \schannel since there is no resonance or equivalent kinematic edge, it is more discriminatory than other variables investigated such as \ptmiss or \HT. Lack of statistical precision dominates the curves at higher \mT for larger \mPhi. Accounting for this, however, and observing the general trend does reveal shapes comparable to smaller \mPhi. For moderate \mPhi, a reasonably large fraction of signal remains at high \mT. This is true in all panels of Fig.~\ref{fig:svj_mg_benchmark_variations_tchannel}, suggesting a cut could be placed on the observable to reject background if not used as the search variable.
+
+\mDark and \aDark have little effect on the \mT. Higher values of \mDark slightly increase the value at which the peak occurs, though the tail remains the same. It is difficult to tell if \aDark has much effect on the kinematics overall, since the values used to vary the parameter were based on the shower of the \schannel signal. Reevaluation may be required in the \tchannel case.
+
+The impact of \rinv on the \mT is similar to, though not as pronounced as in the \schannel signal. Both the initial peak near 1\TeV and the secondary at 2\TeV (i.e., the mediator mass) are recovered more effectively with a lower invisible fraction. Again, this is likely due to the enhanced resolution of \glspl{jet} over \ptmiss.\footnote{Even though cross sections aren't necessarily correct, shouldn't really change conclusions as it only affects normalisation. Would likely just bunch the curves closer together for variations of \mPhi.}
 
 
 %=========================================================

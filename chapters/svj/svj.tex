@@ -16,7 +16,7 @@
 \section{Analysis summary}
 \label{sec:svj_overview}
 
-The analysis in search for \glspl{svj} is formed of a collaboration amongst the University of Bristol, University of Maryland, University of Rochester, Universit\"{a}t Z\"{u}rich, and the \acrfull{fnal}. The \schannel production mode with the full Run-2 dataset of \acrshort{cms} is the subject of the current analysis. A dijet final state with moderate \ptmiss is expected. The transverse mass of the dijet system \mT---calculated with Eq.~\ref{eq:transverse_mass_massive}---is used as the search variable. Confirmed by the distributions in this chapter for simulated signal, a peak close to \mZprime can be captured. With the inclusion of the \ptmiss, the resolution of \mT is better than simply the dijet mass (\mjj) which would otherwise be used to recover the peak. The authors of Ref.~\citenum{Cohen:2017pzm} also demonstrate that sensitivity is stronger with \mT over \mjj. Novel techniques are utilised, such as the development of a boosted decision tree to tag \glspl{svj} and distinguish them from mismeasured \acrshort{qcd} \glspl{jet}. A complete description of the \schannel analysis as of September 2019 can be found in Ref.~\citenum{GiorgiaRaucoThesis}.
+The analysis in search for \glspl{svj} is formed of a collaboration amongst the University of Bristol, University of Maryland, University of Rochester, Universit\"{a}t Z\"{u}rich, and the \acrfull{fnal}. The \schannel production mode with the full Run-2 dataset of \acrshort{cms} is the subject of the current analysis. A dijet final state with moderate \ptmiss is expected. The transverse mass of the dijet system \mT---calculated with Eq.~\ref{eq:transverse_mass_massive}---is used as the search variable. Confirmed by the distributions in this chapter for simulated signal, a peak close to \mZprime can be captured. With the inclusion of the \ptmiss, the resolution of \mT is better than simply the dijet mass (\mjj) which would otherwise be used to recover the peak. The authors of Ref.~\citenum{Cohen:2017pzm}also demonstrate that sensitivity is stronger with \mT over \mjj. Novel techniques are utilised, such as the development of a boosted decision tree to tag \glspl{svj} and distinguish them from mismeasured \acrshort{qcd} \glspl{jet}. A complete description of the \schannel analysis as of September 2019 can be found in Ref.~\citenum{GiorgiaRaucoThesis}. % Remove space between citenum and next word since it already introduces a space
 
 My contribution is predominantly the development and understanding of signal simulation in \MGvATNLO~\cite{Alwall:2011madgraph} for both the \schannel and \tchannel aspects of the model. As such, the remainder of the chapter is focused on its discussion. The code I developed to perform the simulation is being used for the future analysis of the \tchannel mode as well as a low-mass boosted \PZprime search.
 
@@ -115,7 +115,7 @@ d_{iB} &= p_{\mathrm{T}i}^{2k}
     \label{eq:distances_kt_pythia}
 \end{equation}
 
-where, in the rapidity-azimuthal ($y$-$\phi$) plane, $R$ is the radius of the cone---defined as 1.0 to match the merging parameters used in \MADGRAPH. $\Delta R_{ij}$ is the separation between $i$ and $j$,\footnote{This is calculated with Eq.~\ref{eq:delta_r} where $\eta$ is replaced with $y$ from Eq.~\ref{eq:rapidity_def}.} and $k$ defines the algorithm choice: $k = -\text{1}$ in the \gls{antikt}, $k = \text{0}$ in the Cambridge-Aachen algorithm, and $k = \text{1}$ in the $\kt$ algorithm. Our choice is the latter for the same reason as the cone radius size.
+where, in the rapidity-azimuthal ($y-\phi$) plane, $R$ is the radius of the cone---defined as 1.0 to match the merging parameters used in \MADGRAPH. $\Delta R_{ij}$ is the separation between $i$ and $j$,\footnote{This is calculated with Eq.~\ref{eq:delta_r} where $\eta$ is replaced with $y$ from Eq.~\ref{eq:rapidity_def}.} and $k$ defines the algorithm choice: $k = -\text{1}$ in the \gls{antikt}, $k = \text{0}$ in the Cambridge-Aachen algorithm, and $k = \text{1}$ in the $\kt$ algorithm. Our choice is the latter for the same reason as the cone radius size.
 
 If $d_{ij} < d_{iB}$, the particles $i$ and $j$ are combined, replacing the individual constituents in the list of inputs. Otherwise, particle $i$ is designated as a jet and removed from list of inputs. For all combinations of particles remaining in the input list, the distances are recalculated until all objects possess a \pt above the merging scale. Once the algorithm has finished, we are left with fully-clustered \glspl{jet}. Matching is performed between the clustered \glspl{jet} and original partons to avoid double counting. Events with insufficiently-matched \glspl{jet} are rejected. A minimum number of \glspl{jet} may also be specified and events with fewer than this are rejected. A larger $\rinv$ tends to reduce the merging and matching efficiencies since more energy is locked in the dark sector and fewer \glspl{jet} are clustered above the merging scale.
 
@@ -306,12 +306,12 @@ Below are some of the important and insightful distributions for the \schannel p
 
     \begin{subfigure}[b]{0.48\textwidth}
         \includegraphics[width=\textwidth]{figures/madgraph_pythia_comparisons/with_ratios/part2/met_over_mt.pdf}
-        \caption{$\MET/\mT$}
+        \caption{$\ptmiss/\mT$}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.48\textwidth}
         \includegraphics[width=\textwidth]{figures/madgraph_pythia_comparisons/with_ratios/part2/min_dphi.pdf}
-        \caption{\mindphi between \MET and two leading \glspl{jet}}
+        \caption{\mindphi between \ptmiss and two leading \glspl{jet}}
     \end{subfigure}
     \caption[Distributions of several observables for the models SVJ\_\-3000\_\-20\_\-0.5\_\-peak, SVJ\_\-3000\_\-50\_\-0.3\_\-peak, and SVJ\_\-4000\_\-20\_\-0.3\_\-peak]{Distributions of several observables for the models SVJ\_\-3000\_\-20\_\-0.5\_\-peak, SVJ\_\-3000\_\-50\_\-0.3\_\-peak, and SVJ\_\-4000\_\-20\_\-0.3\_\-peak. Generation in \MGvATNLO is compared to \PYTHIAEIGHT, with the ratios between them for each model displayed in the respective subplot.}
     \label{fig:svj_mg_pythia_comparison_set2}

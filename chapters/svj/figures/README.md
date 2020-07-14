@@ -13,6 +13,7 @@ To make signal MC distributions for my thesis, see the instructions in [Making t
       - [Getting the dataframes](#getting-the-dataframes)
       - [Getting the plots](#getting-the-plots)
   - [Lambda_dark vs m_dark](#lambdadark-vs-mdark)
+  - [Mass insertion diagram](#mass-insertion-diagram)
 
 ## Making the samples
 
@@ -164,3 +165,7 @@ python plot_lambdaD_v_mDH.py
 ```
 
 Since the script is so small, everything within it should be pretty self-explanatory.
+
+## Mass insertion diagram
+
+This is taken directly from the semi-visible jets analysis note AN-19-061. The repo link is [here](https://gitlab.cern.ch/tdr/notes/AN-19-061), with the permalink to the figure [here](https://gitlab.cern.ch/tdr/notes/AN-19-061/-/blob/4f97acefe944aa033b8a9b6ca914ee477e790359/img/signal/mass_insertion_diagram.pdf).

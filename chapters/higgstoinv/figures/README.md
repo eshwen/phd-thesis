@@ -3,44 +3,40 @@
 This README should be an indicator of how to make some of the plots included in the Higgs to invisible analysis chapter, in case they need to be regenerated or I need more context for them.
 
 - [Making plots for the Higgs to invisible analysis chapter](#making-plots-for-the-higgs-to-invisible-analysis-chapter)
-  - [`fast-plotter` plots](#-fast-plotter-plots)
-  - [Limit and likelihood scan plots](#limit-and-likelihood-scan-plots)
+  - [`fast-plotter` plots](#fast-plotter-plots)
+    - [Category optimisations](#category-optimisations)
+    - [HEM issue](#hem-issue)
+    - [Full Run-2 region plots](#full-run-2-region-plots)
   - [Dark matter limit plot](#dark-matter-limit-plot)
-  - [ttbar scale plots](#ttbar-scale-plots)
+  - [Fit overview](#fit-overview)
   - [k-factors](#k-factors)
+  - [Limit and likelihood scan plots](#limit-and-likelihood-scan-plots)
+  - [ttbar scale plots](#ttbar-scale-plots)
   - [Things to remember when remaking plots](#things-to-remember-when-remaking-plots)
 
 ## `fast-plotter` plots
 
-Some of the plots in [category_optimisations/](category_optimisations), [hem_issue/](hem_issue/), and [region_plots/](region_plots/) came from `fast-plotter`, probably via the script <https://gitlab.cern.ch/cms-chip/chip/-/blob/master/chip_code/make_nonVBF_plots.py>.
+Some of the plots in [category_optimisations/](category_optimisations), [hem_issue/](hem_issue/), and [region_plots/](region_plots/) came from `fast-plotter`, potentially via the script <https://gitlab.cern.ch/cms-chip/chip/-/blob/master/chip_code/make_nonVBF_plots.py>.
 
-The significance line plots in [category_optimisations/](category_optimisations) were made with my fork of `fast-caliper` (<https://gitlab.cern.ch/ebhal/fast-caliper>), and commands similar to [run_all_significances.sh](category_optimisations/run_all_significances.sh).
+### Category optimisations
 
-For the plots in [hem_issue/](hem_issue/) that contain a translucent block the histograms were made with `fast-plotter`, then edited in Preview to add the block itself. Annoyingly, adding the block does so as a pdf annotation, so is essentially saved as metadata and isn't part of the plot itself. To make it part of the plot, in Preview do **File** -> **Export as PDF...**. Then, click **Show Details**, and set **Paper Size** as **8x10 Borderless** so the aspect ratio is as close to the original plot as possible. Any leftover whitespace can be cropped in Preview after the fact.
+The significance line plots in [category_optimisations/](category_optimisations) were made with my fork of `fast-caliper` (<https://gitlab.cern.ch/ebhal/fast-caliper>), and commands similar to [run_all_significances.sh](category_optimisations/run_all_significances.sh). The histograms came from `make_nonVBF_plots.py`.
 
-## Limit and likelihood scan plots
+### HEM issue
 
-For the code and inputs required to make the limit and likelihood scan plots (in [limits/](limits/) and [likelihood_scan/](likelihood_scan/), respectively), refer to the instructions in <https://gitlab.cern.ch/cms-chip/chip/-/tree/master/fitting> and <https://gitlab.cern.ch/cms-chip/chip/-/tree/master/fitting/plot_fit_results/>. I'll try to maintain keeping a copy of the latest root files and plots in [2016/](2016/), [2017/](2017/), and [2018/](2018/) in case I need a reference or need to regenerate them. The commit datestamp will give an indication as to when they were made.
+For the plots in [hem_issue/](hem_issue/) that contain a translucent block the histograms were made with `fast-plotter`, then edited in Preview to add the block itself. Annoyingly, adding the block does so as a pdf annotation, so is essentially saved as metadata and isn't part of the plot itself. To make it part of the plot, in Preview do **File** -> **Export as PDF...**. Then, click **Show Details**, and set **Paper Size** as **8x10 Borderless** so the aspect ratio is as close to the original plot as possible. Any leftover whitespace can be cropped in Preview after the fact. To get the dataframes used to make the plot, I had to run the latest 2018 config in the chip repo, commenting out the HEM vetoes in the cut flow.
+
+### Full Run-2 region plots
+
+The full Run-2 signal region, control region, and sideband plots were made using the instructions [here](https://gitlab.cern.ch/cms-chip/chip/-/blob/master/configs/nonVBF_instructions.md#plots-for-2016-18-combined).
 
 ## Dark matter limit plot
 
 This should be documented in [dark_matter_limit/](dark_matter_limit/), as it is a self-contained `ROOT` macro that makes it.
 
-## ttbar scale plots
+## Fit overview
 
-To make the plots showing the variations for the variations on the QCD renormalisation and factorisation scale with the ttbar samples, run any of the configs in the chip repo over the NLO ttbar Powheg samples. Then, run `top_systs_postproc.py` to make the plots that include the combinations of individual variations with
-
-```bash
-python chip_code/top_systs_postproc.py -e pdf <outdir from carpenter> <year>
-```
-
-To make the plots that exclude those variations, comment them out in the `weights_to_plot` dictionary. It might also be worth changing the `matplotlib` colour map to something more contrasting with
-
-```bash
-sed -i 's/Set3/tab10/g' chip_code/top_systs_postproc.py
-```
-
-Then run the command above to regenerate the plots.
+This is a self-contained plot in [fit_overview.pptx](fit_overview.pptx). Editable in PowerPoint, the single slide can then be saved as a pdf.
 
 ## k-factors
 
@@ -68,6 +64,26 @@ and to plot all the electroweak k-factor together, run
 python plot_k_factors.py -d kfactor_monojet_ewk ../input_weight_data/nloSF_files/merged_kfactors_{g,w,z}jets.root
 mv merged_kfactors_zjets.pdf 1D_all_ewk.pdf
 ```
+
+## Limit and likelihood scan plots
+
+For the code and inputs required to make the limit and likelihood scan plots (in [limits/](limits/) and [likelihood_scan/](likelihood_scan/), respectively), refer to the instructions in <https://gitlab.cern.ch/cms-chip/chip/-/tree/master/fitting> and <https://gitlab.cern.ch/cms-chip/chip/-/tree/master/fitting/plot_fit_results/>. I'll try to maintain keeping a copy of the latest root files and plots in [2016/](2016/), [2017/](2017/), and [2018/](2018/) in case I need a reference or need to regenerate them. The commit datestamp will give an indication as to when they were made.
+
+## ttbar scale plots
+
+To make the plots showing the variations for the variations on the QCD renormalisation and factorisation scale with the ttbar samples, run any of the configs in the chip repo over the NLO ttbar Powheg samples. Then, run `top_systs_postproc.py` to make the plots that include the combinations of individual variations with
+
+```bash
+python chip_code/top_systs_postproc.py -e pdf <outdir from carpenter> <year>
+```
+
+To make the plots that exclude those variations, comment them out in the `weights_to_plot` dictionary. It might also be worth changing the `matplotlib` colour map to something more contrasting with
+
+```bash
+sed -i 's/Set3/tab10/g' chip_code/top_systs_postproc.py
+```
+
+Then run the command above to regenerate the plots.
 
 ## Things to remember when remaking plots
 

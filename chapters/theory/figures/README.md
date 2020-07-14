@@ -13,7 +13,7 @@ As referenced in the thesis, the figure comes directly from <https://arxiv.org/a
 
 ## Feynman diagrams
 
-I created the Feynman diagrams myself using the online tool <https://feynman.aivazis.com/>. While they look nice visually, they're a bit of a pain to get right. To make sure text renders in math font, when adding the text I need to wrap it in `$` like in LaTeX. Saving the figures as pdf often doesn't work, so I had to download them in png format. Additionally, the locations of the text in the saved image don't always correspond to where they were intended to be placed. The loops for gluons would also sometimes be inverted. As such, some further formatting in Preview was required in most cases.
+I created the Feynman diagrams myself using the online tool <https://feynman.aivazis.com/>. While they look nice visually, they're a bit of a pain to get right. To make sure text renders in math font, when adding the text I need to wrap it in `$` like in LaTeX. Saving the figures as pdf from the website directly often doesn't work, so I had to download them in png format. Additionally, the locations of the text in the saved image don't always correspond to where they were intended to be placed. The loops for gluons would also sometimes be inverted. As such, some further formatting in Preview was required in most cases. I could then export the final images in pdf and png.
 
 There might be better ways to do it with `TikZ` directly in the LaTeX document, but I haven't so far been bothered to learn.
 

@@ -35,6 +35,8 @@ As stated in the document, the figures come from <https://twiki.cern.ch/twiki/bi
 
 These are made when running the JEC workflow. I would just need to follow my instructions (probably best described in section 20 of my [lab book](https://github.com/eshwen/lab-book)) to make new plots. Otherwise, I have a copy of all JEC plots from all iterations on my iCloud Drive if I want to use different ones.
 
+The scatter plots are normally generated in png. I converted them to pdf in Preview to reduce the compilation time of the thesis document itself.
+
 ## Transverse slice through CMS
 
 As stated in the document, the figure comes from <https://arxiv.org/abs/1706.04965>. I downloaded the source containing the pdf image.

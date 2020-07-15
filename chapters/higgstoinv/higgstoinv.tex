@@ -464,7 +464,7 @@ Events must satisfy a logical \texttt{OR} of \acrshort{hlt} cross-triggers for \
     \centering
     \begin{tabular}{ccccc}
         \hline\hline
-        Year & $p_{\mathrm{T}}^{\mathrm{miss,\, \not\Pmu}}$ (\GeVns) & $H_{\mathrm{T}}^{\mathrm{miss,\, \not\Pmu}}$ (\GeVns) & $\HT$ (\GeVns) & $\njet$ with tight ID \\ \hline
+        Year & $\ptmissNoMu$ (\GeVns) & $\mhtNoMu$ (\GeVns) & $\HT$ (\GeVns) & $\njet$ with tight ID \\ \hline
         \multirow{4}{*}{2016} & 90 & 90 & --- & $\geq \text{1}$ \\
         & 100 & 100 & --- & $\geq \text{1}$ \\
         & 110 & 110 & --- & $\geq \text{1}$ \\
@@ -1074,6 +1074,29 @@ Uncertainties for the \acrshort{qcd} renormalisation scale, factorisation scale,
 \subsection{Efficiency of the triggers}
 \label{subsec:htoinv_trigger_effs}
 
+Given the modelling of the \acrlong{l1} and \acrlong{hlt} systems in simulation is only an approximation of their behaviour with data, corrections must be made to unite them.
+
+A dedicated \gls{CR} is formed to assure orthogonality with the signal region and avoid unblinding of data, but with a similar kinematic selection to the analysis for accuracy in our phase space. Events are selected in data from the primary dataset consisting of muon-based triggers, and in simulation from the \wtolnupjets process at \acrshort{lo}. Analysed events consist of these containing a single, tightly-isolated muon with $\pt > \text{30}\GeV$ that triggers the \acrshort{hlt} path for an isolated muon with $\pt > \text{27}\GeV$.\footnote{Why exactly do we use single muon events. Is it the high efficiency from the muon subsystem? Or that they won't bias the METMHT trigger efficiencies, or something?} An ``offline'' selection is then applied to keep those with similar kinematic properties to those in our signal region:
+
+\medskip
+\begin{easylist}[itemize]
+    \cutflowlistprops
+    & $\ptjone > \text{80}\GeV$
+    & $\ptjtwo > \text{40}\GeV$
+    & $\HT > \text{200}\GeV$
+    & $\mhtNoMu/\ptmissNoMu < \text{1.2}$
+\end{easylist}
+
+\medskip
+
+\noindent{}Of these, events that additionally pass the ``online'' selection of the trigger requirements in the signal region (Tab.~\ref{tab:htoinv_SR_triggers}) are also recorded. The efficiency of a trigger---or collection of triggers---$\epsilon_{\mathrm{trg}}$ is defined as
+\begin{equation}
+    \epsilon_{\mathrm{trg}} = \frac{ s_\mathrm{offline} \cap s_{\mathrm{online}} }{ s_\mathrm{offline} }
+    \label{eq:trigger_eff}
+\end{equation}
+
+where $s$ denotes the set of events that have passed the selection given by its subscript. The efficiencies for data and simulation in each data taking year are provided in Figs.~\ref{fig:htoinv_trig_effs_2016}, \ref{fig:htoinv_trig_effs_2017}, and \ref{fig:htoinv_trig_effs_2018}.
+
 \begin{figure}[htbp]
     \centering
     \begin{subfigure}[b]{0.48\textwidth}
@@ -1101,7 +1124,7 @@ Uncertainties for the \acrshort{qcd} renormalisation scale, factorisation scale,
         \caption{2017 simulation}
     \end{subfigure}
     \caption{Efficiency of the \ptmiss--\mht cross triggers in 2017 data and simulation.}
-    \label{fig:htoinv_trig_effs_2016}
+    \label{fig:htoinv_trig_effs_2017}
 \end{figure}
 
 \begin{figure}[htbp]
@@ -1116,8 +1139,10 @@ Uncertainties for the \acrshort{qcd} renormalisation scale, factorisation scale,
         \caption{2018 simulation}
     \end{subfigure}
     \caption{Efficiency of the \ptmiss--\mht cross triggers in 2018 data and simulation.}
-    \label{fig:htoinv_trig_effs_2016}
+    \label{fig:htoinv_trig_effs_2018}
 \end{figure}
+
+% Now write about how we get the scale factor for MC and uncertainties. Need to figure out whether MC is weighted by xsec x lumi (for getting SF if not for efficiency plot)
 
 
 %=========================================================

@@ -86,7 +86,30 @@ fi
 fast_carpenter --mode <mode> --outdir <outdir> ./samples/unskimmed/$year/all.yml ./configs/nonVBF_trigger/${year}_MET-MHT_efficiency.yml
 ```
 
-But because this runs on unskimmed files, they must be readable over xrootd. A script is included in the chip repo to plot the trigger efficiencies and write the scale factors. To make them look more aesthetic, I made a copy of it and changed the styling. Run
+But because this runs on unskimmed files, they must be readable over xrootd.
+
+### 1D plots
+
+The trigger efficiencies are made, by default, in 2D as a function of MET and MHT. To collapse the MHT dimension and plot them in 1D as a function of MET, run
+
+```bash
+cd chip_code
+python trigger_turnons_1D.py <dataframe> <year>
+```
+
+For example, if running over the dataframes already in chip, do, e.g.,
+
+```bash
+year=2016
+cd chip_code
+python trigger_turnons_1D.py ../input_weight_data/nonvbf_trigger_files/$year/tbl_dataset.online.offline.met.mht--met_mht.csv $year
+```
+
+A cut on the MHT can be specified if you don't want to absorb the entire MHT dimension (as it would include underflow and low values). A default is placed at 200 GeV, since that's our analysis-level selection. But the value can be changed with the `-m` argument.
+
+### 2D plots
+
+A script is included in the chip repo to plot the trigger efficiencies and write the scale factors. To make them look more aesthetic, I made a copy of it and changed the styling. Run
 
 ```bash
 cd chip_code/standalone_tools
@@ -101,6 +124,8 @@ python calculate_trigger_effs_esh_colormesh.py -c ../../samples/unskimmed/$year/
 ```
 
 which will make the MET-MHT trigger turn ons in 2D as a function of both MET and MHT, and separately for data and MC. To annotate each cell in the plot with its efficiency, add the argument `-a` above. The styling, etc., can be easily changed in the `plot_2d()` function.
+
+
 
 ## ttbar scale
 

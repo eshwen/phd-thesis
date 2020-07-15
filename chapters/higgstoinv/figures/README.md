@@ -9,8 +9,8 @@ This README should be an indicator of how to make some of the plots included in 
     - [Full Run-2 region plots](#full-run-2-region-plots)
   - [Dark matter limit plot](#dark-matter-limit-plot)
   - [Fit overview](#fit-overview)
-  - [k-factors](#k-factors)
   - [Limit and likelihood scan](#limit-and-likelihood-scan)
+  - [NLO k-factors](#nlo-k-factors)
   - [Trigger efficiencies](#trigger-efficiencies)
   - [ttbar scale](#ttbar-scale)
   - [Things to remember when remaking plots](#things-to-remember-when-remaking-plots)
@@ -39,7 +39,11 @@ This should be documented in [dark_matter_limit/](dark_matter_limit/), as it is 
 
 This is a self-contained plot in [fit_overview.pptx](fit_overview.pptx). Editable in PowerPoint, the single slide can then be saved as a pdf.
 
-## k-factors
+## Limit and likelihood scan
+
+For the code and inputs required to make the limit and likelihood scan plots (in [limits/](limits/) and [likelihood_scan/](likelihood_scan/), respectively), refer to the instructions in <https://gitlab.cern.ch/cms-chip/chip/-/tree/master/fitting> and <https://gitlab.cern.ch/cms-chip/chip/-/tree/master/fitting/plot_fit_results/>. I'll try to maintain keeping a copy of the latest root files and plots in [2016/](2016/), [2017/](2017/), and [2018/](2018/) in case I need a reference or need to regenerate them. The commit datestamp will give an indication as to when they were made.
+
+## NLO k-factors
 
 In the chip repo, navigate to the `chip_code/` directory. For the 2D NLO QCD k-factor plots, just run
 
@@ -65,10 +69,6 @@ and to plot all the electroweak k-factor together, run
 python plot_k_factors.py -d kfactor_monojet_ewk ../input_weight_data/nloSF_files/merged_kfactors_{g,w,z}jets.root
 mv merged_kfactors_zjets.pdf 1D_all_ewk.pdf
 ```
-
-## Limit and likelihood scan
-
-For the code and inputs required to make the limit and likelihood scan plots (in [limits/](limits/) and [likelihood_scan/](likelihood_scan/), respectively), refer to the instructions in <https://gitlab.cern.ch/cms-chip/chip/-/tree/master/fitting> and <https://gitlab.cern.ch/cms-chip/chip/-/tree/master/fitting/plot_fit_results/>. I'll try to maintain keeping a copy of the latest root files and plots in [2016/](2016/), [2017/](2017/), and [2018/](2018/) in case I need a reference or need to regenerate them. The commit datestamp will give an indication as to when they were made.
 
 ## Trigger efficiencies
 

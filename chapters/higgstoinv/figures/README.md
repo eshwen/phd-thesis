@@ -10,8 +10,9 @@ This README should be an indicator of how to make some of the plots included in 
   - [Dark matter limit plot](#dark-matter-limit-plot)
   - [Fit overview](#fit-overview)
   - [k-factors](#k-factors)
-  - [Limit and likelihood scan plots](#limit-and-likelihood-scan-plots)
-  - [ttbar scale plots](#ttbar-scale-plots)
+  - [Limit and likelihood scan](#limit-and-likelihood-scan)
+  - [Trigger efficiencies](#trigger-efficiencies)
+  - [ttbar scale](#ttbar-scale)
   - [Things to remember when remaking plots](#things-to-remember-when-remaking-plots)
 
 ## `fast-plotter` plots
@@ -65,11 +66,43 @@ python plot_k_factors.py -d kfactor_monojet_ewk ../input_weight_data/nloSF_files
 mv merged_kfactors_zjets.pdf 1D_all_ewk.pdf
 ```
 
-## Limit and likelihood scan plots
+## Limit and likelihood scan
 
 For the code and inputs required to make the limit and likelihood scan plots (in [limits/](limits/) and [likelihood_scan/](likelihood_scan/), respectively), refer to the instructions in <https://gitlab.cern.ch/cms-chip/chip/-/tree/master/fitting> and <https://gitlab.cern.ch/cms-chip/chip/-/tree/master/fitting/plot_fit_results/>. I'll try to maintain keeping a copy of the latest root files and plots in [2016/](2016/), [2017/](2017/), and [2018/](2018/) in case I need a reference or need to regenerate them. The commit datestamp will give an indication as to when they were made.
 
-## ttbar scale plots
+## Trigger efficiencies
+
+For the plots of the trigger efficiencies, the dataframes are already available in chip under `input_weight_data/nonvbf_trigger_files/`. They can be remade if, e.g., the binning needs to be adjusted. I would then need to run, e.g.,
+
+```bash
+year=2016
+if (( $year == 2016 )); then
+    lumi=35920
+elif (( $year == 2017 )); then
+    lumi=41530
+elif (( $year == 2018 )); then
+    lumi=59740
+fi
+fast_carpenter --mode <mode> --outdir <outdir> ./samples/unskimmed/$year/all.yml ./configs/nonVBF_trigger/${year}_MET-MHT_efficiency.yml
+```
+
+But because this runs on unskimmed files, they must be readable over xrootd. A script is included in the chip repo to plot the trigger efficiencies and write the scale factors. To make them look more aesthetic, I made a copy of it and changed the styling. Run
+
+```bash
+cd chip_code/standalone_tools
+python calculate_trigger_effs_esh_colormesh.py -c ../../samples/unskimmed/$year/all.yml -l $lumi -o trigger_effs_${year} <outdir from carpenter>/tbl_dataset.online.offline.met.mht--met_mht.csv
+```
+
+Don't worry about the errors that occur later on. They only affect the scale factor plots. For example, if running over the dataframes already in chip, do
+
+```bash
+cd chip_code/standalone_tools
+python calculate_trigger_effs_esh_colormesh.py -c ../../samples/unskimmed/$year/all.yml -l $lumi -o trigger_effs_${year} ../../input_weight_data/nonvbf_trigger_files/$year/tbl_dataset.online.offline.met.mht--met_mht.csv
+```
+
+which will make the MET-MHT trigger turn ons in 2D as a function of both MET and MHT, and separately for data and MC. To annotate each cell in the plot with its efficiency, add the argument `-a` above. The styling, etc., can be easily changed in the `plot_2d()` function.
+
+## ttbar scale
 
 To make the plots showing the variations for the variations on the QCD renormalisation and factorisation scale with the ttbar samples, run any of the configs in the chip repo over the NLO ttbar Powheg samples. Then, run `top_systs_postproc.py` to make the plots that include the combinations of individual variations with
 

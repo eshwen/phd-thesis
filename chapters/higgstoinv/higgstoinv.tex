@@ -878,6 +878,8 @@ The following figures reveal the pre-fit \ptmiss distributions in each \gls{SB} 
 
 % Here, give an overview of how the background estimation is done. Just say what the procedure is, generally, for each background
 
+Accurate estimation of the \acrlong{sm} background processes in the signal region is paramount to a search for new physics. Mismeasured backgrounds and uncertainties can wash out traces of signal and affect the fit to data. The yields of the minor backgrounds are taken directly from simulation. However, the lost lepton, invisibly decaying \PZ boson, and \acrshort{qcd} multijet processes must be predicted more carefully. The single lepton \glspl{CR} are used to constrain the lost lepton background, arising primarily from \ttbarpjets and \wtolnupjets. The dilepton and single photon \glspl{CR} predict the \ztonunupjets background. These processes rely on the \acrlong{mc} yields in those regions, and transfer factors arising from the data-\acrshort{mc} discrepancy. Sidebands to the signal region estimate \acrshort{qcd} multijet contributions from data. Fig.~\ref{fig:htoinv_fit_overview} illustrates the correspondence between the analysis regions and background predictions.
+
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.5\textwidth]{figures/fit_overview.pdf}
@@ -919,7 +921,6 @@ The effects of \gls{jet} mismeasurements are, however, difficult to quantify. Wi
 
 % Weights/SFs and systematics in the analysis I need to still describe:
 %   - JES/JER
-%   - trigger
 
 In order for simulated events, particularly for background processes, to resemble \acrshort{lhc} data as closely as possible, many corrections and weights are applied. These are discussed in more detail in the subsequent sections. All weights and associated systematic uncertainties are applied to all samples for all data taking years, unless stated otherwise. A final event weight $w_{\mathrm{event}}$ is the product of the weights from all of the individual sources $i$ that provide one:
 \begin{equation}
@@ -1095,7 +1096,7 @@ A dedicated \gls{CR} is formed to assure orthogonality with the signal region an
     \label{eq:trigger_eff}
 \end{equation}
 
-where $s$ denotes the set of events that have passed the selection given by its subscript. The efficiencies are binned in two dimensions as a function of \ptmissNoMu and \mht. They are provided for data and simulation in each data taking year in Figs.~\ref{fig:htoinv_trig_effs_2016}, \ref{fig:htoinv_trig_effs_2017}, and \ref{fig:htoinv_trig_effs_2018}.
+where $s$ denotes the set of events that have passed the selection given by its subscript. For simulation, events are weighted by cross section as per Eq.~\ref{eq:xs_weight}. The efficiencies are binned in two dimensions as a function of \ptmissNoMu and \mht. They are provided for data and simulation in each data taking year in Figs.~\ref{fig:htoinv_trig_effs_2016}, \ref{fig:htoinv_trig_effs_2017}, and \ref{fig:htoinv_trig_effs_2018}.
 
 \begin{figure}[htbp]
     \centering
@@ -1108,7 +1109,7 @@ where $s$ denotes the set of events that have passed the selection given by its 
         \includegraphics[width=\textwidth]{figures/trigger_efficiencies/2016/eff-mc--genWeight-sumw.pdf}
         \caption{2016 simulation}
     \end{subfigure}
-    \caption{Efficiency of the \ptmiss--\mht cross triggers in 2016 data and simulation. The momentum of the muon used to select events that }
+    \caption[Efficiency of the HLT \ptmiss--\mht cross triggers in 2016 data and simulation]{Efficiency of the \acrshort{hlt} \ptmiss--\mht cross triggers in 2016 data and simulation. The momentum of the muon used to select events that compute the efficiency is added to the \ptmiss in order to approximate the calculation in the \acrlong{hlt}.}
     \label{fig:htoinv_trig_effs_2016}
 \end{figure}
 
@@ -1123,7 +1124,7 @@ where $s$ denotes the set of events that have passed the selection given by its 
         \includegraphics[width=\textwidth]{figures/trigger_efficiencies/2017/eff-mc--genWeight-sumw.pdf}
         \caption{2017 simulation}
     \end{subfigure}
-    \caption{Efficiency of the \ptmiss--\mht cross triggers in 2017 data and simulation.}
+    \caption[Efficiency of the HLT \ptmiss--\mht cross triggers in 2017 data and simulation]{Efficiency of the \ptmiss--\mht cross triggers in 2017 data and simulation. The momentum of the muon used to select events that compute the efficiency is added to the \ptmiss in order to approximate the calculation in the \acrlong{hlt}.}
     \label{fig:htoinv_trig_effs_2017}
 \end{figure}
 
@@ -1138,7 +1139,7 @@ where $s$ denotes the set of events that have passed the selection given by its 
         \includegraphics[width=\textwidth]{figures/trigger_efficiencies/2018/eff-mc--genWeight-sumw.pdf}
         \caption{2018 simulation}
     \end{subfigure}
-    \caption{Efficiency of the \ptmiss--\mht cross triggers in 2018 data and simulation.}
+    \caption[Efficiency of the HLT \ptmiss--\mht cross triggers in 2018 data and simulation]{Efficiency of the \ptmiss--\mht cross triggers in 2018 data and simulation. The momentum of the muon used to select events that compute the efficiency is added to the \ptmiss in order to approximate the calculation in the \acrlong{hlt}.}
     \label{fig:htoinv_trig_effs_2018}
 \end{figure}
 
@@ -1149,8 +1150,6 @@ The weight applied to events in simulation $w_{\mathrm{trg}}$ is simply the effi
 \end{equation}
 
 Uncertainties are estimated using the Clopper-Pearson method~\cite{10.1093/biomet/26.4.404}. In the signal region, sidebands, and muon \glspl{CR}, weights from the efficiencies of the \ptmiss--\mht cross triggers are used. In the electron and photon \glspl{CR}, the efficiencies are calculated in the same manner, instead from the triggers in Tabs.~\ref{tab:htoinv_ele_pd_triggers} and \ref{tab:htoinv_photon_pd_triggers}.
-
-% Need to figure out whether MC is weighted by xsec x lumi (for getting SF if not for efficiency plot)
 
 
 %=========================================================

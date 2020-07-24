@@ -6,6 +6,8 @@
 
 Repository containing everything related to my thesis. **The hyperlinks for the badges still work while the repo is private, so quick links to the pdf downloads of the thesis are still accessible.**
 
+Trello board for task list: <https://trello.com/b/5Nrw8jb2/thesis>
+
 ## Table of Contents
 
 - [phd-thesis](#phd-thesis)

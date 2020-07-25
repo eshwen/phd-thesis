@@ -1,0 +1,38 @@
+\section{Background estimation}
+\label{sec:htoinv_background_est}
+
+% Here, give an overview of how the background estimation is done. Just say what the procedure is, generally, for each background
+
+Accurate estimation of the \acrlong{sm} background processes in the signal region is paramount to a search for new physics. Mismeasured backgrounds and uncertainties can wash out traces of signal and affect the fit to data. The yields of the minor backgrounds are taken directly from simulation. However, the lost lepton, invisibly decaying \PZ boson, and \acrshort{qcd} multijet processes must be predicted more carefully. The single lepton \glspl{CR} are used to constrain the lost lepton background, arising primarily from \ttbarpjets and \wtolnupjets. The dilepton and single photon \glspl{CR} predict the \ztonunupjets background. These processes rely on the \acrlong{mc} yields in those regions, and transfer factors arising from the data-\acrshort{mc} discrepancy. Sidebands to the signal region estimate \acrshort{qcd} multijet contributions from data. Fig.~\ref{fig:htoinv_fit_overview} illustrates the correspondence between the analysis regions and background predictions.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figures/fit_overview.pdf}
+    \caption[An infographic showcasing the role of each analysis region in the final fit]{An infographic showcasing the role of each analysis region in the final fit. The \glspl{CR} predict the lost lepton and \ztonunu backgrounds, and a \gls{CR}-only fit informs the \acrshort{qcd} multijet prediction that contributes to the eventual background determination in the signal region.}
+    \label{fig:htoinv_fit_overview}
+\end{figure}
+
+
+%=========================================================
+
+
+\subsection{Lost lepton (\texorpdfstring{\PW}{W} and \texorpdfstring{$\ttbarpjets$}{ttbar plus jets})}
+\label{subsec:htoinv_lost_lepton_bkg}
+
+
+%=========================================================
+
+
+\subsection{\texorpdfstring{\ztonunupjets}{Z to nunu + jets}}
+\label{subsec:htoinv_znunu_bkg}
+
+
+%=========================================================
+
+
+\subsection{QCD multijet}
+\label{subsec:htoinv_qcd_multijet_bkg}
+
+To reiterate what has been mentioned previously, estimating \acrshort{qcd} multijet occupancy directly from simulation does not provide an adequate representation of the process. This can be mitigated by using a data-driven method to estimate it from the multijet-enriched sidebands described in Chpt.~\ref{subsec:htoinv_sidebands}.
+
+The effects of \gls{jet} mismeasurements are, however, difficult to quantify. With a final state of several \glspl{jet}, low, or even no, \ptmiss is expected. Therefore, a single mismeasured \gls{jet} will introduce artificial \ptvecmiss in the direction of that jet. A low $\mindphiAB{\mathrm{j}}{\ptvecmiss}$ is therefore expected. Though it is not just this process that suffers---\glspl{jet} from ``cleaner'' processes may also be affected---those with real \ptmiss in an event (e.g., $\ztonunupjets$) are unlikely to be significantly affected by one stray object. The enormous cross section of \acrshort{qcd} multijet also amplifies the problem, making the process as a whole more sensitive to, e.g., fluctuations in the calorimeter response that would affect the energy measurement.

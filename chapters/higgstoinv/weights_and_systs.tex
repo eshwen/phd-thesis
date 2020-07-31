@@ -237,7 +237,7 @@ Uncertainties are estimated using the Clopper-Pearson method~\cite{10.1093/biome
 %=========================================================
 
 
-\subsection{The \texorpdfstring{\ttbar}{ttbar} process}
+\subsection{Top quark processes}
 \label{subsec:htoinv_ttbar_uncerts}
 
 \ttbarpjets is the dominant background for the \ttH process. As such, much effort ensures it is modelled correctly. Variations of the \acrshort{qcd} renormalisation and factorisation scales provide an uncertainty only to the shape of the \ptmiss spectrum of \ttbar. Reweighting of the top quark \pt distribution to \acrshort{nnlo} accuracy is also performed, yielding a shape correction and associated uncertainty.
@@ -318,12 +318,21 @@ The envelope is characterised by the correlated variations $\muRAmuFB{\uparrow}{
 \subsubsection{Top quark \texorpdfstring{\pt}{pT} reweighting}
 \label{subsubsec:htoinv_top_pt_reweighting}
 
-The top quark \pt distribution has been shown to be harder in simulation than data~\cite{Sirunyan:2018ucr}. Developed by members of the \acrshort{cms} Collaboration, the ratio is taken between the \ttbar cross section computed at \acrshort{nnlo} \acrshort{qcd} $+$ \acrshort{nlo} electroweak accuracy to the \acrshort{nlo} \POWHEG \acrshort{mc} as function of top quark \pt. An analytic function is used to fit the distribution.\footnote{If the paper/PAS for HIG-19-008 with this fit function in, reference it instead of giving the equation.} The same function is used for all \ttbarpjets samples for all data taking years:
+The top quark \pt distribution has been shown to be harder in simulation than data~\cite{Sirunyan:2018ucr}. Developed initially by members of the \acrshort{cms} Collaboration, the ratio is taken between the \ttbar cross section computed at \acrshort{nnlo} \acrshort{qcd} $+$ \acrshort{nlo} electroweak accuracy to the \acrshort{nlo} \POWHEG \acrshort{mc} as function of top quark \pt. An analytic function is used to fit the distribution.\footnote{If the paper/PAS for HIG-19-008 with the original fit function in, reference it.} For the purposes of reliably estimating the uncertainties, we changed the fitting function and reduced its complexity. The same nominal function is used for all \ttbarpjets samples for all data taking years:
 \begin{equation}
-    f(\pt) = \exp(a + b \cdot \pt + c \cdot \pt^2 + \frac{d}{\pt + e})
+    f(\pt) = \exp(a + b \cdot \pt + c \cdot \pt^2)
 \end{equation}
 
-where the coefficients are $a = -2.02274 \times 10^{-1}$, $b = 1.09734 \times 10^{-4}$, $c -1.30088 \times 10^{-7}$, $d = 5.83494 \times 10^1$, and $e = 1.96252 \times 10^2$. For a top or antitop quark, the scale factor is given by the value of $f$ for the particle's generator-level \pt. The event weight is then the square root of the product of the top and antitop scale factors. We assume the uncertainty on the weight is equal to it, making the downward variation equal to unity and the upward variation the square of the weight.
+where the coefficients are $a = 1.614 \times 10^{-2}$, $b = -1.966 \times 10^{-4}$, and $c -1.454 \times 10^{-8}$. For a top or antitop quark, the scale factor is given by the value of $f$ for the particle's generator-level \pt. The event weight is then the square root of the product of the top and antitop scale factors.
+
+The uncertainties are acquired from the fit itself over theoretical uncertainties inherent in \acrshort{mc}. This was to avoid double counting with respect to the renormalisation and factorisation scale uncertainty in Chpt.~\ref{subsubsec:ttbar_renorm_fact_scale_uncert}, as overlap would be present. For one parameter in the fit, the upward and downward variations were estimated. The fit function was then recalculated, fixing the parameter of interest to the variation. Providing upward and downward functions, the systematic uncertainty attributed to the parameter is simply the event weight calculated with these functions over the nominal. Separate, uncorrelated uncertainties were calculated for each parameter in the fit. The nominal function and the variations are shown in Fig.~\ref{fig:top_pt_reweighting}.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figures/top_pt_reweighting/top_pt_reweighting_central.pdf}
+    \caption[The ratio of the NNLO to NLO \ttbar cross section as a function of top quark \pt. The fit to the distribution---along with the uncertainties in the parameters---are shown]{The ratio of the \acrshort{nnlo} to \acrshort{nlo} \ttbar cross section as a function of top quark \pt. The fit to the distribution---along with the uncertainties in the parameters---are shown.}
+    \label{fig:top_pt_reweighting}
+\end{figure}
 
 We aimed to remove the dependence on normalisation in the same fashion as for the \acrshort{qcd} scale to consider the correction only to the shape of the distributions and not also the normalisation. However, the normalisation factors were found to be unity for all datasets. Hence, no additional factor was required.
 

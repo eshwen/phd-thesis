@@ -240,7 +240,7 @@ Uncertainties are estimated using the Clopper-Pearson method~\cite{10.1093/biome
 \subsection{Top quark processes}
 \label{subsec:htoinv_ttbar_uncerts}
 
-\ttbarpjets is the dominant background for the \ttH process. As such, much effort ensures it is modelled correctly. Variations of the \acrshort{qcd} renormalisation and factorisation scales provide an uncertainty only to the shape of the \ptmiss spectrum of \ttbar. Reweighting of the top quark \pt distribution to \acrshort{nnlo} accuracy is also performed, yielding a shape correction and associated uncertainty.
+\ttbarpjets is the dominant background for the \ttH category. The $\ttbar X$ backgrounds also have a non-negligible presence. As such, much effort ensures they are modelled correctly. Variations of the \acrshort{qcd} renormalisation and factorisation scales provide an uncertainty only to the shape of the \ptmiss spectrum of \ttbar and $\ttbar X$ backgrounds, and \ttH signal. Reweighting of the top quark \pt distribution to \acrshort{nnlo} accuracy is also performed for \ttbar, yielding a shape correction and associated uncertainty.
 
 
 %=========================================================
@@ -271,28 +271,7 @@ The renormalisation \muR and factorisation scale \muF chosen for \acrshort{mc} s
     \label{eq:ttbar_scale_fvar}
 \end{equation}
 
-The table below documents the values of $f_{\mathrm{var}}$. The values did not differ until the fourth decimal place between the final states or datasets.
-
-\begin{table}[htbp]
-    \centering
-    \begin{tabular}{cc}
-    \hline
-    Variation & $f_{\mathrm{var}}$ \\ \hline
-    $\muRAmuFB{\downarrow}{\downarrow}$ & 0.880\\
-    $\muRAmuFB{\downarrow}{\, \mathrm{nom.}}$ & 0.897\\
-    $\muRAmuFB{\downarrow}{ \uparrow}$ & 0.910\\
-    $\muRAmuFB{\, \mathrm{nom.}}{\downarrow}$ & 0.974\\
-    $\muRAmuFB{\, \mathrm{nom.}}{ \uparrow}$ & 1.021\\
-    $\muRAmuFB{\uparrow}{\downarrow}$ & 1.082\\
-    $\muRAmuFB{\uparrow}{\, \mathrm{nom.}}$ & 1.116\\
-    $\muRAmuFB{\uparrow}{\uparrow}$ & 1.145\\
-    \hline
-    \end{tabular}
-    \caption{The values of factor $f_{\mathrm{var}}$ for each \acrshort{qcd} renormalisation and factorisation scale variation as calculated for the \ttbar background samples. These factors remove the effect of a change in the normalisation of the event yields.}
-    \label{tab:f_var_ttbar_scale}
-\end{table}
-
-The envelope is characterised by the correlated variations $\muRAmuFB{\uparrow}{\uparrow}$, and $\muRAmuFB{\downarrow}{\downarrow}$. Confirmed by Fig.~\ref{fig:htoinv_ttbar_scale}.
+These are computed individually for each decay and data taking year. The envelope is characterised by the correlated variations $\muRAmuFB{\uparrow}{\uparrow}$, and $\muRAmuFB{\downarrow}{\downarrow}$. Confirmed by Fig.~\ref{fig:htoinv_ttbar_scale}, an example is given for the \ttbar background in the signal region. While the sizes of the variations appear large, they are very similar between the signal and \glspl{CR}, cancelling to a large degree in the transfer factors.
 
 \begin{figure}[htbp]
     \centering
@@ -311,6 +290,8 @@ The envelope is characterised by the correlated variations $\muRAmuFB{\uparrow}{
 
 % Plots from Scenario 5, 8th July 2020
 
+For each process (i.e., \ttbar, and the accompanying boson $X$ in $\ttbar X$), a separate systematic uncertainty is derived.\footnote{$\ttH(\HepProcess{\PH \to \text{invisible}})$ signal and $\ttH(\HepProcess{\PH \to \text{visible}})$ background are grouped as one process since the kinematics and generation are consistent between them.} Since different generators and settings may be used for each dataset, it is appropriate to ensure they are uncorrelated.
+
 
 %=========================================================
 
@@ -325,7 +306,7 @@ The top quark \pt distribution has been shown to be harder in simulation than da
 
 where the coefficients are $a = 1.614 \times 10^{-2}$, $b = -1.966 \times 10^{-4}$, and $c -1.454 \times 10^{-8}$. For a top or antitop quark, the scale factor is given by the value of $f$ for the particle's generator-level \pt. The event weight is then the square root of the product of the top and antitop scale factors.
 
-The uncertainties are acquired from the fit itself over theoretical uncertainties inherent in \acrshort{mc}. This was to avoid double counting with respect to the renormalisation and factorisation scale uncertainty in Chpt.~\ref{subsubsec:ttbar_renorm_fact_scale_uncert}, as overlap would be present. For one parameter in the fit, the upward and downward variations were estimated. The fit function was then recalculated, fixing the parameter of interest to the variation. Providing upward and downward functions, the systematic uncertainty attributed to the parameter is simply the event weight calculated with these functions over the nominal. Separate, uncorrelated uncertainties were calculated for each parameter in the fit. The nominal function and the variations are shown in Fig.~\ref{fig:top_pt_reweighting}.
+The uncertainties are acquired from the fit itself over theoretical uncertainties inherent in \acrshort{mc} calculations. This was to avoid double counting with respect to the renormalisation and factorisation scale uncertainty in Chpt.~\ref{subsubsec:ttbar_renorm_fact_scale_uncert}, as overlap would be present and otherwise difficult to disentangle. For each parameter in the fit, the upward and downward variations were estimated. The fit function was then recalculated, fixing the parameter of interest to the variation. Providing upward and downward functions, the systematic uncertainty attributed to the parameter is simply the event weight calculated with these functions over the nominal. Separate, uncorrelated uncertainties were estimated for each parameter in the fit. The nominal function and associated variations are shown in Fig.~\ref{fig:top_pt_reweighting}.
 
 \begin{figure}[htbp]
     \centering

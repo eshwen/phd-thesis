@@ -14,7 +14,7 @@ This README should be an indicator of how to make some of the plots included in 
   - [Top pt reweighting](#top-pt-reweighting)
     - [Aesthetic changes to legend](#aesthetic-changes-to-legend)
     - [Plots with theory uncertainties](#plots-with-theory-uncertainties)
-    - [Plots from HIG-19-008](#plots-from-hig-19-008)
+    - [Plots with all functions overlaid](#plots-with-all-functions-overlaid)
   - [Trigger efficiencies](#trigger-efficiencies)
   - [ttbar scale](#ttbar-scale)
   - [Things to remember when remaking plots](#things-to-remember-when-remaking-plots)
@@ -151,9 +151,9 @@ compTopPtReweighting("pdfDown")
 compTopPtReweighting("pdfUp")
 ```
 
-### Plots from HIG-19-008
+### Plots with all functions overlaid
 
-The original macro provided by the HIG-19-008 team can also be run for a comparison. _Not_ in the interactive ROOT session, just run
+The ROOT files accompanying the plots for the central and theory uncertainties must be created first. Then, to plot all of the functions on a single axis, run (outside of an interactive ROOT session)
 
 ```bash
 root -l -b -q plotTopPtReweighting.C

@@ -11,12 +11,12 @@ This README should be an indicator of how to make some of the plots included in 
   - [Fit overview](#fit-overview)
   - [Limit and likelihood scan](#limit-and-likelihood-scan)
   - [NLO k-factors](#nlo-k-factors)
+  - [QCD scale for top processes](#qcd-scale-for-top-processes)
   - [Top pt reweighting](#top-pt-reweighting)
     - [Aesthetic changes to legend](#aesthetic-changes-to-legend)
     - [Plots with theory uncertainties](#plots-with-theory-uncertainties)
     - [Plots with all functions overlaid](#plots-with-all-functions-overlaid)
   - [Trigger efficiencies](#trigger-efficiencies)
-  - [ttbar scale](#ttbar-scale)
   - [Things to remember when remaking plots](#things-to-remember-when-remaking-plots)
 
 ## `fast-plotter` plots
@@ -73,6 +73,22 @@ and to plot all the electroweak k-factor together, run
 python plot_k_factors.py -d kfactor_monojet_ewk ../input_weight_data/nloSF_files/merged_kfactors_{g,w,z}jets.root
 mv merged_kfactors_zjets.pdf 1D_all_ewk.pdf
 ```
+
+## QCD scale for top processes
+
+To make the plots showing the variations for the variations on the QCD renormalisation and factorisation scale with the ttbar samples, run any of the configs in the chip repo over the NLO ttbar Powheg samples. Then, run `top_systs_postproc.py` to make the plots that include the combinations of individual variations with
+
+```bash
+python chip_code/top_systs_postproc.py -e pdf <outdir from carpenter> <year>
+```
+
+To make the plots that exclude those variations, comment them out in the `weights_to_plot` dictionary. It might also be worth changing the `matplotlib` colour map to something more contrasting with
+
+```bash
+sed -i 's/Set3/tab10/g' chip_code/top_systs_postproc.py
+```
+
+Then run the command above to regenerate the plots.
 
 ## Top pt reweighting
 
@@ -213,24 +229,6 @@ python calculate_trigger_effs_esh_colormesh.py -c ../../samples/unskimmed/$year/
 ```
 
 which will make the MET-MHT trigger turn ons in 2D as a function of both MET and MHT, and separately for data and MC. To annotate each cell in the plot with its efficiency, add the argument `-a` above. The styling, etc., can be easily changed in the `plot_2d()` function.
-
-
-
-## ttbar scale
-
-To make the plots showing the variations for the variations on the QCD renormalisation and factorisation scale with the ttbar samples, run any of the configs in the chip repo over the NLO ttbar Powheg samples. Then, run `top_systs_postproc.py` to make the plots that include the combinations of individual variations with
-
-```bash
-python chip_code/top_systs_postproc.py -e pdf <outdir from carpenter> <year>
-```
-
-To make the plots that exclude those variations, comment them out in the `weights_to_plot` dictionary. It might also be worth changing the `matplotlib` colour map to something more contrasting with
-
-```bash
-sed -i 's/Set3/tab10/g' chip_code/top_systs_postproc.py
-```
-
-Then run the command above to regenerate the plots.
 
 ## Things to remember when remaking plots
 

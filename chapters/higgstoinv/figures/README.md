@@ -11,6 +11,10 @@ This README should be an indicator of how to make some of the plots included in 
   - [Fit overview](#fit-overview)
   - [Limit and likelihood scan](#limit-and-likelihood-scan)
   - [NLO k-factors](#nlo-k-factors)
+  - [Top pt reweighting](#top-pt-reweighting)
+    - [Aesthetic changes to legend](#aesthetic-changes-to-legend)
+    - [Plots with theory uncertainties](#plots-with-theory-uncertainties)
+    - [Plots from HIG-19-008](#plots-from-hig-19-008)
   - [Trigger efficiencies](#trigger-efficiencies)
   - [ttbar scale](#ttbar-scale)
   - [Things to remember when remaking plots](#things-to-remember-when-remaking-plots)
@@ -68,6 +72,91 @@ and to plot all the electroweak k-factor together, run
 ```bash
 python plot_k_factors.py -d kfactor_monojet_ewk ../input_weight_data/nloSF_files/merged_kfactors_{g,w,z}jets.root
 mv merged_kfactors_zjets.pdf 1D_all_ewk.pdf
+```
+
+## Top pt reweighting
+
+This is done in a self-contained macro. First, navigate to the `chip_code/` directory in the chip repo, then load the macro in an interactive ROOT session with
+
+```bash
+root -l
+.L compTopPtReweightingHistoNew.C+
+```
+
+To plot just the central function with uncertainties on the fit parameters, run
+
+```C++
+compTopPtReweighting("central")
+```
+
+### Aesthetic changes to legend
+
+For slightly more aesthetic changes to legend entries, add the line
+
+```C++
+string fit_param_letters [5] = {"a", "b", "c", "d", "e"};
+```
+
+before the line
+
+```C++
+for (int i = 0; i < num_fit_params; ++i) {
+```
+
+Then, replace the lines
+
+```C++
+String f12UpName = Form("parameter %i up", i);
+```
+
+with
+
+```C++
+TString f12UpName = Form("parameter %s up", fit_param_letters[i].c_str());
+```
+
+and
+
+```C++
+String f12DownName = Form("parameter %i down", i);
+```
+
+with
+
+```C++
+TString f12DownName = Form("parameter %s down", fit_param_letters[i].c_str());
+```
+
+Then, also replace the lines
+
+```C++
+string toDisp_str = "#splitline{Fit func. = ";
+toDisp_str += FormulaFitFunction2.Data();
+```
+
+with
+
+```C++
+string toDisp_str = "#splitline{Fit func. = a + bx + cx^{2}";
+```
+
+### Plots with theory uncertainties
+
+Make plots that account for the theory uncertainties with
+
+```C++
+compTopPtReweighting("scaleDown")
+compTopPtReweighting("scaleUp")
+compTopPtReweighting("pdfDown")
+compTopPtReweighting("pdfUp")
+```
+
+### Plots from HIG-19-008
+
+The original macro provided by the HIG-19-008 team can also be run for a comparison. _Not_ in the interactive ROOT session, just run
+
+```bash
+root -l -b -q plotTopPtReweighting.C
 ```
 
 ## Trigger efficiencies

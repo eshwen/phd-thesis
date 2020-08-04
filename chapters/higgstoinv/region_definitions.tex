@@ -254,6 +254,61 @@ The following figures reveal the pre-fit \ptmiss distributions in each \gls{CR} 
 %=========================================================
 
 
+\subsubsection{Photon purity measurement for the \texorpdfstring{\singlePhotonCr}{photon} control region}
+\label{subsubsec:htoinv_photon_purity}
+
+Photons are reconstructed from clusters in the \acrshort{ecal}. They can usually be discriminated from other sources leaving \acrshort{ecal} deposits due to the properties of the deposits themselves, as well as the lack of other signatures that typically belong to other particles. However, this method is imperfect, and occasionally other particles will incorrectly be identified as photons (known as ``fakes''). The leading sources of fake photons is from \acrshort{qcd} multijet events where a \gls{jet} is misidentified as such. Due to the high cross section of the process, even a small rate of fake photons becomes important to consider.
+
+In order to separate real photons from fakes in the \singlePhotonCr \gls{CR}, a purity measurement is performed. We define the purity as the fraction of reconstructed photons that are from an isolated photon emerging from the hard scatter of the event, rather than a fake. The variable $\sieie$ is able to distinguish between real and fake photons with sufficient power. A peak with a hard cut off at $\sieie \approx \text{0.01}$ is observed for real photons, while fakes possess a less pronounced peak and much slower decline above that threshold. As such, we perform a template fit to the distribution in data to extract the purity.
+
+As inputs to the fit, we select photons in data by applying the medium identification requirements in Tab.~\ref{tab:htoinv_photon_ID_barrel} with the exception of $\sieie$ to observe the full range. Photons from \singlePhotonCr simulation are selected with the same criteria and are used to define the real photon template. A fake photon template is obtained from data by requiring at least one of the isolation criteria from the medium ID in Tab.~\ref{tab:htoinv_photon_ID_barrel} to be unfulfilled. This ensures the photons from this set do not overlap with the real photons from data.
+
+The templates are derived in separate bins of photon \pt, and the purity measurement is performed separately for each data taking year. The following event selection is applied:
+
+\medskip
+\begin{easylist}[itemize]
+    \cutflowlistprops
+    & Photon trigger requirement for the respective dataset from Tab.~\ref{tab:htoinv_photon_pd_triggers}
+    & \ptmiss filters from Chpt.~\ref{subsec:htoinv_other_filters}
+    & $\ptmiss < \text{60}\GeV$
+    & At least one jet with $\pt > \text{80}\GeV$ and $\abseta < \text{2.4}$ that is separated from any photon with $\Delta R > \text{0.4}$
+    & If a second jet is present, it is required to have $\pt > \text{40}\GeV$ and $\abseta < \text{2.4}$, also separated from any photon with $\Delta R > \text{0.4}$
+    & $\HT > \text{200} \GeV$
+\end{easylist}
+
+\medskip
+
+\noindent{}A combination of cuts are used to select photons appropriately and ensure the phase space resembles that of the \singlePhotonCr \gls{CR}. The shapes of the real and fake templates are fit to the data using a likelihood function in the range $\text{0.004} \leq \sieie \leq \text{0.02}$. By calculating the purity within acceptance (i.e., $\sieie \leq \text{0.01}$ as given by the medium ID requirement), the \emph{impurity} can be derived as a function of photon \pt. An exponential function is fitted to interpolate within the range that also serves to extrapolate above it. Fig.~\ref{} illustrates the impurity vs photon \pt for each data taking year. A 25\,\% uncertainty around the fit is assumed to account for effects related to the binning of the \sieie distribution.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{figures/photon_purity/2016/impurity_plot_2016.pdf}
+        \caption{2016}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{figures/photon_purity/2017/impurity_plot_2017.pdf}
+        \caption{2017}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{figures/photon_purity/2018/impurity_plot_2018.pdf}
+        \caption{2018}
+    \end{subfigure}
+    \caption[Impurity of photons in data as a function of \pt for each data taking year in Run-2]{Impurity of photons in data as a function of \pt for each data taking year in Run-2. An exponential is fit to the binned data with a 25\,\% uncertainty assigned to account for binning effects.}
+    \label{fig:htoinv_photon_impurity}
+\end{figure}
+
+In the analysis, the purity measurement is used to estimate the \acrshort{qcd} multijet background in the \singlePhotonCr \gls{CR}, replacing the contribution from \acrshort{mc}. For each event in data that enters the region, a \acrshort{qcd} multijet pseudo-event is created with the same properties---notably \ptmiss and photon \pt. A weight is assigned to it equal to the impurity calculated from the photon's \pt, with the associated uncertainty also propagated. The new \acrshort{qcd} background is therefore generated with the same shape as the data and weighted to represent the rate of non-prompt photons.
+
+% Finish description of how purity measurement actually applied
+% See https://root.cern/doc/master/classTFractionFitter.html for implementation
+
+
+%=========================================================
+
+
 \subsection{Sidebands to the signal region}
 \label{subsec:htoinv_sidebands}
 

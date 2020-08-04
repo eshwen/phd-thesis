@@ -11,6 +11,7 @@ This README should be an indicator of how to make some of the plots included in 
   - [Fit overview](#fit-overview)
   - [Limit and likelihood scan](#limit-and-likelihood-scan)
   - [NLO k-factors](#nlo-k-factors)
+  - [Photon purity](#photon-purity)
   - [QCD scale for top processes](#qcd-scale-for-top-processes)
   - [Top pt reweighting](#top-pt-reweighting)
     - [Aesthetic changes to legend](#aesthetic-changes-to-legend)
@@ -74,12 +75,16 @@ python plot_k_factors.py -d kfactor_monojet_ewk ../input_weight_data/nloSF_files
 mv merged_kfactors_zjets.pdf 1D_all_ewk.pdf
 ```
 
+## Photon purity
+
+To make the plots that showcase the impurity as a function of photon pt, or the data with the fit and templates overlaid, follow the instructions in `configs/nonVBF_instructions.md` in the chip repo. It should be fairly self-explanatory.
+
 ## QCD scale for top processes
 
-To make the plots showing the variations for the variations on the QCD renormalisation and factorisation scale with the ttbar samples, run any of the configs in the chip repo over the NLO ttbar Powheg samples. Then, run `top_systs_postproc.py` to make the plots that include the combinations of individual variations with
+To make the plots showing the variations for the variations on the QCD renormalisation and factorisation scale with the ttbar-related samples, run `fast-carpenter` according to the instructions under `configs/2017/top_syst_studies/README.md` in the chip repo. Then, run `top_systs_postproc.py` to make the plots that include the combinations of individual variations with
 
 ```bash
-python chip_code/top_systs_postproc.py -e pdf <outdir from carpenter> <year>
+python chip_code/top_systs_postproc.py -e pdf -w <weight> <outdir from carpenter> <year>
 ```
 
 To make the plots that exclude those variations, comment them out in the `weights_to_plot` dictionary. It might also be worth changing the `matplotlib` colour map to something more contrasting with
@@ -88,7 +93,7 @@ To make the plots that exclude those variations, comment them out in the `weight
 sed -i 's/Set3/tab10/g' chip_code/top_systs_postproc.py
 ```
 
-Then run the command above to regenerate the plots.
+Then run the command above to regenerate the plots. If these are insufficient, up-to-date instructions should also exist in `configs/2017/top_syst_studies/README.md` in the chip repo.
 
 ## Top pt reweighting
 

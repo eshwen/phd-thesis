@@ -26,7 +26,7 @@ Some of the plots in [category_optimisations/](category_optimisations), [hem_iss
 
 ### Category optimisations
 
-The significance line plots in [category_optimisations/](category_optimisations) were made with my fork of `fast-caliper` (<https://gitlab.cern.ch/ebhal/fast-caliper>), and commands similar to [run_all_significances.sh](category_optimisations/run_all_significances.sh). The histograms came from `make_nonVBF_plots.py`.
+The significance line plots in [category_optimisations/](category_optimisations) were made with the master branch of my fork of `fast-caliper` (<https://gitlab.cern.ch/ebhal/fast-caliper>), and the commands in [run_all_significances.sh](category_optimisations/run_all_significances.sh). The histograms came from running `make_nonVBF_plots.py` over the carpenter-produced dataframes.
 
 ### HEM issue
 
@@ -34,7 +34,7 @@ For the plots in [hem_issue/](hem_issue/) that contain a translucent block the h
 
 ### Full Run-2 region plots
 
-The full Run-2 signal region, control region, and sideband plots were made using the instructions [here](https://gitlab.cern.ch/cms-chip/chip/-/blob/master/configs/nonVBF_instructions.md#plots-for-2016-18-combined).
+The full Run-2 signal region, control region, and sideband plots were made using the instructions [here](https://gitlab.cern.ch/cms-chip/chip/-/blob/master/configs/nonVBF_instructions.md#plots-for-2016-18-combined). Run the `make_nonVBF_plots.py` step with the `-m` and `-p` options to save figures in pdf format, and only plot inclusive categories.
 
 ## Dark matter limit plot
 

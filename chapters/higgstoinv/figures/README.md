@@ -48,6 +48,27 @@ This is a self-contained plot in [fit_overview.pptx](fit_overview.pptx). Editabl
 
 For the code and inputs required to make the limit and likelihood scan plots (in [limits/](limits/) and [likelihood_scan/](likelihood_scan/), respectively), refer to the instructions in <https://gitlab.cern.ch/cms-chip/chip/-/tree/master/fitting> and <https://gitlab.cern.ch/cms-chip/chip/-/tree/master/fitting/plot_fit_results/>. I'll try to maintain keeping a copy of the latest root files and plots in [2016/](2016/), [2017/](2017/), and [2018/](2018/) in case I need a reference or need to regenerate them. The commit datestamp will give an indication as to when they were made.
 
+To get the VBF limits, the repo containing their datacards is <https://gitlab.cern.ch/cms-hcg/cadi/hig-20-003/-/tree/master>. Make sure I pull the latest changes before running anything, since there may be import updates. In `mkCombinations.sh`, I replaced the final loop with
+
+```bash
+for c in VBF_2016 all_2017 all_2018 Run2 ;
+do
+  text2workspace.py ${c}.txt --channel-masks
+  combine ${c}.root --run blind
+  mv higgsCombineTest.AsymptoticLimits.mH120.root exp_limit_${c}.root
+  combine -M MultiDimFit ${c}.txt -t -1 --expectSignal 0 --rMin 0 --rMax 1.2 --points 25 -m 125 --algo grid
+  mv higgsCombineTest.MultiDimFit.mH125.root exp_likelihood_${c}.root
+done
+```
+
+to run the expected limit and likelihood scan over all of their categories and combinations, appropriately renaming the root files (otherwise they would get overwritten at each iteration). I can just run
+
+```bash
+./mkCombinations.sh
+```
+
+to do all of this, then add the files to the limit and likelihood plotting configs to display the results. It's probably best to run in a `screen` session since the whole thing can take a while. **ADD INSTRUCTIONS TO COMBINE NON-VBF WITH VBF TO GET COMPLETE RUN-2 LIMIT WHEN I'VE FIGURED OUT HOW**
+
 ## NLO k-factors
 
 In the chip repo, navigate to the `chip_code/` directory. For the 2D NLO QCD k-factor plots, just run

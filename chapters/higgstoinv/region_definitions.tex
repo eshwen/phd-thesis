@@ -300,9 +300,10 @@ The templates are derived in separate bins of photon \pt, and the purity measure
     \label{fig:htoinv_photon_impurity}
 \end{figure}
 
-In the analysis, the purity measurement is used to estimate the \acrshort{qcd} multijet background in the \singlePhotonCr \gls{CR}, replacing the contribution from \acrshort{mc}. For each event in data that enters the region, a \acrshort{qcd} multijet pseudo-event is created with the same properties---notably \ptmiss and photon \pt. A weight is assigned to it equal to the impurity calculated from the photon's \pt, with the associated uncertainty also propagated. The new \acrshort{qcd} background is therefore generated with the same shape as the data and weighted to represent the rate of non-prompt photons.
+% Plots from 4th August, 2020
 
-% Finish description of how purity measurement actually applied
+In the analysis, the purity measurement is used to estimate the \acrshort{qcd} multijet background in the \singlePhotonCr \gls{CR}, replacing the contribution from \acrshort{mc}. For each event in data that enters the region, a \acrshort{qcd} multijet pseudo-event is created with the same properties---notably \ptmiss and photon \pt. A weight is assigned to it equal to the impurity calculated from the photon's \pt. Its uncertainty (i.e., the upward variation as 1.25$\times$ the weight and the downward as 0.8$\times$) is propagated through the analysis as a systematic. The new \acrshort{qcd} background is therefore generated with the same shape as the data and weighted to represent the rate of non-prompt photons.
+
 % Consider adding a plot or two of data with fit and templates overlaid
 % See https://root.cern/doc/master/classTFractionFitter.html for implementation
 

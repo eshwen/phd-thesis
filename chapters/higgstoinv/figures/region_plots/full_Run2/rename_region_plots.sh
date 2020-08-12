@@ -30,6 +30,6 @@ for reg_dir in $(ls -d ${the_dir}/*); do
     mv ${reg_dir}/category_3.02.pdf ${reg_dir}/ggF_3j.pdf
     mv ${reg_dir}/category_3.03.pdf ${reg_dir}/ggF_4j.pdf
     mv ${reg_dir}/category_3.04.pdf ${reg_dir}/ggF_5j.pdf
-    mv ${reg_dir}/category_4.01.pdf ${reg_dir}/Monojet_0b.pdf
-    mv ${reg_dir}/category_4.02.pdf ${reg_dir}/Monojet_1b.pdf
+    rm ${reg_dir}/monojet.pdf
+    rm ${reg_dir}/category_4.*.pdf
 done

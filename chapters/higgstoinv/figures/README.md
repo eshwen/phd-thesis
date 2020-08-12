@@ -34,7 +34,14 @@ For the plots in [hem_issue/](hem_issue/) that contain a translucent block the h
 
 ### Full Run-2 region plots
 
-The full Run-2 signal region, control region, and sideband plots were made using the instructions [here](https://gitlab.cern.ch/cms-chip/chip/-/blob/master/configs/nonVBF_instructions.md#plots-for-2016-18-combined). Run the `make_nonVBF_plots.py` step with the `-m` and `-p` options to save figures in pdf format, and only plot inclusive categories.
+The full Run-2 signal region, control region, and sideband plots were made using the instructions [here](https://gitlab.cern.ch/cms-chip/chip/-/blob/master/configs/nonVBF_instructions.md#plots-for-2016-18-combined). Run the `make_nonVBF_plots.py` step without the `-u` option to save figures in pdf format. After copying the `$outdir` directory to local storage, run [rename_region_plots.sh](region_plots/full_Run2/rename_region_plots.sh) to rename the plots automatically to more user-friendly strings:
+
+```bash
+cd region_plots/full_Run2
+./rename_region_plots/.sh <dir>
+```
+
+Especially for the sidebands, ensure the labels are up-to-date. They are still in a little bit of flux, as of writing.
 
 ## Dark matter limit plot
 

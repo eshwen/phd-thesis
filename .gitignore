@@ -29,4 +29,7 @@
 *.synctex*
 *.synctex.gz*
 *.toc
+
+### Thesis-specific ###
 potential_chapter_quotes.txt
+comments/

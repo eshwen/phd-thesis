@@ -9,25 +9,25 @@ To extract maximum sensitivity to the \higgstoinv decay from the analysis, categ
     \centering
     \begin{tabular}{cccccccc}
         \hline\hline
-        Category & Subcategory & \njet & \nbjet & \nBoostedTop & \nBoostedV & \mjj & Angular variable \\
+        Category & Subcategory & \njet & \nbjet & \nBoostedTop & \nBoostedV & Angular cut & Other \\
         \hline
-        \multirow{9}{*}{\ttH} & 2Boosted & $\geq \text{0}$ & $\geq \text{0}$ & \multicolumn{2}{c}{2} & \multirow{9}{*}{---} & \multirow{9}{*}{$\omegaTilde > \text{0.5}$} \\
+        \multirow{9}{*}{\ttH} & 2Boosted & $\geq \text{0}$ & $\geq \text{0}$ & \multicolumn{2}{c}{2} & \multirow{9}{*}{$\omegaTilde > \text{0.3}$} & \multirow{5}{*}{---} \\
         & 1t0b & $\geq \text{3}$ & 0 & 1 & 0 \\
         & 1t1b & $\geq \text{3}$ & 1 & 1 & 0 \\
         & 1W1b & $\geq \text{3}$ & 1 & 0 & 1 \\
-        & 1W2b & $\geq \text{3}$ & 2 & 0 & 1 \\
-        & 5j1b & 5 & 1 & 0 & 0 \\
-        & 6j1b & $\geq \text{6}$ & 1 & 0 & 0 \\
-        & 5j2b & 5 & $\geq \text{2}$ & 0 & 0 \\
-        & 6j2b & $\geq \text{6}$ & $\geq \text{2}$ & 0 & 0 \\\hline
-        \multirow{4}{*}{\VH} & 2j0b & 2 & 0 & 0 & 0 & $\in [\text{65}, \text{105})$ & \multirow{4}{*}{$\omegaTilde > \text{0.5}$} \\
-        & 2j1b & 2 & 1 & 0 & 0 & $\in [\text{65}, \text{105})$ \\
-        & 2j2b & 2 & 2 & 0 & 0 & $\in [\text{65}, \text{105})$ \\
-        & 1V & 0 & 0 & 0 & 1 & ---\\\hline
-        \multirow{4}{*}{\ggH}& 2jM & 2 & 0 & 0 & 0 & $\notin [\text{65}, \text{105})$ & \multirow{4}{*}{$\omegaTilde > \text{0.7}$} \\
-        & 3j & 3 & 0 & 0 & 0 & ---\\
-        & 4j & 4 & 0 & 0 & 0 & ---\\
-        & 5j & $\geq \text{5}$ & 0 & 0 & 0 & ---\\\hline\hline
+        & 1W2b & $\geq \text{3}$ & 2 & 0 & 1 \\\cline{8-8}
+        & 5j1b & 5 & 1 & 0 & 0 & & $\Delta\phi(\Pbottom_1, \ptvecmiss) > \text{1.0}$ \\
+        & 6j1b & $\geq \text{6}$ & 1 & 0 & 0 & & \& $\Delta\phi(\jone, \ptvecmiss) > \pi/\text{2}$\\\cline{8-8}
+        & 5j2b & 5 & 2 & 0 & 0 & & $\Delta\phi(\Pbottom_1, \ptvecmiss) > \text{1.0}$ \\
+        & 6j2b & $\geq \text{6}$ & 2 & 0 & 0 & & \& $\Delta\phi(\Pbottom_2, \ptvecmiss) > \pi/\text{2}$ \\\hline
+        \multirow{4}{*}{\VH} & 2j0b & 2 & 0 & 0 & 0 & \multirow{4}{*}{$\omegaTilde > \text{0.5}$} & $\mjj \in [\text{65}, \text{105})$ \\
+        & 2j1b & 2 & 1 & 0 & 0 & & $\mjj \in [\text{65}, \text{105})$ \\
+        & 2j2b & 2 & 2 & 0 & 0 & & $\mjj \in [\text{65}, \text{105})$ \\
+        & 1V & 0 & 0 & 0 & 1 & & ---\\\hline
+        \multirow{4}{*}{\ggH}& 2jM & 2 & 0 & 0 & 0 & \multirow{4}{*}{$\omegaTilde > \text{0.7}$} & $\mjj \notin [\text{65}, \text{105})$ \\
+        & 3j & 3 & 0 & 0 & 0 & & ---\\
+        & 4j & 4 & 0 & 0 & 0 & & ---\\
+        & 5j & $\geq \text{5}$ & 0 & 0 & 0 & & ---\\\hline\hline
     \end{tabular}
     \caption[Categorisation of the \ttH, \VH and \ggH production modes in the analysis]{Categorisation of the \ttH, \VH and \ggH production modes in the analysis. Each subcategory highlights one of the possible final states of the mechanism, accounting for inefficiencies in object tagging or reconstruction. In the \ggH 2jM subcategory, the dijet mass requirement ensures orthogonality with \VH 2j0b.}
     \label{tab:htoinv_categories}
@@ -53,6 +53,13 @@ In the \ttH and \VH categories, ancillary groupings of subcategories may be of i
 % This subsection, more than most, may be subject to change
 
 While first principles are a good starting point to categorise events and accentuate the Higgs production modes, they allow much room for improvement. \acrshort{qcd} multijet is still a prominent background, especially in the \ttH and \ggH categories. Historically, variables such as \biasedDPhi and \alphat have been used to suppress it, as in the previous \acrlong{susy} analysis I was a part of.
+
+
+%=========================================================
+
+
+\subsubsection{Angular variables for QCD suppression}
+\label{subsubsec:htoinv_ang_var_optimisation}
 
 Recently, more elaborate variables have been developed to better remove multijet background events in analyses with hadronic final states. Colleagues at the University of Bristol have designed a family of them: \minChi, \omegaHat, and \omegaTilde~\cite{Sakuma:2018xrq}.\footnote{How much detail do I need to go into regarding the explanations of these variables (or just the one we end up using)?} These show noticeable improvement over previous variables (particularly \biasedDPhi, which is used as a benchmark for comparisons). Optimisation was performed for these variables on a per-category, over a per-subcategory, basis to avoid excessive fine tuning for the many subcategories in the analysis. After investigating each variable, \omegaTilde was chosen for the \ttH, \VH, and \ggH categories.
 
@@ -123,6 +130,15 @@ While these are quantitative measures of the sensitivity with an given analysis 
 % Figures from 12th August 2020, scenario 5. When remaking, ensure the colours of the signal lines are consistent, and the legend doesn't overlap with the distribution
 
 It is obvious that the shapes and magnitudes of the significance distributions are sensitive to the inclusion of an estimated systematic uncertainty. Increasing its size affects the shape little, though impacts the magnitude more significantly. In bins with high background occupancy, even a small systematic uncertainty can wash out traces of signal. The thresholds chosen for \omegaTilde do not necessarily maximise the significance---where the Asimov method with $\bkgsystuncert = \text{5\,\%}$ was the leading choice---but to sufficiently separate signal and background, while not removing too many events. The \glspl{CR} in the analysis perform better estimations of their responsible backgrounds when adequately populated. Reducing the background too greatly with the \omegaTilde cut can therefore cause problems in multiple aspects of the analysis.
+
+
+%=========================================================
+
+
+\subsubsection{Other optimisations}
+\label{subsubsec:htoinv_other_optimisations}
+
+In the ``other'' column of Tab.~\ref{tab:htoinv_categories}, selections were made to distinguish signal from potential backgrounds. The \ttH resolved subcategories employ requirements on the azimuthal angle between either the leading jet, leading \Pbottom-jet, or subleading \Pbottom-jet and missing transverse momentum. These are specifically to differentiate \ttH signal from \ttbar background, as the former has been shown to exhibit larger separation between the \glspl{jet} and \ptmiss than the latter. A window on the dijet mass is applied to the \VH resolved categories to reconstruct the \PW and \PZ mass. The 15\GeV below $m_{\PW}$ and above $m_{\PZ}$ allow some leeway to accommodate jet resolution effects. For the \ggH 2jM subcategory, the dijet mass must fall outside of the window to avoid overlap with \VH 2j0b.
 
 
 %=========================================================

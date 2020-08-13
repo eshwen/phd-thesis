@@ -76,6 +76,18 @@ to run the expected limit and likelihood scan over all of their categories and c
 
 to do all of this, then add the files to the limit and likelihood plotting configs to display the results. It's probably best to run in a `screen` session since the whole thing can take a while. **ADD INSTRUCTIONS TO COMBINE NON-VBF WITH VBF TO GET COMPLETE RUN-2 LIMIT WHEN I'VE FIGURED OUT HOW**
 
+If I also copy the root files over, I can rename them by navigating to the directory they're stored in, and run for the limit root files
+
+```bash
+for f in $(ls higgsCombineTest.AsymptoticLimits.mH120.*.root); do mv $f "${f#higgsCombineTest.AsymptoticLimits.mH120.*}"; done
+```
+
+and for the likelihood scan files
+
+```bash
+for f in $(ls higgsCombineTest.MultiDimFit.mH125.*.root); do mv $f "${f#higgsCombineTest.MultiDimFit.mH125.*}"; done
+```
+
 ## NLO k-factors
 
 In the chip repo, navigate to the `chip_code/` directory. For the 2D NLO QCD k-factor plots, just run

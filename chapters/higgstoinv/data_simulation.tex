@@ -21,27 +21,7 @@ In 2018, a sector of the \acrshort{hcal} end cap lost power, leaving the approxi
 \subsection{Simulated signal processes}
 \label{subsec:htoinv_signal}
 
-All \acrlong{mc} datasets used in this analysis were produced centrally by experts in \acrshort{cms} as outlined in Chpt.~\ref{subsec:cms_mc}. The signal samples are generated at \acrshort{nlo} with the \POWHEG generator interfaced with \PYTHIAEIGHT. When reweighting events for their cross section, they are specified at \acrshort{nnlo}. The samples are produced with a Higgs boson mass of $m_{\PH} = \text{125}\GeV$. The vector bosons in each of the \VH channels decay to $\Pquark\APquark$. When simulating 2016 data, the tuning of the shower parameters in \PYTHIA was labelled \textsc{cuetp8m1} (the latest available), whilst for 2017 and 2018 datasets the newer \textsc{cp5} version was used.
-
-The cross section of each mechanism at \comruntwo is detailed in Tab.~\ref{tab:htoinv_signal_xsecs}. The signal simulation assumes a 100\,\% branching ratio to invisible states.
-
-\begin{table}[htbp]
-    \centering
-    \begin{tabular}{cll}
-        \hline
-        Dataset (\higgstoinv) & Cross section (pb) & Accuracy \\\hline
-        $\ttH$ & $\text{5.07} \times \text{10}^{-1}$ & \acrshort{nlo} \acrshort{qcd} and \acrshort{nlo} electroweak \\
-        $\WplusH$ & $\text{8.31} \times \text{10}^{-1}$ & \acrshort{nnlo} \acrshort{qcd} and \acrshort{nlo} electroweak \\
-        $\WminusH$ & $\text{5.27} \times \text{10}^{-1}$ & \acrshort{nnlo} \acrshort{qcd} and \acrshort{nlo} electroweak \\
-        $\HepProcess{\pp \to \ZH}$ & $\text{8.84} \times \text{10}^{-1}$ & \acrshort{nnlo} \acrshort{qcd} and \acrshort{nlo} electroweak \\
-        $\HepProcess{\Pgluon\Pgluon \to \ZH}$ & $\text{1.23} \times \text{10}^{-1}$ & \acrshort{lo} \acrshort{qcd} (\acrshort{nlo} + NLL corrections) \\
-        \ggH & $\text{4.86} \times \text{10}^1$ & N3LO \acrshort{qcd} and \acrshort{nlo} electroweak \\\hline
-    \end{tabular}
-    \caption[Cross sections of the \higgstoinv signal processes in the analysis]{Cross sections of the \higgstoinv signal processes in the analysis. They are calculated at \comruntwo at the highest orders available. The simulation datasets are generated with a 100\,\% branching ratio of the Higgs boson to invisible states, and in the \VH processes the \PVec decays in all cases to $\Pquark\APquark$.}
-    \label{tab:htoinv_signal_xsecs}
-\end{table}
-
-% Xsecs from https://twiki.cern.ch/twiki/bin/view/LHCPhysics/CERNYellowReportPageAt13TeV and https://twiki.cern.ch/twiki/bin/view/LHCPhysics/CERNHLHE2019
+All \acrlong{mc} datasets used in this analysis were produced centrally by experts in \acrshort{cms} as outlined in Chpt.~\ref{subsec:cms_mc}. The signal samples are generated at \acrshort{nlo} with the \POWHEG generator interfaced with \PYTHIAEIGHT. When reweighting events for their cross section, they are specified at the highest accuracy available as given in Tab.~\ref{tab:htoinv_signal_xsecs}. The samples are produced with a Higgs boson mass of $m_{\PH} = \text{125}\GeV$. The vector bosons in each of the \VH channels decay to $\Pquark\APquark$. When simulating 2016 data, the tuning of the shower parameters in \PYTHIA was labelled \textsc{cuetp8m1} (the latest available), whilst for 2017 and 2018 datasets the newer \textsc{cp5} version was used. The signal simulation assumes a 100\,\% branching ratio to invisible states.
 
 
 %=========================================================

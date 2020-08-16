@@ -36,6 +36,8 @@ Events must satisfy a logical or of \acrshort{hlt} cross-triggers for \acrlong{p
     \label{tab:htoinv_SR_triggers}
 \end{table}
 
+The \ptmiss distribution from simulation in the signal region after the analysis-level selection are shown for the \ttH and \VH resolved and boosted categories in Fig.~\ref{fig:htoinv_sr_yields_comb2016to18}. Event yields are scaled to the integrated luminosity of the full Run-2 dataset.
+
 \begin{figure}[htbp]
     \centering
     \begin{subfigure}[b]{0.24\textwidth}
@@ -56,7 +58,7 @@ Events must satisfy a logical or of \acrshort{hlt} cross-triggers for \acrlong{p
         \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/region_0/VH_resolved.pdf}
         \caption{\VH resolved}
     \end{subfigure}
-    \caption[Pre-fit yields of the \ptmiss distribution in the signal region for the combined boosted and resolved categories for the \ttH and \VH processes, using simulation derived for each year in Run-2 and scaled to the required luminosity]{Pre-fit yields of the \ptmiss distribution in the \singleMuCr \gls{CR} for the combined boosted and resolved categories for the \ttH and \VH processes, using simulation derived for each year in Run-2 and scaled to the required luminosity.}
+    \caption[Pre-fit yields of the \ptmiss distribution in the signal region for the combined boosted and resolved categories for the \ttH and \VH processes, using simulation derived for each year in Run-2 and scaled to the required luminosity]{Pre-fit yields of the \ptmiss distribution in the signal region for the combined boosted and resolved categories for the \ttH and \VH processes, using simulation derived for each year in Run-2 and scaled to the required luminosity.}
     \label{fig:htoinv_sr_yields_comb2016to18}
 \end{figure}
 
@@ -121,7 +123,7 @@ For the \singlePhotonCr \gls{CR}, we take data from \acrshort{cms} originating o
 
 In each of the \glspl{CR}, the \ptvecmiss is recalculated without the objects used to define said region to model the process it is predicting. In essence, these objects are treated as a source of missing momentum. Conditions in the event selection and binning that refer to \ptmiss use the recalculated quantity when applied to the \glspl{CR}. Using the \singleMuCr \gls{CR} as an example, the new \ptvecmiss is the vector sum of the old \ptvecmiss and the tight muon \ptvec. The single lepton \glspl{CR} estimate the semi-leptonic $\ttbarpjets$ and $\wtolnupjets$ backgrounds. In both cases, they may enter the signal region if the lepton is lost, becoming a source of \ptmiss. The dilepton and \singlePhotonCr regions consider \ztonunupjets. The former parallels the decay as it is enriched in \ztolplmpjets---possessing very similar kinematic properties while being much easier to detect, improving statistical accuracy. The latter region substitutes the \ztonunu decay with a photon.
 
-The following figures reveal the pre-fit \ptmiss distributions in each \gls{CR} after the analysis-level selections with the full Run-2 dataset. The combined \ttH and \VH subcategories for boosted and resolved topologies are used to demonstrate the shapes and data--simulation agreement. Background estimation is performed separately for each year due to the differing running conditions, detector configuration, and the different effects or problems seen in the data.\footnote{Might not need to show all of these plots. They're just here for now, and can be tidied up later. May be worth showing \ggH in the same capacity as the other categories, however.}
+Figs.~\ref{fig:htoinv_cr_yields_comb2016to18_single_muon}, \ref{fig:htoinv_cr_yields_comb2016to18_double_muon}, \ref{fig:htoinv_cr_yields_comb2016to18_single_electron}, \ref{fig:htoinv_cr_yields_comb2016to18_double_electron}, and \ref{fig:htoinv_cr_yields_comb2016to18_single_photon} reveal the \ptmiss distributions for data and simulation in each \gls{CR} after the analysis-level selections with the full Run-2 dataset. The combined \ttH and \VH subcategories for boosted and resolved topologies are used to demonstrate the shapes and data--simulation agreement. Background estimation is performed separately for each year due to the differing running conditions, detector configuration, and the different effects or problems seen in the data.\footnote{Might not need to show all of these plots. They're just here for now, and can be tidied up later. May be worth showing \ggH in the same capacity as the other categories, however.}
 
 \begin{figure}[htbp]
     \centering
@@ -355,7 +357,7 @@ The \glspl{SB} follow the same categorisation as for the other regions, i.e., Ta
 
 A \gls{SB} composed of the inversion of only one variable maintains similar kinematic properties to the signal region. When performing analysis while still blind to data in the signal region, inspecting one of these \glspl{SB} is a good indicator of how new cuts or corrections will affect the signal region composition, and compatibility between data and \acrshort{mc}. Like the \glspl{CR}, \glspl{SB} serve a secondary purpose.
 
-The following figures reveal the pre-fit \ptmiss distributions in each \gls{SB} after the analysis-level selections with the full Run-2 dataset. The combined \ttH and \VH subcategories for boosted and resolved topologies are used to demonstrate the shapes and data--simulation (dis)agreement. Background estimation is performed separately for each year due to the differing running conditions, detector configuration, and the different effects or problems seen in the data.\footnote{Might not need to show all of these plots. They're just here for now, and can be tidied up later. May be worth showing \ggH in the same capacity as the other categories, however.}\footnote{Some of the sidebands are unpopulated for \VH because of the \mindphi cut in scenario 5. Make sure to fix.}
+Figs.~\ref{fig:htoinv_sb_yields_comb2016to18_tight_double}, \ref{fig:htoinv_sb_yields_comb2016to18_loose_double}, \ref{fig:htoinv_sb_yields_comb2016to18_mht_met}, \ref{fig:htoinv_sb_yields_comb2016to18_tight_minOmegaTilde}, and \ref{fig:htoinv_sb_yields_comb2016to18_loose_minOmegaTilde} illustrate the \ptmiss distributions for data and simulation in each \gls{SB} after the analysis-level selections with the full Run-2 dataset. The combined \ttH and \VH subcategories for boosted and resolved topologies are used to demonstrate the shapes and data--simulation (dis)agreement. Background estimation is performed separately for each year due to the differing running conditions, detector configuration, and the different effects or problems seen in the data.\footnote{Might not need to show all of these plots. They're just here for now, and can be tidied up later. May be worth showing \ggH in the same capacity as the other categories, however.}\footnote{Some of the sidebands are unpopulated for \VH because of the \mindphi cut in scenario 5. Make sure to fix.}
 
 \begin{figure}[htbp]
     \centering

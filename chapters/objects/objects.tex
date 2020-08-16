@@ -5,7 +5,7 @@
 
 \epigraph{You know when grown-ups tell you everything’s going to be fine, but you really think they’re lying to make you feel better? Everything’s going to be fine.}{--- The Eleventh Doctor, \emph{Doctor Who}}
 
-This chapter first discusses some prevalent variables and units in high energy physics, particularly in the context of colliders. Accordingly, it is practical to consolidate their definitions here. The rest of the chapter is devoted to classification of the physics objects that inform the analysis in Chpt.~\ref{chap:higgstoinv}.
+This chapter first discusses some prevalent variables used in the analyses presented in this thesis. Accordingly, it is practical to consolidate their definitions here. The rest of the chapter is devoted to classification of the physics objects that inform the analysis in Chpt.~\ref{chap:higgstoinv}.
 
 
 %=========================================================
@@ -38,7 +38,7 @@ An \acrlong{ev} is a minute quantity of energy, so when discussing properties of
 \subsection{Transverse momentum (\texorpdfstring{\ptvec}{pt})}
 \label{subsec:objects_pt}
 
-In the \acrshort{lhc} (or any other collider), the longitudinal momentum of the initial state particles is typically unknown. However, the momentum transverse to the beam is zero before the collision, and must be zero afterward after due to momentum conservation. This is why the transverse momentum of a particle or physics object (\ptvec for the vector quantity, \pt for its magnitude) is a useful variable in an analysis.
+In the \acrshort{lhc} (or any other hadron collider), the longitudinal momenta of the proton constituents that collide are typically unknown. However, the momentum transverse to the beam is zero before the collision, and must be zero afterward after due to momentum conservation. This is why the transverse momentum of a particle or physics object (\ptvec for the vector quantity, \pt for its magnitude) is a useful variable in an analysis.
 
 
 %=========================================================
@@ -53,7 +53,7 @@ For analyses focused on hadronic objects---such as branches of \acrlong{susy} wh
     \label{eq:ht_definition}
 \end{equation}
 
-Typically, a lower limit on the \pt is used when calculating the \HT, so \glspl{jet} below this threshold do not factor into the sum. This is to avoid low momentum \glspl{jet} attributed to pileup events (see Chpt.~\ref{subsec:pileup}), and those from the primary vertex that can often be mismeasured.
+Typically, a lower limit on the \pt is used when calculating the \HT, so \glspl{jet} below this threshold do not factor into the sum. This is to avoid low momentum \glspl{jet} attributed to pileup events (see Chpt.~\ref{subsec:pileup}) and soft radiation.
 
 
 %=========================================================
@@ -118,7 +118,7 @@ where $\Delta\phi = \phi - \phi(\ptvecmiss)$, and \pt and $\phi$ are from the id
 
 The physics that occurs at the high energies the \acrshort{lhc} is capable of is not simple. That makes the recording of particles and events overall a non-trivial undertaking. Based on complex hardware and software, research, and the experience of previous experiments, establishing physics objects and variables from an analyst's standpoint is thankfully straightforward. The basic definitions are already included into the \ROOT files we use, with ancillary selections on top for the analysis-level objects. All of the descriptions that follow apply both to data and simulated samples, unless otherwise stated.
 
-Different working points for the identification of many objects are available from the respective \glspl{pog}, trading efficiency for purity the tighter the restrictions are. ``Veto'' and ``loose'' criteria are used to specify the secondary leptons in the dilepton \glspl{CR}, and when vetoing leptons and photons (or applying their corresponding veto weights) in the signal region. The ``medium'' and ``tight'' selections are used to construct the primary objects in the \glspl{CR}. We denote these particles with a subscript that signifies the working point. The requirements elaborated upon in the ensuing subsections.
+Different working points for the identification of many objects are available from the respective \glspl{pog}, trading efficiency for purity the tighter the restrictions are. ``Veto,'' ``loose,'', ``medium,'' and ``tight'' criteria exist for most objects. We denote particles with a subscript that signifies the working point. The requirements of which are elaborated upon in the ensuing subsections.
 
 
 %=========================================================
@@ -131,9 +131,9 @@ In the nanoAOD data tier, a \gls{jet} is defined as an AK4-clustered, charged ha
 
 % JER smearing: https://twiki.cern.ch/twiki/bin/viewauth/CMS/JetResolution#Smearing_procedures. Info about the stuff added by the jetmetHelper module in nanoAOD-tools: https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBookNanoAOD#JME_jetmet_HelperRun2
 
-The tight, with or without an additional lepton veto, \acrshort{pf} identification requirements are also mandatory to establish a sufficient degree of purity with a very high efficiency ($> \text{98\,\%}$ in all $\abseta$ regions).\footnote{For all objects, should I also give the background rejection efficiency?} These are documented in Tabs.~\ref{tab:htoinv_jet_id_def_2016}, \ref{tab:htoinv_jet_id_def_2017}, and \ref{tab:htoinv_jet_id_def_2018}.
+The tight, with or without an additional lepton veto, \acrshort{pf} identification requirements are also mandatory to establish a sufficient degree of purity with a very high efficiency ($> \text{98\,\%}$ in all $\abseta$ regions). These are documented in Tabs.~\ref{tab:htoinv_jet_id_def_2016}, \ref{tab:htoinv_jet_id_def_2017}, and \ref{tab:htoinv_jet_id_def_2018}. For all years, both the identification and background rejection efficiencies are above 98\,\% in the barrel and end caps.
 
-A \gls{bjet} is described by a nanoAOD AK4 \gls{jet} with corrected $\pt > \text{20}\GeV$, $\abseta < \text{2.5}$ (2.4 in 2016), and to satisfy the medium working point (a mis-tag rate of 1\,\%) from the \deepcsv algorithm~\cite{Sirunyan:2017ezt}.
+A \gls{jet} suspected to originate from a \Pbottom-quark, or \emph{\gls{bjet}}, is described by a nanoAOD AK4 \gls{jet} with corrected $\pt > \text{20}\GeV$, $\abseta < \text{2.5}$ (2.4 in 2016). It is also required to satisfy the medium working point (a mis-tag rate of 1\,\%) from the \deepcsv algorithm~\cite{Sirunyan:2017ezt}.
 
 
 %=========================================================
@@ -272,7 +272,7 @@ The relative isolation parameter is the ratio of the sum of track, \acrshort{hca
 \subsection{Electrons}
 \label{subsec:objects_electrons}
 
-In the analysis, electrons are labelled as veto (\vetoEle) or tight electrons (\tightEle), depending on which \acrshort{pog} ID requirements are fulfilled. For 2016--18, version 2 of the cut-based identification scheme (tuned using 2017 samples), is applied. These are distinguished for the barrel region in Tab.~\ref{tab:htoinv_electron_ID_barrel}, and end cap region in Tab.~\ref{tab:htoinv_electron_ID_endcap}. The veto and tight ID specifications are designed for average efficiencies of 95\,\% and 70\,\%, respectively.
+In the analysis, electrons are labelled as veto (\vetoEle) or tight electrons (\tightEle), depending on which \acrshort{pog} ID requirements are fulfilled. For 2016--18, version 2 of the cut-based identification scheme (tuned using 2017 samples), is applied. These are distinguished for the barrel region in Tab.~\ref{tab:htoinv_electron_ID_barrel}, and end cap region in Tab.~\ref{tab:htoinv_electron_ID_endcap}. The veto and tight ID specifications are designed for average efficiencies of 95\,\% and 70\,\%, respectively.\footnote{Can't find background rejection efficiencies on twiki pages.}
 
 \begin{table}[htbp]
     \centering
@@ -325,7 +325,7 @@ Common to all electrons in the analysis, we place a cut of $\abseta < \text{2.5}
 \subsection{Photons}
 \label{subsec:objects_photons}
 
-Photons are identified in a similar manner to electrons---using version 2 of the cut-based scheme for 2016--18, optimised with 2017 \acrlong{mc}. We define loose \loosePhoton and medium photons \mediumPhoton that fulfill the corresponding working point criteria for identification. For inclusivity, the latter is used instead of the tight working point. These are detailed in Tab.~\ref{tab:htoinv_photon_ID_barrel} and Tab.~\ref{tab:htoinv_photon_ID_endcap} for the barrel and end cap regions, respectively. The loose photon ID specification is designed to be 90\,\% efficient, and the medium ID 80\,\%.\footnote{Should I give the background rejection efficiencies as well?} Both collections must also pass the electron conversion veto to ensure they originate promptly from the primary vertex.
+Photons are identified in a similar manner to electrons---using version 2 of the cut-based scheme for 2016--18, optimised with 2017 \acrlong{mc}. We define loose \loosePhoton and medium photons \mediumPhoton that fulfill the corresponding working point criteria for identification. For inclusivity, the latter is used instead of the tight working point. These are detailed in Tab.~\ref{tab:htoinv_photon_ID_barrel} and Tab.~\ref{tab:htoinv_photon_ID_endcap} for the barrel and end cap regions, respectively. The loose photon ID specification is designed to be 90\,\% efficient, and the medium ID 80\,\%. In the barrel and end caps, the loose ID rejects 86\,\% and 77\,\% of background, respectively, while the medium ID removes 89\,\% and 82\,\%, respectively. Both collections must also pass the electron conversion veto to ensure they originate promptly from the primary vertex.
 
 \begin{table}[htbp]
     \centering
@@ -371,7 +371,9 @@ As well as the ID, the two collections diverge further due to $\eta$ and \pt req
 \subsection{Tau leptons}
 \label{subsec:objects_taus}
 
-The only purpose tau leptons \Ptau serve in the analysis is to veto events that contain them. We denote these as ``very loose'' taus \vlooseTau.\footnote{Tau definition still not finalised so leave out this subsection for now.}
+The only purpose tau leptons \Ptau serve in the analysis is to veto events that contain them. We denote these as ``very loose'' taus \vlooseTau. Version 2 of the multivariate identification algorithm is used for all years, and tau leptons must pass the very loose criteria. Dedicated multivariate discriminators against electrons and muons are provided and employed, passing the loose and very loose working points, respectively. Kinematically, a \vlooseTau also requires $\pt > \text{20}\GeV$, $\abseta < \text{2.3}$, and $dz <\text{0.2}$\,cm.
+
+% Tau ID: https://twiki.cern.ch/twiki/bin/viewauth/CMS/TauIDRecommendationForRun2. But no real useful information is there
 
 
 %=========================================================
@@ -391,9 +393,7 @@ Muons are first identified, followed by electrons. Cross cleaning is performed a
 \subsection{Revised energy sums \texorpdfstring{\ptvecmiss}{ptmiss}, \texorpdfstring{\HT}{HT}, and \texorpdfstring{\htvecmiss}{MHT}}
 \label{subsec:objects_analysis_energy_sums}
 
-Most \acrshort{cms} analyses, including this one, we define the missing transverse momentum with the ``type-I correction'': corrections to the \acrshort{jer} and \acrshort{jes} are applied as in Chpt.~\ref{subsec:objects_jets}, and so the corrected \gls{jet} \ptvec are propagated to the calculation of \ptvecmiss. Uncertainties are calculated in the same manner as \glspl{jet}.
-
-In each of the \glspl{CR} detailed in Chpt.~\ref{subsec:htoinv_control_regions}, the \ptvecmiss is recalculated without the objects used to define said region to model the process it is predicting. In essence, these objects are treated as a source of missing momentum. Conditions in the event selection and binning that refer to \ptmiss use the recalculated quantity when applied to the \glspl{CR}.
+Most \acrshort{cms} analyses, including those presented in this thesis, define the missing transverse momentum with the ``type-I correction'': corrections to the \acrshort{jer} and \acrshort{jes} are applied as in Chpt.~\ref{subsec:objects_jets}, and so the corrected \gls{jet} \ptvec are propagated to the calculation of \ptvecmiss. Uncertainties are calculated in the same manner as \glspl{jet}.
 
 In 2017, significant noise in the \acrshort{ecal} end cap affected \glspl{jet} and \ptmiss, leading to potentially large energy mismeasurements. These quantities were recomputed after reconstruction, and carried through the analysis.
 

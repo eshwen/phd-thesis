@@ -7,7 +7,7 @@ static float maxDM = 62.49;
 static float minX = 1;
 static float maxX = 1000;
 static double minY_dd = 1e-47;
-static double maxY_dd = 2e-37;
+static double maxY_dd = 1e-37;
 // step in DM mass for making the plot
 static float stepDM = 0.2; // 100 MeV
 double const CV = 1e-36;

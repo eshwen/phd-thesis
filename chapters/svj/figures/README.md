@@ -14,6 +14,7 @@ To make signal MC distributions for my thesis, see the instructions in [Making t
       - [Getting the plots](#getting-the-plots)
   - [Lambda_dark vs m_dark](#lambdadark-vs-mdark)
   - [Mass insertion diagram](#mass-insertion-diagram)
+  - [Things to remember when remaking plots](#things-to-remember-when-remaking-plots)
 
 ## Making the samples
 
@@ -174,3 +175,14 @@ Since the script is so small, everything within it should be pretty self-explana
 ## Mass insertion diagram
 
 This is taken directly from the semi-visible jets analysis note AN-19-061. The repo link is [here](https://gitlab.cern.ch/tdr/notes/AN-19-061), with the permalink to the figure [here](https://gitlab.cern.ch/tdr/notes/AN-19-061/-/blob/4f97acefe944aa033b8a9b6ca914ee477e790359/img/signal/mass_insertion_diagram.pdf).
+
+## Things to remember when remaking plots
+
+- Make sure there are no "CMS" annotations on any of them as the results are not approved
+- Make sure they're in pdf format if possible, since they're likely to be vector graphics
+
+For plots with `fast-plotter` (perhaps within <https://gitlab.cern.ch/cms-chip/chip/-/blob/master/chip_code/make_nonVBF_plots.py>):
+
+- Use the right x-axis limits so there's no horizontal space between the histograms and axis limits. 
+- Add the bin widths on the y-axis label if the bin width is constant. Achievable in the plotting config with the `ylabel` kwarg
+- Make sure signal line colours are consistent (broken in `fast-plotter` as of v0.8.0)

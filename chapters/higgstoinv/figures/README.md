@@ -279,7 +279,7 @@ which will make the MET-MHT trigger turn ons in 2D as a function of both MET and
 
 For all plots:
 
-- Make sure status annotation next to "CMS" is correct, i.e., Preliminary/Work in progress/no annotation
+- Make sure there are no "CMS" annotations on any of them as the results are not approved
 - Make sure they're in pdf format if possible, since they're likely to be vector graphics. Especially if coming from `ROOT`, use pdfs as pngs are quite low resolution
 
 For plots with `fast-plotter` (perhaps within <https://gitlab.cern.ch/cms-chip/chip/-/blob/master/chip_code/make_nonVBF_plots.py>):
@@ -292,4 +292,4 @@ For plots with `fast-plotter` (perhaps within <https://gitlab.cern.ch/cms-chip/c
 
 For limit and likelihood plots:
 
-- Make sure they are visually consistent (i.e., same size, with same "CMS" annotation, lumi, same labels for categories, etc.) if they are not produced together
+- Make sure they are visually consistent (i.e., same size, same lumi, same labels for categories, etc.) if they are not produced together

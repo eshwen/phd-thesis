@@ -3,7 +3,7 @@
 One needs ROOT installed since a ROOT macro (kindly provided by Raffaele Gerosa from [here](https://gitlab.cern.ch/cms-hcg/cadi/hig-17-023/-/tree/master/HiggsInvisibleCombination%2FHiggsPortalDM), with the header [CMS_lumi.h](https://gitlab.cern.ch/cms-hcg/cadi/hig-17-023/-/blob/master/HiggsInvisibleCombination/CMS_lumi.h)). Then, just run it with
 
 ```bash
-root -l -b -q makeHiggsPortalPlot.C\(<limit_value>,\"<output_dir>\"\)
+root -l -b -q makeHiggsPortalPlot.C\(<limit_value>\)
 ```
 
 where `limit_value` is a decimal, not percentage. The backslashes are required to escape the brackets and allow argument parsing.

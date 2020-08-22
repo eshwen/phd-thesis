@@ -62,12 +62,10 @@ TGraph* cresst();
 //TGraph* cdex10();
 
 
-void makeHiggsPortalPlot(float observedBR, string outputDIR){
+void makeHiggsPortalPlot(float observedBR){
 
   gROOT->SetBatch(kTRUE);
   setTDRStyle();
-  system(("mkdir -p "+outputDIR).c_str());
-
   
   TCanvas* canvas = new TCanvas("canvas","",700,650);
   canvas->cd();
@@ -282,8 +280,7 @@ void makeHiggsPortalPlot(float observedBR, string outputDIR){
   CMS_lumi(canvas,"137");
   canvas->RedrawAxis("samesaxis");
    
-  //canvas->SaveAs((outputDIR+"/higgsPortalDM.png").c_str(),"png");
-  canvas->SaveAs((outputDIR+"/higgsPortalDM.pdf").c_str(),"pdf");  
+  canvas->SaveAs("./higgsPortalDM.pdf", "pdf");  
 }
 
 

@@ -265,14 +265,14 @@ A script is included in the chip repo to plot the trigger efficiencies and write
 
 ```bash
 cd chip_code/standalone_tools
-python calculate_trigger_effs_esh_colormesh.py --cms-label -c ../../samples/unskimmed/$year/all.yml -l $lumi -o trigger_effs_${year} <outdir from carpenter>/tbl_dataset.online.offline.met.mht--met_mht.csv
+python calculate_trigger_effs_esh_colormesh.py --cms_label -c ../../samples/unskimmed/$year/all.yml -l $lumi -o trigger_effs_${year} <outdir from carpenter>/tbl_dataset.online.offline.met.mht--met_mht.csv
 ```
 
 Don't worry about the errors that occur later on. They only affect the scale factor plots. For example, if running over the dataframes already in chip, do
 
 ```bash
 cd chip_code/standalone_tools
-python calculate_trigger_effs_esh_colormesh.py --cms-label -c ../../samples/unskimmed/$year/all.yml -l $lumi -o trigger_effs_${year} ../../input_weight_data/nonvbf_trigger_files/$year/tbl_dataset.online.offline.met.mht--met_mht.csv
+python calculate_trigger_effs_esh_colormesh.py --cms_label -c ../../samples/unskimmed/$year/all.yml -l $lumi -o trigger_effs_${year} ../../input_weight_data/nonvbf_trigger_files/$year/tbl_dataset.online.offline.met.mht--met_mht.csv
 ```
 
 which will make the MET-MHT trigger turn ons in 2D as a function of both MET and MHT, and separately for data and MC. To annotate each cell in the plot with its efficiency, add the argument `-a` above. The styling, etc., can be easily changed in the `plot_2d()` function.

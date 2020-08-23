@@ -93,27 +93,29 @@ for f in $(ls higgsCombineTest.MultiDimFit.mH125.*.root); do mv $f "${f#higgsCom
 In the chip repo, navigate to the `chip_code/` directory. For the 2D NLO QCD k-factor plots, just run
 
 ```bash
-python plot_k_factors.py -p ../input_weight_data/nloSF_files/2Dkfactor_nonVBF_wjet.root
+python plot_k_factors.py -p -c ../input_weight_data/nloSF_files/2Dkfactor_nonVBF_wjet.root
 mv 2Dkfactor_nonVBF_wjet.pdf 2D_wjets.pdf
-python plot_k_factors.py -p ../input_weight_data/nloSF_files/2Dkfactor_nonVBF_zjet.root
+python plot_k_factors.py -p -c ../input_weight_data/nloSF_files/2Dkfactor_nonVBF_zjet.root
 mv 2Dkfactor_nonVBF_zjet.pdf 2D_zll.pdf
-python plot_k_factors.py -p ../input_weight_data/nloSF_files/2Dkfactor_nonVBF_znn.root
+python plot_k_factors.py -p -c ../input_weight_data/nloSF_files/2Dkfactor_nonVBF_znn.root
 mv 2Dkfactor_nonVBF_znn.pdf 2D_znunu.pdf
 ```
 
 For the 1D NLO QCD k-factor for gamma + jets, run
 
 ```bash
-python plot_k_factors.py -d kfactor_monojet_qcd ../input_weight_data/nloSF_files/merged_kfactors_gjets.root
+python plot_k_factors.py -c -d kfactor_monojet_qcd ../input_weight_data/nloSF_files/merged_kfactors_gjets.root
 mv merged_kfactors_gjets.pdf 1D_gjets_qcd.pdf
 ```
 
 and to plot all the electroweak k-factor together, run
 
 ```bash
-python plot_k_factors.py -d kfactor_monojet_ewk ../input_weight_data/nloSF_files/merged_kfactors_{g,w,z}jets.root
+python plot_k_factors.py -c -d kfactor_monojet_ewk ../input_weight_data/nloSF_files/merged_kfactors_{g,w,z}jets.root
 mv merged_kfactors_zjets.pdf 1D_all_ewk.pdf
 ```
+
+The `-c` option in each case removes the "CMS Work in Progress" label from the plot(s).
 
 ## Photon purity
 
@@ -255,7 +257,7 @@ cd chip_code
 python trigger_turnons_1D.py ../input_weight_data/nonvbf_trigger_files/$year/tbl_dataset.online.offline.met.mht--met_mht.csv $year
 ```
 
-A cut on the MHT can be specified if you don't want to absorb the entire MHT dimension (as it would include underflow and low values). A default is placed at 200 GeV, since that's our analysis-level selection. But the value can be changed with the `-m` argument.
+A cut on the MHT can be specified if you don't want to absorb the entire MHT dimension (as it would include underflow and low values). A default is placed at 200 GeV, since that's our analysis-level selection. But the value can be changed with the `-m` argument. To remove the CMS label from the plots, comment out the relevant lines from `plotting_configs/plot_config_${year}.yml`.
 
 ### 2D plots
 
@@ -263,14 +265,14 @@ A script is included in the chip repo to plot the trigger efficiencies and write
 
 ```bash
 cd chip_code/standalone_tools
-python calculate_trigger_effs_esh_colormesh.py -c ../../samples/unskimmed/$year/all.yml -l $lumi -o trigger_effs_${year} <outdir from carpenter>/tbl_dataset.online.offline.met.mht--met_mht.csv
+python calculate_trigger_effs_esh_colormesh.py --cms-label -c ../../samples/unskimmed/$year/all.yml -l $lumi -o trigger_effs_${year} <outdir from carpenter>/tbl_dataset.online.offline.met.mht--met_mht.csv
 ```
 
 Don't worry about the errors that occur later on. They only affect the scale factor plots. For example, if running over the dataframes already in chip, do
 
 ```bash
 cd chip_code/standalone_tools
-python calculate_trigger_effs_esh_colormesh.py -c ../../samples/unskimmed/$year/all.yml -l $lumi -o trigger_effs_${year} ../../input_weight_data/nonvbf_trigger_files/$year/tbl_dataset.online.offline.met.mht--met_mht.csv
+python calculate_trigger_effs_esh_colormesh.py --cms-label -c ../../samples/unskimmed/$year/all.yml -l $lumi -o trigger_effs_${year} ../../input_weight_data/nonvbf_trigger_files/$year/tbl_dataset.online.offline.met.mht--met_mht.csv
 ```
 
 which will make the MET-MHT trigger turn ons in 2D as a function of both MET and MHT, and separately for data and MC. To annotate each cell in the plot with its efficiency, add the argument `-a` above. The styling, etc., can be easily changed in the `plot_2d()` function.

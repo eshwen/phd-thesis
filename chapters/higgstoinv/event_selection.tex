@@ -107,12 +107,12 @@ To avoid any potential horns (spikes in data and/or \acrshort{mc}) for \glspl{je
 \subsection{Mitigating the HEM issue}
 \label{subsec:htoinv_hem_mitigation}
 
-In 2018, requirements were placed on electrons and the azimuthal angle of the \ptvecmiss to mitigate the HEM issue (see Chpt.~\ref{subsec:htoinv_data}). As such, the region-dependent selections for 2018 were updated to remove events that met the following:
+During the 2018 data taking period, the HEM issue (see Chpt.~\ref{subsec:htoinv_data}) forced additional measures to be taken that suppressed its effect on the events. For the data recorded within affected period, region-dependent selections were updated to remove events that met the following criteria:
 \medskip
 \begin{easylist}[itemize]
     \cutflowlistprops
     & $-\text{1.8} < \phi(\ptvecmiss) < -\text{0.6}$ in the signal region and \glspl{SB}
-    & Any veto electron \vetoEle with $\pt > \text{10}\GeV$, $-\text{3.0} < \eta < -\text{1.4}$, and $-\text{1.57} < \phi < -\text{0.87}$ in the \singleEleCr \gls{CR}
+    & Any veto electron \vetoEle with $\pt > \text{10}\GeV$, $-\text{3.0} < \eta < -\text{1.4}$, and $-\text{1.57} < \phi < -\text{0.87}$ in the \singleEleCr and \doubleEleCr \glspl{CR}
     & Any loose photon \loosePhoton with $\pt > \text{15}\GeV$, $-\text{3.0} < \eta < -\text{1.4}$, and $-\text{1.57} < \phi < -\text{0.87}$ in the \singlePhotonCr \gls{CR}
 \end{easylist}
 
@@ -120,7 +120,9 @@ In 2018, requirements were placed on electrons and the azimuthal angle of the \p
 
 %\noindent{}Note that while the signal region and \acrshort{qcd} \glspl{SB} have hadronic final states, the implementation of veto weights for leptons in Chpt.~\ref{subsec:veto_sel_weights} does not automatically reject events containing leptons. To avoid ambiguity and the inclusion of potentially mis-reconstructed events, an explicit veto is placed for the electrons satisfying the above criteria.
 % Put the above paragraph back in (and reword the paragraph before the list) if we end up using veto weights, and apply the electron and photon requirements to all regions
-\noindent{}The effect of these cuts can be seen in Figs.~\ref{fig:htoinv_hem_issue_met_phi} and \ref{fig:htoinv_hem_issue_lepton_eta}.
+\noindent{}Events in simulation that met the same criteria were instead weighted by the integrated luminosity from 2018 that was not affected by the issue (i.e., 21.1\fbinv) rather than the entire year. It is applicable under the assumption that both data and simulation are distributed comparably in the $\eta-\phi$ portions of the detector when the issue was not present. Given geometric variables agree very well between data and simulation, and corrections are implemented to further synchronise them, the assumption is valid.
+
+The effect of the above treatment can be seen in Figs.~\ref{fig:htoinv_hem_issue_met_phi} and \ref{fig:htoinv_hem_issue_lepton_eta}.
 
 \begin{figure}[htbp]
     \centering

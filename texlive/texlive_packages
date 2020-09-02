@@ -13,7 +13,7 @@ collection-fontsrecommended
 luaotfload
 
 # texliveonfly does not detect the following packages automatically
-lineno xstring framed
+lineno xstring framed caption
 
 # thesis-specific
 nag

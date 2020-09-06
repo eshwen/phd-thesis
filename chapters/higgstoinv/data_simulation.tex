@@ -36,11 +36,11 @@ All \acrlong{mc} datasets used in this analysis were produced centrally by exper
     \easylistprops
     & Drell-Yan $(\HepProcess{\PZ \to \Plepton\Plepton}) \plusjets$: The Drell-Yan process occurs when the quark of one incident proton annihilates with the antiquark in the oncoming proton, producing a neutral vector boson (a \PZ in this case) from a \acrshort{qcd} vertex. It subsequently decays to a lepton pair, so while absent in the signal region, is the dominant background in the dilepton \glspl{CR} used to model the \ztonunupjets process. The datasets are generated at \acrshort{lo} accuracy with \MGvATNLO, where a dilepton mass cut of 50\GeV is applied.
 
-    & Multiboson: This background encompasses the production of two (diboson) or three (triboson) electroweak bosons from \acrshort{qcd}(?) vertices. They may decay leptonically, also producing neutrinos in the case of \PW bosons, but also hadronically, producing \glspl{jet}. A mixture of the two in an event will lead to similar signatures to that of the signal. The diboson processes are both generated and showered with \PYTHIAEIGHT at \acrshort{lo}. For triboson events, on the other hand, \MGvATNLO at \acrshort{nlo} accuracy models the hard scatter.
+    & Multiboson: This background encompasses the production of two (diboson) or three (triboson) electroweak bosons. They may decay into charged leptons with or without neutrinos, but also hadronically, producing \glspl{jet}. A mixture of the two in an event will lead to similar signatures to that of the signal. The diboson processes are both generated and showered with \PYTHIAEIGHT at \acrshort{lo}. For triboson events, on the other hand, \MGvATNLO at \acrshort{nlo} accuracy models the hard scatter.
 
-    & Electroweak $\PVec + \text{2 jets}$: The production of electroweak bosons from an electroweak vertex is a minor background in the signal region. But as above, they may produce genuine \ptmiss from the decay of the \PVec. The datasets are generated at \acrshort{lo} with \MGvATNLO. % Mention something about the M-50 cut (if I can find out what it is), and maybe about the Vs only decaying into lnu, ll and nunu (perhaps that's what the 'electroweak' vertex means)
+    & Electroweak $\PVec + \text{2 jets}$: The production of electroweak bosons from an electroweak vertex is a minor background in the signal region. But as above, they may produce genuine \ptmiss from the decay of the \PVec. The datasets are generated at \acrshort{lo} with \MGvATNLO.\footnote{Mention something about the M-50 cut (if I can find out what it is), and maybe about the Vs only decaying into lnu, ll and nunu (perhaps that's what the 'electroweak' vertex means)}
 
-    & \singlePhotonCr: Events with photons are vetoed in the signal region. However, this is the dominant background in the \singlePhotonCr \gls{CR} that predicts---along with the dilepton \glspl{CR}---the \ztonunupjets contribution to the signal region. These datasets are generated at \acrshort{lo} with \MGvATNLO, requiring the $\Delta R$ between a photon and \gls{jet} to be at least 0.4.
+    & \singlePhotonCr: Events with photons are vetoed in the signal region. However, this is the largest contributor to the \singlePhotonCr \gls{CR} that predicts---along with the dilepton \glspl{CR}---the \ztonunupjets contribution to the signal region. These datasets are generated at \acrshort{lo} with \MGvATNLO, requiring the $\Delta R$ between a photon and \gls{jet} to be at least 0.4.
 
     & \acrshort{qcd} multijet: The most common type of event produced in \pp collisions at the \acrshort{lhc} is several \glspl{jet} from \acrshort{qcd} vertices. These typically do not have large \ptmiss, but are prone to mismeasurements that can artificially increase it. As such, they serve as a non-negligible background in the analysis. The datasets are produced at \acrshort{lo} by \MGvATNLO.
 
@@ -50,18 +50,25 @@ All \acrlong{mc} datasets used in this analysis were produced centrally by exper
 
     & $\ttbar X \plusjets$: These are rare processes where a boson $X$ ($\Pphoton$, $\PW$, $\PZ$, $\PH$) is produced in association with a \ttbar pair. Several combinations of the decays of the \ttbar and $X$ are covered. All of the datasets are generated at \acrshort{nlo}. The $\ttbar \Pphoton \plusjets$ and $\ttbar \PW \plusjets$ datasets use \MGvATNLO with the ``FxFx'' \gls{jet} matching scheme for the hard scatter, and decay the particles with \MADSPIN. $\ttbar \PZ \plusjets$ uses \MGvATNLO without the two aforementioned additions. Meanwhile, $\ttH \plusjets$ (where the \PH decays to visible states) is generated with \POWHEG.
 
-    & \wtolnupjets: A \acrshort{qcd}-induced process, this background is dominant in the single lepton \glspl{CR}. If the lepton is lost, the \ptmiss can be be inflated and lead to a significant contribution in the signal region. The datasets are produced at \acrshort{lo} with \MGvATNLO.
+    & \wtolnupjets: A \acrshort{qcd}-induced process, this decay is dominant in the single lepton \glspl{CR}. If the lepton is lost, the \ptmiss can be be inflated and lead to a significant contribution in the signal region. The datasets are produced at \acrshort{lo} with \MGvATNLO.
 
-    & \ztonunupjets: From the presence of neutrinos, the genuine \ptmiss from this channel is a dominant background in the signal region. Its contribution is estimated using the double lepton and \singlePhotonCr \glspl{CR}. As with many of the above, the datasets are generated at \acrshort{lo} accuracy with \MGvATNLO.\footnote{The gridpacks/hard process are exactly the same for all samples in 2017 and 2018 (i.e., the same files), I think. But perhaps don't need to mention.}\footnote{In all of the processes where the datasets are split by generator-level \HT (with the exception of \ztonunupjets), the ``MLM'' \gls{jet} matching scheme applied in \madgraph. Not sure if I need to mention either of these.}
+    & \ztonunupjets: From the presence of neutrinos, the genuine \ptvecmiss from this channel is a dominant background in the signal region. Its presence in said region is estimated using the double lepton and \singlePhotonCr \glspl{CR}. As with many of the above, the datasets are generated at \acrshort{lo} accuracy with \MGvATNLO.
 \end{easylist}
 
-% medium skip to nicely separate the end of the list with the start of the next paragraph (ignored if the space would occur at the top of a new page). Should be 9 pt (i.e., half a line since I use 12 pt text and 1.5 line spacing)
-\medskip
-% No indent so it doesn't look weird just after the hanging list
-\noindent{}Cross sections are specified at the highest order available, except for the \acrshort{lo} processes that require reweighting expounded in Chpt.~\ref{subsec:htoinv_nlo_corrs}. The dominant backgrounds that appear in the signal region---\ttbarpjets, \wtolnupjets, and \ztonunupjets---are estimated using transfer factors from the \glspl{CR} they enrich (see Chpt.~\ref{subsec:htoinv_control_regions}). Contributions from \acrshort{qcd} multijet events should be adequately suppressed by the analysis-level selection requirements. However, it is still a process that must be accurately simulated considering its rate of production at \acrshort{cms}. A metric by which to estimate the number of events a dataset should require is by calculating the equivalent luminosity:
+
+%=========================================================
+
+
+\subsection{Cross section reweighting}
+\label{subsec:xs_weighting}
+
+Cross sections are specified at the highest order available, except for the \acrshort{lo} $\PVec \plusjets$ processes that require reweighting, expounded in Chpt.~\ref{subsec:htoinv_nlo_corrs}. Since an arbitrary number of events can be generated for simulation, and a larger number of events gives higher statistical precision, events in these datasets need to be reweighted to normalise their presence in a given region or category. To first order, the weight applied is
 \begin{equation}
-    \lumi_{\mathrm{eq.}} = \frac{N_{\mathrm{events}}}{\sigma}
-    \label{eq:equivalent_lumi}
+    w_{\sigma} = \frac{ \sigma \intlumi }{ N \varepsilon }
+    \label{eq:xs_weight}
 \end{equation}
 
-A general rule is that the equivalent luminosity of a given dataset should be comparable to, or even exceed, that of the data collected by the experiment. Since the \acrshort{qcd} multijet process has a very large cross section, simulating the required number of events to match the luminosity of the data recorded during Run-2 is not feasible. A dedicated method to predict its presence in the signal region is implemented in Chpt.~\ref{subsec:htoinv_qcd_multijet_bkg}. The contributions from the remaining backgrounds are simply taken from their yield in the signal region.
+where $\sigma$ is the cross section of the process at the order it was generated, \intlumi is the integrated luminosity of the \acrshort{lhc} data it is being compared to, $N$ is the number of events in the dataset before any analysis-level cuts are applied (or the sum of the generator weights), and $\varepsilon$ is the filter efficiency.
+
+
+%=========================================================

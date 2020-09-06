@@ -69,21 +69,6 @@ One thing must be noted about the migration of events, since we have many differ
 %=========================================================
 
 
-\subsection{Cross section reweighting}
-\label{subsec:xs_weighting}
-
-Since an arbitrary number of events can be generated for simulation, and a larger number of events gives higher statistical precision, events in these datasets need to be reweighted to normalise their presence in a given region or category. To first order, the weight applied is
-\begin{equation}
-    w_{\sigma} = \frac{ \sigma \intlumi }{ N \varepsilon }
-    \label{eq:xs_weight}
-\end{equation}
-
-where $\sigma$ is the cross section of the process at the order it was generated, \intlumi is the integrated luminosity of the \acrshort{lhc} data it is being compared to, $N$ is the number of events in the dataset before any analysis-level cuts are applied (or the sum of the generator weights), and $\varepsilon$ is the filter efficiency (assumed to be unity for all datasets since no generator-level cuts are applied).\footnote{This statement on filter efficiency might not be strictly true, since the Drell-Yan datasets do apply a generator-level cut/requirement.} If a dataset is generated at leading order, higher order corrections are usually applied on an event-by-event basis that changes the shapes of distributions (see Chpt.~\ref{subsec:htoinv_nlo_corrs}). In some circumstances, ``flat'' $k$-factors can be applied to a dataset that only alters the normalisation (i.e., its cross section).
-
-
-%=========================================================
-
-
 \subsection{Pileup reweighting}
 \label{subsec:pu_reweighting}
 

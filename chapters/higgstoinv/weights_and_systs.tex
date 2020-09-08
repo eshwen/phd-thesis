@@ -3,7 +3,6 @@
 
 % Weights/SFs and systematics in the analysis I need to still describe:
 %   - JES/JER
-%   - Cross section for signal
 
 In order for simulated events, particularly for background processes, to resemble \acrshort{lhc} data as closely as possible, many corrections and weights are applied. These are discussed in more detail in the subsequent sections. All weights and associated systematic uncertainties are applied to all samples for all data taking years, unless stated otherwise. They are summarised in Tab.~\ref{tab:htoinv_syst_summary}. A final event weight $w_{\mathrm{event}}$ is the product of the weights from all of the individual sources $i$ that provide one:
 \begin{equation}
@@ -413,6 +412,19 @@ Uncertainties are associated with the various methods designed to measure the lu
 
 % Lumi POG page: https://twiki.cern.ch/twiki/bin/view/CMS/TWikiLUM
 
+
+%=========================================================
+
+
+\subsubsection{Cross section for signal processes}
+\label{subsubsec:htoinv_signal_xs_syst}
+
+There are several sources of uncertainty in the computation of high order cross sections, from both theoretical and experimental sides. As with the nominal cross sections for signal processes, the uncertainties are retrieved from Ref.~\citenum{Cepeda:2019klc}. Every source for every signal process is treated as a separate uncertainty on the normalisation. They are correlated across years as the cross section is constant across them.
+
+
+%=========================================================
+
+
 \begin{table}[htbp]
     \centering
     \begin{tabular}{lcccc}
@@ -437,6 +449,7 @@ Uncertainties are associated with the various methods designed to measure the lu
         \acrshort{jer} and \acrshort{jes} & Normalisation, shape(?) & All, correlated(?) & All & \\
         Luminosity & Normalisation & All & All & \\\hline
         Photon purity & Normalisation & All, uncorrelated & \acrshort{qcd} est. from data & \\
+        Signal cross section & Normalisation & All, correlated & Signal & \\
     \end{tabular}
     \caption[The experimental uncertainties present in the analysis, the type of uncertainty, and impact on (the \ptmiss distribution/signal strength parameter), along with the years and simulated samples affected]{The experimental uncertainties present in the analysis, the type of uncertainty, and impact on (the \ptmiss distribution/signal strength parameter), along with the years and simulated samples affected.}
     \label{tab:htoinv_syst_summary}

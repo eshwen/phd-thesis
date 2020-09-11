@@ -10,6 +10,7 @@ This README should be an indicator of how to make some of the plots included in 
   - [Dark matter limit plot](#dark-matter-limit-plot)
   - [Fit overview](#fit-overview)
   - [Limit and likelihood scan](#limit-and-likelihood-scan)
+  - [Mountain range plots](#mountain-range-plots)
   - [NLO k-factors](#nlo-k-factors)
   - [Photon purity](#photon-purity)
   - [QCD scale for top processes](#qcd-scale-for-top-processes)
@@ -74,7 +75,7 @@ to run the expected limit and likelihood scan over all of their categories and c
 ./mkCombinations.sh
 ```
 
-to do all of this, then add the files to the limit and likelihood plotting configs to display the results. It's probably best to run in a `screen` session since the whole thing can take a while. **ADD INSTRUCTIONS TO COMBINE NON-VBF WITH VBF TO GET COMPLETE RUN-2 LIMIT WHEN I'VE FIGURED OUT HOW**
+to do all of this, then add the files to the limit and likelihood plotting configs to display the results. It's probably best to run in a `screen` session since the whole thing can take a while.
 
 If I also copy the root files over, I can rename them by navigating to the directory they're stored in, and run for the limit root files
 
@@ -86,6 +87,21 @@ and for the likelihood scan files
 
 ```bash
 for f in $(ls higgsCombineTest.MultiDimFit.mH125.*.root); do mv $f "${f#higgsCombineTest.MultiDimFit.mH125.*}"; done
+```
+
+## Mountain range plots
+
+To make mountain range plots, I can follow the README in the `fitting/` directory of the chip repo. Use the `-s` option when processing the `fitDiagnostics.root` file to create one dataframe (and therefore one plot) by category. Also remember to comment out the CMS header in the plotting config used. After `scp`ing the directory containing the plots and input dataframes over, rename and organise them with
+
+```bash
+cd mountain_ranges
+for f in $(ls *.pdf); do mv $f "${f#plot_process.category--*}"; done
+for g in $(ls *.pdf); do mv $g "${g%%--*}.pdf"; done
+
+for proc in "ttH" "VH" "ggF" ; do
+    mkdir $proc
+    mv *${proc}*.{pdf,csv} $proc/
+done
 ```
 
 ## NLO k-factors

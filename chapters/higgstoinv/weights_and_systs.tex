@@ -73,8 +73,6 @@ One thing must be noted about the migration of events, since we have many differ
 
 \Gls{pileup} interactions at the \acrshort{lhc} are frequent (see Chpt.~\ref{subsec:pileup}) and must be modelled appropriately in simulation. Simulated samples are generated with a certain distribution of the number of \gls{pileup} interactions which usually does not match the data recorded by \acrshort{cms}. This is due to changing conditions in the beam over a period of data taking. In order to make them comparable, the simulated events are reweighted; in this context it is known as \emph{\gls{pileup} reweighting}. \ROOT files containing histograms of the number of \gls{pileup} interactions from short runs in the \acrshort{lhc} are available centrally and are used as the reference for which to reweight the simulated events.
 
-In the trees of the simulated samples, the branch \texttt{Pileup\_nTrueInt} is the mean of the Poisson distribution from which random numbers are drawn. In each simulated event, these random numbers (all from the same distribution) are used to set the number of in-time \gls{pileup} interactions as well as the number of the interactions in each neighbouring bunch crossing to simulate the out-of-time \gls{pileup}. In data, the same branch gives the average number of \gls{pileup} interactions for a colliding bunch pair in a luminosity section.\footnote{A luminosity section is the duration (approximately 23 seconds) over which the instantaneous luminosity in colliding bunches remains constant.} The distribution of \texttt{Pileup\_nTrueInt} in the data is derived from the measured instantaneous luminosity for each colliding bunch pair in each lumi section and the cross section of the total inelastic \pp interaction.
-
 Simulated events are nominally reweighted according to data, where the inelastic $\pp$ cross section is measured to be 69.2\,mb. An uncertainty of $\pm \text{4.6}$\,\% in the measurement is used to calculate the systematic uncertainty on this weight. The pileup distributions, and therefore the weights, are different for each data taking year. However, the inelastic cross section and associated uncertainty are consistent for the entirety of Run-2.
 
 % https://github.com/cms-nanoAOD/nanoAOD-tools/blob/048a828e1d7f5ac3346e2f5e7eafba2570e84bc4/python/postprocessing/modules/common/puWeightProducer.py for implementation
@@ -101,7 +99,7 @@ Two types of reweighting are applied: \acrshort{qcd} corrections to \acrshort{qc
 
 \medskip
 
-\noindent{}where $\pt^{\PVec}$ is the generator-level boson \pt, and $\HT^{\mathrm{Gen}}$ is the scalar sum of generator-level \gls{jet} \pt. The final selection in the list mimics the $\mht/\ptmiss$ cut in Chpt.~\ref{subsec:htoinv_preselection}. The $k$-factors are binned in two dimensions for the \acrshort{qcd} corrections to \PW and \PZ processes, $\pt^{\PVec}$ and $\ptjone$. For those corrections to \Pphoton process and for all electroweak corrections, they are binned solely in $\pt^{\PVec}$ as they were derived by Boston University in the monojet phase space.
+\noindent{}where $\pt^{\PVec}$ is the generator-level boson \pt, and $\HT^{\mathrm{Gen}}$ is the scalar sum of generator-level \gls{jet} \pt. The final selection in the list mimics the $\mht/\ptmiss$ cut in Chpt.~\ref{subsec:htoinv_preselection}. The $k$-factors are binned in two dimensions for the \acrshort{qcd} corrections to \PW and \PZ processes, $\pt^{\PVec}$ and $\ptjone$. For those corrections to \Pphoton process and for all electroweak corrections, they are binned solely in $\pt^{\PVec}$.
 
 Uncertainties for the \acrshort{qcd} renormalisation scale, factorisation scale, and in the parton distribution function are treated as individual, uncorrelated sources. The same values for the nominal $k$-factors and uncertainties are used for each data taking year in Run-2. Distributions of all of the $k$-factors are presented is Fig.~\ref{fig:htoinv_nlo_k_factors}.
 
@@ -234,7 +232,7 @@ Uncertainties are estimated using the Clopper-Pearson method~\cite{10.1093/biome
 \subsubsection{QCD scale systematic uncertainty}
 \label{subsubsec:ttbar_renorm_fact_scale_uncert}
 
-The renormalisation \muR and factorisation scale \muF chosen for \acrshort{mc} samples at generation may be somewhat arbitrary, and therefore not representative of nature. Relative to the nominal, weights exist in the ntuples for each combination of these scales being varied independently (and together) up or down by a factor of two. Eight variations then exist for each event:
+The renormalisation \muR and factorisation scale \muF chosen for \acrshort{mc} samples at generation may be somewhat arbitrary, and therefore not representative of nature. Relative to the nominal, weights were derived centrally for each combination of these scales being varied independently (and together) up or down by a factor of two. Eight variations then exist for each event:
 \medskip
 \begin{easylist}[itemize]
     \easylistprops
@@ -284,7 +282,7 @@ For each process (i.e., \ttbar, and the accompanying boson $X$ in $\ttbar X$), a
 \subsubsection{Top quark \texorpdfstring{\pt}{pT} reweighting}
 \label{subsubsec:htoinv_top_pt_reweighting}
 
-The top quark \pt distribution has been shown to be harder in simulation than data~\cite{Sirunyan:2018ucr}. Developed initially by members of the \acrshort{cms} Collaboration, the ratio is taken between the \ttbar cross section computed at \acrshort{nnlo} \acrshort{qcd} $+$ \acrshort{nlo} electroweak accuracy to the \acrshort{nlo} \POWHEG \acrshort{mc} as function of top quark \pt. An analytic function is used to fit the distribution.\footnote{If the paper/PAS for HIG-19-008 with the original fit function in, reference it.} For the purposes of reliably estimating the uncertainties, we changed the fitting function and reduced its complexity. The same nominal function is used for all \ttbarpjets samples for all data taking years:
+The top quark \pt distribution has been shown to be harder in simulation at \acrshort{nlo} than data~\cite{Sirunyan:2018ucr}. Developed initially by members of the \acrshort{cms} Collaboration, the ratio is taken between the \ttbar cross section computed at \acrshort{nnlo} \acrshort{qcd} $+$ \acrshort{nlo} electroweak accuracy to the \acrshort{nlo} \POWHEG \acrshort{mc} as function of top quark \pt. An analytic function is used to fit the distribution.\footnote{If the paper/PAS for HIG-19-008 with the original fit function in, reference it.} For the purposes of reliably estimating the uncertainties, we changed the fitting function and reduced its complexity. The same nominal function is used for all \ttbarpjets samples for all data taking years:
 \begin{equation}
     f(\pt) = \exp(a + b \cdot \pt + c \cdot \pt^2)
 \end{equation}

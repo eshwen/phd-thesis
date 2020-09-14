@@ -165,7 +165,7 @@ While these are quantitative measures of the sensitivity with an given analysis 
 
 % Figures from 12th August 2020, scenario 5. When remaking, ensure the colours of the signal lines are consistent, and the legend doesn't overlap with the distribution
 
-It is obvious that the shapes and magnitudes of the significance distributions are sensitive to the inclusion of an estimated systematic uncertainty. Increasing its size affects the shape little, though impacts the magnitude more significantly. In bins with high background occupancy, even a small systematic uncertainty can wash out traces of signal. The thresholds chosen for \omegaTilde do not necessarily maximise the significance---where the Asimov method with $\bkgsystuncert = \text{5\,\%}$ was the leading choice---but to sufficiently separate signal and background, while not removing too many events. The \glspl{CR} in the analysis perform better estimations of their responsible backgrounds when adequately populated. Reducing the background too greatly with the \omegaTilde cut can therefore cause problems in multiple aspects of the analysis.
+It is obvious that the shapes and magnitudes of the significance distributions are sensitive to the inclusion of an estimated systematic uncertainty. Increasing its size affects the shape little, though impacts the magnitude more significantly. In bins with high background occupancy, even a small systematic uncertainty can wash out traces of signal. The thresholds chosen for \omegaTilde do not necessarily maximise the significance---where the Asimov method with $\bkgsystuncert = \text{5\,\%}$ was the leading choice---but to sufficiently separate signal and background, while not removing too many events. The \glspl{CR} in the analysis perform better estimations of their responsible backgrounds when adequately populated. Reducing the event counts in the \glspl{CR} too greatly with the \omegaTilde cut can therefore cause problems in multiple aspects of the analysis.
 
 
 %=========================================================
@@ -175,12 +175,3 @@ It is obvious that the shapes and magnitudes of the significance distributions a
 \label{subsubsec:htoinv_other_optimisations}
 
 In the ``signal enhancement'' column of Tab.~\ref{tab:htoinv_categories}, selections were made to distinguish signal from leading backgrounds. The \ttH resolved subcategories employ requirements on the azimuthal angle between either the leading jet, leading \Pbottom-jet, or subleading \Pbottom-jet and missing transverse momentum. These are specifically to differentiate \ttH signal from \ttbar background, as the former has been shown to exhibit larger separation between the \glspl{jet} and \ptmiss than the latter. A window on the dijet mass is applied to the \VH resolved categories to reconstruct the \PW and \PZ mass. The 15\GeV below $m_{\PW}$ and above $m_{\PZ}$ allow some leeway to accommodate jet resolution effects. For the \ggH 2jM subcategory, the dijet mass must fall outside of the window to avoid overlap with \VH 2j0b.
-
-
-%=========================================================
-
-
-\subsection{Binning}
-\label{subsec:htoinv_binning}
-
-In addition to the categories above, events are placed in bins of \ptmiss as that distribution is expected to maximally differentiate signal and background in the final fit (see Chpt.~\ref{sec:htoinv_satistical_treatment}). Since the number of events can significantly differ between categories in the different regions of the analysis, a global binning configuration is inadequate. For each category, the number and widths of the bins are tuned to ensure sufficient statistical precision. These schemes are tied to the category, so are reflected in all regions such that transfer factors from the background estimation methods are calculated on a bin-by-bin basis.\footnote{Not sure if this subsection should instead go in the fit discussion. But as I haven't written any of that, I'll leave it here for now.}

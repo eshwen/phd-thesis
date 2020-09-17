@@ -316,8 +316,7 @@ A small subset of data from the \acrshort{l1t} is diverted for monitoring purpos
 \subsubsection{The High-Level Trigger}
 \label{subsubsec:detector_hlt}
 
-Events that pass a logical \texttt{OR} of the triggers at \acrlong{l1} are transmitted to the \acrshort{hlt}. The higher resolution data collected at the point of collision is available, along with information from the tracker. Populated with Intel Xeon processors (high core count CPUs), approximately 22,000 cores are available (by the end of Run-2) to process the data sent from the \acrshort{l1t}. In order to avoid a back-log, a 100\,kHz input rate allows a \acrshort{hlt} node $\sim$220\,ms to make a decision. High-level software in the \acrshort{cmssw} environment (written in C\texttt{++} and Python, see Chpt.~[REF]) % reference analysis tools/software section
-is executed. A larger and more complex trigger menu is available, including the possibility analysis-specific triggers (such as those that target \acrshort{vbf} topologies in Chpt.~\ref{chap:higgstoinv}). Complex variables such as \alphaT can even be calculated and triggered on.
+Events that pass a logical \texttt{OR} of the triggers at \acrlong{l1} are transmitted to the \acrshort{hlt}. The higher resolution data collected at the point of collision is available, along with information from the tracker. Populated with Intel Xeon processors (high core count CPUs), approximately 22,000 cores are available (by the end of Run-2) to process the data sent from the \acrshort{l1t}. In order to avoid a back-log, a 100\,kHz input rate allows a \acrshort{hlt} node $\sim$220\,ms to make a decision. High-level software in the \acrshort{cmssw} environment (written in C\texttt{++} and Python) is executed. A larger and more complex trigger menu is available, including the possibility analysis-specific triggers (such as those that target \acrshort{vbf} topologies in Chpt.~\ref{chap:higgstoinv}). Complex variables such as \alphaT can even be calculated and triggered on.
 
 Physics objects are reconstructed further, with algorithms such as \glssymbol{antikt} used to cluster \glspl{jet}~\cite{Cacciari:2008gp}. Using a distance parameter---related to the radius of the cone surrounding the hadrons---of 0.4 denotes a \gls{jet} as ``AK4'', while a value of 0.8 is used to cluster fat jets and are known as ``AK8.'' Additional classification algorithms are also applied to objects, such as the \deepcsv neural network~\cite{Sirunyan:2017ezt} to identify \glspl{bjet}. A global event reconstruction from the \gls{particleflow} (\acrshort{pf})~\cite{CMS-PAS-PFT-09-001,CMS-PRF-14-001} is performed as well. Some of these algorithms can be computationally expensive. Consequently, only approximations/parametrisations are used at \acrshort{hlt} level. The full-scale versions of these kind of algorithms are re-run on the retained events in later stages of postprocessing.\footnote{If more detail is required here, I should make a separate subsubsection and discuss.}
 
@@ -379,11 +378,14 @@ The pairs of \glspl{jet} are categorised into sixteen bins of \abseta, the highe
     \label{eq:jec_detector_response}
 \end{equation}
 The reciprocal of $r_j$ vs. \ptLOne is inspected and a correction curve is fitted. A gaussian captures the peak at low \pt and the following equation\footnote{Go into more detail regarding the equation? Reasoning, etc.} is used for the tail:
-\begin{equation}
-    \ptsup{{\mathrm{L1, \ corr.}}} = \ptLOne \cdot \left( p_0 + \frac{p_1}{ \left(\log_{10} \ptLOne \right) ^2 + p_2 } + p_3 \cdot \exp(-p_4 \left( \log_{10} \ptLOne - p_5 \right)^2) \right)
+\begin{equation} % Using invisible right bracket on first line and left on second line to get large brackets but avoid errors
+    \begin{aligned}
+\ptsup{{\mathrm{L1, \ corr.}}} = \ptLOne \cdot \Big( p_0 &+ p_1 \cdot \erf \left(p_2 \cdot \left( \log_{10}\ptLOne - p_3 \right) \right) \\
+&+ p_4 \cdot \exp(p_5 \cdot \left( \log_{10}\ptLOne - p_6 \right)^2 ) \Big)
+    \end{aligned}
     \label{eq:corr_curve_jec_tail}
 \end{equation}
-The input parameters for the function may not be adequate for all cases, so they are often tuned to capture the low-\pt spike and high-\pt plateau (see Fig.~\ref{fig:detector_jecs_corr_curves} for an example). The value of this fit function in each \ptRef bin is exported.
+The starting parameters for the function may not be adequate for all cases, so they are often tuned to capture the low-\pt spike and high-\pt plateau (see Fig.~\ref{fig:detector_jecs_corr_curves} for an example). The value of this fit function in each \ptRef bin is exported.
 
 % Should I note the pt_ref and abseta bins for the calibrations? In most recent talk in L1T DPG meetings/, I have the eta bins (also in iEta). In the sets of plots I have, I can probably also make a table of the pt_ref bins
 
@@ -391,13 +393,13 @@ The input parameters for the function may not be adequate for all cases, so they
     \centering
     \begin{subfigure}[b]{0.45\textwidth}
         \includegraphics[width=\textwidth]{./figures/jecs/corrCurveBarrel.pdf}
-        \caption{$0.435 < \abseta < 0.783$ (Barrel)}
+        \caption{$\text{0.435} < \abseta < \text{0.783}$ (Barrel)}
         \label{fig:detector_jecs_corr_curve_Barrel}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.45\textwidth}
         \includegraphics[width=\textwidth]{./figures/jecs/corrCurveHF.pdf}
-        \caption{$4.191 < \abseta < 5.191$ (\acrshort{hf})}
+        \caption{$\text{4.191} < \abseta < \text{5.0}$ (\acrshort{hf})}
         \label{fig:detector_jecs_corr_curve_HF}
     \end{subfigure}
 \caption[Examples of correction curves used to calibrate the jet energies in two \abseta bins]{Examples of correction curves used to calibrate the \gls{jet} energies in two \abseta bins. The reciprocal of the response is plotted against the \pt of the \acrlong{l1} \gls{jet}, and a complex function (Eq.~\ref{eq:jec_detector_response}) fits the points. These plots are from the \acrlong{jec} performed on 2018 \acrshort{qcd} \acrlong{mc}.}

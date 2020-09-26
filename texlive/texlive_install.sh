@@ -33,4 +33,4 @@ tlmgr option -- autobackup 0
 tlmgr update --self --all --no-auto-install
 
 tlmgr uninstall caption --force
-unzip -d `kpsewhich --var-value TEXMFLOCAL` ./texlive/caption-CTAN_2020-07-20.zip
+unzip -o -d `kpsewhich --var-value TEXMFLOCAL` ./texlive/caption-CTAN_2020-07-20.zip

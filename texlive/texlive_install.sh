@@ -3,8 +3,7 @@
 # Originally from https://github.com/latex3/latex3
 
 # This script is used for building LaTeX files using Travis
-# A minimal current TL is installed adding only the packages that are
-# required
+# A minimal current TL is installed adding only the packages that are required
 
 # See if there is a cached version of TL available
 export PATH=/tmp/texlive/bin/x86_64-linux:$PATH
@@ -31,3 +30,5 @@ tlmgr option -- autobackup 0
 
 # Update the TL install but add nothing new
 tlmgr update --self --all --no-auto-install
+
+tlmgr restore caption 55900 --force

@@ -31,9 +31,3 @@ tlmgr option -- autobackup 0
 
 # Update the TL install but add nothing new
 tlmgr update --self --all --no-auto-install
-
-# Hacks required to use an old version of the caption package until bugs relating to subfigures are fixed
-tlmgr uninstall caption --force
-unzip -o -d `kpsewhich --var-value TEXMFLOCAL` ./texlive/caption-CTAN_2020-07-20.zip
-tlmgr install subcaption
-mktexlsr

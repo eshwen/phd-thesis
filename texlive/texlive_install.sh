@@ -32,4 +32,5 @@ tlmgr option -- autobackup 0
 # Update the TL install but add nothing new
 tlmgr update --self --all --no-auto-install
 
-unzip -d `kpsewhich --var-value TEXMFLOCAL` caption-CTAN_2020-07-20.zip
+pwd
+unzip -d `kpsewhich --var-value TEXMFLOCAL` ../texlive/caption-CTAN_2020-07-20.zip

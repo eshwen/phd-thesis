@@ -43,24 +43,22 @@ Contributions to the signal region from \acrshort{qcd} multijet events should be
 
 A general rule is that the equivalent luminosity of a given dataset should be comparable to, or even exceed, that of the data collected by the experiment. Since the \acrshort{qcd} multijet process has a very large cross section, simulating the required number of events to match the luminosity of the data recorded during Run-2 is not feasible. This can be mitigated by using a data-driven method to estimate it from the multijet-enriched sidebands described in Chpt.~\ref{subsec:htoinv_sidebands}.
 
-To estimate the presence of \acrshort{qcd} in the signal region, a data driven approach is taken utilising the sidebands defined in Chpt.~\ref{subsec:htoinv_sidebands}. These are derived separately for each category and data taking year. Firstly, a fit to the lepton and photon \glspl{CR} is performed to extract the rate parameters that scale the non-multijet background in each subcategory and \ptmiss bin. Applying these scale factors to the relevant backgrounds in the sidebands changes the distribution and hence the data/\acrshort{mc} agreement. The excess in data is assumed to arise solely from multijet events, and as such the difference between data and the non-multijet background is attributed to \acrshort{qcd} (denoted as $N_{\mathrm{QCD}}$).
+To estimate the presence of \acrshort{qcd} in the signal region, a data driven approach is taken utilising the sidebands defined in Chpt.~\ref{subsec:htoinv_sidebands}. These are derived separately for each category and data taking year. Firstly, a fit to the lepton and photon \glspl{CR} is performed to extract the rate parameters that scale the non-multijet background in each subcategory and \ptmiss bin. Applying these scale factors to the relevant backgrounds in the sidebands changes the distribution and hence the data/\acrshort{mc} agreement. The excess in data in a sideband is assumed to arise solely from multijet events, and as such the difference between data and the non-multijet background is attributed to \acrshort{qcd} (denoted as $N_{\mathrm{SB}}^{\mathrm{QCD}}$).
 
-Given the statistical limitations of multijet simulation in the signal region, the expected distribution of the \acrshort{qcd} background is taken from the sidebands. The tight double sideband from Tab.~\ref{tab:sideband_defs}---the most enriched in \acrshort{qcd} \acrshort{mc}---is used to estimate the fraction of \acrshort{qcd} in each subcategory $f_{\mathrm{c}}$ in the signal region:
+\acrshort{qcd} in the signal region $N_{\mathrm{pred.}}^{\mathrm{QCD}}$ is predicted in each subcategory and \ptmiss bin as follows: 
 \begin{equation}
-    f_{\mathrm{c}}(\mathrm{subcategory}) = \frac{ \sum_{\ptmiss} N_{\mathrm{QCD}}(\ptmiss, \, \mathrm{subcategory}) }{ \sum_{\ptmiss, \, \mathrm{subcategory}} N_{\mathrm{QCD}}(\ptmiss, \, \mathrm{subcategory}) }
-\end{equation}
-
-The loose double sideband is used to estimate the fraction in each $\ptmiss$ bin $f_{\mathrm{m}}$ in the signal region:
-\begin{equation}
-    f_{\mathrm{m}}(\ptmiss) = \frac{ \sum_{\mathrm{subcategory}} N_{\mathrm{QCD}}(\ptmiss, \, \mathrm{subcategory}) }{ \sum_{\ptmiss, \, \mathrm{subcategory}} N_{\mathrm{QCD}}(\ptmiss, \, \mathrm{subcategory}) }
-\end{equation}
-
-The same sideband is used to predict the \acrshort{qcd} in the signal region $N_{\mathrm{QCD}}^{\mathrm{pred.}}$, distributed amongst the subcategories and \ptmiss bins as follows: 
-\begin{equation}
-    N_{\mathrm{QCD}}^{\mathrm{pred.}}(\ptmiss, \, \mathrm{subcategory}) = f_{\mathrm{m}}(\ptmiss) \cdot f_{\mathrm{c}}(\mathrm{subcategory}) \cdot \transfac
+    N_{\mathrm{pred.}}^{\mathrm{QCD}}(\mathrm{subcategory}, \, \ptmiss) = N_{\mathrm{SB}}^{\mathrm{QCD}} \cdot \transfac_{\mathrm{QCD}} \cdot \catFraction(\mathrm{subcategory}) \cdot \metFraction(\ptmiss)
+    \label{eq:qcd_prediction}
 \end{equation}
 
 % Explaining the TF sounds a bit weird, but will hopefully make more sense once I've explained the transfer factors for the lost lepton and Z->invisible prediction as they're bin-by-bin
-where $\transfac$ is the transfer factor between the \acrshort{qcd} in the sideband and the multijet simulation in the signal region. As the signal region is depleted in simulated multijet events, the transfer factor is inclusive rather than per \ptmiss bin and subcategory. In this case, it is the total amount of \acrshort{qcd} in the sideband multiplied by the ratio of multijet simulation in the signal region to the sideband.
+where $\transfac_{\mathrm{QCD}}$ is the transfer factor relating the \acrshort{qcd} in the sideband to the multijet simulation in the signal region. As the signal region is depleted in simulated multijet events, the transfer factor is inclusive over the region rather than per \ptmiss bin and subcategory, i.e.,
+\begin{equation}
+    \transfac_{\mathrm{QCD}} = \frac{ N_{\mathrm{MC, \ SR}}^{\mathrm{QCD}} } { N_{\mathrm{MC, \ SB}}^{\mathrm{QCD}} }
+%   \transfac_{\mathrm{QCD}} = \frac{ \sum_{\mathrm{subcategory}, \, \ptmiss}^{\mathrm{SR}} N_{\mathrm{MC}}^{\mathrm{QCD}}(\mathrm{subcategory}, \, \ptmiss) }{ \sum_{\mathrm{subcategory}, \, \ptmiss}^{\mathrm{SB}} N_{\mathrm{MC}}^{\mathrm{QCD}}(\mathrm{subcategory}, \, \ptmiss) }
+    \label{eq:transfer_factor_qcd}
+\end{equation}
+
+The distribution of the \acrshort{qcd} background for each subcategory and \ptmiss bin is extrapolated from the sidebands with the factors $\catFraction$ and $\metFraction$. $\catFraction$ is the fraction of \acrshort{qcd} in a given subcategory of a given sideband, inclusive of \ptmiss. For the \ttH and \ggH categories, the tight double sideband from Tab.~\ref{tab:sideband_defs}---the most enriched in \acrshort{qcd} \acrshort{mc}---is used to derive the factor. $\metFraction$ is the fraction of \acrshort{qcd} in a given \ptmiss bin of a given sideband, inclusive of subcategory. For the \ttH and \ggH categories, the loose double sideband is used to derive the factor. This sideband is used for the prediction as a whole, i.e., for the terms $N_{\mathrm{SB}}^{\mathrm{QCD}}$ and $\transfac_{\mathrm{QCD}}$ in Eq.~\ref{eq:qcd_prediction}.
 
 % Need to mention how prediction is done for VH, given sidebands 0 and 2 are pretty depleted in stats. Also need to mention how uncertainty is handled for the predicted QCD

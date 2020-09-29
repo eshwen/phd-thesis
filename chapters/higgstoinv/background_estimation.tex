@@ -3,7 +3,7 @@
 
 % Here, give an overview of how the background estimation is done. Just say what the procedure is, generally, for each background
 
-Accurate estimation of the \acrlong{sm} background processes in the signal region is paramount to a search for new physics. Mismeasured backgrounds and uncertainties can wash out traces of signal and affect the fit to data. The yields of the minor backgrounds are taken directly from simulation. However, the lost lepton, invisibly decaying \PZ boson, and \acrshort{qcd} multijet processes must be predicted more carefully. The single lepton \glspl{CR} are used to constrain the lost lepton background, arising primarily from \ttbarpjets and \wtolnupjets. The dilepton and single photon \glspl{CR} predict the \ztonunupjets background. These processes rely on the \acrlong{mc} yields in those regions, and transfer factors arising from the data-\acrshort{mc} discrepancy. Sidebands to the signal region estimate \acrshort{qcd} multijet contributions from data. Fig.~\ref{fig:htoinv_fit_overview} illustrates the correspondence between the analysis regions and background predictions.
+Accurate estimation of the \acrlong{sm} background processes in the signal region is paramount to a search for new physics. Mismeasured backgrounds and uncertainties can wash out traces of signal and affect the fit to data. The yields of the minor backgrounds are taken directly from simulation.\footnote{I guess this isn't really true if we group all backgrounds into Ttw and Zinv. In which case, will have to explain the grouping and reword stuff in this paragraph. So it may make sense to describe the fit before this, or integrate the background estimation section into it.} However, the lost lepton, invisibly decaying \PZ boson, and \acrshort{qcd} multijet processes must be predicted more carefully. The single lepton \glspl{CR} are used to constrain the lost lepton background, arising primarily from \ttbarpjets and \wtolnupjets. The dilepton and single photon \glspl{CR} predict the \ztonunupjets background. These processes rely on the \acrlong{mc} yields in those regions, and transfer factors arising from the \acrshort{mc} ratios between them and the signal region. Sidebands to the signal region estimate \acrshort{qcd} multijet contributions from data. The predicted background yields from each of these methods replace the \acrlong{mc} in the signal region when fed into the fit in Chpt.~\ref{sec:htoinv_satistical_treatment}. Fig.~\ref{fig:htoinv_fit_overview} illustrates the correspondence between the analysis regions and background predictions.
 
 \begin{figure}[htbp]
     \centering
@@ -18,6 +18,18 @@ Accurate estimation of the \acrlong{sm} background processes in the signal regio
 
 \subsection{Lost lepton (\texorpdfstring{\PW}{W} and \texorpdfstring{$\ttbarpjets$}{ttbar plus jets})}
 \label{subsec:htoinv_lost_lepton_bkg}
+
+In order to predict the lost lepton background in the signal region, a transfer factor $\transfac$ from simulation is defined that then scales the observed data in the single lepton \glspl{CR}. Events are categorised and binned in the same manner in the single lepton \glspl{CR} as in the signal region, such that the prediction is derived bin-by-bin. The transfer factor is simply the ratio of the simulation in the signal region to the \gls{CR}:
+\begin{equation}
+    \TF_{\singleMuCr} = \frac{ N_{\mathrm{MC}}^{\lostlepton, \, \mathrm{SR}}(\mathrm{subcategory}, \, \ptmiss) }{ N_{\mathrm{MC}}^{\singleMuCr}(\mathrm{subcategory}, \, \ptmiss) }
+\end{equation}
+
+The predicted yield in the signal region is then
+\begin{equation}
+    N_{\mathrm{pred.}}^{\lostlepton}(\mathrm{subcategory}, \, \ptmiss) = \TF_{\singleMuCr} \cdot N_{\mathrm{data}}^{\singleMuCr}(\mathrm{subcategory}, \, \ptmiss)
+\end{equation}
+
+% How is this modified when electrons are used as well?
 
 
 %=========================================================

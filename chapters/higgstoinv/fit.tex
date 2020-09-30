@@ -1,17 +1,17 @@
 \section{Statistical model and fit}
 \label{sec:htoinv_satistical_treatment}
 
-A likelihood model is used in the fit to data, obtaining the \acrlong{sm} expectation values in the signal and \glspl{CR} as well as testing for signals of the \higgstoinv decay. The observed event counts from data in each subcategory and \ptmiss bin are modelled as Poisson-distributed variables around the \acrshort{sm} expectation with a potential contribution from signal (assumed to be zero in the null hypothesis). Expected event counts in the signal region are obtained from simulation in conjunction with transfer factors from the \glspl{CR} and \glspl{SB} for non-multijet and \acrshort{qcd} multijet processes, respectively, as described in Chpt.~\ref{subsec:htoinv_background_est}. Systematic uncertainties associated with the non-multijet processes, discussed in Chpt.~\ref{sec:htoinv_mc_corrections}, are integrated as nuisance parameters within the model. In full, the likelihood model is described as
+A likelihood model is used in the fit to data, obtaining the \acrlong{sm} expectation values in the signal and \glspl{CR} as well as testing for signals of the \higgstoinv decay. The observed event counts from data in each subcategory and \ptmiss bin are modelled as Poisson-distributed variables around the \acrshort{sm} expectation with a potential contribution from signal (assumed to be zero in the null hypothesis). Expected event counts in the signal region are obtained from simulation in conjunction with transfer factors from the \glspl{CR} and \glspl{SB} for non-multijet and \acrshort{qcd} multijet processes, respectively, as described in Chpt.~\ref{subsec:htoinv_background_est}. Systematic uncertainties associated with the non-multijet processes, discussed in Chpt.~\ref{sec:htoinv_mc_corrections}, are integrated as nuisance parameters within the model. In full, the likelihood function $\likelihood_{\higgstoinv}$ is described as
 \begin{equation}
-    \likelihood = \likelihood_{\mathrm{SR}} \cdot \likelihood_{\text{\singleMuCr CR}} \cdot \likelihood_{\text{\doubleMuCr CR}} \cdot \likelihood_{\text{\singleEleCr CR}} \cdot \likelihood_{\text{\doubleMuCr CR}} \cdot \likelihood_{\text{\singlePhotonCr CR}}
+    \likelihood_{\higgstoinv} = \likelihood_{\mathrm{SR}} \cdot \likelihood_{\text{\singleMuCr CR}} \cdot \likelihood_{\text{\doubleMuCr CR}} \cdot \likelihood_{\text{\singleEleCr CR}} \cdot \likelihood_{\text{\doubleMuCr CR}} \cdot \likelihood_{\text{\singlePhotonCr CR}}
     \label{eq:likelihood_overall}
 \end{equation}
 
 The likelihood in a given region may be written as multiple Poisson likelihoods (where $\mathcal{P}(n | \lambda) \equiv \frac{ e^{-\lambda} \lambda^n }{n!}$). In the signal region,
 \begin{equation}
     \begin{aligned}
-\likelihood_{\mathrm{SR}} &= \prod_{\mathrm{subcategory} = i} \prod_{\ptmiss = j(i)} \mathcal{P}(n_{\mathrm{obs.}}^{i, j} | n_{\mathrm{pred.}}^{i, j}), \ \text{where}\\
-n_{\mathrm{pred.}}^{i, j} &= r \cdot s^{i, j} \cdot \rho_s^{i, j}\\
+\likelihood_{\mathrm{SR}} &= \prod_{\mathrm{subcategory} = i} \prod_{\ptmiss = j(i)} \mathcal{P}(N_{\mathrm{obs.}}^{i, j} | N_{\mathrm{pred.}}^{i, j}), \ \text{where}\\
+N_{\mathrm{pred.}}^{i, j} &= r \cdot s^{i, j} \cdot \rho_s^{i, j}\\
 &+ b_{\lostlepton}^{i, j} \cdot a_{\lostlepton}^{i, j} \cdot \cdot \rho_{\lostlepton}^{i, j}\\
 &+ b_{\ztonunu}^{i, j} \cdot a_{\ztonunu}^{i, j} \cdot \cdot \rho_{\ztonunu}^{i, j}\\
 &+ b_{\mathrm{QCD}}^{i, j} \cdot \omega_{\mathrm{QCD}}^{i, j}
@@ -22,11 +22,11 @@ n_{\mathrm{pred.}}^{i, j} &= r \cdot s^{i, j} \cdot \rho_s^{i, j}\\
 where $r$ is the unconstrained signal strength parameter, i.e., the upper limit on $\BRof{\higgstoinv}$, $s$ is the signal expectation determined from simulation, $\rho$ encodes the systematic uncertainties associated with simulation, $b$ is the predicted number of events (further discussed in Chpt.~\ref{subsec:htoinv_background_est}), $a$ is an unconstrained rate parameter connecting the signal and relevant \glspl{CR}, and $\omega$ contains the uncertainties on the \acrshort{qcd} multijet background estimate. For the control regions, the likelihoods are
 \begin{equation}
     \begin{aligned}
-\likelihood_{\text{\singleMuCr CR}} &= \prod_{i} \prod_{j(i)} \mathcal{P}( n_{\mathrm{obs.}, \, \Pmu }^{i, j} | r \cdot s^{i, j}_{\Pmu} \cdot \rho_{s,\, \Pmu}^{i, j} + b_{\Pmu}^{i, j} \cdot a_{\lostlepton}^{i, j} \cdot \rho_{\Pmu}^{i, j} )\\
-\likelihood_{\text{\doubleMuCr CR}} &= \prod_{i} \prod_{j(i)} \mathcal{P}( n_{\mathrm{obs.}, \, \Pmu\Pmu }^{i, j} | r \cdot s^{i, j}_{\Pmu\Pmu} \cdot \rho_{s,\, \Pmu\Pmu}^{i, j} + b_{\Pmu\Pmu}^{i, j} \cdot a_{\ztonunu}^{i, j} \cdot \rho_{\Pmu\Pmu}^{i, j} )\\
-\likelihood_{\text{\singleEleCr CR}} &= \prod_{i} \prod_{j(i)} \mathcal{P}( n_{\mathrm{obs.}, \, \Pe }^{i, j} | r \cdot s^{i, j}_{\Pe} \cdot \rho_{s,\, \Pe}^{i, j} + b_{\Pe}^{i, j} \cdot a_{\lostlepton}^{i, j} \cdot \rho_{\Pe}^{i, j} )\\
-\likelihood_{\text{\doubleEleCr CR}} &= \prod_{i} \prod_{j(i)} \mathcal{P}( n_{\mathrm{obs.}, \, \Pe\Pe }^{i, j} | r \cdot s^{i, j}_{\Pe\Pe} \cdot \rho_{s,\, \Pe\Pe}^{i, j} + b_{\Pe\Pe}^{i, j} \cdot a_{\ztonunu}^{i, j} \cdot \rho_{\Pe\Pe}^{i, j} )\\
-\likelihood_{\text{\singlePhotonCr CR}} &= \prod_{i} \prod_{j(i)} \mathcal{P}( n_{\mathrm{obs.}, \, \Pphoton }^{i, j} | r \cdot s^{i, j}_{\Pphoton} \cdot \rho_{s,\, \Pphoton}^{i, j} + b_{\Pphoton}^{i, j} \cdot a_{\ztonunu}^{i, j} \cdot \rho_{\Pphoton}^{i, j} + b_{\mathrm{QCD}}^{i, j} \cdot \omega_{\mathrm{QCD}}^{i, j} )
+\likelihood_{\text{\singleMuCr CR}} &= \prod_{i} \prod_{j(i)} \mathcal{P}( N_{\mathrm{obs.}, \, \Pmu }^{i, j} | r \cdot s^{i, j}_{\Pmu} \cdot \rho_{s,\, \Pmu}^{i, j} + b_{\Pmu}^{i, j} \cdot a_{\lostlepton}^{i, j} \cdot \rho_{\Pmu}^{i, j} )\\
+\likelihood_{\text{\doubleMuCr CR}} &= \prod_{i} \prod_{j(i)} \mathcal{P}( N_{\mathrm{obs.}, \, \Pmu\Pmu }^{i, j} | r \cdot s^{i, j}_{\Pmu\Pmu} \cdot \rho_{s,\, \Pmu\Pmu}^{i, j} + b_{\Pmu\Pmu}^{i, j} \cdot a_{\ztonunu}^{i, j} \cdot \rho_{\Pmu\Pmu}^{i, j} )\\
+\likelihood_{\text{\singleEleCr CR}} &= \prod_{i} \prod_{j(i)} \mathcal{P}( N_{\mathrm{obs.}, \, \Pe }^{i, j} | r \cdot s^{i, j}_{\Pe} \cdot \rho_{s,\, \Pe}^{i, j} + b_{\Pe}^{i, j} \cdot a_{\lostlepton}^{i, j} \cdot \rho_{\Pe}^{i, j} )\\
+\likelihood_{\text{\doubleEleCr CR}} &= \prod_{i} \prod_{j(i)} \mathcal{P}( N_{\mathrm{obs.}, \, \Pe\Pe }^{i, j} | r \cdot s^{i, j}_{\Pe\Pe} \cdot \rho_{s,\, \Pe\Pe}^{i, j} + b_{\Pe\Pe}^{i, j} \cdot a_{\ztonunu}^{i, j} \cdot \rho_{\Pe\Pe}^{i, j} )\\
+\likelihood_{\text{\singlePhotonCr CR}} &= \prod_{i} \prod_{j(i)} \mathcal{P}( N_{\mathrm{obs.}, \, \Pphoton }^{i, j} | r \cdot s^{i, j}_{\Pphoton} \cdot \rho_{s,\, \Pphoton}^{i, j} + b_{\Pphoton}^{i, j} \cdot a_{\ztonunu}^{i, j} \cdot \rho_{\Pphoton}^{i, j} + b_{\mathrm{QCD}}^{i, j} \cdot \omega_{\mathrm{QCD}}^{i, j} )
     \end{aligned}
     \label{eq:likelihood_CRs}
 \end{equation}

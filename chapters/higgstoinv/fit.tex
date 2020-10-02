@@ -1,47 +1,45 @@
 \section{Statistical model and fit}
 \label{sec:htoinv_satistical_treatment}
 
-A likelihood model is used in the fit to data, obtaining the \acrlong{sm} expectation values in the signal and \glspl{CR} as well as testing for signals of the \higgstoinv decay. The observed event counts from data in each subcategory and \ptmiss bin are modelled as Poisson-distributed variables around the \acrshort{sm} expectation with a potential contribution from signal (assumed to be zero in the null hypothesis). Expected event counts in the signal region are obtained from simulation in conjunction with transfer factors from the \glspl{CR} and \glspl{SB} for non-multijet and \acrshort{qcd} multijet processes, respectively, as described in Chpt.~\ref{subsec:htoinv_background_est}. Systematic uncertainties associated with the non-multijet processes, discussed in Chpt.~\ref{sec:htoinv_mc_corrections}, are integrated as nuisance parameters within the model. In full, the likelihood function $\likelihood_{\higgstoinv}$ is described as
+A likelihood model is used in the fit to data, obtaining the \acrlong{sm} expectation values in the signal and \glspl{CR} as well as testing for signals of the \higgstoinv decay. Events are categorised in two dimensions: the subcategories that target specific Higgs boson production modes and final state topologies as per Tab.~\ref{tab:htoinv_categories}, and in bins of \ptmiss as per Chpt.~\ref{subsec:htoinv_binning}. The observed event counts from data in each subcategory and \ptmiss bin are modelled as Poisson-distributed variables around the \acrshort{sm} expectation with a potential contribution from signal (assumed to be zero in the null hypothesis). Expected event counts in the signal region are obtained from simulation, aided by predictions from the \glspl{CR} and \glspl{SB} for non-multijet and \acrshort{qcd} multijet processes, respectively. These are elaborated upon in Chpt.~\ref{subsec:htoinv_background_est}. Systematic uncertainties associated with the non-multijet processes, discussed in Chpt.~\ref{sec:htoinv_mc_corrections}, are incorporated as nuisance parameters within the model. The likelihood function $\likelihood_{\higgstoinv}$ can be summarised as
 \begin{equation}
     \likelihood_{\higgstoinv} = \likelihood_{\mathrm{SR}} \cdot \likelihood_{\text{\singleMuCr CR}} \cdot \likelihood_{\text{\doubleMuCr CR}} \cdot \likelihood_{\text{\singleEleCr CR}} \cdot \likelihood_{\text{\doubleMuCr CR}} \cdot \likelihood_{\text{\singlePhotonCr CR}}
     \label{eq:likelihood_overall}
 \end{equation}
 
-The likelihood in a given region may be written as multiple Poisson likelihoods (where $\mathcal{P}(n | \lambda) \equiv \frac{ e^{-\lambda} \lambda^n }{n!}$). In the signal region,
+The likelihood in a given region of the analysis may be written as multiple Poisson likelihoods (where $\mathcal{P}(n | \lambda) \equiv \frac{ e^{-\lambda} \lambda^n }{n!}$). In the signal region,
 \begin{equation}
     \begin{aligned}
 \likelihood_{\mathrm{SR}} &= \prod_{\mathrm{subcategory} = i} \prod_{\ptmiss = j(i)} \mathcal{P}(N_{\mathrm{obs.}}^{i, j} | N_{\mathrm{pred.}}^{i, j}), \ \text{where}\\
 N_{\mathrm{pred.}}^{i, j} &= r \cdot s^{i, j} \cdot \rho_s^{i, j}\\
-&+ b_{\lostlepton}^{i, j} \cdot a_{\lostlepton}^{i, j} \cdot \cdot \rho_{\lostlepton}^{i, j}\\
-&+ b_{\ztonunu}^{i, j} \cdot a_{\ztonunu}^{i, j} \cdot \cdot \rho_{\ztonunu}^{i, j}\\
-&+ b_{\mathrm{QCD}}^{i, j} \cdot \omega_{\mathrm{QCD}}^{i, j}
+&+ b_{\lostlepton}^{i, j} \cdot a_{\lostlepton}^{i, j} \cdot \rho_{\lostlepton}^{i, j}\\
+&+ b_{\ztonunu}^{i, j} \cdot a_{\ztonunu}^{i, j} \cdot \rho_{\ztonunu}^{i, j}\\
+&+ c_{\mathrm{QCD}}^{i, j} \cdot \omega_{\mathrm{QCD}}^{i, j}
     \end{aligned}
     \label{eq:likelihood_SR}
 \end{equation}
 
-where $r$ is the unconstrained signal strength parameter, i.e., the upper limit on $\BRof{\higgstoinv}$, $s$ is the signal expectation determined from simulation, $\rho$ encodes the systematic uncertainties associated with simulation, $b$ is the predicted number of events (further discussed in Chpt.~\ref{subsec:htoinv_background_est}), $a$ is an unconstrained rate parameter connecting the signal and relevant \glspl{CR}, and $\omega$ contains the uncertainties on the \acrshort{qcd} multijet background estimate. For the control regions, the likelihoods are
+where $r$ is the unconstrained signal strength parameter, i.e., the upper limit on $\BRof{\higgstoinv}$, $s$ is the signal expectation determined from simulation, $\rho$ encodes the systematic uncertainties associated with simulation, $b$ is the number of events from simulation, $a$ is an unconstrained rate parameter connecting the signal and corresponding \glspl{CR}, $c$ is the predicted number of events, and $\omega$ contains the uncertainties on the \acrshort{qcd} multijet background estimate. For the control regions, the likelihood functions are
 \begin{equation}
     \begin{aligned}
 \likelihood_{\text{\singleMuCr CR}} &= \prod_{i} \prod_{j(i)} \mathcal{P}( N_{\mathrm{obs.}, \, \Pmu }^{i, j} | r \cdot s^{i, j}_{\Pmu} \cdot \rho_{s,\, \Pmu}^{i, j} + b_{\Pmu}^{i, j} \cdot a_{\lostlepton}^{i, j} \cdot \rho_{\Pmu}^{i, j} )\\
 \likelihood_{\text{\doubleMuCr CR}} &= \prod_{i} \prod_{j(i)} \mathcal{P}( N_{\mathrm{obs.}, \, \Pmu\Pmu }^{i, j} | r \cdot s^{i, j}_{\Pmu\Pmu} \cdot \rho_{s,\, \Pmu\Pmu}^{i, j} + b_{\Pmu\Pmu}^{i, j} \cdot a_{\ztonunu}^{i, j} \cdot \rho_{\Pmu\Pmu}^{i, j} )\\
 \likelihood_{\text{\singleEleCr CR}} &= \prod_{i} \prod_{j(i)} \mathcal{P}( N_{\mathrm{obs.}, \, \Pe }^{i, j} | r \cdot s^{i, j}_{\Pe} \cdot \rho_{s,\, \Pe}^{i, j} + b_{\Pe}^{i, j} \cdot a_{\lostlepton}^{i, j} \cdot \rho_{\Pe}^{i, j} )\\
 \likelihood_{\text{\doubleEleCr CR}} &= \prod_{i} \prod_{j(i)} \mathcal{P}( N_{\mathrm{obs.}, \, \Pe\Pe }^{i, j} | r \cdot s^{i, j}_{\Pe\Pe} \cdot \rho_{s,\, \Pe\Pe}^{i, j} + b_{\Pe\Pe}^{i, j} \cdot a_{\ztonunu}^{i, j} \cdot \rho_{\Pe\Pe}^{i, j} )\\
-\likelihood_{\text{\singlePhotonCr CR}} &= \prod_{i} \prod_{j(i)} \mathcal{P}( N_{\mathrm{obs.}, \, \Pphoton }^{i, j} | r \cdot s^{i, j}_{\Pphoton} \cdot \rho_{s,\, \Pphoton}^{i, j} + b_{\Pphoton}^{i, j} \cdot a_{\ztonunu}^{i, j} \cdot \rho_{\Pphoton}^{i, j} + b_{\mathrm{QCD}}^{i, j} \cdot \omega_{\mathrm{QCD}}^{i, j} )
+\likelihood_{\text{\singlePhotonCr CR}} &= \prod_{i} \prod_{j(i)} \mathcal{P}( N_{\mathrm{obs.}, \, \Pphoton }^{i, j} | r \cdot s^{i, j}_{\Pphoton} \cdot \rho_{s,\, \Pphoton}^{i, j} + b_{\Pphoton}^{i, j} \cdot a_{\ztonunu}^{i, j} \cdot \rho_{\Pphoton}^{i, j} + c_{\mathrm{QCD}}^{i, j} \cdot \omega_{\mathrm{QCD}}^{i, j} )
     \end{aligned}
     \label{eq:likelihood_CRs}
 \end{equation}
 
-where the products over the indices $i$ and $j$ are the same as in Eq.~\ref{eq:likelihood_SR}. The rate parameters $a$ are shared across the relevant \glspl{CR} for the same subcategories and \ptmiss bins, i.e., $a_{\lostlepton}$ in the single lepton regions, and $a_{\ztonunu}$ in the dilepton and single photon regions. \acrshort{qcd} is not included in any of the lepton \glspl{CR}, but is estimated from the photon purity measurement in Chpt.~\ref{subsubsec:htoinv_photon_purity} for the \singlePhotonCr \gls{CR}.
+where the products over the indices $i$ and $j$ are the same as in Eq.~\ref{eq:likelihood_SR}. Signal contamination $s$ is accounted for in all \glspl{CR}. The rate parameters $a$ are shared across the complementary \glspl{CR} for the same subcategories and \ptmiss bins, i.e., $a_{\lostlepton}$ in the single lepton regions, and $a_{\ztonunu}$ in the dilepton and single photon regions. \acrshort{qcd} multijet \acrshort{mc} is not included in any of the lepton \glspl{CR}, but is estimated in the \singlePhotonCr \gls{CR} from the photon purity measurement recounted in Chpt.~\ref{subsubsec:htoinv_photon_purity}.
 
 % Give an outline of the how the fit is done (likelihood model, writing it out in full and highlighting each aspect) and how the background estimation methods factor in, etc. Like background estimation, describe it generally since I didn't explicitly work on it. Current fit model is given at https://indico.cern.ch/event/934008/contributions/3924639/attachments/2065231/3465892/2020_06_15_CHIP_Meeting_nonVBF_fit.pdf
-
-% Describe how processes are grouped together in signal region (ttbar/W/residual SM, Z->inv., QCD in signal region, everything but QCD grouped as electroweak in the CRs, QCD dropped in lepton CRs since it has very negligible presence except for unnatural high-weight events, but kept in photon CR using purity measurement)
 
 % In the following sections, talk more about the specific aspects for each mode (e.g., dropping dilepton and photon CRs for ttH, using photon CR only for VH and ggF)
 
 % Toys (verbatim from Henning): toys are repeat experiments where you draw new values for your observed signal and background based on the uncertainties associated with both. The parameters values are randomly drawn according to some pdf. I.e. if we talk about large event counts this would be gaussian with width equal to uncertainty,  small event counts Poissonian, for syst uncert possibly log-normal.
 
-% autoMCstats reference: https://arxiv.org/pdf/1103.0354.pdf
+% autoMCstats reference for stat errors in bins (just MC?): https://arxiv.org/pdf/1103.0354.pdf
 
 
 %=========================================================
@@ -50,7 +48,7 @@ where the products over the indices $i$ and $j$ are the same as in Eq.~\ref{eq:l
 \subsection{Binning}
 \label{subsec:htoinv_binning}
 
-In addition to the categories in Chpt.~\ref{sec:htoinv_categorisation}, events are further separated into bins of \ptmiss as that distribution is expected to maximally differentiate signal and background in the fit. Since the number of events can significantly differ between categories in the different regions of the analysis, a global binning configuration is inadequate. For each category, the number and widths of the bins are tuned to ensure sufficient statistical precision. These schemes are tied to the category, so are reflected in all regions such that transfer factors from the background estimation methods can be calculated on a bin-by-bin basis unless stated otherwise.\footnote{Should I have a table or something that shows the binning scheme for each subcategory, similar to RA1?}
+In addition to the categories in Chpt.~\ref{sec:htoinv_categorisation}, events are further separated into bins of \ptmiss as that distribution is expected to maximally differentiate signal and background in the fit. Since the number of events can significantly differ between categories in the different regions of the analysis, a global binning configuration is inadequate. For each subcategory, the number and widths of the bins are tuned to ensure sufficient statistical precision. These schemes are tied to the subcategory, so are reflected in all regions such that the background estimation methods can operate on a bin-by-bin basis.\footnote{Should I have a table or something that shows the binning scheme for each subcategory, similar to RA1?}
 
 
 %=========================================================
@@ -67,8 +65,8 @@ Accurate estimation of the \acrlong{sm} background processes in the signal regio
 
 \begin{easylist}[itemize]
     \easylistprops
-    & Lost lepton: Comprised of electroweak $\PW + \text{2 jets}$, \gammapjets, single top, \ttbarpjets, $\ttbar\Pphoton \plusjets$, $\ttbar\PW \plusjets$, $\ttbar\PH \plusjets$, \wtolnupjets
-    & $\ztonunu$: Comprised of Drell-Yan $(\HepProcess{\PZ \to \Plepton\Plepton}) \plusjets$, multiboson, electroweak $\PZ + \text{2 jets}$, $\ttbar\PZ \plusjets$, \ztonunupjets
+    & Lost lepton: Comprised of electroweak $\PW + \text{2 jets}$, \gammapjets, single top, \ttbarpjets, $\ttbar\Pphoton \plusjets$, $\ttbar\PW \plusjets$, $\ttbar\PH \plusjets$, and \wtolnupjets
+    & $\ztonunu$: Comprised of Drell-Yan $(\HepProcess{\PZ \to \Plepton\Plepton}) \plusjets$, multiboson, electroweak $\PZ + \text{2 jets}$, $\ttbar\PZ \plusjets$, and \ztonunupjets
     & \acrshort{qcd}: \acrshort{qcd} multijet
 \end{easylist}
 
@@ -76,7 +74,7 @@ Accurate estimation of the \acrlong{sm} background processes in the signal regio
 
 \noindent{}In the lepton \glspl{CR}, all samples are grouped into a single ``electroweak'' process with the exception of \acrshort{qcd} multijet that is absent entirely. In the \singlePhotonCr \gls{CR}, the non-multijet datasets are also under the electroweak label, and the presence of \acrshort{qcd} is estimated from the photon purity measurement.
 
-The single lepton \glspl{CR} are used to constrain the lost lepton background in the signal region, arising primarily from \ttbarpjets and \wtolnupjets. The dilepton and photon \glspl{CR} predict the \ztonunupjets background. These estimations rely on the data and \acrlong{mc} yields in those regions, using \emph{transfer factors} to connect them to the signal region. Sidebands to the signal region estimate \acrshort{qcd} multijet contributions from data. Prediction of the background yields from each of these methods is done so within the fit and expressed in the likelihoods. Further explanation is given below. Fig.~\ref{fig:htoinv_fit_overview} illustrates the correspondence between the analysis regions and background predictions.
+The single lepton \glspl{CR} are used to constrain the lost lepton background in the signal region, arising primarily from \ttbarpjets and \wtolnupjets. The dilepton and photon \glspl{CR} predict the \ztonunupjets background. These estimations rely on the data and \acrlong{mc} yields in those regions, controlled via a rate parameter to connect them to the signal region. \Glspl{SB} to the signal region estimate \acrshort{qcd} multijet contributions from data. The prediction in this case takes the form of a \emph{transfer factor} method---a constrained application of a rate parameter. Prediction of the background yields from each of these methods is done so within the fit and expressed in the likelihoods. Further explanation is given below. Fig.~\ref{fig:htoinv_fit_overview} illustrates the correspondence between the analysis regions and background predictions.
 
 \begin{figure}[htbp]
     \centering
@@ -92,17 +90,7 @@ The single lepton \glspl{CR} are used to constrain the lost lepton background in
 \subsubsection{Lost lepton (\texorpdfstring{\PW}{W} and \texorpdfstring{$\ttbarpjets$}{ttbar plus jets})}
 \label{subsubsec:htoinv_lost_lepton_bkg}
 
-In order to predict the lost lepton background in the signal region, a transfer factor $\transfac$ from the single lepton \glspl{CR} is defined that then scales the event count from simulation in the signal region, obtaining the expected value. Events are categorised and binned in the same manner in the single lepton \glspl{CR} as in the signal region, such that the prediction is derived bin-by-bin. The transfer factor is simply the ratio of data to simulation in the \gls{CR}:
-\begin{equation}
-    \TF_{\singleMuCr} = \frac{ N_{\mathrm{data}}^{\singleMuCr}(\mathrm{subcategory}, \, \ptmiss) }{ N_{\mathrm{MC}}^{\singleMuCr}(\mathrm{subcategory}, \, \ptmiss) }
-\end{equation}
-
-Given two \glspl{CR} [are used] to derive the predicted yield in the signal region, an additional unconstrained rate parameter---set in the fit---is incorporated to ...
-\begin{equation}
-    N_{\mathrm{pred.}}^{\lostlepton}(\mathrm{subcategory}, \, \ptmiss) = N_{\mathrm{MC}}^{\lostlepton, \, \mathrm{SR}}(\mathrm{subcategory}, \, \ptmiss) \cdot \TF_{\singleMuCr} \cdot \TF_{\singleEleCr} \cdot a_{\lostlepton}(\mathrm{subcategory}, \, \ptmiss)
-\end{equation}
-
-% How is this modified when electrons are used as well?
+In order to predict the lost lepton background in the signal region, a freely floating rate parameter $a_{\lostlepton}$ is introduced in the fit. It is shared across the single lepton \glspl{CR} and signal region, where it scales the event count from simulation in these regions to obtain the expected values. Events are categorised and binned in the same manner in the single lepton \glspl{CR} as in the signal region, such that the rate parameters---and therefore the prediction---is derived bin-by-bin. The predicted number of lost lepton events in Eqs.~\ref{eq:likelihood_SR} and \ref{eq:likelihood_CRs} is then simply $b_{\lostlepton} \cdot a_{\lostlepton}$.
 
 
 %=========================================================
@@ -110,6 +98,8 @@ Given two \glspl{CR} [are used] to derive the predicted yield in the signal regi
 
 \subsubsection{\texorpdfstring{\ztonunupjets}{Z to nunu + jets}}
 \label{subsubsec:htoinv_znunu_bkg}
+
+The irreducible background from invisibly decaying \PZ bosons is estimated in the same manner as the lost lepton background. A rate parameter $a_{\ztonunu}$ ties together the dilepton \glspl{CR}, the photon \gls{CR}, and the signal region. The yields from simulation are scaled by the best fit value of the parameter, obtained during the simultaneous fit to the analysis regions. As with the lost lepton background, event categorisation is the same in these regions, allowing the predictions to be derived independently for each subcategory and \ptmiss bin. 
 
 
 %=========================================================
@@ -128,7 +118,7 @@ Contributions to the signal region from \acrshort{qcd} multijet events should be
 
 A general rule is that the equivalent luminosity of a given dataset should be comparable to, or even exceed, that of the data collected by the experiment. Since the \acrshort{qcd} multijet process has a very large cross section, simulating the required number of events to match the luminosity of the data recorded during Run-2 is not feasible. This can be mitigated by using a data-driven method to estimate it from the multijet-enriched sidebands described in Chpt.~\ref{subsec:htoinv_sidebands}.
 
-To estimate the presence of \acrshort{qcd} in the signal region, a data driven approach is taken utilising the sidebands defined in Chpt.~\ref{subsec:htoinv_sidebands}. These are derived separately for each category and data taking year. Firstly, a fit to the lepton and photon \glspl{CR} is performed to extract the rate parameters that scale the non-multijet background in each subcategory and \ptmiss bin. Applying these scale factors to the relevant backgrounds in the sidebands changes the distribution and hence the data/\acrshort{mc} agreement. The excess in data in a sideband is assumed to arise solely from multijet events, and as such the difference between data and the non-multijet background is attributed to \acrshort{qcd} (denoted as $N_{\mathrm{SB}}^{\mathrm{QCD}}$).
+To estimate the presence of \acrshort{qcd} in the signal region, a data driven approach is taken utilising the sidebands defined in Chpt.~\ref{subsec:htoinv_sidebands}. These are derived separately for each category and data taking year. Firstly, a fit to the lepton and photon \glspl{CR} is performed to extract the rate parameters that scale the non-multijet background in each subcategory and \ptmiss bin. Applying these scale factors to the corresponding backgrounds in the sidebands changes the distribution and hence the data/\acrshort{mc} agreement. The excess in data in a sideband is assumed to arise solely from multijet events, and as such the difference between data and the non-multijet background is attributed to \acrshort{qcd} (denoted as $N_{\mathrm{SB}}^{\mathrm{QCD}}$).
 
 \acrshort{qcd} in the signal region $N_{\mathrm{pred.}}^{\mathrm{QCD}}$ is predicted in each subcategory and \ptmiss bin as follows: 
 \begin{equation}

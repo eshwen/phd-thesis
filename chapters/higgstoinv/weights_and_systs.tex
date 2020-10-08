@@ -107,7 +107,7 @@ Uncertainties for the \acrshort{qcd} renormalisation scale, factorisation scale,
     \centering
     \begin{subfigure}[b]{0.32\textwidth}
         \includegraphics[width=\textwidth]{figures/nlo_k_factors/2D_wjets.pdf}
-        \caption{NLO QCD (\PW)}
+        \caption{NLO QCD ($\mkern-2mu\PW$)}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.32\textwidth}
@@ -254,7 +254,7 @@ The renormalisation \muR and factorisation scale \muF chosen for \acrshort{mc} s
     \label{eq:ttbar_scale_fvar}
 \end{equation}
 
-These are computed individually for each decay and data taking year. The envelope is characterised by the correlated variations $\muRAmuFB{\uparrow}{\uparrow}$, and $\muRAmuFB{\downarrow}{\downarrow}$. Confirmed by Fig.~\ref{fig:htoinv_ttbar_scale}, an example is given for the \ttbar background in the signal region. While the sizes of the variations appear large, they are very similar between the signal and \glspl{CR}, cancelling to a large degree in the transfer factors.
+These are computed individually for each decay and data taking year. The envelope is characterised by the correlated variations $\muRAmuFB{\uparrow}{\uparrow}$, and $\muRAmuFB{\downarrow}{\downarrow}$. Confirmed by Fig.~\ref{fig:htoinv_ttbar_scale}, an example is given for the \ttbar background in the signal region. While the sizes of the variations appear large, they are very similar between the signal and \glspl{CR}, cancelling to a large degree to minimally impact the results.
 
 \begin{figure}[htbp]
     \centering
@@ -273,7 +273,7 @@ These are computed individually for each decay and data taking year. The envelop
 
 % Plots from Scenario 5, 8th July 2020
 
-For each process (i.e., \ttbar, and the accompanying boson $X$ in $\ttbar X$), a separate systematic uncertainty is derived.\footnote{$\ttH(\HepProcess{\PH \to \text{invisible}})$ signal and $\ttH(\HepProcess{\PH \to \text{visible}})$ background are grouped as one process since the kinematics and generation are consistent between them.} Since different generators and settings may be used for each dataset, it is appropriate to ensure they are uncorrelated.
+For each process (i.e., \ttbar, and the accompanying boson $X$ in $\ttbar X$), a separate systematic uncertainty is derived.\footnote{$\ttH(\HepProcess{\PH \to \text{invisible}})$ signal and $\ttH(\HepProcess{\PH \to \text{visible}})$ background are grouped as one process since the kinematics and generation procedure are consistent.} Since different generators and settings may be used for each dataset, it is appropriate to ensure they are uncorrelated.
 
 
 %=========================================================
@@ -282,7 +282,7 @@ For each process (i.e., \ttbar, and the accompanying boson $X$ in $\ttbar X$), a
 \subsubsection{Top quark \texorpdfstring{\pt}{pT} reweighting}
 \label{subsubsec:htoinv_top_pt_reweighting}
 
-The top quark \pt distribution has been shown to be harder in simulation at \acrshort{nlo} than data~\cite{Sirunyan:2018ucr}. \acrshort{nlo} \ttbarpjets \acrshort{mc} generated in \POWHEG is reweighted to \acrshort{nnlo} \acrshort{qcd} $+$ \acrshort{nlo} electroweak accuracy as function of top quark \pt. An analytic function is used to fit the distribution that determines the weight. The same nominal function is used for all \ttbarpjets samples for all data taking years:
+The top quark \pt distribution has been shown to be harder in simulation at \acrshort{nlo} than in data~\cite{Sirunyan:2018ucr}. \acrshort{nlo} \ttbarpjets \acrshort{mc} generated in \POWHEG is reweighted to \acrshort{nnlo} \acrshort{qcd} $+$ \acrshort{nlo} electroweak accuracy as function of top quark \pt. An analytic function is used to fit the distribution that determines the weight. The same nominal function is used for all \ttbarpjets samples for all data taking years:
 \begin{equation}
     f(\pt) = \exp(a + b \cdot \pt + c \cdot \pt^2)
 \end{equation}

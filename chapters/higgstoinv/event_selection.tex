@@ -18,15 +18,17 @@ The preselection is designed to discriminate between signal and background event
 \begin{easylist}[itemize]
     \cutflowlistprops
     & $\ptjone > \text{80} \GeV$
+    & $\ptjtwo > \text{40} \GeV$ (if $\njet > \text{1}$)
     & $\HT > \text{200} \GeV$
     & $\mht > \text{200} \GeV$
     & $\ptmiss > \text{200} \GeV$
     & $\mht/\ptmiss < \text{1.2}$
+    & $\Delta\phi(\htvecmiss, \, \ptvecmiss) < \text{0.5}$
 \end{easylist}
 
 \medskip
 % No indent so it doesn't look weird just after the hanging list
-\noindent{}To ensure orthogonality with the phase space occupied by their analysis, we also require $\abs{\etajone} < \text{2.4}$, $\abs{\etajtwo} < \text{2.4}$ if $\njet > \text{1}$, and a veto of the following \acrshort{vbf} kinematic selection:
+\noindent{}To ensure orthogonality with the phase space occupied by their analysis, the two leading \glspl{jet} must be located in the central part of the detector, and events must fail the following \acrshort{vbf} kinematic selection:
 \medskip
 \begin{easylist}[itemize]
     \cutflowlistprops
@@ -36,10 +38,10 @@ The preselection is designed to discriminate between signal and background event
     & $\abs{\etajtwo} < \text{5.0}$
     & $\etajone \cdot \etajtwo < \text{0}$
     & $\ptmiss \geq \text{250}\GeV$
-    & $\abs{\Delta \eta_{\jone \jtwo}} > \text{1}$
+    & $\abs{\Delta \eta_{\jone \jtwo}} > \text{1.0}$
     & $\mjj > \text{200}\GeV$
-    & $\Delta \phi(\jone, \ \jtwo) < \text{1.5}$
-    & $\mindphiAB{\mathrm{j}}{\ptmiss} > \text{0.5}$
+    & $\Delta \phi(\jone, \, \jtwo) < \text{1.5}$
+    & $\mindphiAB{\mathrm{j}}{\ptvecmiss} > \text{0.5}$
 \end{easylist}
 
 
@@ -49,43 +51,25 @@ The preselection is designed to discriminate between signal and background event
 \subsection{Additional filters}
 \label{subsec:htoinv_other_filters}
 
-Further selections are applied to filter poorly measured or mis-reconstructed events in both data and \acrshort{mc}. These are applied to all years, regions, and categories unless stated otherwise. A ``muon \gls{jet} filter'' rejects events with mis-reconstructed muons by requiring all \glspl{jet} with $\pt > \text{200}\GeV$ to have a muon energy fraction $f_{\mathrm{E}}^{\Pmu} < \text{0.5}$, and $\Delta\phi(\mathrm{j}, \ \ptmiss) < \pi - \text{0.4}$.
+Further selections are applied to filter poorly measured or mis-reconstructed events in both data and \acrshort{mc}. These are applied to all years, regions, and categories unless stated otherwise. A ``muon \gls{jet} filter'' rejects events with mis-reconstructed muons by requiring all \glspl{jet} with $\pt > \text{200}\GeV$ to have a muon energy fraction $f_{\mathrm{E}}^{\Pmu} < \text{0.5}$, and $\Delta\phi(\mathrm{j}, \, \ptvecmiss) < \pi - \text{0.4}$.
 
-Charged ($f_{\mathrm{E}}^{\pm}$) and neutral hadron energy fraction ($f_{\mathrm{E}}^{0}$) requirements are applied to all \glspl{jet} via fulfillment of the ``tight'' \gls{jet} ID criteria (see Chpt.~\ref{subsec:objects_jets}). Furthermore, stricter selections are placed on the leading two \glspl{jet} as follows:
+Charged ($f_{\mathrm{E}}^{h\pm}$) and neutral hadron energy fraction ($f_{\mathrm{E}}^{h0}$) requirements are applied to all \glspl{jet} via fulfillment of the ``tight'' \gls{jet} ID criteria (see Chpt.~\ref{subsec:objects_jets}). Furthermore, stricter selections are placed on the leading two \glspl{jet} as follows:
 
 \medskip
 
 \begin{easylist}[itemize]
     \cutflowlistprops
-    & $f_{\mathrm{E}}^{\pm}(\jone) > \text{0.1}$
-    & $f_{\mathrm{E}}^{0}(\jone) < \text{0.8}$
-    & $f_{\mathrm{E}}^{\pm}(\jtwo) > \text{0.1}$
-    & $f_{\mathrm{E}}^{0}(\jtwo) < \text{0.8}$
+    & $f_{\mathrm{E}}^{h\pm}(\jone) > \text{0.1}$
+    & $f_{\mathrm{E}}^{h0}(\jone) < \text{0.8}$
+    & $f_{\mathrm{E}}^{h\pm}(\jtwo) > \text{0.1}$
+    & $f_{\mathrm{E}}^{h0}(\jtwo) < \text{0.8}$
 \end{easylist}
 
 \medskip
 
-\noindent{}Events with anomalously energetic \glspl{jet} have been observed for data in the \acrshort{hf} between $\abs{\eta} \in [\text{3.0}, \text{3.1}]$ that can lead to excess events, particularly in the \acrshort{qcd}-enriched \glspl{SB}. As such, a stipulation is placed on the ratio of the \HT formed from \glspl{jet} within $\abs{\eta} < \text{5}$ ($\HT^5$) and $\abs{\eta} < \text{2.4}$ ($\HT^{2.4}$), in OR with the difference in $\phi$ between the leading \gls{jet} and \mht:
-\medskip
-\begin{easylist}[itemize]
-    \cutflowlistprops
-    & $\dfrac{\HT^5}{\HT^{2.4}} < \text{1.2}$ \ or \ $\Delta\phi(\jone, \mht) \geq \left( \text{5.3} \dfrac{\HT^5}{\HT^{2.4}} - \text{4.78} \right)$  % dfrac for full-size fraction in list
-\end{easylist}
+\noindent{}In the \acrshort{qcd} \glspl{SB}, despite the requirement of $\ptmiss > \text{200}\GeV$, an excess in data was observed for events with low missing transverse momentum calculated from tracker hits ($\ptmissTrk$). This indicated a significant presence of neutral particles in such events, warranting a cut of $\ptmissTrk > \text{80}\GeV$ in the signal region and \glspl{SB}.
 
-\medskip
-
-\noindent{}where, if the former requirement is not met, the latter is constructed such that $\Delta\phi \geq \pi/\text{2}$. The \HT used in the analysis (i.e, in the preselection) only places $\abs{\eta}$ circumscriptions on the two hardest \glspl{jet} from to the VBF orthogonality constraints in Chpt.~\ref{subsec:htoinv_preselection}.
-
-To avoid any potential horns (spikes in data and/or \acrshort{mc}) for \glspl{jet} at large pseudorapidity, we require the agreement between the charged hadron-subtracted \acrlong{pf} \ptmiss and calorimeter-calculated \ptmiss to be within 20\,\%:
-\medskip
-\begin{easylist}[itemize]
-    \cutflowlistprops
-    & $\text{1} - \dfrac{\ptmiss(\text{CHS PF})}{\ptmiss(\text{calo})} < \text{0.8}$
-\end{easylist}
-
-\medskip
-
-\noindent{}The filters described below were recommended by the \ptmiss \acrshort{pog} to remove events with potentially miscalculated \ptmiss:
+The filters described below were recommended by the \ptmiss \acrshort{pog} to remove events with potentially miscalculated \ptmiss:
 \medskip
 \begin{easylist}[itemize]
     \easylistprops
@@ -99,6 +83,15 @@ To avoid any potential horns (spikes in data and/or \acrshort{mc}) for \glspl{je
 \medskip
 
 \noindent{}There are supplementary filters applied only to data. These are to generally mitigate \acrshort{ecal} end cap supercrystal noise, as well as crystals where losses of transparency would otherwise require large laser corrections.
+
+A fraction of events in data that entered the \ttH category in the sidebands were found to disagree in the direction of missing transverse momentum calculated in different regimes. Large differences between the azimuthal angle of the missing transverse momentum calculated with \acrlong{pf} (\ptvecmiss), and either from tracker hits (\ptvecmissTrk) or \glspl{jet} (\htvecmiss) are indicative of poorly measured objects. An elliptical cut is therefore placed in the plane of $\Delta\phi(\ptvecmiss, \, \ptvecmissTrk)$ and $\Delta\phi(\htvecmiss, \, \ptvecmiss)$ for events in the signal region and sidebands that were categorised by \ttH:
+
+\medskip
+
+\begin{easylist}[itemize]
+    \cutflowlistprops
+    & $\sqrt{ \Delta\phi(\ptvecmiss, \, \ptvecmissTrk)^2 + \text{4} \cdot \Delta\phi(\htvecmiss, \, \ptvecmiss)^2 } < \text{1.0}$
+\end{easylist}
 
 
 %=========================================================

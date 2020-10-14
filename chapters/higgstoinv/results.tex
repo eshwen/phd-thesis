@@ -1,12 +1,11 @@
 \section{Analysis of the \texorpdfstring{\ttH}{ttH} mode}
 \label{sec:htoinv_analysis_ttH}
 
-% Describe the specifics of the background estimation and fit for the ttH subcategories, since they may differ for the other modes, e.g.,
-%   - Photon CR is not used for ttH. Dilepton CRs are aggregated over all boosted categories for statistical power and the rate parameter is left floating, being constrained by all ttH boosted subcategories and MET bins. Could try to explicitly write out how the CR likelihood functions evolve
-%   - For QCD background estimation: "For the \ttH category, the tight double sideband from Tab.~\ref{tab:sideband_defs}---the most enriched in \acrshort{qcd} \acrshort{mc}---is used to derive \catFraction. The loose double sideband is used to derive \metFraction. This sideband is used for the prediction as a whole, i.e., for the terms $N_{\mathrm{SB}}^{\mathrm{QCD}}$ and $\transfac_{\mathrm{QCD}}$ in Eq.~\ref{eq:qcd_prediction}."
-% Need to mention somewhere that the observed limit is given at 95% CL
+The fit of signal and background to the observed data is performed for each subcategory of \ttH, in addition to the category as a whole.\footnote{Might make more sense to have a section called ``Results'', and then these ``Analysis of the X mode'' and combined results as subsections.} Due to limited statistical precision, the dilepton \glspl{CR} in the boosted subcategories are combined into a single bin, i.e., inclusive of both subcategory and \ptmiss. The rate parameter for the prediction of the \ztonunu background in the signal region is therefore a single value shared across the boosted subcategories and their \ptmiss bins. The \singlePhotonCr \gls{CR} is not used in constraining the \ztonunu prediction for any of the subcategories.
 
-Fig.~\ref{fig:htoinv_limit_ttH} showcases the median expected limit on $\BRof{\higgstoinv}$ with 1$\sigma$ and 2$\sigma$ bounds for the \ttH category and its subcategories.
+To predict the \acrshort{qcd} event counts in the signal region, Eq.~\ref{eq:qcd_prediction} incorporates the \acrshort{mc} counts in said region and from one or more sidebands. The tight double sideband from Tab.~\ref{tab:sideband_defs}---the most enriched in multijet \acrshort{mc}---is employed to derive the category fraction \catFraction. Yields from the loose double sideband compute the remaining terms: the \ptmiss fraction \metFraction, $N_{\mathrm{SB}}^{\mathrm{QCD}}$, and $\transfac_{\mathrm{QCD}}$.
+
+Results are presented in terms of the upper limit on the signal strength parameter $\sigma \times \BRof{\higgstoinv} / \sigma_{\mathrm{SM}}$. The observed limit in the signal plus background hypothesis at 95\,\% confidence level is overlaid on the expectation from the background-only hypothesis. In the latter, the median expected limit is illustrated with accompanying boundaries for its 1$\sigma$ and 2$\sigma$ deviations. Fig.~\ref{fig:htoinv_limit_ttH} showcases the limits for each \ttH subcategory and the combination of them all, for each data taking year individually and over the full Run-2 dataset.
 
 \begin{figure}[htbp]
     \centering
@@ -33,6 +32,8 @@ Fig.~\ref{fig:htoinv_limit_ttH} showcases the median expected limit on $\BRof{\h
     \label{fig:htoinv_limit_ttH}
 \end{figure}
 
+% Add mountain range plots. Maybe just for the signal region, otherwise it's an overload especially for VH and ggF
+
 
 %=========================================================
 
@@ -40,11 +41,9 @@ Fig.~\ref{fig:htoinv_limit_ttH} showcases the median expected limit on $\BRof{\h
 \section{Analysis of the \texorpdfstring{\VH}{VH} mode}
 \label{sec:htoinv_analysis_VH}
 
-% Describe the specifics of the background estimation and fit for the VH subcategories, since they may differ for the other modes
-% All CRs are used for non-multijet background estimation and predictions are fully granular
-% Not sure how we'll do QCD estimation for VH. Potentially same methods as ttH and ggF but using different sidebands
+Contrary to \ttH, all of the \glspl{CR} are utilised in the non-multijet background predictions with a fully granular correspondence to the signal region.\footnote{Add a sentence or two about how QCD prediction is done. Might be different from ttH.}
 
-Fig.~\ref{fig:htoinv_limit_VH} showcases the median expected limit on $\BRof{\higgstoinv}$ with 1$\sigma$ and 2$\sigma$ bounds for the \VH category and its subcategories.
+Fig.~\ref{fig:htoinv_limit_VH} showcases the expected and observed limits for the \VH subcategories and their combination for each data taking year as well the result for the full Run-2 dataset.
 
 \begin{figure}[htbp]
     \centering
@@ -78,11 +77,9 @@ Fig.~\ref{fig:htoinv_limit_VH} showcases the median expected limit on $\BRof{\hi
 \section{Analysis of the \texorpdfstring{\ggH}{ggH} mode}
 \label{sec:htoinv_analysis_ggF}
 
-% Describe the specifics of the background estimation and fit for ggF subcategories, since they may differ for the other modes
-% Like VH, non-multijet background estimation is done with all CRs and fully granular
-% Like ttH, QCD background estimation is done with sideband 0 to derive category fraction, then sideband 2 for MET fraction and transfer factor
+As with the \VH category, all of the \glspl{CR} are involved in estimating the non-multijet backgrounds in the signal region of the \ggF category. Equivalently to \ttH, the \acrshort{qcd} presence is derived using the tight and loose double sidebands. The category fractions \catFraction are calculated by the former, while the remaining terms in Eq.~\ref{eq:qcd_prediction} are computed from the latter.
 
-Fig.~\ref{fig:htoinv_limit_ggF} showcases the median expected limit on $\BRof{\higgstoinv}$ with 1$\sigma$ and 2$\sigma$ bounds for the \ggH category and its subcategories.
+Expected and observed limits on the signal strength parameter are presented in Fig.~\ref{fig:htoinv_limit_ggF} for each \ggF subcategory and their combination in each data taking year as well as over the full Run-2 dataset.
 
 \begin{figure}[htbp]
     \centering

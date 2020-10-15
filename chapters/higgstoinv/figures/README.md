@@ -95,6 +95,7 @@ To make mountain range plots, I can follow the README in the `fitting/` director
 
 ```bash
 cd mountain_ranges
+rm *.png
 for f in $(ls *.pdf); do mv $f "${f#plot_process.category--*}"; done
 for g in $(ls *.pdf); do mv $g "${g%%--*}.pdf"; done
 

@@ -161,60 +161,33 @@ A dedicated \gls{CR} is formed to assure orthogonality with the signal region an
     \label{eq:trigger_eff}
 \end{equation}
 
-where $s$ denotes the set of events that have passed the selection given by its subscript. For simulation, events are weighted by cross section as per Eq.~\ref{eq:xs_weight}. The efficiencies are binned in two dimensions as a function of \ptmissNoMu and \mht. They are provided for data and simulation in each data taking year in Figs.~\ref{fig:htoinv_trig_effs_2016}, \ref{fig:htoinv_trig_effs_2017}, and \ref{fig:htoinv_trig_effs_2018}.
-
-\begin{figure}[htbp]
-    \centering
-    \begin{subfigure}[b]{0.48\textwidth}
-        \includegraphics[width=\textwidth]{figures/trigger_efficiencies/2016/eff-data--n.pdf}
-        \caption{2016 data}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.48\textwidth}
-        \includegraphics[width=\textwidth]{figures/trigger_efficiencies/2016/eff-mc--genWeight-sumw.pdf}
-        \caption{2016 simulation}
-    \end{subfigure}
-    \caption[Efficiency of the HLT \ptmiss--\mht cross triggers in 2016 data and simulation]{Efficiency of the \acrshort{hlt} \ptmiss--\mht cross triggers in 2016 data and simulation. The momentum of the muon used to select events that compute the efficiency is added to the \ptmiss in order to approximate the calculation in the \acrlong{hlt}.}
-    \label{fig:htoinv_trig_effs_2016}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \begin{subfigure}[b]{0.48\textwidth}
-        \includegraphics[width=\textwidth]{figures/trigger_efficiencies/2017/eff-data--n.pdf}
-        \caption{2017 data}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.48\textwidth}
-        \includegraphics[width=\textwidth]{figures/trigger_efficiencies/2017/eff-mc--genWeight-sumw.pdf}
-        \caption{2017 simulation}
-    \end{subfigure}
-    \caption[Efficiency of the HLT \ptmiss--\mht cross triggers in 2017 data and simulation]{Efficiency of the \ptmiss--\mht cross triggers in 2017 data and simulation. The momentum of the muon used to select events that compute the efficiency is added to the \ptmiss in order to approximate the calculation in the \acrlong{hlt}.}
-    \label{fig:htoinv_trig_effs_2017}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \begin{subfigure}[b]{0.48\textwidth}
-        \includegraphics[width=\textwidth]{figures/trigger_efficiencies/2018/eff-data--n.pdf}
-        \caption{2018 data}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.48\textwidth}
-        \includegraphics[width=\textwidth]{figures/trigger_efficiencies/2018/eff-mc--genWeight-sumw.pdf}
-        \caption{2018 simulation}
-    \end{subfigure}
-    \caption[Efficiency of the HLT \ptmiss--\mht cross triggers in 2018 data and simulation]{Efficiency of the \ptmiss--\mht cross triggers in 2018 data and simulation. The momentum of the muon used to select events that compute the efficiency is added to the \ptmiss in order to approximate the calculation in the \acrlong{hlt}.}
-    \label{fig:htoinv_trig_effs_2018}
-\end{figure}
-
-The weight applied to events in simulation $w_{\mathrm{trg}}$ is simply the efficiency in data divided by the efficiency in simulation for the values of \ptmiss and \mht in the event:
+where $s$ denotes the set of events that have passed the selection given by its subscript. For simulation, events are weighted by cross section as per Eq.~\ref{eq:xs_weight}. The efficiencies are binned in two dimensions as a function of \ptmissNoMu and \mht. The weight applied to events in simulation $w_{\mathrm{trg}}$ is then simply the efficiency in data divided by the efficiency in simulation for the values of \ptmiss and \mht in the event:
 \begin{equation}
     w_{\mathrm{trg}}(\ptmiss, \mht) = \frac{\epsilon_{\mathrm{trg, \ data}}(\ptmiss, \mht)}{\epsilon_{\mathrm{trg, \ MC}}(\ptmiss, \mht)}
     \label{eq:trigger_weight}
 \end{equation}
 
-Uncertainties are estimated using the Clopper-Pearson method~\cite{10.1093/biomet/26.4.404}. In the signal region, sidebands, and muon \glspl{CR}, weights from the efficiencies of the \ptmiss--\mht cross triggers are used. In the electron and photon \glspl{CR}, the efficiencies are calculated in the same manner, instead from the triggers in Tabs.~\ref{tab:htoinv_ele_pd_triggers} and \ref{tab:htoinv_photon_pd_triggers}.
+Uncertainties are estimated using the Clopper-Pearson method~\cite{10.1093/biomet/26.4.404}. In the signal region, sidebands, and muon \glspl{CR}, weights from the efficiencies of the \ptmiss--\mht cross triggers are used. The weights are provided for each data taking year in Fig.~\ref{fig:htoinv_trig_effs}. In the electron and photon \glspl{CR}, the efficiencies are calculated in the same manner, instead from the triggers in Tabs.~\ref{tab:htoinv_ele_pd_triggers} and \ref{tab:htoinv_photon_pd_triggers}.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{figures/trigger_efficiencies/2016/SFs.pdf}
+        \caption{2016}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{figures/trigger_efficiencies/2016/SFs.pdf}
+        \caption{2017}
+    \end{subfigure}
+
+    \begin{subfigure}[b]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{figures/trigger_efficiencies/2017/SFs.pdf}
+        \caption{2018}
+    \end{subfigure}
+    \caption[Scale factors accounting for the efficiencies of the HLT \ptmiss--\mht cross triggers in each data taking year of Run-2]{Scale factors accounting for the efficiencies of the HLT \ptmiss--\mht cross triggers in each data taking year of Run-2. The momentum of the muon used to select events that compute the efficiency is added to the \ptvecmiss (with a magnitude \ptmissNoMu) in order to approximate the calculation in the \acrlong{hlt}.}
+    \label{fig:htoinv_trig_effs}
+\end{figure}
 
 
 %=========================================================

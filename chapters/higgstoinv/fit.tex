@@ -46,7 +46,35 @@ The asymptotic formula~\cite{Cowan:2010js} for setting a limit on $r$ is used in
 \subsection{Binning}
 \label{subsec:htoinv_binning}
 
-In addition to the categories in Chpt.~\ref{sec:htoinv_categorisation}, events are further separated into bins of \ptmiss as that distribution is expected to maximally differentiate signal and background in the fit. Since the number of events can significantly differ between categories in the different regions of the analysis, a global binning configuration is inadequate. For each subcategory, the number and widths of the bins are tuned to ensure sufficient statistical precision. These schemes are tied to the subcategory, so are reflected in all regions such that the background estimation methods can operate on a bin-by-bin basis.\footnote{Should I have a table or something that shows the binning scheme for each subcategory, similar to RA1?}
+In addition to the categories in Chpt.~\ref{sec:htoinv_categorisation}, events are further separated into bins of \ptmiss as that distribution is expected to maximally differentiate signal and background in the fit. Since the number of events can significantly differ between categories in the different regions of the analysis, a global binning configuration is inadequate. For each subcategory, the number and widths of the bins are tuned to ensure sufficient statistical precision. These schemes are tied to the subcategory, so are reflected in all regions such that the background estimation methods can operate on a bin-by-bin basis. The binning configuration is outlined in Tab.~\ref{tab:htoinv_binning_scheme}.
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{ccl}
+        \hline\hline
+        Category & Subcategory & \ptmiss bins (GeV) \\\hline
+        \multirow{9}{*}{\ttH} & 2Boosted & [200, 300), [300, 400), [400, $\infty$) \\
+        & 1t0b & [200, 300), [300, 400), [400, $\infty$) \\
+        & 1t1b & [200, 300), [300, 400), [400, 600), [600, $\infty$) \\
+        & 1W1b & [200, 300), [300, 400), [400, $\infty$) \\
+        & 1W2b & [200, 300), [300, 400), [400, $\infty$) \\
+        & 5j1b & [200, 300), [300, 400), [400, 600), [600, $\infty$) \\
+        & 6j1b & [200, 300), [300, 400), [400, $\infty$) \\
+        & 5j2b & [200, 300), [300, 400), [400, $\infty$) \\
+        & 6j2b & [200, 300), [300, 400), [400, $\infty$) \\\hline
+        \multirow{4}{*}{\VH} & 2j0b & [200, 300), [300, 400), [400, $\infty$) \\
+        & 2j1b & [200, 300), [300, 400), [400, $\infty$) \\
+        & 2j2b & [200, $\infty$)\\
+        & 1V & [200, 300), [300, 400), [400, $\infty$) \\\hline
+        \multirow{4}{*}{\ggH}& 2jM & [200, 300), [300, 400), [400, 600), [600, $\infty$) \\
+        & 3j & [200, 300), [300, 400), [400, 600), [600, $\infty$) \\
+        & 4j & [200, 300), [300, 400), [400, 600), [600, $\infty$) \\
+        & 5j & [200, 300), [300, 400), [400, 600), [600, $\infty$) \\
+        \hline\hline
+    \end{tabular}
+    \caption[The binning scheme used to categorise events in terms of \ptmiss]{The binning scheme used to categorise events in terms of \ptmiss.}
+    \label{tab:htoinv_binning_scheme}
+\end{table}
 
 
 %=========================================================

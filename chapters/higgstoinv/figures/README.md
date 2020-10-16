@@ -91,7 +91,7 @@ for f in $(ls higgsCombineTest.MultiDimFit.mH125.*.root); do mv $f "${f#higgsCom
 
 ## Mountain range plots
 
-To make mountain range plots, I can follow the README in the `fitting/` directory of the chip repo. Use the `-s` option when processing the `fitDiagnostics.root` file to create one dataframe (and therefore one plot) by category. Also remember to comment out the CMS header in the plotting config used. After `scp`ing the directory containing the plots and input dataframes over, rename and organise them with
+To make mountain range plots, I can follow the README in the `fitting/` directory of the chip repo. Use the `-s` option when processing the `fitDiagnostics.root` file to create one dataframe (and therefore one plot) by category. Also remember to comment out the CMS header in the plotting config used. Keep in mind that while I want the pre-fit background overlaid with post-fit in the control regions, that may not be the case for the signal region. In that case, I might have to run the commands twice to get all the plots I want. After `scp`ing the directory containing the plots and input dataframes over, rename and organise them with
 
 ```bash
 cd mountain_ranges
@@ -103,6 +103,7 @@ for proc in "ttH" "VH" "ggF" ; do
     mkdir $proc
     mv *${proc}*.{pdf,csv} $proc/
 done
+cd -
 ```
 
 ## NLO k-factors

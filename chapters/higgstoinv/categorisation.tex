@@ -84,9 +84,7 @@ An additional one-\gls{jet} category was considered to tag \ggH. While previous 
 \subsection{Optimisation of the categories}
 \label{subsec:htoinv_cat_optimisation}
 
-% This subsection, more than most, may be subject to change
-
-While first principles are a good starting point to categorise events and accentuate the Higgs production modes, they allow much room for improvement. \acrshort{qcd} multijet is still a prominent background, especially in the \ttH and \ggH categories. Historically, variables such as \biasedDPhi and \alphat have been used to suppress it, as in the previous \acrlong{susy} analysis I was a part of.
+While first principles are a good starting point to categorise events and accentuate the Higgs production modes, they allow much room for improvement. \acrshort{qcd} multijet is still a prominent background, especially in the \ttH and \ggH categories. Historically, variables such as \biasedDPhi and \alphat have been used to suppress it, as in the previous \acrlong{susy} analysis I was a part of (Ref.\citenum{SUS16038published}).
 
 
 %=========================================================
@@ -95,11 +93,27 @@ While first principles are a good starting point to categorise events and accent
 \subsubsection{Angular variables for QCD suppression}
 \label{subsubsec:htoinv_ang_var_optimisation}
 
-Recently, more elaborate variables have been developed to better remove multijet background events in analyses with hadronic final states. Colleagues at the University of Bristol have designed a family of them: \minChi, \omegaHat, and \omegaTilde~\cite{Sakuma:2018xrq}.\footnote{How much detail do I need to go into regarding the explanations of these variables (or just the one we end up using)?} These show noticeable improvement over previous variables (particularly \biasedDPhi, which is used as a benchmark for comparisons). Optimisation was performed for these variables on a per-category, over a per-subcategory, basis to avoid excessive fine tuning for the many subcategories in the analysis. After investigating each variable, \omegaTilde was chosen for the \ttH, \VH, and \ggH categories.
+Recently, more elaborate variables have been developed to better remove multijet background events in analyses with hadronic final states. Colleagues at the University of Bristol have designed a family of them~\cite{Sakuma:2018xrq}, and for the analysis \omegaTilde was chosen to suppress said background. In the paper, noticeable improvement is demonstrated over previous variables (particularly \biasedDPhi, which is used there as a benchmark for comparisons). Optimisation was performed for \omegaTilde on a per-category, over a per-subcategory, basis to avoid excessive fine tuning for the many subcategories in the analysis.
 
-To reject mismeasured multijet events manifesting in \glspl{jet} aligned with \ptmiss, a simple cut of $\dphiFj$---contracted to \mindphi---above 0.5 was first introduced. Correlations between \mindphi and \omegaTilde were found to be minimal, and as such each variable would suppress multijet events of different characteristics.
+The motivation behind the variable \omegaTilde is to minimise the \mht by varying the \pt of one of the \glspl{jet} in the event. For mismeasured \glspl{jet}, it is typically the magnitude rather than the direction of the transverse momentum that is affected. Hence, a \gls{jet} whose \pt can be varied such that the \mht can be greatly reduced suggests it was mismeasured. For each jet $i$, the ratio between its \pt and the \mht is defined as $f_i$. The variable $\sin\Delta\tilde{\phi}_i$ is the factor that scales the \mht to its minimised value based on the varied \pt of jet $i$:
+\begin{align}
+\sin\Delta\tilde{\phi}_i = \begin{dcases*}
+\sin\Delta\phi_i & if $f_i + \cos\Delta\phi_i \geq 0$, \\
+\sqrt{1 + f_i^2 + 2 f_i \cos(\Delta\phi_i)} & otherwise\\
+\end{dcases*}
+\end{align}
 
-Various metrics (or figures of merit) were considered for the threshold to cut on the given angular variable. In a counting experiment, a known Poisson-distributed background $B$ yields a statistical uncertainty---assuming one standard deviation---of $\sqrt{B}$. A signal count $S$ can then be statistically significant (i.e., unlikely to be a statistical fluctuation of the background) if it is greater than the uncertainty on the background. This, somewhat simplistic, method gives the standard deviation for the expected signal with respect to background---often just referred to as the \emph{expected significance} $Z$---as
+where $\Delta\phi_i$ is the azimuthal angle between \gls{jet} $i$ and the \htvecmiss. The factor is derived from geometrical arguments in the normalised \pt plane (where $\mht = \text{1}$). Finally, the angular variable $\tilde{\omega}_i$ is the defined with respect to the aforementioned variables:
+\begin{equation}
+    \begin{aligned}
+\tilde{\omega}_i &= \frac{ \sin\Delta\tilde{\phi}_i }{ f_i },\\
+\omegaTilde &= \min_{i \, \in \, \mathrm{jets}} \tilde{\omega}_i
+    \end{aligned}
+\end{equation}
+
+To reject mismeasured multijet events manifesting in \glspl{jet} aligned with \ptmiss, a simple cut of $\dphiFj$---contracted to \mindphi---above 0.5 was first introduced. Correlations between \mindphi and \omegaTilde were found to be minimal, and as such each variable would suppress multijet events with different characteristics.
+
+Various metrics, or \emph{figures of merit}, were considered for the threshold on which to cut in \omegaTilde. In a counting experiment, a known Poisson-distributed background $B$ yields a statistical uncertainty---assuming one standard deviation---of $\sqrt{B}$. A signal count $S$ can then be statistically significant (i.e., unlikely to be a statistical fluctuation of the background) if it is greater than the uncertainty on the background. This, somewhat simplistic, method gives the standard deviation for the expected signal with respect to background---often just referred to as the \emph{expected significance} $Z$---as
 \begin{equation}
 Z_{\mathrm{Poisson}} = \frac{S}{\sqrt{B}}
 \label{eq:s_over_root_b}
@@ -174,4 +188,4 @@ It is obvious that the shapes and magnitudes of the significance distributions a
 \subsubsection{Other optimisations}
 \label{subsubsec:htoinv_other_optimisations}
 
-In the ``signal enhancement'' column of Tab.~\ref{tab:htoinv_categories}, selections were made to distinguish signal from leading backgrounds. The \ttH resolved subcategories employ requirements on the azimuthal angle between either the leading jet, leading \Pbottom-jet, or subleading \Pbottom-jet and missing transverse momentum. These are specifically to differentiate \ttH signal from \ttbar background, as the former has been shown to exhibit larger separation between the \glspl{jet} and \ptmiss than the latter. A window on the dijet mass is applied to the \VH resolved categories to reconstruct the \PW and \PZ mass. The 15\GeV below $m_{\PW}$ and above $m_{\PZ}$ allow some leeway to accommodate jet resolution effects. For the \ggH 2jM subcategory, the dijet mass must fall outside of the window to avoid overlap with \VH 2j0b.
+In the ``signal enhancement'' column of Tab.~\ref{tab:htoinv_categories}, selections were made to distinguish signal from leading backgrounds. The \ttH resolved subcategories employ requirements on the azimuthal angle between the missing transverse momentum and either the leading jet, leading \Pbottom-jet, or subleading \Pbottom-jet. These are specifically to differentiate \ttH signal from \ttbar background, as the former has been shown to exhibit larger separation between the \glspl{jet} and \ptmiss than the latter. A window on the dijet mass is applied to the \VH resolved categories to reconstruct the \PW and \PZ mass. The 15\GeV below $m_{\PW}$ and above $m_{\PZ}$ allow some leeway to accommodate jet resolution effects. For the \ggH 2jM subcategory, the dijet mass must fall outside of the window to avoid overlap with \VH 2j0b.

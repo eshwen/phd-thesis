@@ -137,7 +137,7 @@ The `-c` option in each case removes the "CMS Work in Progress" label from the p
 
 ## Photon purity
 
-To make the plots that showcase the impurity as a function of photon pt, or the data with the fit and templates overlaid, follow the instructions in `configs/nonVBF_instructions.md` in the chip repo. It should be fairly self-explanatory.
+To make the plots that showcase the impurity as a function of photon pt, or the data with the fit and templates overlaid, follow the instructions in `configs/nonVBF_instructions.md` in the chip repo. It should be fairly self-explanatory. For consistency, it's probably a good idea to set the x- and y-axis ranges on all the plots to be the same. In `chip_code/photon_purity_postproc.py`, near the end of the script I can set them with `ax.set_xlim(<low>, <high>)`, etc.
 
 ## QCD scale for top processes
 

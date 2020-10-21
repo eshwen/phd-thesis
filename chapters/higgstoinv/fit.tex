@@ -19,7 +19,7 @@ N_{\mathrm{pred.}}^{i, j} &= r \cdot s^{i, j} \cdot \rho_s^{i, j}\\
     \label{eq:likelihood_SR}
 \end{equation}
 
-where the indices $i$ and $j$ refer to each subcategory and \ptmiss bin, respectively, $r$ is the unconstrained signal strength parameter, i.e., $\sigma \times \BRof{\higgstoinv} / \sigma_{\mathrm{SM}}$, $s$ is the signal expectation determined from simulation, $\rho$ encodes the systematic uncertainties associated with simulation, $b$ is the number of events from simulation, $a$ is an unconstrained rate parameter connecting the signal and corresponding \glspl{CR}, $c$ is the predicted number of events, and $\omega$ contains the uncertainties on the \acrshort{qcd} multijet background estimate. Similarly for the control regions, the likelihood functions are
+where the indices $i$ and $j$ refer to each subcategory and \ptmiss bin, respectively, $r$ is the unconstrained signal strength parameter, i.e., \BRHinvFull, $s$ is the signal expectation determined from simulation, $\rho$ encodes the systematic uncertainties associated with simulation, $b$ is the number of events from simulation, $a$ is an unconstrained rate parameter connecting the signal and corresponding \glspl{CR}, $c$ is the predicted number of events, and $\omega$ contains the uncertainties on the \acrshort{qcd} multijet background estimate. Similarly for the control regions, the likelihood functions are
 \begin{equation}
     \begin{aligned}
 \likelihood_{\text{\singleMuCr CR}} &= \prod_{i} \prod_{j(i)} \mathcal{P}( N_{\mathrm{obs.}, \, \Pmu }^{i, j} | r \cdot s^{i, j}_{\Pmu} \cdot \rho_{s,\, \Pmu}^{i, j} + b_{\Pmu}^{i, j} \cdot a_{\lostlepton}^{i, j} \cdot \rho_{\Pmu}^{i, j} )\\

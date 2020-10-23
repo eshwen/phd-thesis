@@ -193,20 +193,20 @@ where $\theta$ is the angle between the particle's three-momentum $\vec{p}$ and 
 
 where $p_{\mathrm{L}}$ is the longitudinal component of the momentum. The subdetectors of \acrshort{cms} are nominally separated into several sections dependent on their geometry or layout, and it is useful to divide them into $\eta$ ranges to demonstrate their coverage. ``Barrel'' sections are cylindrical around the beam line while ``end caps'' are usually discs or plates perpendicular to it. The following subsections describe them in detail. One quadrant of \acrshort{cms} showing the $\eta$ divisions can be seen in Fig.~\ref{fig:cms_eta_bounds}.
 
-The distance between two objects can be found with the variable $\Delta R$:
-\begin{equation}
-\Delta R = \sqrt{(\Delta \eta)^2 + (\Delta \phi)^2}
-\label{eq:delta_r}
-\end{equation}
-
-It is often used as a distance parameter in jet clustering, or between individual objects in highly-boosted decays.
-
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.75\textwidth]{figures/cms_eta_ranges.pdf}
     \caption[A quadrant of the CMS detector illustrating the main subsystems with their radius $R$, longitudinal distance $z$, and pseudorapidity $\eta$ from the interaction point]{A quadrant of the \acrshort{cms} detector illustrating the main subsystems with their radius $R$, longitudinal distance $z$, and pseudorapidity $\eta$ from the interaction point. The grey box at $\text{3} < \abseta < \text{5}$ and $\text{11} < z < \text{12}$\,m is the hadron forward calorimeter. Figure taken from Ref.~\citenum{cms_dp_end_of_run2}.}
     \label{fig:cms_eta_bounds}
 \end{figure}
+
+The distance between two objects can be found with the variable $\Delta R$:
+\begin{equation}
+\Delta R = \sqrt{(\Delta \eta)^2 + (\Delta \phi)^2}
+\label{eq:delta_r}
+\end{equation}
+
+It is often used as a parameter in \gls{jet} clustering to define the enclosing cone, or between reconstructed objects for assessing overlap.
 
 
 %=========================================================
@@ -223,6 +223,8 @@ Consisting of tens of millions of pixels and microstrips, the positions of parti
 
 Track-finding algorithms use pattern recognition to determine whether the hits from multiple layers in the tracker can be correlated and reconstructed to originate from individual particles. Each is suited to different types of track, \pt threshold, and location. Vertex reconstruction algorithms are employed to determine the primary vertex. Any secondary vertices transverse (for example, in \glspl{bjet}) or longitudinal (\gls{pileup}) to the beam line may also be distinguished. The momentum of particles can be measured from the curvature of the track from the magnetic field induced by the solenoid (see Chpt.~\ref{subsubsec:cms_magnet_muons}).\footnote{Should I mention something about resolution as well?} One of the algorithms, the \acrfull{gsf} method, is used extensively in the \acrshort{hlt} for triggering on electrons and photons~\cite{Anuar_2015}.
 
+% Page 28 of https://inspirehep.net/files/9ceded8528ca4c7b7362fa38be62144e gives a formula. No idea where it comes from, though (and it's probably old)
+
 
 %=========================================================
 
@@ -232,12 +234,16 @@ Track-finding algorithms use pattern recognition to determine whether the hits f
 
 After the tracker, the particles can interact with the \acrshort{ecal}~\cite{CERN-LHCC-97-033,Bloch:581342}. The 76,000 lead-tungstate crystals scintillate the incoming light, where the attached avalanche photodiodes record energy deposits in the barrel region ($\abseta < \text{1.48}$) belonging to charged particles and photons. Vacuum phototriodes are instead glued to the crystals in the end caps ($\text{1.48} < \abseta < \text{2.96}$) as they are subject to higher radiation doses. A lead-silicon preshower detector precedes the end cap crystals to improve spatial resolution and discrimination of multiple particles. Electronics for groups of $\text{5}\times\text{5}$ crystals (the \acrshort{ecal} component of a ``trigger tower'') read out the data and deliver it to the trigger system (see Chpt.~\ref{subsec:cms_recording_data}).
 
-The \acrshort{ecal} is designed to identify charged particles, primarily electrons and photons. The $\HepProcess{\PH \to \Pphoton\Pphoton}$ and $\HepProcess{\PH \to \PZ\PZ \to 4\Plepton}$ processes were kept in mind, as an ardent focus was on discovering the Higgs boson. These particles are usually stopped entirely in the subdetector. Muons and tau leptons ($\Ptau$), however, usually penetrate farther. Measuring the energy of electrons and photons is performed as follows:
+The \acrshort{ecal} is designed to identify charged particles, primarily electrons and photons. The $\HepProcess{\PH \to \Pphoton\Pphoton}$ and $\HepProcess{\PH \to \PZ\PZ \to 4\Plepton}$ processes were kept in mind, as an ardent focus was on discovering the Higgs boson. These particles are usually stopped entirely in the subdetector. Charged hadrons, muons, and tau leptons ($\Ptau$), however, only deposit a sliver of energy in the \acrshort{ecal}, and so information from the other subdetectors is required in their cases. Measuring the energy of electrons and photons is complex and corrects for many factors to maintain a high precision. Among them are a cluster correction (as several hits in a cluster can belong to one object, especially when they electromagnetically shower), a time-dependent response correction from the laser monitoring system that measures the crystal transparency, and an intercalibration correction that accounts for the non-uniform response of the crystals and photodetectors. The energy resolution in the \acrshort{ecal} $\sigma_E^{\mathrm{ECAL}} / E$ can be quantified as
 \begin{equation}
-    E_{\Pe, \Pphoton} = G(\eta) \cdot F_{\Pe, \Pphoton} \cdot \sum_i A_i S_i(t) c_i
-    \label{eq:ecal_energy}
+    (\frac{\sigma_E^{\mathrm{ECAL}}}{E})^2 = (\frac{S}{\sqrt{E}})^2 + (\frac{N}{E})^2 + C^2
 \end{equation}
-where $G$ is the global energy scale, $F$ is the cluster correction (as several hits in a cluster can belong to one object, especially when they electromagnetically shower), $A$ is the amplitude of the pulse from the readout electronics, $S$ is the time-dependent response correction from the laser monitoring system that measures the crystal transparency, and $c$ an intercalibration correction that accounts for the non-uniform response of the crystals and photodetectors.\footnote{Should I mention something about energy resolution as well?} Charged hadrons, muons and taus only deposit a sliver of energy in the \acrshort{ecal}, and so information from the other subdetectors is required in their cases. 
+
+where $E$ is the energy in \GeVns, $S$ is a stochastic term, $N$ represents noise in the detector electronics, and $C$ a constant. For electrons in the barrel during Run-1, the terms were measured to be $S = \text{0.028}$, $N = \text{0.12}$, and $C = \text{0.003}$~\cite{Ingram_2007}, yielding a resolution of 0.5\,\% for a 100\GeV electron.
+
+% ECAL 2017 performance slides: https://cds.cern.ch/record/2690931?ln=en
+% ECAL 2018 performance slides: http://cds.cern.ch/record/2701337
+% Conference report on 2017 ECAL performance: https://inspirehep.net/files/19d6cf8998d1f46259993b228c13d529
 
 
 %=========================================================

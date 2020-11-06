@@ -118,7 +118,7 @@ where $\Delta\phi = \phi - \phi(\ptvecmiss)$, and \pt and $\phi$ are from the id
 
 The physics that occurs at the high energies the \acrshort{lhc} is capable of is not simple. That makes the recording of particles and events overall a non-trivial undertaking. Based on complex hardware and software, research, and the experience of previous experiments, establishing physics objects and variables from an analyst's standpoint is thankfully straightforward. The basic definitions are already included into the \ROOT files we use, with ancillary selections on top for the analysis-level objects. All of the descriptions that follow apply both to data and simulated samples, unless otherwise stated.
 
-Different working points for the identification of many objects are available from the respective \glspl{pog}, trading efficiency for purity the tighter the restrictions are. ``Veto,'' ``loose,'', ``medium,'' and ``tight'' criteria exist for most objects. We denote particles with a subscript that signifies the working point. The requirements of which are elaborated upon in the ensuing subsections.
+Different working points for the identification of many objects are available from the respective \glspl{pog}, trading efficiency for purity the tighter the restrictions are. ``Veto,'' ``loose,'' ``medium,'' and ``tight'' criteria exist for most objects. We denote particles with a subscript that signifies the working point. The requirements of which are elaborated upon in the ensuing subsections.
 
 
 %=========================================================
@@ -235,7 +235,7 @@ Many traditional methods have been developed to tag \glspl{jet} originating from
 
 The algorithm operates on AK8 \glspl{jet}. Following the same reconstruction and identification prescription as AK4 \glspl{jet}, they differ only in the cone size and \pt requirement. Hadrons are clustered with the \gls{antikt} using a radius parameter of 0.8 instead of the usual 0.4, and must possess a $\pt > \text{170}\GeV$. The corrections and uncertainties from \acrshort{jer} and \acrshort{jes} are also propagated identically.
 
-We employ the ensuing selections to AK8 \glspl{jet} to classify them, as recommended by the \deepakeight developers:
+The ensuing selections are applied to AK8 \glspl{jet} to classify them, as recommended by the \deepakeight developers:
 \medskip
 \begin{easylist}[itemize]
     \ListProperties(Style*=-- , Style2*=$\circ$ , Hang=true, FinalMark={)})
@@ -252,7 +252,7 @@ We employ the ensuing selections to AK8 \glspl{jet} to classify them, as recomme
 
 \medskip
 
-\noindent{}Orthogonality is ensured between the two classifications from the soft drop mass $m_{\mathrm{SD}}$~\cite{Larkoski:2014wba} window. We also use the tight working points to ensure a high purity. The boosted \PVec \glspl{jet} are not further separated into \PW- and \PZ-tagged since the mass degeneracy makes this inherently difficult. The \PW vs. \acrshort{qcd} discriminator is therefore used to tag both.
+\noindent{}Orthogonality is ensured between the two classifications from the soft drop mass $m_{\mathrm{SD}}$~\cite{Larkoski:2014wba} window. The quantity is corrected for pileup contributions using the PUPPI algorithm~\cite{Bertolini:2014bba}. Tight working points that effectively separate the \glspl{jet} from \acrshort{qcd} background ensure a high purity collection. Boosted \PVec \glspl{jet} are not further separated into \PW- and \PZ-tagged since the mass degeneracy makes this inherently difficult. The \PW vs. \acrshort{qcd} discriminator is therefore used to tag both.
 
 
 %=========================================================

@@ -139,10 +139,12 @@ A \gls{jet} suspected to originate from a \Pbottom-quark, or \emph{\gls{bjet}}, 
 %=========================================================
 
 
-\subsubsection{2016}
+\subsubsection{Jet identification criteria in 2016}
 \label{subsubsec:objects_jets_2016}
 
-The tight and tight $+$ lepton veto ID specifications are detailed in Tab.~\ref{tab:htoinv_jet_id_def_2016}. Specifically to this year, all \glspl{jet} are required to fulfill the criteria for the tight pileup ID to ensure they do not originate from pileup vertices.
+The tight and tight $+$ lepton veto ID specifications are detailed in Tab.~\ref{tab:htoinv_jet_id_def_2016}. Specifically to this year, all \glspl{jet} are required to fulfill the criteria for the tight pileup ID to ensure they do not originate from pileup vertices. The algorithm that gives the pileup ID is based on a boosted decision tree trained on 2016 samples. It incorporates tracker information, jet topology, and constituent multiplicity as discriminating variables.
+
+% Pileup jet ID: https://twiki.cern.ch/twiki/bin/viewauth/CMS/PileupJetID
 
 \begin{table}[htbp]
     \centering
@@ -168,7 +170,7 @@ The tight and tight $+$ lepton veto ID specifications are detailed in Tab.~\ref{
 %=========================================================
 
 
-\subsubsection{2017}
+\subsubsection{Jet identification criteria in 2017}
 \label{subsubsec:objects_jets_2017}
 
 The tight and tight $+$ lepton veto ID conditions are detailed in Tab.~\ref{tab:htoinv_jet_id_def_2017}. \Glspl{jet} with $\pt < \text{50}\GeV$ are required to meet the tight pileup ID criteria. Any \glspl{jet} with a raw (uncorrected) transverse momentum $\pt^{\mathrm{raw}} < \text{50}\GeV$ within the region $\text{2.65} < \abseta < \text{3.139}$ are vetoed due to noise in the \acrshort{ecal} end cap.
@@ -199,7 +201,7 @@ The tight and tight $+$ lepton veto ID conditions are detailed in Tab.~\ref{tab:
 %=========================================================
 
 
-\subsubsection{2018}
+\subsubsection{Jet identification criteria in 2018}
 \label{subsubsec:objects_jets_2018}
 
 The tight and tight $+$ lepton veto ID specifications are detailed in Tab.~\ref{tab:htoinv_jet_id_def_2018}.\footnote{There's probably a more elegant way to write the ID criteria, since the same variables are used for all years and the same thresholds in many cases. But until I figure it out, separate tables for each year will have to do} As in 2017, \glspl{jet} with $\pt < \text{50}\GeV$ must fulfill the tight pileup ID conditions.\footnote{Is it worth going into the pileup ID spec.?}
@@ -272,7 +274,7 @@ The relative isolation parameter is the ratio of the sum of track, \acrshort{hca
 \subsection{Electrons}
 \label{subsec:objects_electrons}
 
-In the analysis, electrons are labelled as veto (\vetoEle) or tight electrons (\tightEle), depending on which \acrshort{pog} ID requirements are fulfilled. For 2016--18, version 2 of the cut-based identification scheme (tuned using 2017 samples), is applied. These are distinguished for the barrel region in Tab.~\ref{tab:htoinv_electron_ID_barrel}, and end cap region in Tab.~\ref{tab:htoinv_electron_ID_endcap}. The veto and tight ID specifications are designed for average efficiencies of 95\,\% and 70\,\%, respectively.\footnote{Can't find background rejection efficiencies on twiki pages.}
+Electrons in the analysis are labelled as veto (\vetoEle) or tight electrons (\tightEle), depending on which \acrshort{pog} ID requirements are fulfilled. For 2016--18, version 2 of the cut-based identification scheme (tuned using 2017 samples), is applied. These are distinguished for the barrel region in Tab.~\ref{tab:htoinv_electron_ID_barrel}, and end cap region in Tab.~\ref{tab:htoinv_electron_ID_endcap}. The veto and tight ID specifications are designed for average efficiencies of 95\,\% and 70\,\%, respectively.\footnote{Can't find background rejection efficiencies on twiki pages.}
 
 \begin{table}[htbp]
     \centering
@@ -371,7 +373,7 @@ As well as the ID, the two collections diverge further due to $\eta$ and \pt req
 \subsection{Tau leptons}
 \label{subsec:objects_taus}
 
-The only purpose tau leptons \Ptau serve in the analysis is to veto events that contain them. We denote these as ``very loose'' taus \vlooseTau. Version 2 of the multivariate identification algorithm is used for all years, and tau leptons must pass the very loose criteria. Dedicated multivariate discriminators against electrons and muons are provided and employed, passing the loose and very loose working points, respectively. Kinematically, a \vlooseTau also requires $\pt > \text{20}\GeV$, $\abseta < \text{2.3}$, and $dz <\text{0.2}$\,cm.
+The only purpose tau leptons \Ptau serve in the analysis is to veto events that contain them. These are denoted as ``very loose'' taus \vlooseTau. Version 2 of the multivariate identification algorithm is used for all years, and tau leptons must pass the very loose criteria. Dedicated multivariate discriminators against electrons and muons are provided and employed, passing the loose and very loose working points, respectively. Kinematically, a \vlooseTau also requires $\pt > \text{20}\GeV$, $\abseta < \text{2.3}$, and $dz <\text{0.2}$\,cm.
 
 % Tau ID: https://twiki.cern.ch/twiki/bin/viewauth/CMS/TauIDRecommendationForRun2. But no real useful information is there
 

@@ -16,53 +16,17 @@ When representing these events in histograms, the yield in a given bin $N_{\math
     \label{eq:bin_weight}
 \end{equation}
 
-where $N_{\mathrm{MC}}$ is the number of unweighted, simulated events in the bin. The statistical uncertainty ascribed to the yield in a bin is given as
+where $N_{\mathrm{MC}}$ is the number of unweighted, simulated events in the bin. In data/\acrshort{mc} distributions, the statistical uncertainty ascribed to the \acrshort{mc} yield in a bin is estimated from the unweighted number of events ($k$ in a Poisson statistical treatment):
 \begin{equation}
     \Delta N_{\mathrm{corr.}} = \pm \frac{ N_{\mathrm{corr.}} }{ \sqrt{N_{\mathrm{MC}}} }
     \label{eq:uncertainty_mc_ours}
 \end{equation}
 
-The statistical uncertainty for the number of events in data is simply the Poissonian error,
+While the statistical uncertainty for the number of events in data is simply the Poissonian error,
 \begin{equation}
     \Delta N_{\mathrm{data}} = \pm \frac{ N_{\mathrm{data}} }{ \sqrt{N_{\mathrm{data}}} }
     \label{eq:uncertainty_data}
 \end{equation}
-
-The standard prescription for error propagation is to approximate the uncertainty as the square root of the sum of the weights squared~\cite{bevington2003data}:
-\begin{equation}
-    \Delta N_{\mathrm{corr.}} = \pm \left( \sum_j^{N_{\mathrm{MC}}} w_{\mathrm{event} \ j}^2 \right) ^{1/2}
-    \label{eq:uncertainty_mc_normal}
-\end{equation}
-
-Our reasoning for using Eq.~\ref{eq:uncertainty_mc_ours} for \acrshort{mc} instead of Eq.~\ref{eq:uncertainty_mc_normal} is that the error should be determined purely from the integer number of events we select ($k$ in a Poisson statistical treatment), regardless of whether they are weighted or not. This often reduces the uncertainty for \acrshort{mc} compared to Eq.~\ref{eq:uncertainty_mc_normal} since many more events are generated to predict a given equivalent luminosity. Further justification is that it is a good approximation in our assumed regime where we expect a large number of events from our \acrshort{mc} samples before any cuts are applied (say $N$), and a large enough number of events after the cuts such that we do not encounter the low-$k$ or low-$N$ limits of Poissonian error propagation.
-
-% When defining the veto/loose and tight objects, can reference them here since objects which pass the veto requirements but not any tight requirements (e.g., muon with pt = 15) will just enter the SR/SB with the veto weight
-
-
-%=========================================================
-
-
-\subsection{Veto and selection weights}
-\label{subsec:veto_sel_weights}
-
-In an analysis, events are often rejected by placing kinematic or object-based requirements. This type of selection strictly removes an event from the analysis if the condition is not met. While kinematic requirements are either fulfilled or not, a different approach can be used when selecting the number of objects, i.e., when defining \glspl{CR}. For a set of objects, the selection weight at event level is defined as
-\begin{equation}
-    w_{\mathrm{sel.}} = \prod_i^{N_\mathrm{objects}} \epsilon_i
-    \label{eq:event_selection_weight}
-\end{equation}
-
-where $\epsilon_i$ is the efficiency/scale factor applied to object $i$. Only reconstructed objects that have been matched to a truth-level object are considered. For leptons (\Pe, \Pmu, \Ptau) and photons, these scale factors are typically from the reconstruction efficiency, identification efficiency, and \pt- or $\eta$-dependent energy corrections. In the case of \Pbottom-tagged \glspl{jet}, it is the data-MC scale factor at the given working point from the algorithm used to identify them. These weights are calculated individually for each type of object in an event, and individually for each source since they also introduce systematic variations that cannot be trivially aggregated. A veto weight is represented as
-\begin{equation}
-    w_{\mathrm{veto}} = \prod_i^{N_\mathrm{objects}} 1 - \epsilon_i
-    \label{eq:event_veto_weight}
-\end{equation}
-
-which is essentially the probability to mis-tag the objects and allow it to enter the signal region as a consequence. The uncertainties/systematic variations follow the same prescription. With these quantities defined, an event that meets the object criteria is given the selection weight, otherwise it is given the veto weight. For example, if an event with one muon meets the criteria for the \singleMuCr region, it will enter that region with its muon-related selection weights. That same event can also enter the signal region or one of the \glspl{SB} (depending on the event kinematics) with the muon-related veto weights. The veto weights for the other leptonic objects will just be unity, as per Eq.~\ref{eq:event_veto_weight}. This ``migration'' of events, where they are able to contribute to more than one region, and the fact that weights are applied instead of event rejection, provides a noticeable decrease to the \acrlong{mc} statistical uncertainty in a given bin of a distribution.
-
-One thing must be noted about the migration of events, since we have many different regions of phase space in the analysis. The signal region and the \glspl{SB} have orthogonal kinematic prerequisites, so an event cannot enter the signal region \emph{and} one of the \glspl{SB}. The same is true amongst the \glspl{CR}, i.e., an event cannot enter more than one of them due to the designed orthogonality. An event \emph{is} able to enter the signal region or a \gls{SB} with $w_{\mathrm{veto}}$, and also one of the \glspl{CR} with $w_{\mathrm{sel.}}$. Since events in data are not weighted, they may only enter a single region.
-
-% Use of veto weights can have a non-negligible impact on the MC stat. uncertainty in the fit and noticeably affect the limit. If using Eq.~\ref{eq:uncertainty_mc_ours}, then allowing events to enter a region with a veto weight can only reduce the stat. uncertainty, since it enters with a small weight compared to the other events, and adds to the number of events with the same pull as the other events.
-% See https://indico.cern.ch/event/904981/contributions/3878540/attachments/2044999/3425840/magnan_hinv_200526.pdf for a more detailed look
 
 
 %=========================================================
@@ -282,7 +246,13 @@ We aimed to remove the dependence on normalisation in the same fashion as for th
 \subsection{Object-level scale factors and uncertainties}
 \label{subsec:htoinv_SFs_systs_objects}
 
-There are multiple corrections applied to simulation based on the physics objects with an event, as opposed to the event topology as a whole. One example of which is Chpt.~\ref{subsubsec:htoinv_top_pt_reweighting}. In the following sections, weights attributed to objects themselves are referred to as \emph{scale factors}, while the event-level weight is the product of the scale factors as in Eq.~\ref{eq:event_weight}. Systematic uncertainties are aggregated in the same manner. Unless stated otherwise, the following scale factors and systematics are derived separately for each year in Run-2.
+There are multiple corrections applied to simulation based on the physics objects with an event as opposed to the event topology as a whole. One example of which is Chpt.~\ref{subsubsec:htoinv_top_pt_reweighting}. A weight or efficiency $\epsilon$ attributed to an object itself is typically referred to as a \emph{scale factor}, while the event-level selection weight $w_{\mathrm{sel.}}$ is the efficiency for successfully tagging or selecting an event with those object contents, and is the product of the scale factors:
+\begin{equation}
+    w_{\mathrm{sel.}} = \prod_i^{N_\mathrm{objects}} \epsilon_i
+    \label{eq:event_selection_weight}
+\end{equation}
+
+These weights are calculated individually for each class of object in an event. For electrons, muons, and photons, these scale factors are usually from the reconstruction efficiency, identification efficiency, and \pt- or $\eta$-dependent energy corrections. In the case of \Pbottom-tagged \glspl{jet}, it is the data-simulation scale factor at the given working point from the algorithm used to identify them. Systematic uncertainties associated with the scale factors are aggregated in the same manner. Unless stated otherwise, the following scale factors and systematics are derived separately for each year in Run-2.
 
 
 %=========================================================

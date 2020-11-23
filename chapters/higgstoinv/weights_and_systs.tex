@@ -51,7 +51,7 @@ In an analysis, events are often rejected by placing kinematic or object-based r
     \label{eq:event_selection_weight}
 \end{equation}
 
-where $\epsilon_i$ is the efficiency/scale factor applied to object $i$. Only reconstructed (``reco level'') objects that have been matched to a generator level object are considered. For leptons (\Pe, \Pmu, \Ptau) and photons, these scale factors are typically from the reconstruction efficiency, identification efficiency, and \pt- or $\eta$-dependent energy corrections. In the case of \Pbottom-tagged \glspl{jet}, it is the data-MC scale factor at the given working point from the algorithm used to identify them. These weights are calculated individually for each type of object in an event, and individually for each source since they also introduce systematic variations that cannot be trivially aggregated. A veto weight is represented as
+where $\epsilon_i$ is the efficiency/scale factor applied to object $i$. Only reconstructed objects that have been matched to a truth-level object are considered. For leptons (\Pe, \Pmu, \Ptau) and photons, these scale factors are typically from the reconstruction efficiency, identification efficiency, and \pt- or $\eta$-dependent energy corrections. In the case of \Pbottom-tagged \glspl{jet}, it is the data-MC scale factor at the given working point from the algorithm used to identify them. These weights are calculated individually for each type of object in an event, and individually for each source since they also introduce systematic variations that cannot be trivially aggregated. A veto weight is represented as
 \begin{equation}
     w_{\mathrm{veto}} = \prod_i^{N_\mathrm{objects}} 1 - \epsilon_i
     \label{eq:event_veto_weight}
@@ -142,7 +142,7 @@ Uncertainties for the \acrshort{qcd} renormalisation scale, factorisation scale,
 
 Given the modelling of the \acrlong{l1} and \acrlong{hlt} systems in simulation is only an approximation of their behaviour with data, corrections must be made to unite them.
 
-A dedicated \gls{CR} is formed to assure orthogonality with the signal region and avoid unblinding of data, but with a similar kinematic selection to the analysis for accuracy in our phase space. Events are selected in data from the primary dataset consisting of muon-based triggers, and in simulation from the \wtolnupjets process at \acrshort{lo}. Analysed events consist of these containing a single, tightly-isolated muon with $\pt > \text{30}\GeV$ that triggers the \acrshort{hlt} path for an isolated muon with $\pt > \text{27}\GeV$.\footnote{Why exactly do we use single muon events. Is it the high efficiency from the muon subsystem? Or that they won't bias the METMHT trigger efficiencies, or something?} An ``offline'' selection is then applied to keep those with similar kinematic properties to those in our signal region:
+A dedicated \gls{CR} is formed to assure orthogonality with the signal region and avoid unblinding of data, but with a similar kinematic selection to the analysis for accuracy in our phase space. Events are selected in data from the primary dataset consisting of muon-based triggers, and in simulation from the \wtolnupjets process at \acrshort{lo}. Analysed events consist of these containing a single, tightly-isolated muon with $\pt > \text{30}\GeV$ that triggers the \acrshort{hlt} path for an isolated muon with $\pt > \text{27}\GeV$.\footnote{Why exactly do we use single muon events. Is it the high efficiency from the muon subsystem? Or that they won't bias the METMHT trigger efficiencies, or something?} An offline selection is then applied to keep those with similar kinematic properties to those in our signal region:
 
 \medskip
 \begin{easylist}[itemize]
@@ -155,7 +155,7 @@ A dedicated \gls{CR} is formed to assure orthogonality with the signal region an
 
 \medskip
 
-\noindent{}where $\ptmissNoMu = \ptmiss + \pt^{\Pmu}$ to approximate the \acrshort{pf} calculation at \acrshort{hlt} level. Of these, events that additionally pass the ``online'' selection of the trigger requirements in the signal region (Tab.~\ref{tab:htoinv_SR_triggers}) are also recorded. The efficiency of a trigger---or collection of triggers---$\epsilon_{\mathrm{trg}}$ is defined as
+\noindent{}where $\ptmissNoMu = \ptmiss + \pt^{\Pmu}$ to approximate the \acrshort{pf} calculation at \acrshort{hlt} level. Of these, events that additionally pass the online selection of the trigger requirements in the signal region (Tab.~\ref{tab:htoinv_SR_triggers}) are also recorded. The efficiency of a trigger---or collection of triggers---$\epsilon_{\mathrm{trg}}$ is defined as
 \begin{equation}
     \epsilon_{\mathrm{trg}} = \frac{ s_\mathrm{offline} \cap s_{\mathrm{online}} }{ s_\mathrm{offline} }
     \label{eq:trigger_eff}

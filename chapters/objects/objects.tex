@@ -118,7 +118,7 @@ where $\Delta\phi = \phi - \phi(\ptvecmiss)$, and \pt and $\phi$ are from the id
 
 The physics that occurs at the high energies the \acrshort{lhc} is capable of is not simple. That makes the recording of particles and events overall a non-trivial undertaking. Based on complex hardware and software, research, and the experience of previous experiments, establishing physics objects and variables from an analyst's standpoint is thankfully straightforward. The basic definitions are already included into the \ROOT files we use, with ancillary selections on top for the analysis-level objects. All of the descriptions that follow apply both to data and simulated samples, unless otherwise stated.
 
-Different working points for the identification of many objects are available from the respective \glspl{pog}, trading efficiency for purity the tighter the restrictions are. ``Veto,'' ``loose,'' ``medium,'' and ``tight'' criteria exist for most objects. We denote particles with a subscript that signifies the working point. The requirements of which are elaborated upon in the ensuing subsections.
+Different working points for the identification of many objects are available from the respective \glspl{pog}, trading efficiency for purity the tighter the restrictions are. \emph{Veto}, \emph{loose}, \emph{medium}, and \emph{tight} criteria exist for most objects. We denote particles with a subscript that signifies the working point. The requirements of which are elaborated upon in the ensuing subsections.
 
 
 %=========================================================
@@ -244,12 +244,12 @@ The ensuing selections are applied to AK8 \glspl{jet} to classify them, as recom
     & Boosted top:
     && $\pt > \text{400}\GeV$
     && $\text{105} < m_{\mathrm{SD}} < \text{210} \GeV$
-    && \Ptop vs. \acrshort{qcd} discriminator score with the ``tight'' working point (1\,\% mis-tag rate)
+    && \Ptop vs. \acrshort{qcd} discriminator score with the tight working point (1\,\% mis-tag rate)
 
     & Boosted \PVec:
     && $\pt > \text{200}\GeV$
     && $\text{65} < m_{\mathrm{SD}} < \text{105} \GeV$
-    && \PW vs. \acrshort{qcd} discriminator score with the ``tight'' working point (1\,\% mis-tag rate)
+    && \PW vs. \acrshort{qcd} discriminator score with the tight working point (1\,\% mis-tag rate)
 \end{easylist}
 
 \medskip
@@ -263,7 +263,7 @@ The ensuing selections are applied to AK8 \glspl{jet} to classify them, as recom
 \subsection{Muons}
 \label{subsec:objects_muons}
 
-The reconstruction and identification criteria for muons is described in significant detail in Ref.~\citenum{Sirunyan:2018fpa}. From there, a loose muon \looseMuon satisfies the ``loose muon identification'' requirements. Additionally, $\abseta < \text{2.4}$, $\pt > \text{10}\GeV$, and the loose working point of the \acrlong{pf} relative isolation parameter (Eq.~5.4 in Ref.~\citenum{CMS-PRF-14-001}\citenumNegSpace) $I_{\mathrm{PF}} < \text{0.25}$ must be satisfied. A tight muon \tightMuon meets the ``tight muon ID'' requirements from Ref.~\citenum{Sirunyan:2018fpa}, $\abseta < \text{2.4}$, $\pt > \text{20}\GeV$, and the tight working point for the relative isolation ($I_{\mathrm{PF}} < \text{0.15}$).
+The reconstruction and identification criteria for muons is described in significant detail in Ref.~\citenum{Sirunyan:2018fpa}. From there, a loose muon \looseMuon satisfies the loose muon identification requirements. Additionally, $\abseta < \text{2.4}$, $\pt > \text{10}\GeV$, and the loose working point of the \acrlong{pf} relative isolation parameter (Eq.~5.4 in Ref.~\citenum{CMS-PRF-14-001}\citenumNegSpace) $I_{\mathrm{PF}} < \text{0.25}$ must be satisfied. A tight muon \tightMuon meets the tight muon ID requirements from Ref.~\citenum{Sirunyan:2018fpa}, $\abseta < \text{2.4}$, $\pt > \text{20}\GeV$, and the tight working point for the relative isolation ($I_{\mathrm{PF}} < \text{0.15}$).
 
 The relative isolation parameter is the ratio of the sum of track, \acrshort{hcal} and \acrshort{ecal} energies within $\Delta R < \text{0.4}$ of the muon to the particle's momentum. The loose and tight working points are designed to give efficiencies of 98\,\% and 95\,\%, respectively.
 
@@ -373,7 +373,7 @@ As well as the ID, the two collections diverge further due to $\eta$ and \pt req
 \subsection{Tau leptons}
 \label{subsec:objects_taus}
 
-The only purpose tau leptons \Ptau serve in the analysis is to veto events that contain them. These are denoted as ``very loose'' taus \vlooseTau. Version 2 of the multivariate identification algorithm is used for all years, and tau leptons must pass the very loose criteria. Dedicated multivariate discriminators against electrons and muons are provided and employed, passing the loose and very loose working points, respectively. Kinematically, a \vlooseTau also requires $\pt > \text{20}\GeV$, $\abseta < \text{2.3}$, and $dz <\text{0.2}$\,cm.
+The only purpose tau leptons \Ptau serve in the analysis is to veto events that contain them. These are denoted as \emph{very loose} taus \vlooseTau. Version 2 of the multivariate identification algorithm is used for all years, and tau leptons must pass the very loose criteria. Dedicated multivariate discriminators against electrons and muons are provided and employed, passing the loose and very loose working points, respectively. Kinematically, a \vlooseTau also requires $\pt > \text{20}\GeV$, $\abseta < \text{2.3}$, and $dz <\text{0.2}$\,cm.
 
 % Tau ID: https://twiki.cern.ch/twiki/bin/viewauth/CMS/TauIDRecommendationForRun2. But no real useful information is there
 
@@ -395,7 +395,7 @@ Muons are first identified, followed by electrons. Cross cleaning is performed a
 \subsection{Revised energy sums \texorpdfstring{\ptvecmiss}{ptmiss}, \texorpdfstring{\HT}{HT}, and \texorpdfstring{\htvecmiss}{MHT}}
 \label{subsec:objects_analysis_energy_sums}
 
-Most \acrshort{cms} analyses, including those presented in this thesis, define the missing transverse momentum with the ``type-I correction'': corrections to the \acrshort{jer} and \acrshort{jes} are applied as in Chpt.~\ref{subsec:objects_jets}, and so the corrected \gls{jet} \ptvec are propagated to the calculation of \ptvecmiss. Uncertainties are calculated in the same manner as \glspl{jet}.
+Most \acrshort{cms} analyses, including those presented in this thesis, define the missing transverse momentum with the \emph{type-I correction}: corrections to the \acrshort{jer} and \acrshort{jes} are applied as in Chpt.~\ref{subsec:objects_jets}, and so the corrected \gls{jet} \ptvec are propagated to the calculation of \ptvecmiss. Uncertainties are calculated in the same manner as \glspl{jet}.
 
 In 2017, significant noise in the \acrshort{ecal} end cap affected \glspl{jet} and \ptmiss, leading to potentially large energy mismeasurements. These quantities were recomputed after reconstruction, and carried through the analysis.
 

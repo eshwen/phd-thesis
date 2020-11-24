@@ -30,6 +30,11 @@ for reg_dir in $(ls -d ${the_dir}/*); do
     mv ${reg_dir}/category_3.02.pdf ${reg_dir}/ggF_3j.pdf
     mv ${reg_dir}/category_3.03.pdf ${reg_dir}/ggF_4j.pdf
     mv ${reg_dir}/category_3.04.pdf ${reg_dir}/ggF_5j.pdf
+    mv ${reg_dir}/plot_dataset.category--SignalComp--weight_nominal--project_category-yscale_linear.pdf ${reg_dir}/signal_composition.pdf
+    mv ${reg_dir}/plot_dataset.category--BkgComp--weight_nominal--project_category-yscale_linear.pdf ${reg_dir}/background_composition.pdf
     rm ${reg_dir}/monojet.pdf
     rm ${reg_dir}/category_4.*.pdf
+    rm ${reg_dir}/*.png
+    rm ${reg_dir}/plot_dataset.bin--sOverB*
+    #rm ${reg_dir}/Yield*.csv
 done

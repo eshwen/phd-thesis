@@ -36,33 +36,48 @@ Events must satisfy a logical or of \acrshort{hlt} cross-triggers for \acrlong{p
     \label{tab:htoinv_SR_triggers}
 \end{table}
 
-The \ptmiss distribution from simulation in the signal region after the analysis-level selection are shown for the \ttH and \VH resolved and boosted categories in Fig.~\ref{fig:htoinv_sr_yields_comb2016to18}. Event yields are scaled to the integrated luminosity of the full Run-2 dataset.
+The \ptmiss distribution from simulation in the signal region after the analysis-level selection are shown for the \ttH and \VH resolved and boosted categories in Fig.~\ref{fig:htoinv_sr_yields_comb2016to18}. Event yields are scaled to the integrated luminosity of the full Run-2 dataset. The relative composition in each subcategory of the signal region for signal and background are illustrated in Fig.~\ref{fig:htoinv_sr_composition_comb2016to18}, highlighting the effectiveness to which the subcategories capture the targeted topologies, and the dominant background processes, respectively. 
 
 \begin{figure}[htbp]
     \centering
     \begin{subfigure}[b]{0.24\textwidth}
-        \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/region_0/ttH_boosted.pdf}
+        \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/region_0/blinded/ttH_boosted.pdf}
         \caption{\ttH boosted}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.24\textwidth}
-        \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/region_0/ttH_resolved.pdf}
+        \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/region_0/blinded/ttH_resolved.pdf}
         \caption{\ttH resolved}
     \end{subfigure}
     \begin{subfigure}[b]{0.24\textwidth}
-        \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/region_0/VH_1V.pdf}
+        \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/region_0/blinded/VH_1V.pdf}
         \caption{\VH 1V}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.24\textwidth}
-        \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/region_0/VH_resolved.pdf}
+        \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/region_0/blinded/VH_resolved.pdf}
         \caption{\VH resolved}
     \end{subfigure}
-    \caption[Data-simulation comparisons of the \ptmiss distribution in the signal region for the combined boosted and resolved categories for the \ttH and \VH processes, using simulation derived for each year in Run-2 and scaled to the required luminosity]{Data-simulation comparisons of the \ptmiss distribution in the signal region for the combined boosted and resolved categories for the \ttH and \VH processes, using simulation derived for each year in Run-2 and scaled to the required luminosity.}
+    \caption[Simulation of the \ptmiss distribution in the signal region for the combined boosted and resolved categories for the \ttH and \VH processes, using simulation derived for each year in Run-2 and scaled to the required luminosity]{Simulation of the \ptmiss distribution in the signal region for the combined boosted and resolved categories for the \ttH and \VH processes, using simulation derived for each year in Run-2 and scaled to the required luminosity.}
     \label{fig:htoinv_sr_yields_comb2016to18}
 \end{figure}
 
-% Figures from 2nd September, 2020
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.4\textwidth}
+        \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/region_0/signal_composition.pdf}
+        \caption{Signal composition}
+    \end{subfigure}
+    \hspace{0.05\textwidth}
+    \begin{subfigure}[b]{0.4\textwidth}
+        \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/region_0/background_composition.pdf}
+        \caption{Background composition}
+    \end{subfigure}
+    \caption[Composition of each subcategory in the signal region for simulated signal and background processes scaled to the integrated luminosity of the full Run-2 dataset]{Composition of each subcategory in the signal region for simulated signal and background processes scaled to the integrated luminosity of the full Run-2 dataset.}
+    \label{fig:htoinv_sr_composition_comb2016to18}
+\end{figure}
+
+% Figures from 12th October, 2020
 
 
 %=========================================================
@@ -252,7 +267,37 @@ Figs.~\ref{fig:htoinv_cr_yields_comb2016to18_single_muon}, \ref{fig:htoinv_cr_yi
     \label{fig:htoinv_cr_yields_comb2016to18_single_photon}
 \end{figure}
 
-% Figures from 2nd September, 2020
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/region_1/background_composition.pdf}
+        \caption{\singleMuCr control region}
+    \end{subfigure}
+    \hspace{0.05\textwidth}
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/region_3/background_composition.pdf}
+        \caption{\singleEleCr control region}
+    \end{subfigure}
+
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/region_2/background_composition.pdf}
+        \caption{\doubleMuCr control region}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/region_4/background_composition.pdf}
+        \caption{\doubleEleCr control region}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/region_5/background_composition.pdf}
+        \caption{\singlePhotonCr control region}
+    \end{subfigure}
+    \caption[Composition of each subcategory in each of the control regions for simulated background processes scaled to the integrated luminosity of the full Run-2 dataset]{Composition of each subcategory in each of the control regions for simulated background processes scaled to the integrated luminosity of the full Run-2 dataset.}
+    \label{fig:htoinv_cr_composition_comb2016to18}
+\end{figure}
+
+% Figures from 12th October, 2020
 
 
 %=========================================================
@@ -460,4 +505,4 @@ Figs.~\ref{fig:htoinv_sb_yields_comb2016to18_tight_double}, \ref{fig:htoinv_sb_y
     \label{fig:htoinv_sb_yields_comb2016to18_loose_minOmegaTilde}
 \end{figure}
 
-% Figures from 2nd September, 2020
+% Figures from 12th October, 2020

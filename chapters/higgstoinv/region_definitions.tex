@@ -36,31 +36,7 @@ Events must satisfy a logical or of \acrshort{hlt} cross-triggers for \acrlong{p
     \label{tab:htoinv_SR_triggers}
 \end{table}
 
-The \ptmiss distribution from simulation in the signal region after the analysis-level selection are shown for the \ttH and \VH resolved and boosted categories in Fig.~\ref{fig:htoinv_sr_yields_comb2016to18}. Event yields are scaled to the integrated luminosity of the full Run-2 dataset. The relative composition in each subcategory of the signal region for signal and background are illustrated in Fig.~\ref{fig:htoinv_sr_composition_comb2016to18}, highlighting the effectiveness to which the subcategories capture the targeted topologies, and the dominant background processes, respectively. 
-
-\begin{figure}[htbp]
-    \centering
-    \begin{subfigure}[b]{0.24\textwidth}
-        \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/region_0/blinded/ttH_boosted.pdf}
-        \caption{\ttH boosted}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.24\textwidth}
-        \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/region_0/blinded/ttH_resolved.pdf}
-        \caption{\ttH resolved}
-    \end{subfigure}
-    \begin{subfigure}[b]{0.24\textwidth}
-        \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/region_0/blinded/VH_1V.pdf}
-        \caption{\VH 1V}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.24\textwidth}
-        \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/region_0/blinded/VH_resolved.pdf}
-        \caption{\VH resolved}
-    \end{subfigure}
-    \caption[Simulation of the \ptmiss distribution in the signal region for the combined boosted and resolved categories for the \ttH and \VH processes, using simulation derived for each year in Run-2 and scaled to the required luminosity]{Simulation of the \ptmiss distribution in the signal region for the combined boosted and resolved categories for the \ttH and \VH processes, using simulation derived for each year in Run-2 and scaled to the required luminosity.}
-    \label{fig:htoinv_sr_yields_comb2016to18}
-\end{figure}
+The relative composition in each subcategory of the signal region for signal and background are illustrated in Fig.~\ref{fig:htoinv_sr_composition_comb2016to18}, highlighting the effectiveness to which the subcategories capture the targeted topologies, and the dominant background processes, respectively. The \ttH subcategories, especially those designed to tag boosted top quarks and vector bosons are very pure in \ttH. Similarly, the \VH and \ggH subcategories predominantly consist of events from the production mode of focus. Contamination from the \acrshort{vbf} process is present at a low level, most notably in the \ggH subcategories given the similar topologies. \ggH signal permeates several subcategories as the second largest component. This is likely due to its high cross section (more than fifty times any other individual process) and its ability to mimic the final states of the other signals. \ttbarpjets is the dominant background for the \ttH subcategories as expected, with \ztonunupjets leading in the others. \wtolnupjets also contributes a reasonable fraction. 
 
 \begin{figure}[htbp]
     \centering
@@ -73,7 +49,7 @@ The \ptmiss distribution from simulation in the signal region after the analysis
         \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/region_0/background_composition.pdf}
         \caption{Background composition}
     \end{subfigure}
-    \caption[Composition of each subcategory in the signal region for simulated signal and background processes scaled to the integrated luminosity of the full Run-2 dataset]{Composition of each subcategory in the signal region for simulated signal and background processes scaled to the integrated luminosity of the full Run-2 dataset.}
+    \caption[Composition of each subcategory in the signal region for simulated signal and background processes after the analysis-level selection]{Composition of each subcategory in the signal region for simulated signal and background processes after the analysis-level selection.}
     \label{fig:htoinv_sr_composition_comb2016to18}
 \end{figure}
 
@@ -140,132 +116,7 @@ For the \singlePhotonCr \gls{CR}, we take data from \acrshort{cms} originating o
 
 In each of the \glspl{CR}, the \ptvecmiss is recalculated without the objects used to define said region to model the process it is predicting. In essence, these objects are treated as a source of missing momentum. Conditions in the event selection and binning that refer to \ptmiss use the recalculated quantity when applied to the \glspl{CR}. Using the \singleMuCr \gls{CR} as an example, the new \ptvecmiss is the vector sum of the old \ptvecmiss and the tight muon \ptvec. The single lepton \glspl{CR} estimate the semi-leptonic $\ttbarpjets$ and $\wtolnupjets$ backgrounds. In both cases, they may enter the signal region if the lepton is lost, becoming a source of \ptmiss. The dilepton and \singlePhotonCr regions consider \ztonunupjets. The former parallels the decay as it is enriched in \ztolplmpjets---possessing very similar kinematic properties while being much easier to detect, improving statistical accuracy. The latter region substitutes the \ztonunu decay with a photon.
 
-Figs.~\ref{fig:htoinv_cr_yields_comb2016to18_single_muon}, \ref{fig:htoinv_cr_yields_comb2016to18_double_muon}, \ref{fig:htoinv_cr_yields_comb2016to18_single_electron}, \ref{fig:htoinv_cr_yields_comb2016to18_double_electron}, and \ref{fig:htoinv_cr_yields_comb2016to18_single_photon} reveal the \ptmiss distributions in each \gls{CR} after the analysis-level selections with the full Run-2 dataset. The combined \ttH and \VH subcategories for boosted and resolved topologies are used to demonstrate the shapes and data--simulation agreement. Background estimation is performed separately for each year due to the differing running conditions, detector configuration, and the different effects or problems seen in the data.\footnote{Might not need to show all of these plots. They're just here for now, and can be tidied up later. May be worth showing \ggH in the same capacity as the other categories, however.}
-
-\begin{figure}[htbp]
-    \centering
-    \begin{subfigure}[b]{0.24\textwidth}
-        \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/region_1/ttH_boosted.pdf}
-        \caption{\ttH boosted}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.24\textwidth}
-        \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/region_1/ttH_resolved.pdf}
-        \caption{\ttH resolved}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.24\textwidth}
-        \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/region_1/VH_1V.pdf}
-        \caption{\VH 1V}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.24\textwidth}
-        \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/region_1/VH_resolved.pdf}
-        \caption{\VH resolved}
-    \end{subfigure}
-    \caption[Data-simulation comparisons of the \ptmiss distribution in the \singleMuCr control region for the combined boosted and resolved categories for the \ttH and \VH processes, using the full Run-2 dataset]{Data-simulation comparisons of the \ptmiss distribution in the \singleMuCr \gls{CR} for the combined boosted and resolved categories for the \ttH and \VH processes, using the full Run-2 dataset.}
-    \label{fig:htoinv_cr_yields_comb2016to18_single_muon}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \begin{subfigure}[b]{0.24\textwidth}
-        \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/region_2/ttH_boosted.pdf}
-        \caption{\ttH boosted}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.24\textwidth}
-        \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/region_2/ttH_resolved.pdf}
-        \caption{\ttH resolved}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.24\textwidth}
-        \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/region_2/VH_1V.pdf}
-        \caption{\VH 1V}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.24\textwidth}
-        \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/region_2/VH_resolved.pdf}
-        \caption{\VH resolved}
-    \end{subfigure}
-    \caption[Data-simulation comparisons of the \ptmiss distribution in the \doubleMuCr control region for the combined boosted and resolved categories for the \ttH and \VH processes, using the full Run-2 dataset]{Data-simulation comparisons of the \ptmiss distribution in the \doubleMuCr \gls{CR} for the combined boosted and resolved categories for the \ttH and \VH processes, using the full Run-2 dataset.}
-    \label{fig:htoinv_cr_yields_comb2016to18_double_muon}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \begin{subfigure}[b]{0.24\textwidth}
-        \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/region_3/ttH_boosted.pdf}
-        \caption{\ttH boosted}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.24\textwidth}
-        \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/region_3/ttH_resolved.pdf}
-        \caption{\ttH resolved}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.24\textwidth}
-        \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/region_3/VH_1V.pdf}
-        \caption{\VH 1V}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.24\textwidth}
-        \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/region_3/VH_resolved.pdf}
-        \caption{\VH resolved}
-    \end{subfigure}
-    \caption[Data-simulation comparisons of the \ptmiss distribution in the \singleEleCr control region for the combined boosted and resolved categories for the \ttH and \VH processes, using the full Run-2 dataset]{Data-simulation comparisons of the \ptmiss distribution in the \singleEleCr \gls{CR} for the combined boosted and resolved categories for the \ttH and \VH processes, using the full Run-2 dataset.}
-    \label{fig:htoinv_cr_yields_comb2016to18_single_electron}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \begin{subfigure}[b]{0.24\textwidth}
-        \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/region_4/ttH_boosted.pdf}
-        \caption{\ttH boosted}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.24\textwidth}
-        \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/region_4/ttH_resolved.pdf}
-        \caption{\ttH resolved}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.24\textwidth}
-        \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/region_4/VH_1V.pdf}
-        \caption{\VH 1V}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.24\textwidth}
-        \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/region_4/VH_resolved.pdf}
-        \caption{\VH resolved}
-    \end{subfigure}
-    \caption[Data-simulation comparisons of the \ptmiss distribution in the \doubleEleCr control region for the combined boosted and resolved categories for the \ttH and \VH processes, using the full Run-2 dataset]{Data-simulation comparisons of the \ptmiss distribution in the \doubleEleCr \gls{CR} for the combined boosted and resolved categories for the \ttH and \VH processes, using the full Run-2 dataset.}
-    \label{fig:htoinv_cr_yields_comb2016to18_double_electron}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \begin{subfigure}[b]{0.24\textwidth}
-        \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/region_5/ttH_boosted.pdf}
-        \caption{\ttH boosted}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.24\textwidth}
-        \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/region_5/ttH_resolved.pdf}
-        \caption{\ttH resolved}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.24\textwidth}
-        \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/region_5/VH_1V.pdf}
-        \caption{\VH 1V}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.24\textwidth}
-        \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/region_5/VH_resolved.pdf}
-        \caption{\VH resolved}
-    \end{subfigure}
-    \caption[Data-simulation comparisons of the \ptmiss distribution in the \singlePhotonCr control region for the combined boosted and resolved categories for the \ttH and \VH processes, using the full Run-2 dataset]{Data-simulation comparisons of the \ptmiss distribution in the \singlePhotonCr \gls{CR} for the combined boosted and resolved categories for the \ttH and \VH processes, using the full Run-2 dataset. Contributions from the \acrshort{qcd} multijet process use the prediction from the photon purity measurement in Chpt.~\ref{subsubsec:htoinv_photon_purity} instead of the \acrshort{mc}.}
-    \label{fig:htoinv_cr_yields_comb2016to18_single_photon}
-\end{figure}
+The relative composition of the background processes in each \gls{CR} after the analysis-level selection is summarised in Fig.~\ref{fig:htoinv_cr_composition_comb2016to18}. As desired, the single lepton \glspl{CR} are very similar and dominated by the \ttbar and \wtolnu process, corresponding to the lost lepton backgrounds in the signal region. The dilepton regions also possess a very similar composition to each other, enriched in Drell-Yan \ztoll (a proxy for the \ztonunu background in the signal region), and to a lesser extent \ttbar and $\ttbar X$ which contain several dileptonic decay channels. In the \singlePhotonCr \gls{CR}, expectedly the \gammapjets process dominates virtually every subcategory apart from a sizeable $\ttbar \Pphoton$ presence in some of the boosted \ttH cases. \acrshort{qcd} multijet events make up a consistent, small fraction of the events. Rather than the yields from \acrshort{mc} as they would likely consist of \glspl{jet} misidentified as photons, its presence in this region is estimated from a data driven purity measurement explained in Chpt.~\ref{subsubsec:htoinv_photon_purity}. Data and background yields from simulation from every \glspl{CR} in each period of Run-2 can be found in App.~\ref{app:supplementary_hinv_plots}.
 
 \begin{figure}[htbp]
     \centering
@@ -293,7 +144,7 @@ Figs.~\ref{fig:htoinv_cr_yields_comb2016to18_single_muon}, \ref{fig:htoinv_cr_yi
         \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/region_5/background_composition.pdf}
         \caption{\singlePhotonCr control region}
     \end{subfigure}
-    \caption[Composition of each subcategory in each of the control regions for simulated background processes scaled to the integrated luminosity of the full Run-2 dataset]{Composition of each subcategory in each of the control regions for simulated background processes scaled to the integrated luminosity of the full Run-2 dataset.}
+    \caption[Composition of each subcategory in each of the control regions for simulated background processes after the analysis-level selection]{Composition of each subcategory in each of the control regions for simulated background processes after the analysis-level selection.}
     \label{fig:htoinv_cr_composition_comb2016to18}
 \end{figure}
 
@@ -380,7 +231,7 @@ We invert the requirements on the two angular variables designed to reject multi
 
 The \glspl{SB} follow the same categorisation as for the other regions, i.e., Tab.~\ref{tab:htoinv_categories}, and are binned in \ptmiss with the same scheme as the other regions. A \gls{SB} composed of the inversion of only one variable maintains similar kinematic properties to the signal region. When performing analysis while still blind to data in the signal region, inspecting one of these \glspl{SB} is a good indicator of how new cuts or corrections will affect the signal region composition, and compatibility between data and \acrshort{mc}. Like the \glspl{CR}, \glspl{SB} serve a secondary purpose.
 
-Figs.~\ref{fig:htoinv_sb_yields_comb2016to18_tight_double}, \ref{fig:htoinv_sb_yields_comb2016to18_loose_double}, \ref{fig:htoinv_sb_yields_comb2016to18_mht_met}, \ref{fig:htoinv_sb_yields_comb2016to18_tight_minOmegaTilde}, and \ref{fig:htoinv_sb_yields_comb2016to18_loose_minOmegaTilde} illustrate the \ptmiss distributions in each \gls{SB} after the analysis-level selections with the full Run-2 dataset. The combined \ttH and \VH subcategories for boosted and resolved topologies are used to demonstrate the shapes and data--simulation resemblance. Background estimation is performed separately for each year due to the differing running conditions, detector configuration, and the different effects or problems seen in the data.\footnote{Might not need to show all of these plots. They're just here for now, and can be tidied up later. May be worth showing \ggH in the same capacity as the other categories, however.}\footnote{Some of the sidebands are unpopulated for \VH because of the \mindphi cut in scenario 5. Make sure to fix.}
+Figs.~\ref{fig:htoinv_sb_yields_comb2016to18_tight_double}, \ref{fig:htoinv_sb_yields_comb2016to18_loose_double}, \ref{fig:htoinv_sb_yields_comb2016to18_mht_met}, \ref{fig:htoinv_sb_yields_comb2016to18_tight_minOmegaTilde}, and \ref{fig:htoinv_sb_yields_comb2016to18_loose_minOmegaTilde} illustrate the \ptmiss distributions in each \gls{SB} after the analysis-level selections with the full Run-2 dataset. The combined \ttH and \VH subcategories for boosted and resolved topologies are used to demonstrate the shapes and data--simulation resemblance. Background estimation is performed separately for each year due to the differing running conditions, detector configuration, and the different effects or problems seen in the data.\footnote{Might not need to show all of these plots. They're just here for now, and can be tidied up later. For the SR and CRs, we have mountain range plots to showcase the yields, but nothing similar for the sidebands. May be worth showing \ggH in the same capacity as the other categories, however.}\footnote{Some of the sidebands are unpopulated for \VH because of the \mindphi cut in scenario 5. Make sure to fix.}
 
 \begin{figure}[htbp]
     \centering

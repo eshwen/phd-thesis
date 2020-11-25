@@ -10,11 +10,71 @@
 
 
 \section{The standard model of particle physics}
-\label{sec:standardmodel}
+\label{sec:theory_standardmodel}
 
 % Link to objects chapter on electron volts somewhere here (Chpt.~\ref{subsec:objects_electron_volt})
 
-The \acrlong{sm} of particle physics (\acrshort{sm}) is the best description of nature the human race has to offer. Three of the four fundamental forces are encapsulated by it: the strong (nuclear) force, the weak (nuclear) force, and electromagnetism. The latter two may instead be considered aspects of a single \emph{electroweak} force, unified above an energy $\order{\text{100}\GeV}$. All of the elementary particles---the quarks, leptons, gauge bosons, and the Higgs boson---and their interactions with each other are considered in the \acrlong{sm}. Its mathematical representation is usually presented in terms of the Lagrangian density
+The \acrlong{sm} of particle physics (\acrshort{sm}) is the best description of nature the human race has to offer. Three of the four fundamental forces are encapsulated by it: the strong (nuclear) force, the weak (nuclear) force, and electromagnetism. The latter two may instead be considered aspects of a single \emph{electroweak} force, unified above an energy $\order{\text{100}\GeV}$; important for physics at the \acrshort{lhc}. All of the elementary particles---the quarks, leptons, gauge bosons, and the Higgs boson---and their interactions with each other via the above forces are contained within the \acrlong{sm}.
+
+As a gauge quantum field theory, the particles in the \acrlong{sm} are characterised as quantum fields and their interactions described by continuous symmetry groups. In the \acrshort{sm}, an SU(3) gauge group represents the strong force interactions, and a $\text{SU(2)} \times \text{U(1)}$ gauge group for the electroweak force. Decomposition into the weak force and electromagnetism results in separate SU(2) and U(1) groups, respectively. The interactions of the \acrlong{sm} as a whole can then be expressed as the product $\text{SU(3)} \times \text{SU(2)} \times \text{U(1)}$.
+
+Noether's theorem associates symmetries of a physical system with conservation laws. A consequence of which that an interaction governed by a particular group conserves its corresponding quantity---a charge or \emph{quantum number}. The conservation of a quantum number is achieved through the exchange of mediators by the interacting particles. SU(3) describes strong force interactions mediated by gluons carrying colour charge. The SU(2) and U(1) groups collectively [describe] the electroweak interaction, conserving weak isospin and weak hypercharge, respectively. Post-electroweak symmetry breaking (a phenomenon related to the Higgs boson and explained in Chpt.~\ref{subsec:theory_higgs_mechanism}), the quantum numbers are carried by the electroweak \PWpm and \PZ bosons, and the photon.
+
+
+%=========================================================
+
+
+\subsection{Particles of the standard model}
+\label{sec:theory_sm_particles}
+
+The \acrlong{sm} contains a relatively small, but diverse ``zoo'' of particles. They can be divided into two distinct categories based on their internal property \emph{spin}: fermions with half-integer spin, comprising the quarks and leptons that constitute matter; and bosons with integer spin, carrying the forces and mediating the interactions between themselves and fermions.
+
+Six types, or \emph{flavours}, of quarks and six flavours of leptons exist, arranged in three generations (summarised in Tab.~\ref{tab:fermions}). Particles between generations share many similarities, the largest differentiator being mass. In the quark sector, the first generation contains the up \Pup and down \Pdown, the second the charm \Pcharm and strange \Pstrange, and the third the top \Ptop and bottom \Pbottom. The first particle in each generation carries an electric charge of $+\text{2/3}$ of the electron charge while the second a value of $-\text{1/3}$. All quarks also carry colour charge, allowing them to combine into the colour-neutral composite \emph{hadron} particles such as protons and neutrons.
+
+In the lepton sector, each generation consists of a doublet of left-handed chiral states $(\Pnu_{\mathrm{L}}, \Plepton_{\mathrm{L}})$ arising from the SU(2) weak isospin symmetry, and a singlet of right-handed chiral states $\Plepton_{\mathrm{R}}$. The $\Plepton_{\mathrm{L}}$ corresponds to the electron \Pe, muon \Pmu, or tau \Ptau, carrying an electrical charge of $-$1, while \Pnu is for the corresponding neutrino, an extremely light and electrically neutral particle. While the strong force and electromagnetism do not distinguish between left- and right-handed fermions, the weak force does. The latter interacts only with left-handed particles and right-handed antiparticles. % Maybe tie this into dark matter postulates?
+
+%Each fermion---with the possible exception of neutrinos---also has a distinct antiparticle, possessing opposite physical charges (such as electrical charge) but otherwise identical properties. The are summarised in Tab.~\ref{tab:fermions}.
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{cclccr}
+        \hline\hline
+        Type & Generation & Particle & Spin & Electric charge & Mass \\ \hline
+        \multirow{6}{*}{Quark} & \multirow{2}{*}{1} & Up (\Pup) & 1/2 & $+$2/3\,\Pe & 2.2$^{+\text{0.5}}_{-\text{0.4}} \MeV$ \\
+        & & Down (\Pdown) & 1/2 & $-$1/3\,\Pe & 4.7$^{+\text{0.5}}_{-\text{0.3}} \MeV$ \\
+        & \multirow{2}{*}{2} & Charm (\Pcharm) & 1/2 & $+$2/3\,\Pe & 1.28$^{+\text{0.03}}_{-\text{0.04}} \GeV$ \\
+        & & Strange (\Pstrange) & 1/2 & $-$1/3\,\Pe & 95$^{+\text{9}}_{-\text{3}} \MeV$ \\
+        & \multirow{2}{*}{3} & Top (\Ptop) & 1/2 & $+$2/3\,\Pe & 173.0$\pm \text{0.4} \GeV$\\
+        & & Bottom (\Pbottom) & 1/2 & $-$1/3\,\Pe & 4.18$^{+\text{0.04}}_{-\text{0.03}} \GeV$ \\ \hline
+        \multirow{6}{*}{Lepton} & \multirow{2}{*}{1} & Electron (\Pe) & 1/2 & $-$1\,\Pe & 0.511\MeV \\
+        & & Electron neutrino (\Pnue) & 1/2 & 0 & $< \text{0.2\,\eV}$ \\
+        & \multirow{2}{*}{2} & Muon (\Pmu) & 1/2 & $-$1\,\Pe & 106\MeV \\
+        & & Muon neutrino (\Pnum) & 1/2 & 0 & $< \text{0.2\,\eV}$ \\
+        & \multirow{2}{*}{3} & Tau (\Ptau) & 1/2 & $-$1\,\Pe & 1.777\GeV \\
+        & & Tau neutrino (\Pnut) & 1/2 & 0 & $< \text{0.2\,\eV}$ \\ \hline\hline
+    \end{tabular}
+    \caption[A summary of the fermionic particles of the standard model]{A summary of the fermionic particles of the \acrlong{sm}. Masses obtained from Ref.~\citenum{PhysRevD.98.030001}.}
+    \label{tab:fermions}
+\end{table}
+
+The spin-1 gauge bosons in the \acrlong{sm} mediate the interactions between fermions, responsible for carrying the fundamental forces and corresponding quantum numbers. For each SU($N$) or U($N$) group, $N^2 - \text{1}$ force carriers exist. Therefore eight types of gluon \Pgluon carry colour charge for the SU(3) strong force, the electrically neutral photon \Pphoton mediates U(1) electromagnetism, and the charged \PWpm boson along with the neutral \PZ mediate the SU(2) weak force. The spin-0 Higgs boson \PH acts to bestow mass to fermions---with the possible exception of neutrinos---and the electroweak bosons alike once the Higgs mechanism separates the electroweak force into the weak force and electromagnetism. All of the bosons are summarised in Tab.~\ref{tab:bosons}.
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{clccr}
+        \hline
+        Force & Particle & Spin & Electric charge & Mass \\ \hline
+        Strong & Gluon (\Pgluon) & 1 & 0 & 0 \\
+        Electromagnetism & Photon (\Pphoton) & 1 & 0 & 0 \\
+        Weak & \PW bosons (\PWpm) & 1 & $\pm$1\,\Pe & $\text{80.38} \pm \text{0.01}\GeV$ \\
+        Weak & \PZ boson (\PZ) & 1 & 0 & 91.19\GeV \\
+        --- & Higgs boson (\PH) & 0 & 0 & $\text{125.18} \pm \text{0.16}\GeV$ \\ \hline
+    \end{tabular}
+    \caption[A summary of the bosonic particles of the standard model]{A summary of the bosonic particles of the \acrlong{sm}. Masses obtained from Ref.~\citenum{PhysRevD.98.030001}.}
+    \label{tab:bosons}
+\end{table}
+
+Its mathematical representation is usually presented in terms of the Lagrangian density
 \begin{equation}
 \begin{alignedat}{4}
 \mathcal{L}_{\mathrm{SM}} &= \mathcal{L}_{\mathrm{Gauge}} &{}+{}& \mathcal{L}_{\mathrm{Fermions}} &{}+{}& \mathcal{L}_{\mathrm{Yukawa}} &{}+{}& \mathcal{L}_{\mathrm{Higgs}} \\
@@ -25,7 +85,7 @@ The \acrlong{sm} of particle physics (\acrshort{sm}) is the best description of 
 
 % When using 'aligned' or 'alignedat' environment, don't indent each equation line, otherwise it complains. Wrapping 'alignedat' in an equation environment ensures only one label for all the lines in the equation.
 
-where the above equation is its form before the manifestation of electroweak symmetry breaking. The boson fields and their couplings are represented by $F_{\mu\nu}F^{\mu\nu}$ and $D$, respectively. Feynman slash notation is used, i.e., $\Dslash \equiv \gamma^{\mu} D_{\mu}$, with $\gamma^{\mu}$ as the Dirac \emph{gamma matrices}. The fermion fields are denoted by $\psi$, with the Yukawa coupling $y_{ij}$.\footnote{Make sure this is correct.} Finally, the Higgs field is represented with $\phi$ and potential $V(\phi)$.
+where the above equation is its form before the manifestation of electroweak symmetry breaking. The boson fields and their couplings are represented by $F_{\mu\nu}F^{\mu\nu}$ and $D$, respectively. The fermion fields are denoted by $\psi$, with the Yukawa coupling $y_{ij}$.\footnote{Make sure this is correct.} Feynman slash notation is used, i.e., $\Dslash \equiv \gamma^{\mu} D_{\mu}$, with $\gamma^{\mu}$ as the Dirac \emph{gamma matrices}. Finally, the Higgs field is represented with $\phi$ and potential $V(\phi)$.
 
 % Explain what each term means (in its own paragraph/subsection?), and how it relates to the particle interactions. See https://en.wikipedia.org/wiki/Electroweak_interaction and Lancaster notes for more info
 % Give overviews of each of the forces (with QFT descriptions) and which particles interact with which force(s)
@@ -51,6 +111,10 @@ where the above equation is its form before the manifestation of electroweak sym
 
 \subsection{Electroweak symmetry breaking and the Higgs mechanism}
 \label{subsec:theory_higgs_mechanism}
+
+The $\PW_1$, $\PW_2$, and $\PW_3$ fields carry weak isospin, while the $B$ field carries weak hypercharge. At energies below electroweak unification, the Higgs mechanism breaks the $\text{SU(2)} \times \text{U(1)}$ symmetry, decoupling electromagnetism from the weak force. Transforming the $\PW$ and $B$ fields into the electroweak bosons and photon, respectively, the electric charge quantum number manifests as a combination of weak hypercharge and a component of weak isospin.
+
+At energies below electroweak unification, the Higgs mechanism breaks the $\text{SU(2)} \times \text{U(1)}$ symmetry and gives rise to the electroweak $\PWpm$ and \PZ bosons from the original $\PW$ fields, and the photon \Pphoton from the $B$ field.
 
 
 %=========================================================

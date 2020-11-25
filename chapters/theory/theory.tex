@@ -14,25 +14,18 @@
 
 % Link to objects chapter on electron volts somewhere here (Chpt.~\ref{subsec:objects_electron_volt})
 
-The \acrlong{sm} of particle physics (\acrshort{sm}) is the best description of nature the human race has to offer. Three of the four fundamental forces are encapsulated by it: the strong (nuclear) force, the weak (nuclear) force, and electromagnetism. The latter two may instead be considered aspects of a single \emph{electroweak} force, unified above an energy $\order{\text{100}\GeV}$. All of the elementary particles---the quarks, leptons, gauge bosons, and the Higgs boson---and their interactions with each other are considered in the \acrlong{sm}. The mathematical representation is often [given] in terms of the Lagrangian density
+The \acrlong{sm} of particle physics (\acrshort{sm}) is the best description of nature the human race has to offer. Three of the four fundamental forces are encapsulated by it: the strong (nuclear) force, the weak (nuclear) force, and electromagnetism. The latter two may instead be considered aspects of a single \emph{electroweak} force, unified above an energy $\order{\text{100}\GeV}$. All of the elementary particles---the quarks, leptons, gauge bosons, and the Higgs boson---and their interactions with each other are considered in the \acrlong{sm}. Its mathematical representation is usually presented in terms of the Lagrangian density
 \begin{equation}
-\mathcal{L}_{\mathrm{SM}} = \mathcal{L}_{\mathrm{Gauge}} + \mathcal{L}_{\mathrm{Fermions}} + \mathcal{L}_{\mathrm{Yukawa}} + \mathcal{L}_{\mathrm{Higgs}} \\
+\begin{alignedat}{4}
+\mathcal{L}_{\mathrm{SM}} &= \mathcal{L}_{\mathrm{Gauge}} &{}+{}& \mathcal{L}_{\mathrm{Fermions}} &{}+{}& \mathcal{L}_{\mathrm{Yukawa}} &{}+{}& \mathcal{L}_{\mathrm{Higgs}} \\
+&= -\frac{1}{4}F_{\mu\nu}F^{\mu\nu} &{}+{}& i\bar{\psi}\!\Dslash \psi &{}+{}& \bar{\psi}_i y_{ij} \psi_j \phi &{}+{}& \abs{D_{\mu} \phi}^2 - V(\phi)
+\end{alignedat}
 \label{eq:sm_lagrangian_compressed}
 \end{equation}
 
-before the manifestation of electroweak symmetry breaking. where each term can be expanded to yield
-\begin{equation}
-    \begin{aligned}
-\mathcal{L}_{\mathrm{SM}} = &-\frac{1}{4}F_{\mu\nu}F^{\mu\nu} \\
-&+ i\bar{\psi}\!\Dslash \psi + \mathrm{h.c.} \\
-&+ \bar{\psi}_i y_{ij} \psi_j \phi + \mathrm{h.c.}\\
-&+ \abs{D_{\mu} \phi}^2 - V(\phi)
-    \end{aligned}
-    \label{eq:sm_lagrangian_expanded}
-\end{equation}
-% When using 'aligned' environment, don't indent each equation line, otherwise it complains
+% When using 'aligned' or 'alignedat' environment, don't indent each equation line, otherwise it complains. Wrapping 'alignedat' in an equation environment ensures only one label for all the lines in the equation.
 
-The boson fields and their couplings are represented by $F_{\mu\nu}F^{\mu\nu}$ and $D$, respectively. Feynman slash notation is used, i.e., $\Dslash \equiv \gamma^{\mu} D_{\mu}$, with $\gamma^{\mu}$ as the Dirac \emph{gamma matrices}. The fermion fields are denoted by $\psi$, with the Yukawa coupling $y_{ij}$.\footnote{Make sure this is correct.} Finally, the Higgs field is represented with $\phi$ and potential $V(\phi)$. 
+where the above equation is its form before the manifestation of electroweak symmetry breaking. The boson fields and their couplings are represented by $F_{\mu\nu}F^{\mu\nu}$ and $D$, respectively. Feynman slash notation is used, i.e., $\Dslash \equiv \gamma^{\mu} D_{\mu}$, with $\gamma^{\mu}$ as the Dirac \emph{gamma matrices}. The fermion fields are denoted by $\psi$, with the Yukawa coupling $y_{ij}$.\footnote{Make sure this is correct.} Finally, the Higgs field is represented with $\phi$ and potential $V(\phi)$.
 
 % Explain what each term means (in its own paragraph/subsection?), and how it relates to the particle interactions. See https://en.wikipedia.org/wiki/Electroweak_interaction and Lancaster notes for more info
 % Give overviews of each of the forces (with QFT descriptions) and which particles interact with which force(s)

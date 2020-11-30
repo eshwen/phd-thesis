@@ -18,23 +18,6 @@ This chapter first discusses some prevalent variables used in the analyses prese
 %=========================================================
 
 
-\subsection{The electron volt}
-\label{subsec:objects_electron_volt}
-
-In highly relativistic systems, such as beams of particles in accelerators, the ability to simply equate mass, energy, and momentum is desirable. In the \acrshort{lhc}, when protons are accelerated to an enormous Lorentz boost factor, their invariant mass $m_0$ contributes little to their total energy $E$. With Einstein's energy-momentum relation from the special theory of relativity, one can express the energy as functions of intrinsic mass and relativistic momentum:
-\begin{equation}
-    E^2 = (pc)^2 + (m_0c^2)^2
-    \label{eq:e_mc2}
-\end{equation}
-
-where $p$ is the magnitude of the momentum and $c$ is the speed of light. For highly relativistic objects, $pc \gg m_0c^2$ and so $E \approx pc$. At rest, $E = m_0c^2$. The \acrfull{ev} unit is common in high energy physics. Its value is the energy supplied to (or removed from) an electron accelerated through a potential difference of 1\,V: $\text{1.6}\times \text{10}^{-19}$\,J. The momentum gained is then $\text{1}\eVc$ and relativistic mass $\text{1}\eVcc$. The factors of $c$ and $c^2$ are often dropped in less formal contexts, or when using natural units (where $c = \text{1}$).
-
-An \acrlong{ev} is a minute quantity of energy, so when discussing properties of high energy particles and accelerators, a long string of digits may be required to express them. SI prefixes mitigate this problem and provide an intuitive sense of scale to scientists. The most frequently used in the context of \acrshort{lhc} physics are \emph{mega} (M, $\text{10}^6$), \emph{giga} (G, $\text{10}^9$), and \emph{tera} (T, $\text{10}^{12}$). For example, the mass of a proton is $\text{0.93}\GeVcc$ and the present centre of mass energy of the \acrshort{lhc} is $\text{13}\TeV$, which are much more natural and understandable numbers than $\text{1.78}\times \text{10}^{-27}$\,kg or $\text{1.6}\times \text{10}^{-7}$\,J, respectively.
-
-
-%=========================================================
-
-
 \subsection{Transverse momentum (\texorpdfstring{\ptvec}{pt})}
 \label{subsec:objects_pt}
 
@@ -87,7 +70,7 @@ As with \HT, the \mht is often calculated with a lower limit on the \gls{jet} \p
 \subsection{Transverse mass (\texorpdfstring{\mT}{MT})}
 \label{subsec:objects_transverse_mass}
 
-The transverse mass \mT of a particle---or the collective products of a decay---is the component of its invariant mass in the transverse plane. In a hadron collider context, this observable is often used when one of the decay products is invisible or unidentified, i.e., as \ptvecmiss. When searching for \glspl{svj}, the \mT of the dijet system is very reliable in recovering the \PZprime mass. Eq.~\ref{eq:e_mc2} can be reformulated for each daughter particle in a decay as
+The transverse mass \mT of a particle---or the collective products of a decay---is the component of its invariant mass in the transverse plane. In a hadron collider context, this observable is often used when one of the decay products is invisible or unidentified, i.e., as \ptvecmiss. When searching for \glspl{svj}, the \mT of the dijet system is very reliable in recovering the \PZprime mass. Einstein's equation $E^2 = (pc)^2 + (m_0c^2)^2$ can be reformulated for each daughter particle in a decay as
 \begin{equation}
 \ET^2 = m_0^2 + \pt^2
 \label{eq:transverse_energy}
@@ -133,7 +116,7 @@ In the nanoAOD data tier, a \gls{jet} is defined as an AK4-clustered, charged ha
 
 The tight, with or without an additional lepton veto, \acrshort{pf} identification requirements are also mandatory to establish a sufficient degree of purity with a very high efficiency ($> \text{98\,\%}$ in all $\abseta$ regions). These are documented in Tabs.~\ref{tab:htoinv_jet_id_def_2016}, \ref{tab:htoinv_jet_id_def_2017}, and \ref{tab:htoinv_jet_id_def_2018}. For all years, both the identification and background rejection efficiencies are above 98\,\% in the barrel and end caps.
 
-A \gls{jet} suspected to originate from a \Pbottom-quark, or \emph{\gls{bjet}}, is described by a nanoAOD AK4 \gls{jet} with corrected $\pt > \text{20}\GeV$ and within the acceptance of the tracker---$\abseta < \text{2.4}$ in 2016, and $< \text{2.5}$ onward. It is also required to satisfy the medium working point (a mis-tag rate of 1\,\%) from the \deepcsv algorithm~\cite{Sirunyan:2017ezt}.
+A \gls{jet} suspected to originate from a \Pbottom-quark, or ``\gls{bjet},'' is described by a nanoAOD AK4 \gls{jet} with corrected $\pt > \text{20}\GeV$ and within the acceptance of the tracker---$\abseta < \text{2.4}$ in 2016, and $< \text{2.5}$ onward. It is also required to satisfy the medium working point (a mis-tag rate of 1\,\%) from the \deepcsv algorithm~\cite{Sirunyan:2017ezt}.
 
 
 %=========================================================

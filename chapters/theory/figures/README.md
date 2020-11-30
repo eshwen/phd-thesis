@@ -17,6 +17,10 @@ I created the Feynman diagrams myself using the online tool <https://feynman.aiv
 
 There might be better ways to do it with `TikZ` directly in the LaTeX document, but I haven't so far been bothered to learn.
 
+## Higgs potential
+
+This is run with the script [higgs_potential.py](./higgs_potential.py). There are no arguments to give, so any changes must be implemented within the script.
+
 ## Semi-visible jets
 
 Just as with the dark matter abundance plot, I pulled these figures directly from the paper's arXiv link at <https://arxiv.org/abs/1707.05326>. Again, I downloaded the source, containing all the figures in pdf format.

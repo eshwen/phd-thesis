@@ -14,8 +14,8 @@ for reg_dir in $(ls -d ${the_dir}/*); do
         rm -rf ${cat_dir}/
     done
     mv ${reg_dir}/category_1.01.pdf ${reg_dir}/ttH_2Boosted.pdf
-    mv ${reg_dir}/category_1.02.pdf ${reg_dir}/ttH_1t0b.pdf
-    mv ${reg_dir}/category_1.03.pdf ${reg_dir}/ttH_1t1b.pdf
+    mv ${reg_dir}/category_1.02.pdf ${reg_dir}/ttH_1t1b.pdf
+    mv ${reg_dir}/category_1.03.pdf ${reg_dir}/ttH_1t2b.pdf
     mv ${reg_dir}/category_1.04.pdf ${reg_dir}/ttH_1W1b.pdf
     mv ${reg_dir}/category_1.05.pdf ${reg_dir}/ttH_1W2b.pdf
     mv ${reg_dir}/category_1.06.pdf ${reg_dir}/ttH_5j1b.pdf

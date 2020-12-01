@@ -4,6 +4,7 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 from matplotlib import cm
+import matplotlib.patches as patches
 
 phi_1 = np.arange(-1, 1, 0.02)
 phi_2 = np.arange(-1, 1, 0.02)
@@ -17,9 +18,12 @@ lam = mu2 / (vev ** 2)
 
 potential = lam * (mu2 - (x ** 2 + y ** 2)) ** 2
 
-# Plot Higgs potential
 fig = plt.figure()
 ax = fig.gca(projection='3d')
+# Adjust viewing angle
+ax.view_init(30, 15)
+
+# Plot Higgs potential
 surf = ax.plot_surface(x, y, potential,
                        cmap=cm.coolwarm, alpha=0.95 , zorder=1., linewidth=0.,
                        antialiased=True, rstride=1, cstride=1)
@@ -40,7 +44,18 @@ ax.text(1.75, -0.05, 0, r"$\phi_1$")
 ax.text(0.05, 1.55, 0, r"$\phi_2$")
 ax.text(0., 0.05, 0.24, r"$V(\phi)$")
 
-# Adjust viewing angle
-ax.view_init(30, 15)
-
 plt.savefig('higgs_potential.pdf', bbox_inches='tight')
+
+ax.clear()
+sphere_r = 0.1
+#z_offset= (2 * sphere_r ** 2) + potential[round(len(phi_1)/2), round(len(phi_2)/2)]
+phi = np.linspace(0, 2 * np.pi, 50)
+theta = np.linspace(0, np.pi, 50)
+sphere_x = sphere_r * np.outer(np.sin(theta), np.cos(phi))
+sphere_y = sphere_r * np.outer(np.sin(theta), np.sin(phi))
+sphere_z = sphere_r * np.outer(np.cos(theta), np.ones(np.size(phi)) * sphere_r)# + z_offset
+ax.plot_surface(sphere_x, sphere_y, sphere_z, linewidth=0., zorder=0.5, antialiased=True, rstride=1, cstride=1)
+ax.grid(False)
+ax.set_axis_off()
+
+plt.savefig('higgs_boson.pdf', bbox_inches='tight')

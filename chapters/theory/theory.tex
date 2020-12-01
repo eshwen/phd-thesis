@@ -93,7 +93,36 @@ Symmetries in the \acrlong{sm} require the gauge bosons. For electromagnetism an
 
 % Basically talk through the foundation of the Higgs mechanism a bit, citing the 1964 papers. Show mathematically what the Higgs scalar field is, and what the potential is (with a plot). Then talk about what the symmetry breaking does and how the weak bosons get their mass. I guess also talk about how the fermions get their masses (since, while it's the Higgs field that gives it, it's not strictly the Higgs 'mechanism' as that term is reserved for how the weak bosons get their masses). Then make sure this section flows into the SM limitations bit and also doesn't overlap with the Hinv section
 
-As mentioned earlier, the electromagnetic and weak forces are unified into one above an energy threshold. In this regime, the electroweak bosons are massless. They, along with the photon, are instead represented as $\PW_1$, $\PW_2$, and $\PW_3$ boson fields carrying weak isospin, and the $B$ boson field of weak hypercharge.\footnote{Actually explain how electroweak symmetry breaking happens here. Make sure to reference the 1964 papers.} At energies below electroweak unification, the Higgs mechanism spontaneously breaks the $\text{SU(2)} \times \text{U(1)}$ symmetry, decoupling electromagnetism from the weak force. The $\PW_1$ and $\PW_2$ fields transform into \PWplus and \PWminus bosons, gaining their 80\GeV mass:
+As mentioned earlier, the electromagnetic and weak forces are unified into one above an energy threshold. In this regime, the electroweak bosons and fermions must be massless to maintain gauge invariance. The electroweak bosons obtain their mass by interacting with the Higgs field, the mechanism through which is labelled the \emph{Higgs mechanism}~\cite{PhysRevLett.13.321,PhysRevLett.13.508,PhysRevLett.13.585}.\footnote{The fermions (except perhaps neutrinos), also obtain their masses from interacting with the Higgs field. However, the term ``Higgs mechanism'' in the \acrlong{sm} is reserved for the procedure by which the electroweak bosons acquire mass.} 
+
+The simplest model by which the Higgs mechanism can be accommodated in the \acrshort{sm} is by introducing an SU(2) doublet of complex scalar Higgs fields:
+\begin{equation}
+    \HiggsField = \begin{pmatrix} \phi^+ \\ \phi^0 \end{pmatrix} = \frac{1}{\sqrt{2}} \begin{pmatrix} \phi_1 + i\phi_2 \\ \phi_3 + i\phi_4 \end{pmatrix}
+    \label{eq:higgs_field}
+\end{equation}
+
+It possesses four degrees of freedom, i.e., one per gauge boson in the electroweak sector. The fields introduce additional terms in the \acrlong{sm} Lagrangian, most importantly a potential of the form
+\begin{equation}
+    V(\HiggsField) = \mu^2 \HiggsField^{\dagger} \HiggsField - \lambda (\HiggsField^{\dagger} \HiggsField)^2
+    \label{eq:higgs_potential}
+\end{equation}
+
+which is the most general scalar potential that is also $\text{SU(2)} \times \text{U(1)}$ invariant. By setting $\lambda < 0$ and $\mu^2 < 0$, a degenerate circle of minima in the $\phi_1\text{--}\phi_2$ plane can be found with values
+\begin{equation}
+    \HiggsField^{\dagger} \HiggsField \lvert_{\mathrm{min}} = \frac{\mu^2}{2\lambda}
+    \label{eq:higgs_mu_lambda}
+\end{equation}
+
+and the familiar ``wine bottle'' potential is formed. An illustration of the potential with a Higgs boson is given in Fig.~\ref{fig:higgs_potential}.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{./figures/higgs_potential_from_pptx.pdf}
+    \caption[A depiction of the Higgs potential $V$ as a function of the component fields. The Higgs boson is initially at $(\phi_1, \phi_2) = (0, 0)$, then tumbles into the minimum value of $V$ at the point of electroweak symmetry breaking]{A depiction of the Higgs potential $V$ as a function of the component fields. The Higgs boson is initially at $(\phi_1, \phi_2) = (0, 0)$, then tumbles into the minimum value of $V$ at the point of electroweak symmetry breaking.}
+    \label{fig:higgs_potential}
+\end{figure}
+
+They, along with the photon, are instead represented as $\PW_1$, $\PW_2$, and $\PW_3$ boson fields carrying weak isospin, and the $B$ boson field of weak hypercharge.\footnote{Actually explain how electroweak symmetry breaking happens here. Make sure to reference the 1964 papers.} At energies below electroweak unification, the Higgs mechanism spontaneously breaks the $\text{SU(2)} \times \text{U(1)}$ symmetry, decoupling electromagnetism from the weak force. The $\PW_1$ and $\PW_2$ fields transform into \PWplus and \PWminus bosons, gaining their 80\GeV mass:
 \begin{equation}
     \PWpm = \frac{1}{\sqrt{2}} (\PW_1 \mp i\PW_2)
     \label{eq:EWSB_W}
@@ -161,43 +190,6 @@ Full derivations of the thermal freeze-out of dark matter can be found in litera
 The time of the dark matter freeze out epoch is somewhat insensitive to the mass and annihilation cross section. Approximate solutions to the Boltzmann equation for time-dependent $n_{\chi}$---where dark matter is modelled as a weakly-interacting, diffuse gas of particles---suggest $x_f \sim 20$~\cite{Lisanti:2016jxe,Bender:2012gc}. Stronger dark matter interaction leads to decoupling at a later time and a lower number density. The approximate value of $x_f$ is significant in that it supports the electroweak-scale mass of \glspl{wimp}.
 
 Another popular mechanism, targeting low-mass dark matter, is the \emph{freeze-in} process~\cite{Hall:2009bx,Krnjaic:2017tio}. In this postulate, dark matter is not produced thermally in the early universe. Instead, it emerges through interactions between \acrshort{sm} particles such as collisions, or decays of those heavier than dark matter. The comoving density increases with time until it plateaus from of the cooling of the universe, where \acrshort{sm} particles are generally stable enough and too low energy to produce dark matter in any meaningful quantity. The relic abundance can therefore reclaimed from a combination of the initial thermal distributions, the dark matter mass, and the interaction strength, similar to the freeze-out process. In order to obey cosmological observations, particularly the fact that it is cold, the masses expected for freeze-in dark matter particles are of $\order{\keVns}$ or heavier.
-
-% DON'T RENDER
-\iffalse
-
-% Taken directly from my lab book. Tidy up and improve
-\begin{easylist}[itemize]
-\easylistprops
-& The mediator (force-carrying particle, like the gauge bosons) for dark matter---between dark matter particles or the dark matter-Standard Model particle interactions---may be a scalar (spin-0, like the Higgs boson) or pseudoscalar (reverses parity under a Lorentz transformation, like the pion) boson. [Support] for a pseudoscalar over a scalar mediator comes from the Feynman diagrams for DM annihilation into, e.g., \Pqb-quarks. With a scalar mediator, the vertex factors and the propagator term lead to cancellations in the cross section equation in the low-velocity limit.
-
-& The mediator for dark matter may be heavier than the dark matter particle itself (like with the $W^{\pm}$ and \PZ bosons being heavier than most of the particles they mediate), maybe 2x heavier or more so than the DM particle. The mediator could decay via DM pair production, so it makes sense that it would be at least twice as heavy.
-
-& There's no consensus on whether dark matter is fermionic or bosonic. If fermionic, it may be either a Dirac fermion (particle is distinct from its antiparticle, like the electron and positron) or Majorana fermion (particle is the same as its antiparticle, like the neutrino is \underline{suspected} to be). If it were Majorana, dark matter could annihilate with itself, making discoveries via indirect searches more likely.
-
-& Some good results showcasing dark matter masses and that of its mediator from different analyses and decay channels are at \cite{CMS-DP-2016-057}. Particularly figures 4 and 6, which I used in my poster for the PGR conference.
-
-\end{easylist}
-
-
-% Taken directly from my lab book. Tidy up and improve. Look through these papers to see which ones give compelling interpretations and motivation for dark matter
-Papers to look at regarding SUSY and dark matter:
-
-\begin{easylist}[itemize]
-\easylistprops
-& \cite{dmsearcheslhc2015}
-& \cite{dmbenchmarkearlylhcrun2}
-& \cite{CMS-PAS-EXO-12-055}
-& \cite{Aitchison:2005cf}
-& \cite{Ellis:2002mx}
-& \cite{Murayama:2007ek}
-& \cite{Peskin:2007nk}
-& \cite{Goodman:2010ku}
-& \cite{PhysRevLett.115.181802}
-& \cite{CMS:2016pod}
-& \cite{Bertone:2004pz}
-\end{easylist}
-
-\fi
 
 
 %=========================================================

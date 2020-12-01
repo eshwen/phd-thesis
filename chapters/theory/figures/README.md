@@ -19,7 +19,7 @@ There might be better ways to do it with `TikZ` directly in the LaTeX document, 
 
 ## Higgs potential
 
-This is run with the script [higgs_potential.py](./higgs_potential.py). There are no arguments to give, so any changes must be implemented within the script.
+This is run with the script [higgs_potential.py](./higgs_potential.py). There are no arguments to give, so any changes must be implemented within the script. It outputs images of the potential and a sphere representing the Higgs boson. I then went into PowerPoint and overlaid the bosons on the potential, with an arrow connecting them and exported as pdf.
 
 ## Semi-visible jets
 

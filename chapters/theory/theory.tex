@@ -93,7 +93,7 @@ Symmetries in the \acrlong{sm} require the gauge bosons. For electromagnetism an
 
 % Basically talk through the foundation of the Higgs mechanism a bit, citing the 1964 papers. Show mathematically what the Higgs scalar field is, and what the potential is (with a plot). Then talk about what the symmetry breaking does and how the weak bosons get their mass. I guess also talk about how the fermions get their masses (since, while it's the Higgs field that gives it, it's not strictly the Higgs 'mechanism' as that term is reserved for how the weak bosons get their masses). Then make sure this section flows into the SM limitations bit and also doesn't overlap with the Hinv section
 
-As mentioned earlier, the electromagnetic and weak forces are unified into one above an energy threshold. In this regime, the electroweak bosons and fermions must be massless to maintain gauge invariance. The electroweak bosons obtain their mass by interacting with the Higgs field, the mechanism through which is labelled the \emph{Higgs mechanism}~\cite{PhysRevLett.13.321,PhysRevLett.13.508,PhysRevLett.13.585}.\footnote{The fermions (except perhaps neutrinos), also obtain their masses from interacting with the Higgs field. However, the term ``Higgs mechanism'' in the \acrlong{sm} is reserved for the procedure by which the electroweak bosons acquire mass.} 
+As mentioned earlier, the electromagnetic and weak forces are unified into one above an energy threshold. In this regime, the electroweak bosons and fermions must be massless to maintain gauge invariance. The electroweak bosons obtain their mass by interacting with the Higgs field, the mechanism through which is labelled the \emph{Higgs mechanism}~\cite{PhysRevLett.13.321,PhysRevLett.13.508,PhysRevLett.13.585}.\footnote{The fermions (except perhaps neutrinos), also obtain their masses by interacting with the Higgs field. However, the term ``Higgs mechanism'' in the \acrlong{sm} is reserved for the procedure by which the electroweak bosons acquire mass.} 
 
 The simplest model by which the Higgs mechanism can be accommodated in the \acrshort{sm} is by introducing an SU(2) doublet of complex scalar Higgs fields:
 \begin{equation}
@@ -107,20 +107,46 @@ It possesses four degrees of freedom, i.e., one per gauge boson in the electrowe
     \label{eq:higgs_potential}
 \end{equation}
 
-which is the most general scalar potential that is also $\text{SU(2)} \times \text{U(1)}$ invariant. By setting $\lambda < 0$ and $\mu^2 < 0$, a degenerate circle of minima in the $\phi_1\text{--}\phi_2$ plane can be found with values
+which is the most general scalar potential that is also $\text{SU(2)} \times \text{U(1)}$ invariant. With both quadratic and quartic components, a positive value of both $\mu^2$ and $\lambda$ would yield a single stable minimum for the potential. In a physical context, this potential would correspond to the universe pre-electroweak symmetry breaking. But by setting $\lambda < \text{0}$ and $\mu^2 < \text{0}$, what was once the minimum becomes an unstable local maximum and a degenerate circle of minima in the $\phi_1\text{--}\phi_2$ plane can be found with values
 \begin{equation}
     \HiggsField^{\dagger} \HiggsField \lvert_{\mathrm{min}} = \frac{\mu^2}{2\lambda}
     \label{eq:higgs_mu_lambda}
 \end{equation}
 
-and the familiar ``wine bottle'' potential is formed. An illustration of the potential with a Higgs boson is given in Fig.~\ref{fig:higgs_potential}.
+forming the familiar ``wine bottle'' potential. An illustration of said potential with a Higgs boson is given in Fig.~\ref{fig:higgs_potential}.
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.5\textwidth]{./figures/higgs_potential_from_pptx.pdf}
-    \caption[A depiction of the Higgs potential $V$ as a function of the component fields. The Higgs boson is initially at $(\phi_1, \phi_2) = (0, 0)$, then tumbles into the minimum value of $V$ at the point of electroweak symmetry breaking]{A depiction of the Higgs potential $V$ as a function of the component fields. The Higgs boson is initially at $(\phi_1, \phi_2) = (0, 0)$, then tumbles into the minimum value of $V$ at the point of electroweak symmetry breaking.}
+    \caption[A depiction of the Higgs potential $V$ as a function of the component fields]{A depiction of the Higgs potential $V$ as a function of the component fields. The Higgs boson is initially at $(\phi_1, \phi_2) = (\text{0}, \text{0})$, an unstable local maximum. It then tumbles into the minimum value of $V$ and triggers electroweak symmetry breaking.}
     \label{fig:higgs_potential}
 \end{figure}
+
+To spontaneously break the $\text{SU(2)} \times \text{U(1)}$ symmetry of the electroweak force, a non-zero vacuum expectation value $v$ must be assigned from the set of minima belonging to the potential $V$. Since the freedom to select a potential is a symmetry, assigning a value breaks said symmetry. For the fields $\phi_1$, $\phi_2$, and $\phi_4$, $v$ can simply be set to zero. $\phi_3$, however, as a neutral field, must be assigned a non-zero value in order for the photon to remain massless after electroweak symmetry breaking. It is allocated a value
+\begin{equation}
+    \bra{0} \mkern-1mu \phi_3 \mkern-1mu \ket{0} = v^2 = \frac{\mu^2}{\lambda}
+    \label{eq:higgs_vev}
+\end{equation}
+
+By expanding \HiggsField around the chosen vacuum and using the unitary gauge, it can be seen that all of the fields other than $\phi_3$---known as \emph{Goldstone fields} in this paradigm---are eliminated. The originally massless electroweak bosons then gain mass by ``eating'' the Goldstone bosons.
+
+The masses of the electroweak bosons can then be calculated using the vacuum expectation value, and the coupling strengths of the weak force $g$ and electromagnetism $g'$:
+\begin{equation}
+    m_{\PW} = \frac{1}{2} gv, \ \ m_{\PZ} = \frac{1}{2} (g\cos\thetaW + g'\sin\thetaW)^2 v = \frac{1}{2}\frac{gv}{\cos\thetaW}
+    \label{eq:w_z_masses}
+\end{equation}
+
+where $\thetaW$ is the \emph{weak mixing angle} or \emph{Weinberg angle}. It is a quantity that illustrates the degree to which the weak and electromagnetic forces mix, defined as
+\begin{equation}
+    \cos\thetaW = \frac{m_{\PW}}{m_{\PZ}} \ \text{and} \ \tan\thetaW = \frac{g'}{g}
+    \label{eq:weak_mixing_angle}
+\end{equation}
+
+It is somewhat of a free parameter in the \acrlong{sm} with its value constrained by measuring the $\PW$ and $\PZ$ boson masses. The mass of the Higgs boson is given by\footnote{Is this to first order, since there are VVH, VVHH, HHH, etc. self-interactions?}
+\begin{equation}
+    m_{\PH} = \sqrt{-2\mu^2}
+    \label{eq:higgs_mass}
+\end{equation}
 
 They, along with the photon, are instead represented as $\PW_1$, $\PW_2$, and $\PW_3$ boson fields carrying weak isospin, and the $B$ boson field of weak hypercharge.\footnote{Actually explain how electroweak symmetry breaking happens here. Make sure to reference the 1964 papers.} At energies below electroweak unification, the Higgs mechanism spontaneously breaks the $\text{SU(2)} \times \text{U(1)}$ symmetry, decoupling electromagnetism from the weak force. The $\PW_1$ and $\PW_2$ fields transform into \PWplus and \PWminus bosons, gaining their 80\GeV mass:
 \begin{equation}
@@ -134,13 +160,15 @@ While the $\PW_3$ and $B$ fields mix to produce the massless photon and massive 
     \label{eq:EWSB_photon_Z}
 \end{equation}
 
-where \thetaW is the weak mixing angle, defined as
-\begin{equation}
-    \cos\thetaW = \frac{m_{\PW}}{m_{\PZ}}
-    \label{eq:weak_mixing_angle}
-\end{equation}
+
 
 Its value is constrained by experiment. In the new U(1) symmetry group of electromagnetism, the electric charge quantum number manifests as a combination of weak hypercharge and a component of weak isospin.
+
+
+%=========================================================
+
+
+\subsection{Masses of the quarks and leptons}
 
 \begin{easylist}[itemize]
     \easylistprops

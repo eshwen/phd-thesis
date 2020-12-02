@@ -58,7 +58,7 @@ In addition to the categories in Chpt.~\ref{sec:htoinv_categorisation}, events a
         & 1t2b & [200, 300), [300, 400), [400, 600), [600, $\infty$) \\
         & 1W1b & [200, 300), [300, 400), [400, $\infty$) \\
         & 1W2b & [200, 300), [300, 400), [400, $\infty$) \\
-        & 5j1b & [200, 300), [300, 400), [400, 600), [600, $\infty$) \\
+        & 5j1b & [200, 300), [300, 400), [400, $\infty$) \\
         & 6j1b & [200, 300), [300, 400), [400, $\infty$) \\
         & 5j2b & [200, 300), [300, 400), [400, $\infty$) \\
         & 6j2b & [200, 300), [300, 400), [400, $\infty$) \\\hline
@@ -146,14 +146,14 @@ To estimate the presence of \acrshort{qcd} in the signal region, a data driven a
 
 \acrshort{qcd} in the signal region $N_{\mathrm{pred.}}^{\mathrm{QCD}}$ (corresponding to $c_{\mathrm{QCD}}$ in Eq.~\ref{eq:likelihood_SR}) is predicted in each subcategory and \ptmiss bin as follows: 
 \begin{equation}
-    N_{\mathrm{pred.}}^{\mathrm{QCD}}(\mathrm{subcategory}, \, \ptmiss) = N_{\mathrm{SB}}^{\mathrm{QCD}} \cdot \transfac_{\mathrm{QCD}} \cdot \catFraction(\mathrm{subcategory}) \cdot \metFraction(\ptmiss)
+    N_{\mathrm{pred.}}^{\mathrm{QCD}}(\text{subcategory}, \, \ptmiss) = N_{\mathrm{SB}}^{\mathrm{QCD}} \cdot \transfac_{\mathrm{QCD}} \cdot \catFraction(\text{subcategory}) \cdot \metFraction(\ptmiss)
     \label{eq:qcd_prediction}
 \end{equation}
 
 where $\transfac_{\mathrm{QCD}}$ is the transfer factor relating the \acrshort{qcd} in the sideband to the multijet simulation in the signal region. As the signal region is depleted in simulated multijet events, the transfer factor is inclusive over the region rather than per \ptmiss bin and subcategory, i.e.,
 \begin{equation}
     \transfac_{\mathrm{QCD}} = \frac{ N_{\mathrm{MC, \ SR}}^{\mathrm{QCD}} } { N_{\mathrm{MC, \ SB}}^{\mathrm{QCD}} }
-%   \transfac_{\mathrm{QCD}} = \frac{ \sum_{\mathrm{subcategory}, \, \ptmiss}^{\mathrm{SR}} N_{\mathrm{MC}}^{\mathrm{QCD}}(\mathrm{subcategory}, \, \ptmiss) }{ \sum_{\mathrm{subcategory}, \, \ptmiss}^{\mathrm{SB}} N_{\mathrm{MC}}^{\mathrm{QCD}}(\mathrm{subcategory}, \, \ptmiss) }
+%   \transfac_{\mathrm{QCD}} = \frac{ \sum_{\text{subcategory}, \, \ptmiss}^{\mathrm{SR}} N_{\mathrm{MC}}^{\mathrm{QCD}}(\text{subcategory}, \, \ptmiss) }{ \sum_{\text{subcategory}, \, \ptmiss}^{\mathrm{SB}} N_{\mathrm{MC}}^{\mathrm{QCD}}(\text{subcategory}, \, \ptmiss) }
     \label{eq:transfer_factor_qcd}
 \end{equation}
 

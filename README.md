@@ -192,6 +192,7 @@ The following are some notes on formatting guidelines and style, just to remain 
 - Bibliography:
   - When the bibliography is displayed and initials for the authors' first names are used, collaborations may also be rendered with initials, i.e., "C. Collaboration" instead of "CMS Collaboration". To fix this, just wrap the author name in double curly braces instead of quotes or single braces, i.e., `author = {{CMS Collaboration}}`
   - Use ISO4 abbreviations for journals instead of their full titles
+  - Drop the `month` field
   - For journals with multiple series, e.g., Physics Letters A and Physics Letters B, make sure the series is in the `journal` rather than the `volume` field
   - Remove `issn` and `isbn` fields for entries that are not books
   - Try to typeset math in a consistent way to the main text but without the use of macros, e.g., `$\sqrt{s} = \text{13\,TeV}$`, so that the `.bib` file can stand alone

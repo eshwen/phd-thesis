@@ -205,7 +205,6 @@ The following are some notes on formatting guidelines and style, just to remain 
     - Avoid a full stop at the end of a short caption since it looks ugly in the LoF/T, and omit references/citations from short captions for the same reason
   - Where appropriate, use small caps to refer to software programs. If the software is an acronym, use lowercase letters (e.g., "CMSSW" would be `\textsc{cmssw}`)
   - When introducing new, lesser-known scientific terms or definitions, I can do so in italics, e.g., `\emph{pileup}`
-    - If, on the other hand, it is more of a colloquialism or something specific to the experiment (especially if it's a word that's used in everyday language) wrap it in quotation marks, e.g., ``` ``barrel''```
     - Italics are still fine to use for emphasis, but use them sparingly as it should, in most cases, be obvious from the syntax
 - More formatting/stylistic guidelines can be found in <https://zenodo.org/record/3228336> ([local copy](helpful_docs/thesis-writing-gotchas.pdf))
 

@@ -248,7 +248,7 @@ There are multiple corrections applied to simulation based on the physics object
     \label{eq:event_selection_weight}
 \end{equation}
 
-These weights are calculated individually for each class of object in an event. For electrons, muons, and photons, these scale factors are usually from the reconstruction efficiency, identification efficiency, and \pt- or $\eta$-dependent energy corrections. In the case of \Pbottom-tagged \glspl{jet}, it is the data-simulation scale factor at the given working point from the algorithm used to identify them. Systematic uncertainties associated with the scale factors are aggregated in the same manner. Unless stated otherwise, the following scale factors and systematics are derived separately for each year in Run-2.
+These weights are calculated individually for each class of object in an event. For electrons, muons, and photons, these scale factors are usually from the reconstruction efficiency, identification efficiency, and \pt- or $\eta$-dependent energy corrections. In the case of \Pbottom-tagged \glspl{jet}, it is the data--simulation scale factor at the given working point from the algorithm used to identify them. Systematic uncertainties associated with the scale factors are aggregated in the same manner. Unless stated otherwise, the following scale factors and systematics are derived separately for each year in Run-2.
 
 
 %=========================================================
@@ -278,7 +278,7 @@ Tau leptons are identified with a multivariate discriminator, as noted in Chpt.~
 \subsubsection{\texorpdfstring{\Pbottom-jets}{b-jets} tagged by the \texorpdfstring{\deepcsv}{DeepCSV} algorithm}
 \label{subsubsec:htoinv_btagging_sfs}
 
-Data-simulation scale factors are calculated for each \gls{bjet} as tagged by the \deepcsv algorithm. They are defined as the tagging efficiency in data divided by the efficiency for simulation for a given working point, and as a function of \gls{jet} \pt. Various methods are employed to derive separate scale factors for separate topologies, such as \acrshort{qcd} multijet or \ttbar events, and are described in Sec.~8.4 of Ref.~\citenum{Sirunyan:2017ezt}. A weighted average of the scale factors computed by each method are then taken to yield the final scale factor for a \Pbottom-tagged \gls{jet}. The resultant systematic uncertainty is typically less than 5\,\%.\footnote{We don't seem to take any explicit systematics at the skimming stage where our b-jets are defined and SFs taken. So I don't really know where the up and down variations come from.}
+Data--simulation scale factors are calculated for each \gls{bjet} as tagged by the \deepcsv algorithm. They are defined as the tagging efficiency in data divided by the efficiency for simulation for a given working point, and as a function of \gls{jet} \pt. Various methods are employed to derive separate scale factors for separate topologies, such as \acrshort{qcd} multijet or \ttbar events, and are described in Sec.~8.4 of Ref.~\citenum{Sirunyan:2017ezt}. A weighted average of the scale factors computed by each method are then taken to yield the final scale factor for a \Pbottom-tagged \gls{jet}. The resultant systematic uncertainty is typically less than 5\,\%.\footnote{We don't seem to take any explicit systematics at the skimming stage where our b-jets are defined and SFs taken. So I don't really know where the up and down variations come from.}
 
 % This talk goes through the methods and SFs in more detail: https://cds.cern.ch/record/2627468/files/DP2018_033.pdf
 

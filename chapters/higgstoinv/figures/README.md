@@ -309,6 +309,8 @@ For plots with `fast-plotter` (perhaps within <https://gitlab.cern.ch/cms-chip/c
 - Add the bin widths on the y-axis label if the bin width is constant. Achievable in the plotting config with the `ylabel` kwarg
 - Make sure signal line colours are consistent (broken in `fast-plotter` as of v0.8.0)
 - Make sure any plots in the ggF categories are labelled/annotated with "ggH", not "ggF"
+- I'm using a git-installed version of `fast-plotter` which contains fixes for consistent signal line colours, and including total pre-fit and post-fit background/prediction on both the main and ratio subplots in mountain ranges: <https://github.com/eshwen/fast-plotter/tree/esh_thesis_hinv>
+- I'm also using a git-installed version of `fast-datacard` which allows bin-by-bin QCD backgrounds in the signal region: <https://gitlab.cern.ch/ebhal/fast-datacard/-/tree/esh_hinv_thesis_QcdPredPerBin>
 
 For limit and likelihood plots:
 

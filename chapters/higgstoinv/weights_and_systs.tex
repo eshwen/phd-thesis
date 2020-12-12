@@ -1,4 +1,4 @@
-\section{Weights, corrections, and systematic uncertainties for simulation}
+\section{Corrections and systematic uncertainties for simulation}
 \label{sec:htoinv_mc_corrections}
 
 % Weights/SFs and systematics in the analysis I need to still describe:
@@ -27,6 +27,61 @@ While the statistical uncertainty for the number of events in data is simply the
     \Delta N_{\mathrm{data}} = \pm \frac{ N_{\mathrm{data}} }{ \sqrt{N_{\mathrm{data}}} }
     \label{eq:uncertainty_data}
 \end{equation}
+
+
+%=========================================================
+
+
+\subsection{Efficiency of the triggers}
+\label{subsec:htoinv_trigger_effs}
+
+Given the modelling of the \acrlong{l1} and \acrlong{hlt} systems in simulation is only an approximation of their behaviour with data, corrections must be made to unite them.
+
+A dedicated \gls{CR} is formed to assure orthogonality with the signal region and avoid unblinding of data, but with a similar kinematic selection to the analysis for accuracy in our phase space. Events are selected in data from the primary dataset consisting of muon-based triggers, and in simulation from the \wtolnupjets process at \acrshort{lo}. Analysed events consist of these containing a single, tightly-isolated muon with $\pt > \text{30}\GeV$ that triggers the \acrshort{hlt} path for an isolated muon with $\pt > \text{27}\GeV$.\footnote{Why exactly do we use single muon events. Is it the high efficiency from the muon subsystem? Or that they won't bias the METMHT trigger efficiencies, or something?} An offline selection is then applied to keep those with similar kinematic properties to those in our signal region:
+
+\medskip
+\begin{easylist}[itemize]
+    \cutflowlistprops
+    & $\ptjone > \text{80}\GeV$
+    & $\HT > \text{200}\GeV$
+    & $\mht/\ptmissNoMu < \text{1.2}$
+\end{easylist}
+
+\medskip
+
+\noindent{}where $\ptmissNoMu = \ptmiss + \pt^{\Pmu}$ to approximate the \acrshort{pf} calculation at \acrshort{hlt} level. Of these, events that additionally pass the online selection of the trigger requirements in the signal region (Tab.~\ref{tab:htoinv_SR_triggers}) are also recorded. The efficiency of a trigger---or collection of triggers---$\epsilon_{\mathrm{trg}}$ is defined as
+\begin{equation}
+    \epsilon_{\mathrm{trg}} = \frac{ s_\mathrm{offline} \cap s_{\mathrm{online}} }{ s_\mathrm{offline} }
+    \label{eq:trigger_eff}
+\end{equation}
+
+where $s$ denotes the set of events that have passed the selection given by its subscript. For simulation, events are weighted by cross section as per Eq.~\ref{eq:xs_weight}. The efficiencies are binned in two dimensions as a function of \ptmissNoMu and \mht. The weight applied to events in simulation $w_{\mathrm{trg}}$ is then simply the efficiency in data divided by the efficiency in simulation for the values of \ptmiss and \mht in the event:
+\begin{equation}
+    w_{\mathrm{trg}}(\ptmiss, \mht) = \frac{\epsilon_{\mathrm{trg, \ data}}(\ptmiss, \mht)}{\epsilon_{\mathrm{trg, \ MC}}(\ptmiss, \mht)}
+    \label{eq:trigger_weight}
+\end{equation}
+
+Uncertainties are estimated using the Clopper-Pearson method~\cite{10.1093/biomet/26.4.404}. In the signal region, sidebands, and muon \glspl{CR}, weights from the efficiencies of the \ptmiss--\mht cross triggers are used. The weights are provided for each data taking year in Fig.~\ref{fig:htoinv_trig_effs}. In the electron and photon \glspl{CR}, the efficiencies are calculated in the same manner, instead from the triggers in Tabs.~\ref{tab:htoinv_ele_pd_triggers} and \ref{tab:htoinv_photon_pd_triggers}.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{figures/trigger_efficiencies/2016/SFs.pdf}
+        \caption{2016}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{figures/trigger_efficiencies/2016/SFs.pdf}
+        \caption{2017}
+    \end{subfigure}
+
+    \begin{subfigure}[b]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{figures/trigger_efficiencies/2017/SFs.pdf}
+        \caption{2018}
+    \end{subfigure}
+    \caption[Scale factors accounting for the efficiencies of the HLT \ptmiss--\mht cross triggers in each data taking year of Run-2]{Scale factors accounting for the efficiencies of the \acrshort{hlt} \ptmiss--\mht cross triggers in each data taking year of Run-2. The momentum of the muon used to select events that compute the efficiency is added to the \ptvecmiss (with a magnitude \ptmissNoMu) in order to approximate the calculation in the \acrlong{hlt}.}
+    \label{fig:htoinv_trig_effs}
+\end{figure}
 
 
 %=========================================================
@@ -92,61 +147,6 @@ Since all of the $\PVec \plusjets$ samples were generated at \acrshort{lo} elect
     \includegraphics[width=0.45\textwidth]{figures/nlo_k_factors/1D_all_ewk.pdf}
     \caption[NLO $k$-factors as a function of generator-level boson \pt used to reweight QCD $\PVec \plusjets$ events generated at LO electroweak accuracy]{\acrshort{nlo} $k$-factors as a function of generator-level boson \pt used to reweight \acrshort{qcd} $\PVec \plusjets$ events generated at \acrshort{nlo} electroweak accuracy. Separate $k$-factors correct the \PW, \PZ, and $\Pphoton\plusjets$ processes.}
     \label{fig:htoinv_nlo_k_factor_ewk}
-\end{figure}
-
-
-%=========================================================
-
-
-\subsection{Efficiency of the triggers}
-\label{subsec:htoinv_trigger_effs}
-
-Given the modelling of the \acrlong{l1} and \acrlong{hlt} systems in simulation is only an approximation of their behaviour with data, corrections must be made to unite them.
-
-A dedicated \gls{CR} is formed to assure orthogonality with the signal region and avoid unblinding of data, but with a similar kinematic selection to the analysis for accuracy in our phase space. Events are selected in data from the primary dataset consisting of muon-based triggers, and in simulation from the \wtolnupjets process at \acrshort{lo}. Analysed events consist of these containing a single, tightly-isolated muon with $\pt > \text{30}\GeV$ that triggers the \acrshort{hlt} path for an isolated muon with $\pt > \text{27}\GeV$.\footnote{Why exactly do we use single muon events. Is it the high efficiency from the muon subsystem? Or that they won't bias the METMHT trigger efficiencies, or something?} An offline selection is then applied to keep those with similar kinematic properties to those in our signal region:
-
-\medskip
-\begin{easylist}[itemize]
-    \cutflowlistprops
-    & $\ptjone > \text{80}\GeV$
-    & $\HT > \text{200}\GeV$
-    & $\mht/\ptmissNoMu < \text{1.2}$
-\end{easylist}
-
-\medskip
-
-\noindent{}where $\ptmissNoMu = \ptmiss + \pt^{\Pmu}$ to approximate the \acrshort{pf} calculation at \acrshort{hlt} level. Of these, events that additionally pass the online selection of the trigger requirements in the signal region (Tab.~\ref{tab:htoinv_SR_triggers}) are also recorded. The efficiency of a trigger---or collection of triggers---$\epsilon_{\mathrm{trg}}$ is defined as
-\begin{equation}
-    \epsilon_{\mathrm{trg}} = \frac{ s_\mathrm{offline} \cap s_{\mathrm{online}} }{ s_\mathrm{offline} }
-    \label{eq:trigger_eff}
-\end{equation}
-
-where $s$ denotes the set of events that have passed the selection given by its subscript. For simulation, events are weighted by cross section as per Eq.~\ref{eq:xs_weight}. The efficiencies are binned in two dimensions as a function of \ptmissNoMu and \mht. The weight applied to events in simulation $w_{\mathrm{trg}}$ is then simply the efficiency in data divided by the efficiency in simulation for the values of \ptmiss and \mht in the event:
-\begin{equation}
-    w_{\mathrm{trg}}(\ptmiss, \mht) = \frac{\epsilon_{\mathrm{trg, \ data}}(\ptmiss, \mht)}{\epsilon_{\mathrm{trg, \ MC}}(\ptmiss, \mht)}
-    \label{eq:trigger_weight}
-\end{equation}
-
-Uncertainties are estimated using the Clopper-Pearson method~\cite{10.1093/biomet/26.4.404}. In the signal region, sidebands, and muon \glspl{CR}, weights from the efficiencies of the \ptmiss--\mht cross triggers are used. The weights are provided for each data taking year in Fig.~\ref{fig:htoinv_trig_effs}. In the electron and photon \glspl{CR}, the efficiencies are calculated in the same manner, instead from the triggers in Tabs.~\ref{tab:htoinv_ele_pd_triggers} and \ref{tab:htoinv_photon_pd_triggers}.
-
-\begin{figure}[htbp]
-    \centering
-    \begin{subfigure}[b]{0.48\textwidth}
-        \includegraphics[width=\textwidth]{figures/trigger_efficiencies/2016/SFs.pdf}
-        \caption{2016}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.48\textwidth}
-        \includegraphics[width=\textwidth]{figures/trigger_efficiencies/2016/SFs.pdf}
-        \caption{2017}
-    \end{subfigure}
-
-    \begin{subfigure}[b]{0.48\textwidth}
-        \includegraphics[width=\textwidth]{figures/trigger_efficiencies/2017/SFs.pdf}
-        \caption{2018}
-    \end{subfigure}
-    \caption[Scale factors accounting for the efficiencies of the HLT \ptmiss--\mht cross triggers in each data taking year of Run-2]{Scale factors accounting for the efficiencies of the \acrshort{hlt} \ptmiss--\mht cross triggers in each data taking year of Run-2. The momentum of the muon used to select events that compute the efficiency is added to the \ptvecmiss (with a magnitude \ptmissNoMu) in order to approximate the calculation in the \acrlong{hlt}.}
-    \label{fig:htoinv_trig_effs}
 \end{figure}
 
 

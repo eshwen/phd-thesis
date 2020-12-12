@@ -4,12 +4,22 @@ The following contains instructions to reproduce plots, or the sources from wher
 
 - [Making plots for the theory chapter](#making-plots-for-the-theory-chapter)
   - [Dark matter abundance](#dark-matter-abundance)
+  - [Dark matter cross sections](#dark-matter-cross-sections)
+  - [Dark matter detection methods pseudo-Feynman diagram](#dark-matter-detection-methods-pseudo-feynman-diagram)
   - [Feynman diagrams](#feynman-diagrams)
   - [Semi-visible jets](#semi-visible-jets)
 
 ## Dark matter abundance
 
 As referenced in the thesis, the figure comes directly from <https://arxiv.org/abs/1303.3040>. Under the **Downloads** menu, select **Other formats**, and download the source containing the figure in pdf format.
+
+## Dark matter cross sections
+
+As stated in the thesis, this plot comes from <https://arxiv.org/abs/1705.11165>. Only the pdf download of the paper is available, unlike other cases where the source containing the image files is also available. I ended up just screenshotting the plot at high resolution to get it.
+
+## Dark matter detection methods pseudo-Feynman diagram
+
+As with the Feynman diagrams in the [theory chapter](../../theory/figures/), I used the interactive tool <https://feynman.aivazis.com/> to make this. See the [README](../../theory/figures/README.md#feynman-diagrams) for those figures for more information.
 
 ## Feynman diagrams
 

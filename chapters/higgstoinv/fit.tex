@@ -1,4 +1,4 @@
-\section{Statistical model and fit to data}
+\section{Statistical model for fit to data}
 \label{sec:htoinv_satistical_treatment}
 
 A likelihood model is used in the fit to data, simultaneously over the signal and \glspl{CR} to obtain the \acrlong{sm} expectation values as well as testing for signals of the \higgstoinv decay. Events are categorised in two dimensions: the subcategories that target specific Higgs boson production modes and final state topologies as per Tab.~\ref{tab:htoinv_categories}, and in bins of \ptmiss as per Chpt.~\ref{subsec:htoinv_binning}. The observed event counts from data in each subcategory and \ptmiss bin are modelled as Poisson-distributed variables around the \acrshort{sm} expectation with a potential contribution from signal (assumed to be zero in the null hypothesis). Expected event counts in the signal region are obtained from simulation, aided by predictions from the \glspl{CR} and \glspl{SB} for non-multijet and \acrshort{qcd} multijet processes, respectively. These are elaborated upon in Chpt.~\ref{subsec:htoinv_background_est}. Systematic uncertainties associated with the non-multijet processes, discussed in Chpt.~\ref{sec:htoinv_mc_corrections}, are incorporated as nuisance parameters within the model. The likelihood function $\likelihood_{\higgstoinv}$ can be summarised as
@@ -74,10 +74,10 @@ In addition to the categories in Chpt.~\ref{sec:htoinv_categorisation}, events a
         & 2j1b & [200, 300), [300, 400), [400, $\infty$) \\
         & 2j2b & [200, $\infty$)\\
         & 1V & [200, 300), [300, 400), [400, $\infty$) \\\hline
-        \multirow{4}{*}{\ggH}& 2jM & [200, 300), [300, 400), [400, 600), [600, $\infty$) \\
-        & 3j & [200, 300), [300, 400), [400, 600), [600, $\infty$) \\
-        & 4j & [200, 300), [300, 400), [400, 600), [600, $\infty$) \\
-        & 5j & [200, 300), [300, 400), [400, 600), [600, $\infty$) \\
+        \multirow{4}{*}{\ggH}& 2jM & [200, 300), [300, 400), [400, 600), [600, 900), [900, $\infty$) \\
+        & 3j & [200, 300), [300, 400), [400, 600), [600, 900), [900, $\infty$) \\
+        & 4j & [200, 300), [300, 400), [400, 600), [600, 900), [900, $\infty$) \\
+        & 5j & [200, 300), [300, 400), [400, 600), [600, 900), [900, $\infty$) \\
         \hline\hline
     \end{tabular}
     \caption[The binning scheme used to categorise events in terms of \ptmiss]{The binning scheme used to categorise events in terms of \ptmiss.}
@@ -165,4 +165,4 @@ where $\transfac_{\mathrm{QCD}}$ is the transfer factor relating the \acrshort{q
     \label{eq:transfer_factor_qcd}
 \end{equation}
 
-The distribution of the \acrshort{qcd} background for each subcategory and \ptmiss bin is extrapolated from the sidebands with the factors $\catFraction$ and $\metFraction$. $\catFraction$ is the fraction of \acrshort{qcd} in a given subcategory of a given sideband, inclusive of \ptmiss. $\metFraction$ is the fraction of \acrshort{qcd} in a given \ptmiss bin of a given sideband, inclusive of subcategory.\footnote{Need to mention how uncertainty is handled for the predicted QCD. Probably some log normal uncertainty estimated from the other sidebands.}
+The distribution of the \acrshort{qcd} background for each subcategory and \ptmiss bin is extrapolated from the sidebands with the factors $\catFraction$ and $\metFraction$. $\catFraction$ is the fraction of \acrshort{qcd} \acrshort{mc} in a given subcategory of a given sideband, inclusive of \ptmiss. $\metFraction$ is the fraction of \acrshort{qcd} in a given \ptmiss bin of a given sideband, inclusive of subcategory.\footnote{Need to mention how uncertainty is handled for the predicted QCD. Probably some log normal uncertainty estimated from the other sidebands.}

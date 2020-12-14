@@ -1,12 +1,16 @@
 \section{Results}
 \label{sec:htoinv_results}
 
+The fits of signal and background to the observed data are performed as outlined in the previous section. In the following subsections, the results of the fits for each category and data taking period are shown in several forms: pre-fit vs. post-fit distributions in each subcategory and \ptmiss bin; the observed upper limit on the signal strength parameter $\BRHinvFull$ at 95\,\% confidence level from the signal plus background hypothesis, accompanied by the median expected limit with 68\,\% and 95\,\% confidence level intervals from the background-only hypothesis; and profile likelihood ratios as a function of the signal strength.
+
+
+%=========================================================
+
+
 \subsection{Results of the \texorpdfstring{\ttH}{ttH} analysis}
 \label{subsec:htoinv_analysis_ttH}
 
-The fit of signal and background to the observed data is performed for each subcategory of \ttH, in addition to the category as a whole.\footnote{Might make more sense to have a section called ``Results'', and then these ``Analysis of the X mode'' and combined results as subsections.} A fully granular (one-to-one) correspondence between the bins in the signal region and leptonic \glspl{CR} is utilised. The \singlePhotonCr \gls{CR} is not used in constraining the \ztonunu prediction for any of the subcategories.
-
-To predict the \acrshort{qcd} event counts in the signal region, Eq.~\ref{eq:qcd_prediction} incorporates the \acrshort{mc} counts in said region and from one or more sidebands. To mitigate the statistical limitations of the \acrshort{qcd} \acrshort{mc} nominally used in the analysis, their event count was increased a hundredfold using a ``smear and rebalance'' method as performed in Ref.~\citenum{Sirunyan:2017wif}. Both the category and \ptmiss fractions were derived from the smeared \acrshort{qcd} \acrshort{mc} in the signal region, while the remaining terms of Eq.~\ref{eq:qcd_prediction} ($N_{\mathrm{SB}}^{\mathrm{QCD}}$, and $\transfac_{\mathrm{QCD}}$) were derived from the tight double sideband from Tab.~\ref{tab:sideband_defs}---the most enriched in multijet \acrshort{mc}---again using the smeared multijet sample.
+The \singlePhotonCr \gls{CR} is not used in constraining the \ztonunu prediction for any of the subcategories. To predict the \acrshort{qcd} event counts in the signal region, Eq.~\ref{eq:qcd_prediction} incorporates the \acrshort{mc} counts in said region and from one or more sidebands. To mitigate the statistical limitations of the \acrshort{qcd} \acrshort{mc} nominally used in the analysis, their event count was increased a hundredfold using a ``smear and rebalance'' method as performed in Ref.~\citenum{Sirunyan:2017wif}. Both the category and \ptmiss fractions were derived from the smeared \acrshort{qcd} \acrshort{mc} in the signal region, while the remaining terms of Eq.~\ref{eq:qcd_prediction} ($N_{\mathrm{SB}}^{\mathrm{QCD}}$, and $\transfac_{\mathrm{QCD}}$) were derived from the tight double sideband from Tab.~\ref{tab:sideband_defs}---the most enriched in multijet \acrshort{mc}---again using the smeared multijet sample.
 
 Distributions of the post-fit yields in the signal region for 2016, 2017, and 2018 are displayed in Fig.~\ref{fig:htoinv_mountain_range_ttH_SR}. The total pre-fit background is also overlaid. Corresponding figures for the \glspl{CR} are given in App.~\ref{sec:pre_post_fit_plots_ttH_CRs}.\footnote{Add at least a paragraph discussing the pre-fit vs post-fit yields, i.e., how well the fit is able to model the background/allow it to fill any pre-fit data excesses, once I have the final results.}
 
@@ -30,30 +34,20 @@ Distributions of the post-fit yields in the signal region for 2016, 2017, and 20
     \label{fig:htoinv_mountain_range_ttH_SR}
 \end{figure}
 
-Results of the fit tot data are presented in terms of the upper limit on the signal strength parameter \BRHinvFull. The observed limit in the signal plus background hypothesis at 95\,\% confidence level is overlaid on the expectation from the background-only hypothesis. In the latter, the median expected limit is illustrated with accompanying boundaries for the 68\,\% and 95\,\% confidence level intervals. Fig.~\ref{fig:htoinv_limit_ttH} showcases the limits for each \ttH subcategory and the combination of them all, for each data taking year individually and over the full Run-2 dataset.\footnote{Add at least a paragraph discussing the limits, and their consistency, once I have the final results. Indicate problems and stuff. Relate limits to the mountain ranges.}
+Results of the fit tot data are presented in terms of the upper limit on the signal strength parameter \BRHinvFull. The observed limit in the signal plus background hypothesis at 95\,\% confidence level is overlaid on the expectation from the background-only hypothesis. In the latter, the median expected limit is illustrated with accompanying boundaries for the 68\,\% and 95\,\% confidence level intervals. Fig.~\ref{fig:htoinv_limit_ttH} showcases the limit and profile likelihood scan for the \ttH category in each data taking year individually and the combination over the full Run-2 dataset. Limits broken down by subcategory in each year are presented in Fig.~\ref{fig:htoinv_limit_ttH_per_year}.\footnote{Add at least a paragraph discussing the limits, and their consistency, once I have the final results. Indicate problems and stuff. Relate limits to the mountain ranges.}
 
 \begin{figure}[htbp]
     \centering
     \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{figures/limits/ttH/limit_2016_ttH.pdf}
-        \caption{\ttH --- 2016}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{figures/limits/ttH/limit_2017_ttH.pdf}
-        \caption{\ttH --- 2017}
-    \end{subfigure}
-
-    \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{figures/limits/ttH/limit_2018_ttH.pdf}
-        \caption{\ttH --- 2018}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.45\textwidth}
         \includegraphics[width=\textwidth]{figures/limits/ttH/limit_Run2_ttH.pdf}
-        \caption{\ttH --- Run-2}
+        \caption{Limit --- \ttH}
     \end{subfigure}
-    \caption[Observed and expected 95\,\% CL upper limits on the Higgs boson to invisible state branching fraction in the \ttH category, for both the individual subcategories, and the combination of them, for each data-taking year in Run-2]{Observed and expected 95\,\% CL upper limits on the Higgs boson to invisible state branching fraction in the \ttH category, for both the individual subcategories, and the combination of them, for each data-taking year in Run-2.}
+    \hspace{0.05\textwidth}
+    \begin{subfigure}[t]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{figures/likelihood_scan/profile_likelihood_scan_Run2_ttH.pdf}
+        \caption{Profile likelihood --- \ttH}
+    \end{subfigure}
+    \caption[Observed and expected 95\,\% CL upper limit on the Higgs boson to invisible state branching fraction $\BRof{\higgstoinv}$ (left) and the corresponding profile likelihood ratio as a function of it (right) in the \ttH category]{Observed and expected 95\,\% CL upper limit on the Higgs boson to invisible state branching fraction $\BRof{\higgstoinv}$ (left) and the corresponding profile likelihood ratio as a function of it (right) in the \ttH category. The result from each data taking period is presented along with their combination.}
     \label{fig:htoinv_limit_ttH}
 \end{figure}
 
@@ -90,30 +84,20 @@ Distributions of the pre-fit and post-fit yields for 2016, 2017, and 2018 are di
     \label{fig:htoinv_mountain_range_VH_SR}
 \end{figure}
 
-Fig.~\ref{fig:htoinv_limit_VH} showcases the expected and observed limits for the \VH subcategories and their combination for each data taking year as well the result for the full Run-2 dataset.\footnote{Add at least a paragraph discussing the limits, and their consistency, once I have the final results. Indicate problems and stuff. Relate limits to the mountain ranges.}
+Fig.~\ref{fig:htoinv_limit_VH} showcases the expected and observed limits for the \VH category in each year and the Run-2 combination. Limits for each subcategory can be found in Fig.~\ref{fig:htoinv_limit_VH_per_year}.\footnote{Add at least a paragraph discussing the limits, and their consistency, once I have the final results. Indicate problems and stuff. Relate limits to the mountain ranges.}
 
 \begin{figure}[htbp]
     \centering
     \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{figures/limits/VH/limit_2016_VH.pdf}
-        \caption{\VH --- 2016}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{figures/limits/VH/limit_2017_VH.pdf}
-        \caption{\VH --- 2017}
-    \end{subfigure}
-
-    \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{figures/limits/VH/limit_2018_VH.pdf}
-        \caption{\VH --- 2018}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.45\textwidth}
         \includegraphics[width=\textwidth]{figures/limits/VH/limit_Run2_VH.pdf}
-        \caption{\VH --- Run-2}
+        \caption{Limit --- \VH}
     \end{subfigure}
-    \caption[Observed and expected 95\,\% CL upper limits on the Higgs boson to invisible state branching fraction in the \VH category, for both the individual subcategories, and the combination of them, for each data-taking year in Run-2]{Observed and expected 95\,\% CL upper limits on the Higgs boson to invisible state branching fraction in the \VH category, for both the individual subcategories, and the combination of them, for each data-taking year in Run-2.}
+    \hspace{0.05\textwidth}
+    \begin{subfigure}[t]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{figures/likelihood_scan/profile_likelihood_scan_Run2_VH.pdf}
+        \caption{Profile likelihood --- \VH}
+    \end{subfigure}
+    \caption[Observed and expected 95\,\% CL upper limit on the Higgs boson to invisible state branching fraction $\BRof{\higgstoinv}$ (left) and the corresponding profile likelihood ratio as a function of it (right) in the \VH category]{Observed and expected 95\,\% CL upper limit on the Higgs boson to invisible state branching fraction $\BRof{\higgstoinv}$ (left) and the corresponding profile likelihood ratio as a function of it (right) in the \VH category. The result from each data taking period is presented along with their combination.}
     \label{fig:htoinv_limit_VH}
 \end{figure}
 
@@ -150,30 +134,20 @@ Distributions of the pre-fit and post-fit yields for 2016, 2017, and 2018 are di
     \label{fig:htoinv_mountain_range_ggH_SR}
 \end{figure}
 
-Expected and observed limits on the signal strength parameter are presented in Fig.~\ref{fig:htoinv_limit_ggF} for each \ggH subcategory and their combination in each data taking year as well as over the full Run-2 dataset.\footnote{Add at least a paragraph discussing the limits, and their consistency, once I have the final results. Indicate problems and stuff. Relate limits to the mountain ranges.}
+Expected and observed limits on the signal strength parameter are presented in Fig.~\ref{fig:htoinv_limit_ggF} for the \ggH category for the full Run-2 dataset as well as broken down by year. A further breakdown by category is given in Fig.~\ref{fig:htoinv_limit_ggH_per_year}.\footnote{Add at least a paragraph discussing the limits, and their consistency, once I have the final results. Indicate problems and stuff. Relate limits to the mountain ranges.}
 
 \begin{figure}[htbp]
     \centering
     \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{figures/limits/ggF/limit_2016_ggF.pdf}
-        \caption{\ggH --- 2016}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{figures/limits/ggF/limit_2017_ggF.pdf}
-        \caption{\ggH --- 2017}
-    \end{subfigure}
-
-    \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{figures/limits/ggF/limit_2018_ggF.pdf}
-        \caption{\ggH --- 2018}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.45\textwidth}
         \includegraphics[width=\textwidth]{figures/limits/ggF/limit_Run2_ggF.pdf}
-        \caption{\ggH --- Run-2}
+        \caption{Limit --- \ggH}
     \end{subfigure}
-    \caption[Observed and expected 95\,\% CL upper limits on the Higgs boson to invisible state branching fraction in the \ggH category, for both the individual subcategories, and the combination of them, for each data-taking year in Run-2]{Observed and expected 95\,\% CL upper limits on the Higgs boson to invisible state branching fraction in the \ggH category, for both the individual subcategories, and the combination of them, for each data-taking year in Run-2.}
+    \hspace{0.05\textwidth}
+    \begin{subfigure}[t]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{figures/likelihood_scan/profile_likelihood_scan_Run2_ggF.pdf}
+        \caption{Profile likelihood --- \ggH}
+    \end{subfigure}
+    \caption[Observed and expected 95\,\% CL upper limit on the Higgs boson to invisible state branching fraction $\BRof{\higgstoinv}$ (left) and the corresponding profile likelihood ratio as a function of it (right) in the \ggH category]{Observed and expected 95\,\% CL upper limit on the Higgs boson to invisible state branching fraction $\BRof{\higgstoinv}$ (left) and the corresponding profile likelihood ratio as a function of it (right) in the \ggH category. The result from each data taking period is presented along with their combination.}
     \label{fig:htoinv_limit_ggF}
 \end{figure}
 
@@ -188,52 +162,7 @@ Expected and observed limits on the signal strength parameter are presented in F
 
 % Show the results combined over all production modes (one plot for each year), then the full combination for Run-2, ideally with VBF results as well
 
-Upper limits for $\BRof{\higgstoinv}$ by combining all categories for a given year are given for 2016, 2017, and 2018 in Figs.~\ref{fig:htoinv_limit_likelihood_2016}, \ref{fig:htoinv_limit_likelihood_2017}, \ref{fig:htoinv_limit_likelihood_2018}, respectively. For the full Run-2 dataset, they are broken down by data taking year in Fig.~\ref{fig:htoinv_limit_likelihood_Run2_per_year} and by category in Fig.~\ref{fig:htoinv_limit_likelihood_Run2_per_cat}. Profile likelihood ratios as a function of $\BRof{\higgstoinv}$ are also presented opposite the limits.\footnote{Add some reasonable discussion of the limits and likelihoods, consistency across categories/years, once I have the final results.}\footnote{If we see worse results in 2016 compared to previous analyses, one explainer could be the signal models. It was recently discovered that signal MC used for 2016 analyses had a harder pt spectrum than what has been used in this analysis, which would give improved limits there as the distributions are shifted to higher MET and giving better signal sensitivity.}
-
-\begin{figure}[htbp]
-    \centering
-    \begin{subfigure}[t]{0.45\textwidth}  % top align since figures are same dimensions, but x-axis labels are larger for likelihood
-        \includegraphics[width=\textwidth]{figures/limits/per_year/limit_2016_comb.pdf}
-        \caption{Limit --- 2016}
-    \end{subfigure}
-    \hspace{0.05\textwidth}
-    \begin{subfigure}[t]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{figures/likelihood_scan/profile_likelihood_scan_2016.pdf}
-        \caption{Profile likelihood --- 2016}
-    \end{subfigure}
-    \caption[Observed and expected 95\,\% CL upper limit on the Higgs boson to invisible state branching fraction $\BRof{\higgstoinv}$ and the corresponding profile likelihood ratio as a function of it, for both the individual categories that target a specific production mode, as well as the combination of them, for the 2016 dataset]{Observed and expected 95\,\% CL upper limit on the Higgs boson to invisible state branching fraction $\BRof{\higgstoinv}$ (left) and the corresponding profile likelihood ratio as a function of it (right), for both the individual categories that target a specific production mode, as well as the combination of them, for the 2016 dataset. The \acrlong{sm} Higgs boson with its associated mass and production cross section are assumed.}
-    \label{fig:htoinv_limit_likelihood_2016}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \begin{subfigure}[t]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{figures/limits/per_year/limit_2017_comb.pdf}
-        \caption{Limit --- 2017}
-    \end{subfigure}
-    \hspace{0.05\textwidth}
-    \begin{subfigure}[t]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{figures/likelihood_scan/profile_likelihood_scan_2017.pdf}
-        \caption{Profile likelihood --- 2017}
-    \end{subfigure}
-    \caption[Observed and expected 95\,\% CL upper limit on the Higgs boson to invisible state branching fraction $\BRof{\higgstoinv}$ and the corresponding profile likelihood ratio as a function of it, for both the individual categories that target a specific production mode, as well as the combination of them, for the 2017 dataset]{Observed and expected 95\,\% CL upper limit on the Higgs boson to invisible state branching fraction $\BRof{\higgstoinv}$ (left) and the corresponding profile likelihood ratio as a function of it (right), for both the individual categories that target a specific production mode, as well as the combination of them, for the 2017 dataset. The \acrlong{sm} Higgs boson with its associated mass and production cross section are assumed.}
-    \label{fig:htoinv_limit_likelihood_2017}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \begin{subfigure}[t]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{figures/limits/per_year/limit_2018_comb.pdf}
-        \caption{Limit --- 2018}
-    \end{subfigure}
-    \hspace{0.05\textwidth}
-    \begin{subfigure}[t]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{figures/likelihood_scan/profile_likelihood_scan_2018.pdf}
-        \caption{Profile likelihood --- 2018}
-    \end{subfigure}
-    \caption[Observed and expected 95\,\% CL upper limit on the Higgs boson to invisible state branching fraction $\BRof{\higgstoinv}$ and the corresponding profile likelihood ratio as a function of it, for both the individual categories that target a specific production mode, as well as the combination of them, for the 2018 dataset]{Observed and expected 95\,\% CL upper limit on the Higgs boson to invisible state branching fraction $\BRof{\higgstoinv}$ (left) and the corresponding profile likelihood ratio as a function of it (right), for both the individual categories that target a specific production mode, as well as the combination of them, for the 2018 dataset. The \acrlong{sm} Higgs boson with its associated mass and production cross section are assumed.}
-    \label{fig:htoinv_limit_likelihood_2018}
-\end{figure}
+Upper limits for $\BRof{\higgstoinv}$ by combining all categories for the full Run-2 dataset can be shown as broken down by data taking year in Fig.~\ref{fig:htoinv_limit_likelihood_Run2_per_year} and by category in Fig.~\ref{fig:htoinv_limit_likelihood_Run2_per_cat}. Profile likelihood ratios as a function of $\BRof{\higgstoinv}$ are also presented opposite the limits. Corresponding limits and likelihood ratios for each year are displayed in Figs.~\ref{fig:htoinv_limit_likelihood_2016}, \ref{fig:htoinv_limit_likelihood_2017}, \ref{fig:htoinv_limit_likelihood_2018}, respectively, of App.~\ref{sec:limits_likelihoods_year_supplementary}.\footnote{Add some reasonable discussion of the limits and likelihoods, consistency across categories/years, once I have the final results.}\footnote{If we see worse results in 2016 compared to previous analyses, one explainer could be the signal models. It was recently discovered that signal MC used for 2016 analyses had a harder pt spectrum than what has been used in this analysis, which would give improved limits there as the distributions are shifted to higher MET and giving better signal sensitivity.}
 
 \begin{figure}[htbp]
     \centering

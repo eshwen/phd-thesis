@@ -42,8 +42,7 @@ cd region_plots/full_Run2
 ./rename_region_plots/.sh <dir>
 ```
 
-Especially for the sidebands, ensure the labels are up-to-date. They are still in a little bit of flux, as of writing.
-
+Since things are kinda weird with how we define the VH sideband, I created a new branch to make plots for that: <https://gitlab.cern.ch/ebhal/chip/-/commits/esh_data_MC_comp_plots_no_ggF>. So, to make the sideband 0 plot for ggF 2jM but with VH labelling, might be easier to just use the branch out of the box rather than fiddle with the plotting scripts.
 ## Dark matter limit plot
 
 This should be documented in [dark_matter_limit/](dark_matter_limit/), as it is a self-contained `ROOT` macro that makes it.

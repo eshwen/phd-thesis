@@ -113,7 +113,7 @@ Separate \acrshort{qcd} and electroweak corrections are applied to \acrshort{qcd
     & $\ptjone > \text{80}\GeV$
     & $\pt^{\PVec} > \text{200}\GeV$
     & $\HT^{\mathrm{Gen}} > \text{200}\GeV$
-    & $\HT^{\mathrm{Gen}}/\pt^{\PVec} < \text{1.2}$\footnote{Not sure if we'll need updated k-factors if we switch to another scenario where we don't use the MHT/MET cut.}
+    & $\HT^{\mathrm{Gen}}/\pt^{\PVec} < \text{1.2}$
 \end{easylist}
 
 \medskip
@@ -267,10 +267,6 @@ Muons follow a similar prescription, where the ID and isolation efficiencies are
 
 % Muon ID/ISO info: 2016 (https://twiki.cern.ch/twiki/bin/view/CMS/MuonReferenceEffs2016LegacyRereco), 2017 (https://twiki.cern.ch/twiki/bin/view/CMS/MuonReferenceEffs2017), 2018 (https://twiki.cern.ch/twiki/bin/view/CMS/MuonReferenceEffs2018)
 
-Tau leptons are identified with a multivariate discriminator, as noted in Chpt.~\ref{subsec:objects_taus}. Data to simulation scale factors are applied and their uncertainties propagated through the analysis.\footnote{If we hard veto on taus, obviously won't have systs.}
-
-% Tau ID and SF/uncertainty info: https://twiki.cern.ch/twiki/bin/viewauth/CMS/TauIDRecommendationForRun2#Corrections_for_the_MVA2017v2_ag
-
 
 %=========================================================
 
@@ -278,7 +274,7 @@ Tau leptons are identified with a multivariate discriminator, as noted in Chpt.~
 \subsubsection{\texorpdfstring{\Pbottom-jets}{b-jets} tagged by the \texorpdfstring{\deepcsv}{DeepCSV} algorithm}
 \label{subsubsec:htoinv_btagging_sfs}
 
-Data--simulation scale factors are calculated for each \gls{bjet} as tagged by the \deepcsv algorithm. They are defined as the tagging efficiency in data divided by the efficiency for simulation for a given working point, and as a function of \gls{jet} \pt. Various methods are employed to derive separate scale factors for separate topologies, such as \acrshort{qcd} multijet or \ttbar events, and are described in Sec.~8.4 of Ref.~\citenum{Sirunyan:2017ezt}. A weighted average of the scale factors computed by each method are then taken to yield the final scale factor for a \Pbottom-tagged \gls{jet}. The resultant systematic uncertainty is typically less than 5\,\%.\footnote{We don't seem to take any explicit systematics at the skimming stage where our b-jets are defined and SFs taken. So I don't really know where the up and down variations come from.}
+Data--simulation scale factors are calculated for each \gls{bjet} as tagged by the \deepcsv algorithm. They are defined as the tagging efficiency in data divided by the efficiency for simulation for a given working point, and as a function of \gls{jet} \pt. Various methods are employed to derive separate scale factors for separate topologies, such as \acrshort{qcd} multijet or \ttbar events, and are described in Sec.~8.4 of Ref.~\citenum{Sirunyan:2017ezt}. A weighted average of the scale factors computed by each method are then taken to yield the final scale factor for a \Pbottom-tagged \gls{jet}. The resultant systematic uncertainty is typically less than 5\,\%.
 
 % This talk goes through the methods and SFs in more detail: https://cds.cern.ch/record/2627468/files/DP2018_033.pdf
 
@@ -328,7 +324,7 @@ where $\epsilon$ is the probability for an object to pre-fire as a function of i
 \subsubsection{Luminosity}
 \label{subsubsec:htoinv_lumi_syst}
 
-Uncertainties are associated with the various methods designed to measure the luminosity received by \acrshort{cms}. For 2016, 2017, and 2018, the total systematic uncertainties on certified data are 2.5\,\%, 2.3\,\%, and 2.5\,\%, respectively. They may be decomposed into several individual sources, some of which are correlated between years. These are documented in Tab.~\ref{tab:lumi_systs} with further information available in Refs.~\citenum{CMS-PAS-LUM-17-001}, \citenum{CMS-PAS-LUM-17-004}, and \citenum{CMS-PAS-LUM-18-002}.\footnote{Not sure if I even need the table, to be honest. It may ask more questions regarding each source rather than answering anything. Or, could fold into summary syst table.}
+Uncertainties are associated with the various methods designed to measure the luminosity received by \acrshort{cms}. For 2016, 2017, and 2018, the total systematic uncertainties on certified data are 2.5\,\%, 2.3\,\%, and 2.5\,\%, respectively. They may be decomposed into several individual sources, some of which are correlated between years. These are documented in Tab.~\ref{tab:lumi_systs} with further information available in Refs.~\citenum{CMS-PAS-LUM-17-001}, \citenum{CMS-PAS-LUM-17-004}, and \citenum{CMS-PAS-LUM-18-002}.
 
 \begin{table}[htbp]
     \centering

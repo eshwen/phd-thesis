@@ -1,9 +1,12 @@
-\section{Analysis of the \texorpdfstring{\ttH}{ttH} mode}
-\label{sec:htoinv_analysis_ttH}
+\section{Results}
+\label{sec:htoinv_results}
+
+\subsection{Results of the \texorpdfstring{\ttH}{ttH} analysis}
+\label{subsec:htoinv_analysis_ttH}
 
 The fit of signal and background to the observed data is performed for each subcategory of \ttH, in addition to the category as a whole.\footnote{Might make more sense to have a section called ``Results'', and then these ``Analysis of the X mode'' and combined results as subsections.} A fully granular (one-to-one) correspondence between the bins in the signal region and leptonic \glspl{CR} is utilised. The \singlePhotonCr \gls{CR} is not used in constraining the \ztonunu prediction for any of the subcategories.
 
-To predict the \acrshort{qcd} event counts in the signal region, Eq.~\ref{eq:qcd_prediction} incorporates the \acrshort{mc} counts in said region and from one or more sidebands. The tight double sideband from Tab.~\ref{tab:sideband_defs}---the most enriched in multijet \acrshort{mc}---is employed to derive the category fraction \catFraction. Yields from the loose double sideband compute the remaining terms: the \ptmiss fraction \metFraction, $N_{\mathrm{SB}}^{\mathrm{QCD}}$, and $\transfac_{\mathrm{QCD}}$.
+To predict the \acrshort{qcd} event counts in the signal region, Eq.~\ref{eq:qcd_prediction} incorporates the \acrshort{mc} counts in said region and from one or more sidebands. To mitigate the statistical limitations of the \acrshort{qcd} \acrshort{mc} nominally used in the analysis, their event count was increased a hundredfold using a ``smear and rebalance'' method as performed in Ref.~\citenum{Sirunyan:2017wif}. Both the category and \ptmiss fractions were derived from the smeared \acrshort{qcd} \acrshort{mc} in the signal region, while the remaining terms of Eq.~\ref{eq:qcd_prediction} ($N_{\mathrm{SB}}^{\mathrm{QCD}}$, and $\transfac_{\mathrm{QCD}}$) were derived from the tight double sideband from Tab.~\ref{tab:sideband_defs}---the most enriched in multijet \acrshort{mc}---again using the smeared multijet sample.
 
 Distributions of the post-fit yields in the signal region for 2016, 2017, and 2018 are displayed in Fig.~\ref{fig:htoinv_mountain_range_ttH_SR}. The total pre-fit background is also overlaid. Corresponding figures for the \glspl{CR} are given in App.~\ref{sec:pre_post_fit_plots_ttH_CRs}.\footnote{Add at least a paragraph discussing the pre-fit vs post-fit yields, i.e., how well the fit is able to model the background/allow it to fill any pre-fit data excesses, once I have the final results.}
 
@@ -60,10 +63,10 @@ Results of the fit tot data are presented in terms of the upper limit on the sig
 %=========================================================
 
 
-\section{Analysis of the \texorpdfstring{\VH}{VH} mode}
-\label{sec:htoinv_analysis_VH}
+\subsection{Results of the \texorpdfstring{\VH}{VH} analysis}
+\label{subsec:htoinv_analysis_VH}
 
-Contrary to \ttH, all of the \glspl{CR} are utilised in the non-multijet background predictions.\footnote{Add a sentence or two about how QCD prediction is done. Might be different from ttH.}
+Contrary to \ttH, all of the \glspl{CR} are utilised in the non-multijet background predictions. A more accurate \ztonunu prediction is possible since it can be constrained by three \glspl{CR}. Events with a \VH topology, being characterised by a dijet pair or single fat jet recoiling from the \ptvecmiss, naturally has a large \mindphi. Predicting the \acrshort{qcd} multijet background in the signal region using the any of the sidebands inverted in this variable was therefore not possible. The sidebands inverted in \omegaTilde contained little \acrshort{qcd} to extrapolate from. Therefore, the tight double sideband from the \ggH 2jM category was chosen as it, too, has a dijet topology, but an inverted dijet mass requirement that populates it sufficiently with multijet events.
 
 Distributions of the pre-fit and post-fit yields for 2016, 2017, and 2018 are displayed in Fig.~\ref{fig:htoinv_mountain_range_VH_SR}. Corresponding figures for the \glspl{CR} are given in App.~\ref{sec:pre_post_fit_plots_VH_CRs}.\footnote{Add at least a paragraph discussing the pre-fit vs post-fit yields, i.e., how well the fit is able to model the background/allow it to fill any pre-fit data excesses, once I have the final results.}
 
@@ -120,10 +123,10 @@ Fig.~\ref{fig:htoinv_limit_VH} showcases the expected and observed limits for th
 %=========================================================
 
 
-\section{Analysis of the \texorpdfstring{\ggH}{ggH} mode}
-\label{sec:htoinv_analysis_ggF}
+\subsection{Results of the \texorpdfstring{\ggH}{ggH} analysis}
+\label{subsec:htoinv_analysis_ggF}
 
-As with the \VH category, all of the \glspl{CR} are involved in estimating the non-multijet backgrounds in the signal region of the \ggH category. Equivalently to \ttH, the \acrshort{qcd} presence is derived using the tight and loose double sidebands. The category fractions \catFraction are calculated by the former, while the remaining terms in Eq.~\ref{eq:qcd_prediction} are computed from the latter.
+As with the \VH category, all of the \glspl{CR} are involved in estimating the non-multijet backgrounds in the signal region of the \ggH category. Equivalently to \ttH, the \acrshort{qcd} presence is derived using the \acrshort{qcd} event counts in the signal region and tight double sideband, taking advantage of the smeared multijet sample.
 
 Distributions of the pre-fit and post-fit yields for 2016, 2017, and 2018 are displayed in Fig.~\ref{fig:htoinv_mountain_range_ggH_SR}. Corresponding figures for the \glspl{CR} are given in App.~\ref{sec:pre_post_fit_plots_ggF_CRs}.\footnote{Add at least a paragraph discussing the pre-fit vs post-fit yields, i.e., how well the fit is able to model the background/allow it to fill any pre-fit data excesses, once I have the final results.}
 

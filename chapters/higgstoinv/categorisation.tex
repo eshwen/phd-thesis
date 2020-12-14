@@ -25,14 +25,9 @@ To extract maximum sensitivity to the \higgstoinv decay from the analysis, categ
         \text{0.5}$}} & $\mjj \in [\text{65}, \text{105})$ \\
         & 2j1b & 2 & 1 & 0 & 0 & & $\mjj \in [\text{65}, \text{105})$ \\
         & 2j2b & 2 & 2 & 0 & 0 & & $\mjj \in [\text{65}, \text{105})$ \\
-        & 1V & 0 & 0 & 0 & 1 & & ---\\\hline
-        \multirow{4}{*}{\ggH}& 2jM & 2 & 0 & 0 & 0 & \multirow{4}{*}{\shortstack[c]{$\omegaTilde > \text{0.3}$,\\$\mindphi > 
-        \text{0.5}$}} & $\mjj \notin [\text{65}, \text{105})$ \\
-        & 3j & 3 & 0 & 0 & 0 & & ---\\
-        & 4j & 4 & 0 & 0 & 0 & & ---\\
-        & 5j & $\geq \text{5}$ & 0 & 0 & 0 & & ---\\\hline\hline
+        & 1V & 0 & 0 & 0 & 1 & & ---\\ \hline\hline
     \end{tabular}
-    \caption[Categorisation of the \ttH, \VH, and \ggH production modes in the analysis]{Categorisation of the \ttH, \VH, and \ggH production modes in the analysis. Each subcategory highlights one of the possible final states of the mechanism, accounting for inefficiencies in object tagging or reconstruction. In the \ggH 2jM subcategory, the dijet mass requirement ensures orthogonality with \VH 2j0b.}
+    \caption[Categorisation of the \ttH and \VH production modes in the analysis]{Categorisation of the \ttH and \VH production modes in the analysis. Each subcategory highlights one of the possible final states of the mechanism, accounting for inefficiencies in object tagging or reconstruction.}
     \label{tab:htoinv_categories}
 \end{table}
 
@@ -40,9 +35,9 @@ In the table, the number of \glspl{jet} \njet refers specifically to the number 
 
 For categorisation and the analysis altogether, \njet and \nbjet are counted independently, so no overlap removal is performed. For example, the \VH 2j2b requires two \glspl{jet}, both of which are \Pbottom-tagged.
 
-In the \ttH and \VH categories, ancillary groupings of subcategories may be of interest: 2Boosted, 1t1b, 1t2b, 1W1b, and 1W2b target boosted decays of the top quark and may be collectively designated the ``\ttH boosted'' category; resolved decays are the focus of the remaining subcategories, appropriately named the ``\ttH resolved'' category; then, assembling the 2j0b, 2j1b, and 2j2b \VH subcategories elicits the ``\VH resolved'' moniker. Low yields may be observed in individual subcategories, so using these grouped alternatives is useful to quickly inspect the wider effect of changes to the analysis.
+Ancillary groupings of subcategories may be of interest: 2Boosted, 1t1b, 1t2b, 1W1b, and 1W2b target boosted decays of the top quark and may be collectively designated the ``\ttH boosted'' category; resolved decays are the focus of the remaining subcategories, appropriately named the ``\ttH resolved'' category; then, assembling the 2j0b, 2j1b, and 2j2b \VH subcategories elicits the ``\VH resolved'' moniker. Low yields may be observed in individual subcategories, so using these grouped alternatives is useful to quickly inspect the wider effect of changes to the analysis.
 
-Chpts.~\ref{subsec:htoinv_ttH_subcats}, \ref{subsec:htoinv_VH_subcats}, and \ref{subsec:htoinv_ggH_subcats} explain the reasoning behind the \gls{jet}-based requirements in Tab.~\ref{tab:htoinv_categories}. Optimisation of the category definitions for \acrshort{qcd} multijet suppression and signal enhancement are described in Chpt.~\ref{subsec:htoinv_cat_optimisation}.
+Chpts.~\ref{subsec:htoinv_ttH_subcats} and \ref{subsec:htoinv_VH_subcats} explain the reasoning behind the \gls{jet}-based requirements in Tab.~\ref{tab:htoinv_categories}. Optimisation of the category definitions for \acrshort{qcd} multijet suppression and signal enhancement are described in Chpt.~\ref{subsec:htoinv_cat_optimisation}.
 
 
 %=========================================================
@@ -65,17 +60,6 @@ For lower energy events, the decay products of the top quarks are spread further
 As with \ttH, the categorisation of the \VH channel aims to encapsulate boosted and resolved decays of the vector boson. In the resolved case, a dijet signature is expected. Both \PW and $\HepProcess{\PZ \to \Pquark\APquark}$ populate the 2j0b subcategory, while $\HepProcess{\PZ \to \Pbottom\APbottom}$ ideally falls into 2j2b. Events with one of the two \glspl{bjet} unidentified is the reasoning for the 2j1b subcategory.
 
 In high energy events, the decay products of the vector boson are merged into a single fat jet. Consequently, only a single \PVec-tagged object is required in the 1V subcategory and the soft drop mass window substitutes \mjj from its resolved counterparts.
-
-
-%=========================================================
-
-
-\subsection{\texorpdfstring{\ggH}{ggH} subcategories}
-\label{subsec:htoinv_ggH_subcats}
-
-Gluon-gluon fusion is difficult to distinguish in terms of jet characteristics as an invisibly decaying Higgs boson only allows radiation to signal its presence. Subcategories for this channel are therefore based solely on the number of \glspl{jet} in the event.
-
-An additional one-\gls{jet} category was considered to tag \ggH. While previous analyses have used a single category that encompasses events with at least one high \pt jet, we found adequate sensitivity by dividing it into separate bins of \njet. Due to the angular variables we use only being effective for higher \gls{jet} multiplicity, it was difficult to accommodate and optimise the one-jet category that ultimately did little to improve the overall result. It was therefore removed.
 
 
 %=========================================================
@@ -144,36 +128,26 @@ While these are quantitative measures of the sensitivity with an given analysis 
 
 \begin{figure}[htbp]
     \centering
-    \begin{subfigure}[b]{0.27\textwidth}
+    \begin{subfigure}[b]{0.35\textwidth}
         \includegraphics[width=\textwidth]{figures/category_optimisations/with_mindphi_cut/min_omega_tilde_ttH.pdf}
         \caption{\ttH category}
     \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.27\textwidth}
+    \hspace{0.1\textwidth}
+    \begin{subfigure}[b]{0.35\textwidth}
         \includegraphics[width=\textwidth]{figures/category_optimisations/with_mindphi_cut/min_omega_tilde_VH.pdf}
         \caption{\VH category}
     \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.27\textwidth}
-        \includegraphics[width=\textwidth]{figures/category_optimisations/with_mindphi_cut/min_omega_tilde_ggH.pdf}
-        \caption{\ggH category}
-    \end{subfigure}
 
-    \begin{subfigure}[b]{0.27\textwidth}
+    \begin{subfigure}[b]{0.35\textwidth}
         \includegraphics[width=\textwidth]{figures/category_optimisations/with_mindphi_cut/significance_ttH_min_omega_tilde_all.pdf}
         \caption{Significance of cut in \ttH category}
     \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.27\textwidth}
+    \hspace{0.1\textwidth}
+    \begin{subfigure}[b]{0.35\textwidth}
         \includegraphics[width=\textwidth]{figures/category_optimisations/with_mindphi_cut/significance_VH_min_omega_tilde_all.pdf}
         \caption{Significance of cut in \VH category}
     \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.27\textwidth}
-        \includegraphics[width=\textwidth]{figures/category_optimisations/with_mindphi_cut/significance_ggH_min_omega_tilde_all.pdf}
-        \caption{Significance of cut in \ggH category}
-    \end{subfigure}
-    \caption[Distributions of \omegaTilde in the signal region in the \ttH, \VH, and \ggH categories, along with the significance---using several figures of merit---if a cut is placed to the right of a given value]{Top row: distributions of \omegaTilde in the signal region in the \ttH, \VH, and \ggH categories. Bottom row: the significance---using several figures of merit---if a cut is placed to the right of a given value of \omegaTilde in each category. The black dotted line indicates the threshold used in the analysis. These are showcased after the analysis-level selection on signal and background simulation for the 2017 data-taking era.}
+    \caption[Distributions of \omegaTilde in the signal region in the \ttH and \VH categories, along with the significance---using several figures of merit---if a cut is placed to the right of a given value]{Top row: distributions of \omegaTilde in the signal region in the \ttH and \VH categories. Bottom row: the significance---using several figures of merit---if a cut is placed to the right of a given value of \omegaTilde in each category. The black dotted line indicates the threshold used in the analysis. These are showcased after the analysis-level selection on signal and background simulation for the 2017 data-taking era.}
     \label{fig:htoinv_category_optimisations_significances}
 \end{figure}
 

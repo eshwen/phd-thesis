@@ -10,7 +10,7 @@ The fits of signal and background to the observed data are performed as outlined
 \subsection{Results of the \texorpdfstring{\ttH}{ttH} analysis}
 \label{subsec:htoinv_analysis_ttH}
 
-The \singlePhotonCr \gls{CR} is not used in constraining the \ztonunu prediction for any of the subcategories. To predict the \acrshort{qcd} event counts in the signal region, Eq.~\ref{eq:qcd_prediction} incorporates the \acrshort{mc} counts in said region and from one or more sidebands. To mitigate the statistical limitations of the \acrshort{qcd} \acrshort{mc} nominally used in the analysis, their event count was increased a hundredfold using a ``smear and rebalance'' method as performed in Ref.~\citenum{Sirunyan:2017wif}. Both the category and \ptmiss fractions were derived from the smeared \acrshort{qcd} \acrshort{mc} in the signal region, while the remaining terms of Eq.~\ref{eq:qcd_prediction} ($N_{\mathrm{SB}}^{\mathrm{QCD}}$, and $\transfac_{\mathrm{QCD}}$) were derived from the tight double sideband from Tab.~\ref{tab:sideband_defs}---the most enriched in multijet \acrshort{mc}---again using the smeared multijet sample.
+The \singlePhotonCr \gls{CR} is not used in constraining the \ztonunu prediction for any of the subcategories. To predict the \acrshort{qcd} event counts in the signal region, Eq.~\ref{eq:qcd_prediction} incorporates the \acrshort{mc} counts in said region and from the loose double sideband from Tab.~\ref{tab:sideband_defs}---the most enriched in multijet \acrshort{mc}. The category and \ptmiss fractions, $N_{\mathrm{SB}}^{\mathrm{QCD}}$, and $\transfac_{\mathrm{QCD}}$ were derived from the sideband.
 
 Distributions of the post-fit yields in the signal region for 2016, 2017, and 2018 are displayed in Fig.~\ref{fig:htoinv_mountain_range_ttH_SR}. The total pre-fit background is also overlaid. Corresponding figures for the \glspl{CR} are given in App.~\ref{sec:pre_post_fit_plots_ttH_CRs}.\footnote{Add at least a paragraph discussing the pre-fit vs post-fit yields, i.e., how well the fit is able to model the background/allow it to fill any pre-fit data excesses, once I have the final results.}
 
@@ -34,7 +34,9 @@ Distributions of the post-fit yields in the signal region for 2016, 2017, and 20
     \label{fig:htoinv_mountain_range_ttH_SR}
 \end{figure}
 
-Results of the fit tot data are presented in terms of the upper limit on the signal strength parameter \BRHinvFull. The observed limit in the signal plus background hypothesis at 95\,\% confidence level is overlaid on the expectation from the background-only hypothesis. In the latter, the median expected limit is illustrated with accompanying boundaries for the 68\,\% and 95\,\% confidence level intervals. Fig.~\ref{fig:htoinv_limit_ttH} showcases the limit and profile likelihood scan for the \ttH category in each data taking year individually and the combination over the full Run-2 dataset. Limits broken down by subcategory in each year are presented in Fig.~\ref{fig:htoinv_limit_ttH_per_year}.\footnote{Add at least a paragraph discussing the limits, and their consistency, once I have the final results. Indicate problems and stuff. Relate limits to the mountain ranges.}
+It is evident from the distributions that the fit succeeds in most cases to match the signal and background to the data within uncertainties. Relatively few bins contain a post-fit data/prediction ratio largely different from unity. Large deviations are seen only in the \ttH boosted subcategories which are statistically limited. In 2016, a general over-prediction of background is seen, corrected for most part by the fit. The pre-fit ratio is overall better in 2016 than in the other years. The effect of pre-firing was less severe than in 2017. Both of the later years suffered from additional problems such as noise in the \acrshort{ecal} end caps in 2017---affecting \ttH given its high jet multiplicity---and the HEM issue in 2018 that largely affects \glspl{jet}. Techniques were employed to mitigate the problems, but of course may have failed to completely eradicate them.
+
+These post-fit distributions translate directly into the upper limit on \BRHinvFull. Fig.~\ref{fig:htoinv_limit_ttH} showcases the limit and profile likelihood scan for the \ttH category in each data taking year individually and the combination over the full Run-2 dataset. Limits broken down by subcategory in each year are presented in Fig.~\ref{fig:htoinv_limit_ttH_per_year}.\footnote{Add at least a paragraph discussing the limits, and their consistency, once I have the final results. Indicate problems and stuff. Relate limits to the mountain ranges.}
 
 \begin{figure}[htbp]
     \centering
@@ -50,6 +52,8 @@ Results of the fit tot data are presented in terms of the upper limit on the sig
     \caption[Observed and expected 95\,\% CL upper limit on the Higgs boson to invisible state branching fraction $\BRof{\higgstoinv}$ (left) and the corresponding profile likelihood ratio as a function of it (right) in the \ttH category]{Observed and expected 95\,\% CL upper limit on the Higgs boson to invisible state branching fraction $\BRof{\higgstoinv}$ (left) and the corresponding profile likelihood ratio as a function of it (right) in the \ttH category. The result from each data taking period is presented along with their combination.}
     \label{fig:htoinv_limit_ttH}
 \end{figure}
+
+\textbf{Talk about the limit and likelihood scan. The overall combined limit is XX\%, much better than ATLAS' hadronic ttH. Compare observed vs expected. Compare our 2016 limit with the published one. Note that differences could be due to systematic uncertainties (e.g., we include QCD scale systs that they don't, and possibly others). Differences in MC could also have an effect. Talk about the likelihood scans briefly. The median expected limit can be seen from the intersection of the dashed curve with the horizontal line $-\text{2}\delta \ln(\likelihood) = \text{3.84}$ (i.e., at the 95\% confidence level interval). The intersection of the solid curve with the same horizontal line gives the observed limit at 95\,\% CL.}
 
 \clearpage
 
@@ -110,7 +114,7 @@ Fig.~\ref{fig:htoinv_limit_VH} showcases the expected and observed limits for th
 \subsection{Results of the \texorpdfstring{\ggH}{ggH} analysis}
 \label{subsec:htoinv_analysis_ggF}
 
-As with the \VH category, all of the \glspl{CR} are involved in estimating the non-multijet backgrounds in the signal region of the \ggH category. Equivalently to \ttH, the \acrshort{qcd} presence is derived using the \acrshort{qcd} event counts in the signal region and tight double sideband, taking advantage of the smeared multijet sample.
+As with the \VH category, all of the \glspl{CR} are involved in estimating the non-multijet backgrounds in the signal region of the \ggH category. Equivalently to \ttH, the \acrshort{qcd} presence in the signal region is predicted using the event counts in the loose double sideband.
 
 Distributions of the pre-fit and post-fit yields for 2016, 2017, and 2018 are displayed in Fig.~\ref{fig:htoinv_mountain_range_ggH_SR}. Corresponding figures for the \glspl{CR} are given in App.~\ref{sec:pre_post_fit_plots_ggF_CRs}.\footnote{Add at least a paragraph discussing the pre-fit vs post-fit yields, i.e., how well the fit is able to model the background/allow it to fill any pre-fit data excesses, once I have the final results.}
 
@@ -193,8 +197,6 @@ Upper limits for $\BRof{\higgstoinv}$ by combining all categories for the full R
     \caption[Observed and expected 95\,\% CL upper limit on the Higgs boson to invisible state branching fraction $\BRof{\higgstoinv}$ and the corresponding profile likelihood ratio as a function of it, for both the individual categories, as well as the combination of them, for the full Run-2 dataset]{Observed and expected 95\,\% CL upper limit on the Higgs boson to invisible state branching fraction $\BRof{\higgstoinv}$ (left) and the corresponding profile likelihood ratio as a function of it (right), for both the individual categories, as well as the combination of them, for the full Run-2 dataset. The \acrlong{sm} Higgs boson with its associated mass and production cross section are assumed.}
     \label{fig:htoinv_limit_likelihood_Run2_per_cat}
 \end{figure}
-
-% Expected limits and likelihoods only, for Scenario 5. All limit and likelihood plots from 13th August
 
 \begin{table}[htbp]
     \centering

@@ -102,7 +102,7 @@ Simulated events are nominally reweighted according to data, where the inelastic
 
 Vector boson \plusjets processes present a sizeable background in some of the categories and regions of the analysis. At the dataset sizes required to provide sufficient statistical coverage of the phase space, \acrshort{nlo} \acrshort{mc} samples are not available with the complete detector simulation applied. To circumvent this, \acrshort{lo} samples are used in the analysis and reweighted at generator level on an event-by-event basis to \acrshort{nlo} accuracy. This method is usually referred to as a ``$k$-factor'' correction, where $k$ is the ratio of the \acrshort{nlo} to \acrshort{lo} cross section.
 
-Separate \acrshort{qcd} and electroweak corrections are applied to \acrshort{qcd} processes. \acrshort{nlo} $\PW \plusjets$ samples are used to derive the $k$-factors for the respective \acrshort{lo} process. Drell-Yan $\HepProcess{\PZ (\to \Plepton\APlepton)} \plusjets$ samples are utilised for both the \acrshort{lo} Drell-Yan and \ztonunupjets processes. The $k$-factors are calculated independently for the two processes as the \acrshort{lo} samples and cross sections are different. One or two additional \glspl{jet} in the matrix element calculations are permitted in the \acrshort{nlo} samples. Events from the above datasets are processed through the following generator-level event selection to ensure they are in a similar phase space to the analysis:
+Separate \acrshort{qcd} and electroweak corrections are applied to \acrshort{qcd} processes. \acrshort{nlo} $\PW \plusjets$ samples are utilised when deriving the $k$-factors for the respective \acrshort{lo} process. Drell-Yan $\HepProcess{\PZ (\to \Plepton\APlepton)} \plusjets$ samples are utilised for both the \acrshort{lo} Drell-Yan and \ztonunupjets processes. The $k$-factors are calculated independently for the two processes as the \acrshort{lo} samples and cross sections are different. One or two additional \glspl{jet} in the matrix element calculations are permitted in the \acrshort{nlo} samples. Events from the above datasets are processed through the following generator-level event selection to ensure they are in a similar phase space to the analysis:
 
 \medskip
 \begin{easylist}[itemize]
@@ -133,7 +133,7 @@ Separate \acrshort{qcd} and electroweak corrections are applied to \acrshort{qcd
         \includegraphics[width=\textwidth]{figures/nlo_k_factors/2D_wjets.pdf}
         \caption{$\wtolnupjets$}
     \end{subfigure}
-    \caption[NLO $k$-factors---as a function of the generator-level boson \pt and leading jet \pt---used to reweight events in LO QCD $\PW$ and $\PZ \plusjets$ simulation to NLO accuracy in QCD]{\acrshort{nlo} $k$-factors---as a function of the generator-level boson \pt and leading jet \pt---used to reweight events in \acrshort{lo} \acrshort{qcd} $\PW$ and $\PZ \plusjets$ simulation to \acrshort{nlo} accuracy in \acrshort{qcd}.}
+    \caption[NLO $k$-factors---as a function of the generator-level boson \pt and leading jet \pt---for reweighting events in LO QCD $\PW$ and $\PZ \plusjets$ simulation to NLO accuracy in QCD]{\acrshort{nlo} $k$-factors---as a function of the generator-level boson \pt and leading jet \pt---for reweighting reweight events in \acrshort{lo} \acrshort{qcd} $\PW$ and $\PZ \plusjets$ simulation to \acrshort{nlo} accuracy in \acrshort{qcd}.}
     \label{fig:htoinv_nlo_k_factors_qcd}
 \end{figure}
 
@@ -142,7 +142,7 @@ Since all of the $\PVec \plusjets$ samples were generated at \acrshort{lo} elect
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.45\textwidth]{figures/nlo_k_factors/1D_all_ewk.pdf}
-    \caption[NLO $k$-factors as a function of generator-level boson \pt used to reweight QCD $\PVec \plusjets$ events generated at LO electroweak accuracy]{\acrshort{nlo} $k$-factors as a function of generator-level boson \pt used to reweight \acrshort{qcd} $\PVec \plusjets$ events generated at \acrshort{nlo} electroweak accuracy. Separate $k$-factors correct the \PW, \PZ, and $\Pphoton\plusjets$ processes.}
+    \caption[NLO $k$-factors as a function of generator-level boson \pt for reweighting QCD $\PVec \plusjets$ events generated at LO electroweak accuracy]{\acrshort{nlo} $k$-factors as a function of generator-level boson \pt for reweighting \acrshort{qcd} $\PVec \plusjets$ events generated at \acrshort{nlo} electroweak accuracy. Separate $k$-factors correct the \PW, \PZ, and $\Pphoton\plusjets$ processes.}
     \label{fig:htoinv_nlo_k_factor_ewk}
 \end{figure}
 
@@ -212,7 +212,7 @@ For each process (i.e., \ttbar, and the accompanying boson $X$ in $\ttbar X$), a
 \subsubsection{Top quark \texorpdfstring{\pt}{pT} reweighting}
 \label{subsubsec:htoinv_top_pt_reweighting}
 
-The top quark \pt distribution has been shown to be harder in simulation at \acrshort{nlo} than in data~\cite{Sirunyan:2018ucr}. \acrshort{nlo} \ttbarpjets \acrshort{mc} generated in \POWHEG is reweighted to \acrshort{nnlo} \acrshort{qcd} $+$ \acrshort{nlo} electroweak accuracy as function of top quark \pt. An analytic function is used to fit the distribution that determines the weight. The same nominal function is used for all \ttbarpjets samples for all data taking years:
+The top quark \pt distribution has been shown to be harder in simulation at \acrshort{nlo} than in data~\cite{Sirunyan:2018ucr}. \acrshort{nlo} \ttbarpjets \acrshort{mc} generated in \POWHEG is reweighted to \acrshort{nnlo} \acrshort{qcd} $+$ \acrshort{nlo} electroweak accuracy as function of top quark \pt. An analytic function fits the distribution that determines the weight. The same nominal function applies to all \ttbarpjets samples for all data taking years:
 \begin{equation}
     f(\pt) = \exp(a + b \cdot \pt + c \cdot \pt^2)
 \end{equation}

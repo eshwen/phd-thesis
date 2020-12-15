@@ -36,7 +36,7 @@ For analyses focused on hadronic objects---such as branches of \acrlong{susy} wh
     \label{eq:ht_definition}
 \end{equation}
 
-Typically, a lower limit on the \pt is used when calculating the \HT, so \glspl{jet} below this threshold do not factor into the sum. This is to avoid low momentum \glspl{jet} attributed to pileup events (see Chpt.~\ref{subsec:pileup}) and soft radiation.
+Typically, a lower limit on the \pt is enforced when calculating the \HT, so \glspl{jet} below this threshold do not factor into the sum. This is to avoid low momentum \glspl{jet} attributed to pileup events (see Chpt.~\ref{subsec:pileup}) and soft radiation.
 
 
 %=========================================================
@@ -45,7 +45,7 @@ Typically, a lower limit on the \pt is used when calculating the \HT, so \glspl{
 \subsection{Missing transverse momentum (\texorpdfstring{\ptvecmiss}{ptmiss})}
 \label{subsec:objects_met}
 
-The missing transverse momentum \ptvecmiss is defined as the negative vector sum of the \ptvec of all identified particles in an event. It is a term often used interchangeably with \gls{met} (MET, \VEtmiss). Undetected particles from neutrinos or dark matter, or mismeasured kinematic properties of identified particles, will introduce an imbalance in the vector sum of the \ptvec. Hence, the \ptvecmiss will be non-zero. Formally,
+The missing transverse momentum \ptvecmiss is defined as the negative vector sum of the \ptvec of all identified particles in an event. It is a term often interchangeable with \gls{met} (MET, \VEtmiss). Undetected particles from neutrinos or dark matter, or mismeasured kinematic properties of identified particles, will introduce an imbalance in the vector sum of the \ptvec. Hence, the \ptvecmiss will be non-zero. Formally,
 \begin{equation}
     \begin{aligned}
         \ptvecmiss &\equiv - \sum_i^{N_{\mathrm{particles}}} \vec{p}_{\mathrm{T}, \, i} \\
@@ -70,7 +70,7 @@ As with \HT, the \mht is often calculated with a lower limit on the \gls{jet} \p
 \subsection{Transverse mass (\texorpdfstring{\mT}{MT})}
 \label{subsec:objects_transverse_mass}
 
-The transverse mass \mT of a particle---or the collective products of a decay---is the component of its invariant mass in the transverse plane. In a hadron collider context, this observable is often used when one of the decay products is invisible or unidentified, i.e., as \ptvecmiss. When searching for \glspl{svj}, the \mT of the dijet system is very reliable in recovering the \PZprime mass. Einstein's equation $E^2 = (pc)^2 + (m_0c^2)^2$ can be reformulated for each daughter particle in a decay as
+The transverse mass \mT of a particle---or the collective products of a decay---is the component of its invariant mass in the transverse plane. In a hadron collider context, this observable is typically used when one of the decay products is invisible or unidentified, i.e., as \ptvecmiss. When searching for \glspl{svj}, the \mT of the dijet system is very reliable in recovering the \PZprime mass. Einstein's equation $E^2 = (pc)^2 + (m_0c^2)^2$ can be reformulated for each daughter particle in a decay as
 \begin{equation}
 \ET^2 = m_0^2 + \pt^2
 \label{eq:transverse_energy}
@@ -274,7 +274,7 @@ Electrons in the analysis are labelled as veto (\vetoEle) or tight electrons (\t
     Pass conversion veto & yes & yes \\
     \hline
     \end{tabular}
-    \caption[Requirements used to define the veto and tight electron IDs in the barrel region (supercluster $\abs{\eta} \leq \text{1.479}$)]{Requirements used to define the veto and tight electron IDs in the barrel region (supercluster $\abs{\eta} \leq \text{1.479}$). Information taken from Ref.~\citenum{cms_ele_ID_Run2}.}
+    \caption[Criteria for defining the veto and tight electron IDs in the barrel region (supercluster $\abs{\eta} \leq \text{1.479}$)]{Criteria for defining the veto and tight electron IDs in the barrel region (supercluster $\abs{\eta} \leq \text{1.479}$). Information taken from Ref.~\citenum{cms_ele_ID_Run2}.}
     \label{tab:htoinv_electron_ID_barrel}
 \end{table}
 
@@ -293,7 +293,7 @@ Electrons in the analysis are labelled as veto (\vetoEle) or tight electrons (\t
     Pass conversion veto & yes & yes \\
     \hline
     \end{tabular}
-    \caption[Requirements used to define the veto and tight electron IDs in the end cap region (supercluster $\abs{\eta} > \text{1.479}$)]{Requirements used to define the veto and tight electron IDs in the end cap region (supercluster $\abs{\eta} > \text{1.479}$). Information taken from Ref.~\citenum{cms_ele_ID_Run2}.}
+    \caption[Criteria for defining the veto and tight electron IDs in the end cap region (supercluster $\abs{\eta} > \text{1.479}$)]{Criteria for defining the veto and tight electron IDs in the end cap region (supercluster $\abs{\eta} > \text{1.479}$). Information taken from Ref.~\citenum{cms_ele_ID_Run2}.}
     \label{tab:htoinv_electron_ID_endcap}
 \end{table}
 
@@ -323,7 +323,7 @@ Photons are identified in a similar manner to electrons---using version 2 of the
         $\rho$-corrected \acrshort{pf} neutral hadron isolation & $< \text{24.032} + X + Y$ & $< \text{1.189} + X + Y$ \\
         $\rho$-corrected \acrshort{pf} photon isolation & $< \text{2.876} + Z$ & $< \text{2.08} + Z$ \\\hline
     \end{tabular}
-    \caption[Requirements used to define the loose and medium photon IDs in the barrel region of the detector ($\abs{\eta} \leq \text{1.479}$)]{Requirements used to define the loose and medium photon IDs in the barrel region of the detector ($\abs{\eta} \leq \text{1.479}$). The factors $X = \text{0.01512}\pt$, $Y = \text{2.259} \times \text{10}^{-5}\pt^2$, and $Z = \text{0.004017}\pt$ in the isolation criteria are used to scale the threshold. Information taken from Ref.~\citenum{cms_photon_ID_Run2}.}
+    \caption[Criteria for defining the loose and medium photon IDs in the barrel region of the detector ($\abs{\eta} \leq \text{1.479}$)]{Criteria for defining the loose and medium photon IDs in the barrel region of the detector ($\abs{\eta} \leq \text{1.479}$). The factors $X = \text{0.01512}\pt$, $Y = \text{2.259} \times \text{10}^{-5}\pt^2$, and $Z = \text{0.004017}\pt$ in the isolation criteria are used to scale the threshold. Information taken from Ref.~\citenum{cms_photon_ID_Run2}.}
     \label{tab:htoinv_photon_ID_barrel}
 \end{table}
 
@@ -338,7 +338,7 @@ Photons are identified in a similar manner to electrons---using version 2 of the
         $\rho$-corrected \acrshort{pf} neutral hadron isolation & $< \text{1.922} + X + Y$ & $< \text{2.718} + X + Y$ \\
         $\rho$-corrected \acrshort{pf} photon isolation & $< \text{4.162} + Z$ & $< \text{3.867} + Z$ \\\hline
     \end{tabular}
-    \caption[Requirements used to define the loose and medium photon IDs in the end cap region of the detector ($\abs{\eta} > \text{1.479}$)]{Requirements used to define the loose and medium photon IDs in the end cap region of the detector ($\abs{\eta} > \text{1.479}$). The factors $X = \text{0.0117}\pt$, $Y = \text{2.3} \times \text{10}^{-5}\pt^2$, and $Z = \text{0.0037}\pt$ in the isolation criteria are used to scale the threshold. Information taken from Ref.~\citenum{cms_photon_ID_Run2}.}
+    \caption[Criteria for defining the loose and medium photon IDs in the end cap region of the detector ($\abs{\eta} > \text{1.479}$)]{Criteria for defining the loose and medium photon IDs in the end cap region of the detector ($\abs{\eta} > \text{1.479}$). The factors $X = \text{0.0117}\pt$, $Y = \text{2.3} \times \text{10}^{-5}\pt^2$, and $Z = \text{0.0037}\pt$ in the isolation criteria are used to scale the threshold. Information taken from Ref.~\citenum{cms_photon_ID_Run2}.}
     \label{tab:htoinv_photon_ID_endcap}
 \end{table}
 
@@ -356,7 +356,7 @@ As well as the ID, the two collections diverge further due to $\eta$ and \pt req
 \subsection{Tau leptons}
 \label{subsec:objects_taus}
 
-The only purpose tau leptons \Ptau serve in the analysis is to veto events that contain them. These are denoted as \emph{very loose} taus \vlooseTau. Version 2 of the multivariate identification algorithm is used for all years, and tau leptons must pass the very loose criteria. Dedicated multivariate discriminators against electrons and muons are provided and employed, passing the loose and very loose working points, respectively. Kinematically, a \vlooseTau also requires $\pt > \text{20}\GeV$, $\abseta < \text{2.3}$, and $dz <\text{0.2}$\,cm.
+The only purpose tau leptons \Ptau serve in the analysis is to veto events that contain them. These are denoted as \emph{very loose} taus \vlooseTau. Version 2 of the multivariate identification algorithm is applied in all years, and tau leptons must pass the very loose criteria. Dedicated multivariate discriminators against electrons and muons are provided and employed, passing the loose and very loose working points, respectively. Kinematically, a \vlooseTau also requires $\pt > \text{20}\GeV$, $\abseta < \text{2.3}$, and $dz <\text{0.2}$\,cm.
 
 % Tau ID: https://twiki.cern.ch/twiki/bin/viewauth/CMS/TauIDRecommendationForRun2. But no real useful information is there
 

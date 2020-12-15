@@ -43,9 +43,10 @@ cd region_plots/full_Run2
 ```
 
 Since things are kinda weird with how we define the VH sideband, I created a new branch to make plots for that: <https://gitlab.cern.ch/ebhal/chip/-/commits/esh_data_MC_comp_plots_no_ggF>. So, to make the sideband 0 plot for ggF 2jM but with VH labelling, might be easier to just use the branch out of the box rather than fiddle with the plotting scripts.
+
 ## Dark matter limit plot
 
-This should be documented in [dark_matter_limit/](dark_matter_limit/), as it is a self-contained `ROOT` macro that makes it.
+This should be documented in [dark_matter_limit/](dark_matter_limit/), as it is a self-contained `ROOT` macro that makes it. The limits we normally produce are at 95% confidence level. But to be consistent with the direct detection experiments who quote 90% CL, we need the limit at that level. The commands are the same as normal, except when running the actual `combine` command, just add the option `--cl 0.9`.
 
 ## Fit overview
 

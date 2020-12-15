@@ -3,16 +3,16 @@
 >>> random number generator seed is 123456
 >>> 0 out of 15 channels masked
 
-SimNLL created with 15 channels, 0 generic constraints, 50 fast gaussian constraints, 0 fast poisson constraints, 0 fast group constraints, 
-SimNLL created with 15 channels, 0 generic constraints, 50 fast gaussian constraints, 0 fast poisson constraints, 0 fast group constraints, 
-SimNLL created with 15 channels, 0 generic constraints, 50 fast gaussian constraints, 0 fast poisson constraints, 0 fast group constraints, 
+SimNLL created with 15 channels, 0 generic constraints, 51 fast gaussian constraints, 0 fast poisson constraints, 0 fast group constraints, 
+SimNLL created with 15 channels, 0 generic constraints, 51 fast gaussian constraints, 0 fast poisson constraints, 0 fast group constraints, 
+SimNLL created with 15 channels, 0 generic constraints, 51 fast gaussian constraints, 0 fast poisson constraints, 0 fast group constraints, 
 
  -- AsymptoticLimits ( CLs ) --
-Observed Limit: r < 2.0611
-Expected  2.5%: r < 1.2048
-Expected 16.0%: r < 1.5948
-Expected 50.0%: r < 2.2031
-Expected 84.0%: r < 3.0550
-Expected 97.5%: r < 4.0657
+Observed Limit: r < 2.0408
+Expected  2.5%: r < 1.2091
+Expected 16.0%: r < 1.6083
+Expected 50.0%: r < 2.2109
+Expected 84.0%: r < 3.0746
+Expected 97.5%: r < 4.1150
 
 Done in 0.10 min (cpu), 0.10 min (real)

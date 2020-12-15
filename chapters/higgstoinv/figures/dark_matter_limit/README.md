@@ -1,6 +1,8 @@
 # Making Higgs portal dark matter summary plots
 
-One needs ROOT installed since a ROOT macro (kindly provided by Raffaele Gerosa from [here](https://gitlab.cern.ch/cms-hcg/cadi/hig-17-023/-/tree/master/HiggsInvisibleCombination%2FHiggsPortalDM), with the header [CMS_lumi.h](https://gitlab.cern.ch/cms-hcg/cadi/hig-17-023/-/blob/master/HiggsInvisibleCombination/CMS_lumi.h)). Then, just run it with
+One needs ROOT installed since a ROOT macro (kindly provided by Raffaele Gerosa from [here](https://gitlab.cern.ch/cms-hcg/cadi/hig-17-023/-/tree/master/HiggsInvisibleCombination%2FHiggsPortalDM), with the header [CMS_lumi.h](https://gitlab.cern.ch/cms-hcg/cadi/hig-17-023/-/blob/master/HiggsInvisibleCombination/CMS_lumi.h)) is needed to make the plot. ROOT 6.20/04 is recommended, since newer versions (specifically 6.22/00) caused weird whitespace issues.
+
+The macro can simply be run with
 
 ```bash
 root -l -b -q makeHiggsPortalPlot.C\(<limit_value>\)

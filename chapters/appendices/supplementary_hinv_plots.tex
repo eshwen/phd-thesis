@@ -5,7 +5,7 @@
 
 App.~\ref{sec:limits_likelihoods_cats_supplementary} includes limit plots broken down by subcategory and data taking period for each of the analysis categories. While App.~\ref{sec:limits_likelihoods_year_supplementary} contains the overall limits for each year combined over the categories.
 
-Event counts in the signal region from the background-only fit to data are tabulated in App.~\ref{sec:yield_tables_SR}. One table is provided per data taking year. Each table is contains the yields of the data and total \acrshort{sm} background (with further columns decomposing the latter into its components) in every subcategory and \ptmiss bin. 
+Event counts in the signal region from the background-only fit to data are tabulated in App.~\ref{sec:yield_tables_SR_CR_only_fit}. One table is provided per data taking year. Each table is contains the yields of the data and total \acrshort{sm} background (with further columns decomposing the latter into its components) in every subcategory and \ptmiss bin. Equivalent yields from the background-only fit are presented in App.~\ref{sec:yield_tables_SR_B_only_fit}.
 
 
 %=========================================================
@@ -312,8 +312,181 @@ Event counts in the signal region from the background-only fit to data are tabul
 %=========================================================
 
 
-\section{Event counts in the signal region after the background-only fit}
-\label{sec:yield_tables_SR}
+\section{Signal region event counts after the control region-only fit}
+\label{sec:yield_tables_SR_CR_only_fit}
+
+% 2016:
+
+\begin{table}[htbp]
+    \footnotesize
+    \centering
+    \begin{tabular}{llccccr}
+    \toprule
+    Subcategory & \ptmiss & Lost lepton & \ztonunu & QCD & Total SM & Data \\
+    \midrule
+\ttH 2Boosted & [200, 300) &    $\text{7.37} \pm \text{1.07}$ &     $\text{0} \pm \text{0}$ &  $\text{1.03} \pm \text{1.01}$ &     $\text{8.4} \pm \text{1.47}$ &    12 \\
+         & [300, 400) &     $\text{2.97} \pm \text{0.5}$ &   $\text{1.26} \pm \text{0.89}$ &  $\text{0.38} \pm \text{0.62}$ &     $\text{4.61} \pm \text{1.2}$ &     1 \\
+         & [400, $\infty$) &    $\text{0.61} \pm \text{0.14}$ &   $\text{1.46} \pm \text{0.75}$ &  $\text{0.18} \pm \text{0.43}$ &    $\text{2.24} \pm \text{0.87}$ &     2 \\
+\ttH 1t1b & [200, 300) &    $\text{33.7} \pm \text{2.91}$ &   $\text{6.34} \pm \text{2.01}$ &  $\text{7.11} \pm \text{2.67}$ &    $\text{47.1} \pm \text{4.43}$ &    36 \\
+         & [300, 400) &    $\text{25.8} \pm \text{2.35}$ &   $\text{6.61} \pm \text{1.37}$ &  $\text{2.62} \pm \text{1.62}$ &    $\text{35.0} \pm \text{3.16}$ &    45 \\
+         & [400, $\infty$) &    $\text{18.9} \pm \text{1.77}$ &   $\text{7.36} \pm \text{1.82}$ &  $\text{1.27} \pm \text{1.13}$ &    $\text{27.5} \pm \text{2.78}$ &    32 \\
+\ttH 1t2b & [200, 300) &    $\text{44.7} \pm \text{3.34}$ &   $\text{3.12} \pm \text{1.31}$ &  $\text{9.42} \pm \text{3.07}$ &    $\text{57.3} \pm \text{4.72}$ &    51 \\
+         & [300, 400) &    $\text{41.4} \pm \text{3.13}$ &   $\text{2.68} \pm \text{1.32}$ &  $\text{3.47} \pm \text{1.86}$ &    $\text{47.5} \pm \text{3.87}$ &    40 \\
+         & [400, 600) &    $\text{17.4} \pm \text{1.63}$ &   $\text{4.62} \pm \text{1.84}$ &  $\text{1.51} \pm \text{1.23}$ &    $\text{23.5} \pm \text{2.75}$ &    21 \\
+         & [600, $\infty$) &    $\text{2.13} \pm \text{0.56}$ &     $\text{1.1} \pm \text{1.0}$ &  $\text{0.17} \pm \text{0.41}$ &    $\text{3.39} \pm \text{1.22}$ &     4 \\
+\ttH 1W1b & [200, 300) &   $\text{375} \pm \text{15.7}$ &   $\text{46.2} \pm \text{10.8}$ &  $\text{21.6} \pm \text{4.64}$ &   $\text{443} \pm \text{19.6}$ &   396 \\
+         & [300, 400) &    $\text{83.2} \pm \text{5.33}$ &   $\text{34.9} \pm \text{9.96}$ &  $\text{7.94} \pm \text{2.82}$ &   $\text{126} \pm \text{11.6}$ &   112 \\
+         & [400, $\infty$) &    $\text{15.1} \pm \text{1.67}$ &   $\text{8.23} \pm \text{2.77}$ &  $\text{3.84} \pm \text{1.96}$ &    $\text{27.2} \pm \text{3.78}$ &    32 \\
+\ttH 1W2b & [200, 300) &   $\text{266} \pm \text{11.0}$ &     $\text{4.0} \pm \text{2.2}$ &   $\text{14.4} \pm \text{3.8}$ &   $\text{284} \pm \text{11.8}$ &   264 \\
+         & [300, 400) &    $\text{50.7} \pm \text{4.27}$ &   $\text{3.66} \pm \text{2.12}$ &  $\text{5.31} \pm \text{2.31}$ &    $\text{59.7} \pm \text{5.29}$ &    65 \\
+         & [400, $\infty$) &    $\text{7.73} \pm \text{1.04}$ &    $\text{1.07} \pm \text{0.7}$ &   $\text{2.57} \pm \text{1.6}$ &    $\text{11.4} \pm \text{2.03}$ &    11 \\
+\ttH 5j1b & [200, 300) &  $\text{1522} \pm \text{36.4}$ &  $\text{473} \pm \text{68.6}$ &  $\text{54.5} \pm \text{7.38}$ &  $\text{2049} \pm \text{78.1}$ &  2192 \\
+         & [300, 400) &   $\text{285} \pm \text{11.8}$ &  $\text{157} \pm \text{25.5}$ &  $\text{20.1} \pm \text{4.48}$ &   $\text{461} \pm \text{28.4}$ &   516 \\
+         & [400, $\infty$) &    $\text{55.1} \pm \text{4.11}$ &   $\text{92.1} \pm \text{23.0}$ &  $\text{9.69} \pm \text{3.11}$ &   $\text{157} \pm \text{23.5}$ &   189 \\
+\ttH 6j1b & [200, 300) &   $\text{900} \pm \text{29.3}$ &  $\text{232} \pm \text{38.0}$ &  $\text{41.6} \pm \text{6.45}$ &  $\text{1173} \pm \text{48.4}$ &  1193 \\
+         & [300, 400) &    $\text{183} \pm \text{9.5}$ &   $\text{91.8} \pm \text{19.3}$ &  $\text{15.3} \pm \text{3.91}$ &   $\text{291} \pm \text{21.9}$ &   315 \\
+         & [400, $\infty$) &    $\text{51.5} \pm \text{4.15}$ &   $\text{34.6} \pm \text{12.5}$ &   $\text{7.4} \pm \text{2.72}$ &    $\text{93.5} \pm \text{13.5}$ &   114 \\
+\ttH 5j2b & [200, 300) &   $\text{406} \pm \text{15.3}$ &  $\text{111} \pm \text{25.8}$ &  $\text{10.4} \pm \text{3.23}$ &   $\text{528} \pm \text{30.1}$ &   555 \\
+         & [300, 400) &    $\text{47.3} \pm \text{3.73}$ &   $\text{29.0} \pm \text{11.5}$ &  $\text{3.83} \pm \text{1.96}$ &    $\text{80.2} \pm \text{12.3}$ &    87 \\
+         & [400, $\infty$) &    $\text{9.38} \pm \text{1.53}$ &   $\text{16.1} \pm \text{6.95}$ &  $\text{1.85} \pm \text{1.36}$ &    $\text{27.3} \pm \text{7.25}$ &    36 \\
+\ttH 6j2b & [200, 300) &   $\text{291} \pm \text{13.5}$ &   $\text{73.7} \pm \text{20.1}$ &   $\text{10.9} \pm \text{3.3}$ &   $\text{375} \pm \text{24.5}$ &   357 \\
+         & [300, 400) &    $\text{45.3} \pm \text{4.11}$ &   $\text{49.4} \pm \text{13.4}$ &   $\text{4.01} \pm \text{2.0}$ &    $\text{98.7} \pm \text{14.2}$ &    76 \\
+         & [400, $\infty$) &    $\text{12.4} \pm \text{1.89}$ &   $\text{4.36} \pm \text{4.16}$ &  $\text{1.94} \pm \text{1.39}$ &    $\text{18.7} \pm \text{4.77}$ &    29 \\
+         \midrule
+\VH 2j0b & [200, 300) &  $\text{3914} \pm \text{82.2}$ &  $\text{6497} \pm \text{247}$ &  $\text{259} \pm \text{16.1}$ &  $\text{10669} \pm \text{260}$ &  9744 \\
+        & [300, 400) &   $\text{513} \pm \text{21.7}$ &   $\text{1125} \pm \text{40.9}$ &     $\text{0} \pm \text{0}$ &    $\text{1638} \pm \text{46.3}$ &  1663 \\
+        & [400, $\infty$) &     $\text{48.8} \pm \text{6.0}$ &     $\text{99.5} \pm \text{8.52}$ &     $\text{0} \pm \text{0}$ &     $\text{148} \pm \text{10.4}$ &   172 \\
+\VH 2j1b & [200, 300) &   $\text{545} \pm \text{20.7}$ &    $\text{571} \pm \text{34.8}$ &   $\text{1.41} \pm \text{1.19}$ &    $\text{1117} \pm \text{40.5}$ &  1060 \\
+        & [300, 400) &     $\text{56.1} \pm \text{4.9}$ &    $\text{115} \pm \text{10.7}$ &     $\text{0} \pm \text{0}$ &     $\text{171} \pm \text{11.7}$ &   139 \\
+        & [400, $\infty$) &    $\text{3.24} \pm \text{0.95}$ &     $\text{9.91} \pm \text{2.73}$ &     $\text{0} \pm \text{0}$ &      $\text{13.1} \pm \text{2.89}$ &    14 \\
+\VH 2j2b & [200, $\infty$) &    $\text{38.4} \pm \text{4.91}$ &    $\text{160} \pm \text{18.1}$ &     $\text{0} \pm \text{0}$ &     $\text{198} \pm \text{18.7}$ &   143 \\
+\VH 1V & [200, 300) &  $\text{1525} \pm \text{39.8}$ &  $\text{2836} \pm \text{120}$ &   $\text{23.5} \pm \text{4.85}$ &   $\text{4384} \pm \text{127}$ &  3899 \\
+        & [300, 400) &   $\text{163} \pm \text{8.95}$ &    $\text{497} \pm \text{26.6}$ &     $\text{0} \pm \text{0}$ &     $\text{661} \pm \text{28.0}$ &   654 \\
+        & [400, $\infty$) &    $\text{6.92} \pm \text{1.42}$ &     $\text{22.1} \pm \text{4.73}$ &     $\text{0} \pm \text{0}$ &      $\text{29.1} \pm \text{4.94}$ &    42 \\
+        \bottomrule
+    \end{tabular}
+    \caption[Event counts in the signal region after the control region-only fit to data in 2016]{Event counts in the signal region after the control region-only fit to data in 2016.}
+    \label{tab:yields_SR_CR_only_2016}
+\end{table}
+
+% 2017:
+
+\begin{table}[htbp]
+    \small
+    \centering
+    \begin{tabular}{llccccr}
+    \toprule
+    Subcategory & \ptmiss & Lost lepton & \ztonunu & QCD & Total SM & Data \\
+    \midrule
+\ttH 2Boosted & [200, 300) &    $\text{7.11} \pm \text{1.07}$ &   $\text{2.28} \pm \text{1.19}$ &   $\text{1.6} \pm \text{1.27}$ &    $\text{11.0} \pm \text{2.04}$ &     9 \\
+         & [300, 400) &    $\text{2.48} \pm \text{0.36}$ &   $\text{2.23} \pm \text{0.93}$ &  $\text{0.61} \pm \text{0.78}$ &    $\text{5.32} \pm \text{1.27}$ &     6 \\
+         & [400, $\infty$) &    $\text{1.17} \pm \text{0.25}$ &     $\text{1.4} \pm \text{0.5}$ &  $\text{0.32} \pm \text{0.56}$ &    $\text{2.88} \pm \text{0.79}$ &     3 \\
+\ttH 1t1b & [200, 300) &    $\text{45.8} \pm \text{3.21}$ &   $\text{5.53} \pm \text{1.58}$ &   $\text{10.2} \pm \text{3.2}$ &     $\text{61.6} \pm \text{4.8}$ &    45 \\
+         & [300, 400) &    $\text{38.0} \pm \text{3.09}$ &   $\text{5.96} \pm \text{1.07}$ &  $\text{3.88} \pm \text{1.97}$ &    $\text{47.8} \pm \text{3.82}$ &    52 \\
+         & [400, $\infty$) &    $\text{21.2} \pm \text{1.64}$ &   $\text{8.79} \pm \text{1.87}$ &  $\text{2.02} \pm \text{1.42}$ &    $\text{32.1} \pm \text{2.86}$ &    28 \\
+\ttH 1t2b & [200, 300) &    $\text{52.9} \pm \text{3.35}$ &   $\text{2.28} \pm \text{1.13}$ &  $\text{12.8} \pm \text{3.58}$ &    $\text{68.0} \pm \text{5.03}$ &    57 \\
+         & [300, 400) &    $\text{45.2} \pm \text{3.23}$ &   $\text{4.12} \pm \text{1.28}$ &   $\text{4.86} \pm \text{2.2}$ &    $\text{54.1} \pm \text{4.12}$ &    38 \\
+         & [400, 600) &    $\text{20.3} \pm \text{1.99}$ &   $\text{4.75} \pm \text{1.59}$ &  $\text{2.27} \pm \text{1.51}$ &    $\text{27.4} \pm \text{2.96}$ &    33 \\
+         & [600, $\infty$) &     $\text{1.7} \pm \text{0.42}$ &   $\text{4.34} \pm \text{1.74}$ &   $\text{0.25} \pm \text{0.5}$ &    $\text{6.29} \pm \text{1.86}$ &     1 \\
+\ttH 1W1b & [200, 300) &   $\text{385} \pm \text{15.3}$ &   $\text{32.5} \pm \text{7.73}$ &  $\text{26.8} \pm \text{5.18}$ &   $\text{445} \pm \text{17.9}$ &   410 \\
+         & [300, 400) &    $\text{94.9} \pm \text{5.03}$ &   $\text{13.7} \pm \text{4.53}$ &  $\text{10.2} \pm \text{3.19}$ &   $\text{119} \pm \text{7.48}$ &   110 \\
+         & [400, $\infty$) &    $\text{15.8} \pm \text{1.64}$ &   $\text{5.54} \pm \text{1.57}$ &    $\text{5.3} \pm \text{2.3}$ &    $\text{26.6} \pm \text{3.23}$ &    35 \\
+\ttH 1W2b & [200, 300) &   $\text{288} \pm \text{10.4}$ &    $\text{8.06} \pm \text{3.4}$ &  $\text{18.1} \pm \text{4.26}$ &   $\text{315} \pm \text{11.8}$ &   302 \\
+         & [300, 400) &    $\text{53.0} \pm \text{3.35}$ &     $\text{4.2} \pm \text{2.1}$ &  $\text{6.88} \pm \text{2.62}$ &    $\text{64.1} \pm \text{4.74}$ &    74 \\
+         & [400, $\infty$) &     $\text{6.73} \pm \text{0.9}$ &   $\text{1.74} \pm \text{0.68}$ &  $\text{3.58} \pm \text{1.89}$ &     $\text{12.0} \pm \text{2.2}$ &    14 \\
+\ttH 5j1b & [200, 300) &  $\text{1808} \pm \text{42.9}$ &  $\text{502} \pm \text{59.8}$ &  $\text{73.0} \pm \text{8.54}$ &  $\text{2383} \pm \text{74.1}$ &  2514 \\
+         & [300, 400) &   $\text{289} \pm \text{11.9}$ &  $\text{244} \pm \text{36.4}$ &  $\text{27.7} \pm \text{5.26}$ &   $\text{561} \pm \text{38.6}$ &   540 \\
+         & [400, $\infty$) &    $\text{55.2} \pm \text{3.81}$ &   $\text{82.3} \pm \text{18.3}$ &   $\text{14.4} \pm \text{3.8}$ &   $\text{152} \pm \text{19.1}$ &   152 \\
+\ttH 6j1b & [200, 300) &   $\text{997} \pm \text{25.2}$ &  $\text{250} \pm \text{34.4}$ &  $\text{54.0} \pm \text{7.35}$ &  $\text{1301} \pm \text{43.2}$ &  1295 \\
+         & [300, 400) &   $\text{202} \pm \text{9.39}$ &  $\text{110} \pm \text{20.8}$ &  $\text{20.5} \pm \text{4.53}$ &   $\text{332} \pm \text{23.3}$ &   343 \\
+         & [400, $\infty$) &    $\text{54.0} \pm \text{4.07}$ &   $\text{40.1} \pm \text{11.9}$ &  $\text{10.7} \pm \text{3.26}$ &   $\text{105} \pm \text{13.0}$ &   121 \\
+\ttH 5j2b & [200, 300) &   $\text{511} \pm \text{18.2}$ &  $\text{122} \pm \text{25.6}$ &  $\text{13.5} \pm \text{3.68}$ &   $\text{647} \pm \text{31.6}$ &   651 \\
+         & [300, 400) &    $\text{45.6} \pm \text{3.51}$ &   $\text{24.9} \pm \text{10.4}$ &  $\text{5.14} \pm \text{2.27}$ &    $\text{75.6} \pm \text{11.3}$ &   106 \\
+         & [400, $\infty$) &     $\text{8.78} \pm \text{1.4}$ &   $\text{22.7} \pm \text{9.85}$ &  $\text{2.67} \pm \text{1.63}$ &    $\text{34.1} \pm \text{10.1}$ &    27 \\
+\ttH 6j2b & [200, 300) &   $\text{335} \pm \text{12.9}$ &   $\text{57.4} \pm \text{16.6}$ &  $\text{12.9} \pm \text{3.59}$ &   $\text{406} \pm \text{21.3}$ &   422 \\
+         & [300, 400) &     $\text{51.2} \pm \text{4.4}$ &   $\text{27.7} \pm \text{11.0}$ &   $\text{4.9} \pm \text{2.21}$ &    $\text{83.8} \pm \text{12.1}$ &    87 \\
+         & [400, $\infty$) &     $\text{6.86} \pm \text{1.1}$ &    $\text{4.62} \pm \text{4.0}$ &   $\text{2.55} \pm \text{1.6}$ &    $\text{14.0} \pm \text{4.45}$ &    36 \\
+        \midrule
+\VH 2j0b & [200, 300) &  $\text{4152} \pm \text{90.8}$ &  $\text{6090} \pm \text{208}$ &  $\text{379} \pm \text{19.5}$ &  $\text{10622} \pm \text{228}$ &  11263 \\
+        & [300, 400) &   $\text{574} \pm \text{23.9}$ &    $\text{964} \pm \text{36.6}$ &     $\text{0} \pm \text{0}$ &    $\text{1538} \pm \text{43.7}$ &   1696 \\
+        & [400, $\infty$) &    $\text{39.0} \pm \text{4.37}$ &    $\text{103} \pm \text{9.76}$ &     $\text{0} \pm \text{0}$ &     $\text{142} \pm \text{10.7}$ &    149 \\
+\VH 2j1b & [200, 300) &   $\text{569} \pm \text{20.9}$ &    $\text{619} \pm \text{36.1}$ &   $\text{2.07} \pm \text{1.44}$ &    $\text{1190} \pm \text{41.8}$ &   1235 \\
+        & [300, 400) &    $\text{56.6} \pm \text{4.26}$ &    $\text{126} \pm \text{12.1}$ &     $\text{0} \pm \text{0}$ &     $\text{183} \pm \text{12.8}$ &    190 \\
+        & [400, $\infty$) &    $\text{4.27} \pm \text{1.06}$ &      $\text{9.3} \pm \text{2.42}$ &     $\text{0} \pm \text{0}$ &      $\text{13.6} \pm \text{2.64}$ &     14 \\
+\VH 2j2b & [200, $\infty$) &    $\text{32.7} \pm \text{3.21}$ &    $\text{132} \pm \text{15.8}$ &     $\text{0} \pm \text{0}$ &     $\text{165} \pm \text{16.1}$ &    164 \\
+\VH 1V & [200, 300) &  $\text{1349} \pm \text{42.9}$ &  $\text{2394} \pm \text{106}$ &   $\text{34.5} \pm \text{5.88}$ &   $\text{3778} \pm \text{114}$ &   4005 \\
+        & [300, 400) &   $\text{169} \pm \text{8.88}$ &    $\text{511} \pm \text{30.4}$ &     $\text{0} \pm \text{0}$ &     $\text{679} \pm \text{31.7}$ &    612 \\
+        & [400, $\infty$) &    $\text{6.34} \pm \text{1.14}$ &     $\text{34.8} \pm \text{5.87}$ &     $\text{0} \pm \text{0}$ &      $\text{41.2} \pm \text{5.98}$ &     50 \\
+        \bottomrule
+    \end{tabular}
+    \caption[Event counts in the signal region after the control region-only fit to data in 2017]{Event counts in the signal region after the control region-only fit to data in 2017.}
+    \label{tab:yields_SR_CR_only_2017}
+\end{table}
+
+% 2018:
+
+\begin{table}[htbp]
+    \small
+    \centering
+    \begin{tabular}{llccccr}
+    \toprule
+    Subcategory & \ptmiss & Lost lepton & \ztonunu & QCD & Total SM & Data \\
+    \midrule
+\ttH 2Boosted & [200, 300) &     $\text{11.2} \pm \text{1.3}$ &   $\text{1.97} \pm \text{1.11}$ &   $\text{2.2} \pm \text{1.48}$ &    $\text{15.4} \pm \text{2.26}$ &     9 \\
+         & [300, 400) &    $\text{3.48} \pm \text{0.51}$ &   $\text{1.25} \pm \text{0.67}$ &  $\text{0.86} \pm \text{0.93}$ &    $\text{5.58} \pm \text{1.26}$ &     7 \\
+         & [400, $\infty$) &     $\text{1.59} \pm \text{0.4}$ &   $\text{1.58} \pm \text{0.54}$ &  $\text{0.45} \pm \text{0.67}$ &    $\text{3.62} \pm \text{0.95}$ &     5 \\
+\ttH 1t1b & [200, 300) &    $\text{52.4} \pm \text{3.22}$ &    $\text{7.5} \pm \text{1.55}$ &  $\text{12.4} \pm \text{3.52}$ &    $\text{72.3} \pm \text{5.02}$ &    74 \\
+         & [300, 400) &    $\text{42.6} \pm \text{3.14}$ &   $\text{8.43} \pm \text{1.29}$ &   $\text{4.83} \pm \text{2.2}$ &    $\text{55.8} \pm \text{4.04}$ &    49 \\
+         & [400, $\infty$) &    $\text{26.1} \pm \text{1.99}$ &   $\text{11.2} \pm \text{2.45}$ &  $\text{2.52} \pm \text{1.59}$ &    $\text{39.8} \pm \text{3.53}$ &    38 \\
+\ttH 1t2b & [200, 300) &    $\text{72.2} \pm \text{4.04}$ &   $\text{7.31} \pm \text{2.21}$ &  $\text{17.9} \pm \text{4.23}$ &    $\text{97.4} \pm \text{6.25}$ &    82 \\
+         & [300, 400) &    $\text{58.8} \pm \text{3.58}$ &    $\text{4.8} \pm \text{1.32}$ &  $\text{6.95} \pm \text{2.64}$ &    $\text{70.5} \pm \text{4.64}$ &    72 \\
+         & [400, 600) &    $\text{27.5} \pm \text{1.96}$ &   $\text{3.67} \pm \text{1.34}$ &  $\text{3.26} \pm \text{1.81}$ &    $\text{34.4} \pm \text{2.98}$ &    42 \\
+         & [600, $\infty$) &    $\text{2.27} \pm \text{0.45}$ &   $\text{3.03} \pm \text{1.25}$ &   $\text{0.36} \pm \text{0.6}$ &    $\text{5.66} \pm \text{1.45}$ &     5 \\
+\ttH 1W1b & [200, 300) &   $\text{523} \pm \text{15.7}$ &   $\text{47.8} \pm \text{9.34}$ &  $\text{36.7} \pm \text{6.06}$ &   $\text{607} \pm \text{19.3}$ &   612 \\
+         & [300, 400) &    $\text{114} \pm \text{4.9}$ &   $\text{15.5} \pm \text{4.11}$ &  $\text{14.3} \pm \text{3.78}$ &   $\text{144} \pm \text{7.43}$ &   149 \\
+         & [400, $\infty$) &    $\text{17.7} \pm \text{1.71}$ &   $\text{6.14} \pm \text{2.15}$ &  $\text{7.45} \pm \text{2.73}$ &    $\text{31.3} \pm \text{3.87}$ &    48 \\
+\ttH 1W2b & [200, 300) &   $\text{430} \pm \text{14.9}$ &   $\text{21.1} \pm \text{5.75}$ &  $\text{30.5} \pm \text{5.52}$ &   $\text{481} \pm \text{16.9}$ &   467 \\
+         & [300, 400) &     $\text{84.2} \pm \text{4.9}$ &   $\text{5.88} \pm \text{2.82}$ &  $\text{11.9} \pm \text{3.44}$ &   $\text{102} \pm \text{6.62}$ &    92 \\
+         & [400, $\infty$) &    $\text{14.1} \pm \text{1.33}$ &   $\text{3.62} \pm \text{1.28}$ &  $\text{6.18} \pm \text{2.49}$ &     $\text{23.9} \pm \text{3.1}$ &    27 \\
+\ttH 5j1b & [200, 300) &  $\text{2043} \pm \text{37.9}$ &  $\text{672} \pm \text{66.6}$ &  $\text{93.0} \pm \text{9.65}$ &  $\text{2808} \pm \text{77.2}$ &  2989 \\
+         & [300, 400) &   $\text{390} \pm \text{14.6}$ &  $\text{283} \pm \text{35.4}$ &  $\text{36.2} \pm \text{6.01}$ &   $\text{709} \pm \text{38.7}$ &   698 \\
+         & [400, $\infty$) &    $\text{82.0} \pm \text{4.81}$ &  $\text{109} \pm \text{20.6}$ &  $\text{18.9} \pm \text{4.34}$ &   $\text{210} \pm \text{21.6}$ &   238 \\
+\ttH 6j1b & [200, 300) &  $\text{1206} \pm \text{27.5}$ &  $\text{291} \pm \text{41.5}$ &  $\text{68.2} \pm \text{8.26}$ &  $\text{1565} \pm \text{50.4}$ &  1574 \\
+         & [300, 400) &   $\text{261} \pm \text{11.1}$ &  $\text{184} \pm \text{31.1}$ &  $\text{26.5} \pm \text{5.15}$ &   $\text{472} \pm \text{33.4}$ &   445 \\
+         & [400, $\infty$) &    $\text{64.4} \pm \text{4.09}$ &  $\text{109} \pm \text{22.7}$ &  $\text{13.8} \pm \text{3.72}$ &   $\text{187} \pm \text{23.3}$ &   188 \\
+\ttH 5j2b & [200, 300) &   $\text{610} \pm \text{18.1}$ &  $\text{151} \pm \text{27.4}$ &  $\text{20.5} \pm \text{4.53}$ &   $\text{782} \pm \text{33.2}$ &   788 \\
+         & [300, 400) &    $\text{82.4} \pm \text{4.97}$ &   $\text{58.9} \pm \text{14.4}$ &  $\text{7.99} \pm \text{2.83}$ &   $\text{149} \pm \text{15.5}$ &   159 \\
+         & [400, $\infty$) &    $\text{16.7} \pm \text{1.94}$ &   $\text{26.4} \pm \text{10.8}$ &  $\text{4.17} \pm \text{2.04}$ &    $\text{47.2} \pm \text{11.1}$ &    45 \\
+\ttH 6j2b & [200, 300) &   $\text{449} \pm \text{15.5}$ &  $\text{119} \pm \text{23.1}$ &  $\text{20.6} \pm \text{4.54}$ &   $\text{589} \pm \text{28.2}$ &   593 \\
+         & [300, 400) &    $\text{86.6} \pm \text{6.25}$ &   $\text{41.3} \pm \text{12.6}$ &  $\text{8.02} \pm \text{2.83}$ &   $\text{136} \pm \text{14.3}$ &   144 \\
+         & [400, $\infty$) &    $\text{19.1} \pm \text{2.19}$ &   $\text{23.8} \pm \text{10.1}$ &  $\text{4.19} \pm \text{2.05}$ &    $\text{47.2} \pm \text{10.5}$ &    47 \\
+        \midrule
+\VH 2j0b & [200, 300) &  $\text{4543} \pm \text{81.3}$ &  $\text{7000} \pm \text{217}$ &  $\text{400} \pm \text{20}$ &  $\text{11943} \pm \text{233}$ &  12086 \\
+        & [300, 400) &   $\text{542} \pm \text{22.1}$ &   $\text{1149} \pm \text{37.6}$ &     $\text{0} \pm \text{0}$ &    $\text{1691} \pm \text{43.6}$ &   1827 \\
+        & [400, $\infty$) &    $\text{65.0} \pm \text{6.19}$ &    $\text{124} \pm \text{10.9}$ &     $\text{0} \pm \text{0}$ &     $\text{189} \pm \text{12.6}$ &    208 \\
+\VH 2j1b & [200, 300) &   $\text{707} \pm \text{23.1}$ &    $\text{685} \pm \text{36.6}$ &   $\text{2.19} \pm \text{1.48}$ &    $\text{1394} \pm \text{43.4}$ &   1519 \\
+        & [300, 400) &    $\text{93.0} \pm \text{6.35}$ &    $\text{132} \pm \text{10.7}$ &     $\text{0} \pm \text{0}$ &     $\text{225} \pm \text{12.5}$ &    236 \\
+        & [400, $\infty$) &    $\text{7.71} \pm \text{1.79}$ &     $\text{17.6} \pm \text{3.28}$ &     $\text{0} \pm \text{0}$ &      $\text{25.3} \pm \text{3.74}$ &     27 \\
+\VH 2j2b & [200, $\infty$) &    $\text{58.1} \pm \text{5.06}$ &    $\text{216} \pm \text{21.9}$ &     $\text{0} \pm \text{0}$ &     $\text{274} \pm \text{22.5}$ &    208 \\
+\VH 1V & [200, 300) &  $\text{1481} \pm \text{37}$ &   $\text{2710} \pm \text{93.8}$ &   $\text{36.4} \pm \text{6.04}$ &   $\text{4227} \pm \text{101}$ &   4815 \\
+        & [300, 400) &   $\text{173} \pm \text{7.24}$ &    $\text{572} \pm \text{26.8}$ &     $\text{0} \pm \text{0}$ &     $\text{746} \pm \text{27.7}$ &    816 \\
+        & [400, $\infty$) &    $\text{6.08} \pm \text{0.95}$ &     $\text{70.7} \pm \text{9.81}$ &     $\text{0} \pm \text{0}$ &      $\text{76.8} \pm \text{9.85}$ &     51 \\
+        \bottomrule
+    \end{tabular}
+    \caption[Event counts in the signal region after the control region-only fit to data in 2018]{Event counts in the signal region after the control region-only fit to data in 2018.}
+    \label{tab:yields_SR_CR_only_2018}
+\end{table}
+
+\clearpage
+
+
+%=========================================================
+
+
+\section{Signal region event counts after the background-only fit}
+\label{sec:yield_tables_SR_B_only_fit}
+
+% 2016:
 
 \begin{table}[htbp]
     \footnotesize
@@ -364,8 +537,10 @@ Event counts in the signal region from the background-only fit to data are tabul
     \bottomrule
     \end{tabular}
     \caption[Event counts in the signal region after the background-only fit to data in 2016]{Event counts in the signal region after the background-only fit to data in 2016.}
-    \label{tab:yields_SR_2016}
+    \label{tab:yields_SR_B_only_2016}
 \end{table}
+
+% 2017:
 
 \begin{table}[htbp]
     \small
@@ -416,8 +591,10 @@ Event counts in the signal region from the background-only fit to data are tabul
        \bottomrule
     \end{tabular}
     \caption[Event counts in the signal region after the background-only fit to data in 2017]{Event counts in the signal region after the background-only fit to data in 2017.}
-    \label{tab:yields_SR_2017}
+    \label{tab:yields_SR_B_only_2017}
 \end{table}
+
+% 2018:
 
 \begin{table}[htbp]
     \small
@@ -468,5 +645,5 @@ Event counts in the signal region from the background-only fit to data are tabul
     \bottomrule
 \end{tabular}
 \caption[Event counts in the signal region after the background-only fit to data in 2018]{Event counts in the signal region after the background-only fit to data in 2018.}
-\label{tab:yields_SR_2018}
+\label{tab:yields_SR_B_only_2018}
 \end{table}

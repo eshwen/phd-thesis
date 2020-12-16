@@ -100,9 +100,11 @@ rm index.php
 for f in $(ls *.pdf); do mv $f "${f#plot_process.category--*}"; done
 for g in $(ls *.pdf); do mv $g "${g%%--*}.pdf"; done
 
-for proc in "ttH" "VH" "ggF" ; do
+for proc in "ttH" "VH" ; do
     mkdir $proc
     mv *${proc}*.{pdf,csv} $proc/
+    mkdir $proc/inputs
+    mv $proc/*.csv $proc/inputs/
 done
 cd -
 ```

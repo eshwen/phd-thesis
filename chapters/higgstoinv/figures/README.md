@@ -13,12 +13,16 @@ This README should be an indicator of how to make some of the plots included in 
   - [Mountain range plots](#mountain-range-plots)
   - [NLO k-factors](#nlo-k-factors)
   - [Photon purity](#photon-purity)
+  - [Rate parameter tables](#rate-parameter-tables)
   - [QCD scale for top processes](#qcd-scale-for-top-processes)
   - [Top pt reweighting](#top-pt-reweighting)
     - [Aesthetic changes to legend](#aesthetic-changes-to-legend)
     - [Plots with theory uncertainties](#plots-with-theory-uncertainties)
     - [Plots with all functions overlaid](#plots-with-all-functions-overlaid)
   - [Trigger efficiencies](#trigger-efficiencies)
+    - [1D plots](#1d-plots)
+    - [2D plots](#2d-plots)
+  - [Yield tables](#yield-tables)
   - [Things to remember when remaking plots](#things-to-remember-when-remaking-plots)
 
 ## `fast-plotter` plots
@@ -141,6 +145,15 @@ The `-c` option in each case removes the "CMS Work in Progress" label from the p
 ## Photon purity
 
 To make the plots that showcase the impurity as a function of photon pt, or the data with the fit and templates overlaid, follow the instructions in `configs/nonVBF_instructions.md` in the chip repo. It should be fairly self-explanatory. For consistency, it's probably a good idea to set the x- and y-axis ranges on all the plots to be the same. In `chip_code/photon_purity_postproc.py`, near the end of the script I can set them with `ax.set_xlim(<low>, <high>)`, etc.
+
+## Rate parameter tables
+
+To make the tables that contain the pre-fit MC, data, and rate parameters from the CR-only fit, run `control_region_rate_param_tables.py` from the chip repo over the pre-fit mountain range df straight out of `esh_fitDiagnostics_to_dfs.py` and rate parameter df from `bkg_sfs_from_pulls.py`, which prints LaTeX tables to the screen that then need a bit of massaging to look nice. For example:
+
+```bash
+python fitting/control_region_rate_param_tables.py fit_plots_2016/tbl_process.region.category.met--tree_prefit-abs_values_ttH_cats.csv fit_plots_2016/rate_Params_2016_ttH.csv
+python fitting/control_region_rate_param_tables.py fit_plots_2016/tbl_process.region.category.met--tree_prefit-abs_values_VH_cats.csv fit_plots_2016/rate_Params_2016_VH.csv
+```
 
 ## QCD scale for top processes
 
@@ -297,6 +310,14 @@ python calculate_trigger_effs_esh_colormesh.py --cms_label -c ../../samples/unsk
 ```
 
 which will make the MET-MHT trigger turn ons in 2D as a function of both MET and MHT, and separately for data and MC. To annotate each cell in the plot with its efficiency, add the argument `-a` above. The styling, etc., can be easily changed in the `plot_2d()` function.
+
+## Yield tables
+
+To make the yield tables of the signal region from the post CR-only fit or post B-only fit, run `yield_tables_from_dfs.py` from the chip repo over the mountain range df straight out of `esh_fitDiagnostics_to_dfs.py`, which prints LaTeX tables to the screen that then need a bit of massaging to look nice. For example:
+
+```bash
+python fitting/yield_tables_from_dfs.py fit_plots_${year}/tbl_process.region.category.met--tree_fit_b-abs_values_{ttH,VH}_cats.csv 
+```
 
 ## Things to remember when remaking plots
 

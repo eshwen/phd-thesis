@@ -356,3 +356,43 @@ Uncertainties are associated with the various methods designed to measure the lu
 \label{subsubsec:htoinv_signal_xs_syst}
 
 There are several sources of uncertainty in the computation of high order cross sections, from both theoretical and experimental sides. As with the nominal cross sections for signal processes, the uncertainties are retrieved from Ref.~\citenum{Cepeda:2019klc}. Every source for every signal process is treated as a separate uncertainty on the normalisation. They are correlated across years as the cross section is constant across them.
+
+
+%=========================================================
+
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{lcccc}
+        \hline
+        Source & Type & Years & Samples & Size (\%) \\\hline
+        Pileup & Normalisation, shape & All, correlated & All & \\
+        \acrshort{nlo} renorm. scale & Normalisation, shape & All, correlated & \acrshort{lo} $\PVec \plusjets$ & \\
+        \acrshort{nlo} fact. scale & Normalisation, shape & All, correlated & \acrshort{lo} $\PVec \plusjets$ & \\
+        \acrshort{nlo} PDF & Normalisation, shape & All, correlated & \acrshort{lo} $\PVec \plusjets$ & \\
+        Trigger efficiency & Normalisation, shape & All, uncorrelated(?) & All & \\
+        QCD renorm. \& fact. scale & Shape & All, correlated & \ttH, \ttbar, $\ttbar X$ & \\
+        Top \pt reweighting & Shape & All, correlated & \ttbar & \\
+        \Pmu ID efficiency & Normalisation & All, correlated & All & \\
+        \Pmu isolation efficiency & Normalisation & All, correlated & All & \\
+        \Pe ID \& isolation efficiency & Normalisation & All, correlated & All & \\
+        \Pe reconstruction efficiency & Normalisation & All, correlated & All & \\
+        \Pphoton ID \& isolation efficiency & Normalisation & All, correlated & All & \\
+        \Ptau ID efficiency & Normalisation & All, correlated & All & \\
+        \Pbottom-tagging & ? & All, correlated & All & \\
+        Boosted object tagging & Normalisation & All, correlated & All & \\
+        \acrshort{ecal} pre-firing & Normalisation & 2016--17, uncorrelated & All & \\
+        \acrshort{jer} and \acrshort{jes} & Normalisation, shape(?) & All, correlated(?) & All & \\
+        Luminosity & Normalisation & All & All & \\
+        Photon purity & Normalisation & All, uncorrelated & \acrshort{qcd} est. from data & \\
+        Signal cross section & Normalisation & All, correlated & Signal & \\\hline
+    \end{tabular}
+    \caption[The experimental uncertainties present in the analysis, the type of uncertainty, and impact on (the \ptmiss distribution/signal strength parameter), along with the years and simulated samples affected]{The experimental uncertainties present in the analysis, the type of uncertainty, and impact on (the \ptmiss distribution/signal strength parameter), along with the years and simulated samples affected.}
+    \label{tab:htoinv_syst_summary}
+\end{table}
+
+% Could split source column into two (source, nuisance parameter/uncertainty) if I want to group things (e.g., luminosity source with x-y factorisation, length scale, beam-beam deflection, etc. nuisance parameters)
+% Type would probably be shape/normalisation (or both)
+% Years would be "all" or the specified years, noting correlations
+% Samples/processes would be, e.g., all, or ttbar, LO V + jets, etc.
+% Size would obviously depend on whether we're considering the effect on the MET distribution or the signal strength parameter. Would estimate in the signal region. And would have to decide whether the sizes are inclusive of category, or whether I have separate entries for each category (e.g., NLO corrections would presumably have larger impact in VH category)

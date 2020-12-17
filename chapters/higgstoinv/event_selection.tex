@@ -27,18 +27,16 @@ The preselection is designed to discriminate between signal and background event
 
 \medskip
 % No indent so it doesn't look weird just after the hanging list
-\noindent{}To ensure orthogonality with the phase space occupied by the \acrshort{vbf} topology, the two leading \glspl{jet} must be within the acceptance of the tracker, and events must fail the following kinematic selection:
+\noindent{}To ensure orthogonality with the phase space occupied by the \acrshort{vbf} topology, the two leading \glspl{jet} must be within the acceptance of the tracker, and events must fail one or more of the following criteria:
 \medskip
 \begin{easylist}[itemize]
     \cutflowlistprops
-    & $\ptjone > \text{80}\GeV$
     & $\ptjtwo > \text{40}\GeV$
     & $\etajone \cdot \etajtwo < \text{0}$
     & $\ptmiss \geq \text{250}\GeV$
     & $\abs{\Delta \eta(\jone, \, \jtwo)} > \text{1.0}$
     & $\mjj > \text{200}\GeV$
     & $\Delta \phi(\jone, \, \jtwo) < \text{1.5}$
-    & $\mindphiAB{\mathrm{j}}{\ptvecmiss} > \text{0.5}$
 \end{easylist}
 
 
@@ -111,7 +109,7 @@ During the 2018 data taking period, the HEM issue (see Chpt.~\ref{subsec:htoinv_
 
 \noindent{}Events in simulation that met the same criteria were instead weighted by the integrated luminosity from 2018 that was not affected by the issue (i.e., 21.1\fbinv) rather than the entire year. It is applicable under the assumption that both data and simulation are distributed comparably in the $\eta-\phi$ portions of the detector when the issue was not present. Given geometric variables agree very well between data and simulation, and corrections are implemented to further synchronise them, the assumption is valid.
 
-The effect of the above treatment can be seen in Figs.~\ref{fig:htoinv_hem_issue_met_phi} and \ref{fig:htoinv_hem_issue_lepton_eta}.
+The effect of the HEM issue can be seen in Fig.~\ref{fig:htoinv_hem_issue_met_phi}. The $\phi(\ptvecmiss)$ distribution is shown in the loose \omegaTilde sideband since it kinematically resembles the signal region, and the data--simulation discrepancy can be removed while still blind in said region.
 
 \begin{figure}[htbp]
     \centering
@@ -124,23 +122,6 @@ The effect of the above treatment can be seen in Figs.~\ref{fig:htoinv_hem_issue
         \includegraphics[width=\textwidth]{figures/hem_issue/sideband_4/met_phi/met_phi_VH_before_annotated.pdf}
         \caption{\VH inclusive category}
     \end{subfigure}
-    \caption[The azimuthal angle of the \ptvecmiss in the inclusive \ttH and \VH categories before and after applying the selections designed to mitigate the HEM issue in 2018]{The azimuthal angle of the \ptvecmiss in the inclusive \ttH and \VH categories before and after applying the selections designed to mitigate the HEM issue in 2018. The loose \omegaTilde \gls{SB} is used to demonstrate the effect since it kinematically resembles the signal region, and the data--simulation discrepancy can be removed while still blind in said region. A red box encloses the sector that is removed by the selection applied in the signal region and \glspl{SB}.}
+    \caption[The azimuthal angle of the \ptvecmiss in the inclusive \ttH and \VH categories before and after applying the selections designed to mitigate the HEM issue in 2018]{The azimuthal angle of the \ptvecmiss in the inclusive \ttH and \VH categories before and after applying the selections designed to mitigate the HEM issue in 2018. The loose \omegaTilde \gls{SB} is used to demonstrate the effect. A red box encloses the sector that is removed by the selection applied in the signal region and \glspl{SB}.}
     \label{fig:htoinv_hem_issue_met_phi}
 \end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \begin{subfigure}[b]{0.34\textwidth}
-        \includegraphics[width=\textwidth]{figures/hem_issue/region_3/leadLepton_eta/leadLepton_eta_VH_before.pdf}
-        \caption{$\eta_{\Pe}$ before cut}
-    \end{subfigure}
-    \hspace{0.05\textwidth}
-    \begin{subfigure}[b]{0.34\textwidth}
-        \includegraphics[width=\textwidth]{figures/hem_issue/region_3/leadLepton_eta/leadLepton_eta_VH_after.pdf}
-        \caption{$\eta_{\Pe}$ after cut}
-    \end{subfigure}
-    \caption[The pseudorapidity of the electron in the \VH inclusive category of the \singleEleCr \gls{CR} before applying the selection designed to mitigate the HEM issue in 2018]{The pseudorapidity of the electron in the \VH inclusive category of the \singleEleCr \gls{CR} before applying the selection designed to mitigate the HEM issue in 2018.}
-    \label{fig:htoinv_hem_issue_lepton_eta}
-\end{figure}
-
-% Figures from 3rd September, 2020

@@ -1,7 +1,9 @@
 \section{Corrections and systematic uncertainties for simulation}
 \label{sec:htoinv_mc_corrections}
 
-In order for simulated events, particularly for background processes, to resemble \acrshort{lhc} data as closely as possible, many corrections and weights are applied. These are discussed in more detail in the subsequent sections. All weights and associated systematic uncertainties are applied to all samples for all data taking years, unless stated otherwise. A final event weight $w_{\mathrm{event}}$ is the product of the weights from all of the individual sources $i$ that provide one:
+In order for simulated events, particularly for background processes, to resemble \acrshort{lhc} data as closely as possible, many corrections are applied. These are discussed in more detail in the subsequent sections. All weights and associated systematic uncertainties are applied to all samples for all data taking years, unless stated otherwise, and summarised in Tab.~\ref{tab:htoinv_syst_summary}.
+
+A final event weight $w_{\mathrm{event}}$ is the product of the weights from all of the individual sources $i$ that provide one:
 \begin{equation}
     w_{\mathrm{event}} = \prod_i w_i
     \label{eq:event_weight}
@@ -355,7 +357,24 @@ Uncertainties are associated with the various methods designed to measure the lu
 \subsubsection{Cross section for signal processes}
 \label{subsubsec:htoinv_signal_xs_syst}
 
-There are several sources of uncertainty in the computation of high order cross sections, from both theoretical and experimental sides. As with the nominal cross sections for signal processes, the uncertainties are retrieved from Ref.~\citenum{Cepeda:2019klc}. Every source for every signal process is treated as a separate uncertainty on the normalisation. They are correlated across years as the cross section is constant across them.
+There are several sources of uncertainty in the computation of high order cross sections, from both theoretical and experimental sides. As with the nominal cross sections for signal processes, the uncertainties are retrieved from Ref.~\citenum{Cepeda:2019klc}. Each source for every signal process is treated as a separate uncertainty on the normalisation. They are correlated across years as the cross sections are constant. Nominal values of the cross sections at \comruntwo are tabulated in Tab.~\ref{tab:htoinv_signal_xsecs}. A summary of the uncertainties are presented in Tab.~\ref{tab:htoinv_signal_xs_systs}.
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{lcc}
+        \toprule
+        Signal & $\delta\text{(scale)}$ (\%) & $\delta\text{(PDF} + \alpha_{\mathrm{S}}\text{)}$ (\%) \\\midrule
+        \ttH & $+\text{6.0}$, $-\text{9.2}$ & $\pm \text{3.5}$ \\
+        \WplusH & $+\text{0.74}$, $-\text{0.73}$ & $\pm \text{1.79}$ \\
+        \WminusH & $+\text{0.59}$, $-\text{0.63}$ & $\pm \text{2.03}$ \\
+        $\HepProcess{\pp \to \ZH}$ & $+\text{3.50}$, $-\text{2.68}$ & $\pm \text{1.65}$ \\
+        $\HepProcess{\Pgluon\Pgluon \to \ZH}$ & $+\text{2.49}$, $-\text{1.88}$ & $\pm \text{4.37}$ \\
+        VBF & $+\text{0.43}$, $-\text{0.33}$ & $\pm \text{2.1}$ \\
+        \bottomrule
+    \end{tabular}
+    \caption[Systematic uncertainties on the cross section of the simulated \higgstoinv signal samples]{Systematic uncertainties on the cross section of the simulated \higgstoinv signal samples. Values obtained from Ref.~\citenum{Cepeda:2019klc}.}
+    \label{tab:htoinv_signal_xs_systs}
+\end{table}
 
 
 %=========================================================
@@ -364,13 +383,13 @@ There are several sources of uncertainty in the computation of high order cross 
 \begin{table}[htbp]
     \centering
     \begin{tabular}{lcccc}
-        \hline
-        Source & Type & Years & Samples & Size (\%) \\\hline
+        \toprule
+        Source & Type & Years & Samples & Size (\%) \\\midrule
         Pileup & Normalisation, shape & All, correlated & All & \\
         \acrshort{nlo} renorm. scale & Normalisation, shape & All, correlated & \acrshort{lo} $\PVec \plusjets$ & \\
         \acrshort{nlo} fact. scale & Normalisation, shape & All, correlated & \acrshort{lo} $\PVec \plusjets$ & \\
         \acrshort{nlo} PDF & Normalisation, shape & All, correlated & \acrshort{lo} $\PVec \plusjets$ & \\
-        Trigger efficiency & Normalisation, shape & All, uncorrelated(?) & All & \\
+        Trigger efficiency & Normalisation, shape & All, uncorrelated(?) & All & 1--2\,\% \\
         QCD renorm. \& fact. scale & Shape & All, correlated & \ttH, \ttbar, $\ttbar X$ & \\
         Top \pt reweighting & Shape & All, correlated & \ttbar & \\
         \Pmu ID efficiency & Normalisation & All, correlated & All & \\
@@ -385,7 +404,8 @@ There are several sources of uncertainty in the computation of high order cross 
         \acrshort{jer} and \acrshort{jes} & Normalisation, shape(?) & All, correlated(?) & All & \\
         Luminosity & Normalisation & All & All & \\
         Photon purity & Normalisation & All, uncorrelated & \acrshort{qcd} est. from data & \\
-        Signal cross section & Normalisation & All, correlated & Signal & \\\hline
+        Signal cross section & Normalisation & All, correlated & Signal & 0.5--9\,\% \\
+        \bottomrule
     \end{tabular}
     \caption[The experimental uncertainties present in the analysis, the type of uncertainty, and impact on (the \ptmiss distribution/signal strength parameter), along with the years and simulated samples affected]{The experimental uncertainties present in the analysis, the type of uncertainty, and impact on (the \ptmiss distribution/signal strength parameter), along with the years and simulated samples affected.}
     \label{tab:htoinv_syst_summary}

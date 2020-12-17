@@ -36,7 +36,7 @@ While the statistical uncertainty for the number of events in data is simply the
 
 Given the modelling of the \acrlong{l1} and \acrlong{hlt} systems in simulation is only an approximation of their behaviour with data, corrections must be made to unite them.
 
-A dedicated \gls{CR} is formed to assure orthogonality with the signal region and avoid unblinding of data, but with a similar kinematic selection to the analysis for accuracy in our phase space. Events are selected in data from the primary dataset consisting of muon-based triggers, and in simulation from the \wtolnupjets process at \acrshort{lo}. Analysed events consist of these containing a single, tightly-isolated muon with $\pt > \text{30}\GeV$ that triggers the \acrshort{hlt} path for an isolated muon with $\pt > \text{27}\GeV$.\footnote{Why exactly do we use single muon events. Is it the high efficiency from the muon subsystem? Or that they won't bias the METMHT trigger efficiencies, or something?} An offline selection is then applied to keep those with similar kinematic properties to those in our signal region:
+A dedicated \gls{CR} is formed to assure orthogonality with the signal region and avoid unblinding of data, but with a similar kinematic selection to the analysis for accuracy in our phase space. Events are selected in data from the primary dataset consisting of muon-based triggers, and in simulation from the \wtolnupjets process at \acrshort{lo}. Analysed events consist of these containing a single, tightly-isolated muon with $\pt > \text{30}\GeV$ that triggers the \acrshort{hlt} path for an isolated muon with $\pt > \text{27}\GeV$. This is to avoid biasing the efficiencies of the triggers defining the signal region. An offline selection is then applied to keep those with similar kinematic properties to those in our signal region:
 
 \medskip
 \begin{easylist}[itemize]
@@ -91,7 +91,7 @@ Uncertainties are estimated using the Clopper-Pearson method~\cite{10.1093/biome
 
 \Gls{pileup} interactions at the \acrshort{lhc} are frequent (see Chpt.~\ref{subsec:pileup}) and must be modelled appropriately in simulation. Simulated samples are generated with a certain distribution of the number of \gls{pileup} interactions which usually does not match the data recorded by \acrshort{cms}. This is due to changing conditions in the beam over a period of data taking. In order to make them comparable, the simulated events are reweighted; in this context it is known as \emph{\gls{pileup} reweighting}. \ROOT files containing histograms of the number of \gls{pileup} interactions from short runs in the \acrshort{lhc} are available centrally and are used as the reference for which to reweight the simulated events.
 
-Simulated events are nominally reweighted according to data, where the inelastic $\pp$ cross section is measured to be 69.2\,mb. An uncertainty of $\pm \text{4.6}$\,\% in the measurement is used to calculate the systematic uncertainty on this weight. The pileup distributions, and therefore the weights, are different for each data taking year. However, the inelastic cross section and associated uncertainty are consistent for the entirety of Run-2.
+Simulated events are nominally reweighted according to data, where the inelastic $\pp$ cross section is measured to be 69.2\,mb. An uncertainty of $\pm \text{4.6}$\,\% in the measurement is used to calculate the systematic uncertainty on this weight. These were found to be a 1--2\,\% effect in the signal and \glspl{CR}. The pileup distributions, and therefore the weights, are different for each data taking year. However, the inelastic cross section and associated uncertainty are consistent for the entirety of Run-2.
 
 % https://github.com/cms-nanoAOD/nanoAOD-tools/blob/048a828e1d7f5ac3346e2f5e7eafba2570e84bc4/python/postprocessing/modules/common/puWeightProducer.py for implementation
 
@@ -117,7 +117,9 @@ Separate \acrshort{qcd} and electroweak corrections are applied to \acrshort{qcd
 
 \medskip
 
-\noindent{}where $\pt^{\PVec}$ is the generator-level boson \pt, and $\HT^{\mathrm{Gen}}$ is the scalar sum of generator-level \gls{jet} \pt. The final selection in the list mimics the $\mht/\ptmiss$ cut in Chpt.~\ref{subsec:htoinv_preselection}. The $k$-factors are binned in two dimensions, $\pt^{\PVec}$ and $\ptjone$. Uncertainties for the \acrshort{qcd} renormalisation scale, factorisation scale, and in the parton distribution function are treated as individual, uncorrelated sources. The same values for the nominal $k$-factors and uncertainties are used for each data taking year in Run-2. Distributions of the \acrshort{nlo} \acrshort{qcd} $k$-factors are presented in Fig.~\ref{fig:htoinv_nlo_k_factors_qcd}.
+\noindent{}where $\pt^{\PVec}$ is the generator-level boson \pt, and $\HT^{\mathrm{Gen}}$ is the scalar sum of generator-level \gls{jet} \pt. The final selection in the list mimics the $\mht/\ptmiss$ cut in Chpt.~\ref{subsec:htoinv_preselection}. The $k$-factors are binned in two dimensions, $\pt^{\PVec}$ and $\ptjone$.
+
+Uncertainties for the \acrshort{qcd} renormalisation scale, factorisation scale, and in the parton distribution function are treated as individual, uncorrelated sources. The same values for the nominal $k$-factors and uncertainties are used for each data taking year in Run-2. The impact of the renormalisation scale uncertainty was approximately 0--5\,\% on the yields, while the factorisation and PDF scales had effects of 1--10\,\% and up to 15\,\%, respectively. Distributions of the \acrshort{nlo} \acrshort{qcd} $k$-factors are presented in Fig.~\ref{fig:htoinv_nlo_k_factors_qcd}.
 
 \begin{figure}[htbp]
     \centering
@@ -190,16 +192,8 @@ These are computed individually for each decay and data taking year. The envelop
 
 \begin{figure}[htbp]
     \centering
-    \begin{subfigure}[b]{0.34\textwidth}
-        \includegraphics[width=\textwidth]{figures/qcd_scale_top_procs/ttbar/ratio_vars_SR_ttH_boosted.pdf}
-        \caption{\ttH boosted}
-    \end{subfigure}
-    \hspace{0.05\textwidth}
-    \begin{subfigure}[b]{0.34\textwidth}
-        \includegraphics[width=\textwidth]{figures/qcd_scale_top_procs/ttbar/ratio_vars_SR_ttH_resolved.pdf}
-        \caption{\ttH resolved}
-    \end{subfigure}
-    \caption[The deviations relative to the nominal weight of the combinations of QCD renormalisation and factorisation scale variations. They are presented as a function of \ptmiss in the \ttH categories for the \ttbar samples]{The deviations relative to the nominal weight of the combinations of \acrshort{qcd} renormalisation and factorisation scale variations. They are presented as a function of \ptmiss in the \ttH categories for the \ttbar samples. Events are from the signal region in the 2017 dataset after the analysis-level selection.}
+    \includegraphics[width=0.5\textwidth]{figures/qcd_scale_top_procs/ttbar/ratio_vars_SR_ttH.pdf}
+    \caption[The deviations relative to the nominal weight of the combinations of QCD renormalisation and factorisation scale variations. They are presented as a function of \ptmiss inclusive over the \ttH categories for the \ttbar samples]{The deviations relative to the nominal weight of the combinations of \acrshort{qcd} renormalisation and factorisation scale variations. They are presented as a function of \ptmiss inclusive over the \ttH categories for the \ttbar samples. Events are from the signal region in the 2017 dataset after the analysis-level selection.}
     \label{fig:htoinv_ttbar_scale}
 \end{figure}
 
@@ -219,9 +213,9 @@ The top quark \pt distribution has been shown to be harder in simulation at \acr
     f(\pt) = \exp(a + b \cdot \pt + c \cdot \pt^2)
 \end{equation}
 
-where the coefficients are $a = \text{1.614} \times \text{10}^{-2}$, $b = -\text{1.966} \times \text{10}^{-4}$, and $c -\text{1.454} \times \text{10}^{-8}$. For a top or antitop quark, the scale factor is given by the value of $f$ for the particle's generator-level \pt. The event weight is then the square root of the product of the top and antitop scale factors.
+where the coefficients are $a = \text{1.614} \times \text{10}^{-2}$, $b = -\text{1.966} \times \text{10}^{-4}$, and $c = -\text{1.454} \times \text{10}^{-8}$. For a top or antitop quark, the scale factor is given by the value of $f$ for the particle's generator-level \pt. The event weight is then the square root of the product of the top and antitop scale factors.
 
-The uncertainties are acquired from the fit itself over theoretical uncertainties inherent in \acrshort{mc} calculations. This was to avoid double counting with respect to the renormalisation and factorisation scale uncertainty in Chpt.~\ref{subsubsec:ttbar_renorm_fact_scale_uncert}, as overlap would be present and otherwise difficult to disentangle. For each parameter in the fit, the upward and downward variations were estimated. The fit function was then recalculated, fixing the parameter of interest to the variation. Providing upward and downward functions, the systematic uncertainty attributed to the parameter is simply the event weight calculated with these functions over the nominal. Separate, uncorrelated uncertainties were estimated for each parameter in the fit. The nominal function and associated variations are shown in Fig.~\ref{fig:top_pt_reweighting}.
+The uncertainties are acquired from the fit itself over theoretical uncertainties inherent in \acrshort{mc} calculations. This was to avoid double counting with respect to the renormalisation and factorisation scale uncertainty in Chpt.~\ref{subsubsec:ttbar_renorm_fact_scale_uncert}, as overlap would be present and otherwise difficult to disentangle. For each parameter in the fit, the upward and downward variations were estimated. The fit function was then recalculated, fixing the parameter of interest to the variation. Providing upward and downward functions, the systematic uncertainty attributed to the parameter is simply the event weight calculated with these functions over the nominal. Separate, uncorrelated uncertainties were estimated for each parameter in the fit, and were each found to have a $< \text{2\,\%}$ impact on the event yields. The nominal function and associated variations are shown in Fig.~\ref{fig:top_pt_reweighting}.
 
 \begin{figure}[htbp]
     \centering
@@ -284,7 +278,7 @@ Data--simulation scale factors are calculated for each \gls{bjet} as tagged by t
 \subsubsection{Boosted jets tagged by the \texorpdfstring{\deepakeight}{DeepAK8} algorithm}
 \label{subsubsec:htoinv_deepak8_sfs}
 
-In a similar fashion to the section above, objects classified by the \deepakeight algorithm are given scale factors according to the data/\acrshort{mc} efficiencies as a function of AK8 \gls{jet} \pt. Scale factors are derived separately for \glspl{jet} tagged as originating from a top quark and \PVec boson. Systematic uncertainties associated with the scale factors on the order of 1--10\,\% are also derived separately, according to Sec.~8.1 of Ref.~\citenum{CMS-PAS-JME-18-002}.
+In a similar fashion to the section above, objects classified by the \deepakeight algorithm are given scale factors according to the data/\acrshort{mc} efficiencies as a function of AK8 \gls{jet} \pt. Scale factors are derived separately for \glspl{jet} tagged as originating from a top quark and \PVec boson. Systematic variations associated with the scale factors on the order of 1--10\,\% are also derived separately, according to Sec.~8.1 of Ref.~\citenum{CMS-PAS-JME-18-002}.
 
 
 %=========================================================
@@ -306,7 +300,7 @@ Derived by members of the Collaboration, the nominal weight applied to events in
     \label{eq:prefiring_weight}
 \end{equation}
 
-where $\epsilon$ is the probability for an object to pre-fire as a function of its $\eta$ and electromagnetic \pt (simply \pt for photons, and \pt multiplied by the sum of the charged and neutral electromagnetic energy fractions for \glspl{jet}). The systematic uncertainty in the event weight is found by taking the uncertainty on $\epsilon$, defined the maximum value from either $\text{0.2}\epsilon$ or the relative statistical uncertainty in the $(\eta, \pt^{\mathrm{EM}})$ bin of the pre-firing map from which $\epsilon$ is extracted. Pre-firing probabilities are assumed to be uncorrelated between photons and jets.
+where $\epsilon$ is the probability for an object to pre-fire as a function of its $\eta$ and electromagnetic \pt (simply \pt for photons, and \pt multiplied by the sum of the charged and neutral electromagnetic energy fractions for \glspl{jet}). Pre-firing probabilities are assumed to be uncorrelated between photons and jets. The systematic uncertainty in the event weight is found by taking the uncertainty on $\epsilon$, defined the maximum value from either $\text{0.2}\epsilon$ or the relative statistical uncertainty in the $(\eta, \pt^{\mathrm{EM}})$ bin of the pre-firing map from which $\epsilon$ is extracted. It was found to impact the yields in the analysis by $< \text{1\,\%}$.
 
 % Pre-firing: https://twiki.cern.ch/twiki/bin/viewauth/CMS/L1ECALPrefiringWeightRecipe, https://indico.cern.ch/event/764279/
 
@@ -385,26 +379,25 @@ There are several sources of uncertainty in the computation of high order cross 
     \begin{tabular}{lcccc}
         \toprule
         Source & Type & Years & Samples & Size (\%) \\\midrule
-        Pileup & Normalisation, shape & All, correlated & All & \\
-        \acrshort{nlo} \muR & Normalisation, shape & All, correlated & \acrshort{lo} $\PVec \plusjets$ & \\
-        \acrshort{nlo} \muF & Normalisation, shape & All, correlated & \acrshort{lo} $\PVec \plusjets$ & \\
-        \acrshort{nlo} PDF & Normalisation, shape & All, correlated & \acrshort{lo} $\PVec \plusjets$ & \\
-        Trigger efficiency & Normalisation, shape & All, correlated & All & 1--2\,\% \\
-        QCD \muR \& \muF & Shape & All, correlated & \ttH, \ttbar, $\ttbar X$ & \\
-        Top \pt & Shape & All, correlated & \ttbar & \\
-        \Pmu ID efficiency & Normalisation & All, correlated & All & \\
-        \Pmu isolation efficiency & Normalisation & All, correlated & All & \\
-        \Pe ID \& isolation efficiency & Normalisation & All, correlated & All & \\
-        \Pe reconstruction efficiency & Normalisation & All, correlated & All & \\
-        \Pphoton ID \& isolation efficiency & Normalisation & All, correlated & All & \\
-        \Ptau ID efficiency & Normalisation & All, correlated & All & \\
-        \Pbottom-tagging & Normalisation & All, correlated & All & \\
-        \deepakeight tagging & Normalisation & All, correlated & All & \\
-        \acrshort{ecal} pre-firing & Normalisation & 2016--17, uncorrelated & All & \\
-        \acrshort{jer} & Normalisation & All, correlated & All & 2 \\
-        \acrshort{jes} & Normalisation & All, correlated & All & 3 \\
+        Pileup & Normalisation, shape & All, correlated & All & 1--2 \\
+        \acrshort{nlo} \muR & Normalisation, shape & All, correlated & \acrshort{lo} $\PVec \plusjets$ & 0--5 \\
+        \acrshort{nlo} \muF & Normalisation, shape & All, correlated & \acrshort{lo} $\PVec \plusjets$ & 1--10 \\
+        \acrshort{nlo} PDF & Normalisation, shape & All, correlated & \acrshort{lo} $\PVec \plusjets$ & 2--20 \\
+        Trigger efficiency & Normalisation, shape & All, correlated & All & 1--2 \\
+        QCD \muR \& \muF & Shape & All, correlated & \ttH, \ttbar, $\ttbar X$ & 0--10 \\
+        Top \pt & Shape & All, correlated & \ttbar & $< \text{2\,\%}$ \\
+        Muon ID & Normalisation & All, correlated & All & $< \text{1}$ \\
+        Muon isolation & Normalisation & All, correlated & All & 1 \\
+        Electron ID \& isolation & Normalisation & All, correlated & All & 1--5 \\
+        Electron reconstruction & Normalisation & All, correlated & All & 1--5 \\
+        Photon ID \& isolation & Normalisation & All, correlated & All & 1--5 \\
+        \Pbottom-tagging with \deepcsv & Normalisation & All, correlated & All & $< \text{5}$ \\
+        \deepakeight tagging & Normalisation & All, correlated & All & 1--10 \\
+        \acrshort{ecal} pre-firing & Normalisation & 2016--17, uncorrelated & All & $< \text{1}$ \\
+        \acrlong{jer} & Normalisation & All, correlated & All & 2 \\
+        \acrlong{jes} & Normalisation & All, correlated & All & 3 \\
         Luminosity & Normalisation & All & All & 2--3 \\
-        Photon purity & Normalisation & All, uncorrelated & \acrshort{qcd} est. from data & 25 \\
+        Photon purity & Normalisation & All, uncorrelated & \acrshort{qcd} in \singlePhotonCr CR & 25 \\
         \acrshort{qcd} prediction & Normalisation & All, uncorrelated & \acrshort{qcd} in signal region & 50 \\
         Signal cross section & Normalisation & All, correlated & Signal & 0.5--9 \\
         \bottomrule

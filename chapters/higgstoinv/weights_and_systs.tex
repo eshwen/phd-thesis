@@ -306,7 +306,7 @@ Derived by members of the Collaboration, the nominal weight applied to events in
     \label{eq:prefiring_weight}
 \end{equation}
 
-where $\epsilon$ is the probability for an object to pre-fire as a function of its $\eta$ and electromagnetic \pt (simply \pt for photons, and \pt multiplied by the sum of the charged and neutral electromagnetic energy fractions for \glspl{jet}). The systematic uncertainty in the event weight is found by taking the uncertainty on $\epsilon$: the maximum of $\text{0.2}\epsilon$ and the statistical uncertainty in the $(\eta, \pt^{\mathrm{EM}})$ bin of the pre-firing map from which $\epsilon$ is extracted. Pre-firing probabilities are assumed to be uncorrelated between photons and jets.
+where $\epsilon$ is the probability for an object to pre-fire as a function of its $\eta$ and electromagnetic \pt (simply \pt for photons, and \pt multiplied by the sum of the charged and neutral electromagnetic energy fractions for \glspl{jet}). The systematic uncertainty in the event weight is found by taking the uncertainty on $\epsilon$, defined the maximum value from either $\text{0.2}\epsilon$ or the relative statistical uncertainty in the $(\eta, \pt^{\mathrm{EM}})$ bin of the pre-firing map from which $\epsilon$ is extracted. Pre-firing probabilities are assumed to be uncorrelated between photons and jets.
 
 % Pre-firing: https://twiki.cern.ch/twiki/bin/viewauth/CMS/L1ECALPrefiringWeightRecipe, https://indico.cern.ch/event/764279/
 
@@ -380,36 +380,38 @@ There are several sources of uncertainty in the computation of high order cross 
 %=========================================================
 
 
-\begin{table}[htbp]
+\begin{sidewaystable}[htbp]
     \centering
     \begin{tabular}{lcccc}
         \toprule
         Source & Type & Years & Samples & Size (\%) \\\midrule
         Pileup & Normalisation, shape & All, correlated & All & \\
-        \acrshort{nlo} renorm. scale & Normalisation, shape & All, correlated & \acrshort{lo} $\PVec \plusjets$ & \\
-        \acrshort{nlo} fact. scale & Normalisation, shape & All, correlated & \acrshort{lo} $\PVec \plusjets$ & \\
+        \acrshort{nlo} \muR & Normalisation, shape & All, correlated & \acrshort{lo} $\PVec \plusjets$ & \\
+        \acrshort{nlo} \muF & Normalisation, shape & All, correlated & \acrshort{lo} $\PVec \plusjets$ & \\
         \acrshort{nlo} PDF & Normalisation, shape & All, correlated & \acrshort{lo} $\PVec \plusjets$ & \\
-        Trigger efficiency & Normalisation, shape & All, uncorrelated(?) & All & 1--2\,\% \\
-        QCD renorm. \& fact. scale & Shape & All, correlated & \ttH, \ttbar, $\ttbar X$ & \\
-        Top \pt reweighting & Shape & All, correlated & \ttbar & \\
+        Trigger efficiency & Normalisation, shape & All, correlated & All & 1--2\,\% \\
+        QCD \muR \& \muF & Shape & All, correlated & \ttH, \ttbar, $\ttbar X$ & \\
+        Top \pt & Shape & All, correlated & \ttbar & \\
         \Pmu ID efficiency & Normalisation & All, correlated & All & \\
         \Pmu isolation efficiency & Normalisation & All, correlated & All & \\
         \Pe ID \& isolation efficiency & Normalisation & All, correlated & All & \\
         \Pe reconstruction efficiency & Normalisation & All, correlated & All & \\
         \Pphoton ID \& isolation efficiency & Normalisation & All, correlated & All & \\
         \Ptau ID efficiency & Normalisation & All, correlated & All & \\
-        \Pbottom-tagging & ? & All, correlated & All & \\
-        Boosted object tagging & Normalisation & All, correlated & All & \\
+        \Pbottom-tagging & Normalisation & All, correlated & All & \\
+        \deepakeight tagging & Normalisation & All, correlated & All & \\
         \acrshort{ecal} pre-firing & Normalisation & 2016--17, uncorrelated & All & \\
-        \acrshort{jer} and \acrshort{jes} & Normalisation, shape(?) & All, correlated(?) & All & \\
-        Luminosity & Normalisation & All & All & \\
-        Photon purity & Normalisation & All, uncorrelated & \acrshort{qcd} est. from data & \\
-        Signal cross section & Normalisation & All, correlated & Signal & 0.5--9\,\% \\
+        \acrshort{jer} & Normalisation & All, correlated & All & 2 \\
+        \acrshort{jes} & Normalisation & All, correlated & All & 3 \\
+        Luminosity & Normalisation & All & All & 2--3 \\
+        Photon purity & Normalisation & All, uncorrelated & \acrshort{qcd} est. from data & 25 \\
+        \acrshort{qcd} prediction & Normalisation & All, uncorrelated & \acrshort{qcd} in signal region & 50 \\
+        Signal cross section & Normalisation & All, correlated & Signal & 0.5--9 \\
         \bottomrule
     \end{tabular}
-    \caption[The experimental uncertainties present in the analysis, the type of uncertainty, and impact on (the \ptmiss distribution/signal strength parameter), along with the years and simulated samples affected]{The experimental uncertainties present in the analysis, the type of uncertainty, and impact on (the \ptmiss distribution/signal strength parameter), along with the years and simulated samples affected.}
+    \caption[The experimental uncertainties present in the analysis with the applicable samples and impact on the corresponding event counts]{The experimental uncertainties present in the analysis with the applicable samples and impact on the corresponding event counts.}
     \label{tab:htoinv_syst_summary}
-\end{table}
+\end{sidewaystable}
 
 % Could split source column into two (source, nuisance parameter/uncertainty) if I want to group things (e.g., luminosity source with x-y factorisation, length scale, beam-beam deflection, etc. nuisance parameters)
 % Type would probably be shape/normalisation (or both)

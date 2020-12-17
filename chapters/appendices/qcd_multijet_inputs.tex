@@ -1,0 +1,164 @@
+\section{Inputs to the QCD multijet prediction}
+\label{sec:htoinv_qcd_inputs}
+
+% 2016:
+
+\begin{table}[htbp]
+    \centering
+    \scriptsize
+    \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}llclcccr}
+    \toprule
+    Category & \ptmiss & \catFraction & \metFraction & $N_{\mathrm{data}}$ & $N_{\mathrm{MC}}^{\mathrm{non-QCD}}$ & $\transfac_{\mathrm{QCD}}$ & $N_{\mathrm{pred.}}^{\mathrm{QCD}}$ \\
+    \midrule
+    \ttH 2Boosted & [200, 300) & \multirow{3}{*}{0.006} & 0.647 & \multirow{28}{*}{7200} & \multirow{28}{*}{3426} & \multirow{28}{*}{0.0698} &  $\text{1.03} \pm \text{1.01}$ \\
+    & [300, 400) & & 0.238 & & & & $\text{0.38} \pm \text{0.62}$ \\
+    & [400, $\infty$) & & 0.115 & & & & $\text{0.18} \pm \text{0.43}$ \\\cline{2-4}
+    \ttH 1t1b & [200, 300) & \multirow{3}{*}{0.042} & 0.647 & & & & $\text{7.11} \pm \text{2.67}$ \\
+    & [300, 400) & & 0.238 & & & & $\text{2.62} \pm \text{1.62}$ \\
+    & [400, $\infty$) & & 0.115 & & & & $\text{1.27} \pm \text{1.13}$ \\\cline{2-4}
+\ttH 1t2b & [200, 300) & \multirow{4}{*}{0.055} & 0.647 & & & & $\text{9.42} \pm \text{3.07}$ \\
+    & [300, 400) & & 0.238 & & & & $\text{3.47} \pm \text{1.86}$ \\
+    & [400, 600) & & 0.104 & & &  & $\text{1.51} \pm \text{1.23}$ \\
+    & [600, $\infty$) & & 0.012 & & & & $\text{0.17} \pm \text{0.41}$ \\\cline{2-4}
+\ttH 1W1b & [200, 300) & \multirow{3}{*}{0.126} & 0.647 & & & & $\text{21.6} \pm \text{4.64}$ \\
+    & [300, 400) & & 0.238 & & & & $\text{7.94} \pm \text{2.82}$ \\
+    & [400, $\infty$) & & 0.115 & & & & $\text{3.84} \pm \text{1.96}$ \\\cline{2-4}
+\ttH 1W2b & [200, 300) & \multirow{3}{*}{0.084} & 0.647 & & & & $\text{14.4} \pm \text{3.8}$ \\
+    & [300, 400) & & 0.238 & & & & $\text{5.31} \pm \text{2.31}$ \\
+    & [400, $\infty$) & & 0.115 & & & & $\text{2.57} \pm \text{1.6}$ \\\cline{2-4}
+\ttH 5j1b & [200, 300) & \multirow{3}{*}{0.319} & 0.647 & & & & $\text{54.5} \pm \text{7.38}$ \\
+    & [300, 400) & & 0.238 & & & & $\text{20.1} \pm \text{4.48}$ \\
+    & [400, $\infty$) & & 0.115 & & & & $\text{9.69} \pm \text{3.11}$ \\\cline{2-4}
+\ttH 6j1b & [200, 300) & \multirow{3}{*}{0.243} & 0.647 & & & & $\text{41.6} \pm \text{6.45}$ \\
+    & [300, 400) & & 0.238 & & & & $\text{15.3} \pm \text{3.91}$ \\
+    & [400, $\infty$) & & 0.115 & & & & $\text{7.4} \pm \text{2.72}$ \\\cline{2-4}
+\ttH 5j2b & [200, 300) & \multirow{3}{*}{0.061} & 0.647 & & & & $\text{10.4} \pm \text{3.23}$ \\
+    & [300, 400) & & 0.238 & & & & $\text{3.83} \pm \text{1.96}$ \\
+    & [400, $\infty$) & & 0.115 & & & & $\text{1.85} \pm \text{1.36}$ \\\cline{2-4}
+\ttH 6j2b & [200, 300) & \multirow{3}{*}{0.064} & 0.647 & & & & $\text{10.9} \pm \text{3.3}$ \\
+    & [300, 400) & & 0.238 & & & & $\text{4.01} \pm \text{2.0}$ \\
+    & [400, $\infty$) & & 0.115 & & & & $\text{1.94} \pm \text{1.39}$ \\
+    \midrule
+\VH 2j0b & [200, 300) & \multirow{10}{*}{1} & 0.794 & \multirow{10}{*}{188260} & \multirow{10}{*}{69691} & 0.00275 & $\text{259} \pm \text{16.1}$ \\
+    & [300, 400) & & 0.150 & & & 0 & $\text{0} \pm \text{0}$ \\
+    & [400, $\infty$) & & 0.056 & & & 0 & $\text{0} \pm \text{0}$ \\
+\VH 2j1b & [200, 300) & & 0.794 & & & 0.000015 & $\text{1.41} \pm \text{1.19}$ \\
+    & [300, 400) & & 0.150 & & & 0 & $\text{0} \pm \text{0}$ \\
+    & [400, $\infty$) & & 0.056 & & & 0 & $\text{0} \pm \text{0}$ \\
+\VH 2j2b & [200, $\infty$) & & 0.794 & & & 0 & $\text{0} \pm \text{0}$ \\
+\VH 1V & [200, 300) & & 0.794 & & & 0.00025 & $\text{23.5} \pm \text{4.85}$ \\
+& [300, 400) & & 0.150 & & & 0 & $\text{0} \pm \text{0}$ \\
+& [400, $\infty$) & & 0.056 & & & 0 & $\text{0} \pm \text{0}$ \\
+\bottomrule
+\end{tabular*}
+\caption[Components of the \acrshort{qcd} multijet prediction in the signal region for the 2016 dataset]{Components of the \acrshort{qcd} multijet prediction in the signal region for the 2016 dataset. These include the category fractions (\catFraction) from the loose double sideband for \ttH and the tight double sideband for the \VH channel, and the other quantities from the tight double sideband: \ptmiss fractions (\metFraction), and the total event counts in data ($N_{\mathrm{data}}$) and non-\acrshort{qcd} \acrshort{mc} ($N_{\mathrm{MC}}^{\mathrm{non-QCD}}$). The transfer factor ($\transfac_{\mathrm{QCD}}$) obtained from the tight double sideband of a smeared multijet sample.}
+\label{tab:htoinv_qcd_pred_2016}
+\end{table}
+
+% 2017:
+
+\begin{table}[htbp]
+    \centering
+    \footnotesize
+    \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}llclcccr}
+    \toprule
+    Category & \ptmiss & \catFraction & \metFraction & $N_{\mathrm{data}}$ & $N_{\mathrm{MC}}^{\mathrm{non-QCD}}$ & $\transfac_{\mathrm{QCD}}$ & $N_{\mathrm{pred.}}^{\mathrm{QCD}}$ \\
+    \midrule
+    \ttH 2Boosted & [200, 300) & \multirow{3}{*}{0.007} & 0.634 & \multirow{28}{*}{9371} & \multirow{28}{*}{4347} & \multirow{28}{*}{0.0698} &  $\text{1.6} \pm \text{1.27}$ \\
+    & [300, 400) & & 0.241 & & & & $\text{0.61} \pm \text{0.78}$ \\
+    & [400, $\infty$) & & 0.125 & & & & $\text{0.32} \pm \text{0.56}$ \\\cline{2-4}
+    \ttH 1t1b & [200, 300) & \multirow{3}{*}{0.046} & 0.634 & & & & $\text{10.2} \pm \text{3.2}$ \\
+    & [300, 400) & & 0.241 & & & & $\text{3.88} \pm \text{1.97}$ \\
+    & [400, $\infty$) & & 0.125 & & & & $\text{2.02} \pm \text{1.42}$ \\\cline{2-4}
+\ttH 1t2b & [200, 300) & \multirow{4}{*}{0.057} & 0.634 & & & & $\text{12.8} \pm \text{3.58}$ \\
+    & [300, 400) & & 0.241 & & & & $\text{4.86} \pm \text{2.2}$ \\
+    & [400, 600) & & 0.113 & & &  & $\text{2.27} \pm \text{1.51}$ \\
+    & [600, $\infty$) & & 0.012 & & & & $\text{0.25} \pm \text{0.5}$ \\\cline{2-4}
+\ttH 1W1b & [200, 300) & \multirow{3}{*}{0.120} & 0.634 & & & & $\text{26.8} \pm \text{5.18}$ \\
+    & [300, 400) & & 0.241 & & & & $\text{10.2} \pm \text{3.19}$ \\
+    & [400, $\infty$) & & 0.125 & & & & $\text{5.3} \pm \text{2.3}$ \\\cline{2-4}
+\ttH 1W2b & [200, 300) & \multirow{3}{*}{0.081} & 0.634 & & & & $\text{18.1} \pm \text{4.26}$ \\
+    & [300, 400) & & 0.241 & & & & $\text{6.88} \pm \text{2.62}$ \\
+    & [400, $\infty$) & & 0.125 & & & & $\text{3.58} \pm \text{1.89}$ \\\cline{2-4}
+\ttH 5j1b & [200, 300) & \multirow{3}{*}{0.327} & 0.634 & & & & $\text{73.0} \pm \text{8.54}$ \\
+    & [300, 400) & & 0.241 & & & & $\text{27.7} \pm \text{5.26}$ \\
+    & [400, $\infty$) & & 0.125 & & & & $\text{14.4} \pm \text{3.8}$ \\\cline{2-4}
+\ttH 6j1b & [200, 300) & \multirow{3}{*}{0.242} & 0.634 & & & & $\text{54.0} \pm \text{7.35}$ \\
+    & [300, 400) & & 0.241 & & & & $\text{20.5} \pm \text{4.53}$ \\
+    & [400, $\infty$) & & 0.125 & & & & $\text{10.7} \pm \text{3.26}$ \\\cline{2-4}
+\ttH 5j2b & [200, 300) & \multirow{3}{*}{0.061} & 0.634 & & & & $\text{13.5} \pm \text{3.68}$ \\
+    & [300, 400) & & 0.241 & & & & $\text{5.14} \pm \text{2.27}$ \\
+    & [400, $\infty$) & & 0.125 & & & & $\text{2.67} \pm \text{1.63}$ \\\cline{2-4}
+\ttH 6j2b & [200, 300) & \multirow{3}{*}{0.058} & 0.634 & & & & $\text{12.9} \pm \text{3.59}$ \\
+    & [300, 400) & & 0.241 & & & & $\text{4.9} \pm \text{2.21}$ \\
+    & [400, $\infty$) & & 0.125 & & & & $\text{2.55} \pm \text{1.6}$ \\
+    \midrule
+\VH 2j0b & [200, 300) & \multirow{10}{*}{1} & 0.770 & \multirow{10}{*}{288040} & \multirow{10}{*}{108702} & 0.00275 & $\text{379} \pm \text{19.5}$ \\
+    & [300, 400) & & 0.166 & & & 0 & $\text{0} \pm \text{0}$ \\
+    & [400, $\infty$) & & 0.064 & & & 0 & $\text{0} \pm \text{0}$ \\
+\VH 2j1b & [200, 300) & & 0.770 & & & 0.000015 & $\text{2.07} \pm \text{1.44}$ \\
+    & [300, 400) & & 0.166 & & & 0 & $\text{0} \pm \text{0}$ \\
+    & [400, $\infty$) & & 0.064 & & & 0 & $\text{0} \pm \text{0}$ \\
+\VH 2j2b & [200, $\infty$) & & 0.770 & & & 0 & $\text{0} \pm \text{0}$ \\
+\VH 1V & [200, 300) & & 0.770 & & & 0.00025 & $\text{34.5} \pm \text{5.88}$ \\
+& [300, 400) & & 0.166 & & & 0 & $\text{0} \pm \text{0}$ \\
+& [400, $\infty$) & & 0.064 & & & 0 & $\text{0} \pm \text{0}$ \\
+\bottomrule
+\end{tabular*}
+\caption[Components of the \acrshort{qcd} multijet prediction in the signal region for the 2017 dataset]{Components of the \acrshort{qcd} multijet prediction in the signal region for the 2017 dataset. These include the category fractions (\catFraction) from the loose double sideband for \ttH and the tight double sideband for the \VH channel, and the other quantities from the tight double sideband: \ptmiss fractions (\metFraction), and the total event counts in data ($N_{\mathrm{data}}$) and non-\acrshort{qcd} \acrshort{mc} ($N_{\mathrm{MC}}^{\mathrm{non-QCD}}$). The transfer factor ($\transfac_{\mathrm{QCD}}$) obtained from the tight double sideband of a smeared multijet sample.}
+\label{tab:htoinv_qcd_pred_2017}
+\end{table}
+
+% 2018;
+
+\begin{table}[htbp]
+    \centering
+    \footnotesize
+    \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}llclcccr}
+    \toprule
+    Category & \ptmiss & \catFraction & \metFraction & $N_{\mathrm{data}}$ & $N_{\mathrm{MC}}^{\mathrm{non-QCD}}$ & $\transfac_{\mathrm{QCD}}$ & $N_{\mathrm{pred.}}^{\mathrm{QCD}}$ \\
+    \midrule
+    \ttH 2Boosted & [200, 300) & \multirow{3}{*}{0.007} & 0.628 & \multirow{28}{*}{12395} & \multirow{28}{*}{5525} & \multirow{28}{*}{0.0698} &  $\text{2.2} \pm \text{1.48}$ \\
+    & [300, 400) & & 0.244 & & & & $\text{0.86} \pm \text{0.93}$ \\
+    & [400, $\infty$) & & 0.127 & & & & $\text{0.45} \pm \text{0.67}$ \\\cline{2-4}
+    \ttH 1t1b & [200, 300) & \multirow{3}{*}{0.041} & 0.628 & & & & $\text{12.4} \pm \text{3.52}$ \\
+    & [300, 400) & & 0.244 & & & & $\text{4.83} \pm \text{2.2}$ \\
+    & [400, $\infty$) & & 0.127 & & & & $\text{2.52} \pm \text{1.59}$ \\\cline{2-4}
+\ttH 1t2b & [200, 300) & \multirow{4}{*}{0.059} & 0.628 & & & & $\text{17.9} \pm \text{4.23}$ \\
+    & [300, 400) & & 0.244 & & & & $\text{6.95} \pm \text{2.64}$ \\
+    & [400, 600) & & 0.115 & & &  & $\text{3.26} \pm \text{1.81}$ \\
+    & [600, $\infty$) & & 0.013 & & & & $\text{0.36} \pm \text{0.6}$ \\\cline{2-4}
+\ttH 1W1b & [200, 300) & \multirow{3}{*}{0.126} & 0.628 & & & & $\text{36.7} \pm \text{6.06}$ \\
+    & [300, 400) & & 0.244 & & & & $\text{14.3} \pm \text{3.78}$ \\
+    & [400, $\infty$) & & 0.127 & & & & $\text{7.45} \pm \text{2.73}$ \\\cline{2-4}
+\ttH 1W2b & [200, 300) & \multirow{3}{*}{0.101} & 0.628 & & & & $\text{30.5} \pm \text{5.52}$ \\
+    & [300, 400) & & 0.244 & & & & $\text{11.9} \pm \text{3.44}$ \\
+    & [400, $\infty$) & & 0.127 & & & & $\text{6.18} \pm \text{2.49}$ \\\cline{2-4}
+\ttH 5j1b & [200, 300) & \multirow{3}{*}{0.308} & 0.628 & & & & $\text{93.0} \pm \text{9.65}$ \\
+    & [300, 400) & & 0.244 & & & & $\text{36.2} \pm \text{6.01}$ \\
+    & [400, $\infty$) & & 0.127 & & & & $\text{18.9} \pm \text{4.34}$ \\\cline{2-4}
+\ttH 6j1b & [200, 300) & \multirow{3}{*}{0.226} & 0.628 & & & & $\text{68.2} \pm \text{8.26}$ \\
+    & [300, 400) & & 0.244 & & & & $\text{26.5} \pm \text{5.15}$ \\
+    & [400, $\infty$) & & 0.127 & & & & $\text{13.8} \pm \text{3.72}$ \\\cline{2-4}
+\ttH 5j2b & [200, 300) & \multirow{3}{*}{0.068} & 0.628 & & & & $\text{20.5} \pm \text{4.53}$ \\
+    & [300, 400) & & 0.244 & & & & $\text{7.99} \pm \text{2.83}$ \\
+    & [400, $\infty$) & & 0.127 & & & & $\text{4.17} \pm \text{2.04}$ \\\cline{2-4}
+\ttH 6j2b & [200, 300) & \multirow{3}{*}{0.068} & 0.628 & & & & $\text{20.6} \pm \text{4.54}$ \\
+    & [300, 400) & & 0.244 & & & & $\text{8.02} \pm \text{2.83}$ \\
+    & [400, $\infty$) & & 0.127 & & & & $\text{4.19} \pm \text{2.05}$ \\
+    \midrule
+\VH 2j0b & [200, 300) & \multirow{10}{*}{1} & 0.775 & \multirow{10}{*}{313805} & \multirow{10}{*}{109959} & 0.00275 & $\text{400} \pm \text{20}$ \\
+    & [300, 400) & & 0.159 & & & 0 & $\text{0} \pm \text{0}$ \\
+    & [400, $\infty$) & & 0.066 & & & 0 & $\text{0} \pm \text{0}$ \\
+\VH 2j1b & [200, 300) & & 0.775 & & & 0.000015 & $\text{2.19} \pm \text{1.48}$ \\
+    & [300, 400) & & 0.159 & & & 0 & $\text{0} \pm \text{0}$ \\
+    & [400, $\infty$) & & 0.066 & & & 0 & $\text{0} \pm \text{0}$ \\
+\VH 2j2b & [200, $\infty$) & & 0.775 & & & 0 & $\text{0} \pm \text{0}$ \\
+\VH 1V & [200, 300) & & 0.775 & & & 0.00025 & $\text{36.4} \pm \text{6.04}$ \\
+& [300, 400) & & 0.159 & & & 0 & $\text{0} \pm \text{0}$ \\
+& [400, $\infty$) & & 0.066 & & & 0 & $\text{0} \pm \text{0}$ \\
+\bottomrule
+\end{tabular*}
+\caption[Components of the \acrshort{qcd} multijet prediction in the signal region for the 2018 dataset]{Components of the \acrshort{qcd} multijet prediction in the signal region for the 2018 dataset. These include the category fractions (\catFraction) from the loose double sideband for \ttH and the tight double sideband for the \VH channel, and the other quantities from the tight double sideband: \ptmiss fractions (\metFraction), and the total event counts in data ($N_{\mathrm{data}}$) and non-\acrshort{qcd} \acrshort{mc} ($N_{\mathrm{MC}}^{\mathrm{non-QCD}}$). The transfer factor ($\transfac_{\mathrm{QCD}}$) obtained from the tight double sideband of a smeared multijet sample.}
+\label{tab:htoinv_qcd_pred_2018}
+\end{table}

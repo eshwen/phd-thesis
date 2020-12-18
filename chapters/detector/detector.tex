@@ -3,7 +3,7 @@
 
 \epigraph{No one can whistle a symphony. It takes a whole orchestra to play it.}{--- H.E. Luccock}
 
-\initial{T}his chapter concerns the experimental setup. \acrshort{cern}, the European Organisation for Nuclear Research (\emph{Organisation Europ\'{e}enne pour la Recherche Nucl\'{e}aire}), is the organisation that manages the machines discussed and is a pioneer in the high energy physics community. Its most notable---the \acrlong{lhc}---provides the \acrshort{cms} experiment with proton-proton collision data that is then stored, corrected, and finally used by physicists for analysis. Ranging from \acrlong{sm} precision measurements, searches for new physics, the development of tools and algorithms to aid the previous two, these and much more are studied by the collaboration. \acrshort{cms} is described in detail, from its hardware and subdetectors to its data acquisition and trigger system. Special attention is given to the derivation of \acrfull{jec} in the \acrfull{l1t} as a portion of this PhD has been devoted to them.
+\initial{T}his chapter concerns the experimental setup. \acrshort{cern}, the European Organisation for Nuclear Research (\emph{Organisation Europ\'{e}enne pour la Recherche Nucl\'{e}aire}), is the organisation that manages the machines discussed and is a pioneer in the high energy physics community. Its most notable construction---the \acrlong{lhc}---provides the \acrshort{cms} experiment with proton-proton collision data that is then stored, corrected, and finally used by physicists for analysis. Ranging from \acrlong{sm} precision measurements, searches for new physics, the development of tools and algorithms to aid the previous two, these and much more are studied by the collaboration. \acrshort{cms} is described in detail, from its hardware and subdetectors to its data acquisition and trigger system. Special attention is given to the derivation of \acrfull{jec} in the \acrfull{l1t} as a portion of this PhD has been devoted to them.
 
 
 %=========================================================
@@ -85,7 +85,7 @@ There are strategies in place in the LHC and the anchored experiments to mitigat
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.75\textwidth]{figures/pileup_allYears_run2.pdf}
+    \includegraphics[width=0.7\textwidth]{figures/pileup_allYears_run2.pdf}
     \caption[The average number of pileup interactions per bunch crossing at CMS during Run-2 of the LHC]{The average number of \gls{pileup} interactions per bunch crossing at \acrshort{cms} during Run-2 of the LHC. Figure obtained from Ref.~\citenum{cmslumitwikipage}.}
     \label{fig:detector_cms_pileup}
 \end{figure}
@@ -122,7 +122,7 @@ The LHC resumed operation in 2015, marking the start of Run-2 and further pushin
     \label{fig:detector_cms_lumi}
 \end{figure}
 
-In addition to the upgrades that have so far been performed, a much grander change is on the horizon. In 2027, the \acrfull{hllhc} improvements are set to be introduced with the primary purpose of increasing the luminosity by up to a factor of ten: more powerful magnets for focusing the beam, crab cavities for increasing the bunch overlap area, shielding and more radiation-resistant components, an upgrade to many of the boosters in the accelerator complex, and much more. A summary of the important parameters at three stages of the LHC's life is given in Tab.~\ref{tab:lhc_specs}.\footnote{Should I add a column for the Tevatron, as a comparison to/sense of scale for the LHC's numbers? Or maybe discuss the Tevatron qualitatively somewhere.}
+In addition to the upgrades that have so far been performed, a much grander change is on the horizon. In 2027, the \acrfull{hllhc} improvements are set to be introduced with the primary purpose of increasing the luminosity by up to a factor of ten: more powerful magnets for focusing the beam, crab cavities for increasing the bunch overlap area, shielding and more radiation-resistant components, an upgrade to many of the boosters in the accelerator complex, and much more. A summary of the important parameters at three stages of the LHC's life is given in Tab.~\ref{tab:lhc_specs}.
 
 \begin{table}[htbp]
     \centering
@@ -133,14 +133,12 @@ In addition to the upgrades that have so far been performed, a much grander chan
         Bunches per beam & 2,556 & 2,748 & 2,808 \\  % bunches per beam in Run-2 from https://home.cern/news/news/accelerators/lhc-report-lhc-full
         Protons per bunch & $\text{1.5} \times \text{10}^{\text{11}}$ & $\text{2.2} \times \text{10}^{\text{11}}$ & $\text{1.5} \times \text{10}^{\text{11}}$ \\
         Crossing angle (\si{\micro\text{rad}}) & 300 & 590 & 285 \\
-        Instantaneous luminosity ($\text{cm}^{-2}\text{s}^{-1}$) & $\text{2.1} \times \text{10}^{\text{34}}$ & $\text{7.2} \times \text{10}^{\text{34}}$ * & $\text{1.0} \times \text{10}^{\text{34}}$ \\  % peak lumi in Run-2 from https://home.cern/news/news/accelerators/lhc-report-lhc-full
+        Instantaneous luminosity ($\text{cm}^{-2}\text{s}^{-1}$) & $\text{2.1} \times \text{10}^{\text{34}}$ & $\text{7.2} \times \text{10}^{\text{34}}$ & $\text{1.0} \times \text{10}^{\text{34}}$ \\  % peak lumi in Run-2 from https://home.cern/news/news/accelerators/lhc-report-lhc-full
         Integrated luminosity per year (\fbinv) & 68 & 250 & 40 \\  % 40 fb-1 for design integrated lumi using instantaneous lumi of 1e34
         Average \gls{pileup} per bunch crossing & 34 & 140 & 27 \\
         \bottomrule
     \end{tabular}
-    \caption[Some of the important parameters defining the performance of the LHC at the end of Run-2, for the High-Luminosity LHC, and the design specification]{Some of the important parameters defining the performance of the \acrshort{lhc} at the end of Run-2, for the \acrlong{hllhc}, and the design specification. Several values in this table were obtained from Refs.~\citenum{Benedikt:2112115,Apollinari:2017cqg}.
-
-    * Does not account for the large increase to virtual luminosity from the introduction of crab cavities.}
+    \caption[Some of the important parameters defining the performance of the LHC at the end of Run-2, for the High-Luminosity LHC, and the design specification]{Some of the important parameters defining the performance of the \acrshort{lhc} at the end of Run-2, for the \acrlong{hllhc}, and the design specification. Several values in this table were obtained from Refs.~\citenum{Benedikt:2112115,Apollinari:2017cqg}.}
     \label{tab:lhc_specs}
 \end{table}
 
@@ -163,6 +161,8 @@ The \acrfull{cms} Collaboration was formed in 1992 with a letter of intent circu
 \acrshort{cms} itself lives a hundred metres underground at Interaction Point 5, just outside the town of Cessy in France. Constructed over several years, the detector was separated into fifteen sections. Each was built on the surface and lowered into the experimental cavern to assemble the 14,000 tonne goliath. As a hermetic cylinder enclosing the \acrshort{lhc} beam pipe, the machine 21\,m in length (plus a little extra from the bolt-on forward calorimeters) and 15\,m in diameter. Its etymology stems from how \emph{compact} (relatively speaking) the detector is since its weight is twice that of \acrshort{atlas} in only one sixth of the volume, it has a subsystem dedicated to detecting \emph{muons}, and a \emph{solenoid} is employed to generate the magnetic field.
 
 A kaleidoscope through we which see the subatomic, \acrshort{cms} is designed to detect all manner of particles as accurately as possible. To accomplish this, the detector is divided into four major subsystems (or subdetectors): the silicon tracker, the \acrfull{ecal}, the \acrfull{hcal}, and the muon chambers. These are each explained in more detail below, with a graphic of the entire detector presented in Fig.~\ref{fig:detector_cms_cutaway} and a transverse slice through it in Fig.~\ref{fig:detector_cms_transverse}.
+
+\clearpage
 
 \begin{figure}[htbp]
     \centering
@@ -308,7 +308,7 @@ With the enormous collision rate at the \acrshort{cms} interaction point, acquir
 
 The \acrlong{l1t} is a set of algorithms (a trigger menu) implemented in custom hardware designed to reduce the event rate from 40\,MHz to a maximum of 100\,kHz. FPGA and ASIC chips contain the algorithms in firmware, with timing systems synchronised with the \acrshort{lhc} clock. When a collision occurs, particles interact with the detector and hits are registered by the components.
 
-Coarsely-segmented data is read out from the \acrshort{ecal} and \acrshort{hcal} through a two-layer Calorimeter Trigger. These are arrays of custom processors located at Point 5. Layer-1 receives the calorimeter data from upwards of one thousand fibre optic links, each with multi-gigabit bandwidths. The information from the two subsystems are combined into calorimeter towers, and some simple position- and energy-dependent calibrations are applied.\footnote{Mention something about trigger primitives here?} The data from Layer-1 is then transmitted to Layer-2, again over many high-bandwidth optical links. Here, physics object candidates are identified (\glspl{jet}, \Pe, \Pphoton, \Ptau).\footnote{An overview of the latest Run-2 algorithms for object identification can be found in Ref.~\citenum{Zabi_2017}.} Additional calibrations are applied to them (for example, in Chpt.~\ref{subsec:detector_jecs}), and simple \gls{pileup} subtraction is performed. Energy sums are also calculated at this stage, such as \etmiss, \HT, and \mht.
+Coarsely-segmented data is read out from the \acrshort{ecal} and \acrshort{hcal} through a two-layer Calorimeter Trigger. These are arrays of custom processors located at Point 5. Layer-1 receives the calorimeter data from upwards of one thousand fibre optic links, each with multi-gigabit bandwidths. The information from the two subsystems are combined into calorimeter towers, and some simple position- and energy-dependent calibrations are applied. The data from Layer-1 is then transmitted to Layer-2, again over many high-bandwidth optical links. Here, physics object candidates are identified (\glspl{jet}, \Pe, \Pphoton, \Ptau).\footnote{An overview of the latest Run-2 algorithms for object identification can be found in Ref.~\citenum{Zabi_2017}.} Additional calibrations are applied to them (for example, in Chpt.~\ref{subsec:detector_jecs}), and simple \gls{pileup} subtraction is performed. Energy sums are also calculated at this stage, such as \etmiss, \HT, and \mht.
 
 In parallel, the various subdetectors in the muon chambers pass information through successive stages, and is then combined with some of the calorimeter information in a sorting/merging/isolation layer. The output from this layer is combined with the remaining information within Layer-2 in the Global Trigger, a series of \si{\micro}TCA boards with FPGAs. The trigger menu lives here, and all of the information gathered---object candidates, energy sums, beam conditions---is provided to it. These triggers may be dependent on the presence of a single object or the number of objects of a single class (e.g., one muon, two \glspl{jet}), multiple classes of object (cross triggers), the energy sums, the topologies of objects, and more. The latency given to make a decision on whether to keep or reject an event is 4\,\si{\micro}s. A diagram of this data flow is given in Fig.~\ref{fig:cms_l1t_data_flow}.
 
@@ -384,12 +384,12 @@ When a new round of calibrations are derived, there are many steps before this o
 
 The reference and \acrshort{l1} \glspl{jet} are matched using the variable $\Delta R$ (see Eq.~\ref{eq:delta_r}). The algorithm matches the \glspl{jet} by inspecting each \acrshort{l1} \gls{jet} in descending \pt and searching for a reference \gls{jet} with $\Delta R < \text{0.25}$. If there is more than one match, the reference \gls{jet} with the smallest $\Delta R$ is taken. Then the next \acrshort{l1} jet (and so on) follows the same procedure, with the previous reference \gls{jet} removed from the matching collection.
 
-The pairs of \glspl{jet} are categorised into sixteen bins of \abseta, the highest granularity available since the calibrations must run quickly on hardware. Each bin is then analysed in turn. Within each \abseta bin, the \gls{jet} pairs are subdivided into bins of the transverse momentum of the reference \gls{jet} (\ptRef).\footnote{Should I add tables somewhere of the \ptRef and \abseta bins for the calibrations?} The bin widths, like \abseta, are variable. The ratio of the transverse momentum of the \acrshort{l1} \gls{jet} (\ptLOne) to \ptRef is taken for each pair of \glspl{jet}. Our metric for measuring the detector response is the mean of these ratios:
+The pairs of \glspl{jet} are categorised into sixteen bins of \abseta, the highest granularity available since the calibrations must run quickly on hardware. Each bin is then analysed in turn. Within each \abseta bin, the \gls{jet} pairs are subdivided into bins of the transverse momentum of the reference \gls{jet} (\ptRef). The bin widths, like \abseta, are variable. The ratio of the transverse momentum of the \acrshort{l1} \gls{jet} (\ptLOne) to \ptRef is taken for each pair of \glspl{jet}. Our metric for measuring the detector response is the mean of these ratios:
 \begin{equation}
     r_j = \expval{\ptLOne / \ptRef}
     \label{eq:jec_detector_response}
 \end{equation}
-The reciprocal of $r_j$ vs. \ptLOne is inspected and a correction curve is fitted. A gaussian captures the peak at low \pt and the following equation\footnote{Go into more detail regarding the equation? Reasoning, etc.} is used for the tail:
+The reciprocal of $r_j$ vs. \ptLOne is inspected and a correction curve is fitted. A gaussian captures the peak at low \pt and the following equation is used for the tail:
 \begin{equation} % Using invisible right bracket on first line and left on second line to get large brackets but avoid errors
     \begin{aligned}
 \ptsup{{\mathrm{L1, \ corr.}}} = \ptLOne \cdot \Big( p_0 &+ p_1 \cdot \erf \left(p_2 \cdot \left( \log_{10}\ptLOne - p_3 \right) \right) \\
@@ -424,13 +424,13 @@ A closure test is conducted to validate the corrections that were produced. The 
 
 \begin{figure}[htbp]
     \centering
-    \begin{subfigure}[b]{0.45\textwidth}
+    \begin{subfigure}[b]{0.48\textwidth}
         \includegraphics[width=\textwidth]{./figures/jecs/scatterPlotBeforeBE.pdf}
         \caption{Before corrections}
         \label{fig:detector_jecs_scatter_before_BE}
     \end{subfigure}
     \hfill
-    \begin{subfigure}[b]{0.45\textwidth}
+    \begin{subfigure}[b]{0.48\textwidth}
         \includegraphics[width=\textwidth]{./figures/jecs/scatterPlotAfterBE.pdf}
         \caption{After corrections}
         \label{fig:detector_jecs_scatter_after_BE}
@@ -441,13 +441,13 @@ A closure test is conducted to validate the corrections that were produced. The 
 
 \begin{figure}[htbp]
     \centering
-    \begin{subfigure}[b]{0.45\textwidth}
+    \begin{subfigure}[b]{0.48\textwidth}
         \includegraphics[width=\textwidth]{./figures/jecs/response_before.pdf}
         \caption{Before corrections}
         \label{fig:detector_jecs_response_before}
     \end{subfigure}
     \hfill
-    \begin{subfigure}[b]{0.45\textwidth}
+    \begin{subfigure}[b]{0.48\textwidth}
         \includegraphics[width=\textwidth]{./figures/jecs/response_after.pdf}
         \caption{After corrections}
         \label{fig:detector_jecs_response_after}

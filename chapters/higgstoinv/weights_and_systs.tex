@@ -104,7 +104,7 @@ Simulated events are nominally reweighted according to data, where the inelastic
 
 Vector boson \plusjets processes present a sizeable background in some of the categories and regions of the analysis. At the dataset sizes required to provide sufficient statistical coverage of the phase space, \acrshort{nlo} \acrshort{mc} samples are not available with the complete detector simulation applied. To circumvent this, \acrshort{lo} samples are used in the analysis and reweighted at generator level on an event-by-event basis to \acrshort{nlo} accuracy. This method is usually referred to as a ``$k$-factor'' correction, where $k$ is the ratio of the \acrshort{nlo} to \acrshort{lo} cross section.
 
-Separate \acrshort{qcd} and electroweak corrections are applied to \acrshort{qcd} processes. \acrshort{nlo} $\PW \plusjets$ samples are utilised when deriving the $k$-factors for the respective \acrshort{lo} process. Drell-Yan $\HepProcess{\PZ (\to \Plepton\APlepton)} \plusjets$ samples are utilised for both the \acrshort{lo} Drell-Yan and \ztonunupjets processes. The $k$-factors are calculated independently for the two processes as the \acrshort{lo} samples and cross sections are different. One or two additional \glspl{jet} in the matrix element calculations are permitted in the \acrshort{nlo} samples. Events from the above datasets are processed through the following generator-level event selection to ensure they are in a similar phase space to the analysis:
+Separate \acrshort{nlo} \acrshort{qcd} and electroweak corrections are applied to the \acrshort{qcd} production of $\PVec \plusjets$ samples. \acrshort{nlo} $\PW \plusjets$ samples are utilised when deriving the $k$-factors for the respective \acrshort{lo} process. Drell-Yan $\HepProcess{\PZ (\to \Plepton\APlepton)} \plusjets$ samples are utilised for both the \acrshort{lo} Drell-Yan and \ztonunupjets processes. The $k$-factors are calculated independently for the two processes as the \acrshort{lo} samples and cross sections are different. One or two additional \glspl{jet} in the matrix element calculations are permitted in the \acrshort{nlo} samples. Events from the above datasets are processed through the following generator-level event selection to ensure they are in a similar phase space to the analysis:
 
 \medskip
 \begin{easylist}[itemize]
@@ -146,7 +146,7 @@ Since all of the $\PVec \plusjets$ samples were generated at \acrshort{lo} elect
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.45\textwidth]{figures/nlo_k_factors/1D_all_ewk.pdf}
-    \caption[NLO $k$-factors as a function of generator-level boson \pt for reweighting QCD $\PVec \plusjets$ events generated at LO electroweak accuracy]{\acrshort{nlo} $k$-factors as a function of generator-level boson \pt for reweighting \acrshort{qcd} $\PVec \plusjets$ events generated at \acrshort{nlo} electroweak accuracy. Separate $k$-factors correct the \PW, \PZ, and $\Pphoton\plusjets$ processes.}
+    \caption[NLO $k$-factors as a function of generator-level boson \pt for reweighting QCD $\PVec \plusjets$ events generated at LO electroweak accuracy]{\acrshort{nlo} $k$-factors as a function of generator-level boson \pt for reweighting \acrshort{qcd} $\PVec \plusjets$ events generated at \acrshort{nlo} electroweak accuracy. Separate $k$-factors correct the \PW, \PZ, and $\Pphoton\plusjets$ processes. Values obtained from Ref.~\citenum{Lindert_2017}.}
     \label{fig:htoinv_nlo_k_factor_ewk}
 \end{figure}
 
@@ -199,7 +199,7 @@ These are computed individually for each decay and data taking year. The envelop
 
 % Plots from Scenario 5, 8th July 2020
 
-For each process (i.e., \ttbar, and the accompanying boson $X$ in $\ttbar X$), a separate systematic uncertainty is derived.\footnote{$\ttH(\HepProcess{\PH \to \text{invisible}})$ signal and $\ttH(\HepProcess{\PH \to \text{visible}})$ background are grouped as one process since the kinematics and generation procedure are consistent.} Since different generators and settings may be used for each dataset, it is appropriate to ensure they are uncorrelated.
+For each process (i.e., \ttbar, and the accompanying boson $X$ in $\ttbar X$), a separate systematic uncertainty is derived.\footnote{$\ttH(\HepProcess{\PH \to \text{invisible}})$ signal and $\ttH(\HepProcess{\PH \to \text{visible}})$ background are grouped as one process since the kinematics and generation procedure are consistent.} Since different generators and settings may be used for each dataset, it is appropriate to assume they are uncorrelated.
 
 
 %=========================================================
@@ -256,7 +256,9 @@ Electrons and photons are identified using the cut-based identification describe
 
 % e/gamma reco SFs and systs documented here: https://twiki.cern.ch/twiki/bin/view/CMS/EgammaRunIIRecommendations#E_gamma_RECO
 
-Muons follow a similar prescription, where the ID and isolation efficiencies are calculated in bins of $\eta$ and \pt. The systematic uncertainties for each of the two sources are separated---contrary to electrons and photons---and are usually 1\,\% or smaller in size. An equivalent reconstruction efficiency is not given as the dedicated muon chambers and reconstruction algorithms are more than sufficient.\footnote{For electrons, muons, and photons, not really sure of the actual procedures for getting the scale factors for each source. Twikis do a pretty poor job of explaining them.}
+Muons follow a similar prescription, where the ID and isolation efficiencies are calculated in bins of $\eta$ and \pt. The systematic uncertainties for each of the two sources are separated---contrary to electrons and photons---and are usually 1\,\% or smaller in size. An equivalent reconstruction efficiency is not given as the dedicated muon chambers and reconstruction algorithms are more than sufficient.
+
+The scale factors and systematic uncertainties for electrons, photons, and muons were derived centrally for \acrshort{cms} by the \acrlong{pog}s.
 
 % Muon ID/ISO info: 2016 (https://twiki.cern.ch/twiki/bin/view/CMS/MuonReferenceEffs2016LegacyRereco), 2017 (https://twiki.cern.ch/twiki/bin/view/CMS/MuonReferenceEffs2017), 2018 (https://twiki.cern.ch/twiki/bin/view/CMS/MuonReferenceEffs2018)
 
@@ -294,7 +296,7 @@ In a similar fashion to the section above, objects classified by the \deepakeigh
 \subsubsection{Pre-firing in the ECAL}
 \label{subsubsec:htoinv_ecal_prefiring_weight}
 
-Derived by members of the Collaboration, the nominal weight applied to events in simulation that emulates the effect of pre-firing in 2016 and 2017 data, is given in Ref.~\citenum{prefiring_weight}:
+A weight is applied to events in simulation that emulates the effect of pre-firing in 2016 and 2017 data, given in Ref.~\citenum{prefiring_weight}:
 \begin{equation}
     w_{\text{pre-firing}} = \prod_{i = \Pphoton,\, \mathrm{jet}} 1 - \epsilon_i^{\text{pre-firing}}(\eta, \pt^{\mathrm{EM}})
     \label{eq:prefiring_weight}

@@ -1,9 +1,7 @@
 \section{Categorisation of the production modes}
 \label{sec:htoinv_categorisation}
 
-% This section is up-to-date as of 15th May.
-
-To extract maximum sensitivity to the \higgstoinv decay from the analysis, categories are established to target each of the production modes. From first principles, the topologies outlined in Chpt.~\ref{subsec:theory_higgs_production_modes} provide an initial direction of the expected structure. Steps are taken to ensure the categories that target the production mechanism---and the categories that capitalise on specific topologies within the mechanism---are orthogonal. Additional cuts based on optimisation studies in Chpt.~\ref{subsec:htoinv_cat_optimisation} are also implemented, devising the categories in Tab.~\ref{tab:htoinv_categories}.
+To extract maximum sensitivity to the \higgstoinv decay from the analysis, events passing the selection in Chpt.~\ref{sec:htoinv_event_selection} must be further subdivided. Categories are established to target each of the production modes. From first principles, the topologies outlined in Chpt.~\ref{subsec:theory_higgs_production_modes} provide an initial direction of the expected structure. Steps are taken to ensure the categories that target the production mechanism---and the categories that capitalise on specific topologies within the mechanism---are orthogonal. Additional cuts based on optimisation studies in Chpt.~\ref{subsec:htoinv_cat_optimisation} are also implemented, devising the categories in Tab.~\ref{tab:htoinv_categories}.
 
 \begin{table}[htbp]
     \centering
@@ -165,3 +163,85 @@ It is obvious that the shapes and magnitudes of the significance distributions a
 \label{subsubsec:htoinv_other_optimisations}
 
 In the ``background rejection'' column of Tab.~\ref{tab:htoinv_categories}, selections were made to distinguish signal from leading backgrounds. The \ttH resolved categories employ requirements on the azimuthal angle between the missing transverse momentum and either the leading jet, leading \Pbottom-jet, or subleading \Pbottom-jet. These are specifically to differentiate \ttH signal from \ttbar background, as the former has been shown to exhibit larger separation between the \glspl{jet} and \ptmiss than the latter. A window on the dijet mass is applied to the \VH resolved categories to reconstruct the \PW and \PZ mass. The 15\GeV below $m_{\PW}$ and above $m_{\PZ}$ allow some leeway to accommodate \glspl{jet} resolution effects. A tight window also acts as an extra multijet background suppressor.
+
+
+%=========================================================
+
+
+\subsection{Binning}
+\label{subsec:htoinv_binning}
+
+In addition to the categories in Chpt.~\ref{sec:htoinv_categorisation}, events are further separated into bins of \ptmiss as that distribution is expected to maximally differentiate signal and background in the fit. Since the number of events can significantly differ between categories in the different regions of the analysis, the number and widths of the bins are tuned to ensure sufficient statistical precision. These schemes are tied to the category, so are reflected in all regions such that the background estimation methods can operate on a bin-by-bin basis. The binning configuration is outlined in Tab.~\ref{tab:htoinv_binning_scheme}.
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{ccl}
+        \toprule
+        Channel & Category & \ptmiss bins (GeV) \\\midrule
+        \multirow{9}{*}{\ttH} & 2Boosted & [200, 300), [300, 400), [400, $\infty$) \\
+        & 1t1b & [200, 300), [300, 400), [400, $\infty$) \\
+        & 1t2b & [200, 300), [300, 400), [400, 600), [600, $\infty$) \\
+        & 1W1b & [200, 300), [300, 400), [400, $\infty$) \\
+        & 1W2b & [200, 300), [300, 400), [400, $\infty$) \\
+        & 5j1b & [200, 300), [300, 400), [400, $\infty$) \\
+        & 6j1b & [200, 300), [300, 400), [400, $\infty$) \\
+        & 5j2b & [200, 300), [300, 400), [400, $\infty$) \\
+        & 6j2b & [200, 300), [300, 400), [400, $\infty$) \\
+        \midrule
+        \multirow{4}{*}{\VH} & 2j0b & [200, 300), [300, 400), [400, $\infty$) \\
+        & 2j1b & [200, 300), [300, 400), [400, $\infty$) \\
+        & 2j2b & [200, $\infty$)\\
+        & 1V & [200, 300), [300, 400), [400, $\infty$) \\
+        \bottomrule
+    \end{tabular}
+    \caption[The binning scheme implemented to categorise events in terms of \ptmiss]{The binning scheme implemented to categorise events in terms of \ptmiss.}
+    \label{tab:htoinv_binning_scheme}
+\end{table}
+
+
+%=========================================================
+
+
+\subsection{The signal region}
+\label{subsec:htoinv_signal_region}
+
+The signal region is the area of phase space where the highest rate of invisible Higgs boson decays are expected to manifest, and the background to be reduced sufficiently that the potential presence of signal in data can be statistically verified. In this analysis, only hadronic final states are permitted. Events with leptons, photons and taus meeting the loose or veto criteria in Chpt.~\ref{sec:analysis_objects} are vetoed.
+
+Events must satisfy a logical \texttt{OR} of \acrshort{hlt} cross-triggers for \acrlong{pf} \ptmiss and \mht calculated without muons (as they can also appear in the \gls{jet} collection in \acrshort{cms}), and at least one \gls{jet} fulfilling the tight ID criteria (see Chpt.~\ref{sec:analysis_objects}). The triggers are illustrated in Tab.~\ref{tab:htoinv_SR_triggers}.
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{ccccc}
+        \toprule
+        Year & $\ptmissNoMu$ (\GeVns) & $\mhtNoMu$ (\GeVns) & $\HT$ (\GeVns) & $\njet$ with tight ID \\ \midrule
+        \multirow{4}{*}{2016} & 90 & 90 & --- & $\geq \text{1}$ \\
+        & 100 & 100 & --- & $\geq \text{1}$ \\
+        & 110 & 110 & --- & $\geq \text{1}$ \\
+        & 120 & 120 & --- & $\geq \text{1}$ \\
+        \midrule
+        \multirow{2}{*}{2017} & 120 & 120 & --- & $\geq \text{1}$ \\
+        & 120 & 120 & 60 & $\geq \text{1}$ \\
+        \midrule
+        2018 & 120 & 120 & --- & $\geq \text{1}$ \\
+        \bottomrule
+    \end{tabular}
+    \caption[The trigger thresholds required for events to enter the signal region in each data taking year]{The trigger thresholds required for events to enter the signal region in each data taking year. Each quantity is computed with the \gls{particleflow} at \acrshort{hlt} level. The variables \ptmiss and \mht do not include muons in the calculations.}
+    \label{tab:htoinv_SR_triggers}
+\end{table}
+
+The relative composition in each category of the signal region (after the event selection) for signal and background are illustrated in Fig.~\ref{fig:htoinv_sr_composition_comb2016to18}, highlighting the effectiveness to which the categories capture the targeted topologies, and the dominant background processes, respectively. The \ttH categories, especially those designed to tag boosted top quarks and vector bosons are very pure in \ttH. Similarly, the \VH categories predominantly consist of events from the production mode of focus. Contamination from the \acrshort{vbf} process is present at a low level, most notably in the resolved categories given the similar topologies. \ggH signal permeates several categories as the second largest component. This is likely due to its high cross section (more than ten times any other individual process) and its ability to mimic the final states of the other signals. \ttbarpjets is the dominant background for the \ttH categories as expected, with \ztonunupjets leading in the others. \wtolnupjets also contributes a reasonable fraction. 
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.4\textwidth}
+        \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/region_0/signal_composition.pdf}
+        \caption{Signal composition}
+    \end{subfigure}
+    \hspace{0.05\textwidth}
+    \begin{subfigure}[b]{0.4\textwidth}
+        \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/region_0/background_composition.pdf}
+        \caption{Background composition}
+    \end{subfigure}
+    \caption[Composition of each category in the signal region for simulated signal and background processes after the analysis-level selection]{Composition of each category in the signal region for simulated signal and background processes after the analysis-level selection.}
+    \label{fig:htoinv_sr_composition_comb2016to18}
+\end{figure}

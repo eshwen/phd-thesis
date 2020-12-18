@@ -1,7 +1,7 @@
 \section{Corrections and systematic uncertainties for simulation}
 \label{sec:htoinv_mc_corrections}
 
-In order for simulated events, particularly for background processes, to resemble \acrshort{lhc} data as closely as possible, many corrections are applied. These are discussed in more detail in the subsequent sections. All weights and associated systematic uncertainties are applied to all samples for all data taking years, unless stated otherwise, and summarised in Tab.~\ref{tab:htoinv_syst_summary}.
+In order for simulated events, particularly for background processes, to resemble \acrshort{lhc} data as closely as possible, many corrections are applied. These are discussed in more detail in the subsequent sections. All corrections and associated systematic uncertainties are applied to all samples for all data taking years, unless stated otherwise, and summarised in Tab.~\ref{tab:htoinv_syst_summary}.
 
 A final event weight $w_{\mathrm{event}}$ is the product of the weights from all of the individual sources $i$ that provide one:
 \begin{equation}
@@ -15,7 +15,7 @@ When representing these events in histograms, the yield in a given bin $N_{\math
     \label{eq:bin_weight}
 \end{equation}
 
-where $N_{\mathrm{MC}}$ is the number of unweighted, simulated events in the bin. In the data-\acrshort{mc} distributions, the statistical uncertainty ascribed to the \acrshort{mc} yield in a bin is estimated from the unweighted number of events ($k$ in a Poisson statistical treatment):
+where $N_{\mathrm{MC}}$ is the number of unweighted, simulated events in the bin. In the data--\acrshort{mc} distributions shown previously in this chapter, the statistical uncertainty ascribed to the \acrshort{mc} yield in a bin is estimated from the unweighted number of events ($k$ in a Poisson statistical treatment):
 \begin{equation}
     \Delta N_{\mathrm{corr.}} = \pm \frac{ N_{\mathrm{corr.}} }{ \sqrt{N_{\mathrm{MC}}} }
     \label{eq:uncertainty_mc_ours}
@@ -36,7 +36,7 @@ While the statistical uncertainty for the number of events in data is simply the
 
 Given the modelling of the \acrlong{l1} and \acrlong{hlt} systems in simulation is only an approximation of their behaviour with data, corrections must be made to unite them.
 
-A dedicated \gls{CR} is formed to assure orthogonality with the signal region and avoid unblinding of data, but with a similar kinematic selection to the analysis for accuracy in our phase space. Events are selected in data from the primary dataset consisting of muon-based triggers, and in simulation from the \wtolnupjets process at \acrshort{lo}. Analysed events consist of these containing a single, tightly-isolated muon with $\pt > \text{30}\GeV$ that triggers the \acrshort{hlt} path for an isolated muon with $\pt > \text{27}\GeV$. This is to avoid biasing the efficiencies of the triggers defining the signal region. An offline selection is then applied to keep those with similar kinematic properties to those in our signal region:
+A dedicated \gls{CR} is formed to assure orthogonality with the signal region and avoid unblinding of data, but with a similar kinematic selection to the analysis for accuracy in the desired phase space. Events are selected in data from the primary dataset consisting of muon-based triggers, and in simulation from the \wtolnupjets process at \acrshort{lo}. Analysed events consist of these containing a single, tightly-isolated muon with $\pt > \text{30}\GeV$ that triggers the \acrshort{hlt} path for an isolated muon with $\pt > \text{27}\GeV$. This is to avoid biasing the efficiencies of the triggers defining the signal region. An offline selection is then applied to keep those with similar kinematic properties to those in our signal region:
 
 \medskip
 \begin{easylist}[itemize]
@@ -102,9 +102,9 @@ Simulated events are nominally reweighted according to data, where the inelastic
 \subsection{Higher order corrections to \texorpdfstring{$\PVec \plusjets$}{V plus jets} samples}
 \label{subsec:htoinv_nlo_corrs}
 
-Vector boson \plusjets processes present a sizeable background in some of the categories and regions of the analysis. At the dataset sizes required to provide sufficient statistical coverage of the phase space, \acrshort{nlo} \acrshort{mc} samples are not available with the complete detector simulation applied. To circumvent this, \acrshort{lo} samples are used in the analysis and reweighted at generator level on an event-by-event basis to \acrshort{nlo} accuracy. This method is usually referred to as a ``$k$-factor'' correction, where $k$ is the ratio of the \acrshort{nlo} to \acrshort{lo} cross section.
+Vector boson $+$ \glspl{jet} processes present a sizeable background in the signal region for some of the categories, and are a large component of some of the \glspl{CR}. At the dataset sizes required to provide sufficient statistical coverage of the analysis phase space, \acrshort{nlo} \acrshort{mc} samples are not available with the complete detector simulation applied. To circumvent this, \acrshort{lo} samples are used primarily and reweighted at generator level on an event-by-event basis to \acrshort{nlo} accuracy. This method is usually referred to as a ``$k$-factor'' correction, where $k$ is the ratio of the \acrshort{nlo} to \acrshort{lo} cross section.
 
-Separate \acrshort{nlo} \acrshort{qcd} and electroweak corrections are applied to the \acrshort{qcd} production of $\PVec \plusjets$ samples. \acrshort{nlo} $\PW \plusjets$ samples are utilised when deriving the $k$-factors for the respective \acrshort{lo} process. Drell-Yan $\HepProcess{\PZ (\to \Plepton\APlepton)} \plusjets$ samples are utilised for both the \acrshort{lo} Drell-Yan and \ztonunupjets processes. The $k$-factors are calculated independently for the two processes as the \acrshort{lo} samples and cross sections are different. One or two additional \glspl{jet} in the matrix element calculations are permitted in the \acrshort{nlo} samples. Events from the above datasets are processed through the following generator-level event selection to ensure they are in a similar phase space to the analysis:
+Separate \acrshort{nlo} \acrshort{qcd} and electroweak corrections are applied to the \acrshort{qcd} production of $\PVec \plusjets$ samples. \acrshort{nlo} $\PW \plusjets$ samples are utilised when deriving the $k$-factors for the \acrshort{lo} counterpart. Drell-Yan $\HepProcess{\PZ (\to \Plepton\APlepton)} \plusjets$ samples are utilised for both the \acrshort{lo} Drell-Yan and \ztonunupjets processes. The $k$-factors are calculated independently for the two processes as the \acrshort{lo} sample production and cross sections are different. One or two additional \glspl{jet} in the matrix element calculations are permitted in the \acrshort{nlo} samples. Events from the above datasets are processed through the following generator-level event selection to ensure they are in a similar phase space to the analysis:
 
 \medskip
 \begin{easylist}[itemize]
@@ -117,9 +117,9 @@ Separate \acrshort{nlo} \acrshort{qcd} and electroweak corrections are applied t
 
 \medskip
 
-\noindent{}where $\pt^{\PVec}$ is the generator-level boson \pt, and $\HT^{\mathrm{Gen}}$ is the scalar sum of generator-level \gls{jet} \pt. The final selection in the list mimics the $\mht/\ptmiss$ cut in Chpt.~\ref{subsec:htoinv_preselection}. The $k$-factors are binned in two dimensions, $\pt^{\PVec}$ and $\ptjone$.
+\noindent{}where $\pt^{\PVec}$ is the generator-level boson \pt, and $\HT^{\mathrm{Gen}}$ is the scalar sum of generator-level \gls{jet} \pt. The $k$-factors are binned in two dimensions, $\pt^{\PVec}$ and $\ptjone$.
 
-Uncertainties for the \acrshort{qcd} renormalisation scale, factorisation scale, and in the parton distribution function are treated as individual, uncorrelated sources. The same values for the nominal $k$-factors and uncertainties are used for each data taking year in Run-2. The impact of the renormalisation scale uncertainty was approximately 0--5\,\% on the yields, while the factorisation and PDF scales had effects of 1--10\,\% and up to 15\,\%, respectively. Distributions of the \acrshort{nlo} \acrshort{qcd} $k$-factors are presented in Fig.~\ref{fig:htoinv_nlo_k_factors_qcd}.
+Uncertainties for the \acrshort{qcd} renormalisation scale, factorisation scale, and in the parton distribution function are treated as individual, uncorrelated sources. The same values for the nominal $k$-factors and uncertainties are used for each data taking year in Run-2. The impact of the renormalisation scale uncertainty was approximately 0--5\,\% on the yields, while the factorisation and PDF scales had effects of roughly 1--10\,\% and 1--5\,\%, respectively. Distributions of the \acrshort{nlo} \acrshort{qcd} $k$-factors are presented in Fig.~\ref{fig:htoinv_nlo_k_factors_qcd}.
 
 \begin{figure}[htbp]
     \centering
@@ -143,6 +143,8 @@ Uncertainties for the \acrshort{qcd} renormalisation scale, factorisation scale,
 
 Since all of the $\PVec \plusjets$ samples were generated at \acrshort{lo} electroweak accuracy, an additional $k$-factor is needed to reweight events to \acrshort{nlo}. Ref.~\citenum{Lindert_2017}{}provides \acrshort{nlo} electroweak corrections for \PW, \PZ, and $\Pphoton\plusjets$ processes as a function of $\pt^{\PVec}$, depicted in Fig.~\ref{fig:htoinv_nlo_k_factor_ewk}. The \PZ $k$-factor is adopted by both the Drell-Yan and \ztonunu processes.
 
+\clearpage
+
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.45\textwidth]{figures/nlo_k_factors/1D_all_ewk.pdf}
@@ -157,7 +159,7 @@ Since all of the $\PVec \plusjets$ samples were generated at \acrshort{lo} elect
 \subsection{Top quark processes}
 \label{subsec:htoinv_ttbar_uncerts}
 
-\ttbarpjets is the dominant background for the \ttH channel. The $\ttbar X$ backgrounds also have a non-negligible presence. As such, much effort ensures they are modelled correctly. Variations of the \acrshort{qcd} renormalisation and factorisation scales provide an uncertainty only to the shape of the \ptmiss spectrum of \ttbar and $\ttbar X$ backgrounds, and \ttH signal. Reweighting of the top quark \pt distribution to \acrshort{nnlo} accuracy is also performed for \ttbar, yielding a shape correction and associated uncertainty.
+\ttbarpjets is the dominant background for the \ttH channel. The $\ttbar X$ backgrounds also have a non-negligible presence. As such, much effort must be made to ensure they are modelled correctly. Variations of the \acrshort{qcd} renormalisation and factorisation scales provide an uncertainty only to the shape of the \ptmiss spectrum of the \ttbar and $\ttbar X$ backgrounds, and \ttH signal. Reweighting of the top quark \pt distribution to \acrshort{nnlo} accuracy is also performed for \ttbar, yielding a shape correction and associated uncertainty.
 
 
 %=========================================================
@@ -166,7 +168,7 @@ Since all of the $\PVec \plusjets$ samples were generated at \acrshort{lo} elect
 \subsubsection{QCD scale systematic uncertainty}
 \label{subsubsec:ttbar_renorm_fact_scale_uncert}
 
-The renormalisation \muR and factorisation scale \muF chosen for \acrshort{mc} samples at generation may be somewhat arbitrary, and therefore not representative of nature. Relative to the nominal, weights were derived centrally for each combination of these scales being varied independently (and together) up or down by a factor of two. Eight variations then exist for each event:
+The renormalisation \muR and factorisation scale \muF chosen for \acrshort{mc} samples at generation may be somewhat arbitrary, and therefore not representative of nature. Relative to the nominal value, weights were derived centrally for each combination of these scales being varied independently (and together) up or down by a factor of two. Eight variations then exist for each event:
 \medskip
 \begin{easylist}[itemize]
     \easylistprops
@@ -184,11 +186,11 @@ The renormalisation \muR and factorisation scale \muF chosen for \acrshort{mc} s
 
 \noindent{}To remove the dependence on normalisation (since the skim and event selection may bias it) and ensure the systematic is only shape-based, each variation was also multiplied by an additional factor $f_{\mathrm{var}}$:
 \begin{equation}
-    f_{\mathrm{var}} = \dfrac{ \sum_{\text{unskimmed events}} w_{\muRAmuFB{\, \mathrm{nom.}}{\, \mathrm{nom.}}} }{ \sum_{\text{unskimmed events}} w_{\mathrm{var}} }
+    f_{\mathrm{var}} = \dfrac{ \sum_{\text{unskimmed events}} w_{\mu_{\mathrm{R \, nom.}\, \mathrm{F \, nom.}}} }{ \sum_{\text{unskimmed events}} w_{\mathrm{var}} }
     \label{eq:ttbar_scale_fvar}
 \end{equation}
 
-These are computed individually for each decay and data taking year. The envelope is characterised by the correlated variations $\muRAmuFB{\uparrow}{\uparrow}$, and $\muRAmuFB{\downarrow}{\downarrow}$. Confirmed by Fig.~\ref{fig:htoinv_ttbar_scale}, an example is given for the \ttbar background in the signal region. While the sizes of the variations appear large, they are very similar between the signal and \glspl{CR}, cancelling to a large degree to minimally impact the results.
+These are computed individually for each decay and data taking year. The envelope is characterised by the correlated variations $\muRAmuFB{\uparrow}{\uparrow}$, and $\muRAmuFB{\downarrow}{\downarrow}$. Confirmed by Fig.~\ref{fig:htoinv_ttbar_scale}, an example is given for the \ttbar background in the signal region. While the sizes of the variations appear large, they are reduced when matching the fit binning, and very similar between the signal and \glspl{CR}, cancelling to a large degree to minimally impact the results.
 
 \begin{figure}[htbp]
     \centering
@@ -215,7 +217,9 @@ The top quark \pt distribution has been shown to be harder in simulation at \acr
 
 where the coefficients are $a = \text{1.614} \times \text{10}^{-2}$, $b = -\text{1.966} \times \text{10}^{-4}$, and $c = -\text{1.454} \times \text{10}^{-8}$. For a top or antitop quark, the scale factor is given by the value of $f$ for the particle's generator-level \pt. The event weight is then the square root of the product of the top and antitop scale factors.
 
-The uncertainties are acquired from the fit itself over theoretical uncertainties inherent in \acrshort{mc} calculations. This was to avoid double counting with respect to the renormalisation and factorisation scale uncertainty in Chpt.~\ref{subsubsec:ttbar_renorm_fact_scale_uncert}, as overlap would be present and otherwise difficult to disentangle. For each parameter in the fit, the upward and downward variations were estimated. The fit function was then recalculated, fixing the parameter of interest to the variation. Providing upward and downward functions, the systematic uncertainty attributed to the parameter is simply the event weight calculated with these functions over the nominal. Separate, uncorrelated uncertainties were estimated for each parameter in the fit, and were each found to have a $< \text{2\,\%}$ impact on the event yields. The nominal function and associated variations are shown in Fig.~\ref{fig:top_pt_reweighting}.
+The uncertainties are acquired from the fit itself over the theoretical uncertainties inherent in \acrshort{mc} calculations. This was to avoid double counting with respect to the renormalisation and factorisation scale uncertainty in Chpt.~\ref{subsubsec:ttbar_renorm_fact_scale_uncert}, as overlap would be present and otherwise difficult to disentangle. For each parameter in the fit, the upward and downward variations were estimated. The fit function was then recalculated, fixing the parameter of interest to the variation. Providing upward and downward functions, the systematic uncertainty attributed to the parameter is simply the event weight calculated with these functions over the nominal. Separate, uncorrelated uncertainties were estimated for each parameter in the fit, and were each found to have a $< \text{2\,\%}$ impact on the event yields. The dependence on normalisation was removed in the same fashion as for the \acrshort{qcd} scale to consider the correction only to the shape of the distributions and not also the normalisation. The nominal function and associated variations are shown in Fig.~\ref{fig:top_pt_reweighting}.
+
+\clearpage
 
 \begin{figure}[htbp]
     \centering
@@ -223,8 +227,6 @@ The uncertainties are acquired from the fit itself over theoretical uncertaintie
     \caption[The ratio of the NNLO to NLO \ttbar cross section as a function of top quark \pt. The fit to the distribution---along with the uncertainties in the parameters---are shown]{The ratio of the \acrshort{nnlo} to \acrshort{nlo} \ttbar cross section as a function of top quark \pt. The fit to the distribution---along with the uncertainties in the parameters---are shown.}
     \label{fig:top_pt_reweighting}
 \end{figure}
-
-We aimed to remove the dependence on normalisation in the same fashion as for the \acrshort{qcd} scale to consider the correction only to the shape of the distributions and not also the normalisation. However, the normalisation factors were found to be unity for all datasets. Hence, no additional factor was required.
 
 % See https://indico.cern.ch/event/904971/contributions/3857701/attachments/2036949/3410728/TopPt_20.05.12.pdf for more info
 
@@ -250,15 +252,13 @@ These weights are calculated individually for each class of object in an event. 
 \subsubsection{Lepton and photon identification, isolation, and reconstruction}
 \label{subsubsec:htoinv_lepton_id_iso_reco_systs}
 
-Electrons and photons are identified using the cut-based identification described in Chpts.~\ref{subsec:objects_electrons} and \ref{subsec:objects_photons}, respectively. Scale factors are applied separately to each of these objects in simulation that account for the efficiency of identification, isolation, and reconstruction in data. They are derived as a function of $\eta$ and \acrshort{ecal} supercluster \pt and binned as such. Uncertainties are given as the error in the $(\eta, \pt)$ bin of the histogram that describes the efficiencies. The ID and isolation are grouped as a single uncertainty, while reconstruction is another. Event weights simply are the products of the individual object scale factors. The uncertainty on the event weight is the product of the scale factor plus/minus its uncertainty. For each source, they are on the order of 1--5\,\%.
+The scale factors and systematic uncertainties for electrons, photons, and muons were derived centrally for \acrshort{cms} by the \acrlong{pog}s. Electrons and photons are identified using the cut-based identification described in Chpts.~\ref{subsec:objects_electrons} and \ref{subsec:objects_photons}, respectively. Scale factors are applied separately to each of these objects in simulation that account for the efficiency of identification, isolation, and reconstruction in data. They are derived as a function of $\eta$ and \acrshort{ecal} supercluster \pt. Uncertainties are given as the error in the $(\eta, \pt)$ bin of the histogram that describes the efficiencies. The ID and isolation are grouped as a single uncertainty, while reconstruction is another. Event weights simply are the products of the individual object scale factors. The uncertainty on the event weight is the product of the scale factor plus/minus its uncertainty. For each source, they are on the order of 1--5\,\%.
 
 % While photon reconstruction efficiency is assumed to be 100\,\% for $H/E < \text{0.5}$, that is not the case for electrons. A tag and probe method is used to select electrons, distinguishing them from background objects. A gaussian is then fit to the invariant mass of the electron to capture the \PZ peak. 
 
 % e/gamma reco SFs and systs documented here: https://twiki.cern.ch/twiki/bin/view/CMS/EgammaRunIIRecommendations#E_gamma_RECO
 
 Muons follow a similar prescription, where the ID and isolation efficiencies are calculated in bins of $\eta$ and \pt. The systematic uncertainties for each of the two sources are separated---contrary to electrons and photons---and are usually 1\,\% or smaller in size. An equivalent reconstruction efficiency is not given as the dedicated muon chambers and reconstruction algorithms are more than sufficient.
-
-The scale factors and systematic uncertainties for electrons, photons, and muons were derived centrally for \acrshort{cms} by the \acrlong{pog}s.
 
 % Muon ID/ISO info: 2016 (https://twiki.cern.ch/twiki/bin/view/CMS/MuonReferenceEffs2016LegacyRereco), 2017 (https://twiki.cern.ch/twiki/bin/view/CMS/MuonReferenceEffs2017), 2018 (https://twiki.cern.ch/twiki/bin/view/CMS/MuonReferenceEffs2018)
 
@@ -289,6 +289,8 @@ In a similar fashion to the section above, objects classified by the \deepakeigh
 \subsection{Minor contributions}
 \label{subsec:htoinv_minor_weights_systs}
 
+In the following subsection, minor corrections and uncertainties which had little impact on the yields are documented.
+
 
 %=========================================================
 
@@ -313,7 +315,7 @@ where $\epsilon$ is the probability for an object to pre-fire as a function of i
 \subsubsection{Jet energy scale and resolution}
 \label{subsubsec:htoinv_JES_JER_systs}
 
-The \acrfull{jes} and resolution uncertainties are applied to all simulated samples. Many individual sources contribute to the \acrshort{jes}, and in this analysis the overall uncertainty is taken. The same is true for the \acrshort{jer}. To estimate the magnitude of these systematic uncertainties, each event is copied once per variation (i.e., upward and downward for the total \acrshort{jes} and \acrshort{jer}). In the copied event, the \pt of the AK4 \glspl{jet} are varied according to scale factors from resolution/scale maps as a function of \pt and $\eta$. Consequently, the \ptvecmiss is also changed for the event. The copied events are propagated through the analysis with the same treatment as the standard events. After categorisation and binning in \ptmiss, the weighted event yields from the copy in a given subcategory and \ptmiss bin serve as the uncertainty on the nominal yields.
+To estimate the magnitude of the \acrfull{jes} and resolution (\acrshort{jer}) uncertainties, each event is copied once per variation (i.e., upward and downward for the \acrshort{jes} and \acrshort{jer}). In the copied event, the \pt of the AK4 \glspl{jet} are varied according to scale factors from resolution/scale maps as a function of \pt and $\eta$. Consequently, the \ptvecmiss is also changed for the event. The copied events are propagated through the analysis with the same treatment as the standard events. After categorisation and binning in \ptmiss, the weighted event yields from the copy in a given subcategory and \ptmiss bin serve as the uncertainty on the nominal yields.
 
 As the event selection for the signal region is mirrored in the \glspl{CR}, variations from the \acrshort{jer} and \acrshort{jes} variations should affect both in a similar way and their effects should largely cancel in the fit to data. This cancellation is however not complete, resulting in residual differences of 2\,\% and 3\,\% on average for \acrshort{jer} and \acrshort{jes}, respectively. Similar variations for the signal processes were observed. As such, these values are applied as systematic uncertainties to all signal and background processes in all regions of the analysis.
 
@@ -340,7 +342,7 @@ Uncertainties are associated with the various methods designed to measure the lu
         Ghosts and satellites & 0.4 & 0.1 & ---  \\
         \bottomrule
     \end{tabular}
-    \caption[Sources of uncertainty in the luminosity measurements for each year of Run-2]{Sources of uncertainty in the luminosity measurements for each year of Run-2, and their impacts in percent. For each row except the first, the source of uncertainty is assumed to be correlated between years for which it was present.}
+    \caption[Sources of uncertainty in the luminosity measurements for each year of Run-2]{Sources of uncertainty in the luminosity measurements for each year of Run-2, and their impacts in percent.}
     \label{tab:lumi_systs}
 \end{table}
 
@@ -353,7 +355,7 @@ Uncertainties are associated with the various methods designed to measure the lu
 \subsubsection{Cross section for signal processes}
 \label{subsubsec:htoinv_signal_xs_syst}
 
-There are several sources of uncertainty in the computation of high order cross sections, from both theoretical and experimental sides. As with the nominal cross sections for signal processes, the uncertainties are retrieved from Ref.~\citenum{Cepeda:2019klc}. Each source for every signal process is treated as a separate uncertainty on the normalisation. They are correlated across years as the cross sections are constant. Nominal values of the cross sections at \comruntwo are tabulated in Tab.~\ref{tab:htoinv_signal_xsecs}. A summary of the uncertainties are presented in Tab.~\ref{tab:htoinv_signal_xs_systs}.
+There are several sources of uncertainty in the computation of high order cross sections, from both theoretical and experimental sides. As with the nominal cross sections for signal processes, the uncertainties are retrieved from Ref.~\citenum{Cepeda:2019klc}. Each source for each signal process is treated as a separate uncertainty on the normalisation. They are correlated across years as the cross sections are constant. Nominal values of the cross sections at \comruntwo are tabulated in Tab.~\ref{tab:htoinv_signal_xsecs}. A summary of the uncertainties are presented in Tab.~\ref{tab:htoinv_signal_xs_systs}.
 
 \begin{table}[htbp]
     \centering
@@ -379,16 +381,16 @@ There are several sources of uncertainty in the computation of high order cross 
 \subsection{Summary of systematic uncertainties}
 \label{subsec:htoinv_syst_summary}
 
-Tab.~\ref{tab:htoinv_syst_summary} contains a summary of the systematic uncertainties incorporated in the fits to data. The type of uncertainty, whether it affects primarily the normalisation of the event yields and/or the shapes of distributions significantly, the data taking years they apply in and correlations between years, the samples affected (where ``All'' corresponds to all signal and background simulation), and an estimation of the impact on event yields in the \ptmiss distribution are presented.
+Tab.~\ref{tab:htoinv_syst_summary} contains a summary of the systematic uncertainties incorporated in the fits to data. The type of uncertainty, whether it affects primarily the normalisation of the event yields and/or the shapes of distributions, the applicable data taking years and correlations among them, the samples affected (where ``all'' corresponds to all signal and background simulation), and an estimation of the impact on event yields in the \ptmiss distribution are presented.
 
 \begin{sidewaystable}[htbp]
     \centering
-    \begin{tabular}{lcccc}
+    \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lcccc}
         \toprule
         Source & Type & Years & Samples & Size (\%) \\\midrule
         Pileup & Normalisation, shape & All, correlated & All & 1--2 \\
-        \acrshort{nlo} \muR & Normalisation, shape & All, correlated & \acrshort{lo} $\PVec \plusjets$ & 0--5 \\
-        \acrshort{nlo} \muF & Normalisation, shape & All, correlated & \acrshort{lo} $\PVec \plusjets$ & 1--10 \\
+        \acrshort{nlo} renormalisation scale & Normalisation, shape & All, correlated & \acrshort{lo} $\PVec \plusjets$ & 0--5 \\
+        \acrshort{nlo} factorisation scale & Normalisation, shape & All, correlated & \acrshort{lo} $\PVec \plusjets$ & 1--10 \\
         \acrshort{nlo} PDF & Normalisation, shape & All, correlated & \acrshort{lo} $\PVec \plusjets$ & 2--20 \\
         Trigger efficiency & Normalisation, shape & All, correlated & All & 1--2 \\
         QCD \muR \& \muF & Shape & All, correlated & \ttH, \ttbar, $\ttbar X$ & 0--10 \\
@@ -408,7 +410,7 @@ Tab.~\ref{tab:htoinv_syst_summary} contains a summary of the systematic uncertai
         \acrshort{qcd} prediction & Normalisation & All, uncorrelated & \acrshort{qcd} in signal region & 50 \\
         Signal cross section & Normalisation & All, correlated & Signal & 0.5--9 \\
         \bottomrule
-    \end{tabular}
+    \end{tabular*}
     \caption[The experimental uncertainties present in the analysis with the applicable samples and impact on the corresponding event counts]{The experimental uncertainties present in the analysis with the applicable samples and impact on the corresponding event counts.}
     \label{tab:htoinv_syst_summary}
 \end{sidewaystable}

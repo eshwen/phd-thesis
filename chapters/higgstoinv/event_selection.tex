@@ -45,7 +45,7 @@ The preselection is designed to discriminate between signal and background event
 \subsection{Additional filters}
 \label{subsec:htoinv_other_filters}
 
-Further selections are applied to filter poorly measured or mis-reconstructed events in both data and \acrshort{mc}. These are applied to all years, regions, and categories unless stated otherwise. A ``muon \gls{jet} filter'' rejects events with mis-reconstructed muons by requiring all \glspl{jet} with $\pt > \text{200}\GeV$ to have a muon energy fraction $f_{\mathrm{E}}^{\Pmu} < \text{0.5}$, and $\Delta\phi(\mathrm{j}, \, \ptvecmiss) < \pi - \text{0.4}$. Events containing a \gls{jet} in the forward region with $\pt > \text{50}\GeV$ are rejected since they are more susceptible to mismeasurement in that area of the detector. An additional benefit is the further separation of signal from background.
+Further selections are applied to filter poorly measured or mis-reconstructed events in both data and \acrshort{mc}. These are applied to all years, regions, and categories unless stated otherwise. A ``muon \gls{jet} filter'' rejects events with mis-reconstructed muons by requiring all \glspl{jet} with $\pt > \text{200}\GeV$ to have a muon energy fraction $f_{\mathrm{E}}^{\Pmu} < \text{0.5}$ and $\Delta\phi(\mathrm{j}, \, \ptvecmiss) < \pi - \text{0.4}$. Events containing a \gls{jet} in the forward region with $\pt > \text{50}\GeV$ are rejected since they are more susceptible to mismeasurement in that area of the detector. An additional benefit is the further separation of signal from background.
 
 Charged ($f_{\mathrm{E}}^{h\pm}$) and neutral hadron energy fraction ($f_{\mathrm{E}}^{h0}$) requirements are applied to all \glspl{jet} via fulfillment of the tight \gls{jet} ID criteria (see Chpt.~\ref{subsec:objects_jets}). Furthermore, stricter selections are placed on the leading two \glspl{jet} as follows:
 
@@ -96,7 +96,7 @@ A discrepancy between the directions of the \htvecmiss and \ptvecmiss were found
 \subsection{Mitigating the HEM issue}
 \label{subsec:htoinv_hem_mitigation}
 
-During the 2018 data taking period, the HEM issue (see Chpt.~\ref{subsec:htoinv_data}) forced additional measures to be taken that suppressed its effect on the events. For the data recorded within affected period, region-dependent selections were updated to remove events that met the following criteria:
+During the 2018 data taking period, the HEM issue forced additional measures to be taken that suppressed its effect on the events. For the data recorded within affected period, region-dependent selections were updated to remove events that met the following criteria:
 \medskip
 \begin{easylist}[itemize]
     \cutflowlistprops
@@ -106,21 +106,21 @@ During the 2018 data taking period, the HEM issue (see Chpt.~\ref{subsec:htoinv_
 
 \medskip
 
-\noindent{}Events in simulation that met the same criteria were instead weighted by the integrated luminosity from 2018 that was not affected by the issue (i.e., 21.1\fbinv) rather than the entire year. It is applicable under the assumption that both data and simulation are distributed comparably in the $\eta-\phi$ portions of the detector when the issue was not present. Given geometric variables agree very well between data and simulation, and corrections are implemented to further synchronise them, the assumption is valid.
+\noindent{}Events in simulation that met the same criteria were instead weighted by the integrated luminosity from 2018 that was not affected by the issue (i.e., 21.1\fbinv) rather than the entire year. It is applicable under the assumption that both data and simulation are distributed comparably in the $\eta-\phi$ portions of the detector when the issue was not present. Given geometric variables agree very well between data and simulation in the analysis, and corrections are implemented to further synchronise them, the assumption is valid.
 
-The effect of the HEM issue can be seen in Fig.~\ref{fig:htoinv_hem_issue_met_phi}. The $\phi(\ptvecmiss)$ distribution is shown in a \gls{SB} to the signal region defined by inverting the \omegaTilde variable (see Chpt.~\ref{subsubsec:htoinv_ang_var_optimisation}) since it kinematically resembles the signal region, and the data--simulation discrepancy can be removed while still blind in the signal region.
+The effect of the HEM issue can be seen in Fig.~\ref{fig:htoinv_hem_issue_met_phi}. The $\phi(\ptvecmiss)$ distribution is shown in a \gls{SB} to the signal region defined by inverting the \omegaTilde variable (see Chpt.~\ref{subsubsec:htoinv_ang_var_optimisation}) since it kinematically resembles the signal region, and the data--simulation discrepancy can be removed while still blind to the data in the signal region.
 
 \begin{figure}[htbp]
     \centering
-    \begin{subfigure}[b]{0.34\textwidth}
+    \begin{subfigure}[b]{0.4\textwidth}
         \includegraphics[width=\textwidth]{figures/hem_issue/sideband_4/met_phi/met_phi_ttH_before_annotated.pdf}
         \caption{\ttH inclusive category}
     \end{subfigure}
-    \hspace{0.05\textwidth}
-    \begin{subfigure}[b]{0.34\textwidth}
+    \hspace{0.1\textwidth}
+    \begin{subfigure}[b]{0.4\textwidth}
         \includegraphics[width=\textwidth]{figures/hem_issue/sideband_4/met_phi/met_phi_VH_before_annotated.pdf}
         \caption{\VH inclusive category}
     \end{subfigure}
-    \caption[The azimuthal angle of the \ptvecmiss in the inclusive \ttH and \VH categories before and after applying the selections designed to mitigate the HEM issue in 2018]{The azimuthal angle of the \ptvecmiss in the inclusive \ttH and \VH categories before and after applying the selections designed to mitigate the HEM issue in 2018. The loose \omegaTilde \gls{SB} is used to demonstrate the effect. A red box encloses the sector that is removed by the selection applied in the signal region and \glspl{SB}.}
+    \caption[The azimuthal angle of the \ptvecmiss inclusive in the \ttH and \VH categories before and after applying the selections designed to mitigate the HEM issue in 2018]{The azimuthal angle of the \ptvecmiss inclusive in the \ttH and \VH categories before and after applying the selections designed to mitigate the HEM issue in 2018. The loose \omegaTilde \gls{SB} is used to demonstrate the effect. A red box encloses the sector that is removed by the selection applied in the signal region and \glspl{SB}.}
     \label{fig:htoinv_hem_issue_met_phi}
 \end{figure}

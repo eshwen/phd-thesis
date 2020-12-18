@@ -1,9 +1,9 @@
 \section{Results}
 \label{sec:htoinv_results}
 
-The fits of signal and background to the observed data are performed as outlined in Chpt.~\ref{fig:htoinv_fit_overview}. Tabulated event counts in the signal region after the \gls{CR}-only fit are shown in Chpt.~\ref{subsec:yield_tables_SR_CR_only_fit} to compare the background prediction from those regions to the observed data in the signal region.
+The fits of signal and background to the observed data are performed as outlined in Chpt.~\ref{fig:htoinv_fit_overview}. Tabulated event counts in the signal region after the \gls{CR}-only fit are shown in Chpt.~\ref{subsec:yield_tables_SR_CR_only_fit} to compare the background prediction from those regions to the observed data in the signal region. To check whether the \acrshort{sm} background by itself can accurately model the data, event yields in the signal region from the fit to the background-only hypothesis are exhibited in Chpt.~\ref{subsec:yield_tables_SR_B_only_fit}. No significant excesses in the data are identified that can be plugged by signal, demonstrating that indeed the background-only fit can bring together the data and \acrshort{sm} background into agreement within uncertainties. Limits can therefore be set.
 
-In Chpts.~\ref{subsec:htoinv_results_ttH} and \ref{subsec:htoinv_results_VH}, the results of the fits for the \ttH and \VH channels, individually are shown in several forms: pre-fit vs. post-fit distributions in each category and \ptmiss bin; the observed upper limit on the signal strength parameter $\BRHinvFull$ at 95\,\% confidence level from the signal plus background hypothesis, accompanied by the median expected limit with 68\,\% and 95\,\% confidence level intervals from the background-only hypothesis; and profile likelihood ratios as a function of the signal strength. The outcome from combining both channels, yielding the final result, is given in Chpt.~\ref{subsec:htoinv_combined_results}. As an additional comparison between the observed data and \acrshort{sm} expectation, event yields in the signal region from the fit to the background-only hypothesis are exhibited in Chpt.~\ref{subsec:yield_tables_SR_B_only_fit}.
+In Chpts.~\ref{subsec:htoinv_results_ttH} and \ref{subsec:htoinv_results_VH}, the results of the fits for the \ttH and \VH channels, individually are shown in several forms: pre-fit vs. post-fit distributions in each category and \ptmiss bin; the observed upper limit on the signal strength parameter $\BRHinvFull$ at 95\,\% confidence level from the signal plus background hypothesis, accompanied by the median expected limit with 68\,\% and 95\,\% confidence level intervals from the background-only hypothesis; and profile likelihood ratios as a function of the signal strength. The outcome from combining both channels, yielding the final result, is given in Chpt.~\ref{subsec:htoinv_combined_results}.
 
 
 %=========================================================
@@ -14,6 +14,18 @@ In Chpts.~\ref{subsec:htoinv_results_ttH} and \ref{subsec:htoinv_results_VH}, th
 From the fit invoking only the \glspl{CR} to scale the \acrlong{sm} background events in the signal region, a sufficient description of the data can be seen. The total \acrshort{sm} event counts in Tabs.~\ref{tab:yields_SR_CR_only_2016}, \ref{tab:yields_SR_CR_only_2017}, and \ref{tab:yields_SR_CR_only_2018}, which correspond to the 2016, 2017, and 2018 datasets, respectively, are very similar to data within uncertainties. The largest discrepancies occur, as expected, from the bins with small event counts such as in the \ttH boosted categories. However, with additional constraints provided by data and simulation in the background-only or signal plus background fits, dissimilarities can be mitigated to some extent.
 
 \clearpage
+
+
+%=========================================================
+
+
+\import{./}{yields_SR_B_only_fit.tex}
+
+\clearpage
+
+The results of the background-only fit to data model it well in large part. As noted above, no significant excess is observed in the data. With the \acrshort{sm} background describing the data sufficiently, only upper limits can be set on $\BRof{\higgstoinv}$. Post-fit distributions in the signal region---visualising the event counts in the following tables---are depicted in Apps.~\ref{sec:B_only_fit_plots_ttH_SR} and \ref{sec:B_only_fit_plots_VH_SR} for the \ttH and \VH categories, respectively. The ``pre-fit'' yields are from the results of the \gls{CR}-only fit documented earlier in this chapter.
+
+As expected, knowledge of the background and data in the signal region permits the background-only fit to model the data better than the \gls{CR}-only fit. Noticeable improvements are in the \ttH and \VH resolved categories. While small in some cases, the addition of the \acrshort{qcd} multijet background with 50\,\% uncertainty allows for an additional avenue for constraining the backgrounds. Strong sensitivity translates to a small value of the expected upper limit on $\BRof{\higgstoinv}$.
 
 
 %=========================================================
@@ -71,8 +83,6 @@ By category, those targeting the boosted topologies are the most sensitive to th
 
 The profile likelihood scan illustrates how the likelihood function for the fit over a set of categories evolves with the upper limit on branching ratio. The horizontal line $-\text{2}\Delta \ln(\likelihood) = \text{3.84}$ represents the 95\,\% confidence level. It can therefore be seen that the intersection of a dashed curve with the line is equal to the median expected limit and the intersection of a solid curve equals the measured observed limit. Indicative of the stability and health of the fit, the likelihood scans in Fig.~\ref{fig:htoinv_limit_ttH} are satisfactory with minima near $\BR = \text{0}$, rising smoothly either side of it.
 
-\clearpage
-
 
 %=========================================================
 
@@ -104,7 +114,9 @@ Distributions of the prediction from the signal plus background fit to data, for
 
 The \VH topology is dominated by the irreducible \ztonunupjets background, followed by lost lepton, and finally a small amount of \acrshort{qcd} multijet. Especially with the \gls{bjet}/boosted object requirements, and dijet signature coupled to a small mass window around the electroweak bosons, it is a percent-level background in the bins it appears in. The post-fit prediction agrees with the data well in most cases, demonstrating an adequate description and leaving little room for signal to be inflated. An exception the 1V category in 2018 whose observation is much larger than in the preceding years. The observed limits for 2j0b and 2j1b also fall close, if not slightly outside, the $\text{2}\sigma$ bound of the expected limit in 2017 and 2018.
 
-Fig.~\ref{fig:htoinv_limit_VH} showcases the expected and observed limits for the \VH category in each year and the Run-2 combination. Limits for each category can be found in Fig.~\ref{fig:htoinv_limit_VH_per_year}.
+Fig.~\ref{fig:htoinv_limit_VH} showcases the expected and observed limits for the \VH category in each year and for the Run-2 combination. Limits for the individual categories can be found in Fig.~\ref{fig:htoinv_limit_VH_per_year}.
+
+\clearpage
 
 \begin{figure}[htbp]
     \centering
@@ -128,8 +140,6 @@ For comparisons to public results, there are no full Run-2 hadronic $\VH(\higgst
 % Info about signal scale from 2016: https://indico.cern.ch/event/978146/contributions/4120060/attachments/2149295/3623502/2020-11-20_monov_update%2B.pdf
 
 The results per year in Fig.~\ref{fig:htoinv_limit_VH} are inconsistent to some degree, with an observation slightly below the $\text{2}\sigma$ boundary of the expected limit in 2016, correspondence in 2017, and an excess in 2018. In 2018, the observed limit is noticeably worse than in the preceding two. Inference from Figs.~\ref{fig:htoinv_mountain_range_VH_2018_single_lep_CRs} and \ref{fig:htoinv_mountain_range_VH_2018_dilep_photon_CRs} suggests it is due the over-prediction of simulation in all of the leptonic \glspl{CR} of the 1V category, consequently scaling down the background in the signal region. The 2j0b observation is also just outside the $\text{2}\sigma$ interval, further affecting the fit to the whole channel. Reassuringly, the expected limits per year are stable and as assumed (sensitivity improving each year, following the trend in integrated luminosity). No issues are found with the likelihood scans either.
-
-\clearpage
 
 
 %=========================================================
@@ -178,15 +188,3 @@ The \VH channel predominantly drives the combined observed and expected sensitiv
     \caption[Observed and median expected upper limits on $\BRof{\higgstoinv}$ at 95\,\% confidence level for each combination of channel and dataset analysed]{Observed and median expected upper limits on $\BRof{\higgstoinv}$ at 95\,\% confidence level for each combination of channel and dataset analysed.}
     \label{tab:htoinv_limits}
 \end{table}
-
-
-%=========================================================
-
-
-\import{./}{yields_SR_B_only_fit.tex}
-
-The results of the background-only fit to data model it well in large part, leading to strong expected upper limits on $\BRof{\higgstoinv}$. Post-fit distributions in the signal region---visualising the event counts in the following tables---are depicted in Apps.~\ref{sec:B_only_fit_plots_ttH_SR} and \ref{sec:B_only_fit_plots_VH_SR} for the \ttH and \VH categories, respectively. The ``pre-fit'' yields are from the results of the \gls{CR}-only fit documented earlier in this chapter.
-
-As expected, knowledge of the background and data in the signal region permits the background-only fit to model the data better than the \gls{CR}-only fit. Noticeable improvements are in the \ttH and \VH resolved categories. While small in some cases, the addition of the \acrshort{qcd} multijet background with 50\,\% uncertainty allows for an additional avenue for constraining the backgrounds.
-
-\clearpage

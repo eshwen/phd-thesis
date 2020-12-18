@@ -121,31 +121,36 @@ The relative composition of the background processes in each \gls{CR} after the 
 
 In order to predict the lost lepton background in the signal region, a freely floating rate parameter $a_{\lostlepton}$ is introduced in the fit. It is shared across the single lepton \glspl{CR} and signal region, where it scales the event count from simulation in these regions to obtain the expected values. Events are categorised and binned in the same manner in the single lepton \glspl{CR} as in the signal region, such that the rate parameters---and therefore the prediction---is derived bin-by-bin. The predicted number of lost lepton events in Eqs.~\ref{eq:likelihood_SR} and \ref{eq:likelihood_CRs} is then simply $b_{\lostlepton} \cdot a_{\lostlepton}$.
 
-Distributions of the single lepton \glspl{CR} after the \gls{CR}-only fit are illustrated in Fig.~\ref{fig:htoinv_mountain_range_2017_single_lep_CRs} for the 2017 dataset. Corresponding event counts, along with the rate parameters, can be found in Tab.~\ref{tab:htoinv_rate_params_2017_lost_lep}. Equivalent figures for the other data taking periods are accessible in Apps.~\ref{sec:pre_post_fit_plots_ttH_CRs} and \ref{sec:pre_post_fit_plots_VH_CRs} for the \ttH and \VH categories, respectively.
+Distributions of the single lepton \glspl{CR} after the \gls{CR}-only fit are illustrated in Figs.~\ref{fig:htoinv_mountain_range_2017_single_lep_ttH} and \ref{fig:htoinv_mountain_range_2017_single_lep_VH} in the \ttH and \VH categories, respectively, the 2017 dataset. Corresponding event counts, along with the rate parameters, can be found in Tab.~\ref{tab:htoinv_rate_params_2017_lost_lep}. Equivalent figures for the other data taking periods are accessible in Apps.~\ref{sec:pre_post_fit_plots_ttH_CRs} and \ref{sec:pre_post_fit_plots_VH_CRs} for the \ttH and \VH categories, respectively.
 
 \begin{figure}[htbp]
     \centering
-    \begin{subfigure}[b]{0.65\textwidth}
+    \begin{subfigure}[b]{0.9\textwidth}
         \includegraphics[width=\textwidth]{chapters/higgstoinv/figures/mountain_ranges/2017/ttH/Wmunu_tree_fit_b-abs_values_ttH_cats.pdf}
         \caption{\ttH --- \singleMuCr \gls{CR} (2017)}
     \end{subfigure}
 
-    \begin{subfigure}[b]{0.65\textwidth}
+    \begin{subfigure}[b]{0.9\textwidth}
         \includegraphics[width=\textwidth]{chapters/higgstoinv/figures/mountain_ranges/2017/ttH/Wenu_tree_fit_b-abs_values_ttH_cats.pdf}
         \caption{\ttH --- \singleEleCr \gls{CR} (2017)}
     \end{subfigure}
+    \caption[Post-fit yields for each category and \ptmiss bin in the single lepton control regions of the \ttH categories for the 2017 dataset]{Post-fit yields for each category and \ptmiss bin in the single lepton \glspl{CR} of the \ttH categories for the 2017 dataset. The total background pre-fit and post-fit is compared to data in the lower panel of each subfigure.}
+    \label{fig:htoinv_mountain_range_2017_single_lep_ttH}
+\end{figure}
 
-    \begin{subfigure}[b]{0.65\textwidth}
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{\textwidth}
         \includegraphics[width=\textwidth]{chapters/higgstoinv/figures/mountain_ranges/2017/VH/Wmunu_tree_fit_b-abs_values_VH_cats.pdf}
         \caption{\VH --- \singleMuCr \gls{CR} (2017)}
     \end{subfigure}
     \hfill
-    \begin{subfigure}[b]{0.65\textwidth}
+    \begin{subfigure}[b]{\textwidth}
         \includegraphics[width=\textwidth]{chapters/higgstoinv/figures/mountain_ranges/2017/VH/Wenu_tree_fit_b-abs_values_VH_cats.pdf}
         \caption{\VH --- \singleEleCr \gls{CR} (2017)}
     \end{subfigure}
-    \caption[Post-fit yields for each category and \ptmiss bin in the single lepton control regions for the 2017 dataset]{Post-fit yields for each category and \ptmiss bin in the single lepton control regions for the 2017 dataset. The total background pre-fit and post-fit is compared to data in the lower panel of each subfigure.}
-    \label{fig:htoinv_mountain_range_2017_single_lep_CRs}
+    \caption[Post-fit yields for each category and \ptmiss bin in the single lepton control regions of the \VH categories for the 2017 dataset]{Post-fit yields for each category and \ptmiss bin in the single lepton \glspl{CR} of the \VH categories for the 2017 dataset. The total background pre-fit and post-fit is compared to data in the lower panel of each subfigure.}
+    \label{fig:htoinv_mountain_range_2017_single_lep_VH}
 \end{figure}
 
 The fit performs adequately in bringing the simulation in closer agreement to the data, despite large initial disagreement in some bins. All of the bins are sufficiently populated, such that the uncertainty on the prediction is small in most cases. The predicted \acrshort{sm} background counts in the signal region from Tab.~\ref{tab:yields_SR_CR_only_2017} further corroborates the results as the yields are close to, if not above than the data in several bins.
@@ -159,41 +164,7 @@ The fit performs adequately in bringing the simulation in closer agreement to th
 
 The irreducible background from invisibly decaying \PZ bosons is estimated in the same manner as the lost lepton background. A rate parameter $a_{\ztonunu}$ ties together the dilepton \glspl{CR}, the photon \gls{CR}, and the signal region. The yields from simulation are scaled by the best fit value of the parameter, obtained during the simultaneous fit to the analysis regions. As with the lost lepton background, event categorisation is the same in these regions, allowing the predictions to be derived independently for each category and \ptmiss bin.
 
-For the \ttH categories, the \singlePhotonCr \gls{CR} is not used as the mapping of the $\Pphoton + \Pqb$ process onto $\PZ + \Pqb$ is accompanied by significant uncertainties. The region is leveraged by the \VH categories, however. In addition to the electroweak background dominated by \gammapjets simulation, the \acrshort{qcd} multijet presence---consisting of \glspl{jet} misidentified as photons---in the photon \gls{CR} is estimated by way of a data-driven purity measurement. This is detailed extensively in Chpt.~\ref{subsubsec:htoinv_photon_purity}.
-
-Distributions of the dilepton and photon \glspl{CR} from the \gls{CR}-only fit are shown in Fig.~\ref{fig:htoinv_mountain_range_2017_dilep_photon_CRs} for the 2017 dataset. Corresponding event counts, along with the rate parameters, can be found in Tab.~\ref{tab:htoinv_rate_params_2017_zinv}. The predicted invisible \PZ background in the signal region, for comparisons to the observed data, is tabulated in Tab.~\ref{tab:yields_SR_CR_only_2017}. Equivalent figures for the other data taking periods are accessible in Apps.~\ref{sec:pre_post_fit_plots_ttH_CRs} and \ref{sec:pre_post_fit_plots_VH_CRs} for the \ttH and \VH categories, respectively.
-
-\begin{figure}[htbp]
-    \centering
-    \begin{subfigure}[b]{0.49\textwidth}
-        \includegraphics[width=\textwidth]{chapters/higgstoinv/figures/mountain_ranges/2017/ttH/Zmumu_tree_fit_b-abs_values_ttH_cats.pdf}
-        \caption{\ttH --- \doubleMuCr \gls{CR} (2017)}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.49\textwidth}
-        \includegraphics[width=\textwidth]{chapters/higgstoinv/figures/mountain_ranges/2017/ttH/Zee_tree_fit_b-abs_values_ttH_cats.pdf}
-        \caption{\ttH --- \doubleEleCr \gls{CR} (2017)}
-    \end{subfigure}
-
-    \begin{subfigure}[b]{0.49\textwidth}
-        \includegraphics[width=\textwidth]{chapters/higgstoinv/figures/mountain_ranges/2017/VH/Zmumu_tree_fit_b-abs_values_VH_cats.pdf}
-        \caption{\VH --- \doubleMuCr \gls{CR} (2017)}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.49\textwidth}
-        \includegraphics[width=\textwidth]{chapters/higgstoinv/figures/mountain_ranges/2017/VH/Zee_tree_fit_b-abs_values_VH_cats.pdf}
-        \caption{\VH --- \doubleEleCr \gls{CR} (2017)}
-    \end{subfigure}
-
-    \begin{subfigure}[b]{0.49\textwidth}
-        \includegraphics[width=\textwidth]{chapters/higgstoinv/figures/mountain_ranges/2017/VH/Photon_tree_fit_b-abs_values_VH_cats.pdf}
-        \caption{\VH --- \singlePhotonCr \gls{CR} (2017)}
-    \end{subfigure}
-    \caption[Post-fit yields for each category and \ptmiss bin in the dilepton and photon control regions of the \ttH and \VH categories for the 2017 dataset]{Post-fit yields for each category and \ptmiss bin in the dilepton and photon control regions of the \ttH and \VH categories for the 2017 dataset. The total background pre-fit and post-fit is compared to data in the lower panel of each subfigure.}
-    \label{fig:htoinv_mountain_range_2017_dilep_photon_CRs}
-\end{figure}
-
-Despite the low yields in the \ttH categories, the fit is able to correct the background closer the observed data in most of the bins. A comparable result is achieved in the \VH categories. The highly populated \singlePhotonCr \gls{CR} adds a powerful additional constraint to the prediction; extremely useful given \ztonunu is comfortably the dominant background for the \VH channel. With \acrshort{qcd} contributing under 5\,\% to the total yield in the photon region, convergence of the fit is expectedly driven by the electroweak processes.
+For the \ttH categories, the \singlePhotonCr \gls{CR} is not used for the \ztonunu prediction. The region is leveraged by the \VH categories, however. In addition to the electroweak background dominated by \gammapjets simulation, the \acrshort{qcd} multijet presence---consisting of \glspl{jet} misidentified as photons---in the photon \gls{CR} is estimated by way of a data-driven purity measurement. This is detailed extensively in Chpt.~\ref{subsubsec:htoinv_photon_purity}. The results of a \gls{CR}-only fit to data for the 2017 dataset are shown as an example in Chpt.~\ref{subsubsec:htoinv_zinv_CR_only_fit}.
 
 
 %=========================================================
@@ -273,45 +244,47 @@ In the analysis, the purity measurement is used to estimate the \acrshort{qcd} m
 %=========================================================
 
 
-\subsection{Sidebands to the signal region}
-\label{subsubsec:htoinv_sidebands}
+\subsubsection{Results from a control region-only fit}
+\label{subsubsec:htoinv_zinv_CR_only_fit}
 
-Several kinematic cuts in the analysis are designed to reject \acrshort{qcd} in the signal region. So by inverting and tightening one or more of them, it is possible to construct multijet-enriched regions known as \emph{\glspl{SB}}. Two sidebands are defined for the \ttH category by inversions on the angular variables \omegaTilde and \dphiFj:
-
-\medskip
-\begin{easylist}[itemize]
-    \easylistprops
-    & Tight sideband: $\omegaTilde < \text{0.2}$, $\dphiFj \leq \text{0.5}$
-    & Loose sideband: $\text{0.2} \leq \omegaTilde \leq \text{0.3}$, $\dphiFj \leq \text{0.5}$
-\end{easylist}
-
-The signal region is defined by $\omegaTilde > \text{0.3}$ and $\dphiFj > \text{0.5}$ as in Tab.~\ref{tab:htoinv_categories}. Otherwise, the same selection applied to the signal is also done so for the sidebands. Yields from all of the \ttH categories are combined to form the sidebands as statistical limitations would otherwise ensue.
-
-Events with a \VH topology, being characterised by a dijet pair or single fat jet recoiling from the \ptvecmiss, naturally have a large \mindphiJetMet. Obtaining a multijet enriched sideband by inverting this variable was therefore not possible. The sidebands inverted in \omegaTilde also contained little \acrshort{qcd} to extrapolate from. Therefore, a single sideband was created from the 2j0b category that inverts \mindphi, \omegaTilde (tightly, as with \ttH), and the dijet mass requirement from Tab.~\ref{tab:htoinv_categories}. The latter inversion populates the sideband sufficiently with multijet events. This sideband is utilised by all \VH categories, as while the 1V category does not enforce the same dijet mass window, the soft drop mass requirement for the boosted \PVec-tagged \gls{jet} is a suitable proxy. Inclusion of \glspl{bjet} in the 2j1b and 2j2b categories reduces the multijet content of potential sidebands significantly. For this reason, these categories to also utilise the sideband constructed from 2j0b.
-
-Figs.~\ref{fig:htoinv_sb_yields_comb2016to18_ttH} and \ref{fig:htoinv_sb_yields_comb2016to18_VH} illustrate the \ptmiss distributions in the \ttH and \VH \glspl{SB} after the analysis-level selections with the full Run-2 dataset. Background estimation is performed separately for each year due to the differing running conditions, detector configuration, and the different effects or features seen in the data.
+Distributions of the dilepton and photon \glspl{CR} from the \gls{CR}-only fit are shown in Fig.~\ref{fig:htoinv_mountain_range_2017_dilep_CRs_ttH} and \ref{fig:htoinv_mountain_range_2017_dilep_CRs_VH} in the \ttH and \VH categories, respectively, for the 2017 dataset. Corresponding event counts, along with the rate parameters, can be found in Tab.~\ref{tab:htoinv_rate_params_2017_zinv}. The predicted invisible \PZ background in the signal region, for comparisons to the observed data, is tabulated in Tab.~\ref{tab:yields_SR_CR_only_2017}. Equivalent figures for the other data taking periods are accessible in Apps.~\ref{sec:pre_post_fit_plots_ttH_CRs} and \ref{sec:pre_post_fit_plots_VH_CRs} for the \ttH and \VH categories, respectively.
 
 \begin{figure}[htbp]
     \centering
-    \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/sideband_0/ttH.pdf}
-        \caption{Tight double sideband --- \ttH}
+    \begin{subfigure}[b]{0.9\textwidth}
+        \includegraphics[width=\textwidth]{chapters/higgstoinv/figures/mountain_ranges/2017/ttH/Zmumu_tree_fit_b-abs_values_ttH_cats.pdf}
+        \caption{\ttH --- \doubleMuCr \gls{CR} (2017)}
     \end{subfigure}
-    \hspace{0.05\textwidth}
-    \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/sideband_2/ttH.pdf}
-        \caption{Loose double sideband --- \ttH}
+    \hfill
+    \begin{subfigure}[b]{0.9\textwidth}
+        \includegraphics[width=\textwidth]{chapters/higgstoinv/figures/mountain_ranges/2017/ttH/Zee_tree_fit_b-abs_values_ttH_cats.pdf}
+        \caption{\ttH --- \doubleEleCr \gls{CR} (2017)}
     \end{subfigure}
-    \caption[Data--simulation comparisons of the \ptmiss distribution in the tight and loose double sidebands for the \ttH category, using the full Run-2 dataset]{Data--simulation comparisons of the \ptmiss distribution in the tight and loose double \glspl{SB} for the \ttH category, using the full Run-2 dataset.}
-    \label{fig:htoinv_sb_yields_comb2016to18_ttH}
+    \caption[Post-fit yields for each category and \ptmiss bin in the dilepton control regions of the \ttH categories for the 2017 dataset]{Post-fit yields for each category and \ptmiss bin in the dilepton \glspl{CR} of the \ttH categories for the 2017 dataset. The total background pre-fit and post-fit is compared to data in the lower panel of each subfigure.}
+    \label{fig:htoinv_mountain_range_2017_dilep_CRs_ttH}
 \end{figure}
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.45\textwidth]{figures/region_plots/full_Run2/VH_sideband/VH.pdf}
-    \caption[Data--simulation comparison of the \ptmiss distribution in the sideband for the \VH category, using the full Run-2 dataset]{Data--simulation comparison of the \ptmiss distribution in the sideband for the \VH category, using the full Run-2 dataset.}
-    \label{fig:htoinv_sb_yields_comb2016to18_VH}
+    \begin{subfigure}[b]{0.9\textwidth}
+        \includegraphics[width=\textwidth]{chapters/higgstoinv/figures/mountain_ranges/2017/VH/Zmumu_tree_fit_b-abs_values_VH_cats.pdf}
+        \caption{\VH --- \doubleMuCr \gls{CR} (2017)}
+    \end{subfigure}
+
+    \begin{subfigure}[b]{0.9\textwidth}
+        \includegraphics[width=\textwidth]{chapters/higgstoinv/figures/mountain_ranges/2017/VH/Zee_tree_fit_b-abs_values_VH_cats.pdf}
+        \caption{\VH --- \doubleEleCr \gls{CR} (2017)}
+    \end{subfigure}
+
+    \begin{subfigure}[b]{0.9\textwidth}
+        \includegraphics[width=\textwidth]{chapters/higgstoinv/figures/mountain_ranges/2017/VH/Photon_tree_fit_b-abs_values_VH_cats.pdf}
+        \caption{\VH --- \singlePhotonCr \gls{CR} (2017)}
+    \end{subfigure}
+    \caption[Post-fit yields for each category and \ptmiss bin in the dilepton and photon control regions of the \VH categories for the 2017 dataset]{Post-fit yields for each category and \ptmiss bin in the dilepton and photon \glspl{CR} of the \VH categories for the 2017 dataset. The total background pre-fit and post-fit is compared to data in the lower panel of each subfigure.}
+    \label{fig:htoinv_mountain_range_2017_dilep_CRs_VH}
 \end{figure}
+
+Despite the low yields in the \ttH categories, the fit is able to correct the background closer the observed data in most of the bins. A comparable result is achieved in the \VH categories. The highly populated \singlePhotonCr \gls{CR} adds a powerful additional constraint to the prediction; extremely useful given \ztonunu is comfortably the dominant background for the \VH channel. With \acrshort{qcd} contributing under 5\,\% to the total yield in the photon region, convergence of the fit is expectedly driven by the electroweak processes.
 
 
 %=========================================================
@@ -330,7 +303,64 @@ Contributions to the signal region from \acrshort{qcd} multijet events should be
 
 A general rule is that the equivalent luminosity of a given dataset should be comparable to, or even exceed, that of the data collected by the experiment. Since the \acrshort{qcd} multijet process has a very large cross section, simulating the required number of events to match the luminosity of the data recorded during Run-2 is not feasible.
 
-To estimate the presence of \acrshort{qcd} in the signal region, a data driven approach is taken utilising the sidebands defined above. This is derived separately for each channel and data taking year. A \glspl{CR}-only fit is performed to extract the rate parameters ($a$ from Eq.~\ref{eq:likelihood_CRs}) that scale the electroweak backgrounds in the signal region. Applying these also to the corresponding backgrounds in the sidebands changes the event distribution and hence the data--\acrshort{mc} agreement. The excess in data in a sideband is assumed to arise solely from multijet events, and as such the difference between data and the non-multijet background is attributed to \acrshort{qcd} (denoted as $N_{\mathrm{SB}}^{\mathrm{QCD}}$).
+To estimate the presence of \acrshort{qcd} in the signal region, a data driven approach is taken utilising the sidebands defined in Chpt.~\ref{subsubsec:htoinv_sidebands}. Then, the application of the sidebands to derive the predicted event counts in the signal region is outlined in Chpt.~\ref{subsubsec:htoinv_qcd_pred_SR}. This is derived separately for each channel and data taking year.
+
+
+%=========================================================
+
+
+\subsubsection{Sidebands to the signal region}
+\label{subsubsec:htoinv_sidebands}
+
+Several kinematic cuts in the analysis are designed to reject \acrshort{qcd} in the signal region. So by inverting and tightening one or more of them, it is possible to construct multijet-enriched regions known as \emph{\glspl{SB}}. The sideband is defined for the \ttH category by inversions on the angular variables \omegaTilde and \dphiFj:
+
+\medskip
+\begin{easylist}[itemize]
+    \easylistprops
+    & \ttH sideband: $\omegaTilde < \text{0.2}$, $\dphiFj \leq \text{0.5}$
+\end{easylist}
+
+\medskip
+
+\noindent()The signal region is defined by $\omegaTilde > \text{0.3}$ and $\dphiFj > \text{0.5}$ as in Tab.~\ref{tab:htoinv_categories}. Otherwise, the same selection applied to the signal is also done so for the sidebands. Yields from all of the \ttH categories are combined to form the sidebands as statistical limitations would otherwise ensue.
+
+Events with a \VH topology, being characterised by a dijet pair or single fat jet recoiling from the \ptvecmiss, naturally have a large \mindphiJetMet. Obtaining a multijet enriched sideband by inverting this variable was therefore not possible. The sidebands inverted in \omegaTilde also contained little \acrshort{qcd} to extrapolate from. Therefore, a single sideband was created from the 2j0b category that inverts \mindphi, \omegaTilde (tightly, as with \ttH), and the dijet mass requirement from Tab.~\ref{tab:htoinv_categories}:
+
+\medskip
+\begin{easylist}[itemize]
+    \easylistprops
+    & \VH sideband: $\omegaTilde < \text{0.2}$, $\dphiFj \leq \text{0.5}$, $\mjj \notin [\text{65}, \text{105})$
+\end{easylist}
+
+\medskip
+
+\noindent{}The latter inversion populates the sideband sufficiently with multijet events. This sideband is utilised by all \VH categories, as while the 1V category does not enforce the same dijet mass window, the soft drop mass requirement for the boosted \PVec-tagged \gls{jet} is a suitable proxy. Inclusion of \glspl{bjet} in the 2j1b and 2j2b categories reduces the multijet content of potential sidebands significantly. For this reason, these categories to also utilise the sideband constructed from 2j0b.
+
+Fig.~\ref{fig:htoinv_sb_yields_combRun2} illustrates the \ptmiss distributions in the \ttH and \VH \glspl{SB} after the analysis-level selections with the full Run-2 dataset. Background estimation is performed separately for each year due to the differing running conditions, detector configuration, and the different effects or features seen in the data.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/sideband_0/ttH.pdf}
+        \caption{\ttH}
+    \end{subfigure}
+    \hspace{0.05\textwidth}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/VH_sideband/VH.pdf}
+        \caption{\VH}
+    \end{subfigure}
+    \caption[Data--simulation comparisons of the \ptmiss distribution in the \ttH and \VH sidebands, aggregated over the full Run-2 dataset]{Data--simulation comparisons of the \ptmiss distribution in the \ttH and \VH sidebands, aggregated over the full Run-2 dataset.}
+    \label{fig:htoinv_sb_yields_combRun2}
+\end{figure}
+
+
+%=========================================================
+
+
+\subsubsection{Prediction in the signal region}
+\label{subsubsec:htoinv_qcd_pred_SR}
+
+A \glspl{CR}-only fit is performed without multijet simulation to extract the rate parameters ($a$ from Eq.~\ref{eq:likelihood_CRs}) that scale the electroweak backgrounds in the signal region. Applying these also to the corresponding backgrounds in the sidebands changes the event distribution and hence the data--\acrshort{mc} agreement. The excess in data in a sideband is assumed to arise solely from multijet events, and as such the difference between data and the non-multijet background is attributed to \acrshort{qcd} (denoted as $N_{\mathrm{SB}}^{\mathrm{QCD}}$).
 
 \acrshort{qcd} in the signal region $N_{\mathrm{pred.}}^{\mathrm{QCD}}$ (corresponding to $c_{\mathrm{QCD}}$ in Eq.~\ref{eq:likelihood_SR}) is predicted in each category and \ptmiss bin as follows:
 \begin{equation}
@@ -338,7 +368,7 @@ To estimate the presence of \acrshort{qcd} in the signal region, a data driven a
     \label{eq:qcd_prediction}
 \end{equation}
 
-The distribution of the \acrshort{qcd} background for each category and \ptmiss bin is extrapolated from the sidebands with the factors $\catFraction$ and $\metFraction$. $\catFraction$ is the fraction of non-\acrshort{qcd} \acrshort{mc} in a given category of a given sideband, inclusive of \ptmiss. $\metFraction$ is the fraction of non-\acrshort{qcd} \acrshort{mc} in a given \ptmiss bin of a given sideband, inclusive of category. Determining $\catFraction$ and $\metFraction$ from non-multijet simulation assumes the \acrshort{qcd} background is distributed in the same proportion across categories as the the non-\acrshort{qcd} background, though gives a more consistent description of the data in the sidebands than estimating the fractions from \acrshort{qcd} \acrshort{mc}. A 50\,\% uncertainty following a log normal distribution is assigned to the predicted multijet event counts. Numerical values for the terms in Eq.~\ref{eq:qcd_prediction} for deriving the \acrshort{qcd} prediction are visible in App.~\ref{sec:htoinv_qcd_inputs}.
+The distribution of the \acrshort{qcd} background for each category and \ptmiss bin is extrapolated from the sidebands with the factors $\catFraction$ and $\metFraction$. $\catFraction$ is the fraction of non-\acrshort{qcd} \acrshort{mc} in a given category of the signal region, inclusive of \ptmiss. $\metFraction$ is the fraction of non-\acrshort{qcd} \acrshort{mc} in a given \ptmiss bin of the sideband, inclusive of category. Determining $\catFraction$ and $\metFraction$ from non-multijet simulation assumes the \acrshort{qcd} background is distributed in the same proportion across categories as the the non-\acrshort{qcd} background, though gives a more consistent description of the data in the sidebands than estimating the fractions from \acrshort{qcd} \acrshort{mc}. A 50\,\% systematic uncertainty following a log normal distribution is assigned to the predicted multijet event counts. Numerical values for the terms in Eq.~\ref{eq:qcd_prediction} for deriving the \acrshort{qcd} prediction are visible in App.~\ref{sec:htoinv_qcd_inputs}.
 
 The term $\transfac_{\mathrm{QCD}}$ is the transfer factor relating the \acrshort{qcd} in the sideband to the multijet simulation in the signal region. For \ttH, the transfer factor is inclusive over the categories, i.e.,
 \begin{equation}
@@ -351,4 +381,4 @@ To attempt to mitigate the statistical limitations of the \acrshort{qcd} \acrsho
 
 The \VH categories have the benefit of a much larger sample size, both before and after smearing the \acrshort{mc}. In this case, the transfer factor is derived bin-by-bin.
 
-For the \ttH categories, \catFraction was determined from the loose sideband, while the remaining components \metFraction, $N_{\mathrm{SB}}^{\mathrm{QCD}}$, and $\transfac_{\mathrm{QCD}}$ were derived from the tight sideband enriched most in multijet simulation. The sideband inverted in \mindphi, \omegaTilde, and dijet mass was used to predict the \acrshort{qcd} contribution to the signal region in all \VH categories. No category fraction was introduced since all of the \VH categories predict the \acrshort{qcd} background from the inversion of the 2j0b category.
+For both the \ttH and \VH channels, \metFraction, $N_{\mathrm{SB}}^{\mathrm{QCD}}$, and $\transfac_{\mathrm{QCD}}$ were derived from their respective sidebands. In \ttH, \catFraction was determined from non-multijet simulation in the signal region. No category fraction was introduced in \VH since all of those categories predict the \acrshort{qcd} background from the inversion of the 2j0b category.

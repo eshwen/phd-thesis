@@ -1,18 +1,28 @@
 \section{Results}
 \label{sec:htoinv_results}
 
-The fits of signal and background to the observed data are performed as outlined in the previous section. In the following subsections, the results of the fits for each channel and data taking period are shown in several forms: pre-fit vs. post-fit distributions in each category and \ptmiss bin; the observed upper limit on the signal strength parameter $\BRHinvFull$ at 95\,\% confidence level from the signal plus background hypothesis, accompanied by the median expected limit with 68\,\% and 95\,\% confidence level intervals from the background-only hypothesis; and profile likelihood ratios as a function of the signal strength.
+The fits of signal and background to the observed data are performed as outlined in Chpt.~\ref{fig:htoinv_fit_overview}. Tabulated event counts in the signal region after the \gls{CR}-only fit are shown in Chpt.~\ref{subsec:yield_tables_SR_CR_only_fit} to compare the background prediction from those regions to the observed data in the signal region.
+
+In Chpts.~\ref{subsec:htoinv_results_ttH} and \ref{subsec:htoinv_results_VH}, the results of the fits for the \ttH and \VH channels, individually are shown in several forms: pre-fit vs. post-fit distributions in each category and \ptmiss bin; the observed upper limit on the signal strength parameter $\BRHinvFull$ at 95\,\% confidence level from the signal plus background hypothesis, accompanied by the median expected limit with 68\,\% and 95\,\% confidence level intervals from the background-only hypothesis; and profile likelihood ratios as a function of the signal strength. The outcome from combining both channels, yielding the final result, is given in Chpt.~\ref{subsec:htoinv_combined_results}. As an additional comparison between the observed data and \acrshort{sm} expectation, event yields in the signal region from the fit to the background-only hypothesis are exhibited in Chpt.~\ref{subsec:yield_tables_SR_B_only_fit}.
+
+
+%=========================================================
+
+
+\import{./}{yields_SR_CR_only_fit.tex}
+
+From the fit invoking only the \glspl{CR} to scale the \acrlong{sm} background events in the signal region, a sufficient description of the data can be seen. The total \acrshort{sm} event counts in Tabs.~\ref{tab:yields_SR_CR_only_2016}, \ref{tab:yields_SR_CR_only_2017}, and \ref{tab:yields_SR_CR_only_2018}, which correspond to the 2016, 2017, and 2018 datasets, respectively, are very similar to data within uncertainties. The largest discrepancies occur, as expected, from the bins with small event counts such as in the \ttH boosted categories. However, with additional constraints provided by data and simulation in the background-only or signal plus background fits, dissimilarities can be mitigated to some extent.
+
+\clearpage
 
 
 %=========================================================
 
 
 \subsection{Results from the \texorpdfstring{\ttH}{ttH} channel}
-\label{subsec:htoinv_analysis_ttH}
+\label{subsec:htoinv_results_ttH}
 
-[ADD SOME INTRODUCTORY SENTENCE(S)]
-
-Distributions of the post-fit yields in the signal region for 2016, 2017, and 2018 are displayed in Fig.~\ref{fig:htoinv_mountain_range_ttH_SR_Postfit}. The \acrshort{sm} prediction from the \gls{CR}-only fit is also overlaid, denoted as ``pre-fit.'' Corresponding figures for the \gls{CR} distributions from the \acrshort{CR}-only fit are given in App.~\ref{sec:pre_post_fit_plots_ttH_CRs}.
+Distributions of the yields from the signal plus background fit in the signal region for 2016, 2017, and 2018 are displayed in Fig.~\ref{fig:htoinv_mountain_range_ttH_SR_Postfit}. The \acrshort{sm} prediction from the \gls{CR}-only fit is also overlaid, denoted as ``pre-fit.'' Event counts from said are tabulated in the previous section. Corresponding figures for the \gls{CR} distributions from the \gls{CR}-only fit are given in App.~\ref{sec:pre_post_fit_plots_ttH_CRs}.
 
 \begin{figure}[htbp]
     \centering
@@ -68,11 +78,9 @@ The profile likelihood scan illustrates how the likelihood function for the fit 
 
 
 \subsection{Results from the \texorpdfstring{\VH}{VH} channel}
-\label{subsec:htoinv_analysis_VH}
+\label{subsec:htoinv_results_VH}
 
-[ADD SOME INTRODUCTORY SENTENCE(S)]
-
-Distributions of the post-fit prediction for 2016, 2017, and 2018 are displayed in Fig.~\ref{fig:htoinv_mountain_range_VH_SR_Postfit}. The \acrshort{sm} prediction from the \gls{CR}-only fit is overlaid for comparison. Corresponding figures of the \glspl{CR} resulting from the \gls{CR}-only fit are given in App.~\ref{sec:pre_post_fit_plots_VH_CRs}.
+Distributions of the prediction from the signal plus background fit to data, for 2016, 2017, and 2018, are displayed in Fig.~\ref{fig:htoinv_mountain_range_VH_SR_Postfit}. The \acrshort{sm} prediction from the \gls{CR}-only fit (with event yields in Chpt.~\ref{subsec:yield_tables_SR_CR_only_fit}) is overlaid for comparison. Corresponding figures of the \glspl{CR} resulting from the \gls{CR}-only fit are given in App.~\ref{sec:pre_post_fit_plots_VH_CRs}.
 
 \begin{figure}[htbp]
     \centering
@@ -119,7 +127,7 @@ For comparisons to public results, there are no full Run-2 hadronic $\VH(\higgst
 
 % Info about signal scale from 2016: https://indico.cern.ch/event/978146/contributions/4120060/attachments/2149295/3623502/2020-11-20_monov_update%2B.pdf
 
-The results per year in Fig.~\ref{fig:htoinv_limit_VH} are inconsistent to some degree, with an observation slightly below the $\text{2}\sigma$ boundary of the expected limit in 2016, correspondence in 2017, and an excess in 2018. In 2018, the observed limit is noticeably worse than in the preceding two. Inference from Figs.~\ref{fig:htoinv_mountain_range_VH_2018_single_lep_CRs} and \ref{fig:htoinv_mountain_range_VH_2018_dilep_photon_CRs} suggests it is due the over-prediction of simulation in all of the leptonic \glspl{CR} of the 1V category, consequently scaling down the background in the signal region. The 2j0b observation is also just outside the $\text{2}\sigma$ interval, further affecting the fit to the whole channel. Reassuringly, the expected limits per year are stable and as assumed (sensitivity improving each year, following the trend in integrated luminosity). No issue is found with the likelihood scans either.
+The results per year in Fig.~\ref{fig:htoinv_limit_VH} are inconsistent to some degree, with an observation slightly below the $\text{2}\sigma$ boundary of the expected limit in 2016, correspondence in 2017, and an excess in 2018. In 2018, the observed limit is noticeably worse than in the preceding two. Inference from Figs.~\ref{fig:htoinv_mountain_range_VH_2018_single_lep_CRs} and \ref{fig:htoinv_mountain_range_VH_2018_dilep_photon_CRs} suggests it is due the over-prediction of simulation in all of the leptonic \glspl{CR} of the 1V category, consequently scaling down the background in the signal region. The 2j0b observation is also just outside the $\text{2}\sigma$ interval, further affecting the fit to the whole channel. Reassuringly, the expected limits per year are stable and as assumed (sensitivity improving each year, following the trend in integrated luminosity). No issues are found with the likelihood scans either.
 
 \clearpage
 
@@ -147,9 +155,7 @@ The combined upper limit on $\BRHinvFull$ from combining the \ttH and \VH channe
     \label{fig:htoinv_limit_likelihood_Run2_per_cat}
 \end{figure}
 
-The \VH channel predominantly drives the combined observed and expected sensitivity, with upper limits of 28\,\% and 20\,\%, respectively. Nevertheless, the \ttH category does constrain the combination and reduces the uncertainty bands around the expected limit. Both results are competitive with existing searches, with comparable results from 2016 to those published by both \acrshort{cms} and \acrshort{atlas}. No full Run-2 combination exists for the \VH channel, so the results in this thesis set the benchmark for future endeavours. The \ttH result with the full Run-2 dataset is stronger than that of \acrshort{atlas}, also setting the standard for later searches to improve upon. Expected limits evolve naturally over the years, consistent with the integrated luminosity.
-
-A summary of the observed and median expected limits for both the \ttH and \VH categories, together with their combination, is given in Tab.~\ref{tab:htoinv_limits}.
+The \VH channel predominantly drives the combined observed and expected sensitivity, with upper limits of 28\,\% and 20\,\%, respectively. Nevertheless, the \ttH category does constrain the combination and reduces the uncertainty bands around the expected limit. Both results are competitive with existing searches, with comparable results from 2016 to those published by both \acrshort{cms} and \acrshort{atlas}. No full Run-2 combination exists for the \VH channel, so the results in this thesis set the benchmark for future endeavours. The \ttH result with the full Run-2 dataset is stronger than that of \acrshort{atlas}, also setting the standard for later searches to improve upon. Expected limits evolve naturally over the years, consistent with the integrated luminosity. A summary of the observed and median expected limits for both the \ttH and \VH channels, together with their combination, is given in Tab.~\ref{tab:htoinv_limits}.
 
 \begin{table}[htbp]
     \centering
@@ -172,3 +178,15 @@ A summary of the observed and median expected limits for both the \ttH and \VH c
     \caption[Observed and median expected upper limits on $\BRof{\higgstoinv}$ at 95\,\% confidence level for each combination of channel and dataset analysed]{Observed and median expected upper limits on $\BRof{\higgstoinv}$ at 95\,\% confidence level for each combination of channel and dataset analysed.}
     \label{tab:htoinv_limits}
 \end{table}
+
+
+%=========================================================
+
+
+\import{./}{yields_SR_B_only_fit.tex}
+
+The results of the background-only fit to data model it well in large part, leading to strong expected upper limits on $\BRof{\higgstoinv}$. Post-fit distributions in the signal region---visualising the event counts in the following tables---are depicted in Apps.~\ref{sec:B_only_fit_plots_ttH_SR} and \ref{sec:B_only_fit_plots_VH_SR} for the \ttH and \VH categories, respectively. The ``pre-fit'' yields are from the results of the \gls{CR}-only fit documented earlier in this chapter.
+
+As expected, knowledge of the background and data in the signal region permits the background-only fit to model the data better than the \gls{CR}-only fit. Noticeable improvements are in the \ttH and \VH resolved categories. While small in some cases, the addition of the \acrshort{qcd} multijet background with 50\,\% uncertainty allows for an additional avenue for constraining the backgrounds.
+
+\clearpage

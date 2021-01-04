@@ -6,8 +6,6 @@
 
 Repository containing everything related to my thesis. **The hyperlinks for the badges still work while the repo is private, so quick links to the pdf downloads of the thesis are still accessible.**
 
-Trello board for task list: <https://trello.com/b/5Nrw8jb2/thesis>
-
 ## Table of Contents
 
 - [phd-thesis](#phd-thesis)
@@ -28,7 +26,6 @@ Trello board for task list: <https://trello.com/b/5Nrw8jb2/thesis>
     - [Normal compilation - TeXShop](#normal-compilation---texshop)
     - [Draft compilation - TeXShop](#draft-compilation---texshop)
   - [Formatting and style guidelines](#formatting-and-style-guidelines)
-    - [Questions regarding formatting](#questions-regarding-formatting)
   - [Badges](#badges)
   - [Useful links](#useful-links)
 
@@ -200,6 +197,7 @@ The following are some notes on formatting guidelines and style, just to remain 
   - When explicitly referring to a reference with "Ref.", use `\citenum{}` instead of `\cite{}` so that the number isn't wrapped in square brackets
     - The `\citenum` command isn't available natively in `biblatex`. I've written a re-implementation just after the package is imported in [thesismain.tex](./thesismain.tex), but it can sometimes add an erroneous space after it before subsequent puncuation, e.g., `Ref. 42 )` instead of `Ref. 42)`. I've added another macro to input a small amount of negative space (`\citnumNegSpace`), so just need to watch out for that and use it if necessary
 - Misc. style tips:
+  - The margins and alignment of each page in the thesis are off-centred, i.e., optimised for double-sided printing and binding. To instead use single-sided printing (which mostly centres everything), add the `oneside` argument in the `memoir` class options
   - For when to write numbers in words or numerals, see <https://www.scribbr.com/academic-writing/numbers/> for help
   - To add a shorter caption for a figure/table in the List of Figures/Tables, add it inside square brackets before the main one (i.e., `\caption[Short caption]{Full caption}`)
     - Avoid a full stop at the end of a short caption since it looks ugly in the LoF/T, and omit references/citations from short captions for the same reason
@@ -207,12 +205,6 @@ The following are some notes on formatting guidelines and style, just to remain 
   - When introducing new, lesser-known scientific terms or definitions, I can do so in italics, e.g., `\emph{pileup}`
     - Italics are still fine to use for emphasis, but use them sparingly as it should, in most cases, be obvious from the syntax
 - More formatting/stylistic guidelines can be found in <https://zenodo.org/record/3228336> ([local copy](helpful_docs/thesis-writing-gotchas.pdf))
-
-### Questions regarding formatting
-
-- Can I use different colours for different links (from hyperref package), e.g., urls, references, etc.? Or should it all be black/more muted colours?
-- For certain words used often like "reweight" and "misreconstruct", should there be hyphens ("re-weight", "mis-reconstruct", etc.)?
-- The alignment of each page in the thesis is off-centre, i.e., optimised for double-sided printing and binding. When circulating a pdf copy, should I make a single-sided version where the alignment is the same for every page?
 
 ## Badges
 

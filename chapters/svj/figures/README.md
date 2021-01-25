@@ -122,11 +122,17 @@ The same processing config as the MadGraph-Pythia comparisons is used for simpli
 To make the plots, run
 
 ```bash
-df="tbl_dataset.dijet_mt--dijet_mt_df.csv"  # tbl_dataset.met--MET_df.csv for MET
+df="tbl_dataset.dijet_mt--dijet_mt_df.csv"  # tbl_dataset.met--MET_df.csv for MET, tbl_dataset.min_dphi--min_dphi_df.csv for min dphi, tbl_dataset.njet--n_jets.csv for number of jets, tbl_dataset.dijet_pt--dijet_pt_df.csv for dijet pt
 if [[ "$df" == *"--dijet_mt"* ]]; then
     plotting_cfg=$(readlink -m plotting_configs/svj_plotting_configs/svj_plot_config_benchmark_variations_dijet_mt.yaml)
 elif [[ "$df" == *"--MET"* ]]; then
     plotting_cfg=$(readlink -m plotting_configs/svj_plotting_configs/svj_plot_config_benchmark_variations_met.yaml)
+elif [[ "$df" == *"--min_dphi"* ]]; then
+    plotting_cfg=$(readlink -m plotting_configs/svj_plotting_configs/svj_plot_config_benchmark_variations_min_dphi.yaml)
+elif [[ "$df" == *"--n_jets"* ]]; then
+    plotting_cfg=$(readlink -m plotting_configs/svj_plotting_configs/svj_plot_config_benchmark_variations_njet.yaml)
+elif [[ "$df" == *"--dijet_pt"* ]]; then
+    plotting_cfg=$(readlink -m plotting_configs/svj_plotting_configs/svj_plot_config_benchmark_variations_dijet_pt.yaml)
 fi
 
 if [[ $svj_model == "s" ]]; then

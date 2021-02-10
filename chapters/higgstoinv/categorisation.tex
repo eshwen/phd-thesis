@@ -68,7 +68,7 @@ In high energy events, the decay products of the vector boson are merged into a 
 \subsection{Optimisation of the categories}
 \label{subsec:htoinv_cat_optimisation}
 
-While first principles are a good starting point to categorise events and accentuate the Higgs production modes, they allow much room for improvement. \acrshort{qcd} multijet is still a prominent background, especially in the \ttH channel. Historically, variables such as \biasedDPhi and \alphat have been used to suppress it, as in Ref.\citenum{SUS16038published}.
+While first principles are a good starting point to categorise events and accentuate the Higgs production modes, they allow much room for improvement. \acrshort{qcd} multijet is still a prominent background, especially in the \ttH channel. Historically, variables such as \biasedDPhi and \alphat have been used to suppress it, as in Ref.~\citenum{SUS16038published}.
 
 
 %=========================================================
@@ -83,7 +83,7 @@ The motivation behind the variable \omegaTilde is to minimise the \mht by varyin
 \begin{align}
 \sin\Delta\tilde{\phi}_i = \begin{dcases*}
 \sin\Delta\phi_i & if $f_i + \cos\Delta\phi_i \geq 0$, \\
-\sqrt{1 + f_i^2 + 2 f_i \cos(\Delta\phi_i)} & otherwise\\
+\sqrt{1 + f_i^2 + 2 f_i \cos\Delta\phi_i} & otherwise\\
 \end{dcases*}
 \end{align}
 
@@ -124,7 +124,7 @@ c_1 = \ln\left( \frac{(S + B) \cdot (B + \bkgsystuncert^2)}{B^2 + (S + B)\bkgsys
 \label{eq:asimov_significance_systs}
 \end{equation}
 
-While these are quantitative measures of the sensitivity with an given analysis configuration, they are only a guide to inform an analyst of a more specific area of phase space to consider, rather than providing a precise cut for the given variable. To derive the appropriate cut for each production mode, all simulated signal and background events were processed through the analysis. They were categorised according to Tab.~\ref{tab:htoinv_categories}. For each category, the significances for both methods were calculated, with and without an estimated 5\,\% systematic uncertainty on the background distribution. To estimate the significance for a production mode, the significances for each category were summed in quadrature. Fig.~\ref{fig:htoinv_category_optimisations_significances} demonstrates the results as a function of \omegaTilde for the \ttH and \VH categories with the 2017 datasets.
+While these are quantitative measures of the sensitivity with a given analysis configuration, they are only a guide to inform an analyst of a more specific area of phase space to consider, rather than providing a precise cut for the given variable. To derive the appropriate cut for each production mode, all simulated signal and background events were processed through the analysis. They were categorised according to Tab.~\ref{tab:htoinv_categories}. For each category, the significances for both methods were calculated, with and without an estimated 5\,\% systematic uncertainty on the background distribution. To estimate the significance for a production mode, the significances for each category were summed in quadrature. Fig.~\ref{fig:htoinv_category_optimisations_significances} demonstrates the results as a function of \omegaTilde for the \ttH and \VH categories with the 2017 datasets.
 
 The preselection from Chpt.~\ref{subsec:htoinv_preselection} and $\mindphi > \text{0.5}$ were applied to demonstrate the remaining multijet events that can be suppressed by \omegaTilde, as well the improvements in significance.
 
@@ -164,7 +164,7 @@ It is obvious that the shapes and magnitudes of the significance distributions a
 \subsubsection{Other optimisations}
 \label{subsubsec:htoinv_other_optimisations}
 
-In the ``background rejection'' column of Tab.~\ref{tab:htoinv_categories}, selections were made to distinguish signal from leading backgrounds. The \ttH resolved categories employ requirements on the azimuthal angle between the missing transverse momentum and either the leading jet, leading \Pbottom-jet, or subleading \Pbottom-jet. These are specifically to differentiate \ttH signal from \ttbar background, as the former has been shown to exhibit larger separation between the \glspl{jet} and \ptmiss than the latter. A window on the dijet mass is applied to the \VH resolved categories to reconstruct the \PW and \PZ mass. The 15\GeV below $m_{\PW}$ and above $m_{\PZ}$ allow some leeway to accommodate \glspl{jet} resolution effects. A tight window also acts as an extra multijet background suppressor.
+In the ``background rejection'' column of Tab.~\ref{tab:htoinv_categories}, selections were made to distinguish signal from leading backgrounds. The \ttH resolved categories employ requirements on the azimuthal angle between the missing transverse momentum and either the leading jet, leading \Pbottom-jet, or subleading \Pbottom-jet. These are specifically to differentiate \ttH signal from \ttbar background, as the former has been shown to exhibit larger separation between the \glspl{jet} and \ptvecmiss than the latter. A window on the dijet mass is applied to the \VH resolved categories to reconstruct the \PW and \PZ mass. The 15\GeV below $m_{\PW}$ and above $m_{\PZ}$ allow some leeway to accommodate \gls{jet} resolution effects. A tight window also acts as an extra multijet background suppressor.
 
 
 %=========================================================

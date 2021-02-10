@@ -1,7 +1,7 @@
 \section{Event selection}
 \label{sec:htoinv_event_selection}
 
-The event selection aims to strike a balance between rejecting as many background events while retaining as much signal as possible. The preselection, in Chpt.~\ref{subsec:htoinv_preselection}, is applied to data and simulation in all analysis regions and categories to do just that. Filters to reject potentially-mismeasured events and those that lead to incorrect \ptmiss calculations are documented in Chpt.~\ref{subsec:htoinv_other_filters}. A strategy to combat the HEM issue faced in 2018 (detailed in Chpt.~\ref{subsec:htoinv_data}) is given in Chpt.~\ref{subsec:htoinv_hem_mitigation}.
+The event selection aims to strike a balance between rejecting as many background events while retaining as much signal as possible. The preselection, in Chpt.~\ref{subsec:htoinv_preselection}, is applied to data and simulation in all analysis regions and categories to do just that. Filters to reject potentially-mismeasured events and those that lead to incorrect \ptvecmiss calculations are documented in Chpt.~\ref{subsec:htoinv_other_filters}. A strategy to combat the HEM issue faced in 2018 (detailed in Chpt.~\ref{subsec:htoinv_data}) is given in Chpt.~\ref{subsec:htoinv_hem_mitigation}.
 
 
 %=========================================================
@@ -45,7 +45,11 @@ The preselection is designed to discriminate between signal and background event
 \subsection{Additional filters}
 \label{subsec:htoinv_other_filters}
 
-Further selections are applied to filter poorly measured or mis-reconstructed events in both data and \acrshort{mc}. These are applied to all years, regions, and categories unless stated otherwise. A ``muon \gls{jet} filter'' rejects events with mis-reconstructed muons by requiring all \glspl{jet} with $\pt > \text{200}\GeV$ to have a muon energy fraction $f_{\mathrm{E}}^{\Pmu} < \text{0.5}$ and $\Delta\phi(\mathrm{j}, \, \ptvecmiss) < \pi - \text{0.4}$. Events containing a \gls{jet} in the forward region with $\pt > \text{50}\GeV$ are rejected since they are more susceptible to mismeasurement in that area of the detector. An additional benefit is the further separation of signal from background.
+Further selections are applied to filter poorly measured or mis-reconstructed events in both data and \acrshort{mc}. These are applied to all years, regions, and categories unless stated otherwise.
+
+A ``muon \gls{jet} filter'' rejects events with mis-reconstructed muons by requiring all \glspl{jet} with $\pt > \text{200}\GeV$ to have a muon energy fraction $f_{\mathrm{E}}^{\Pmu} < \text{0.5}$ or $\Delta\phi(\mathrm{j}, \, \ptvecmiss) < \pi - \text{0.4}$.
+
+Events containing a \gls{jet} in the forward region with $\pt > \text{50}\GeV$ are rejected since they are more susceptible to mismeasurement in that area of the detector. An additional benefit is the further separation of signal from background.
 
 Charged ($f_{\mathrm{E}}^{h\pm}$) and neutral hadron energy fraction ($f_{\mathrm{E}}^{h0}$) requirements are applied to all \glspl{jet} via fulfillment of the tight \gls{jet} ID criteria (see Chpt.~\ref{subsec:objects_jets}). Furthermore, stricter selections are placed on the leading two \glspl{jet} as follows:
 
@@ -64,17 +68,11 @@ Charged ($f_{\mathrm{E}}^{h\pm}$) and neutral hadron energy fraction ($f_{\mathr
 \noindent{}In the \acrshort{qcd} \glspl{SB}, despite the requirement of $\ptmiss > \text{200}\GeV$, an excess in data was observed for events with low missing transverse momentum calculated from track momenta ($\ptmissTrk$). This indicated a significant presence of neutral particles in such events, warranting a cut of $\ptmissTrk > \text{80}\GeV$ in the signal region and \glspl{SB}.
 
 A discrepancy between the directions of the \htvecmiss and \ptvecmiss were found to be present in both the \ttH and \VH categories, prompting the requirement $\Delta\phi(\htvecmiss, \, \ptvecmiss) < \text{0.5}$ everywhere. In the \ttH categories, this was further tightened. Large differences between the azimuthal angle of the missing transverse momentum calculated with \acrlong{pf} (\ptvecmiss), and either from track momenta (\ptvecmissTrk) or \glspl{jet} (\htvecmiss) are indicative of an inconsistent event description. An elliptical cut is therefore placed in the plane of $\Delta\phi(\ptvecmiss, \, \ptvecmissTrk)$ and $\Delta\phi(\htvecmiss, \, \ptvecmiss)$ for events in the signal region and sidebands for \ttH:
+\begin{equation}
+    \sqrt{ \Delta\phi(\ptvecmiss, \, \ptvecmissTrk)^2 + 4 \cdot \Delta\phi(\htvecmiss, \, \ptvecmiss)^2 } < 1.0
+\end{equation}
 
-\medskip
-
-\begin{easylist}[itemize]
-    \cutflowlistprops
-    & $\sqrt{ \Delta\phi(\ptvecmiss, \, \ptvecmissTrk)^2 + \text{4} \cdot \Delta\phi(\htvecmiss, \, \ptvecmiss)^2 } < \text{1.0}$
-\end{easylist}
-
-\medskip
-
-\noindent{}The filters described below were recommended by the MET \acrshort{pog}~\cite{cmsmetfilterspage} to remove events with potentially miscalculated \ptmiss:
+The filters described below were recommended by the MET \acrshort{pog}~\cite{cmsmetfilterspage} to remove events with potentially miscalculated \ptvecmiss:
 \medskip
 \begin{easylist}[itemize]
     \easylistprops
@@ -106,7 +104,7 @@ During the 2018 data taking period, the HEM issue forced additional measures to 
 
 \medskip
 
-\noindent{}Events in simulation that met the same criteria were instead weighted by the integrated luminosity from 2018 that was not affected by the issue (i.e., 21.1\fbinv) rather than the entire year. It is applicable under the assumption that both data and simulation are distributed comparably in the $\eta-\phi$ portions of the detector when the issue was not present. Given geometric variables agree very well between data and simulation in the analysis, and corrections are implemented to further synchronise them, the assumption is valid.
+\noindent{}Events in simulation that met the same criteria were instead weighted by the integrated luminosity from 2018 that was not affected by the issue (i.e., 21.1\fbinv) rather than the entire year. It is applicable under the assumption that both data and simulation are distributed comparably in the $\eta$-$\phi$ portions of the detector when the issue was not present. Given geometric variables agree very well between data and simulation in the analysis, and corrections are implemented to further synchronise them, the assumption is valid.
 
 The effect of the HEM issue can be seen in Fig.~\ref{fig:htoinv_hem_issue_met_phi}. The $\phi(\ptvecmiss)$ distribution is shown in a \gls{SB} to the signal region defined by inverting the \omegaTilde variable (see Chpt.~\ref{subsubsec:htoinv_ang_var_optimisation}) since it kinematically resembles the signal region, and the data--simulation discrepancy can be removed while still blind to the data in the signal region.
 
@@ -121,6 +119,6 @@ The effect of the HEM issue can be seen in Fig.~\ref{fig:htoinv_hem_issue_met_ph
         \includegraphics[width=\textwidth]{figures/hem_issue/sideband_4/met_phi/met_phi_VH_before_annotated.pdf}
         \caption{\VH inclusive category}
     \end{subfigure}
-    \caption[The azimuthal angle of the \ptvecmiss inclusive in the \ttH and \VH categories before and after applying the selections designed to mitigate the HEM issue in 2018]{The azimuthal angle of the \ptvecmiss inclusive in the \ttH and \VH categories before and after applying the selections designed to mitigate the HEM issue in 2018. The loose \omegaTilde \gls{SB} is used to demonstrate the effect. A red box encloses the sector that is removed by the selection applied in the signal region and \glspl{SB}.}
+    \caption[The azimuthal angle of the \ptvecmiss inclusive in the \ttH and \VH categories before applying the selections designed to mitigate the HEM issue in 2018]{The azimuthal angle of the \ptvecmiss inclusive in the \ttH and \VH categories before applying the selections designed to mitigate the HEM issue in 2018. The loose \omegaTilde \gls{SB} is used to demonstrate the effect. A red box encloses the sector that is removed by the selection applied in the signal region and \glspl{SB}.}
     \label{fig:htoinv_hem_issue_met_phi}
 \end{figure}

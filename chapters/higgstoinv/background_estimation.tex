@@ -38,7 +38,7 @@ These estimations rely on the distributions of data and \acrlong{mc} in those re
 
 The transverse mass cuts in the single lepton \glspl{CR} reduce the effect of signal contamination, specifically from \ttH since its \mT generally eclipses that of \ttbar.\footnote{The \mT for a \ttbar event with \ptvecmiss solely from the neutrino (in $\HepProcess{\Ptop \to \Pbottom\PW}$, $\HepProcess{\PW \to \Plepton\Pnu}$) should be in a window around the \PW mass. Introducing additional decay products such as the Higgs boson increase it.} The trigger requirements for the \singleMuCr and \doubleMuCr \glspl{CR} are the same as for the signal region (Tab.~\ref{tab:htoinv_SR_triggers}) since the same primary dataset is used.
 
-In the \doubleMuCr and \doubleEleCr \glspl{CR}, the \doubleLepMass window is halved for the \ttH categories compared to the others to reduce contamination from dileptonic \ttbar decays, granting a a higher purity \ztolplmpjets region. The leading lepton \pt requirement is increased in these regions for all categories also for purity purposes.
+In the \doubleMuCr and \doubleEleCr \glspl{CR}, the \doubleLepMass window is halved for the \ttH categories compared to the others to reduce contamination from dileptonic \ttbar decays, granting a a higher purity \ztolplmpjets region. The leading lepton \pt requirement is increased in these regions for all categories, also for purity purposes.
 
 The \singleEleCr and \doubleEleCr \glspl{CR} take advantage of the increased statistical power of two primary datasets in both 2016 and 2017, characterised by electron and photon triggers. In 2018, they were merged into a single $\Pe/\Pphoton$ primary dataset. Tabs.~\ref{tab:htoinv_ele_pd_triggers} and~\ref{tab:htoinv_photon_pd_triggers} elucidate how the trigger requirements are specified for each year. As before, each quantity and object is defined at \acrshort{hlt} level. If an event aims to enter the \singleEleCr or \doubleEleCr, and is from the dataset of \Pe-based triggers, the criteria for either of the two triggers for the given year in Tab.~\ref{tab:htoinv_ele_pd_triggers} must be satisfied. If an event aims to enter either \gls{CR} and is from the primary dataset of \Pphoton-based triggers, the failure of both of the electron triggers in Tab.~\ref{tab:htoinv_ele_pd_triggers} and the passing of any of the photon triggers in Tab.~\ref{tab:htoinv_photon_pd_triggers} are required. This condition avoids double counting events that also appear in the electron trigger-based dataset. In 2018, any of the year's triggers in Tabs.~\ref{tab:htoinv_ele_pd_triggers} and~\ref{tab:htoinv_photon_pd_triggers} may be satisfied since there is only one primary dataset. For \acrlong{mc} events, as the datasets are not categorised by trigger, they may pass any of the requirements for their respective year in either table.
 
@@ -61,8 +61,6 @@ The \singleEleCr and \doubleEleCr \glspl{CR} take advantage of the increased sta
     \label{tab:htoinv_ele_pd_triggers}
 \end{table}
 
-For the \singlePhotonCr \gls{CR}, data is used from \acrshort{cms} originating only from the dataset of \Pphoton-based triggers. Data and \acrshort{mc} must satisfy any of the triggers from Tab.~\ref{tab:htoinv_photon_pd_triggers} for the respective year.
-
 \begin{table}[htbp]
     \centering
     \begin{tabular}{ccc}
@@ -80,33 +78,35 @@ For the \singlePhotonCr \gls{CR}, data is used from \acrshort{cms} originating o
     \label{tab:htoinv_photon_pd_triggers}
 \end{table}
 
+For the \singlePhotonCr \gls{CR}, data is used from \acrshort{cms} originating only from the dataset of \Pphoton-based triggers. Data and \acrshort{mc} must satisfy any of the triggers from Tab.~\ref{tab:htoinv_photon_pd_triggers} for the respective year.
+
 In each of the \glspl{CR}, the \ptvecmiss is recalculated without the objects used to define said region as a proxy for \ptvecmiss in the signal region. Conditions in the event selection and binning that refer to \ptvecmiss or \ptmiss use this recalculated quantity when applied to the \glspl{CR}. Using the \singleMuCr \gls{CR} as an example, the new \ptvecmiss is the vector sum of the old \ptvecmiss and the tight muon's \ptvec.
 
-The relative composition of the background processes in each \gls{CR} after the analysis-level selection is summarised in Fig.~\ref{fig:htoinv_cr_composition_comb2016to18}. As desired, the single lepton \glspl{CR} are very similar and dominated by the \ttbar and \wtolnu process. The dilepton regions also possess a very similar composition to each other, enriched in Drell-Yan \ztoll, and to a lesser extent \ttbar and $\ttbar X$ which contain several dileptonic decay channels.  In the \singlePhotonCr \gls{CR}, expectedly the \gammapjets process dominates virtually every category. \acrshort{qcd} multijet events make up a consistent, small fraction of the events. Rather than the yields from \acrshort{mc} as they would likely consist of \glspl{jet} misidentified as photons, its presence in this region is estimated from a data driven purity measurement explained in Chpt.~\ref{subsubsec:htoinv_photon_purity}.
+The relative composition of the background processes in each \gls{CR} after the analysis-level selection is summarised in Fig.~\ref{fig:htoinv_cr_composition_comb2016to18}. As desired, the single lepton \glspl{CR} are very similar and dominated by the \ttbar and \wtolnu processes. The dilepton regions also possess a very similar composition to each other, enriched in Drell-Yan \ztoll, and to a lesser extent \ttbar and $\ttbar X$ which contain several dileptonic decay channels.  In the \singlePhotonCr \gls{CR}, expectedly the \gammapjets process dominates virtually every category. \acrshort{qcd} multijet events make up a consistent, small fraction of the events. Rather than the yields from \acrshort{mc} as they would likely consist of \glspl{jet} misidentified as photons, its presence in this region is estimated from a data driven purity measurement explained in Chpt.~\ref{subsubsec:htoinv_photon_purity}.
 
 \begin{figure}[htbp]
     \centering
-    \begin{subfigure}[b]{0.3\textwidth}
+    \begin{subfigure}[b]{0.33\textwidth}
         \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/region_1/background_composition.pdf}
         \caption{\singleMuCr control region}
     \end{subfigure}
     \hspace{0.05\textwidth}
-    \begin{subfigure}[b]{0.3\textwidth}
+    \begin{subfigure}[b]{0.33\textwidth}
         \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/region_3/background_composition.pdf}
         \caption{\singleEleCr control region}
     \end{subfigure}
 
-    \begin{subfigure}[b]{0.3\textwidth}
+    \begin{subfigure}[b]{0.33\textwidth}
         \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/region_2/background_composition.pdf}
         \caption{\doubleMuCr control region}
     \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.3\textwidth}
+    \hspace{0.05\textwidth}
+    \begin{subfigure}[b]{0.33\textwidth}
         \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/region_4/background_composition.pdf}
         \caption{\doubleEleCr control region}
     \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.3\textwidth}
+
+    \begin{subfigure}[b]{0.33\textwidth}
         \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/region_5/background_composition.pdf}
         \caption{\singlePhotonCr control region}
     \end{subfigure}
@@ -123,7 +123,7 @@ The relative composition of the background processes in each \gls{CR} after the 
 
 In order to predict the lost lepton background in the signal region, a freely floating rate parameter $a_{\lostlepton}$ is introduced in the fit. It is shared across the single lepton \glspl{CR} and signal region, where it scales the event count from simulation in these regions to obtain the expected values. Events are categorised and binned in the same manner in the single lepton \glspl{CR} as in the signal region, such that the rate parameters---and therefore the prediction---is derived bin-by-bin. The predicted number of lost lepton events in Eqs.~\ref{eq:likelihood_SR} and \ref{eq:likelihood_CRs} is then simply $b_{\lostlepton} \cdot a_{\lostlepton}$.
 
-Distributions of the single lepton \glspl{CR} after the \gls{CR}-only fit are illustrated in Figs.~\ref{fig:htoinv_mountain_range_2017_single_lep_ttH} and \ref{fig:htoinv_mountain_range_2017_single_lep_VH} in the \ttH and \VH categories, respectively, the 2017 dataset. Corresponding event counts, along with the rate parameters, can be found in Tab.~\ref{tab:htoinv_rate_params_2017_lost_lep}. Equivalent figures for the other data taking periods are accessible in Apps.~\ref{sec:pre_post_fit_plots_ttH_CRs} and \ref{sec:pre_post_fit_plots_VH_CRs} for the \ttH and \VH categories, respectively.
+Distributions of the single lepton \glspl{CR} after the \gls{CR}-only fit are illustrated in Figs.~\ref{fig:htoinv_mountain_range_2017_single_lep_ttH} and \ref{fig:htoinv_mountain_range_2017_single_lep_VH} in the \ttH and \VH categories, respectively, for the 2017 dataset. Corresponding event counts, along with the rate parameters, can be found in Tab.~\ref{tab:htoinv_rate_params_2017_lost_lep}. Equivalent figures for the other data taking periods are accessible in Apps.~\ref{sec:pre_post_fit_plots_ttH_CRs} and \ref{sec:pre_post_fit_plots_VH_CRs} for the \ttH and \VH categories, respectively.
 
 \clearpage
 
@@ -183,7 +183,7 @@ Photons are reconstructed from clusters in the \acrshort{ecal}. They can usually
 
 In order to separate real photons from fakes in the \singlePhotonCr \gls{CR}, a purity measurement is performed. The purity is defined as the fraction of reconstructed photons that are from an isolated photon emerging from the hard scatter of the event, rather than a fake. The variable $\sieie$ is able to distinguish between real and fake photons with sufficient power. A peak with a hard cut off at $\sieie \approx \text{0.01}$ is observed for real photons, while fakes possess a less pronounced peak and much slower decline above that threshold. As such, a template fit is performed to the distribution in data to extract the purity.
 
-As inputs to the fit, photons in data are selected by applying the medium identification requirements in Tab.~\ref{tab:htoinv_photon_ID_barrel} with the exception of $\sieie$ to observe the full range. Photons from \singlePhotonCr simulation are selected with the same criteria and are used to define the real photon template. A fake photon template is obtained from data by requiring at least one of the isolation criteria from the medium ID in Tab.~\ref{tab:htoinv_photon_ID_barrel} to be unfulfilled. This ensures the photons from this set do not overlap with the real photons from data.
+As inputs to the fit, photons in data are selected by applying the medium identification requirements from Tab.~\ref{tab:htoinv_photon_ID_barrel} with the exception of $\sieie$ to observe the full range. Photons from \singlePhotonCr simulation are selected with the same criteria and are used to define the real photon template. A fake photon template is obtained from data by requiring at least one of the isolation criteria from the medium ID in Tab.~\ref{tab:htoinv_photon_ID_barrel} to be unfulfilled. This ensures the photons from this set do not overlap with the real photons from data.
 
 The templates are derived in separate bins of photon \pt, and the purity measurement is performed separately for each data taking year. The following event selection is applied:
 
@@ -217,7 +217,7 @@ The templates are derived in separate bins of photon \pt, and the purity measure
     \label{fig:htoinv_photon_purity_fits}
 \end{figure}
 
-It can be seen that the data resembles the real template at low values of \sieie with the fake template dominating at larger values. Each fit captures the features of both templates appropriately. By calculating the purity within acceptance (i.e., $\sieie \leq \text{0.01}$ as given by the medium ID requirement), the \emph{impurity} can be derived as a function of photon \pt. An exponential function is fitted to interpolate within the range that also serves to extrapolate above it. Fig.~\ref{fig:htoinv_photon_impurity} illustrates the impurity vs photon \pt for each data taking year. A 25\,\% uncertainty around the fit is assumed to account for effects related to the binning of the \sieie distribution.
+It can be seen that the data resembles the real template at low values of \sieie with the fake template dominating at larger values. Each fit captures the features of both templates appropriately. By calculating the purity within acceptance (i.e., $\sieie \leq \text{0.01}$ as given by the medium ID requirement), the \emph{impurity} can be derived as a function of photon \pt. An exponential function is fitted to interpolate within the range that also serves to extrapolate above it. Fig.~\ref{fig:htoinv_photon_impurity} illustrates the impurity versus photon \pt for each data taking year. A 25\,\% uncertainty around the fit is assumed to account for effects related to the binning of the \sieie distribution.
 
 \begin{figure}[htbp]
     \centering
@@ -253,7 +253,7 @@ In the analysis, the purity measurement is used to estimate the \acrshort{qcd} m
 \subsubsection{Results from a control region-only fit}
 \label{subsubsec:htoinv_zinv_CR_only_fit}
 
-Distributions of the dilepton and photon \glspl{CR} from the \gls{CR}-only fit are shown in Fig.~\ref{fig:htoinv_mountain_range_2017_dilep_CRs_ttH} and \ref{fig:htoinv_mountain_range_2017_dilep_CRs_VH} in the \ttH and \VH categories, respectively, for the 2017 dataset. Corresponding event counts, along with the rate parameters, can be found in Tab.~\ref{tab:htoinv_rate_params_2017_zinv}. The predicted invisible \PZ background in the signal region, for comparisons to the observed data, is tabulated in Tab.~\ref{tab:yields_SR_CR_only_2017}. Equivalent figures for the other data taking periods are accessible in Apps.~\ref{sec:pre_post_fit_plots_ttH_CRs} and \ref{sec:pre_post_fit_plots_VH_CRs} for the \ttH and \VH categories, respectively.
+Distributions of the dilepton and photon \glspl{CR} from the \gls{CR}-only fit are shown in Figs.~\ref{fig:htoinv_mountain_range_2017_dilep_CRs_ttH} and \ref{fig:htoinv_mountain_range_2017_dilep_CRs_VH} in the \ttH and \VH categories, respectively, for the 2017 dataset. Corresponding event counts, along with the rate parameters, can be found in Tab.~\ref{tab:htoinv_rate_params_2017_zinv}. The predicted invisible \PZ background in the signal region, for comparisons to the observed data, is tabulated in Tab.~\ref{tab:yields_SR_CR_only_2017}. Equivalent figures for the other data taking periods are accessible in Apps.~\ref{sec:pre_post_fit_plots_ttH_CRs} and \ref{sec:pre_post_fit_plots_VH_CRs} for the \ttH and \VH categories, respectively.
 
 \begin{figure}[htbp]
     \centering
@@ -290,7 +290,7 @@ Distributions of the dilepton and photon \glspl{CR} from the \gls{CR}-only fit a
     \label{fig:htoinv_mountain_range_2017_dilep_CRs_VH}
 \end{figure}
 
-Despite the low yields in the \ttH categories, the fit is able to correct the background closer the observed data in most of the bins. A comparable result is achieved in the \VH categories. The highly populated \singlePhotonCr \gls{CR} adds a powerful additional constraint to the prediction; extremely useful given \ztonunu is comfortably the dominant background for the \VH channel. With \acrshort{qcd} contributing under 5\,\% to the total yield in the photon region, convergence of the fit is naturally driven by the electroweak processes.
+Despite the low yields in the \ttH categories, the fit is able to correct the simulated background closer the observed data in most of the bins. A comparable result is achieved in the \VH categories. The highly populated \singlePhotonCr \gls{CR} adds a powerful additional constraint to the prediction; an extremely useful inclusion given \ztonunu is comfortably the dominant background for the \VH channel. With \acrshort{qcd} contributing under 5\,\% to the total yield in the photon region, convergence of the fit is naturally driven by the electroweak processes.
 
 
 %=========================================================
@@ -299,7 +299,7 @@ Despite the low yields in the \ttH categories, the fit is able to correct the ba
 \subsection{QCD multijet background estimation}
 \label{subsec:htoinv_qcd_multijet_bkg}
 
-The effects of \gls{jet} mismeasurements are difficult to quantify. With a final state of several \glspl{jet} in the \acrshort{qcd} multijet process, little, or even no \ptvecmiss is expected. Therefore, a single mismeasured \gls{jet} will introduce artificial \ptvecmiss in the direction of that jet. A low $\mindphiAB{\mathrm{j}}{\ptvecmiss}$ is therefore expected. Though it is not just this process that suffers as \glspl{jet} from ``cleaner'' processes may also be affected. But those with real \ptmiss in an event (e.g., $\ztonunupjets$) are unlikely to be significantly influenced by one stray object. The enormous cross section of \acrshort{qcd} multijet amplifies the problem, making the process as a whole more sensitive to, e.g., fluctuations in the calorimeter response that would affect the energy measurement.
+The effects of \gls{jet} mismeasurements are difficult to quantify. With a final state of several \glspl{jet} in the \acrshort{qcd} multijet process, little, or even no \ptvecmiss is expected. Therefore, a single mismeasured \gls{jet} will introduce artificial \ptvecmiss in the direction of that jet. A low $\mindphiAB{\mathrm{j}}{\ptvecmiss}$ is therefore expected. Though it is not just this background that suffers as \glspl{jet} from ``cleaner'' processes may also be affected. But those with real \ptmiss in an event (e.g., $\ztonunupjets$) are unlikely to be significantly influenced by one stray object. The enormous cross section of \acrshort{qcd} multijet amplifies the problem, making the process as a whole more sensitive to, e.g., fluctuations in the calorimeter response that would affect the energy measurement.
 
 Contributions to the signal region from \acrshort{qcd} multijet events should be adequately suppressed by the analysis-level selection requirements. However, it is still a process that must be accurately accounted for considering its rate of production at \acrshort{cms}. A metric by which to estimate the number of events a dataset should require is by calculating the equivalent luminosity:
 \begin{equation}
@@ -318,7 +318,7 @@ To estimate the presence of \acrshort{qcd} in the signal region, a data driven a
 \subsubsection{Sidebands to the signal region}
 \label{subsubsec:htoinv_sidebands}
 
-Several kinematic cuts in the analysis are designed to reject \acrshort{qcd} in the signal region. So by inverting and tightening one or more of them, it is possible to construct multijet-enriched regions known as \emph{\glspl{SB}}. The sideband is defined for the \ttH category by inversions on the angular variables \omegaTilde and \dphiFj:
+Several kinematic cuts in the analysis are designed to reject \acrshort{qcd} in the signal region. So by inverting and tightening one or more of them, it is possible to construct multijet-enriched regions known as \emph{\glspl{SB}}. The sideband is defined for the \ttH channel by inversions on the angular variables \omegaTilde and \dphiFj:
 
 \medskip
 \begin{easylist}[itemize]
@@ -340,7 +340,7 @@ Events with a \VH topology, being characterised by a dijet pair or single fat je
 
 \medskip
 
-\noindent{}The latter inversion populates the sideband sufficiently with multijet events. This sideband is utilised by all \VH categories, as while the 1V category does not enforce the same dijet mass window, the soft drop mass requirement for the boosted \PVec-tagged \gls{jet} is a suitable proxy. Inclusion of \glspl{bjet} in the 2j1b and 2j2b categories reduces the multijet content of potential sidebands significantly. For this reason, these categories to also utilise the sideband constructed from 2j0b.
+\noindent{}The latter inversion populates the sideband sufficiently with multijet events. This sideband is utilised by all \VH categories, as while the 1V category does not enforce the same dijet mass window, the soft drop mass requirement for the boosted \PVec-tagged \gls{jet} is a suitable proxy. Inclusion of \glspl{bjet} in the 2j1b and 2j2b categories reduces the multijet content of potential sidebands significantly. This is the reason these categories also utilise the sideband constructed from 2j0b.
 
 Fig.~\ref{fig:htoinv_sb_yields_combRun2} illustrates the \ptmiss distributions in the \ttH and \VH \glspl{SB} after the analysis-level selections with the full Run-2 dataset. Background estimation is performed separately for each year due to the differing running conditions, detector configuration, and the different effects or features seen in the data.
 

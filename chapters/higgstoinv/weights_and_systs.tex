@@ -1,7 +1,7 @@
 \section{Corrections and systematic uncertainties for simulation}
 \label{sec:htoinv_mc_corrections}
 
-In order for simulated events, particularly for background processes, to resemble \acrshort{lhc} data as closely as possible, many corrections are applied. These are discussed in more detail in the subsequent sections. All corrections and associated systematic uncertainties are applied to all samples for all data taking years, unless stated otherwise, and summarised in Tab.~\ref{tab:htoinv_syst_summary}.
+In order for simulated events, particularly \acrshort{sm} background processes, to resemble \acrshort{lhc} data as closely as possible, many corrections are applied. These are discussed in more detail in the subsequent sections. All corrections and associated systematic uncertainties are applied to all samples for all data taking years, unless stated otherwise, and summarised in Tab.~\ref{tab:htoinv_syst_summary}.
 
 A final event weight $w_{\mathrm{event}}$ is the product of the weights from all of the individual sources $i$ that provide one:
 \begin{equation}
@@ -36,7 +36,7 @@ While the statistical uncertainty for the number of events in data is simply the
 
 Given the modelling of the \acrlong{l1} and \acrlong{hlt} systems in simulation is only an approximation of their behaviour with data, corrections must be made to unite them.
 
-A dedicated \gls{CR} is formed to assure orthogonality with the signal region and avoid unblinding of data, but with a similar kinematic selection to the analysis for accuracy in the desired phase space. Events are selected in data from the primary dataset consisting of muon-based triggers, and in simulation from the \wtolnupjets process at \acrshort{lo}. Analysed events consist of these containing a single, tightly-isolated muon with $\pt > \text{30}\GeV$ that triggers the \acrshort{hlt} path for an isolated muon with $\pt > \text{27}\GeV$. This is to avoid biasing the efficiencies of the triggers defining the signal region. An offline selection is then applied to keep those with similar kinematic properties to those in our signal region:
+A dedicated \gls{CR} is formed to assure orthogonality with the signal region and avoid unblinding of data, but with a similar kinematic selection to the analysis for accuracy in the desired phase space. Events are selected in data from the primary dataset consisting of muon-based triggers, and in simulation from the \wtolnupjets process at \acrshort{lo}. Analysed events consist of these containing a single, tightly-isolated muon with $\pt > \text{30}\GeV$ that triggers the \acrshort{hlt} path for an isolated muon with $\pt > \text{27}\GeV$. This is to avoid biasing the efficiencies of the triggers defining the signal region. An offline selection is then applied to keep those with similar kinematic properties to those in the signal region:
 
 \medskip
 \begin{easylist}[itemize]
@@ -48,7 +48,7 @@ A dedicated \gls{CR} is formed to assure orthogonality with the signal region an
 
 \medskip
 
-\noindent{}where $\ptmissNoMu = \ptmiss + \pt^{\Pmu}$ to approximate the \acrshort{pf} calculation at \acrshort{hlt} level. Of these, events that additionally pass the online selection of the trigger requirements in the signal region (Tab.~\ref{tab:htoinv_SR_triggers}) are also recorded. The efficiency of a trigger---or collection of triggers---$\epsilon_{\mathrm{trg}}$ is defined as
+\noindent{}where $\ptmissNoMu = \lvert \ptvecmiss + \ptvec^{\kern1pt \Pmu} \rvert$ to approximate the \acrshort{pf} calculation at \acrshort{hlt} level. Of these, events that additionally pass the online selection of the trigger requirements in the signal region (Tab.~\ref{tab:htoinv_SR_triggers}) are also recorded. The efficiency of a trigger---or collection of triggers---$\epsilon_{\mathrm{trg}}$ is defined as
 \begin{equation}
     \epsilon_{\mathrm{trg}} = \frac{ s_\mathrm{offline} \cap s_{\mathrm{online}} }{ s_\mathrm{offline} }
     \label{eq:trigger_eff}
@@ -186,7 +186,7 @@ The renormalisation \muR and factorisation scale \muF chosen for \acrshort{mc} s
 
 \noindent{}To remove the dependence on normalisation (since the skim and event selection may bias it) and ensure the systematic is only shape-based, each variation was also multiplied by an additional factor $f_{\mathrm{var}}$:
 \begin{equation}
-    f_{\mathrm{var}} = \dfrac{ \sum_{\text{unskimmed events}} w_{\mu_{\mathrm{R \, nom.}\, \mathrm{F \, nom.}}} }{ \sum_{\text{unskimmed events}} w_{\mathrm{var}} }
+    f_{\mathrm{var}} = \dfrac{ \sum_{\text{unskimmed events}} w_{\mu_{\mathrm{R \, nom.}}\, \& \, \mu_{\mathrm{F \, nom.}} } }{ \sum_{\text{unskimmed events}} w_{\mathrm{var}} }
     \label{eq:ttbar_scale_fvar}
 \end{equation}
 
@@ -194,7 +194,7 @@ These are computed individually for each decay and data taking year. The envelop
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.5\textwidth]{figures/qcd_scale_top_procs/ttbar/ratio_vars_SR_ttH.pdf}
+    \includegraphics[width=0.55\textwidth]{figures/qcd_scale_top_procs/ttbar/ratio_vars_SR_ttH.pdf}
     \caption[The deviations relative to the nominal weight of the combinations of QCD renormalisation and factorisation scale variations. They are presented as a function of \ptmiss inclusive over the \ttH categories for the \ttbar samples]{The deviations relative to the nominal weight of the combinations of \acrshort{qcd} renormalisation and factorisation scale variations. They are presented as a function of \ptmiss inclusive over the \ttH categories for the \ttbar samples. Events are from the signal region in the 2017 dataset after the analysis-level selection.}
     \label{fig:htoinv_ttbar_scale}
 \end{figure}
@@ -223,7 +223,7 @@ The uncertainties are acquired from the fit itself over the theoretical uncertai
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.5\textwidth]{figures/top_pt_reweighting/top_pt_reweighting_central.pdf}
+    \includegraphics[width=0.6\textwidth]{figures/top_pt_reweighting/top_pt_reweighting_central.pdf}
     \caption[The ratio of the NNLO to NLO \ttbar cross section as a function of top quark \pt. The fit to the distribution---along with the uncertainties in the parameters---are shown]{The ratio of the \acrshort{nnlo} to \acrshort{nlo} \ttbar cross section as a function of top quark \pt. The fit to the distribution---along with the uncertainties in the parameters---are shown.}
     \label{fig:top_pt_reweighting}
 \end{figure}
@@ -315,7 +315,7 @@ where $\epsilon$ is the probability for an object to pre-fire as a function of i
 \subsubsection{Jet energy scale and resolution}
 \label{subsubsec:htoinv_JES_JER_systs}
 
-To estimate the magnitude of the \acrfull{jes} and resolution (\acrshort{jer}) uncertainties, each event is copied once per variation (i.e., upward and downward for the \acrshort{jes} and \acrshort{jer}). In the copied event, the \pt of the AK4 \glspl{jet} are varied according to scale factors from resolution/scale maps as a function of \pt and $\eta$. Consequently, the \ptvecmiss is also changed for the event. The copied events are propagated through the analysis with the same treatment as the standard events. After categorisation and binning in \ptmiss, the weighted event yields from the copy in a given subcategory and \ptmiss bin serve as the uncertainty on the nominal yields.
+To estimate the magnitude of the \acrfull{jes} and resolution (\acrshort{jer}) uncertainties, each event is copied once per variation (i.e., upward and downward for the \acrshort{jes} and \acrshort{jer}). In the copied event, the \pt of the AK4 \glspl{jet} are varied according to scale factors from resolution/scale maps as a function of \pt and $\eta$. Consequently, the \ptvecmiss also changes for the event. The copied events are propagated through the analysis with the same treatment as the standard events. After categorisation and binning in \ptmiss, the weighted event yields from the copy in a given subcategory and \ptmiss bin serves as the uncertainty on the nominal yields.
 
 As the event selection for the signal region is mirrored in the \glspl{CR}, variations from the \acrshort{jer} and \acrshort{jes} variations should affect both in a similar way and their effects should largely cancel in the fit to data. This cancellation is however not complete, resulting in residual differences of 2\,\% and 3\,\% on average for \acrshort{jer} and \acrshort{jes}, respectively. Similar variations for the signal processes were observed. As such, these values are applied as systematic uncertainties to all signal and background processes in all regions of the analysis.
 

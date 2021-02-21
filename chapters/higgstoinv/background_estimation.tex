@@ -243,7 +243,6 @@ The impurity expectedly decreases as a function of the photon \pt. Harder partic
 
 In the analysis, the purity measurement is used to estimate the \acrshort{qcd} multijet background in the \singlePhotonCr \gls{CR}, replacing the contribution from \acrshort{mc}. For each event in data that enters the region, a \acrshort{qcd} multijet pseudo-event is created with the same properties---notably \ptmiss and photon \pt. The value of the impurity calculated from the photon's \pt weights the event. The new \acrshort{qcd} background is therefore generated with the same shape as the data and weighted to represent the rate of non-prompt photons. A 25\,\% uncertainty is attributed to the normalisation of the yield.
 
-% Consider adding a plot or two of data with fit and templates overlaid
 % See https://root.cern/doc/master/classTFractionFitter.html for implementation
 
 
@@ -306,7 +305,6 @@ Contributions to the signal region from \acrshort{qcd} multijet events should be
     \lumi_{\mathrm{eq.}} = \frac{N_{\mathrm{events}}}{\sigma}
     \label{eq:equivalent_lumi}
 \end{equation}
-
 A general rule is that the equivalent luminosity of a given dataset should be comparable to, or even exceed, that of the data collected by the experiment. Since the \acrshort{qcd} multijet process has a very large cross section, simulating the required number of events to match the luminosity of the data recorded during Run-2 is not feasible.
 
 To estimate the presence of \acrshort{qcd} in the signal region, a data driven approach is taken utilising the sidebands defined in Chpt.~\ref{subsubsec:htoinv_sidebands}. Then, the application of the sidebands to derive the predicted event counts in the signal region is outlined in Chpt.~\ref{subsubsec:htoinv_qcd_pred_SR}. This is derived separately for each channel and data taking year.
@@ -373,16 +371,13 @@ A \gls{CR}-only fit is performed without multijet simulation to extract the rate
     N_{\mathrm{pred.}}^{\mathrm{QCD}}(\text{category}, \, \ptmiss) = N_{\mathrm{SB}}^{\mathrm{QCD}} \cdot \transfac_{\mathrm{QCD}} \cdot \catFraction(\text{category}) \cdot \metFraction(\ptmiss)
     \label{eq:qcd_prediction}
 \end{equation}
-
 The distribution of the \acrshort{qcd} background for each category and \ptmiss bin is extrapolated from the sidebands with the factors $\catFraction$ and $\metFraction$. $\catFraction$ is the fraction of non-\acrshort{qcd} \acrshort{mc} in a given category of the signal region, inclusive of \ptmiss. While $\metFraction$ is the fraction of non-\acrshort{qcd} \acrshort{mc} in a given \ptmiss bin of the signal region, inclusive of category. Determining $\catFraction$ and $\metFraction$ from non-multijet simulation assumes the \acrshort{qcd} background is distributed in the same proportion across categories as the the non-\acrshort{qcd} background, though gives a more consistent description of the data in the sidebands than estimating the fractions from \acrshort{qcd} \acrshort{mc}. A 50\,\% systematic uncertainty following a log normal distribution is assigned to the predicted multijet event counts. Numerical values for the terms in Eq.~\ref{eq:qcd_prediction} for deriving the \acrshort{qcd} prediction are visible in App.~\ref{sec:htoinv_qcd_inputs}.
 
 The term $\transfac_{\mathrm{QCD}}$ is the transfer factor relating \acrshort{qcd} in the sideband to that in the signal region. For \ttH, the transfer factor is inclusive over the categories, i.e.,
 \begin{equation}
     \transfac_{\mathrm{QCD}} = \frac{ N_{\mathrm{MC, \ SR}}^{\mathrm{QCD}} } { N_{\mathrm{MC, \ SB}}^{\mathrm{QCD}} }
-%   \transfac_{\mathrm{QCD}} = \frac{ \sum_{\text{category}, \, \ptmiss}^{\mathrm{SR}} N_{\mathrm{MC}}^{\mathrm{QCD}}(\text{category}, \, \ptmiss) }{ \sum_{\text{category}, \, \ptmiss}^{\mathrm{SB}} N_{\mathrm{MC}}^{\mathrm{QCD}}(\text{category}, \, \ptmiss) }
     \label{eq:transfer_factor_qcd}
 \end{equation}
-
 To attempt to mitigate the statistical limitations of the \acrshort{qcd} \acrshort{mc} nominally used in the analysis, their event count was increased a hundredfold using a ``smear and rebalance'' method as performed in Ref.~\citenum{Sirunyan:2017wif}. These smeared samples replaced the \acrshort{qcd} \acrshort{mc} only for the derivation of $\transfac_{\mathrm{QCD}}$. The \VH categories have the benefit of a much larger sample size, both before and after smearing the \acrshort{mc}. In this case, the transfer factor is derived bin-by-bin.
 
 For both the \ttH and \VH channels, $N_{\mathrm{SB}}^{\mathrm{QCD}}$ and $\transfac_{\mathrm{QCD}}$ were derived from their respective sidebands. In \ttH, \catFraction was determined from non-multijet simulation in the signal region. No category fraction was introduced in \VH since all of those categories predict the \acrshort{qcd} background from the inversion of the 2j0b category.

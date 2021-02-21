@@ -94,7 +94,6 @@ where $\Delta\phi_i$ is the azimuthal angle between \gls{jet} $i$ and the \htvec
 \omegaTilde &= \min_{i \, \in \, \mathrm{jets}} \tilde{\omega}_i
     \end{aligned}
 \end{equation}
-
 To reject mismeasured multijet events manifesting in \glspl{jet} aligned with the \ptvecmiss, a simple cut of $\dphiFj$---contracted to \mindphi---above 0.5 was first introduced. Correlations between \mindphi and \omegaTilde were found to be high at small values, though at the thresholds applied to the categories the correlation is weaker. As such, each variable is capable of suppressing multijet events with different characteristics.
 
 Various metrics, or \emph{figures of merit}, were considered for the threshold on which to cut in \omegaTilde. In a counting experiment, a known Poisson-distributed background $B$ yields a statistical uncertainty---assuming one standard deviation---of $\sqrt{B}$. A signal count $S$ can then be statistically significant (i.e., unlikely to be a statistical fluctuation of the background) if it is greater than the uncertainty on the background. This somewhat simplistic method gives the standard deviation for the expected signal with respect to background, often just referred to as the \emph{expected significance} $Z$, as
@@ -102,19 +101,16 @@ Various metrics, or \emph{figures of merit}, were considered for the threshold o
 Z_{\mathrm{Poisson}} = \frac{S}{\sqrt{B}}
 \label{eq:s_over_root_b}
 \end{equation}
-
 An estimate of the overall effect of systematic uncertainties on the background $\bkgsystuncert$ can also be incorporated, leading to
 \begin{equation}
 Z_{\mathrm{Poisson}} = \frac{S}{\sqrt{B + (\bkgsystuncert B)^2}}
 \label{eq:s_over_root_b_systs}
 \end{equation}
-
 Another figure of merit is to use the significance from an \emph{Asimov dataset}---which replaces the ensemble of different datasets by a single representative one~\cite{Cowan:2010js}. The median significance can then be extracted, colloquially ascribed the \emph{Asimov significance} $Z_{\mathrm{Asimov}}$. In many fields, including particle physics, a likelihood ratio is used for hypothesis testing. This is described in the context of the analysis in Chpt.~\ref{sec:htoinv_satistical_treatment}. The asymptotic limit, where the sample size is large (as in the case for \acrshort{lhc} data and simulation), can also be exploited as a property within the likelihood model. In this regime, the Asimov significance can be expressed as
 \begin{equation}
 Z_{\mathrm{Asimov}} = \sqrt{2 \left( (S + B) \cdot \ln\left(1 + \frac{S}{B} \right) - S \right)}
 \label{eq:asimov_significance}
 \end{equation}
-
 reducing to Eq.~\ref{eq:s_over_root_b} for $S \ll B$. Including a systematic uncertainty expands Eq.~\ref{eq:asimov_significance} to
 \begin{equation}
     \begin{gathered}  % use gathered environment to centre each row in the equation, while avoiding each row having its own equation number
@@ -123,7 +119,6 @@ c_1 = \ln\left( \frac{(S + B) \cdot (B + \bkgsystuncert^2)}{B^2 + (S + B)\bkgsys
     \end{gathered}
 \label{eq:asimov_significance_systs}
 \end{equation}
-
 While these are quantitative measures of the sensitivity with a given analysis configuration, they are only a guide to inform an analyst of a more specific area of phase space to consider, rather than providing a precise cut for the given variable. To derive the appropriate cut for each production mode, all simulated signal and background events were processed through the analysis. They were categorised according to Tab.~\ref{tab:htoinv_categories}. For each category, the significances for both methods were calculated, with and without an estimated 5\,\% systematic uncertainty on the background distribution. To estimate the significance for a production mode, the significances for each category were summed in quadrature. Fig.~\ref{fig:htoinv_category_optimisations_significances} demonstrates the results as a function of \omegaTilde for the \ttH and \VH categories with the 2017 datasets.
 
 The preselection from Chpt.~\ref{subsec:htoinv_preselection} and $\mindphi > \text{0.5}$ were applied to demonstrate the remaining multijet events that can be suppressed by \omegaTilde, as well the improvements in significance.

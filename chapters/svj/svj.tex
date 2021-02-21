@@ -87,7 +87,6 @@ For simplicity, the values of \aDark used in the scan of parameter points are ba
     \lamDarkPeak = 3.2 \mDark^{0.8}
     \label{eq:lambda_dark_peak_v_m_dark}
 \end{equation}
-
 which gives the parameter $\aDarkPeak = \aDark(\lamDarkPeak)$ calculated according to Eq.~\ref{eq:lambda_dark}. Variations on \aDark are calculated by scaling it by a factor 0.5 and 1.5, yielding $\aDarkLow = \text{0.5}\aDarkPeak$ and $\aDarkHigh = \text{1.5}\aDarkPeak$. For the purposes of emphasizing the effect of the choice of \aDark on the kinematics of the signal, an additional variation was introduced: $\aDarkVHigh = \text{2}\aDarkPeak$. The advantage of denoting the dark coupling strength with ``peak,'' ``low,'' and ``high,'' enables a more intuitive understanding of the parameter over a numerical value. Eq.~\ref{eq:lambda_dark_peak_v_m_dark} also means that \lamDark (and therefore \aDark) can be easily varied as a function of \mDark for each configuration of parameters in a scan of the model. Fig.~\ref{fig:svj_lamDark_vs_mDark} illustrates the evolution of \lamDark as a function of \mDark for each value of \aDark that is considered.
 
 \begin{figure}[htbp]
@@ -114,7 +113,6 @@ d_{iB} &= p_{\mathrm{T}i}^{2k}
     \end{aligned}
     \label{eq:distances_kt_pythia}
 \end{equation}
-
 where, in the rapidity-azimuthal ($y$-$\phi$) plane, $R$ is the radius of the cone---defined as 1.0 to match the merging parameters used in \MADGRAPH. $\Delta R_{ij}$ is the separation between $i$ and $j$,\footnote{This is calculated with Eq.~\ref{eq:delta_r} where $\eta$ is replaced with $y$ from Eq.~\ref{eq:rapidity_def}.} and $k$ defines the algorithm choice: $k = -\text{1}$ in the \gls{antikt}, $k = \text{0}$ in the Cambridge-Aachen algorithm, and $k = \text{1}$ in the $\kt$ algorithm. The latter is chosen for the same reason as the cone radius size.
 
 If $d_{ij} < d_{iB}$, the particles $i$ and $j$ are combined, replacing the individual constituents in the list of inputs. Otherwise, particle $i$ is designated as a jet and removed from list of inputs. For all combinations of particles remaining in the input list, the distances are recalculated until all objects possess a \pt above the merging scale. Once the algorithm has finished, all that remains are fully-clustered \glspl{jet}. Matching is performed between the clustered \glspl{jet} and original partons to avoid double counting. Events with insufficiently-matched \glspl{jet} are rejected. A minimum number of \glspl{jet} may also be specified and events with fewer than this are rejected. A larger $\rinv$ tends to reduce the merging and matching efficiencies since more energy is locked in the dark sector and fewer \glspl{jet} are clustered above the merging scale.
@@ -157,7 +155,6 @@ Somewhat decoupled from the parameters of the signal models themselves, there ar
     \kt^2 = 2 \min(p_{\mathrm{T}i}, \ p_{\mathrm{T}j}) [\cosh(\eta_i - \eta_j) - \cos(\phi_i - \phi_j)]
     \label{eq:svj_mg_kt}
 \end{equation}
-
 where $\eta$ and $\phi$ are the pseudorapidity and azimuthal angle, respectively. Complete definitions are presented in Chpt.~\ref{subsubsec:geometry}. Events with $\kt < \texttt{xqcut}$ are not simulated. In essence, the \texttt{xqcut} is a measure of the required separation between partons in the event. A value of 100\GeV is set in the analysis for consistency with Ref.~\citenum{Cohen:2017pzm}. This interpretation of a merging scale is similar, but not quite the same, as \PYTHIA's discussed in Chpt.~\ref{sec:svj_showering_pythia}.
 
 The choice of parton distribution function also lives in the run card. As stated above, this changes to reflect the data taking period that is emulated. Preferences for particle separation, momentum and direction cuts, beam energy, and the \acrshort{qcd} renormalisation and factorisation scales are some of the additional settings that can be customised.

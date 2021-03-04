@@ -327,7 +327,7 @@ At the \acrshort{lhc}, the most common mechanisms for producing a Higgs boson ar
     \centering
     \begin{tabular}{cll}
         \toprule
-        Mode (\higgstoinv) & Cross section (pb) & Accuracy \\\midrule
+        Production mode & Cross section (pb) & Accuracy \\\midrule
         \acrshort{vbf} & 3.77 & \acrshort{nnlo} \acrshort{qcd} and \acrshort{nlo} electroweak \\
         $\ttH$ & $\text{5.07} \times \text{10}^{-1}$ & \acrshort{nlo} \acrshort{qcd} and \acrshort{nlo} electroweak \\
         $\WplusH$ & $\text{8.31} \times \text{10}^{-1}$ & \acrshort{nnlo} \acrshort{qcd} and \acrshort{nlo} electroweak \\
@@ -337,7 +337,7 @@ At the \acrshort{lhc}, the most common mechanisms for producing a Higgs boson ar
         \ggH & $\text{4.86} \times \text{10}^1$ & N3LO \acrshort{qcd} and \acrshort{nlo} electroweak \\
         \bottomrule
     \end{tabular}
-    \caption[Cross sections of the \higgstoinv signal processes]{Cross sections of the \higgstoinv signal processes. They are calculated at \comruntwo at the highest orders available and obtained from Ref.~\citenum{Cepeda:2019klc}.}
+    \caption[Cross sections of the Higgs boson production modes]{Cross sections of the Higgs boson production modes. They are calculated at \comruntwo at the highest orders available and obtained from Ref.~\citenum{Cepeda:2019klc}.}
     \label{tab:htoinv_signal_xsecs}
 \end{table}
 
@@ -359,7 +359,7 @@ A \acrshort{vbf} topology is exhibited by a \tchannel exchange of two vector bos
 \subsubsection{Associated production from top quarks (\texorpdfstring{\ttH}{ttH})}
 \label{subsubsec:theory_hinv_ttH_mode}
 
-In \ttH, a \ttbar pair is produced from the collision. A virtual top quark \Ptop and antiquark \APtop produced in association with their real counterparts annihilate to produce the Higgs boson. As it decays invisibly, it is the remaining \Ptop and \APtop in the event that lead to three classes of final state. The \Ptop quark decays almost exclusively to $\Pbottom\PWplus$ (and $\HepProcess{\APtop \to \APbottom\PWminus}$)~\cite{PhysRevD.98.030001}. In a resolved system where top quarks possess low to moderate momentum, the multitude of available \Pbottom-tagging algorithms can distinguish the decays of the \Pbottom quark. The products of the \PW boson are the determining factor of the final state. Hadronically-decaying $\mkern-2mu\PW\text{s}$ ($\HepProcess{\PW \to \Pquark\APquark}$), of course, produce pairs of \glspl{jet}. But they can also decay into a lepton and neutrino. The final states then all have \ptvecmiss and up to two \glspl{bjet} in common. Several \glspl{jet} may accompany them (the hadronic channel), or fewer \glspl{jet} with a single lepton (the \emph{semi-leptonic} channel), or simply two leptons (the \emph{dileptonic} channel). The magnitude and direction of the \ptvecmiss in the latter two channels may be affected by the neutrinos, depending on their direction and energy.
+In \ttH, a \ttbar pair is produced from the collision. A virtual top quark \Ptop and antiquark \APtop produced in association with their real counterparts annihilate to produce the Higgs boson. As it decays invisibly, it is the remaining \Ptop and \APtop in the event that lead to three classes of final state. The \Ptop quark decays almost exclusively to $\Pbottom\PWplus$ (with $\HepProcess{\APtop \to \APbottom\PWminus}$)~\cite{PhysRevD.98.030001}. In a resolved system where top quarks possess low to moderate momentum, the multitude of available \Pbottom-tagging algorithms can distinguish the decays of the \Pbottom quark. The products of the \PW boson are the determining factor of the final state. Hadronically-decaying $\mkern-2mu\PW\text{s}$ ($\HepProcess{\PW \to \Pquark\APquark}$), of course, produce pairs of \glspl{jet}. But they can also decay into a lepton and neutrino. The final states then all have \ptvecmiss and up to two \glspl{bjet} in common. Several \glspl{jet} may accompany them (the hadronic channel), or fewer \glspl{jet} with a single lepton (the \emph{semi-leptonic} channel), or simply two leptons (the \emph{dileptonic} channel). The magnitude and direction of the \ptvecmiss in the latter two channels may be affected by the neutrinos, depending on their direction and energy.
 
 In a boosted system where the top quarks have significant \pt, it is often difficult to tag \glspl{bjet}, especially if one is searching in the hadronic channel. The decay products are not well separated and can merge into large, ``fat'' \glspl{jet}. Recently-developed algorithms can assist in this case by inspecting the substructure of these fat \glspl{jet} to classify, for example, boosted topologies originating from \Ptop quarks as well as \PVec bosons to identify \ttH events.
 
@@ -457,7 +457,7 @@ The kinematics of \glspl{svj} are heavily influenced by the following free param
 
     & \mqdark: This parameter does not directly affect much, but is related to the dark hadron mass ($\mDark = \text{2}\mqdark$) and \lamDark. The combination of the two properties affects the shower dynamics. Note that while Ref.~\citenum{Cohen:2017pzm}{}describes some of these to be insensitive, a parameter scan over these two variables are necessary in the study described in Chpt.~\ref{chap:svj}.
 
-    & \rinv: This is defined as the fraction of produced invisible particles that remain stable, at least over timescales where they would interact with a detector. When generating simulated samples, \rinv can be interpreted as the \emph{probability} of a dark hadron being stable. While this variable is not inherent within the model, it is one that can parametrise many underlying components. As a result, visualisation of the shower and direction of \ptvecmiss is much more intuitive, as demonstrated in Figs.~\ref{fig:theory_svj_rinv} and \ref{fig:theory_svj_met_dir}, respectively. A large value of \rinv would yield a similar final state to a \acrshort{wimp} search.
+    & \rinv: This is defined as the fraction of produced dark particles that remain invisible, at least over timescales where they would interact with a detector. When generating simulated samples, \rinv can be interpreted as the \emph{probability} of a dark hadron being stable. While this variable is not inherent within the model, it is one that can parametrise many underlying components. As a result, visualisation of the shower and direction of \ptvecmiss is much more intuitive, as demonstrated in Figs.~\ref{fig:theory_svj_rinv} and \ref{fig:theory_svj_met_dir}, respectively. A large value of \rinv would yield a similar final state to a \acrshort{wimp} search.
 \end{easylist}
 
 \begin{figure}[htbp]

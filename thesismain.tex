@@ -227,7 +227,11 @@
 
 % ======================================
 % Create the glossary for terms and acronyms
-\usepackage[acronym,toc,nonumberlist]{glossaries}
+\usepackage[
+    acronym,                            % To include acronyms as well as a glossary
+    toc,                                % Add to Table of Contents
+    nonumberlist,
+    numberedsection=nameref]{glossaries}% To be able to reference the Glossary section with \nameref{main} and Acronyms section with \nameref{acronym}
 \makeglossaries
 \input{backmatter/glossary}
 % ======================================

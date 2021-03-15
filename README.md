@@ -31,9 +31,13 @@ Repository containing everything related to my thesis. **The hyperlinks for the 
 
 [_Table of contents generated with markdown-toc_](http://ecotrust-canada.github.io/markdown-toc/)
 
+*****
+
 ## General information
 
 This thesis uses the memoir document class, based off the template from [here](https://www.overleaf.com/latex/templates/university-of-bristol-thesis-template/kzqrfvyxxcdm). It has been designed to conform with the thesis guidelines from the University of Bristol [here](http://www.bristol.ac.uk/academic-quality/pg/pgrcode/annex4/). More information on the technical details can be found below. External helpful documents regarding LaTeX, thesis writing (Bristol-specific and general), etc. can be found in [helpful_docs/](helpful_docs/) or [Useful links](#useful-links).
+
+*****
 
 ## Structure and features
 
@@ -106,6 +110,8 @@ Note that the configuration of this CI is fairly specific to the implementation 
 
 Because of the design choices above, the Tex Live version of the pipeline was necessary. If one is using more conventional implementations, there are several alternative instructions at <https://github.com/PHPirates/travis-ci-latex-pdf> that might be easier to pursue.
 
+*****
+
 ## Compiling the document
 
 **Disclaimer**: I haven't tried compiling on Overleaf, only on my local MacTeX/TeX Live distributions and in the CI pipeline. So your mileage may vary depending on your IDE/OS of choice.
@@ -169,6 +175,8 @@ To compile in TeXShop on Mac, select **pdflatexmk** from the drop-down menu next
 
 Add the `draft` option in the `\documentclass[...]{memoir}` line in [thesismain.tex](./thesismain.tex), then compile as above.
 
+*****
+
 ## Formatting and style guidelines
 
 The following are some notes on formatting guidelines and style, just to remain consistent throughout the document and writing process:
@@ -206,11 +214,15 @@ The following are some notes on formatting guidelines and style, just to remain 
     - Italics are still fine to use for emphasis, but use them sparingly as it should, in most cases, be obvious from the syntax
 - More formatting/stylistic guidelines can be found in <https://zenodo.org/record/3228336> ([local copy](helpful_docs/thesis-writing-gotchas.pdf))
 
+*****
+
 ## Badges
 
 Badges are pretty useful to highlight the important aspects of a repo to any potential forker/contributor. The build status badge is from [Travis](https://travis-ci.com/), linked to my CI pipeline. All of the others are from Shields ([webpage](https://shields.io/), [repo](https://github.com/badges/shields)). They are free to use, but obviously the badges are tied to the original fork of the repository. So to continue using them in your own fork, you can generate them yourself with these as inspiration. Note that not every badge may work if the repository is private. Server load can also mean that not every badge icon may render each time the repo is viewed. Any hyperlinks should still work though, e.g., for the downloads of latest pdfs.
 
 **While the repository is private, the build status badge from Travis requires a security token to display properly. This can be removed once the repo is made public again**
+
+*****
 
 ## Useful links
 

@@ -93,7 +93,14 @@ where $\Delta\phi_i$ is the azimuthal angle between \gls{jet} $i$ and the \htvec
 \omegaTilde &= \min_{i \, \in \, \mathrm{jets}} \tilde{\omega}_i
     \end{aligned}
 \end{equation}
-To reject mismeasured multijet events manifesting in \glspl{jet} aligned with the \ptvecmiss, a simple cut of $\dphiFj$---contracted to \mindphi---above 0.5 was first introduced. Correlations between \mindphi and \omegaTilde were found to be high at small values, though at the thresholds applied to the categories the correlation is weaker. As such, each variable is capable of suppressing multijet events with different characteristics.
+To reject mismeasured multijet events manifesting in \glspl{jet} aligned with the \ptvecmiss, a simple cut of $\dphiFj$---contracted to \mindphi---above 0.5 was first introduced. Correlations between \mindphi and \omegaTilde were found to be high at small values, though at the thresholds applied to the categories the correlation is weaker. As such, each variable is capable of suppressing multijet events with different characteristics. To demonstrate this, Fig. illustrates the distribution of \acrshort{qcd} events in the signal region---inclusive of category---as a function of \omegaTilde and \mindphi.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.85\textwidth]{figures/category_optimisations/omega_vs_dphi.pdf}
+    \caption[The distribution of QCD multijet events in the signal region as a function of \omegaTilde and \mindphi]{The distribution of \acrshort{qcd} multijet events in the signal region as a function of \omegaTilde and \mindphi. The full event selection, except the cuts pertaining to the variables of interest, is applied.}
+    \label{fig:htoinv_omega_vs_dphi_qcd_SR}
+\end{figure}
 
 Various metrics, or \emph{figures of merit}, were considered for the threshold on which to cut in \omegaTilde. In a counting experiment, a known Poisson-distributed background $B$ yields a statistical uncertainty---assuming one standard deviation---of $\sqrt{B}$. A signal count $S$ can then be statistically significant (i.e., unlikely to be a statistical fluctuation of the background) if it is greater than the uncertainty on the background. This somewhat simplistic method gives the standard deviation for the expected signal with respect to background, often just referred to as the \emph{expected significance} $Z$, as
 \begin{equation}
@@ -149,7 +156,7 @@ The preselection from Chpt.~\ref{subsec:htoinv_preselection} and $\mindphi > \te
 
 % Figures from 12th August 2020, scenario 5. When remaking, ensure the colours of the signal lines are consistent, and the legend doesn't overlap with the distribution
 
-It is obvious that the shapes and magnitudes of the significance distributions are sensitive to the inclusion of an estimated systematic uncertainty. Increasing its size affects the shape little, though impacts the magnitude more significantly. In bins with high background occupancy, even a small systematic uncertainty can wash out traces of signal. The thresholds chosen for \omegaTilde do not necessarily maximise the significance---where the Asimov method with $\bkgsystuncert = \text{5\,\%}$ was the leading choice---but to sufficiently separate signal and background, while not removing too many events.
+It is obvious that the shapes and magnitudes of the significance distributions are sensitive to the inclusion of an estimated systematic uncertainty. Increasing its size affects the shape little, though impacts the magnitude more significantly. In bins with high background occupancy, even a small systematic uncertainty can wash out traces of signal. The thresholds chosen for \omegaTilde do not necessarily maximise the significance---where the Asimov method with $\bkgsystuncert = \text{5\,\%}$ was the leading choice---but to sufficiently separate signal and background, while not removing too many events. Inspecting the distributions of the significance for \omegaTilde provided an initial range to investigate in greater detail. Then, for several values within that range, fits of the simulation to data using only the \glspl{CR} was performed. The threshold used in the analysis was decided by the value that resulted in the smallest upper limit on $\BRof{\higgstoinv}$.
 
 
 %=========================================================

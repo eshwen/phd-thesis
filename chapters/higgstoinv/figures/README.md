@@ -33,6 +33,19 @@ Some of the plots in [category_optimisations/](category_optimisations), [hem_iss
 
 The significance line plots in [category_optimisations/](category_optimisations) were made with the master branch of my fork of `fast-caliper` (<https://gitlab.cern.ch/ebhal/fast-caliper>), and the commands in [run_all_significances.sh](category_optimisations/run_all_significances.sh). The histograms came from running `make_nonVBF_plots.py` over the carpenter-produced dataframes.
 
+For the 2D heatmap of the QCD events in the signal region (summed over the ttH and VH categories) for min_omega_tilde vs. min_dphi, it requires the branch `esh_omega_vs_dphi_heatmap`. Here, the min_omega_tilde and min_dphi cuts are removed. So I can run `fast-carpenter` over 2017 with
+
+```bash
+fast_carpenter --mode sge --blocksize 60000 --outdir ./omega_vs_dphi_correlation ./samples/2017/all_signal_background.yaml ./configs/2017/all_region_plots.yaml
+```
+
+Then create the plot with
+
+```bash
+cd chip_code
+python omega_vs_dphi_2D.py ../omega_vs_dphi_correlation 2017 tbl_dataset.region.min_omega_tilde.min_dphi_4j.category--omega_vs_dphi.csv
+```
+
 ### HEM issue
 
 For the plots in [hem_issue/](hem_issue/) that contain a translucent block the histograms were made with `fast-plotter`, then edited in Preview to add the block itself. Annoyingly, adding the block does so as a pdf annotation, so is essentially saved as metadata and isn't part of the plot itself. To make it part of the plot, in Preview do **File** -> **Export as PDF...**. Then, click **Show Details**, and set **Paper Size** as **8x10 Borderless** so the aspect ratio is as close to the original plot as possible. Any leftover whitespace can be cropped in Preview after the fact. To get the dataframes used to make the plot, I had to run the latest 2018 config in the chip repo, commenting out the HEM vetoes in the cut flow.

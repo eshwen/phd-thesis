@@ -55,7 +55,7 @@ The missing transverse momentum \ptvecmiss is defined as the negative vector sum
 The hadronic-only counterpart to this variable, \htvecmiss, is the negative vector sum of the \gls{jet} transverse momenta in an event:
 \begin{equation}
     \begin{aligned}
-        \htvecmiss &\equiv - \sum_j^{N_{\mathrm{jets}}} \vec{p}_{\mathrm{T}, \, j} \\
+        \htvecmiss &\equiv - \sum_{\mathrm{jets}} \vec{p}_{\mathrm{T}} \\
         \mht &\equiv \abs{\htvecmiss}
     \end{aligned}
     \label{eq:mht_definition}
@@ -69,7 +69,7 @@ As with \HT, the \mht is often calculated with a lower limit on the \gls{jet} \p
 \subsection{Transverse mass (\texorpdfstring{\mT}{MT})}
 \label{subsec:objects_transverse_mass}
 
-The transverse mass \mT of a particle---or the collective products of a decay---is the component of its invariant mass in the transverse plane. In a hadron collider context, this observable is typically used when one of the decay products is invisible or unidentified, i.e., as \ptvecmiss. When searching for \glspl{svj}, the \mT of the dijet system is very reliable in recovering the \PZprime mass. Einstein's equation $E^2 = (pc)^2 + (m_0c^2)^2$ can be reformulated for each daughter particle in a decay as
+The transverse mass \mT of a particle---or the collective products of a decay---is the component of its invariant mass in the transverse plane. In a hadron collider context, this observable is typically used when one of the decay products is invisible or unidentified, i.e., as \ptvecmiss. When searching for \glspl{svj}, the \mT of the dijet system is very reliable in recovering the \PZprime mass at low \rinv. Einstein's equation $E^2 = (pc)^2 + (m_0c^2)^2$ can be reformulated for each daughter particle in a decay as
 \begin{equation}
 \ET^2 = m_0^2 + \pt^2
 \label{eq:transverse_energy}
@@ -98,7 +98,7 @@ where $\Delta\phi = \phi - \phi(\ptvecmiss)$, and \pt and $\phi$ are from the id
 
 The physics that occurs at the high energies the \acrshort{lhc} is capable of is not simple. That makes the recording of particles and events overall a non-trivial undertaking. Based on complex hardware and software, research, and the experience of previous experiments, establishing physics objects and variables from an analyst's standpoint is thankfully straightforward. The basic definitions are already included into the \ROOT files, with ancillary selections on top for the analysis-level objects. All of the descriptions that follow apply both to data and simulated samples, unless otherwise stated.
 
-Several working points for the identification of many objects are available from the respective \glspl{pog}, trading efficiency for purity the tighter the restrictions are. \emph{Veto}, \emph{loose}, \emph{medium}, and \emph{tight} criteria exist for most objects. Particles are denoted with a subscript that signifies the working point. The requirements of which are elaborated upon in the ensuing subsections.
+Several working points for the identification of many objects are available from the respective \glspl{pog}, trading efficiency for purity the tighter the restrictions are. \emph{Veto}, \emph{loose}, \emph{medium}, and \emph{tight} criteria exist for most objects. Particles are denoted with a subscript that signifies the working point. Their requirements are elaborated upon in the ensuing subsections.
 
 
 %=========================================================
@@ -107,13 +107,13 @@ Several working points for the identification of many objects are available from
 \subsection{Jets}
 \label{subsec:objects_jets}
 
-In the nanoAOD data tier, a \gls{jet} is defined as an AK4-clustered, charged hadron-subtracted object reconstructed with the \gls{particleflow}, with \acrlong{jec} applied and a $\pt > \text{15}\GeV$ prerequisite. For the analysis, the \emph{latest} \acrshort{jec} and \acrfull{jer} treatments are applied to both data and simulation to determine the \pt. Those with $\pt > \text{30}\GeV$ are kept. The \acrshort{jer} is worse in data than in simulation, so \glspl{jet} in the latter are smeared to describe the former more accurately.
+In the nanoAOD data tier, a \gls{jet} is defined as an AK4-clustered object reconstructed with the \gls{particleflow} implementing the charged-hadron subtraction technique~\cite{CMS-PRF-14-001}, with \acrlong{jec} applied and a $\pt > \text{15}\GeV$ prerequisite. For the analysis, the \emph{latest} \acrshort{jec} and \acrfull{jer} treatments are applied to both data and simulation to determine the \pt. Those with $\pt > \text{30}\GeV$ are kept. The \acrshort{jer} is worse in data than in simulation, so \glspl{jet} in the latter are smeared to describe the former more accurately.
 
 % JER smearing: https://twiki.cern.ch/twiki/bin/viewauth/CMS/JetResolution#Smearing_procedures. Info about the stuff added by the jetmetHelper module in nanoAOD-tools: https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBookNanoAOD#JME_jetmet_HelperRun2
 
-The tight, with or without an additional lepton veto, \acrshort{pf} identification requirements are also mandatory to establish a sufficient degree of purity with a very high efficiency ($> \text{98\,\%}$ in all $\abseta$ regions). These are documented in Tabs.~\ref{tab:htoinv_jet_id_def_2016}, \ref{tab:htoinv_jet_id_def_2017}, and \ref{tab:htoinv_jet_id_def_2018}. For all years, both the identification and background rejection efficiencies are above 98\,\% in the barrel and end caps.
+The recommended tight, with or without an additional lepton veto, \acrshort{pf} identification requirements are also mandatory to establish a sufficient degree of purity with a very high efficiency ($> \text{98\,\%}$ in all $\abseta$ regions). These are documented in Tabs.~\ref{tab:htoinv_jet_id_def_2016}, \ref{tab:htoinv_jet_id_def_2017}, and \ref{tab:htoinv_jet_id_def_2018}. For all years, both the identification and background rejection efficiencies are above 98\,\% in the barrel and end caps.
 
-A \gls{jet} suspected to originate from a \Pbottom-quark, or ``\gls{bjet},'' is described by a nanoAOD AK4 \gls{jet} with corrected $\pt > \text{30}\GeV$ and within the acceptance of the tracker: $\abseta < \text{2.4}$ in 2016, and $< \text{2.5}$ onward. It is also required to satisfy the medium working point (a mis-tag rate of 1\,\%) from the \deepcsv algorithm~\cite{Sirunyan:2017ezt}.
+A \gls{jet} suspected to originate from a \Pbottom-quark, or ``\gls{bjet},'' is described by a nanoAOD AK4 \gls{jet} with corrected $\pt > \text{30}\GeV$ and within the acceptance of the tracker: $\abseta < \text{2.4}$ in 2016, and $< \text{2.5}$ onward. It is also required to satisfy the medium working point (a mis-tag rate of 1\,\%) from the \deepcsv \Pbottom-tagging algorithm~\cite{Sirunyan:2017ezt}.
 
 
 %=========================================================
@@ -141,7 +141,7 @@ The tight and tight $+$ lepton veto ID specifications are detailed in Tab.~\ref{
         \# neutral particles & --- & --- & $> \text{2}$ & $> \text{10}$ \\
         \bottomrule
     \end{tabular}
-    \caption[The requirements for a jet to pass tight identification for data taken in 2016, and to \acrlong{mc} events emulating that year]{The requirements for a \gls{jet} to pass tight identification for data taken in 2016, and to \acrlong{mc} events emulating that year. Information taken from Ref.~\citenum{cms_jet_ID_2016}.
+    \caption[The requirements for a jet with $\pt > \text{15}\GeV$ to pass tight identification for data taken in 2016, and to \acrlong{mc} events emulating that year]{The requirements for a \gls{jet} with $\pt > \text{15}\GeV$ to pass tight identification for data taken in 2016, and to \acrlong{mc} events emulating that year. Information taken from Ref.~\citenum{cms_jet_ID_2016}.
         
     * Only applies to the tight $+$ lepton veto ID.}
     \label{tab:htoinv_jet_id_def_2016}
@@ -154,7 +154,7 @@ The tight and tight $+$ lepton veto ID specifications are detailed in Tab.~\ref{
 \subsubsection{Jet identification criteria in 2017}
 \label{subsubsec:objects_jets_2017}
 
-The tight and tight $+$ lepton veto ID conditions are detailed in Tab.~\ref{tab:htoinv_jet_id_def_2017}. \Glspl{jet} with $\pt < \text{50}\GeV$ are required to meet the tight pileup ID criteria. Any \glspl{jet} with a raw (uncorrected) transverse momentum $\pt^{\mathrm{raw}} < \text{50}\GeV$ within the region $\text{2.65} < \abseta < \text{3.139}$ are vetoed due to noise in the \acrshort{ecal} end cap.
+The tight and tight $+$ lepton veto ID conditions are detailed in Tab.~\ref{tab:htoinv_jet_id_def_2017}. \Glspl{jet} with $\pt < \text{50}\GeV$ are required to meet the tight pileup ID criteria. No corresponding criteria are recommended for \glspl{jet} with greater \pt. Any \glspl{jet} with a raw (uncorrected) transverse momentum $\pt^{\mathrm{raw}} < \text{50}\GeV$ within the region $\text{2.65} < \abseta < \text{3.139}$ are vetoed due to noise in the \acrshort{ecal} end cap.
 
 % These noisy EE jets are described in https://docs.google.com/presentation/d/1PMWr9QEaHYAbyi6yAFLHEE6KT-u7Cjwm3wniJZCixcU/edit#slide=id.p
 
@@ -173,7 +173,7 @@ The tight and tight $+$ lepton veto ID conditions are detailed in Tab.~\ref{tab:
         \# neutral particles & --- & --- & $> \text{2}$ & $> \text{10}$ \\
         \bottomrule
     \end{tabular}
-    \caption[The requirements for a jet to pass tight identification for data taken in 2017, and to \acrlong{mc} events emulating that year]{The requirements for a \gls{jet} to pass tight identification for data taken in 2017, and to \acrlong{mc} events emulating that year. Information taken from Ref.~\citenum{cms_jet_ID_2017}.
+    \caption[The requirements for a jet with $\pt > \text{15}\GeV$ to pass tight identification for data taken in 2017, and to \acrlong{mc} events emulating that year]{The requirements for a \gls{jet} with $\pt > \text{15}\GeV$ to pass tight identification for data taken in 2017, and to \acrlong{mc} events emulating that year. Information taken from Ref.~\citenum{cms_jet_ID_2017}.
         
     * Only applies to the tight $+$ lepton veto ID.}
     \label{tab:htoinv_jet_id_def_2017}
@@ -186,7 +186,7 @@ The tight and tight $+$ lepton veto ID conditions are detailed in Tab.~\ref{tab:
 \subsubsection{Jet identification criteria in 2018}
 \label{subsubsec:objects_jets_2018}
 
-The tight and tight $+$ lepton veto ID specifications are detailed in Tab.~\ref{tab:htoinv_jet_id_def_2018}. As in 2017, \glspl{jet} with $\pt < \text{50}\GeV$ must fulfill the tight pileup ID conditions.
+The tight and tight $+$ lepton veto ID specifications are detailed in Tab.~\ref{tab:htoinv_jet_id_def_2018}. As in 2017, \glspl{jet} with $\pt < \text{50}\GeV$ must fulfill the tight pileup ID conditions, with no recommendations for \glspl{jet} with higher \pt.
 
 \begin{table}[htbp]
     \centering
@@ -203,7 +203,7 @@ The tight and tight $+$ lepton veto ID specifications are detailed in Tab.~\ref{
         \# neutral particles & --- & --- & $> \text{2}$ & $> \text{10}$ \\
         \bottomrule
     \end{tabular}
-    \caption[The requirements for a jet to pass tight identification for data taken in 2018, and to \acrlong{mc} events emulating that year]{The requirements for a \gls{jet} to pass tight identification for data taken in 2018, and to \acrlong{mc} events emulating that year.  Information taken from Ref.~\citenum{cms_jet_ID_2018}.
+    \caption[The requirements for a jet with $\pt > \text{15}\GeV$ to pass tight identification for data taken in 2018, and to \acrlong{mc} events emulating that year]{The requirements for a \gls{jet} with $\pt > \text{15}\GeV$ to pass tight identification for data taken in 2018, and to \acrlong{mc} events emulating that year. Information taken from Ref.~\citenum{cms_jet_ID_2018}.
         
     * Only applies to the tight $+$ lepton veto ID.}
     \label{tab:htoinv_jet_id_def_2018}
@@ -216,11 +216,11 @@ The tight and tight $+$ lepton veto ID specifications are detailed in Tab.~\ref{
 \subsection{Boosted decays of top quarks and electroweak bosons}
 \label{subsec:objects_deepak8}
 
-Many traditional methods have been developed to tag \glspl{jet} originating from heavy particles such as top quarks, vector bosons, and Higgs bosons. Though, there are limitations with all of these, and in the era of machine learning a plethora of new tools have arisen. One such algorithm---\deepakeight---has been developed by physicists in \acrshort{cms} to classify \glspl{jet} that originate from numerous heavy particle decays. In the analysis in search of invisibly decaying Higgs bosons, specific interest is paid to those coming from top quarks and vector bosons in order to assist the categorisation of the \ttH and \VH signals. The design and optimisation of the algorithm is described in Ref.~\citenum{CMS-PAS-JME-18-002}.
+Many traditional methods have been developed to tag \glspl{jet} originating from heavy particles such as top quarks, vector bosons, and Higgs bosons. Though, there are limitations with all of these, and in the era of machine learning a plethora of new tools have arisen. One such algorithm---\deepakeight---has been developed by physicists in \acrshort{cms} to classify \glspl{jet} that originate from numerous heavy particle decays. In the analysis in search of invisibly decaying Higgs bosons, specific attention is paid to those coming from top quarks and vector bosons in order to assist the categorisation of the \ttH and \VH signals. The design and optimisation of the algorithm is described in Ref.~\citenum{CMS-PAS-JME-18-002}.
 
-The algorithm operates on AK8 \glspl{jet}. Following the same reconstruction and identification prescription as AK4 \glspl{jet}, they differ only in the cone size and \pt requirement. Hadrons are clustered with the \gls{antikt} using a radius parameter of 0.8 instead of the usual 0.4, and must possess a $\pt > \text{170}\GeV$. The corrections and uncertainties from \acrshort{jer} and \acrshort{jes} are also propagated identically.
+The algorithm operates on AK8 \glspl{jet}. Following the same reconstruction and identification prescription as AK4 \glspl{jet}, they differ only in the cone size and \pt requirement. Hadrons are clustered with the \gls{antikt} using a radius parameter of 0.8 instead of the usual 0.4, and must possess a $\pt > \text{170}\GeV$. The corrections and uncertainties from \acrshort{jer} and \acrshort{jes} are also propagated identically. 
 
-The ensuing selections are applied to AK8 \glspl{jet} to classify them, as recommended by the \deepakeight developers:
+The following selections are applied to AK8 \glspl{jet} to classify them, as recommended by the \deepakeight developers:
 \medskip
 \begin{easylist}[itemize]
     \ListProperties(Style*=-- , Style2*=$\circ$ , Hang=true, FinalMark={)})
@@ -237,7 +237,7 @@ The ensuing selections are applied to AK8 \glspl{jet} to classify them, as recom
 
 \medskip
 
-\noindent{}Orthogonality is ensured between the two classifications from the soft drop mass $m_{\mathrm{SD}}$~\cite{Larkoski:2014wba} window. The quantity is corrected for pileup contributions using the PUPPI algorithm~\cite{Bertolini:2014bba}. Tight working points that effectively separate the \glspl{jet} from \acrshort{qcd} background ensure a high purity collection. Boosted \PVec \glspl{jet} are not further separated into \PW- and \PZ-tagged since the mass degeneracy makes this inherently difficult. The \PW vs. \acrshort{qcd} discriminator is therefore used to tag both.
+\noindent{}Orthogonality is ensured between the two classifications from the soft drop mass $m_{\mathrm{SD}}$~\cite{Larkoski:2014wba} window. The soft drop algorithm is designed unravel clustered \glspl{jet} and prune the soft radiation. Recalculating the mass of reclustered \gls{jet} would then be closer to the mother particle that produced it, improving the tagging of heavy particles. For the AK8 \glspl{jet} in this thesis, the soft drop mass is corrected for pileup contributions using the PUPPI algorithm~\cite{Bertolini:2014bba}. Tight working points that effectively separate the \glspl{jet} from \acrshort{qcd} background ensure a high purity collection. Boosted \PVec \glspl{jet} are not further separated into \PW- and \PZ-tagged since the mass degeneracy makes this inherently difficult. The \PW vs. \acrshort{qcd} discriminator is therefore used to tag both.
 
 
 %=========================================================
@@ -246,9 +246,9 @@ The ensuing selections are applied to AK8 \glspl{jet} to classify them, as recom
 \subsection{Muons}
 \label{subsec:objects_muons}
 
-The reconstruction and identification criteria for muons is described in significant detail in Ref.~\citenum{Sirunyan:2018fpa}. From there, a loose muon \looseMuon satisfies the loose muon identification requirements. Additionally, $\abseta < \text{2.4}$, $\pt > \text{10}\GeV$, and the loose working point of the \acrlong{pf} relative isolation parameter (Eq.~5.4 in Ref.~\citenum{CMS-PRF-14-001}\citenumNegSpace) $I_{\mathrm{PF}} < \text{0.25}$ must be satisfied. A tight muon \tightMuon meets the tight muon ID requirements from Ref.~\citenum{Sirunyan:2018fpa}, $\abseta < \text{2.4}$, $\pt > \text{20}\GeV$, and the tight working point for the relative isolation ($I_{\mathrm{PF}} < \text{0.15}$).
+The reconstruction and identification criteria for muons is described in sufficient detail in Ref.~\citenum{Sirunyan:2018fpa}. From there, a loose muon \looseMuon satisfies the loose identification requirements. Additionally, $\abseta < \text{2.4}$, $\pt > \text{10}\GeV$, and the loose working point of the \acrlong{pf} relative isolation parameter (Eq.~5.4 in Ref.~\citenum{CMS-PRF-14-001}\citenumNegSpace) $I_{\mathrm{PF}} < \text{0.25}$ must be satisfied. A tight muon \tightMuon meets the tight muon ID requirements from Ref.~\citenum{Sirunyan:2018fpa}, $\abseta < \text{2.4}$, $\pt > \text{20}\GeV$, and the tight working point for the relative isolation ($I_{\mathrm{PF}} < \text{0.15}$).
 
-The relative isolation parameter is the ratio of the sum of track, \acrshort{hcal} and \acrshort{ecal} energies within $\Delta R < \text{0.4}$ of the muon to the particle's momentum. The loose and tight working points are designed to give efficiencies of 98\,\% and 95\,\%, respectively.
+The relative isolation parameter is the ratio of the sum of tracker, \acrshort{hcal} and \acrshort{ecal} energies within $\Delta R < \text{0.4}$ of the muon to the particle's momentum. The loose and tight working points are designed to give efficiencies of 98\,\% and 95\,\%, respectively.
 
 
 %=========================================================
@@ -257,7 +257,7 @@ The relative isolation parameter is the ratio of the sum of track, \acrshort{hca
 \subsection{Electrons}
 \label{subsec:objects_electrons}
 
-Electrons are labelled as veto (\vetoEle) or tight electrons (\tightEle), depending on which \acrshort{pog} ID requirements are fulfilled. For 2016--18, version 2 of the cut-based identification scheme (tuned using 2017 samples), is applied. These are distinguished for the barrel region in Tab.~\ref{tab:htoinv_electron_ID_barrel}, and end cap region in Tab.~\ref{tab:htoinv_electron_ID_endcap}. The veto and tight ID specifications are designed for average efficiencies of 95\,\% and 70\,\%, respectively.
+Electrons are labelled as veto (\vetoEle) or tight electrons (\tightEle), depending on which identification requirements from the \acrshort{pog} are fulfilled. For 2016--18, version 2 of the cut-based identification scheme (tuned using 2017 samples) is applied. The thresholds for each identification criterion are distinguished for the barrel region in Tab.~\ref{tab:htoinv_electron_ID_barrel}, and end cap region in Tab.~\ref{tab:htoinv_electron_ID_endcap}. The veto and tight ID specifications are designed for average efficiencies of 95\,\% and 70\,\%, respectively.
 
 \begin{table}[htbp]
     \centering
@@ -301,7 +301,7 @@ The variable $\sigma_{i\eta i\eta}$ is the energy-weighted standard deviation of
 % rho and A_eff: https://iopscience.iop.org/article/10.1088/1748-0221/10/08/P08010/pdf
 % More electron stuff in reference to tables above: https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideGsfElectronObject
 
-Common to all electrons in the analysis, a cut is placed of $\abseta < \text{2.5}$ so they are reconstructed with tracker information. To further utilise the subdetector, impact parameter conditions on the transverse and longitudinal directions ensure they originate sufficiently close to the primary vertex: $d_0 < \text{0.05}$\,cm and $dz < \text{0.1}$\,cm in the barrel, with $d_0 < \text{0.1}$\,cm and $dz < \text{0.2}$\,cm in the end cap. The \vetoEle and \tightEle sets are only separated by the identification prerequisites above, and transverse momentum. A veto electron requires $\pt > \text{10}\GeV$, and a tight electron $\pt > \text{40}\GeV$.
+Common to all electrons in the analysis, a cut is placed of $\abseta < \text{2.5}$ so they are reconstructed with tracker information. To further utilise the subdetector, impact parameter conditions on the transverse and longitudinal directions ($d_0$ and $dz$, respectively) ensure they originate sufficiently close to the primary vertex: $d_0 < \text{0.05}$\,cm and $dz < \text{0.1}$\,cm in the barrel, with $d_0 < \text{0.1}$\,cm and $dz < \text{0.2}$\,cm in the end cap. The \vetoEle and \tightEle sets are only separated by the identification prerequisites above, and transverse momentum. A veto electron requires $\pt > \text{10}\GeV$, and a tight electron $\pt > \text{40}\GeV$.
 
 
 %=========================================================
@@ -310,7 +310,7 @@ Common to all electrons in the analysis, a cut is placed of $\abseta < \text{2.5
 \subsection{Photons}
 \label{subsec:objects_photons}
 
-Photons are identified in a similar manner to electrons---using version 2 of the cut-based scheme for 2016--18, optimised with 2017 \acrlong{mc}. Loose \loosePhoton and medium photons \mediumPhoton are defined which fulfill the corresponding working point criteria for identification. For inclusivity, the latter is used instead of the tight working point. These are detailed in Tab.~\ref{tab:htoinv_photon_ID_barrel} and Tab.~\ref{tab:htoinv_photon_ID_endcap} for the barrel and end cap regions, respectively. The loose photon ID specification is designed to be 90\,\% efficient, and the medium ID 80\,\%. In the barrel and end caps, the loose ID rejects 86\,\% and 77\,\% of background, respectively, while the medium ID removes 89\,\% and 82\,\%, respectively. Both collections must also pass the electron conversion veto to ensure they originate promptly from the primary vertex.
+Photons are identified in a similar manner to electrons---using version 2 of the cut-based scheme for 2016--18, optimised with 2017 \acrlong{mc}. Loose \loosePhoton and medium photons \mediumPhoton are defined which fulfill the corresponding working point criteria for identification. For greater acceptance, the latter is used instead of the tight working point. These are detailed in Tab.~\ref{tab:htoinv_photon_ID_barrel} and Tab.~\ref{tab:htoinv_photon_ID_endcap} for the barrel and end cap regions, respectively. The loose photon ID specification is designed to be 90\,\% efficient, and the medium ID 80\,\%. In the barrel and end caps, the loose ID rejects 86\,\% and 77\,\% of background, respectively, while the medium ID removes 89\,\% and 82\,\%, respectively. Both collections must also pass the electron conversion veto to ensure they originate promptly from the primary vertex.
 
 \begin{table}[htbp]
     \centering
@@ -357,7 +357,7 @@ As well as the ID, the two collections diverge further due to $\eta$ and \pt req
 \subsection{Tau leptons}
 \label{subsec:objects_taus}
 
-Tau leptons \Ptau can decay hadronically and present a non-neglible background in searches for \glspl{jet} and \ptmiss. The only purpose they serve in the \higgstoinv analysis is to veto events that contain them. These are denoted as \emph{very loose} taus \vlooseTau. Version 2 of the multivariate identification algorithm is applied in all years, and tau leptons must pass the very loose criteria. Dedicated multivariate discriminators against electrons and muons are provided and employed, passing the loose and very loose working points, respectively. Kinematically, a \vlooseTau also requires $\pt > \text{20}\GeV$, $\abseta < \text{2.3}$, and $dz <\text{0.2}$\,cm.
+Tau leptons \Ptau can decay hadronically and present a non-negligible background in searches for \glspl{jet} and \ptmiss. The only purpose they serve in the \higgstoinv analysis is to veto events that contain them. These are denoted as \emph{very loose} taus \vlooseTau. Version 2 of the multivariate identification algorithm is applied in all years, and tau leptons must pass the very loose requirements. Dedicated multivariate discriminators against electrons and muons are provided and employed, passing the loose and very loose working points, respectively. Kinematically, a \vlooseTau also requires $\pt > \text{20}\GeV$, $\abseta < \text{2.3}$, and $dz <\text{0.2}$\,cm.
 
 % Tau ID: https://twiki.cern.ch/twiki/bin/viewauth/CMS/TauIDRecommendationForRun2. But no real useful information is there
 
@@ -370,7 +370,7 @@ Tau leptons \Ptau can decay hadronically and present a non-neglible background i
 
 Particle detection is not a straightforward process. As such, there may be particles identified close together in an event either due to real physics or misreconstruction. To ensure only well-measured and correctly-identified objects are used in analysis, particles considered to be overlapping are removed---or \emph{cross cleaned}---between the different classes. This is performed in the following order.
 
-Muons are first identified, followed by electrons. Cross cleaning is performed against the \looseMuon collection of objects, so electrons are not counted in the event if they are within $\Delta R < \text{0.3}$ of one. Photons are next in the list. Both the \loosePhoton and \mediumPhoton collections are cross-cleaned against \looseMuon and \vetoEle objects in the event with $\Delta R < \text{0.3}$. The same collections and separation are used to remove overlap with the set \vlooseTau leptons. Finally, \glspl{jet} are identified, with those in the AK4 collection requiring a separation of $\Delta R > \text{0.4}$ from any electron, muon, and photon defined previously.
+Muons are first identified, followed by electrons. Cross cleaning is performed against the \looseMuon collection of objects, so electrons are not counted in the event if they are within $\Delta R < \text{0.3}$ of one. Photons are next in the list. Both the \loosePhoton and \mediumPhoton collections are cross cleaned against \looseMuon and \vetoEle objects in the event with $\Delta R < \text{0.3}$. The same collections and separation are used to remove overlap with the set \vlooseTau leptons. Finally, \glspl{jet} are identified, with those in the AK4 collection requiring a separation of $\Delta R > \text{0.4}$ from any electron, muon, and photon defined previously. No overlap removal is performed for AK8 \glspl{jet}. Since they are reclustered from the same hadronic energy deposits as AK4 \glspl{jet}, cross cleaning against the latter is sufficient.
 
 
 %=========================================================
@@ -379,7 +379,7 @@ Muons are first identified, followed by electrons. Cross cleaning is performed a
 \subsection{Revised energy sums}
 \label{subsec:objects_analysis_energy_sums}
 
-Most \acrshort{cms} analyses, including those presented in this thesis, define the missing transverse momentum with the \emph{type-I correction}: corrections to the \acrshort{jer} and \acrshort{jes} are applied as in Chpt.~\ref{subsec:objects_jets}, and so the corrected \gls{jet} \ptvec are propagated to the calculation of \ptvecmiss. Uncertainties are calculated in the same manner as \glspl{jet}.
+Most \acrshort{cms} analyses, including those presented in this thesis, define the missing transverse momentum with the \emph{type-I correction}: corrections to the \acrshort{jer} and \acrshort{jes} are applied as in Chpt.~\ref{subsec:objects_jets}, and so the corrected \gls{jet} \ptvec are propagated to the calculation of \ptvecmiss.
 
 In 2017, significant noise in the \acrshort{ecal} end cap affected \glspl{jet} and \ptmiss, leading to potentially large energy mismeasurements. These quantities were recomputed after reconstruction, and carried through the analysis.
 

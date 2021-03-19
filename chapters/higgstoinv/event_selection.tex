@@ -19,14 +19,18 @@ The preselection is designed to discriminate between signal and background event
     & $\HT > \text{200} \GeV$
     & $\mht > \text{200} \GeV$
     & $\ptmiss > \text{200} \GeV$
-    & $\mht/\ptmiss > \text{0.8}$
-    & $\mht/\ptmiss < \text{1.2}$
+    & $\text{0.8} < \mht/\ptmiss < \text{1.2}$
     & $n_{\vlooseTau} = \text{0}$
 \end{easylist}
 
 \medskip
 % No indent so it doesn't look weird just after the hanging list
-\noindent{}To ensure orthogonality with the phase space occupied by the \acrshort{vbf} topology, the two leading \glspl{jet} must be within the acceptance of the tracker, and events must fail one or more of the following criteria:
+\noindent{}Physics objects in the analysis are ordered by descending \pt. In reference to the list above, for example, the superscript $\mathrm{j_1}$ that refers to the first \gls{jet} in an event is the one with the largest \pt.
+
+The leading jet \pt and \HT requirements are chosen to remove events with insufficient hadronic activity, which are unlikely to occur in signal processes. \acrlong{pf}-level \mht and \ptmiss comprise the \acrshort{hlt} requirements that categorise the data. Significant values of both variables are expected in the signal. The thresholds are decided from measurements of the trigger efficiency. Above 200\GeV in both variables, the signal region triggers have efficiencies of $> \text{95}$\,\%. The window placed on the ratio $\mht/\ptmiss$ is designed to control mismeasured events. In those with hadronic final states, it is expected that $\mht \approx \ptmiss$. Mismeasurements or mistagged objects may lead to a divergence between the two sums. For all of the above requirements, a balance must be maintained between purity and selection efficiency. Finally, the requirement of zero \vlooseTau objects seeks to eliminate the potential background from hadronically decaying taus.
+
+Orthogonality is ensured with the phase space occupied by the \acrshort{vbf} topology as a search for \higgstoinv in this final state is currently underway in \acrshort{cms}. To simplify any future combinations with that analysis, overlap must be removed. To do so, the two leading \glspl{jet} must be within the acceptance of the tracker, and events must \emph{fail} one or more of the following criteria:
+
 \medskip
 \begin{easylist}[itemize]
     \cutflowlistprops

@@ -53,7 +53,7 @@ Further selections are applied to filter poorly measured or mis-reconstructed ev
 
 A ``muon \gls{jet} filter'' rejects events with mis-reconstructed muons by requiring all \glspl{jet} with $\pt > \text{200}\GeV$ to have a muon energy fraction $f_{\mathrm{E}}^{\Pmu} < \text{0.5}$ or $\Delta\phi(\mathrm{j}, \, \ptvecmiss) < \pi - \text{0.4}$.
 
-Events containing a \gls{jet} in the forward region with $\pt > \text{50}\GeV$ are rejected since they are more susceptible to mismeasurement in that area of the detector. An additional benefit is the further separation of signal from background.
+Events containing a \gls{jet} in the forward region ($\abseta > \text{2.4}$) with $\pt > \text{50}\GeV$ are rejected since they are more susceptible to mismeasurement in that area of the detector. \glspl{jet} in this region are also less likely to manifest in most of the signal topologies than several of the backgrounds. Therefore, cutting harder provides the additional benefit of further separation of signal from background.
 
 Charged ($f_{\mathrm{E}}^{h\pm}$) and neutral hadron energy fraction ($f_{\mathrm{E}}^{h0}$) requirements are applied to all \glspl{jet} via fulfillment of the tight \gls{jet} ID criteria (see Chpt.~\ref{subsec:objects_jets}). Furthermore, stricter selections are placed on the leading two \glspl{jet} as follows:
 
@@ -69,13 +69,15 @@ Charged ($f_{\mathrm{E}}^{h\pm}$) and neutral hadron energy fraction ($f_{\mathr
 
 \medskip
 
-\noindent{}In the \acrshort{qcd} \glspl{SB}, despite the requirement of $\ptmiss > \text{200}\GeV$, an excess in data was observed for events with low missing transverse momentum calculated from track momenta ($\ptmissTrk$). This indicated a significant presence of neutral particles in such events, warranting a cut of $\ptmissTrk > \text{80}\GeV$ in the signal region and \glspl{SB}.
+\noindent{}The \acrshort{qcd} \glspl{SB} are used, in part, as a validation region adjacent to the signal region, and can identify issues that may also be present in the signal region. Despite the requirement of $\ptmiss > \text{200}\GeV$ in the preselection, an excess in data was observed in the \glspl{SB} for events with low missing transverse momentum calculated from track momenta ($\ptmissTrk$). This indicated a significant presence of neutral particles in such events, or event content not modelled in simulation. It is an issue that would likely also be present in the signal region, warranting a cut of $\ptmissTrk > \text{80}\GeV$ in both the signal region and \glspl{SB}.
 
-A discrepancy between the directions of the \htvecmiss and \ptvecmiss were found to be present in both the \ttH and \VH categories, prompting the requirement $\Delta\phi(\htvecmiss, \, \ptvecmiss) < \text{0.5}$ everywhere. In the \ttH categories, this was further tightened. Large differences between the azimuthal angle of the missing transverse momentum calculated with \acrlong{pf} (\ptvecmiss), and either from track momenta (\ptvecmissTrk) or \glspl{jet} (\htvecmiss) are indicative of an inconsistent event description. An elliptical cut is therefore placed in the plane of $\Delta\phi(\ptvecmiss, \, \ptvecmissTrk)$ and $\Delta\phi(\htvecmiss, \, \ptvecmiss)$ for events in the signal region and sidebands for \ttH:
+A discrepancy between the directions of the \htvecmiss and \ptvecmiss were found to be present in both the \ttH and \VH categories, prompting the requirement $\Delta\phi(\htvecmiss, \, \ptvecmiss) < \text{0.5}$ in all categories and regions. In the \ttH categories, this was further tightened. Large differences between the azimuthal angle of the missing transverse momentum calculated with \acrlong{pf} (\ptvecmiss), and either from track momenta (\ptvecmissTrk) or \glspl{jet} (\htvecmiss) are indicative of an inconsistent event description. Inspired by another analysis who observed the same issues, an elliptical cut is therefore placed in the plane of $\Delta\phi(\ptvecmiss, \, \ptvecmissTrk)$ and $\Delta\phi(\htvecmiss, \, \ptvecmiss)$ for events in the signal region and sidebands for \ttH:
 \begin{equation}
     \sqrt{ \Delta\phi(\ptvecmiss, \, \ptvecmissTrk)^2 + 4 \cdot \Delta\phi(\htvecmiss, \, \ptvecmiss)^2 } < 1.0
 \end{equation}
-The filters described below were recommended by the MET \acrshort{pog}~\cite{cmsmetfilterspage} to remove events with potentially miscalculated \ptvecmiss:
+The requirement removed few events overall without sculpting the \ptmiss distribution or introducing bias; it only cut away those that appeared to contain mismeasured or mistagged objects, as intended.
+
+The filters described below were recommended by the MET \acrlong{pog}~\cite{cmsmetfilterspage} to remove events with potentially miscalculated \ptvecmiss:
 \medskip
 \begin{easylist}[itemize]
     \cutflowlistprops
@@ -102,7 +104,7 @@ During the 2018 data taking period, the HEM Issue forced additional measures to 
 \begin{easylist}[itemize]
     \cutflowlistprops
     & $-\text{1.8} < \phi(\ptvecmiss) < -\text{0.6}$ in the signal region and \glspl{SB}
-    & Any veto electron \vetoEle with $\pt > \text{10}\GeV$, $-\text{3.0} < \eta < -\text{1.4}$, and $-\text{1.57} < \phi < -\text{0.87}$ in the \singleEleCr and \doubleEleCr \glspl{CR}
+    & Any veto electron \vetoEle with $\pt > \text{10}\GeV$, $-\text{3.0} < \eta < -\text{1.4}$, and $-\text{1.57} < \phi < -\text{0.87}$ in the \singleEleCr and \doubleEleCr \glspl{CR} (defined in Chpt.~\ref{subsec:htoinv_control_regions})
 \end{easylist}
 
 \medskip

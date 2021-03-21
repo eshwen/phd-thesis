@@ -48,7 +48,7 @@ Chpts.~\ref{subsec:htoinv_ttH_subcats} and \ref{subsec:htoinv_VH_subcats} explai
 
 The categories comprising the \ttH channel are designed to capture both boosted and resolved topologies. The range of categories in the class are to account for inefficiencies in detection and tagging, i.e., events where only one of the top quarks or \PW bosons are identified. Requirements on the number of \glspl{bjet} effectively distinguish background from signal.
 
-For lower momentum events, the decay products of the top quarks are spread further apart, allowing individual \glspl{jet} to be reconstructed. The \ttH resolved categories, as in the boosted case, are intended to compensate for identification and/or reconstruction inefficiencies. In the 6j1b and 6j2b categories, while only six \glspl{jet} are expected from a \ttbar decay, initial and final state radiation may be present. The products of $\ttbar + X$ events can also yield additional jets. While only two \Pbottom quarks are expected in $\ttH(\higgstoinv)$, the \gls{bjet} requirement is left open-ended in the 5j2b and 6j2b categories. While this allows for mis-tagged \glspl{bjet} to still enter the category, it is much more prevalent in true \ttbar ($+ X$) decays than other processes.
+For lower momentum events, the decay products of the top quarks are spread further apart, allowing individual \glspl{jet} to be reconstructed. The \ttH resolved categories, as in the boosted case, are intended to compensate for identification and/or reconstruction inefficiencies. In the 6j1b and 6j2b categories, while only six \glspl{jet} are expected from a \ttbar decay, initial and final state radiation may be present. The products of $\ttbar + X$ events can also yield additional \glspl{jet}. While only two \Pbottom quarks are expected in $\ttH(\higgstoinv)$, the \gls{bjet} requirement is left open-ended in the 5j2b and 6j2b categories. While this allows for mis-tagged \glspl{bjet} to still enter the category, it is much more prevalent in true \ttbar ($+ X$) decays than other processes.
 
 
 %=========================================================
@@ -79,20 +79,26 @@ While first principles are a good starting point to categorise events and accent
 
 Recently, more elaborate variables have been developed to better remove multijet background events in analyses with hadronic final states~\cite{Sakuma:2018xrq}. For the analysis, \omegaTilde was chosen to suppress said background. In Ref.~\citenum{Sakuma:2018xrq}, noticeable improvement is demonstrated over previous variables (particularly \biasedDPhi, which is used there as a benchmark for comparisons). Optimisation was performed for \omegaTilde on a per-channel, over a per-category, basis to avoid excessive fine tuning for the many categories in the analysis.
 
-The motivation behind the variable \omegaTilde is to minimise the \mht by varying the \pt of one of the \glspl{jet} in the event. For mismeasured \glspl{jet}, it is typically the magnitude rather than the direction of the transverse momentum that is affected. Hence, a \gls{jet} whose \pt can be varied such that the \mht can be greatly reduced suggests it was mismeasured. For each jet $i$, the ratio between its \pt and the \mht is defined as $f_i$. The variable $\sin\Delta\tilde{\phi}_i$ is the factor that scales the \mht to its minimised value based on the varied \pt of jet $i$:
+The motivation behind the variable \omegaTilde is to understand how the \mht can be minimised by rescaling the \pt of a single \gls{jet} in the event; it is typically the magnitude rather than the direction of the transverse momentum that is incorrectly measured for a given physics object. Hence, a \gls{jet} whose \pt can be rescaled such that the \mht can be greatly reduced suggests the \gls{jet} was indeed mismeasured.
+
+For each jet $i$, the ratio between its \pt and the \mht is defined as $f_i$. The variable $\sin\Delta\tilde{\phi}_i$ is the factor that scales the \mht to its minimised value based on the varied \pt of jet $i$:
 \begin{align}
 \sin\Delta\tilde{\phi}_i = \begin{dcases*}
 \sin\Delta\phi_i & if $f_i + \cos\Delta\phi_i \geq 0$, \\
 \sqrt{1 + f_i^2 + 2 f_i \cos\Delta\phi_i} & otherwise\\
 \end{dcases*}
 \end{align}
-where $\Delta\phi_i$ is the azimuthal angle between \gls{jet} $i$ and the \htvecmiss. The factor is derived from geometrical arguments in the normalised \pt plane (where $\mht = \text{1}$). Finally, the angular variable $\tilde{\omega}_i$ is the defined with respect to the aforementioned variables:
+where $\Delta\phi_i$ is the azimuthal angle between \gls{jet} $i$ and the \htvecmiss. The factor $\sin\Delta\tilde{\phi}_i$ is derived from geometrical arguments in the normalised \pt plane (where $\mht = \text{1}$). The tangent of the angular variable $\tilde{\omega}_i$ is defined as the size of the minimised \mht relative to the initial jet \pt:
 \begin{equation}
     \begin{aligned}
-\tilde{\omega}_i &= \frac{ \sin\Delta\tilde{\phi}_i }{ f_i },\\
+\tan \tilde{\omega}_i &= \frac{ \sin\Delta\tilde{\phi}_i }{ f_i },\\
 \omegaTilde &= \min_{i \, \in \, \mathrm{jets}} \tilde{\omega}_i
     \end{aligned}
 \end{equation}
+It can be concluded that if the \mht can be minimised substantially by rescaling the magnitude of a given \gls{jet}'s \ptvec, a small value of $\tilde{\omega}_i$ will be achieved. In events with real \mht, it is more difficult to rescale the \pt of the \glspl{jet} and arrive at a small value of $\omegaTilde$. Hence, such processes tend to larger values of this variable, while those with little-to-no real \mht such as \acrshort{qcd} multijet would tend to low values if there exists a single mismeasured \gls{jet}.
+
+In Ref.~\citenum{Sakuma:2018xrq}, it can be seen that both \acrshort{qcd} and electroweak \acrlong{sm} processes are peaked toward lower values of \omegaTilde than the other variables proposed in that paper. The \acrlong{susy} test signals---whose final states are similar to $\ttH(\higgstoinv)$---were also shifted to higher values, making \omegaTilde a prime candidate for heavily reducing the multijet background in the analysis as well as improving the overall signal-to-background separation. The claims in Ref.~\citenum{Sakuma:2018xrq} were confirmed in the phase space of this analysis.
+
 To reject mismeasured multijet events manifesting in \glspl{jet} aligned with the \ptvecmiss, a simple cut of $\dphiFj$---contracted to \mindphi---above 0.5 was first introduced. Correlations between \mindphi and \omegaTilde were found to be high at small values, though at the thresholds applied to the categories the correlation is weaker. As such, each variable is capable of suppressing multijet events with different characteristics. To demonstrate this, Fig. illustrates the distribution of \acrshort{qcd} events in the signal region---inclusive of category---as a function of \omegaTilde and \mindphi.
 
 \begin{figure}[htbp]
@@ -156,7 +162,7 @@ The preselection from Chpt.~\ref{subsec:htoinv_preselection} and $\mindphi > \te
 
 % Figures from 12th August 2020, scenario 5. When remaking, ensure the colours of the signal lines are consistent, and the legend doesn't overlap with the distribution
 
-It is obvious that the shapes and magnitudes of the significance distributions are sensitive to the inclusion of an estimated systematic uncertainty. Increasing its size affects the shape little, though impacts the magnitude more significantly. In bins with high background occupancy, even a small systematic uncertainty can wash out traces of signal. The thresholds chosen for \omegaTilde do not necessarily maximise the significance---where the Asimov method with $\bkgsystuncert = \text{5\,\%}$ was the leading choice---but to sufficiently separate signal and background, while not removing too many events. Inspecting the distributions of the significance for \omegaTilde provided an initial range to investigate in greater detail. Then, for several values within that range, fits of the simulation to data using only the \glspl{CR} was performed. The threshold used in the analysis was decided by the value that resulted in the smallest upper limit on $\BRof{\higgstoinv}$.
+It is obvious that the shapes and magnitudes of the significance distributions are sensitive to the inclusion of an estimated systematic uncertainty. Increasing its size affects the shape little, though impacts the magnitude more significantly. In distributions with high background occupancy, even a small systematic uncertainty can wash out traces of signal. The thresholds chosen for \omegaTilde do not necessarily maximise the significance---where the Asimov method with $\bkgsystuncert = \text{5\,\%}$ was the leading choice as it seemed more realistic than the other metrics---but to sufficiently separate signal and background, while not removing too many events. Inspecting the distributions of the significance for \omegaTilde provided an initial range to investigate in greater detail. Then, for several values within that range, fits of the simulation to data using only the \glspl{CR} was performed. The threshold used in the analysis was decided by the value that resulted in the smallest upper limit on $\BRof{\higgstoinv}$.
 
 
 %=========================================================

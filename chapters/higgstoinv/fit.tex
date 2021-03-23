@@ -28,7 +28,7 @@ N_{\mathrm{pred.}}^{i, j} &= r \cdot s^{i, j} \cdot \rho_s^{i, j}\\
     \end{aligned}
     \label{eq:likelihood_SR}
 \end{equation}
-where the indices $i$ and $j$ refer to each category and \ptmiss bin, respectively, $r$ is the unconstrained signal strength parameter, i.e., \BRHinvFull, $s$ is the signal expectation determined from simulation, $\rho$ encodes the systematic uncertainties associated with simulation as Gaussian constraints, $b$ is the number of events from simulation, $a$ is an unconstrained rate parameter connecting the signal and corresponding \glspl{CR}, $c$ is the predicted number of \acrshort{qcd} multijet events, and $\omega$ contains the uncertainties on those events with Gaussian constraints. Similarly for the \glspl{CR}, the likelihood functions are
+where the indices $i$ and $j$ refer to each category and \ptmiss bin, respectively, $r$ is the unconstrained signal strength parameter, i.e., \BRHinvFull, $s$ is the signal expectation determined from simulation, $\rho$ encodes the systematic uncertainties associated with simulation as Gaussian constraints, $b$ is the number of events from simulation, $a$ is an initially unconstrained rate parameter (extracted in the fit) connecting the signal and corresponding \glspl{CR}, $c$ is the number of \acrshort{qcd} multijet events, and $\omega$ contains the uncertainties on those events with Gaussian constraints. Similarly for the \glspl{CR}, the likelihood functions are
 \begin{equation}
     \begin{aligned}
 \likelihood_{\text{\singleMuCr CR}} &= \prod_{i} \prod_{j(i)} \mathcal{P}( N_{\mathrm{obs.}, \, \Pmu }^{i, j} | r \cdot s^{i, j}_{\Pmu} \cdot \rho_{s,\, \Pmu}^{i, j} + b_{\Pmu}^{i, j} \cdot a_{\lostlepton}^{i, j} \cdot \rho_{\Pmu}^{i, j} )\\

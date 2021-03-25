@@ -352,7 +352,7 @@ An even more drastic reduction was made possible by the introduction of the nano
 \subsection{Simulating CMS data}
 \label{subsec:cms_mc}
 
-Data recorded by \acrshort{cms} is paramount for analyses searching for new physics. However, simulated samples are also of high importance. Events for specific processes are generated using \acrfull{mc} random sampling, and the output datasets are often collectively referred to by the method---\emph{\acrlong{mc}} or \emph{\acrshort{mc}}. The datasets are often generated with large numbers of events to minimise the associated statistical uncertainty. \acrshort{mc} samples are useful in a variety of cases: understanding the kinematics of signal processes in searches for new physics, modelling background processes that can mimic signal, and comparisons to data for validation purposes.
+Obviously, data recorded by \acrshort{cms} is paramount for analyses searching for new physics. However, simulated samples are also of high importance. Events for specific processes are generated using \acrfull{mc} random sampling, and the output datasets are often collectively referred to by the method---\emph{\acrlong{mc}} or \emph{\acrshort{mc}}. The datasets are often generated with large numbers of events to minimise the associated statistical uncertainty. \acrshort{mc} samples are useful in a variety of cases: understanding the kinematics of signal processes in searches for new physics, modelling background processes that can mimic signal, and comparisons to data for validation purposes.
 
 A matrix element generator such as \madgraph~\cite{Alwall:2014hca} or \POWHEG~\cite{Nason:2004rx,Frixione:2007vw} models the hard scattering process, usually at \acrfull{lo} but sometimes at higher orders. Events then pass through a hadroniser (usually \PYTHIA~\cite{pythia82} in \acrshort{cms}) to model hadronisation of quarks and gluons, sometimes known as the \emph{parton shower}---the softer radiation that accompanies the hard scatter. \Glspl{jet} are clustered here by, for example, the \gls{antikt}. The particles are also run through a detector simulation that emulates the configuration and response of the detector from a given period. Material interactions and emulation of the triggers are included. \GEANTfour~\cite{AGOSTINELLI2003250} provides this in \acrshort{cms}. Once the detector response has been appropriately simulated, it is given the same postprocessing treatment as actual data, such as executing object-tagging algorithms so that the data and simulated samples are as comparable as possible.
 
@@ -363,11 +363,11 @@ A matrix element generator such as \madgraph~\cite{Alwall:2014hca} or \POWHEG~\c
 \subsection{Jet energy corrections in the Level-1 Trigger}
 \label{subsec:detector_jecs}
 
-Recording the properties of hadrons that are amalgamated into \glspl{jet} is not always consistent across the detector. While the components go through quality control, there is inevitably some variation in their performance. They can degrade at different rates. Some may also receive hits more often than others and be subject to greater radiation damage. As a result, non-uniformity of the detector response---as functions of \pt and $\eta$---must be compensated for. For \glspl{jet}, this comes in the form of \gls{jec}.
+Recording the properties of hadrons that are amalgamated into \glspl{jet} is not always consistent across the detector. While the components go through quality control, there is inevitably some variation in their performance. They can degrade at different rates since some may also receive hits more often than others and be subject to greater radiation damage. As a result, non-uniformity of the detector response---as functions of \pt and $\eta$---must be compensated for. For \glspl{jet}, this comes in the form of \gls{jec}.
 
 As outlined in Chpt.~\ref{subsubsec:detector_l1t}, the trigger primitives from the \acrshort{ecal} and \acrshort{hcal} enter Layer-1 of the Calorimeter Trigger, where coarse position- and energy-dependent calibrations are applied. Objects such as \glspl{jet} are initially identified in Layer-2, and preliminary calibrations correct their energy. Disregarding these, even at this early stage in the data acquisition workflow, can affect the efficiency and rate of the \acrlong{l1t}. It is therefore important to re-derive the calibrations regularly, since the configuration of the detector and beam conditions change over the lifetime of the experiment.
 
-When a new round of calibrations are derived, there are many steps before this one. Preceding it, Layer-1 experts calculate their scale factors for the calorimeter towers. Once performed, the \acrlong{jec} are then derived in \acrshort{cmssw}. From early 2017 to mid-2018, I was responsible for procuring the \acrshort{jec}. The repository is accessible at \url{https://github.com/eshwen/L1JetEnergyCorrections}.
+Before a new set of calibrations can be procured, Layer-1 experts calculate their scale factors for the calorimeter towers. Once applied, the \acrlong{jec} are then derived in \acrshort{cmssw}. From early 2017 to mid-2018, I was responsible for procuring the \acrshort{jec}. The repository is accessible at \url{https://github.com/eshwen/L1JetEnergyCorrections}.
 
 
 %=========================================================
@@ -376,7 +376,7 @@ When a new round of calibrations are derived, there are many steps before this o
 \subsubsection{The procedure}
 \label{subsubsec:detector_jec_procedure}
 
-\acrshort{qcd} multijet \acrshort{mc} datasets with a large \pt range are required to derive the Layer-1 and Layer-2 calibrations. Corresponding \glspl{jet} in data for this process can often be mismeasured (so providing good calibrations in the most difficult scenario is a good test), and \acrshort{mc} events contain \emph{truth-level} information from the generator. Ntuples are made from these which have the Layer-1 corrections applied. Referring to the processing chain in Chpt.~\ref{subsec:cms_mc}, the \glspl{jet} these calibrations are derived for are post--hadronisation, but before interaction with the detector. They are referred to as \emph{\acrfull{l1} \glspl{jet}}. The reference \glspl{jet} directly from the generator (GenJets as colloquialised in \acrshort{cms}) are important for matching to the \acrshort{l1} \glspl{jet} to ensure \glspl{jet} from the parton shower---that have no well-defined source---are not mistakenly being used.
+\acrshort{qcd} multijet \acrshort{mc} datasets with a large \pt range are required to derive the Layer-1 and Layer-2 calibrations. Corresponding \glspl{jet} in data for this process can often be mismeasured (so providing good calibrations in the most difficult scenario is a good test), and \acrshort{mc} events contain \emph{truth-level} information from the generator. Ntuples are created to store these events, with the Layer-1 corrections then applied. Referring to the processing chain in Chpt.~\ref{subsec:cms_mc}, the \glspl{jet} these calibrations are derived for are post--hadronisation, but before interaction with the detector. They are referred to as \emph{\acrfull{l1} \glspl{jet}}. Reference \glspl{jet} directly from the generator (GenJets as colloquialised in \acrshort{cms}) are important for matching to the \acrshort{l1} \glspl{jet} to ensure \glspl{jet} originating from the parton shower---that have no well-defined source---are not mistakenly being used.
 
 The reference and \acrshort{l1} \glspl{jet} are matched using the variable $\Delta R$ (see Eq.~\ref{eq:delta_r}). The algorithm matches the \glspl{jet} by inspecting each \acrshort{l1} \gls{jet} in descending \pt and searching for a reference \gls{jet} with $\Delta R < \text{0.25}$. If there is more than one match, the reference \gls{jet} with the smallest $\Delta R$ is taken. Then the next \acrshort{l1} jet (and so on) follows the same procedure, with the previous reference \gls{jet} removed from the matching collection.
 
@@ -399,13 +399,13 @@ The starting parameters of the function $p_{0,\ldots,6}$ may not be adequate for
 
 \begin{figure}[htbp]
     \centering
-    \begin{subfigure}[b]{0.45\textwidth}
+    \begin{subfigure}[b]{0.48\textwidth}
         \includegraphics[width=\textwidth]{./figures/jecs/corrCurveBarrel.pdf}
         \caption{$\text{0.44} < \abseta < \text{0.78}$ (Barrel)}
         \label{fig:detector_jecs_corr_curve_Barrel}
     \end{subfigure}
     \hfill
-    \begin{subfigure}[b]{0.45\textwidth}
+    \begin{subfigure}[b]{0.48\textwidth}
         \includegraphics[width=\textwidth]{./figures/jecs/corrCurveHF.pdf}
         \caption{$\text{4.19} < \abseta < \text{5.0}$ (\acrshort{hf})}
         \label{fig:detector_jecs_corr_curve_HF}

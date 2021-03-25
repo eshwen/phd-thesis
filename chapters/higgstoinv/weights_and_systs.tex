@@ -31,9 +31,9 @@ While the statistical uncertainty for the number of events in data is simply the
 \subsection{Efficiency of the triggers}
 \label{subsec:htoinv_trigger_effs}
 
-Given the modelling of the \acrlong{l1} and \acrlong{hlt} systems in simulation is only an approximation of their behaviour with data, corrections must be made to unite them.
+Given the modelling of the \acrlong{l1} and \acrlong{hlt} systems in simulation is only an approximation of their behaviour with real data, corrections must be applied to ensure it is more representative of the data collected by \acrshort{cms}.
 
-A dedicated \gls{CR} is formed to assure orthogonality with the signal region and avoid unblinding of data, but with a similar kinematic selection to the analysis for accuracy in the desired phase space. Events are selected in data from the primary dataset consisting of muon-based triggers, and in simulation from the \wtolnupjets process at \acrshort{lo}. Analysed events consist of these containing a single, tightly-isolated muon with $\pt > \text{30}\GeV$ that triggers the \acrshort{hlt} path for an isolated muon with $\pt > \text{27}\GeV$. This is to avoid biasing the efficiencies of the triggers defining the signal region. An offline selection is then applied to keep those with similar kinematic properties to those in the signal region:
+A dedicated \gls{CR} is formed to assure orthogonality with the signal region and avoid unblinding of data, but with a similar kinematic selection to the analysis for accuracy in the desired phase space. Events are selected in data from the primary dataset consisting of muon-based triggers, and in simulation from the \wtolnupjets process at \acrshort{lo}. Analysed events contain a single, tightly-isolated muon with $\pt > \text{30}\GeV$ that triggers the \acrshort{hlt} path for an isolated muon with $\pt > \text{27}\GeV$. This is to avoid biasing the efficiencies of the triggers defining the signal region. An offline selection is then applied to keep those with similar kinematic properties to those in the signal region:
 
 \medskip
 \begin{easylist}[itemize]
@@ -55,7 +55,7 @@ where $s$ denotes the set of events that have passed the selection given by its 
     w_{\mathrm{trg}}(\ptmiss, \mht) = \frac{\epsilon_{\mathrm{trg, \ data}}(\ptmiss, \mht)}{\epsilon_{\mathrm{trg, \ MC}}(\ptmiss, \mht)}
     \label{eq:trigger_weight}
 \end{equation}
-Uncertainties are estimated using the Clopper-Pearson method~\cite{10.1093/biomet/26.4.404} and impact the yields by up to 1--2\,\%. In the signal region, sidebands, and muon \glspl{CR}, weights from the efficiencies of the \ptmiss--\mht cross triggers are used. The weights are provided for each data taking year in Fig.~\ref{fig:htoinv_trig_effs}. In the electron and photon \glspl{CR}, the efficiencies are calculated in the same manner, instead from the triggers in Tabs.~\ref{tab:htoinv_ele_pd_triggers} and \ref{tab:htoinv_photon_pd_triggers}.
+Uncertainties are estimated using the Clopper-Pearson method~\cite{10.1093/biomet/26.4.404} and impact the yields by up to 1--2\,\%. In the signal region, sidebands, and muon \glspl{CR}, weights from the efficiencies of the \ptmiss--\mht cross triggers are used. The weights are provided for each data taking year in Fig.~\ref{fig:htoinv_trig_effs}. In the electron and photon \glspl{CR}, the efficiencies are calculated in the same manner, instead with the triggers in Tabs.~\ref{tab:htoinv_ele_pd_triggers} and \ref{tab:htoinv_photon_pd_triggers}.
 
 \begin{figure}[htbp]
     \centering
@@ -261,7 +261,7 @@ Muons follow a similar prescription, where the ID and isolation efficiencies are
 \subsubsection{\texorpdfstring{\Pbottom-jets}{b-jets} tagged by the \texorpdfstring{\deepcsv}{DeepCSV} algorithm}
 \label{subsubsec:htoinv_btagging_sfs}
 
-Data--simulation scale factors are calculated for each \gls{bjet} as tagged by the \deepcsv algorithm. They are defined as the tagging efficiency in data divided by the efficiency for simulation for a given working point, and as a function of \gls{jet} \pt. Various methods are employed to derive separate scale factors for separate topologies, such as \acrshort{qcd} multijet or \ttbar events, and are described in Sec.~8.4 of Ref.~\citenum{Sirunyan:2017ezt}. A weighted average of the scale factors computed by each method are then taken to yield the final scale factor for a \Pbottom-tagged \gls{jet}. The resultant systematic uncertainty is typically less than 5\,\%.
+Data--simulation scale factors are calculated for each \gls{bjet} as tagged by the \deepcsv algorithm. They are defined as the tagging efficiency in data divided by the efficiency for simulation for a given working point, and as a function of \gls{jet} \pt. Various methods are employed to derive separate scale factors for separate topologies, such as \acrshort{qcd} multijet or \ttbar events, and are described in Sec.~8.4 of Ref.~\citenum{Sirunyan:2017ezt}. A weighted average of the scale factors computed by each method is then taken to yield the final scale factor for a \Pbottom-tagged \gls{jet}. The resultant systematic uncertainty is typically less than 5\,\%.
 
 % This talk goes through the methods and SFs in more detail: https://cds.cern.ch/record/2627468/files/DP2018_033.pdf
 

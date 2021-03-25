@@ -111,9 +111,9 @@ In the nanoAOD data tier, a \gls{jet} is defined as an AK4-clustered object reco
 
 % JER smearing: https://twiki.cern.ch/twiki/bin/viewauth/CMS/JetResolution#Smearing_procedures. Info about the stuff added by the jetmetHelper module in nanoAOD-tools: https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBookNanoAOD#JME_jetmet_HelperRun2
 
-The recommended tight, with or without an additional lepton veto, \acrshort{pf} identification requirements are also mandatory to establish a sufficient degree of purity with a very high efficiency ($> \text{98\,\%}$ in all $\abseta$ regions). These are documented in Tabs.~\ref{tab:htoinv_jet_id_def_2016}, \ref{tab:htoinv_jet_id_def_2017}, and \ref{tab:htoinv_jet_id_def_2018}. For all years, both the identification and background rejection efficiencies are above 98\,\% in the barrel and end caps.
+The recommended tight (with or without an additional lepton veto, referred to as ``tight $+$ lepton veto'') \acrshort{pf} identification requirements are also mandatory to establish a sufficient degree of purity with a very high efficiency ($> \text{98\,\%}$ in all $\abseta$ regions). These are documented in Tabs.~\ref{tab:htoinv_jet_id_def_2016}, \ref{tab:htoinv_jet_id_def_2017}, and \ref{tab:htoinv_jet_id_def_2018}. For all years, both the identification and background rejection efficiencies are above 98\,\% in the barrel and end caps.
 
-A \gls{jet} suspected to originate from a \Pbottom-quark, or ``\gls{bjet},'' is described by a nanoAOD AK4 \gls{jet} with corrected $\pt > \text{30}\GeV$ and within the acceptance of the tracker: $\abseta < \text{2.4}$ in 2016, and $< \text{2.5}$ onward. It is also required to satisfy the medium working point (a mis-tag rate of 1\,\%) from the \deepcsv \Pbottom-tagging algorithm~\cite{Sirunyan:2017ezt}.
+A \gls{jet} suspected to originate from a \Pbottom-quark, or ``\gls{bjet},'' is described by a nanoAOD AK4 \gls{jet} with $\pt > \text{30}\GeV$ and within the acceptance of the tracker: $\abseta < \text{2.4}$ in 2016, and $< \text{2.5}$ onward. It is also required to satisfy the medium working point (a mis-tag rate of 1\,\%) from the \deepcsv \Pbottom-tagging algorithm~\cite{Sirunyan:2017ezt}.
 
 
 %=========================================================
@@ -122,7 +122,7 @@ A \gls{jet} suspected to originate from a \Pbottom-quark, or ``\gls{bjet},'' is 
 \subsubsection{Jet identification criteria in 2016}
 \label{subsubsec:objects_jets_2016}
 
-The tight and tight $+$ lepton veto ID specifications are detailed in Tab.~\ref{tab:htoinv_jet_id_def_2016}. Specifically to this year, all \glspl{jet} are required to fulfill the criteria for the tight pileup ID to ensure they do not originate from pileup vertices. The algorithm that gives the pileup ID is based on a boosted decision tree trained on 2016 samples. It incorporates tracker information, jet topology, and constituent multiplicity as discriminating variables.
+The tight, and tight $+$ lepton veto, ID specifications are detailed in Tab.~\ref{tab:htoinv_jet_id_def_2016}. Specifically to this year, all \glspl{jet} are required to fulfill the criteria for the tight working point for the pileup identification algorithm~\cite{CMS-PAS-JME-13-005} to ensure they do not originate from pileup vertices. It is based on a boosted decision tree trained on 2016 samples, and incorporates tracker information, jet topology, and constituent multiplicity as discriminating variables.
 
 % Pileup jet ID: https://twiki.cern.ch/twiki/bin/viewauth/CMS/PileupJetID
 
@@ -348,7 +348,7 @@ The variables $\sigma_{i\eta i\eta}$ and $\rho$ follow the same definitions as i
 \begin{equation}
 I_{\mathrm{PF}}^{\mathrm{corr.}} = \max (I_{\mathrm{PF}} - \rho A_{\mathrm{eff.}}, 0)
 \end{equation}
-As well as the ID, the two collections diverge further due to $\eta$ and \pt requirements. A loose photon is characterised by $\abseta < \text{2.5}$ and $\pt > \text{15}\GeV$, while a medium photon must be central ($\abseta < \text{1.442}$) and possess $\pt > \text{230}\GeV$.
+As well as the working point for identification, the two collections diverge further due to $\eta$ and \pt requirements. A loose photon is characterised by $\abseta < \text{2.5}$ and $\pt > \text{15}\GeV$, while a medium photon must be central ($\abseta < \text{1.442}$) and possess $\pt > \text{230}\GeV$.
 
 
 %=========================================================
@@ -368,7 +368,7 @@ Tau leptons \Ptau can decay hadronically and present a non-negligible background
 \subsection{Overlap removal}
 \label{subsec:objects_cross_cleaning}
 
-Particle detection is not a straightforward process. As such, there may be particles identified close together in an event either due to real physics or misreconstruction. To ensure only well-measured and correctly-identified objects are used in analysis, particles considered to be overlapping are removed---or \emph{cross cleaned}---between the different classes. This is performed in the following order.
+Particle detection is not a straightforward process. As such, there may be particles identified close together in an event either due to real physics or misreconstruction. To ensure only well-measured and correctly identified objects are used in analysis, particles considered to be overlapping are removed---or \emph{cross cleaned}---between the different classes, i.e., \glspl{jet}, muons, electrons, photons, and taus. This is performed in the following order.
 
 Muons are first identified, followed by electrons. Cross cleaning is performed against the \looseMuon collection of objects, so electrons are not counted in the event if they are within $\Delta R < \text{0.3}$ of one. Photons are next in the list. Both the \loosePhoton and \mediumPhoton collections are cross cleaned against \looseMuon and \vetoEle objects in the event with $\Delta R < \text{0.3}$. The same collections and separation are used to remove overlap with the set \vlooseTau leptons. Finally, \glspl{jet} are identified, with those in the AK4 collection requiring a separation of $\Delta R > \text{0.4}$ from any electron, muon, and photon defined previously. No overlap removal is performed for AK8 \glspl{jet}. Since they are reclustered from the same hadronic energy deposits as AK4 \glspl{jet}, cross cleaning against the latter is sufficient.
 

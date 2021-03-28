@@ -82,7 +82,7 @@ For the \singlePhotonCr \gls{CR}, data is used from \acrshort{cms} originating o
 
 In each of the \glspl{CR}, the \ptvecmiss is recalculated without the objects used to define said region as a proxy for \ptvecmiss in the signal region. Conditions in the event selection and binning that refer to \ptvecmiss or \ptmiss use this recalculated quantity when applied to the \glspl{CR}. Using the \singleMuCr \gls{CR} as an example, the new \ptvecmiss is the vector sum of the old \ptvecmiss and the tight muon's \ptvec.
 
-The relative composition of the background processes in each \gls{CR} after the analysis-level selection is summarised in Fig.~\ref{fig:htoinv_cr_composition_comb2016to18}. As desired, the single lepton \glspl{CR} are very similar and dominated by the \ttbar and \wtolnu processes. The dilepton regions also possess a very similar composition to each other, enriched in Drell-Yan \ztoll, and to a lesser extent \ttbar and $\ttbar X$ which contain several dileptonic decay channels.  In the \singlePhotonCr \gls{CR}, expectedly the \gammapjets process dominates virtually every category. \acrshort{qcd} multijet events make up a consistent, small fraction of the events. Rather than the yields from \acrshort{mc} as they would likely consist of \glspl{jet} misidentified as photons, its presence in this region is estimated from a data driven purity measurement explained in Chpt.~\ref{subsubsec:htoinv_photon_purity}.
+The relative composition of the background processes in each \gls{CR} after the analysis-level selection is summarised in Fig.~\ref{fig:htoinv_cr_composition_comb2016to18}, and can be compared to those in the signal region from Fig.~\ref{fig:htoinv_sr_composition_comb2016to18}. As desired, the single lepton \glspl{CR} are very similar and dominated by the \ttbar and \wtolnu processes. The dilepton regions also possess a very similar composition to each other, enriched in Drell-Yan \ztoll, and to a lesser extent \ttbar and $\ttbar X$ which contain several dileptonic decay channels. In the \singlePhotonCr \gls{CR}, expectedly the \gammapjets process dominates virtually every category. \acrshort{qcd} multijet events make up a consistent, small fraction of the events. Rather than the yields from \acrshort{mc} as they would likely consist of \glspl{jet} misidentified as photons, its presence in this region is estimated from a data driven purity measurement explained in Chpt.~\ref{subsubsec:htoinv_photon_purity}.
 
 \begin{figure}[htbp]
     \centering
@@ -221,17 +221,17 @@ It can be seen that the data resembles the real template at low values of \sieie
 
 \begin{figure}[htbp]
     \centering
-    \begin{subfigure}[b]{0.32\textwidth}
+    \begin{subfigure}[b]{0.48\textwidth}
         \includegraphics[width=\textwidth]{figures/photon_purity/2016/impurity_plot_2016.pdf}
         \caption{2016}
     \end{subfigure}
     \hfill
-    \begin{subfigure}[b]{0.32\textwidth}
+    \begin{subfigure}[b]{0.48\textwidth}
         \includegraphics[width=\textwidth]{figures/photon_purity/2017/impurity_plot_2017.pdf}
         \caption{2017}
     \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.32\textwidth}
+
+    \begin{subfigure}[b]{0.48\textwidth}
         \includegraphics[width=\textwidth]{figures/photon_purity/2018/impurity_plot_2018.pdf}
         \caption{2018}
     \end{subfigure}
@@ -300,12 +300,7 @@ Despite the low yields in the \ttH categories, the fit is able to correct the si
 
 The effects of \gls{jet} mismeasurements are difficult to quantify. With a final state of several \glspl{jet} in the \acrshort{qcd} multijet process, little, or even no \ptvecmiss is expected. Therefore, a single mismeasured \gls{jet} will introduce artificial \ptvecmiss in the direction of that jet. A low $\mindphiAB{\mathrm{j}}{\ptvecmiss}$ is therefore expected. Though it is not just this background that suffers from mismeasurements as \glspl{jet} from ``cleaner'' processes may also be affected. But those with real \ptmiss in an event (e.g., $\ztonunupjets$) are unlikely to be significantly influenced by one stray object---the magnitude and direction of \ptvecmiss will be less affected. The enormous cross section of \acrshort{qcd} multijet amplifies the problem, making the process as a whole more sensitive to, e.g., fluctuations in the calorimeter response that would affect the energy measurement.
 
-Contributions to the signal region from \acrshort{qcd} multijet events should be adequately suppressed by the analysis-level selection requirements. However, it is still a process that must be accurately accounted for considering its rate of production at \acrshort{cms}. A metric by which to estimate the number of events a dataset should require is by calculating the equivalent luminosity:
-\begin{equation}
-    \lumi_{\mathrm{eq.}} = \frac{N_{\mathrm{events}}}{\sigma}
-    \label{eq:equivalent_lumi}
-\end{equation}
-A general rule is that the equivalent luminosity of a given dataset should be comparable to, or even exceed, that of the data collected by the experiment. Since the \acrshort{qcd} multijet process has a very large cross section, simulating the required number of events to match the luminosity of the data recorded during Run-2 is not feasible.
+Contributions to the signal region from \acrshort{qcd} multijet events should be adequately suppressed by the analysis-level selection requirements. However, it is still a process that must be accurately accounted for considering its rate of production at \acrshort{cms}. A metric by which to estimate the number of events a dataset should require is by calculating the equivalent luminosity, i.e., Eq.~\ref{eq:lumi_integrated} where the cross section is multiplied by the branching ratio of the final state. A general rule is that the equivalent luminosity of a given dataset should be comparable to, or even exceed, that of the data collected by the experiment. Since the \acrshort{qcd} multijet process has a very large cross section, simulating the required number of events to match the luminosity of the data recorded during Run-2 is not feasible.
 
 To estimate the presence of \acrshort{qcd} in the signal region, a data driven approach is taken utilising the sidebands defined in Chpt.~\ref{subsubsec:htoinv_sidebands}. Then, the application of the sidebands to derive the predicted event counts in the signal region is outlined in Chpt.~\ref{subsubsec:htoinv_qcd_pred_SR}. This is derived separately for each channel and data taking year.
 

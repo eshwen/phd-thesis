@@ -52,7 +52,7 @@ For the plots in [hem_issue/](hem_issue/) that contain a translucent block the h
 
 ### Full Run-2 region plots
 
-The full Run-2 signal region, control region, and sideband plots were made using the instructions [here](https://gitlab.cern.ch/cms-chip/chip/-/blob/master/configs/nonVBF_instructions.md#plots-for-2016-18-combined). Run the `make_nonVBF_plots.py` step without the `-u` option and with `-m` to save figures in pdf format. After copying the `$outdir` directory to local storage, run [rename_region_plots.sh](region_plots/full_Run2/rename_region_plots.sh) to rename the plots automatically to more user-friendly strings:
+The full Run-2 signal region, control region, and sideband plots were made using the instructions [here](https://gitlab.cern.ch/ebhal/chip/-/blob/esh_unblinding_no_lepton_cr_cuts/configs/nonVBF_instructions.md#plots-for-2016-18-combined). Run the `make_nonVBF_plots.py` step without the `-u` option and with `-m` to save figures in pdf format. After copying the `$outdir` directory to local storage, run [rename_region_plots.sh](region_plots/full_Run2/rename_region_plots.sh) to rename the plots automatically to more user-friendly strings:
 
 ```bash
 cd region_plots/full_Run2

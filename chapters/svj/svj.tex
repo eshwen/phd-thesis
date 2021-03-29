@@ -86,7 +86,7 @@ The dark confinement scale \lamDark and running dark coupling \aDark are encoded
 
 For simplicity, the values of \aDark used in the scan of parameter points are based on the value of \lamDark that maximises the dark hadron multiplicity in an event. The dependence is very small on \mZprime, and instead modelled as a function of \mDark by performing a fit. The value of \lamDark that leads to the largest number of dark hadrons (\lamDarkPeak) is
 \begin{equation}
-    \lamDarkPeak = 3.2 \mDark^{0.8}
+    \lamDarkPeak = 3.2 \mDark^{0.8},
     \label{eq:lambda_dark_peak_v_m_dark}
 \end{equation}
 which gives the parameter $\aDarkPeak = \aDark(\lamDarkPeak)$ calculated according to Eq.~\ref{eq:lambda_dark}. Variations on \aDark are calculated by scaling it by a factor 0.5 and 1.5, yielding $\aDarkLow = \text{0.5}\aDarkPeak$ and $\aDarkHigh = \text{1.5}\aDarkPeak$. For the purposes of emphasizing the effect of the choice of \aDark on the kinematics of the signal, an additional variation was introduced: $\aDarkVHigh = \text{2}\aDarkPeak$. The advantage of denoting the dark coupling strength with ``peak,'' ``low,'' and ``high,'' enables a more intuitive understanding of the parameter over a numerical value. Eq.~\ref{eq:lambda_dark_peak_v_m_dark} also means that \lamDark (and therefore \aDark) can be easily varied as a function of \mDark for each configuration of parameters in a scan of the model. Fig.~\ref{fig:svj_lamDark_vs_mDark} illustrates the evolution of \lamDark as a function of \mDark for each value of \aDark that is considered.
@@ -113,7 +113,7 @@ For given particles $i$ and $j$, distance between them $d_{ij}$, and to the beam
 \begin{equation}
     \begin{aligned}
 d_{ij} &= \min(p_{\mathrm{T}i}^{2k}, \ p_{\mathrm{T}j}^{2k}) \frac{\Delta R_{ij}}{R^2},\\
-d_{iB} &= p_{\mathrm{T}i}^{2k}
+d_{iB} &= p_{\mathrm{T}i}^{2k},
     \end{aligned}
     \label{eq:distances_kt_pythia}
 \end{equation}
@@ -156,7 +156,7 @@ Common to both the $s$- and \tchannel signal models generated for these studies,
 
 Somewhat decoupled from the parameters of the signal models themselves, there are many important, adjustable settings controlled by the run card that affect the behaviour of \MADGRAPH. The most notable of which is the parton/\gls{jet} merging scale, denoted as the \texttt{xqcut}. \MADGRAPH has difficulty simulating soft, collinear physics. To avoid this, a threshold may be placed on the \texttt{xqcut} to only generate sufficiently energetic events. Between two partons $i$ and $j$, the \pt (equivalent to \kt in the \gls{antikt}) is given as
 \begin{equation}
-    \pt^2 = 2 \min(p_{\mathrm{T}i}, \ p_{\mathrm{T}j}) [\cosh(\eta_i - \eta_j) - \cos(\phi_i - \phi_j)]
+    \pt^2 = 2 \min(p_{\mathrm{T}i}, \ p_{\mathrm{T}j}) [\cosh(\eta_i - \eta_j) - \cos(\phi_i - \phi_j)],
     \label{eq:svj_mg_kt}
 \end{equation}
 where $\eta$ and $\phi$ are the pseudorapidity and azimuthal angle, respectively. Complete definitions are presented in Chpt.~\ref{subsubsec:geometry}. Events with $\pt < \texttt{xqcut}$ are not simulated. In essence, the \texttt{xqcut} is a measure of the required separation between partons in the event. A value of 100\GeV for this parameter is set for consistency with Ref.~\citenum{Cohen:2017pzm}. This interpretation of a merging scale is similar, but not quite the same, as \PYTHIA's discussed in Chpt.~\ref{sec:svj_showering_pythia}.

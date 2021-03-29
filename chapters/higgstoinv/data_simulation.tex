@@ -69,7 +69,7 @@ When simulating 2016 data, the tuning of the shower parameters in \PYTHIA was la
 
 Cross sections are specified at the highest order available, except for the \acrshort{lo} $\PVec \plusjets$ processes that require reweighting, expounded in Chpt.~\ref{subsec:htoinv_nlo_corrs}. Since an arbitrary number of events can be generated for simulation (in principle), and a larger number of events gives higher statistical precision, events in these datasets need to be reweighted to normalise their presence in a given region or category. To first order, the weight applied is
 \begin{equation}
-    w_{\sigma} = \frac{ \sigma \intlumi }{ N \varepsilon }
+    w_{\sigma} = \frac{ \sigma \intlumi }{ N \varepsilon },
     \label{eq:xs_weight}
 \end{equation}
 where $\sigma$ is the cross section of the process at the order it was generated, \intlumi is the integrated luminosity of the \acrshort{lhc} data it is being compared to, $N$ is the number of events in the dataset before any analysis-level cuts are applied (or the sum of the generator weights), and $\varepsilon$ is the filter efficiency.

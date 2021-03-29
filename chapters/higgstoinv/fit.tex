@@ -14,7 +14,7 @@ In the signal region, the background samples in Chpt.~\ref{subsec:htoinv_backgro
 \medskip
 \noindent{}Systematic uncertainties associated with simulation of both signal and background processes, discussed in Chpt.~\ref{sec:htoinv_mc_corrections}, are incorporated as nuisance parameters within the model. The likelihood function $\likelihood_{\higgstoinv}$ can be summarised as
 \begin{equation}
-    \likelihood_{\higgstoinv} = \likelihood_{\text{SR}} \cdot \likelihood_{\text{\singleMuCr CR}} \cdot \likelihood_{\text{\doubleMuCr CR}} \cdot \likelihood_{\text{\singleEleCr CR}} \cdot \likelihood_{\text{\doubleMuCr CR}} \cdot \likelihood_{\text{\singlePhotonCr CR}}
+    \likelihood_{\higgstoinv} = \likelihood_{\text{SR}} \cdot \likelihood_{\text{\singleMuCr CR}} \cdot \likelihood_{\text{\doubleMuCr CR}} \cdot \likelihood_{\text{\singleEleCr CR}} \cdot \likelihood_{\text{\doubleMuCr CR}} \cdot \likelihood_{\text{\singlePhotonCr CR}},
     \label{eq:likelihood_overall}
 \end{equation}
 where the aim of the fit is to minimise $-\ln \likelihood_{\higgstoinv}$. The likelihood in a given region of the analysis (where the subscript below $\likelihood$ indicates said region) may be written as multiple Poisson likelihoods, denoting $\mathcal{P}(n | \lambda) \equiv \frac{ e^{-\lambda} \lambda^n }{n!}$. In the signal region,
@@ -24,18 +24,18 @@ where the aim of the fit is to minimise $-\ln \likelihood_{\higgstoinv}$. The li
 N_{\mathrm{pred.}}^{i, j} &= r \cdot s^{i, j} \cdot \rho_s^{i, j}\\
 &+ b_{\lostlepton}^{i, j} \cdot a_{\lostlepton}^{i, j} \cdot \rho_{\lostlepton}^{i, j}\\
 &+ b_{\ztonunu}^{i, j} \cdot a_{\ztonunu}^{i, j} \cdot \rho_{\ztonunu}^{i, j}\\
-&+ c_{\mathrm{QCD}}^{i, j} \cdot \omega_{\mathrm{QCD}}^{i, j}
+&+ c_{\mathrm{QCD}}^{i, j} \cdot \omega_{\mathrm{QCD}}^{i, j},
     \end{aligned}
     \label{eq:likelihood_SR}
 \end{equation}
 where the indices $i$ and $j$ refer to each category and \ptmiss bin, respectively, $r$ is the unconstrained signal strength parameter, i.e., \BRHinvFull, $s$ is the signal expectation determined from simulation, $\rho$ encodes the systematic uncertainties associated with simulation as Gaussian constraints, $b$ is the number of events from simulation, $a$ is an initially unconstrained rate parameter (extracted in the fit) connecting the signal and corresponding \glspl{CR}, $c$ is the number of \acrshort{qcd} multijet events, and $\omega$ contains the uncertainties on those events with Gaussian constraints. Similarly for the \glspl{CR}, the likelihood functions are
 \begin{equation}
     \begin{aligned}
-\likelihood_{\text{\singleMuCr CR}} &= \prod_{i} \prod_{j(i)} \mathcal{P}( N_{\mathrm{obs.}, \, \Pmu }^{i, j} | r \cdot s^{i, j}_{\Pmu} \cdot \rho_{s,\, \Pmu}^{i, j} + b_{\Pmu}^{i, j} \cdot a_{\lostlepton}^{i, j} \cdot \rho_{\Pmu}^{i, j} )\\
-\likelihood_{\text{\doubleMuCr CR}} &= \prod_{i} \prod_{j(i)} \mathcal{P}( N_{\mathrm{obs.}, \, \Pmu\Pmu }^{i, j} | r \cdot s^{i, j}_{\Pmu\Pmu} \cdot \rho_{s,\, \Pmu\Pmu}^{i, j} + b_{\Pmu\Pmu}^{i, j} \cdot a_{\ztonunu}^{i, j} \cdot \rho_{\Pmu\Pmu}^{i, j} )\\
-\likelihood_{\text{\singleEleCr CR}} &= \prod_{i} \prod_{j(i)} \mathcal{P}( N_{\mathrm{obs.}, \, \Pe }^{i, j} | r \cdot s^{i, j}_{\Pe} \cdot \rho_{s,\, \Pe}^{i, j} + b_{\Pe}^{i, j} \cdot a_{\lostlepton}^{i, j} \cdot \rho_{\Pe}^{i, j} )\\
-\likelihood_{\text{\doubleEleCr CR}} &= \prod_{i} \prod_{j(i)} \mathcal{P}( N_{\mathrm{obs.}, \, \Pe\Pe }^{i, j} | r \cdot s^{i, j}_{\Pe\Pe} \cdot \rho_{s,\, \Pe\Pe}^{i, j} + b_{\Pe\Pe}^{i, j} \cdot a_{\ztonunu}^{i, j} \cdot \rho_{\Pe\Pe}^{i, j} )\\
-\likelihood_{\text{\singlePhotonCr CR}} &= \prod_{i} \prod_{j(i)} \mathcal{P}( N_{\mathrm{obs.}, \, \Pphoton }^{i, j} | r \cdot s^{i, j}_{\Pphoton} \cdot \rho_{s,\, \Pphoton}^{i, j} + b_{\Pphoton}^{i, j} \cdot a_{\ztonunu}^{i, j} \cdot \rho_{\Pphoton}^{i, j} + c_{\mathrm{QCD}}^{i, j} \cdot \omega_{\mathrm{QCD}}^{i, j} )
+\likelihood_{\text{\singleMuCr CR}} &= \prod_{i} \prod_{j(i)} \mathcal{P}( N_{\mathrm{obs.}, \, \Pmu }^{i, j} | r \cdot s^{i, j}_{\Pmu} \cdot \rho_{s,\, \Pmu}^{i, j} + b_{\Pmu}^{i, j} \cdot a_{\lostlepton}^{i, j} \cdot \rho_{\Pmu}^{i, j} ),\\
+\likelihood_{\text{\doubleMuCr CR}} &= \prod_{i} \prod_{j(i)} \mathcal{P}( N_{\mathrm{obs.}, \, \Pmu\Pmu }^{i, j} | r \cdot s^{i, j}_{\Pmu\Pmu} \cdot \rho_{s,\, \Pmu\Pmu}^{i, j} + b_{\Pmu\Pmu}^{i, j} \cdot a_{\ztonunu}^{i, j} \cdot \rho_{\Pmu\Pmu}^{i, j} ),\\
+\likelihood_{\text{\singleEleCr CR}} &= \prod_{i} \prod_{j(i)} \mathcal{P}( N_{\mathrm{obs.}, \, \Pe }^{i, j} | r \cdot s^{i, j}_{\Pe} \cdot \rho_{s,\, \Pe}^{i, j} + b_{\Pe}^{i, j} \cdot a_{\lostlepton}^{i, j} \cdot \rho_{\Pe}^{i, j} ),\\
+\likelihood_{\text{\doubleEleCr CR}} &= \prod_{i} \prod_{j(i)} \mathcal{P}( N_{\mathrm{obs.}, \, \Pe\Pe }^{i, j} | r \cdot s^{i, j}_{\Pe\Pe} \cdot \rho_{s,\, \Pe\Pe}^{i, j} + b_{\Pe\Pe}^{i, j} \cdot a_{\ztonunu}^{i, j} \cdot \rho_{\Pe\Pe}^{i, j} ),\\
+\likelihood_{\text{\singlePhotonCr CR}} &= \prod_{i} \prod_{j(i)} \mathcal{P}( N_{\mathrm{obs.}, \, \Pphoton }^{i, j} | r \cdot s^{i, j}_{\Pphoton} \cdot \rho_{s,\, \Pphoton}^{i, j} + b_{\Pphoton}^{i, j} \cdot a_{\ztonunu}^{i, j} \cdot \rho_{\Pphoton}^{i, j} + c_{\mathrm{QCD}}^{i, j} \cdot \omega_{\mathrm{QCD}}^{i, j} ),
     \end{aligned}
     \label{eq:likelihood_CRs}
 \end{equation}
@@ -45,7 +45,7 @@ Three types of fit to data are considered in the analysis: one involving only th
 
 The \CLs method for setting an upper limit on $r$ is used in the case no new physics is observed. It is often applied to set exclusion limits on non-negative parameters. Instead of simply comparing the $p$-value from the signal plus background (alternative) hypothesis $p_{s+b}$---obtained from the fit---to the threshold $\alpha$, both $p_{s+b}$ and the $p$-value from the background-only (null) hypothesis $p_b$ are involved. The alternative hypothesis is rejected, i.e., the signal model is excluded, where
 \begin{equation}
-    \frac{p_{s+b}}{1 - p_b} \leq \alpha
+    \frac{p_{s+b}}{1 - p_b} \leq \alpha.
     \label{eq:CLs_ratio}
 \end{equation}
 As such, the upper limit on the signal strength parameter is given by the value of $r$ in which the left-hand side of Eq.~\ref{eq:CLs_ratio} equals $\alpha$. An asymptotic formula~\cite{Cowan:2010js}, whereby the ensemble of simulated datasets is replaced by the single, representative one to reduce computational expense, is applicable in the large sample limit and is incorporated into the model.

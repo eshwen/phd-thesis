@@ -5,22 +5,22 @@ In order for simulated events, particularly \acrshort{sm} background processes, 
 
 A final event weight $w_{\mathrm{event}}$ is the product of the weights from all of the individual sources $i$ that provide one:
 \begin{equation}
-    w_{\mathrm{event}} = \prod_i w_i
+    w_{\mathrm{event}} = \prod_i w_i.
     \label{eq:event_weight}
 \end{equation}
 When representing these events in histograms, the yield in a given bin $N_{\mathrm{corr.}}$ is the sum of these event weights:
 \begin{equation}
-    N_{\mathrm{corr.}} = \sum_j^{N_{\mathrm{MC}}} w_{\mathrm{event} \ j}
+    N_{\mathrm{corr.}} = \sum_j^{N_{\mathrm{MC}}} w_{\mathrm{event} \ j},
     \label{eq:bin_weight}
 \end{equation}
 where $N_{\mathrm{MC}}$ is the number of unweighted, simulated events in the bin. In the data--\acrshort{mc} distributions shown previously in this chapter, the statistical uncertainty ascribed to the \acrshort{mc} yield in a bin is estimated from the unweighted number of events ($k$ in a Poisson statistical treatment):
 \begin{equation}
-    \Delta N_{\mathrm{corr.}} = \pm \frac{ N_{\mathrm{corr.}} }{ \sqrt{N_{\mathrm{MC}}} }
+    \Delta N_{\mathrm{corr.}} = \pm \frac{ N_{\mathrm{corr.}} }{ \sqrt{N_{\mathrm{MC}}} }.
     \label{eq:uncertainty_mc_ours}
 \end{equation}
 While the statistical uncertainty for the number of events in data is simply the Poissonian error,
 \begin{equation}
-    \Delta N_{\mathrm{data}} = \pm \frac{ N_{\mathrm{data}} }{ \sqrt{N_{\mathrm{data}}} }
+    \Delta N_{\mathrm{data}} = \pm \frac{ N_{\mathrm{data}} }{ \sqrt{N_{\mathrm{data}}} }.
     \label{eq:uncertainty_data}
 \end{equation}
 
@@ -47,12 +47,12 @@ A dedicated \gls{CR} is formed to assure orthogonality with the signal region an
 
 \noindent{}where $\ptmissNoMu = \lvert \ptvecmiss + \ptvec^{\kern1pt \Pmu} \rvert$ to approximate the \acrshort{pf} calculation at \acrshort{hlt} level. Of these, events that additionally pass the online selection of the trigger requirements in the signal region (Tab.~\ref{tab:htoinv_SR_triggers}) are also recorded. The efficiency of a trigger---or collection of triggers---$\epsilon_{\mathrm{trg}}$ is defined as
 \begin{equation}
-    \epsilon_{\mathrm{trg}} = \frac{ s_\mathrm{offline} \cap s_{\mathrm{online}} }{ s_\mathrm{offline} }
+    \epsilon_{\mathrm{trg}} = \frac{ s_\mathrm{offline} \cap s_{\mathrm{online}} }{ s_\mathrm{offline} },
     \label{eq:trigger_eff}
 \end{equation}
 where $s$ denotes the set of events that have passed the selection given by its subscript. For simulation, events are weighted by cross section as per Eq.~\ref{eq:xs_weight}. The efficiencies are binned in two dimensions as a function of \ptmissNoMu and \mht. The weight applied to events in simulation $w_{\mathrm{trg}}$ is then simply the efficiency in data divided by the efficiency in simulation for the values of \ptmiss and \mht in the event:
 \begin{equation}
-    w_{\mathrm{trg}}(\ptmiss, \mht) = \frac{\epsilon_{\mathrm{trg, \ data}}(\ptmiss, \mht)}{\epsilon_{\mathrm{trg, \ MC}}(\ptmiss, \mht)}
+    w_{\mathrm{trg}}(\ptmiss, \mht) = \frac{\epsilon_{\mathrm{trg, \ data}}(\ptmiss, \mht)}{\epsilon_{\mathrm{trg, \ MC}}(\ptmiss, \mht)}.
     \label{eq:trigger_weight}
 \end{equation}
 Uncertainties are estimated using the Clopper-Pearson method~\cite{10.1093/biomet/26.4.404} and impact the yields by up to 1--2\,\%. In the signal region, sidebands, and muon \glspl{CR}, weights from the efficiencies of the \ptmiss--\mht cross triggers are used. The weights are provided for each data taking year in Fig.~\ref{fig:htoinv_trig_effs}. In the electron and photon \glspl{CR}, the efficiencies are calculated in the same manner, instead with the triggers in Tabs.~\ref{tab:htoinv_ele_pd_triggers} and \ref{tab:htoinv_photon_pd_triggers}.
@@ -181,7 +181,7 @@ The renormalisation \muR and factorisation scale \muF chosen for \acrshort{mc} s
 
 \noindent{}To remove the dependence on normalisation (since the skim and event selection may bias it) and ensure the systematic is only shape-based, each variation was also multiplied by an additional factor $f_{\mathrm{var}}$:
 \begin{equation}
-    f_{\mathrm{var}} = \dfrac{ \sum_{\text{unskimmed events}} w_{\mu_{\mathrm{R \, nom.}}\, \& \, \mu_{\mathrm{F \, nom.}} } }{ \sum_{\text{unskimmed events}} w_{\mathrm{var}} }
+    f_{\mathrm{var}} = \dfrac{ \sum_{\text{unskimmed events}} w_{\mu_{\mathrm{R \, nom.}}\, \& \, \mu_{\mathrm{F \, nom.}} } }{ \sum_{\text{unskimmed events}} w_{\mathrm{var}} }.
     \label{eq:ttbar_scale_fvar}
 \end{equation}
 These are computed individually for each decay and data taking year. The envelope is characterised by the correlated variations $\muRAmuFB{\uparrow}{\uparrow}$, and $\muRAmuFB{\downarrow}{\downarrow}$. Confirmed by Fig.~\ref{fig:htoinv_ttbar_scale}, an example is given for the \ttbar background in the signal region. While the sizes of the variations appear large, they are reduced when matching the fit binning, and very similar between the signal and \glspl{CR}, cancelling to a large degree to minimally impact the results.
@@ -206,7 +206,7 @@ For each process (i.e., \ttbar, and the accompanying boson $X$ in $\ttbar X$), a
 
 The top quark \pt distribution has been shown to be harder in simulation at \acrshort{nlo} than in data~\cite{Sirunyan:2018ucr}. \acrshort{nlo} \ttbarpjets \acrshort{mc} generated in \POWHEG is reweighted to \acrshort{nnlo} \acrshort{qcd} $+$ \acrshort{nlo} electroweak accuracy as function of top quark \pt. An analytic function fits the distribution that determines the weight. The same nominal function applies to all \ttbarpjets samples for all data taking years:
 \begin{equation}
-    f(\pt) = \exp(a + b \cdot \pt + c \cdot \pt^2)
+    f(\pt) = \exp(a + b \cdot \pt + c \cdot \pt^2),
 \end{equation}
 where the coefficients are $a = \text{1.614} \times \text{10}^{-2}$, $b = -\text{1.966} \times \text{10}^{-4}$, and $c = -\text{1.454} \times \text{10}^{-8}$. For a top or antitop quark, the scale factor is given by the value of $f$ for the particle's generator-level \pt. The event weight is then the square root of the product of the top and antitop scale factors.
 
@@ -232,7 +232,7 @@ The uncertainties are acquired from the fit itself over the theoretical uncertai
 
 There are multiple corrections applied to simulation based on the physics objects with an event as opposed to the event topology as a whole. One example of which is Chpt.~\ref{subsubsec:htoinv_top_pt_reweighting}. A weight or efficiency $\epsilon$ attributed to an object itself is typically referred to as a \emph{scale factor}, while the event-level selection weight $w_{\mathrm{sel.}}$ is the efficiency for successfully tagging or selecting an event with those object contents, and is the product of the scale factors:
 \begin{equation}
-    w_{\mathrm{sel.}} = \prod_i^{N_\mathrm{objects}} \epsilon_i
+    w_{\mathrm{sel.}} = \prod_i^{N_\mathrm{objects}} \epsilon_i.
     \label{eq:event_selection_weight}
 \end{equation}
 These weights are calculated individually for each class of object in an event. For electrons, muons, and photons, these scale factors are usually from the reconstruction efficiency, identification efficiency, and \pt- or $\eta$-dependent energy corrections. In the case of \Pbottom-tagged \glspl{jet}, it is the data--simulation scale factor at the given working point from the algorithm used to identify them. Systematic uncertainties associated with the scale factors are aggregated in the same manner. Unless stated otherwise, the following scale factors and systematics are derived separately for each year in Run-2.
@@ -292,7 +292,7 @@ In the following subsection, minor corrections and uncertainties which had littl
 
 A weight is applied to events in simulation that emulates the effect of pre-firing in 2016 and 2017 data, given in Ref.~\citenum{prefiring_weight}:
 \begin{equation}
-    w_{\text{pre-firing}} = \prod_{i = \Pphoton,\, \mathrm{jet}} 1 - \epsilon_i^{\text{pre-firing}}(\eta, \pt^{\mathrm{EM}})
+    w_{\text{pre-firing}} = \prod_{i = \Pphoton,\, \mathrm{jet}} 1 - \epsilon_i^{\text{pre-firing}}(\eta, \pt^{\mathrm{EM}}),
     \label{eq:prefiring_weight}
 \end{equation}
 where $\epsilon$ is the probability for an object to pre-fire as a function of its $\eta$ and electromagnetic \pt (simply \pt for photons, and \pt multiplied by the sum of the charged and neutral electromagnetic energy fractions for \glspl{jet}). Pre-firing probabilities are assumed to be uncorrelated between photons and jets. The systematic uncertainty in the event weight is found by taking the uncertainty on $\epsilon$, defined the maximum value from either $\text{0.2}\epsilon$ or the relative statistical uncertainty in the $(\eta, \pt^{\mathrm{EM}})$ bin of the pre-firing map from which $\epsilon$ is extracted. It was found to impact the yields in the analysis by $< \text{1\,\%}$.

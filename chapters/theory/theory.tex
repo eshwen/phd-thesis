@@ -96,17 +96,17 @@ As mentioned previously, the electromagnetic and weak forces are unified into th
 
 The simplest model by which the Higgs mechanism can be accommodated in the \acrshort{sm} is by introducing an SU(2) doublet of complex scalar Higgs fields:
 \begin{equation} % Ensure no blank lines before or after equation so spacing and indentation is correct
-    \HiggsField = \begin{pmatrix} \phi^+ \\ \phi^0 \end{pmatrix} = \frac{1}{\sqrt{2}} \begin{pmatrix} \phi_1 + i\phi_2 \\ \phi_3 + i\phi_4 \end{pmatrix}
+    \HiggsField = \begin{pmatrix} \phi^+ \\ \phi^0 \end{pmatrix} = \frac{1}{\sqrt{2}} \begin{pmatrix} \phi_1 + i\phi_2 \\ \phi_3 + i\phi_4 \end{pmatrix}.
     \label{eq:higgs_field}
 \end{equation}
 It possesses four degrees of freedom, i.e., one per gauge boson in the electroweak sector. The fields introduce additional terms in the \acrlong{sm} Lagrangian, most importantly a potential of the form
 \begin{equation}
-    V(\HiggsField) = \mu^2 \HiggsField^{\dagger} \HiggsField + \lambda (\HiggsField^{\dagger} \HiggsField)^2
+    V(\HiggsField) = \mu^2 \HiggsField^{\dagger} \HiggsField + \lambda (\HiggsField^{\dagger} \HiggsField)^2,
     \label{eq:higgs_potential}
 \end{equation}
 which is the most general scalar potential that is also $\text{SU(2)} \times \text{U(1)}$ invariant. With both quadratic and quartic components, positive values of both free parameters $\mu^2$ (related to mass) and $\lambda$ (related to self-interaction) would yield a single, stable minimum for the potential. In a physical context, this corresponds to the universe pre-electroweak symmetry breaking. But by setting $\lambda > \text{0}$ and $\mu^2 < \text{0}$, what was once the minimum becomes an unstable local maximum and a new, degenerate circle of minima in the $\phi_1 - \phi_2$ plane can be found with values
 \begin{equation}
-    \HiggsField^{\dagger} \HiggsField \lvert_{\mathrm{min}} = -\frac{\mu^2}{2\lambda}
+    \HiggsField^{\dagger} \HiggsField \lvert_{\mathrm{min}} = -\frac{\mu^2}{2\lambda},
     \label{eq:higgs_mu_lambda}
 \end{equation}
 forming the familiar ``wine bottle'' potential. An illustration is given in Fig.~\ref{fig:higgs_potential}.
@@ -120,17 +120,17 @@ forming the familiar ``wine bottle'' potential. An illustration is given in Fig.
 
 To spontaneously break the $\text{SU(2)} \times \text{U(1)}$ symmetry of the electroweak force, a non-zero vacuum expectation value $v$ must be assigned from the set of minima belonging to the potential $V$. Since the ability to select any potential is a symmetry, assigning a value breaks said symmetry. For the fields $\phi_1$, $\phi_2$, and $\phi_4$, $v$ can simply be set to zero. However, as a neutral field, $\phi_3$ must be assigned a non-zero value in order for the photon to remain massless after the symmetry is broken. It is allocated a value
 \begin{equation}
-    \bra{0} \mkern-1mu \phi_3 \mkern-1mu \ket{0} = v^2 = -\frac{\mu^2}{\lambda}
+    \bra{0} \mkern-1mu \phi_3 \mkern-1mu \ket{0} = v^2 = -\frac{\mu^2}{\lambda}.
     \label{eq:higgs_vev}
 \end{equation}
 By expanding \HiggsField around the chosen vacuum and using the unitary gauge, it can be seen that all of the fields other than $\phi_3$---known as \emph{Goldstone fields} in this paradigm---are eliminated. The originally massless $\PW_{1,2,3}$ and $B$ fields then mix, with the manifesting bosons of the weak force gaining their mass and acquiring extra longitudinal polarisation degrees of freedom by ``eating'' the Goldstone bosons. The $\PW_1$ and $\PW_2$ fields transform into the $\PWpm$ bosons:
 \begin{equation}
-    \PWpm = \frac{1}{\sqrt{2}} (\PW_1 \mp i\PW_2)
+    \PWpm = \frac{1}{\sqrt{2}} (\PW_1 \mp i\PW_2),
     \label{eq:EWSB_W}
 \end{equation}
-While the $\PW_3$ and $B$ fields mix to produce the massless photon and massive \PZ boson:
+while the $\PW_3$ and $B$ fields mix to produce the massless photon and massive \PZ boson:
 \begin{equation}
-    \begin{pmatrix} \Pphoton \\ \PZ \end{pmatrix} = \begin{pmatrix} \cos\thetaW & \sin\thetaW \\ -\sin\thetaW & \cos\thetaW \end{pmatrix} \begin{pmatrix} B \\ \PW_3 \end{pmatrix}
+    \begin{pmatrix} \Pphoton \\ \PZ \end{pmatrix} = \begin{pmatrix} \cos\thetaW & \sin\thetaW \\ -\sin\thetaW & \cos\thetaW \end{pmatrix} \begin{pmatrix} B \\ \PW_3 \end{pmatrix}.
     \label{eq:EWSB_photon_Z}
 \end{equation}
 In the new U(1) symmetry group of electromagnetism (mediated by the photon), electric charge is the conserved current, manifesting as a combination of weak hypercharge and the third component of weak isospin. For the SU(2) weak interaction, weak isospin becomes the conserved quantity. Due to only left-handed chiral states of fermions possessing a non-zero weak isospin, certain interactions are not allowed by the weak force. Only these states couple to the \PW bosons that participate in \emph{charged current} interactions. This maximally violates the parity symmetry conserved by the other forces. Left- and right-handed fermions also couple differently to the \PZ boson that mediates \emph{neutral current} interactions.
@@ -139,18 +139,18 @@ The masses of the electroweak bosons can be calculated using the vacuum expectat
 \begin{equation}
     \begin{aligned}
 m_{\PW} &= \frac{1}{2} gv, \\[1em]
-m_{\PZ} &= \frac{1}{2} (g\cos\thetaW + g'\sin\thetaW)^2 v = \frac{1}{2}\frac{gv}{\cos\thetaW}
+m_{\PZ} &= \frac{1}{2} (g\cos\thetaW + g'\sin\thetaW)^2 v = \frac{1}{2}\frac{gv}{\cos\thetaW},
     \end{aligned}
     \label{eq:w_z_masses}
 \end{equation}
 where $\thetaW$ is the \emph{weak mixing angle} or \emph{Weinberg angle}. It is a quantity that represents the degree to which the weak and electromagnetic forces mix, defined as
 \begin{equation}
-    \cos\thetaW = \frac{m_{\PW}}{m_{\PZ}} \ \text{or} \ \tan\thetaW = \frac{g'}{g}
+    \cos\thetaW = \frac{m_{\PW}}{m_{\PZ}} \ \text{or} \ \tan\thetaW = \frac{g'}{g}.
     \label{eq:weak_mixing_angle}
 \end{equation}
 It is a free parameter in the \acrlong{sm} with its value constrained by the $\PW$ and $\PZ$ boson masses. With the latest results in Ref.~\citenum{PhysRevD.98.030001}, $\thetaW = \text{28.74}^{\circ}$ and $v = \text{246}\GeVcc$. The mass of the Higgs boson is given by
 \begin{equation}
-    m_{\PH} = \sqrt{2\lambda v^2} = \sqrt{-2\mu^2}
+    m_{\PH} = \sqrt{2\lambda v^2} = \sqrt{-2\mu^2}.
     \label{eq:higgs_mass}
 \end{equation}
 
@@ -163,12 +163,12 @@ It is a free parameter in the \acrlong{sm} with its value constrained by the $\P
 
 The quarks and leptons in the \acrshort{sm} acquire their masses from the Higgs field by means of a Yukawa coupling $y_f$, which describes the interaction between a scalar (Higgs) field and Dirac (fermion) field. As a function of $y_f$ and the vacuum expectation value of the Higgs field, the fermion masses are calculated as
 \begin{equation}
-    m_f = \frac{1}{\sqrt{2}} y_f v
+    m_f = \frac{1}{\sqrt{2}} y_f v.
     \label{eq:fermion_mass}
 \end{equation}
 They are directly proportional to their coupling strength to the Higgs, and are all free parameters in the \acrshort{sm} so must be constrained by experiment. The decay width $\Gamma$ of the Higgs boson into fermions is computed as
 \begin{equation}
-    \Gamma(\HepProcess{\PH \to f\bar{f}}) = \frac{m_{\PH}}{8\pi} \left( \frac{m_f}{v} \right)^2 \Nc \left( 1 - \frac{4 m_f^2}{m_{\PH}^2} \right)^{\frac{3}{2}}
+    \Gamma(\HepProcess{\PH \to f\bar{f}}) = \frac{m_{\PH}}{8\pi} \left( \frac{m_f}{v} \right)^2 \Nc \left( 1 - \frac{4 m_f^2}{m_{\PH}^2} \right)^{\frac{3}{2}},
     \label{eq:higgs_decay_width_fermions}
 \end{equation}
 which is proportional to the squared mass of the decay products. Here, $\Nc$ is the colour factor, with a value of three for quarks and one for leptons. The \emph{branching ratio} $\BR$---the probability of a particle decaying into a given final state---is simply the ratio of the partial width to the total width, the latter being the sum of partial widths for all the particle's decay modes.
@@ -452,7 +452,7 @@ The kinematics of \glspl{svj} are heavily influenced by the following free param
 
     & \aDark: In Ref.~\citenum{Cohen:2017pzm}, this is defined as $\gqdark^2/ 4\pi$ (where $\gqdark$ is the coupling constant between the dark quarks and mediator). Analogous to \acrshort{qcd}, the dark coupling runs as a function of the energy scale, influencing \lamDark. At 1\TeV,
     \begin{equation}
-        \lamDark = 1000 \ [\GeVns] \exp( \frac{-2\pi}{\aDark b} )
+        \lamDark = 1000 \ [\GeVns] \exp( \frac{-2\pi}{\aDark b} ),
         \label{eq:lambda_dark}
     \end{equation}
     where $b = \frac{11}{3}\Nc - \frac{2}{3}\Nf$ is related to the number of dark colours \Nc and flavours \Nf.

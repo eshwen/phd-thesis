@@ -363,12 +363,12 @@ The number of \acrshort{qcd} events in the signal region (corresponding to $c_{\
 
 The predicted number of multijet events in the signal region $N_{\mathrm{pred.}}^{\mathrm{QCD}}$ is as follows (with numerical values for each term visible in App.~\ref{sec:htoinv_qcd_inputs}):
 \begin{equation}
-    N_{\mathrm{pred.}}^{\mathrm{QCD}}(\text{category}, \, \ptmiss) = N_{\mathrm{SB}}^{\mathrm{QCD}} \cdot \transfac_{\mathrm{QCD}} \cdot \catFraction(\text{category}) \cdot \metFraction(\ptmiss)
+    N_{\mathrm{pred.}}^{\mathrm{QCD}}(\text{category}, \, \ptmiss) = N_{\mathrm{SB}}^{\mathrm{QCD}} \cdot \transfac_{\mathrm{QCD}} \cdot \catFraction(\text{category}) \cdot \metFraction(\ptmiss),
     \label{eq:qcd_prediction}
 \end{equation}
 where a 50\,\% systematic uncertainty following a log normal distribution is assigned to the predicted event counts. This was derived from a combination of the size of the data excess observed in the \glspl{SB}, statistical uncertainties in individual categories or \ptmiss bins, and generally to allow a conservative estimate of the yield that can be corrected as required in the fit. The term $\transfac_{\mathrm{QCD}}$ is the transfer factor relating \acrshort{qcd} in the sideband to that in the signal region. For \ttH, the transfer factor is inclusive over the categories, i.e.,
 \begin{equation}
-    \transfac_{\mathrm{QCD}} = \frac{ N_{\mathrm{MC, \ SR}}^{\mathrm{QCD}} } { N_{\mathrm{MC, \ SB}}^{\mathrm{QCD}} }
+    \transfac_{\mathrm{QCD}} = \frac{ N_{\mathrm{MC, \ SR}}^{\mathrm{QCD}} } { N_{\mathrm{MC, \ SB}}^{\mathrm{QCD}} }.
     \label{eq:transfer_factor_qcd}
 \end{equation}
 To attempt to mitigate the statistical limitations of the \acrshort{qcd} \acrshort{mc} nominally used in the analysis, their event count was increased a hundredfold using a ``rebalance and smear'' method\footnote{In this procedure, a simulated \acrshort{qcd} multijet event can be effectively replicated numerous times by first rescaling the magnitude of as many \gls{jet}'s \ptvec as required to minimise the \mht (rebalancing), and then by varying the rescaled \gls{jet} \pt individually within their respective energy resolution (smearing). For processes that suffer from statistical limitations, this method produces a shallower, broader \ptmiss distribution more representative of data.} as performed in Ref.~\citenum{Sirunyan:2017wif}. These smeared samples replaced the \acrshort{qcd} \acrshort{mc} only for the derivation of $\transfac_{\mathrm{QCD}}$. The \VH categories have the benefit of a much larger sample size, both before and after smearing the \acrshort{mc}. In this case, the transfer factor is derived bin-by-bin.

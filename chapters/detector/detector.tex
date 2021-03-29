@@ -49,12 +49,12 @@ One beam consists of a \emph{train} of up to 2,808 bunches spaced 25\,ns apart, 
 
 The \emph{\gls{luminosity}} of a particle accelerator is, along with centre of mass energy, a quantitative measure of its performance. It also often used to denote the amount of data delivered to, or collected by, the receiving detector. A full derivation of this quantity can be found in Ref.~\citenum{Herr:941318}, and as such, only a summary is given here. The \emph{instantaneous luminosity} \lumi, typically quoted in $\text{cm}^{-2}\,\text{s}^{-1}$, is defined as
 \begin{equation}
-    \lumi = \frac{1}{\sigma_{\mathrm{p}}} \dv{N}{t}
+    \lumi = \frac{1}{\sigma_{\mathrm{p}}} \dv{N}{t},
     \label{eq:lumi_instantaneous}
 \end{equation}
 where $N$ is the number of collisions and $\sigma_{\mathrm{p}}$ is the cross section of the collision products. In the \acrshort{lhc}, because many final states are possible, $\sigma_{\mathrm{p}}$ is not generally known. It can be measured, however. A recent paper from LHCb measured the extrapolated inelastic cross section (which is the important component for \acrshort{lhc} collisions) to be $\text{75.4} \pm \text{5.4}$\,mb at \comruntwo~\cite{Aaij:2018okq}, allowing an estimate of the collision rate. For two colliding beams split into bunches with the constituents of each bunch spread according to a gaussian profile,
 \begin{equation}
-    \lumi = \frac{N_1 N_2 f N_b}{4 \pi \sigma_x \sigma_y} \cdot F % \cdot H
+    \lumi = \frac{N_1 N_2 f N_b}{4 \pi \sigma_x \sigma_y} \cdot F, % \cdot H
     \label{eq:lumi_inst_head_on_colliding_beams}
 \end{equation}
 where $N_1$ and $N_2$ are the number of particles per bunch in beams 1 and 2, respectively, $N_b$ is the number of bunches per beam, $f$ is the revolution frequency (11.2\,kHz for protons in the \acrshort{lhc}), and $\sigma_x$ and $\sigma_y$ are the horizontal and vertical sizes of the beam, respectively.
@@ -67,7 +67,7 @@ The instantaneous luminosity can be increased further by the inclusion of more b
 
 Integrating the instantaneous luminosity over a period of time yields the \emph{integrated luminosity} \intlumi:
 \begin{equation}
-    \intlumi = \int \lumi \dd{t} = \frac{N}{\sigma_{\mathrm{p}}}
+    \intlumi = \int \lumi \dd{t} = \frac{N}{\sigma_{\mathrm{p}}}.
     \label{eq:lumi_integrated}
 \end{equation}
 These values are often quoted by experiments in units of \emph{inverse femtobarn} ($\text{fb}^{-1}$) as an indicator of the amount of collision data collected. A barn is a unit equal to 10$^{-28}$\,m$^2$ and widely used to express cross sectional area in nuclear and particle physics. Thus its reciprocal, the same units as integrated luminosity, gives a good sense of scale that relates cross sections of individual processes to the total amount of data. Tab.~\ref{tab:lumis_lhc_cms} gives the integrated luminosities over Run-2 delivered by the LHC and collected by CMS. Taking 139\,\fbinv from this table, and assuming the inelastic \pp cross section above gives an estimate of 10$^{16}$ collisions recorded by \acrshort{cms} over Run-2 (excluding \gls{pileup} interactions).
@@ -180,12 +180,12 @@ A kaleidoscope through we which see the subatomic, \acrshort{cms} is designed to
 
 Collider physics tends to use certain conventions when describing the positions of particles in a detector. The azimuthal angle $\phi$ is the same variable as in cylindrical coordinates with a range $[-\pi, \pi]$. Pseudorapidity, denoted by $\eta$, is a coordinate that describes the angle between a particle and the longitudinal axis of the detector (the beam line):
 \begin{equation}
-    \eta = -\ln \left[ \tan(\frac{\theta}{2}) \right]
+    \eta = -\ln \left[ \tan(\frac{\theta}{2}) \right],
     \label{eq:eta_def}
 \end{equation}
 where $\theta$ is the angle between the particle's three-momentum $\vec{p}$ and the positive direction of the beam axis. So as $\theta \rightarrow \text{0}^{\circ}$, $\eta \rightarrow \infty$. Generally, particles with large $\eta$ escape the detector which is why forward calorimeters are in place. The transverse momentum of a particle (\ptvec for the vector quantity, \pt for its magnitude) can be found with $\pt = \abs{\vec{p}} / \cosh \eta$. The convention in hadron colliders is to use $\eta$ over the rapidity $y$, where the latter is Lorentz invariant and tends to the former in the limit $\abs{\vec{p}} \gg m$. However, in cases such as jet clustering, soft particles are included and so $y$ is required:
 \begin{equation}
-    y = \frac{1}{2} \ln (\frac{ E + p_{\mathrm{L}} }{ E - p_{\mathrm{L}} })
+    y = \frac{1}{2} \ln (\frac{ E + p_{\mathrm{L}} }{ E - p_{\mathrm{L}} }),
     \label{eq:rapidity_def}
 \end{equation}
 where $p_{\mathrm{L}}$ is the longitudinal component of the momentum. In a hadron collider, the $p_{\mathrm{L}}$ of the proton constituents that collide are typically unknown. However, the momentum transverse to the beam is zero before the collision, and must be zero afterward after from momentum conservation. This is why the \ptvec of a particle or physics object is a useful variable in the field.
@@ -201,7 +201,7 @@ The subdetectors of \acrshort{cms} are nominally separated into several sections
 
 The distance between two objects can be found with the variable $\Delta R$:
 \begin{equation}
-\Delta R = \sqrt{(\Delta \eta)^2 + (\Delta \phi)^2}
+\Delta R = \sqrt{(\Delta \eta)^2 + (\Delta \phi)^2}.
 \label{eq:delta_r}
 \end{equation}
 It is often used as a parameter in \gls{jet} clustering related to the size of the enclosing cone, or between reconstructed objects for assessing overlap.
@@ -234,7 +234,7 @@ After the tracker, the particles can interact with the \acrshort{ecal}~\cite{CER
 
 The \acrshort{ecal} is designed to identify charged particles (primarily electrons) and photons. The $\HepProcess{\PH \to \Pphoton\Pphoton}$ and $\HepProcess{\PH \to \PZ\PZ \to 4\Plepton}$ processes were kept in mind as an ardent focus was on discovering the Higgs boson. These particles are usually stopped entirely in the subdetector. Charged hadrons, muons, and tau leptons ($\Ptau$), however, only deposit a sliver of energy in the \acrshort{ecal}, and so information from the other subdetectors is required in their cases. Measuring the energies of electrons and photons is complex and must correct for many factors to maintain a high precision. Among them are a cluster correction (as several hits in a cluster can belong to one object, especially when they electromagnetically shower), a time-dependent response correction from the laser monitoring system that measures the crystal transparency, and an intercalibration correction that accounts for the non-uniform response of the crystals and photodetectors. The energy resolution in the \acrshort{ecal} $\sigma_E^{\mathrm{ECAL}} / E$ can be quantified as
 \begin{equation}
-    \left( \frac{\sigma_E^{\mathrm{ECAL}}}{E} \right)^2 = \left( \frac{S}{\sqrt{E}} \right)^2 + \left( \frac{N}{E} \right)^2 + C^2
+    \left( \frac{\sigma_E^{\mathrm{ECAL}}}{E} \right)^2 = \left( \frac{S}{\sqrt{E}} \right)^2 + \left( \frac{N}{E} \right)^2 + C^2,
     \label{eq:ecal_resolution}
 \end{equation}
 where $E$ is the energy in \GeVns, $S$ is a stochastic term, $N$ represents noise in the detector electronics, and $C$ a constant. For electrons in the barrel during Run-1, the terms were measured to be $S = \text{0.028}$, $N = \text{0.12}$, and $C = \text{0.003}$~\cite{Ingram_2007}, yielding a resolution of 0.5\,\% for a 100\GeV electron.\footnote{As of writing, there are no equivalent values for Run-2.}
@@ -258,7 +258,7 @@ Each cell of the \acrshort{hcal} maps onto a given number of \acrshort{ecal} cry
 
 The hadronic energy resolution for the combined \acrshort{hcal} and \acrshort{ecal} $\sigma_E^h/E$ in the barrel section can be estimated as
 \begin{equation}
-    \left( \frac{\sigma_E^h}{E} \right)^2 = \left( \frac{S}{\sqrt{E}} \right)^2 + C^2
+    \left( \frac{\sigma_E^h}{E} \right)^2 = \left( \frac{S}{\sqrt{E}} \right)^2 + C^2,
     \label{eq:hcal_resolution}
 \end{equation}
 where, as in Eq.~\ref{eq:ecal_resolution}, $S$ and $C$ are stochastic and constant terms, respectively. In Run-1, the terms were measured to be $S = \text{0.847}$ and $C = \text{0.074}$ in the barrel with similar performance in the end caps~\cite{cms_hcal_per_2010}. In the \acrshort{hf}, $S = \text{1.98}$ and $C = \text{0.09}$.\footnote{As of writing, there are no equivalent values for Run-2.}
@@ -384,14 +384,14 @@ The reference and \acrshort{l1} \glspl{jet} are matched using the variable $\Del
 
 The pairs of \glspl{jet} are categorised into sixteen bins of \abseta, the highest granularity available since the calibrations must run quickly on hardware. Each bin is then analysed in turn. Within each \abseta bin, the \gls{jet} pairs are subdivided into bins of the transverse momentum of the reference \gls{jet} (\ptRef). The bin widths, like \abseta, are variable. The ratio of the transverse momentum of the \acrshort{l1} \gls{jet} (\ptLOne) to \ptRef is taken for each pair of \glspl{jet}. The metric for measuring the detector response for a jet $r_j$ is the mean of these ratios:
 \begin{equation}
-    r_j = \expval{\ptLOne / \ptRef}
+    r_j = \expval{\ptLOne / \ptRef}.
     \label{eq:jec_detector_response}
 \end{equation}
 The reciprocal of $r_j$ vs. \ptLOne is inspected and a correction curve is fitted. A gaussian captures the peak at low \pt and the following equation is used for the tail:
 \begin{equation} % Using invisible right bracket on first line and left on second line to get large brackets but avoid errors
     \begin{aligned}
 \ptsup{{\mathrm{L1, \ corr.}}} = \ptLOne \cdot \Big( p_0 &+ p_1 \cdot \erf \left(p_2 \cdot \left( \log_{10}\ptLOne - p_3 \right) \right) \\
-&+ p_4 \cdot \exp(p_5 \cdot \left( \log_{10}\ptLOne - p_6 \right)^2 ) \Big)
+&+ p_4 \cdot \exp(p_5 \cdot \left( \log_{10}\ptLOne - p_6 \right)^2 ) \Big).
     \end{aligned}
     \label{eq:corr_curve_jec_tail}
 \end{equation}

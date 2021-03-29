@@ -38,16 +38,16 @@ Typically, a lower limit on the \pt is enforced when calculating the \HT, so \gl
 The missing transverse momentum \ptvecmiss is defined as the negative vector sum of the \ptvec of all identified particles in an event. It is a term often interchangeable with \gls{met} (MET, \VEtmiss). Undetected particles from neutrinos or dark matter, or mismeasured kinematic properties of identified particles, will introduce an imbalance in the vector sum of the \ptvec. Hence, the \ptvecmiss will be non-zero. Formally,
 \begin{equation}
     \begin{aligned}
-        \ptvecmiss &\equiv - \sum_i^{N_{\mathrm{particles}}} \vec{p}_{\mathrm{T}, \, i} \\
-        \ptmiss &\equiv \abs{\ptvecmiss}
+        \ptvecmiss &\equiv - \sum_i^{N_{\mathrm{particles}}} \vec{p}_{\mathrm{T}, \, i}, \\
+        \ptmiss &\equiv \abs{\ptvecmiss}.
     \end{aligned}
     \label{eq:met_definition}
 \end{equation}
 The hadronic-only counterpart to this variable, \htvecmiss, is the negative vector sum of the \gls{jet} transverse momenta in an event:
 \begin{equation}
     \begin{aligned}
-        \htvecmiss &\equiv - \sum_{\mathrm{jets}} \vec{p}_{\mathrm{T}} \\
-        \mht &\equiv \abs{\htvecmiss}
+        \htvecmiss &\equiv - \sum_{\mathrm{jets}} \vec{p}_{\mathrm{T}}, \\
+        \mht &\equiv \abs{\htvecmiss}.
     \end{aligned}
     \label{eq:mht_definition}
 \end{equation}
@@ -62,20 +62,20 @@ As with \HT, the \mht is often calculated with a lower limit on the \gls{jet} \p
 
 The transverse mass \mT of a particle---or the collective products of a decay---is the component of its invariant mass in the transverse plane. In a hadron collider context, this observable is typically used when one of the decay products is invisible or unidentified, i.e., as \ptvecmiss. When searching for \glspl{svj}, the \mT of the dijet system is very reliable in recovering the \PZprime mass at low \rinv. Einstein's equation $E^2 = (pc)^2 + (m_0c^2)^2$ can be reformulated for each daughter particle in a decay as
 \begin{equation}
-\ET^2 = m_0^2 + \pt^2
+\ET^2 = m_0^2 + \pt^2,
 \label{eq:transverse_energy}
 \end{equation}
 where \ET is the transverse energy. The transverse mass of the system is then
 \begin{equation}
     \begin{aligned}
 \mT^2 &= (E_{\mathrm{T,1}} + E_{\mathrm{T,2}})^2 - ({\vec p}_{\mathrm{T,1}} + {\vec p}_{\mathrm{T,2}})^2 \\
-&= m_1^2 + m_2^2 + 2(E_{\mathrm{T,1}} E_{\mathrm{T,2}} - {\vec p}_{\mathrm{T,1}} \cdot {\vec p}_{\mathrm{T,2}})
+&= m_1^2 + m_2^2 + 2(E_{\mathrm{T,1}} E_{\mathrm{T,2}} - {\vec p}_{\mathrm{T,1}} \cdot {\vec p}_{\mathrm{T,2}}).
     \end{aligned}
 \label{eq:transverse_mass_massive}
 \end{equation}
 In the case of one unidentified daughter, the \ptvecmiss may substitute a particle in the first line of Eq.~\ref{eq:transverse_mass_massive}. If one also treats the daughters as massless, i.e., if $\pt \gg m_0$ like with boosted leptons, the formula approximates to
 \begin{equation}
-\mT^2 = 2 \pt \ptmiss (1 - \cos(\Delta\phi))
+\mT^2 = 2 \pt \ptmiss (1 - \cos(\Delta\phi)),
 \label{eq:transverse_mass_massless}
 \end{equation}
 where $\Delta\phi = \phi - \phi(\ptvecmiss)$, and \pt and $\phi$ are from the identified daughter.
@@ -337,7 +337,7 @@ Photons are identified in a similar manner to electrons---using version 2 of the
 
 The variables $\sigma_{i\eta i\eta}$ and $\rho$ follow the same definitions as in Chpt.~\ref{subsec:objects_electrons}. The $\rho$-corrected isolation is calculated by taking the maximum of zero, and the difference between the \acrlong{pf} isolation and possible contamination from pileup:
 \begin{equation}
-I_{\mathrm{PF}}^{\mathrm{corr.}} = \max (I_{\mathrm{PF}} - \rho A_{\mathrm{eff.}}, 0)
+I_{\mathrm{PF}}^{\mathrm{corr.}} = \max (I_{\mathrm{PF}} - \rho A_{\mathrm{eff.}}, 0).
 \end{equation}
 As well as the working point for identification, the two collections diverge further due to $\eta$ and \pt requirements. A loose photon is characterised by $\abseta < \text{2.5}$ and $\pt > \text{15}\GeV$, while a medium photon must be central ($\abseta < \text{1.442}$) and possess $\pt > \text{230}\GeV$.
 

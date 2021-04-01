@@ -103,7 +103,7 @@ To reject mismeasured multijet events manifesting in \glspl{jet} aligned with th
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.85\textwidth]{figures/category_optimisations/omega_vs_dphi.pdf}
+    \includegraphics[width=0.95\textwidth]{figures/category_optimisations/omega_vs_dphi.pdf}
     \caption[The distribution of QCD multijet events in the signal region as a function of \omegaTilde and \mindphi]{The distribution of \acrshort{qcd} multijet events in the signal region as a function of \omegaTilde and \mindphi. The full event selection, except the cuts pertaining to the variables of interest, is applied.}
     \label{fig:htoinv_omega_vs_dphi_qcd_SR}
 \end{figure}
@@ -137,30 +137,28 @@ The preselection from Chpt.~\ref{subsec:htoinv_preselection} and $\mindphi > \te
 
 \begin{figure}[htbp]
     \centering
-    \begin{subfigure}[b]{0.4\textwidth}
+    \begin{subfigure}[b]{0.46\textwidth}
         \includegraphics[width=\textwidth]{figures/category_optimisations/with_mindphi_cut/min_omega_tilde_ttH.pdf}
         \caption{\ttH channel}
     \end{subfigure}
-    \hspace{0.1\textwidth}
-    \begin{subfigure}[b]{0.4\textwidth}
+    \hfill
+    \begin{subfigure}[b]{0.46\textwidth}
         \includegraphics[width=\textwidth]{figures/category_optimisations/with_mindphi_cut/min_omega_tilde_VH.pdf}
         \caption{\VH channel}
     \end{subfigure}
 
-    \begin{subfigure}[b]{0.4\textwidth}
+    \begin{subfigure}[b]{0.46\textwidth}
         \includegraphics[width=\textwidth]{figures/category_optimisations/with_mindphi_cut/significance_ttH_min_omega_tilde_all.pdf}
         \caption{Significance of selection in \ttH channel}
     \end{subfigure}
-    \hspace{0.1\textwidth}
-    \begin{subfigure}[b]{0.4\textwidth}
+    \hfill
+    \begin{subfigure}[b]{0.46\textwidth}
         \includegraphics[width=\textwidth]{figures/category_optimisations/with_mindphi_cut/significance_VH_min_omega_tilde_all.pdf}
         \caption{Significance of selection in \VH channel}
     \end{subfigure}
     \caption[Distributions of \omegaTilde in the signal region inclusive in the \ttH and \VH categories, along with the significance---from several figures of merit---if a cut is placed to the right of a given value]{Top row: distributions of \omegaTilde in the signal region inclusive in the \ttH and \VH categories. Bottom row: the significance---from several figures of merit---if a cut is placed to the right of a given value. The black dotted line indicates the threshold used in the analysis. These are showcased after the analysis-level selection on signal and background simulation for the 2017 data-taking era.}
     \label{fig:htoinv_category_optimisations_significances}
 \end{figure}
-
-% Figures from 12th August 2020, scenario 5. When remaking, ensure the colours of the signal lines are consistent, and the legend doesn't overlap with the distribution
 
 It is obvious that the shapes and magnitudes of the significance distributions are sensitive to the inclusion of an estimated systematic uncertainty. Increasing its size affects the shape little, though impacts the magnitude more significantly. In distributions with high background occupancy, even a small systematic uncertainty can wash out traces of signal. The thresholds chosen for \omegaTilde do not necessarily maximise the significance---where the Asimov method with $\bkgsystuncert = \text{5\,\%}$ was the leading choice as it seemed more realistic than the other metrics---but to sufficiently separate signal and background, while not removing too many events. Inspecting the distributions of the significance for \omegaTilde provided an initial range to investigate in greater detail. Then, for several values within that range, fits of the simulation to data using only the \glspl{CR} was performed. The threshold used in the analysis was decided by the value that resulted in the smallest upper limit on $\BRof{\higgstoinv}$.
 
@@ -218,6 +216,8 @@ The signal region is the area of phase space where the highest rate of invisible
 
 Events must satisfy a logical \texttt{OR} of \acrshort{hlt} cross-triggers for \acrlong{pf} \ptmiss and \mht calculated without muons (as they can also appear in the \gls{jet} collection in \acrshort{cms}), and at least one \gls{jet} fulfilling the tight ID criteria (see Chpt.~\ref{sec:analysis_objects}). The triggers are illustrated in Tab.~\ref{tab:htoinv_SR_triggers}.
 
+\
+
 \begin{table}[htbp]
     \centering
     \begin{tabular}{ccccc}
@@ -242,12 +242,12 @@ The relative composition in each category of the signal region (after the event 
 
 \begin{figure}[htbp]
     \centering
-    \begin{subfigure}[b]{0.45\textwidth}
+    \begin{subfigure}[b]{0.49\textwidth}
         \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/region_0/signal_composition.pdf}
         \caption{Signal composition}
     \end{subfigure}
-    \hspace{0.05\textwidth}
-    \begin{subfigure}[b]{0.45\textwidth}
+    \hfill
+    \begin{subfigure}[b]{0.49\textwidth}
         \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/region_0/background_composition.pdf}
         \caption{Background composition}
     \end{subfigure}

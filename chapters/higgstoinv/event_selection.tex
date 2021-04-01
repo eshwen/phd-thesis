@@ -29,7 +29,7 @@ The preselection is designed to discriminate between signal and background event
 
 The leading jet \pt and \HT requirements are chosen to remove events with insufficient hadronic activity, which are unlikely to occur in signal processes. \acrlong{pf}-level \mht and \ptmiss comprise the \acrshort{hlt} requirements that categorise the data. Significant values of both variables are expected in the signal. The thresholds are decided from measurements of the trigger efficiency. Above 200\GeV in both variables, the signal region triggers have efficiencies of $> \text{95}$\,\%. The window placed on the ratio $\mht/\ptmiss$ is designed to control mismeasured events. In those with hadronic final states, it is expected that $\mht \approx \ptmiss$. Mismeasurements or mistagged objects may lead to a divergence between the two sums. For all of the above requirements, a balance must be maintained between purity and selection efficiency. Finally, the requirement of zero \vlooseTau objects seeks to eliminate the potential background from hadronically decaying taus.
 
-Orthogonality is ensured with the phase space occupied by the \acrshort{vbf} topology as a search for \higgstoinv in this final state is currently underway in \acrshort{cms}. To simplify any future combinations with that analysis, overlap must be removed. To do so, the two leading \glspl{jet} must be within the acceptance of the tracker, and events must \emph{fail} one or more of the following criteria:
+Orthogonality is ensured with the phase space occupied by the \acrshort{vbf} topology as a search for \higgstoinv in this final state is currently underway in \acrshort{cms}. To simplify any future combinations with that analysis, overlap must be removed. To do so, the two leading \glspl{jet} must be within the tracker acceptance, and events must \emph{fail} one of the following criteria:
 
 \medskip
 \begin{easylist}[itemize]
@@ -115,14 +115,14 @@ The effect of the HEM Issue can be seen in Fig.~\ref{fig:htoinv_hem_issue_met_ph
 
 \begin{figure}[htbp]
     \centering
-    \begin{subfigure}[b]{0.4\textwidth}
+    \begin{subfigure}[b]{0.49\textwidth}
         \includegraphics[width=\textwidth]{figures/hem_issue/sideband_4/met_phi/met_phi_ttH_before_annotated.pdf}
-        \caption{\ttH inclusive category}
+        \caption{\ttH channel}
     \end{subfigure}
-    \hspace{0.1\textwidth}
-    \begin{subfigure}[b]{0.4\textwidth}
+    \hfill
+    \begin{subfigure}[b]{0.49\textwidth}
         \includegraphics[width=\textwidth]{figures/hem_issue/sideband_4/met_phi/met_phi_VH_before_annotated.pdf}
-        \caption{\VH inclusive category}
+        \caption{\VH channel}
     \end{subfigure}
     \caption[The azimuthal angle of the \ptvecmiss in the \ttH and \VH channels before applying the selections designed to mitigate the HEM Issue in 2018]{The azimuthal angle of the \ptvecmiss in the \ttH and \VH channels before applying the selections designed to mitigate the HEM Issue in 2018. The loose \omegaTilde \gls{SB} is used to demonstrate the effect. A red box encloses the sector that is removed by the selection applied in the signal region and \glspl{SB}.}
     \label{fig:htoinv_hem_issue_met_phi}

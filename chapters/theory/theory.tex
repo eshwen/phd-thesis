@@ -223,8 +223,8 @@ Full derivations of the thermal freeze-out of dark matter can be found in litera
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.75\textwidth]{figures/dm_abundance.pdf}
-    \caption[A measure of the comoving number density of WIMP dark matter as a function of time with projections for several particle masses]{A measure of the comoving number density of \acrshort{wimp} dark matter as a function of time with projections for several particle masses. The black curve represents the scenario in which dark matter remains in equilibrium with the \acrlong{sm}. Figure taken from Ref.~\citenum{Han:2013gba}.}
+    \includegraphics[width=0.7\textwidth]{figures/dm_abundance.pdf}
+    \caption[A measure of the comoving number density of WIMP dark matter as a function of time, with projections for several particle masses]{A measure of the comoving number density of \acrshort{wimp} dark matter as a function of time, with projections for several particle masses. The black curve represents the scenario in which dark matter remains in equilibrium with the \acrlong{sm}. Figure taken from Ref.~\citenum{Han:2013gba}.}
     \label{fig:theory_dm_abundance}
 \end{figure}
 
@@ -296,6 +296,26 @@ An analysis in search of this decay is provided comprehensively in Chpt.~\ref{ch
 
 At the \acrshort{lhc}, the most common mechanisms for producing a Higgs boson are the previously mentioned \ttH, \VH, and \acrshort{vbf}, and in addition gluon-gluon fusion (\ggF or \ggH). Feynman diagrams of these processes are shown in Fig.~\ref{fig:higgs_feynman_diagrams}. Additional diagrams for \ggH involve a square top quark loop and/or initial state radiation. The \ZH process can be initiated by $\HepProcess{\Pgluon\Pgluon\to \ZH}$ as well as $\HepProcess{\Pquark\APquark \to \ZH}$. Each mechanism's cross section at \comruntwo is detailed in Tab.~\ref{tab:htoinv_signal_xsecs}.
 
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{cll}
+        \toprule
+        Production mode & Cross section (pb) & Accuracy \\\midrule
+        \acrshort{vbf} & 3.77 & \acrshort{nnlo} \acrshort{qcd} and \acrshort{nlo} electroweak \\
+        $\ttH$ & $\text{5.07} \times \text{10}^{-1}$ & \acrshort{nlo} \acrshort{qcd} and \acrshort{nlo} electroweak \\
+        $\WplusH$ & $\text{8.31} \times \text{10}^{-1}$ & \acrshort{nnlo} \acrshort{qcd} and \acrshort{nlo} electroweak \\
+        $\WminusH$ & $\text{5.27} \times \text{10}^{-1}$ & \acrshort{nnlo} \acrshort{qcd} and \acrshort{nlo} electroweak \\
+        $\HepProcess{\pp \to \ZH}$ & $\text{8.84} \times \text{10}^{-1}$ & \acrshort{nnlo} \acrshort{qcd} and \acrshort{nlo} electroweak \\
+        $\HepProcess{\Pgluon\Pgluon \to \ZH}$ & $\text{1.23} \times \text{10}^{-1}$ & \acrshort{lo} \acrshort{qcd} (\acrshort{nlo} + \acrshort{nll} corrections) \\
+        \ggH & $\text{4.86} \times \text{10}^1$ & \acrshort{n3lo} \acrshort{qcd} and \acrshort{nlo} electroweak \\
+        \bottomrule
+    \end{tabular}
+    \caption[Cross sections of the Higgs boson production modes]{Cross sections of the Higgs boson production modes. They are calculated at \comruntwo at the highest orders available and obtained from Ref.~\citenum{Cepeda:2019klc}. Acronyms are expanded in the \nameref{acronym} section at the end of the document.}
+    \label{tab:htoinv_signal_xsecs}
+\end{table}
+
+% Xsecs from https://twiki.cern.ch/twiki/bin/view/LHCPhysics/CERNYellowReportPageAt13TeV and https://twiki.cern.ch/twiki/bin/view/LHCPhysics/CERNHLHE2019
+
 They all have very different characteristics, production rates, and event signatures, complementing each other and allowing analyses to cover all bases with orthogonal parameter spaces to target them individually. An eventual combination over the production channels, for the greatest sensitivity possible, then becomes simpler. One common feature of these final states is the presence of at least one quark. The hadronic constituents in the decay products of a collision often shower due to colour confinement, producing collimated sprays of hadrons called \emph{\glspl{jet}}. In a detector, these are represented by clusters of hadronic energy deposits. Algorithms at each stage of data acquisition (see Chpt.~\ref{subsec:cms_recording_data} for those in \acrshort{cms}) can reliably connect these back to the individual quark decays so one has some certainty of the process they are observing.
 
 \begin{figure}[htbp]
@@ -322,26 +342,6 @@ They all have very different characteristics, production rates, and event signat
 \caption[A subset of the Feynman diagrams for the four predominant production mechanisms of the Higgs boson at the LHC]{A subset of the Feynman diagrams for the four predominant production mechanisms of the Higgs boson at the \acrshort{lhc}.}
 \label{fig:higgs_feynman_diagrams}
 \end{figure}
-
-\begin{table}[htbp]
-    \centering
-    \begin{tabular}{cll}
-        \toprule
-        Production mode & Cross section (pb) & Accuracy \\\midrule
-        \acrshort{vbf} & 3.77 & \acrshort{nnlo} \acrshort{qcd} and \acrshort{nlo} electroweak \\
-        $\ttH$ & $\text{5.07} \times \text{10}^{-1}$ & \acrshort{nlo} \acrshort{qcd} and \acrshort{nlo} electroweak \\
-        $\WplusH$ & $\text{8.31} \times \text{10}^{-1}$ & \acrshort{nnlo} \acrshort{qcd} and \acrshort{nlo} electroweak \\
-        $\WminusH$ & $\text{5.27} \times \text{10}^{-1}$ & \acrshort{nnlo} \acrshort{qcd} and \acrshort{nlo} electroweak \\
-        $\HepProcess{\pp \to \ZH}$ & $\text{8.84} \times \text{10}^{-1}$ & \acrshort{nnlo} \acrshort{qcd} and \acrshort{nlo} electroweak \\
-        $\HepProcess{\Pgluon\Pgluon \to \ZH}$ & $\text{1.23} \times \text{10}^{-1}$ & \acrshort{lo} \acrshort{qcd} (\acrshort{nlo} + \acrshort{nll} corrections) \\
-        \ggH & $\text{4.86} \times \text{10}^1$ & \acrshort{n3lo} \acrshort{qcd} and \acrshort{nlo} electroweak \\
-        \bottomrule
-    \end{tabular}
-    \caption[Cross sections of the Higgs boson production modes]{Cross sections of the Higgs boson production modes. They are calculated at \comruntwo at the highest orders available and obtained from Ref.~\citenum{Cepeda:2019klc}. Acronyms are expanded in the \nameref{acronym} section at the end of the document.}
-    \label{tab:htoinv_signal_xsecs}
-\end{table}
-
-% Xsecs from https://twiki.cern.ch/twiki/bin/view/LHCPhysics/CERNYellowReportPageAt13TeV and https://twiki.cern.ch/twiki/bin/view/LHCPhysics/CERNHLHE2019
 
 
 %=========================================================

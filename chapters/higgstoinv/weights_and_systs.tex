@@ -372,44 +372,40 @@ There are several sources of uncertainty in the computation of high order cross 
 \subsection{Summary of systematic uncertainties}
 \label{subsec:htoinv_syst_summary}
 
-Tab.~\ref{tab:htoinv_syst_summary} contains a summary of the systematic uncertainties incorporated in the fits to data. The type of uncertainty, whether it affects primarily the normalisation of the event yields and/or the shapes of distributions, the applicable data taking years and correlations among them, the samples affected (where ``all'' corresponds to all signal and background simulation), and an estimation of the impact on event yields in the \ptmiss distribution are presented.
+Tab.~\ref{tab:htoinv_syst_summary} contains a summary of the systematic uncertainties incorporated in the fits to data. The type of uncertainty, whether it affects primarily the normalisation of the event yields and/or the shapes of distributions, the applicable data taking years and correlations among them, the samples affected, and estimations of the impacts on event yields on both the \ptmiss distribution and signal strength parameter $r$ are presented.
 
 \begin{sidewaystable}[htbp]
+    \small
     \centering
-    \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lcccc}
+    \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lccccc}
         \toprule
-        Source & Type & Years & Samples & Size (\%) \\\midrule
-        Pileup & Normalisation, shape & All, correlated & All & 1--2 \\
-        \acrshort{nlo} renormalisation scale & Normalisation, shape & All, correlated & \acrshort{lo} $\PVec \plusjets$ & 0--5 \\
-        \acrshort{nlo} factorisation scale & Normalisation, shape & All, correlated & \acrshort{lo} $\PVec \plusjets$ & 1--10 \\
-        \acrshort{nlo} \acrshort{pdf} & Normalisation, shape & All, correlated & \acrshort{lo} $\PVec \plusjets$ & 2--20 \\
-        Trigger efficiency & Normalisation, shape & All, correlated & All & 1--2 \\
-        QCD \muR \& \muF & Shape & All, correlated & \ttH, \ttbar, $\ttbar X$ & 0--10 \\
-        Top \pt & Shape & All, correlated & \ttbar & $< \text{2\,\%}$ \\
-        Muon ID & Normalisation & All, correlated & All & $< \text{1}$ \\
-        Muon isolation & Normalisation & All, correlated & All & 1 \\
-        Electron ID \& isolation & Normalisation & All, correlated & All & 1--5 \\
-        Electron reconstruction & Normalisation & All, correlated & All & 1--5 \\
-        Photon ID \& isolation & Normalisation & All, correlated & All & 1--5 \\
-        \Pbottom-tagging with \deepcsv & Normalisation & All, correlated & All & $< \text{5}$ \\
-        \deepakeight tagging & Normalisation & All, correlated & All & 1--10 \\
-        \acrshort{ecal} pre-firing & Normalisation & 2016--17, uncorrelated & All & $< \text{1}$ \\
-        \acrlong{jer} & Normalisation & All, correlated & All & 2 \\
-        \acrlong{jes} & Normalisation & All, correlated & All & 3 \\
-        Luminosity & Normalisation & All & All & 2--3 \\
-        Photon purity & Normalisation & All, uncorrelated & \acrshort{qcd} in \singlePhotonCr CR & 25 \\
-        \acrshort{qcd} prediction & Normalisation & All, uncorrelated & \acrshort{qcd} in signal region & 50 \\
-        Signal cross section & Normalisation & All, correlated & Signal & 0.5--9 \\
+        Source & Type & Years & Samples & Impact on yields (\%) & Impact on $r$ (\%) \\\midrule
+        Pileup & Normalisation, shape & All, correlated & All & 1--2 & $< \text{1}$ \\
+        \acrshort{nlo} renormalisation scale & Normalisation, shape & All, correlated & \acrshort{lo} $\PVec \plusjets$ & 0--5 & 2 \\
+        \acrshort{nlo} factorisation scale & Normalisation, shape & All, correlated & \acrshort{lo} $\PVec \plusjets$ & 1--10 & 1--2 \\
+        \acrshort{nlo} \acrshort{pdf} & Normalisation, shape & All, correlated & \acrshort{lo} $\PVec \plusjets$ & 2--20 & 1--3 \\
+        Trigger efficiency & Normalisation, shape & All, correlated & All & 1--2 & $< \text{1}$ \\
+        QCD \muR \& \muF & Shape & All, correlated & \ttH, \ttbar, $\ttbar X$ & 0--10 & $< \text{1}$ \\
+        Top \pt & Shape & All, correlated & \ttbar & $< \text{2}$ & $< \text{1}$ \\
+        Muon ID & Normalisation & All, correlated & All & $< \text{1}$ & 0--4 \\
+        Muon isolation & Normalisation & All, correlated & All & 1 & $< \text{1}$ \\
+        Electron ID \& isolation & Normalisation & All, correlated & All & 1--5 & 1--2 \\
+        Electron reconstruction & Normalisation & All, correlated & All & 1--5 & $< \text{1}$ \\
+        Photon ID \& isolation & Normalisation & All, correlated & All & 1--5 & 1 \\
+        Photon reconstruction & Normalisation & All, correlated & All & 1--2 & $< \text{1}$ \\
+        \Pbottom-tagging with \deepcsv & Normalisation & All, correlated & All & $< \text{5}$ & 1 \\
+        \deepakeight tagging & Normalisation & All, correlated & All & 1--10 & 0--5 \\
+        \acrshort{ecal} pre-firing & Normalisation & 2016--17, uncorrelated & All & $< \text{1}$ & $< \text{1}$\\
+        \acrlong{jer} & Normalisation & All, correlated & All & 2 & 2 \\
+        \acrlong{jes} & Normalisation & All, correlated & All & 3 & 3 \\
+        Luminosity & Normalisation & All & All & 2--3 & 1 \\
+        Photon purity & Normalisation & All, uncorrelated & \acrshort{qcd} in \singlePhotonCr CR & 25 & $< \text{1}$ \\
+        \acrshort{qcd} prediction & Normalisation & All, uncorrelated & \acrshort{qcd} in SR & 50 & 1--3 \\
+        Signal cross section & Normalisation & All, correlated & Signal & 0.5--9 & $< \text{2}$ \\
         \bottomrule
     \end{tabular*}
-    \caption[The experimental uncertainties present in the analysis with the applicable samples and impact on the corresponding event counts]{The experimental uncertainties present in the analysis with the applicable samples and impact on the corresponding event counts.}
+    \caption[The experimental uncertainties present in the analysis with the applicable samples, and impacts on the corresponding event counts and overall signal strength parameter $r$]{The experimental uncertainties present in the analysis with the applicable samples (where ``all'' corresponds to all signal and background simulation), and impacts on the corresponding event counts and overall signal strength parameter $r$.}
     \label{tab:htoinv_syst_summary}
 \end{sidewaystable}
-
-% Could split source column into two (source, nuisance parameter/uncertainty) if I want to group things (e.g., luminosity source with x-y factorisation, length scale, beam-beam deflection, etc. nuisance parameters)
-% Type would probably be shape/normalisation (or both)
-% Years would be "all" or the specified years, noting correlations
-% Samples/processes would be, e.g., all, or ttbar, LO V + jets, etc.
-% Size would obviously depend on whether we're considering the effect on the MET distribution or the signal strength parameter. Would estimate in the signal region. And would have to decide whether the sizes are inclusive of category, or whether I have separate entries for each category (e.g., NLO corrections would presumably have larger impact in VH category)
 
 \clearpage

@@ -286,8 +286,6 @@ All of the detectors in the muon chambers take advantage of gaseous ionisation, 
 \end{figure}
 
 % Phase-1 upgrade TDRs: HCAL \cite{Mans:1481837}, pixels \cite{Dominguez:1481838}, L1T \cite{Tapper:1556311}.
-% Phase-2 upgrade TDRs: tracker \cite{Collaboration:2272264}, barrel calorimeters \cite{Collaboration:2283187}, end cap calorimeters \cite{Collaboration:2293646}, muon detectors \cite{Collaboration:2283189}, L1T \cite{Collaboration:2283192}, DAQ \cite{Collaboration:2283193}.
-% Can look at CMS detector section in CMS papers for an overview of things. Give more detail where appropriate.
 
 
 %=========================================================
@@ -331,10 +329,6 @@ Events that pass a logical \texttt{OR} of the triggers at \acrlong{l1} are trans
 Physics objects are reconstructed further, with algorithms such as \glssymbol{antikt} leveraged to cluster \glspl{jet}~\cite{Cacciari:2008gp}. Using a distance parameter---related to the radius of the cone surrounding the hadrons---of 0.4 denotes a \gls{jet} as AK4, while fat jets are clustered with the value of 0.8 and are known as AK8. Additional classification algorithms are applied to objects, such as the \deepcsv neural network~\cite{Sirunyan:2017ezt} to identify \glspl{bjet}. A global event reconstruction from the \gls{particleflow} (\acrshort{pf})~\cite{CMS-PAS-PFT-09-001,CMS-PRF-14-001} is performed as well. Some of these algorithms can be computationally expensive. Consequently, only approximations/parametrisations are used at \acrshort{hlt} level. The full-scale versions are re-run on the retained events in later stages of postprocessing.
 
 The \acrshort{hlt} reduces the event rate from the maximum 100\,kHz input substantially to around 1\,kHz. The data stream of $\order{\text{6\,GB\,s}^{-1}}$ is then subject to further processing before the analysts access it. As well as the data being stored on networked hard drives at sites across the globe, backups are made to magnetic tape for long term storage. As with the \acrlong{l1t}, some data is redirected for monitoring, object calibrations, and alignment of detector components.
-
-% CMS Computing TDR: \cite{Bayatyan:838359}. See the Offline Data Preparation slides in the Induction Course folder. If computing/offline data prep. warrants its own subsubsection, add it.
-
-% Info on Particle Flow: http://cdsweb.cern.ch/record/127459
 
 
 %=========================================================
@@ -397,8 +391,6 @@ The reciprocal of $r_j$ vs. \ptLOne is inspected and a correction curve is fitte
 \end{equation}
 The starting parameters of the function $p_{0,\ldots,6}$ may not be adequate for all cases, so they are often tuned to capture the low-\pt spike and high-\pt plateau (see Fig.~\ref{fig:detector_jecs_corr_curves} for an example). The value of this fit function in each \ptRef bin is exported.
 
-% Should I note the pt_ref and abseta bins for the calibrations? In most recent talk in L1T DPG meetings/, I have the eta bins (also in iEta). In the sets of plots I have, I can probably also make a table of the pt_ref bins
-
 \begin{figure}[htbp]
     \centering
     \begin{subfigure}[b]{0.49\textwidth}
@@ -422,13 +414,13 @@ A closure test is conducted to validate the corrections that were produced. The 
 
 \begin{figure}[htbp]
     \centering
-    \begin{subfigure}[b]{0.58\textwidth}
+    \begin{subfigure}[b]{0.59\textwidth}
         \includegraphics[width=\textwidth]{./figures/jecs/scatterPlotBeforeBE.pdf}
         \caption{Before corrections}
         \label{fig:detector_jecs_scatter_before_BE}
     \end{subfigure}
 
-    \begin{subfigure}[b]{0.58\textwidth}
+    \begin{subfigure}[b]{0.59\textwidth}
         \includegraphics[width=\textwidth]{./figures/jecs/scatterPlotAfterBE.pdf}
         \caption{After corrections}
         \label{fig:detector_jecs_scatter_after_BE}
@@ -437,20 +429,20 @@ A closure test is conducted to validate the corrections that were produced. The 
 \label{fig:detector_jecs_scatter_BE}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[ht]
     \centering
-    \begin{subfigure}[b]{0.62\textwidth}
+    \begin{subfigure}[b]{0.68\textwidth}
         \includegraphics[width=\textwidth]{./figures/jecs/response_before.pdf}
         \caption{Before corrections}
         \label{fig:detector_jecs_response_before}
     \end{subfigure}
 
-    \begin{subfigure}[b]{0.62\textwidth}
+    \begin{subfigure}[b]{0.68\textwidth}
         \includegraphics[width=\textwidth]{./figures/jecs/response_after.pdf}
         \caption{After corrections}
         \label{fig:detector_jecs_response_after}
     \end{subfigure}
-\caption[The response curves in each \abseta bin as a function of \ptLOne, in the pileup 40--50 range, before and after jet energy corrections are applied]{The response curves in each \abseta bin as a function of \ptLOne, in the \gls{pileup} 40--50 range, before and after \gls{jec} are applied. Note that in panel b, the $x$-axis corresponds to the corrected \ptLOne.}
+\caption[The response curves in each \abseta bin as a function of \ptLOne, in the pileup 40--50 range, before and after jet energy corrections are applied]{The response curves in each \abseta bin as a function of \ptLOne, in the \gls{pileup} 40--50 range, before and after \acrlong{jec} are applied.}
 \label{fig:detector_jecs_response}
 \end{figure}
 

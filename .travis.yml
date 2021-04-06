@@ -16,26 +16,17 @@ cache:
 
 before_script:
   - cp thesismain.tex Eshwen_Bhal_thesis.tex
-  - cp thesismain.tex Eshwen_Bhal_thesis_draft.tex
 
 script:
   # Texliveonfly will download packages automatically
   - texliveonfly --arguments="-synctex=1 -interaction=nonstopmode" Eshwen_Bhal_thesis.tex
 
-  # Fully compile normal version of pdf with glossary
+  # Fully compile pdf with glossary
   - pdflatex -synctex=1 -interaction=nonstopmode Eshwen_Bhal_thesis.tex
   - biber Eshwen_Bhal_thesis
   - makeglossaries Eshwen_Bhal_thesis
   - pdflatex -synctex=1 -interaction=nonstopmode Eshwen_Bhal_thesis.tex
   - pdflatex -synctex=1 -interaction=nonstopmode Eshwen_Bhal_thesis.tex  # Compile twice to fix references
-
-  # Fully compile draft version of pdf with glossary
-  - texliveonfly --arguments="-synctex=1 -interaction=nonstopmode \"\PassOptionsToClass{draft}{memoir}\input{Eshwen_Bhal_thesis_draft}\"" Eshwen_Bhal_thesis_draft.tex
-  - pdflatex -synctex=1 -interaction=nonstopmode "\PassOptionsToClass{draft}{memoir}\input{Eshwen_Bhal_thesis_draft}"
-  - biber Eshwen_Bhal_thesis_draft
-  - makeglossaries Eshwen_Bhal_thesis_draft
-  - pdflatex -synctex=1 -interaction=nonstopmode "\PassOptionsToClass{draft}{memoir}\input{Eshwen_Bhal_thesis_draft}"
-  - pdflatex -synctex=1 -interaction=nonstopmode "\PassOptionsToClass{draft}{memoir}\input{Eshwen_Bhal_thesis_draft}"
 
   # Word count
   - texcount -html -inc ./thesismain.tex > word_count.html
@@ -46,8 +37,8 @@ deploy:
   token: $GITHUB_CI_TOKEN  # Secure variable for GitHub token. Set in settings page of repository (on Travis CI)
   file:
     - ./Eshwen_Bhal_thesis.pdf
-    - ./Eshwen_Bhal_thesis_draft.pdf
     - ./word_count.html
   skip_cleanup: true
   on:
     tags: true
+

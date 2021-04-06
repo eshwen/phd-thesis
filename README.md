@@ -1,6 +1,6 @@
 # phd-thesis
 
-[![Build Status](https://travis-ci.com/eshwen/phd-thesis.svg?token=XYfJ1ZWVhoKbK3NhXnLP&branch=master)](https://travis-ci.com/eshwen/phd-thesis) [![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/eshwen/phd-thesis?include_prereleases)](https://github.com/eshwen/phd-thesis/releases/latest) ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/eshwen/phd-thesis) ![GitHub repo size](https://img.shields.io/github/repo-size/eshwen/phd-thesis) ![GitHub top language](https://img.shields.io/github/languages/top/eshwen/phd-thesis)
+[![Build Status](https://travis-ci.com/eshwen/phd-thesis.svg?token=XYfJ1ZWVhoKbK3NhXnLP&branch=master)](https://travis-ci.com/eshwen/phd-thesis) [![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/eshwen/phd-thesis?include_prereleases)](https://github.com/eshwen/phd-thesis/releases/latest) ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/eshwen/phd-thesis) ![GitHub repo size](https://img.shields.io/github/repo-size/eshwen/phd-thesis)
 
 [![GitHub Releases (by Asset - pdf)](https://img.shields.io/github/downloads/eshwen/phd-thesis/latest/Eshwen_Bhal_thesis.pdf?color=ff69b4)](https://github.com/eshwen/phd-thesis/releases/latest/download/Eshwen_Bhal_thesis.pdf) [![GitHub Releases (by Asset - word count)](https://img.shields.io/github/downloads/eshwen/phd-thesis/latest/word_count.html?color=ff69b4)](https://github.com/eshwen/phd-thesis/releases/latest/download/word_count.html)
 

@@ -4,7 +4,7 @@
 
 [![GitHub Releases (by Asset - pdf)](https://img.shields.io/github/downloads/eshwen/phd-thesis/latest/Eshwen_Bhal_thesis.pdf?color=ff69b4)](https://github.com/eshwen/phd-thesis/releases/latest/download/Eshwen_Bhal_thesis.pdf) [![GitHub Releases (by Asset - word count)](https://img.shields.io/github/downloads/eshwen/phd-thesis/latest/word_count.html?color=ff69b4)](https://github.com/eshwen/phd-thesis/releases/latest/download/word_count.html)
 
-Repository containing everything related to my thesis. **The hyperlinks for the badges still work while the repo is private, so quick links to the pdf downloads of the thesis are still accessible.**
+Repository containing everything related to my thesis.
 
 ## Table of Contents
 
@@ -94,7 +94,7 @@ This spits out a `word_count.html` file that can be viewed to get a rough idea o
 
 ### Continuous integration
 
-I've written a CI pipeline utilising Travis to compile the document. This includes a normal pdf, draft-mode pdf, and a rough word count. The configuration file [.travis.yml](./.travis.yml) and Tex Live install files from [texlive/](./texlive/) are based on <https://github.com/PHPirates/travis-ci-latex-pdf>, with some modifications by myself.
+I've written a CI pipeline utilising Travis to compile the document. This includes a pdf and a rough word count (for compiling a draft version, see [here](https://github.com/eshwen/phd-thesis/tree/4e473a385de0584a219a7059f754467654d3c5e2)). The configuration file [.travis.yml](./.travis.yml) and Tex Live install files from [texlive/](./texlive/) are based on <https://github.com/PHPirates/travis-ci-latex-pdf>, with some modifications by myself.
 
 If one wishes to implement a similar pipeline, those instructions should be checked first. On every push, the pipeline is run: a basic TeX Live distro is installed along with all the required packages, the commands from [Normal compilation - CLI](#normal-compilation---cli) and [Draft compilation - CLI](#draft-compilation---cli) are run to create the pdfs, and finally the word count is estimated as in [Word count](#word-count).
 
@@ -103,7 +103,6 @@ I can see whether the documents compile successfully or not by the pipeline pass
 Note that the configuration of this CI is fairly specific to the implementation of my thesis, and not all features may work if the repository is private. These are:
 
 - Adding commands to the config file to install `garamondx`, and to generate glossaries
-- Creating the draft pdf, which requires passing the `draft` option specifically to the `memoir` class. Different document classes may require a different implementation to create a draft version
 - Adding a GitHub token in the `deploy` stage of the config file. This is done to authenticate the upload of files when a new tag is made
   - The variable `GITHUB_CI_TOKEN` is a secure variable specific to me (Eshwen), so must be generated individually for a user to make use of the feature. More information is linked about [deployment](https://docs.travis-ci.com/user/deployment) and [GitHub tokens](https://github.com/settings/tokens)
 - The package `texliveonfly` is used to install the packages required for compiling the document. But it doesn't always seem to install the dependencies. So I've had to add some packages to [texlive/texlive_packages](./texlive/texlive_packages) through trial-and-error by checking the logs from failed builds. Using new packages in the document therefore carries this small risk of failing the pipeline. This can be easily debugged, however
@@ -219,8 +218,6 @@ The following are some notes on formatting guidelines and style, just to remain 
 ## Badges
 
 Badges are pretty useful to highlight the important aspects of a repo to any potential forker/contributor. The build status badge is from [Travis](https://travis-ci.com/), linked to my CI pipeline. All of the others are from Shields ([webpage](https://shields.io/), [repo](https://github.com/badges/shields)). They are free to use, but obviously the badges are tied to the original fork of the repository. So to continue using them in your own fork, you can generate them yourself with these as inspiration. Note that not every badge may work if the repository is private. Server load can also mean that not every badge icon may render each time the repo is viewed. Any hyperlinks should still work though, e.g., for the downloads of latest pdfs.
-
-**While the repository is private, the build status badge from Travis requires a security token to display properly. This can be removed once the repo is made public again**
 
 *****
 

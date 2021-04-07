@@ -1,7 +1,7 @@
 \section{Categorisation of the production modes}
 \label{sec:htoinv_categorisation}
 
-To extract maximum sensitivity to the \higgstoinv decay from the analysis, events passing the selections in Chpt.~\ref{sec:htoinv_event_selection} must be further subdivided. Categories are established to target each of the production modes. From first principles, the topologies outlined in Chpt.~\ref{subsec:theory_higgs_production_modes} provide an initial direction of the expected structure. Steps are taken to ensure the categories that target the production mechanism---and the categories that capitalise on specific topologies within the mechanism---are orthogonal. Additional cuts based on optimisation studies in Chpt.~\ref{subsec:htoinv_cat_optimisation} are also implemented, devising the categories in Tab.~\ref{tab:htoinv_categories}.
+To extract maximum sensitivity to the \higgstoinv decay from the analysis, events passing the selections in Sec.~\ref{sec:htoinv_event_selection} must be further subdivided. Categories are established to target each of the production modes. From first principles, the topologies outlined in Sec.~\ref{subsec:theory_higgs_production_modes} provide an initial direction of the expected structure. Steps are taken to ensure the categories that target the production mechanism---and the categories that capitalise on specific topologies within the mechanism---are orthogonal. Additional cuts based on optimisation studies in Sec.~\ref{subsec:htoinv_cat_optimisation} are also implemented, devising the categories in Tab.~\ref{tab:htoinv_categories}.
 
 \begin{table}[htbp]
     \centering
@@ -31,13 +31,13 @@ To extract maximum sensitivity to the \higgstoinv decay from the analysis, event
     \label{tab:htoinv_categories}
 \end{table}
 
-In the table, the number of \glspl{jet} \njet refers specifically to the number of AK4-clustered \glspl{jet} that do not overlap with a boosted \Ptop or \PVec \gls{jet} to avoid double counting objects, i.e., an AK4 \gls{jet} within $\Delta R < \text{0.8}$ of a boosted object does not count toward the \njet requirement in the category definition. This is not the case for \Pqb-tagged \glspl{jet} as boosted AK8 \glspl{jet} can conceal \glspl{bjet} from the decay of the primary particle. The overlap removal between AK4 and AK8 \glspl{jet} only applies to the categorisation and does not affect selections made on \glspl{jet} in Chpt.~\ref{sec:htoinv_event_selection}. The number of boosted top quark- and vector boson-tagged \glspl{jet} are denoted as \nBoostedTop and \nBoostedV, respectively.
+In the table, the number of \glspl{jet} \njet refers specifically to the number of AK4-clustered \glspl{jet} that do not overlap with a boosted \Ptop or \PVec \gls{jet} to avoid double counting objects, i.e., an AK4 \gls{jet} within $\Delta R < \text{0.8}$ of a boosted object does not count toward the \njet requirement in the category definition. This is not the case for \Pqb-tagged \glspl{jet} as boosted AK8 \glspl{jet} can conceal \glspl{bjet} from the decay of the primary particle. The overlap removal between AK4 and AK8 \glspl{jet} only applies to the categorisation and does not affect selections made on \glspl{jet} in Sec.~\ref{sec:htoinv_event_selection}. The number of boosted top quark- and vector boson-tagged \glspl{jet} are denoted as \nBoostedTop and \nBoostedV, respectively.
 
 For categorisation and the analysis altogether, \njet and \nbjet are counted independently, so no overlap removal is performed. For example, the \VH 2j2b requires two \glspl{jet}, both of which are \Pbottom-tagged.
 
 Ancillary groupings of categories may be of interest: 2Boosted, 1t1b, 1t2b, 1W1b, and 1W2b target boosted decays of the top quark and may be collectively designated the ``\ttH boosted'' category; resolved decays are the focus of the remaining categories, appropriately named the ``\ttH resolved'' category; then, assembling the 2j0b, 2j1b, and 2j2b \VH categories elicits the ``\VH resolved'' moniker. Low yields may be observed in individual categories, so having these grouped alternatives is useful to quickly inspect the wider effect of changes to the analysis.
 
-Chpts.~\ref{subsec:htoinv_ttH_subcats} and \ref{subsec:htoinv_VH_subcats} explain the reasoning behind the \gls{jet}-based requirements in Tab.~\ref{tab:htoinv_categories}. Optimisation of the category definitions for \acrshort{qcd} multijet suppression and signal enhancement are described in Chpt.~\ref{subsec:htoinv_cat_optimisation}.
+Secs.~\ref{subsec:htoinv_ttH_subcats} and \ref{subsec:htoinv_VH_subcats} explain the reasoning behind the \gls{jet}-based requirements in Tab.~\ref{tab:htoinv_categories}. Optimisation of the category definitions for \acrshort{qcd} multijet suppression and signal enhancement are described in Sec.~\ref{subsec:htoinv_cat_optimisation}.
 
 
 %=========================================================
@@ -118,7 +118,7 @@ An estimate of the overall effect of systematic uncertainties on the background 
 Z_{\mathrm{Poisson}} = \frac{S}{\sqrt{B + (\bkgsystuncert B)^2}}.
 \label{eq:s_over_root_b_systs}
 \end{equation}
-Another figure of merit is to use the significance from an \emph{Asimov dataset}---which replaces the ensemble of different datasets by a single representative one~\cite{Cowan:2010js}. The median significance can then be extracted, colloquially ascribed the \emph{Asimov significance} $Z_{\mathrm{Asimov}}$. In many fields, including particle physics, a likelihood ratio is used for hypothesis testing. This is described in the context of the analysis in Chpt.~\ref{sec:htoinv_satistical_treatment}. The asymptotic limit, where the sample size is large (as in the case for \acrshort{lhc} data and simulation), can also be exploited as a property within the likelihood model. In this regime, the Asimov significance can be expressed as
+Another figure of merit is to use the significance from an \emph{Asimov dataset}---which replaces the ensemble of different datasets by a single representative one~\cite{Cowan:2010js}. The median significance can then be extracted, colloquially ascribed the \emph{Asimov significance} $Z_{\mathrm{Asimov}}$. In many fields, including particle physics, a likelihood ratio is used for hypothesis testing. This is described in the context of the analysis in Sec.~\ref{sec:htoinv_satistical_treatment}. The asymptotic limit, where the sample size is large (as in the case for \acrshort{lhc} data and simulation), can also be exploited as a property within the likelihood model. In this regime, the Asimov significance can be expressed as
 \begin{equation}
 Z_{\mathrm{Asimov}} = \sqrt{2 \left( (S + B) \cdot \ln\left(1 + \frac{S}{B} \right) - S \right)},
 \label{eq:asimov_significance}
@@ -133,7 +133,7 @@ c_1 = \ln\left( \frac{(S + B) \cdot (B + \bkgsystuncert^2)}{B^2 + (S + B)\bkgsys
 \end{equation}
 While these are quantitative measures of the sensitivity with a given analysis configuration, they are only a guide to inform an analyst of a more specific area of phase space to consider, rather than providing a precise cut for the given variable. To derive the appropriate cut for each production mode, all simulated signal and background events were processed through the analysis. They were categorised according to Tab.~\ref{tab:htoinv_categories}. For each category, the significances for both methods were calculated, with and without an estimated 5\,\% systematic uncertainty on the background distribution. To estimate the significance for a production mode, the significances for each category were summed in quadrature. Fig.~\ref{fig:htoinv_category_optimisations_significances} demonstrates the results as a function of \omegaTilde for the \ttH and \VH categories with the 2017 datasets.
 
-The preselection from Chpt.~\ref{subsec:htoinv_preselection} and $\mindphi > \text{0.5}$ were applied to demonstrate the remaining multijet events that can be suppressed by \omegaTilde, as well the improvements in significance.
+The preselection from Sec.~\ref{subsec:htoinv_preselection} and $\mindphi > \text{0.5}$ were applied to demonstrate the remaining multijet events that can be suppressed by \omegaTilde, as well the improvements in significance.
 
 \begin{figure}[htbp]
     \centering
@@ -178,7 +178,7 @@ In the ``background rejection'' column of Tab.~\ref{tab:htoinv_categories}, sele
 \subsection{Binning}
 \label{subsec:htoinv_binning}
 
-In addition to the categories in Chpt.~\ref{sec:htoinv_categorisation}, events are further separated into bins of \ptmiss as that distribution is expected to maximally differentiate signal and background in the fit. Since the number of events can significantly differ between categories in the different regions of the analysis, the number and widths of the bins are tuned to ensure sufficient statistical precision. These schemes are tied to the category, so are reflected in all regions such that the background estimation methods can operate on a bin-by-bin basis. The binning configuration is outlined in Tab.~\ref{tab:htoinv_binning_scheme}.
+In addition to the categories in Sec.~\ref{sec:htoinv_categorisation}, events are further separated into bins of \ptmiss as that distribution is expected to maximally differentiate signal and background in the fit. Since the number of events can significantly differ between categories in the different regions of the analysis, the number and widths of the bins are tuned to ensure sufficient statistical precision. These schemes are tied to the category, so are reflected in all regions such that the background estimation methods can operate on a bin-by-bin basis. The binning configuration is outlined in Tab.~\ref{tab:htoinv_binning_scheme}.
 
 \begin{table}[htbp]
     \centering
@@ -212,9 +212,9 @@ In addition to the categories in Chpt.~\ref{sec:htoinv_categorisation}, events a
 \subsection{The signal region}
 \label{subsec:htoinv_signal_region}
 
-The signal region is the area of phase space where the highest rate of invisible Higgs boson decays are expected, and the background to be reduced sufficiently that the potential presence of signal in data can be statistically verified. Only hadronic final states are permitted in the signal region. Events with leptons, photons and taus (defined in Chpt.~\ref{sec:analysis_objects}) are vetoed.
+The signal region is the area of phase space where the highest rate of invisible Higgs boson decays are expected, and the background to be reduced sufficiently that the potential presence of signal in data can be statistically verified. Only hadronic final states are permitted in the signal region. Events with leptons, photons and taus (defined in Sec.~\ref{sec:analysis_objects}) are vetoed.
 
-Events must satisfy a logical \texttt{OR} of \acrshort{hlt} cross-triggers for \acrlong{pf} \ptmiss and \mht calculated without muons (as they can also appear in the \gls{jet} collection in \acrshort{cms}), and at least one \gls{jet} fulfilling the tight ID criteria (see Chpt.~\ref{sec:analysis_objects}). The triggers are illustrated in Tab.~\ref{tab:htoinv_SR_triggers}.
+Events must satisfy a logical \texttt{OR} of \acrshort{hlt} cross-triggers for \acrlong{pf} \ptmiss and \mht calculated without muons (as they can also appear in the \gls{jet} collection in \acrshort{cms}), and at least one \gls{jet} fulfilling the tight ID criteria (see Sec.~\ref{sec:analysis_objects}). The triggers are illustrated in Tab.~\ref{tab:htoinv_SR_triggers}.
 
 \
 

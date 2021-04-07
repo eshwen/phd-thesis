@@ -12,9 +12,9 @@ Several regions of phase space are explored in the analysis. The signal region i
 \subsection{The signal region}
 \label{subsec:htoinv_signal_region}
 
-The signal region is the area of phase space where the highest rate of invisible Higgs boson decays are expected to manifest, and the background to be reduced sufficiently that the potential presence of signal in data can be statistically verified. In this analysis, only hadronic final states are permitted. Events with leptons, photons and taus meeting the loose or veto criteria in Chpt.~\ref{sec:analysis_objects} are vetoed.
+The signal region is the area of phase space where the highest rate of invisible Higgs boson decays are expected to manifest, and the background to be reduced sufficiently that the potential presence of signal in data can be statistically verified. In this analysis, only hadronic final states are permitted. Events with leptons, photons and taus meeting the loose or veto criteria in Sec.~\ref{sec:analysis_objects} are vetoed.
 
-Events must satisfy a logical \texttt{OR} of \acrshort{hlt} cross-triggers for \acrlong{pf} \ptmiss and \mht calculated without muons (as they can appear in the \gls{jet} collection in \acrshort{cms}), and at least one \gls{jet} fulfilling the tight ID criteria (see Chpt.~\ref{sec:analysis_objects}). The triggers are illustrated in Tab.~\ref{tab:htoinv_SR_triggers}.
+Events must satisfy a logical \texttt{OR} of \acrshort{hlt} cross-triggers for \acrlong{pf} \ptmiss and \mht calculated without muons (as they can appear in the \gls{jet} collection in \acrshort{cms}), and at least one \gls{jet} fulfilling the tight ID criteria (see Sec.~\ref{sec:analysis_objects}). The triggers are illustrated in Tab.~\ref{tab:htoinv_SR_triggers}.
 
 \begin{table}[htbp]
     \centering
@@ -62,7 +62,7 @@ The relative composition in each category of the signal region for signal and ba
 \subsection{Control regions}
 \label{subsec:htoinv_control_regions}
 
-\Glspl{CR} serve two complementary purposes in many analyses: the prediction of certain backgrounds that dominate in the signal region, as a more accurate method than using the yields directly from \acrlong{mc}; and to validate the data, \acrshort{mc}, and corrections or weights applied. They are orthogonal to the signal region and to each other by way of lepton or photon requirements, and by triggers that may pertain to those objects. \Glspl{CR} are also designed to, ideally, be devoid of signal. Contamination is sometimes present, but at a very small level. Five \glspl{CR} are used in the analysis: \singleMuCr \doubleMuCr, \singleEleCr \doubleEleCr, and \singlePhotonCr. The criteria for the objects---which are defined explicitly in Chpt.~\ref{sec:analysis_objects}---are summarised in the list below.
+\Glspl{CR} serve two complementary purposes in many analyses: the prediction of certain backgrounds that dominate in the signal region, as a more accurate method than using the yields directly from \acrlong{mc}; and to validate the data, \acrshort{mc}, and corrections or weights applied. They are orthogonal to the signal region and to each other by way of lepton or photon requirements, and by triggers that may pertain to those objects. \Glspl{CR} are also designed to, ideally, be devoid of signal. Contamination is sometimes present, but at a very small level. Five \glspl{CR} are used in the analysis: \singleMuCr \doubleMuCr, \singleEleCr \doubleEleCr, and \singlePhotonCr. The criteria for the objects---which are defined explicitly in Sec.~\ref{sec:analysis_objects}---are summarised in the list below.
 \medskip
 \begin{easylist}[itemize]
     \easylistprops
@@ -123,7 +123,7 @@ For the \singlePhotonCr \gls{CR}, we take data from \acrshort{cms} originating o
 
 In each of the \glspl{CR}, the \ptvecmiss is recalculated without the objects used to define said region as a proxy for \ptvecmiss in the signal region. Conditions in the event selection and binning that refer to \ptmiss use the recalculated quantity when applied to the \glspl{CR}. Using the \singleMuCr \gls{CR} as an example, the new \ptvecmiss is the vector sum of the old \ptvecmiss and the tight muon \ptvec. The single lepton \glspl{CR} estimate primarily the semi-leptonic $\ttbarpjets$ and $\wtolnupjets$ backgrounds. In both cases, they may enter the signal region if the lepton is lost, becoming a source of \ptmiss. The dilepton and \singlePhotonCr regions consider \ztonunupjets. The former parallels the decay as it is enriched in \ztolplmpjets---possessing the same kinematic properties while being much easier to detect, improving statistical accuracy. The latter region substitutes the \ztonunu decay with a photon, permissible as long as the momentum of the photon is large compared to the \PZ mass.
 
-The relative composition of the background processes in each \gls{CR} after the analysis-level selection is summarised in Fig.~\ref{fig:htoinv_cr_composition_comb2016to18}. As desired, the single lepton \glspl{CR} are very similar and dominated by the \ttbar and \wtolnu process. The dilepton regions also possess a very similar composition to each other, enriched in Drell-Yan \ztoll, and to a lesser extent \ttbar and $\ttbar X$ which contain several dileptonic decay channels. In the \singlePhotonCr \gls{CR}, expectedly the \gammapjets process dominates virtually every category apart from a sizeable $\ttbar \Pphoton$ presence in some of the boosted \ttH cases. \acrshort{qcd} multijet events make up a consistent, small fraction of the events. Rather than the yields from \acrshort{mc} as they would likely consist of \glspl{jet} misidentified as photons, its presence in this region is estimated from a data driven purity measurement explained in Chpt.~\ref{subsubsec:htoinv_photon_purity}. Data and background yields from simulation from every \glspl{CR} in each period of Run-2 can be found in App.~\ref{app:supplementary_hinv_plots}.
+The relative composition of the background processes in each \gls{CR} after the analysis-level selection is summarised in Fig.~\ref{fig:htoinv_cr_composition_comb2016to18}. As desired, the single lepton \glspl{CR} are very similar and dominated by the \ttbar and \wtolnu process. The dilepton regions also possess a very similar composition to each other, enriched in Drell-Yan \ztoll, and to a lesser extent \ttbar and $\ttbar X$ which contain several dileptonic decay channels. In the \singlePhotonCr \gls{CR}, expectedly the \gammapjets process dominates virtually every category apart from a sizeable $\ttbar \Pphoton$ presence in some of the boosted \ttH cases. \acrshort{qcd} multijet events make up a consistent, small fraction of the events. Rather than the yields from \acrshort{mc} as they would likely consist of \glspl{jet} misidentified as photons, its presence in this region is estimated from a data driven purity measurement explained in Sec.~\ref{subsubsec:htoinv_photon_purity}. Data and background yields from simulation from every \glspl{CR} in each period of Run-2 can be found in App.~\ref{app:supplementary_hinv_plots}.
 
 \begin{figure}[htbp]
     \centering
@@ -176,7 +176,7 @@ The templates are derived in separate bins of photon \pt, and the purity measure
 \begin{easylist}[itemize]
     \cutflowlistprops
     & Photon trigger requirement for the respective dataset from Tab.~\ref{tab:htoinv_photon_pd_triggers}
-    & \ptmiss filters from Chpt.~\ref{subsec:htoinv_other_filters}
+    & \ptmiss filters from Sec.~\ref{subsec:htoinv_other_filters}
     & $\ptmiss < \text{60}\GeV$
     & At least one jet with $\pt > \text{80}\GeV$ and $\abseta < \text{2.4}$ that is separated from any photon with $\Delta R > \text{0.4}$
     & If a second jet is present, it is required to have $\pt > \text{40}\GeV$ and $\abseta < \text{2.4}$, also separated from any photon with $\Delta R > \text{0.4}$
@@ -238,9 +238,9 @@ In the analysis, the purity measurement is used to estimate the \acrshort{qcd} m
 \subsection{Sidebands to the signal region}
 \label{subsec:htoinv_sidebands}
 
-As explained in Chpt.~\ref{subsec:htoinv_background}, it is difficult to accurately estimate the \acrshort{qcd} multijet content in the signal region. Several kinematic cuts in the analysis are designed to reject \acrshort{qcd} in the signal region, so by inverting and tightening one or more of them, it is possible to construct multijet-enriched regions: \emph{\glspl{SB}}.
+As explained in Sec.~\ref{subsec:htoinv_background}, it is difficult to accurately estimate the \acrshort{qcd} multijet content in the signal region. Several kinematic cuts in the analysis are designed to reject \acrshort{qcd} in the signal region, so by inverting and tightening one or more of them, it is possible to construct multijet-enriched regions: \emph{\glspl{SB}}.
 
-The requirements are inverted for the \ttH category on the two angular variables designed to reject multijet events and optimise the categorisation of the production modes (see Chpt.~\ref{subsec:htoinv_cat_optimisation}). Several \glspl{SB} are constructed where each cut is inverted separately, and also when both are inverted. When the angular cut is inverted, the remaining phase space may be split into two \glspl{SB}, dubbed \emph{loose} and \emph{tight}. These are summarised in Tab.~\ref{tab:sideband_defs_ttH}.
+The requirements are inverted for the \ttH category on the two angular variables designed to reject multijet events and optimise the categorisation of the production modes (see Sec.~\ref{subsec:htoinv_cat_optimisation}). Several \glspl{SB} are constructed where each cut is inverted separately, and also when both are inverted. When the angular cut is inverted, the remaining phase space may be split into two \glspl{SB}, dubbed \emph{loose} and \emph{tight}. These are summarised in Tab.~\ref{tab:sideband_defs_ttH}.
 
 \begin{table}[htbp]
     \centering

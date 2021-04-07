@@ -1,7 +1,7 @@
 \section{Event selection}
 \label{sec:htoinv_event_selection}
 
-The event selection aims to strike a balance between rejecting as many background events while retaining as much signal as possible. The preselection, in Chpt.~\ref{subsec:htoinv_preselection}, is applied to data and simulation in all analysis regions and categories to do just that. Filters to reject potentially-mismeasured events and those that lead to incorrect \ptvecmiss calculations are documented in Chpt.~\ref{subsec:htoinv_other_filters}. A strategy to combat the HEM Issue faced in 2018 (detailed in Chpt.~\ref{subsec:htoinv_data}) is given in Chpt.~\ref{subsec:htoinv_hem_mitigation}.
+The event selection aims to strike a balance between rejecting as many background events while retaining as much signal as possible. The preselection, in Sec.~\ref{subsec:htoinv_preselection}, is applied to data and simulation in all analysis regions and categories to do just that. Filters to reject potentially-mismeasured events and those that lead to incorrect \ptvecmiss calculations are documented in Sec.~\ref{subsec:htoinv_other_filters}. A strategy to combat the HEM Issue faced in 2018 (detailed in Sec.~\ref{subsec:htoinv_data}) is given in Sec.~\ref{subsec:htoinv_hem_mitigation}.
 
 
 %=========================================================
@@ -55,7 +55,7 @@ A ``muon \gls{jet} filter'' rejects events with mis-reconstructed muons by requi
 
 Events containing a \gls{jet} in the forward region ($\abseta > \text{2.4}$) with $\pt > \text{50}\GeV$ are rejected since they are more susceptible to mismeasurement in that area of the detector. \glspl{jet} in this region are also less likely to manifest in most of the signal topologies than several of the backgrounds. Therefore, cutting harder provides the additional benefit of further separation of signal from background.
 
-Charged ($f_{\mathrm{E}}^{h\pm}$) and neutral hadron energy fraction ($f_{\mathrm{E}}^{h0}$) requirements are applied to all \glspl{jet} via fulfillment of the tight \gls{jet} ID criteria (see Chpt.~\ref{subsec:objects_jets}). Furthermore, stricter selections are placed on the leading two \glspl{jet} as follows:
+Charged ($f_{\mathrm{E}}^{h\pm}$) and neutral hadron energy fraction ($f_{\mathrm{E}}^{h0}$) requirements are applied to all \glspl{jet} via fulfillment of the tight \gls{jet} ID criteria (see Sec.~\ref{subsec:objects_jets}). Furthermore, stricter selections are placed on the leading two \glspl{jet} as follows:
 
 \medskip
 
@@ -104,14 +104,14 @@ During the 2018 data taking period, the HEM Issue forced additional measures to 
 \begin{easylist}[itemize]
     \cutflowlistprops
     & $-\text{1.8} < \phi(\ptvecmiss) < -\text{0.6}$ in the signal region and \glspl{SB}
-    & Any veto electron \vetoEle with $\pt > \text{10}\GeV$, $-\text{3.0} < \eta < -\text{1.4}$, and $-\text{1.57} < \phi < -\text{0.87}$ in the \singleEleCr and \doubleEleCr \glspl{CR} (defined in Chpt.~\ref{subsec:htoinv_control_regions})
+    & Any veto electron \vetoEle with $\pt > \text{10}\GeV$, $-\text{3.0} < \eta < -\text{1.4}$, and $-\text{1.57} < \phi < -\text{0.87}$ in the \singleEleCr and \doubleEleCr \glspl{CR} (defined in Sec.~\ref{subsec:htoinv_control_regions})
 \end{easylist}
 
 \medskip
 
 \noindent{}Events in simulation that met the same criteria were instead weighted by the integrated luminosity from 2018 that was not affected by the issue (i.e., 21.1\fbinv) rather than the entire year. It is applicable under the assumption that both data and simulation are distributed comparably in the $\eta$-$\phi$ portions of the detector when the issue was not present. Given geometric variables agree very well between data and simulation in the analysis, and corrections are implemented to further synchronise them, the assumption is valid.
 
-The effect of the HEM Issue can be seen in Fig.~\ref{fig:htoinv_hem_issue_met_phi}.\footnote{In all following data--simulation comparisons, the ordering of the processes that form the stacked histogram match the ordering in the legend.} The $\phi(\ptvecmiss)$ distribution is shown in a \gls{SB} to the signal region defined by inverting the \omegaTilde variable (see Chpt.~\ref{subsubsec:htoinv_ang_var_optimisation}) since it kinematically resembles the signal region, and the data--simulation discrepancy can be removed while still blind to the data in the signal region.
+The effect of the HEM Issue can be seen in Fig.~\ref{fig:htoinv_hem_issue_met_phi}.\footnote{In all following data--simulation comparisons, the ordering of the processes that form the stacked histogram match the ordering in the legend.} The $\phi(\ptvecmiss)$ distribution is shown in a \gls{SB} to the signal region defined by inverting the \omegaTilde variable (see Sec.~\ref{subsubsec:htoinv_ang_var_optimisation}) since it kinematically resembles the signal region, and the data--simulation discrepancy can be removed while still blind to the data in the signal region.
 
 \begin{figure}[htbp]
     \centering

@@ -26,7 +26,7 @@ For analyses focused on hadronic objects---such as branches of \acrlong{susy} wh
     \HT \equiv \sum_{\mathrm{jets}} \pt
     \label{eq:ht_definition}
 \end{equation}
-Typically, a lower limit on the \pt is enforced when calculating the \HT, so \glspl{jet} below this threshold do not factor into the sum. This is to avoid low momentum \glspl{jet} attributed to pileup events (see Chpt.~\ref{subsec:pileup}) and soft radiation.
+Typically, a lower limit on the \pt is enforced when calculating the \HT, so \glspl{jet} below this threshold do not factor into the sum. This is to avoid low momentum \glspl{jet} attributed to pileup events (see Sec.~\ref{subsec:pileup}) and soft radiation.
 
 
 %=========================================================
@@ -329,7 +329,7 @@ Photons are identified in a similar manner to electrons---using version 2 of the
     \label{tab:htoinv_photon_ID_endcap}
 \end{table}
 
-The variables $\sigma_{i\eta i\eta}$ and $\rho$ follow the same definitions as in Chpt.~\ref{subsec:objects_electrons}. The $\rho$-corrected isolation is calculated by taking the maximum of zero, and the difference between the \acrlong{pf} isolation and possible contamination from pileup:
+The variables $\sigma_{i\eta i\eta}$ and $\rho$ follow the same definitions as in Sec.~\ref{subsec:objects_electrons}. The $\rho$-corrected isolation is calculated by taking the maximum of zero, and the difference between the \acrlong{pf} isolation and possible contamination from pileup:
 \begin{equation}
 I_{\mathrm{PF}}^{\mathrm{corr.}} = \max (I_{\mathrm{PF}} - \rho A_{\mathrm{eff.}}, 0).
 \end{equation}
@@ -364,11 +364,11 @@ Muons are first identified, followed by electrons. Cross cleaning is performed a
 \subsection{Revised energy sums}
 \label{subsec:objects_analysis_energy_sums}
 
-Most \acrshort{cms} analyses, including those presented in this thesis, define the missing transverse momentum with the \emph{type-I correction}: corrections to the \acrshort{jer} and \acrshort{jes} are applied as in Chpt.~\ref{subsec:objects_jets}, and so the corrected \gls{jet} \ptvec are propagated to the calculation of \ptvecmiss.
+Most \acrshort{cms} analyses, including those presented in this thesis, define the missing transverse momentum with the \emph{type-I correction}: corrections to the \acrshort{jer} and \acrshort{jes} are applied as in Sec.~\ref{subsec:objects_jets}, and so the corrected \gls{jet} \ptvec are propagated to the calculation of \ptvecmiss.
 
 In 2017, significant noise in the \acrshort{ecal} end cap affected \glspl{jet} and \ptmiss, leading to potentially large energy mismeasurements. These quantities were recomputed after reconstruction, and carried through the analysis.
 
-The scalar sum \HT and negative vector sum of hadronic transverse momentum \htvecmiss are broadly defined in Chpts.~\ref{subsec:objects_ht} and \ref{subsec:objects_met}, respectively. They are calculated from the analysis-level AK4 \glspl{jet} with $\pt > \text{30}\GeV$, as detailed in Chpt.~\ref{subsec:objects_jets}.
+The scalar sum \HT and negative vector sum of hadronic transverse momentum \htvecmiss are broadly defined in Secs.~\ref{subsec:objects_ht} and \ref{subsec:objects_met}, respectively. They are calculated from the analysis-level AK4 \glspl{jet} with $\pt > \text{30}\GeV$, as detailed in Sec.~\ref{subsec:objects_jets}.
 
 Regarding the \ptvecmiss and \htvecmiss, in most cases the magnitudes (\ptmiss and \mht, respectively) are the important quantities used in the event selection and other aspects of the analysis.
 

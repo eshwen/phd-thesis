@@ -262,7 +262,7 @@ The impact of \rinv on the \mT is similar to the \schannel signal insofar that t
 
 To verify that both \PYTHIA and \MADGRAPH are suitable generators, 100,000 events were generated for a selection of parameter points with each program independently. Six models encompassing a sufficient range of \mZprime, \mDark, and \rinv were chosen: SVJ\_\-1000\_\-20\_\-0.3\_\-peak, SVJ\_\-3000\_\-20\_\-0.1\_peak, SVJ\_\-3000\_\-20\_\-0.5\_\-peak, SVJ\_\-3000\_\-20\_\-0.9\_\-peak, SVJ\_\-3000\_\-50\_\-0.3\_\-peak, and SVJ\_\-4000\_\-20\_\-0.3\_\-peak. For all the simulation steps after the initial generation (described in more detail in Sec.~\ref{subsec:cms_mc}), identical implementations were used. This was to compare the differences due only to the generator. No analysis-level selections were applied either, for the same purpose.
 
-Below are some of the important and insightful distributions for the \schannel production mode: \mT, the number of \glspl{jet} (with the large cone size equivalent to AK8 \glspl{jet} in the \gls{antikt}), the ratio of \ptmiss to \mT, and the minimum azimuthal angle between the \ptmiss and two leading \glspl{jet} $\dijetMindphi$. The ratio between the \MADGRAPH-generated and \PYTHIA-generated sample for a given model is also shown. For readability, plots are split into two sets comprising three models each. Fig.~\ref{fig:svj_mg_pythia_comparison_set1} showcases SVJ\_\-1000\_\-20\_\-0.3\_\-peak, SVJ\_\-3000\_\-20\_\-0.1\_\-peak, and SVJ\_\-3000\_\-20\_\-0.9\_\-peak, while Fig.~\ref{fig:svj_mg_pythia_comparison_set2} shows SVJ\_\-3000\_\-20\_\-0.5\_\-peak, SVJ\_\-3000\_\-50\_\-0.3\_\-peak, and SVJ\_\-4000\_\-20\_\-0.3\_\-peak.
+Below are some of the important and insightful distributions for the \schannel production mode: \mT, the number of \glspl{jet} (with the large cone size equivalent to AK8 \glspl{jet} in the \gls{antikt}), the ratio of \ptmiss to \mT, and the minimum azimuthal angle between the \ptvecmiss and two leading \glspl{jet} $\dijetMindphi$. The ratio between the \MADGRAPH-generated and \PYTHIA-generated sample for a given model is also shown. For readability, plots are split into two sets comprising three models each. Fig.~\ref{fig:svj_mg_pythia_comparison_set1} showcases SVJ\_\-1000\_\-20\_\-0.3\_\-peak, SVJ\_\-3000\_\-20\_\-0.1\_\-peak, and SVJ\_\-3000\_\-20\_\-0.9\_\-peak, while Fig.~\ref{fig:svj_mg_pythia_comparison_set2} shows SVJ\_\-3000\_\-20\_\-0.5\_\-peak, SVJ\_\-3000\_\-50\_\-0.3\_\-peak, and SVJ\_\-4000\_\-20\_\-0.3\_\-peak.
 
 \begin{figure}[htbp]
     \centering
@@ -283,7 +283,7 @@ Below are some of the important and insightful distributions for the \schannel p
     \hfill
     \begin{subfigure}[b]{0.49\textwidth}
         \includegraphics[width=\textwidth]{figures/madgraph_pythia_comparisons/plots/part1/min_dphi.pdf}
-        \caption{\mindphi between \ptmiss and two leading \glspl{jet}}
+        \caption{\mindphi between \ptvecmiss and two leading \glspl{jet}}
     \end{subfigure}
     \caption[Distributions of several observables for the models SVJ\_\-1000\_\-20\_\-0.3\_\-peak, SVJ\_\-3000\_\-20\_\-0.1\_\-peak, and SVJ\_\-3000\_\-20\_\-0.9\_\-peak]{Distributions of several observables for the models SVJ\_\-1000\_\-20\_\-0.3\_\-peak, SVJ\_\-3000\_\-20\_\-0.1\_\-peak, and SVJ\_\-3000\_\-20\_\-0.9\_\-peak. Generation in \MGvATNLO is compared to \PYTHIAEIGHT, with the ratios between them for each model displayed in the respective subplot.}
     \label{fig:svj_mg_pythia_comparison_set1}
@@ -308,7 +308,7 @@ Below are some of the important and insightful distributions for the \schannel p
     \hfill
     \begin{subfigure}[b]{0.49\textwidth}
         \includegraphics[width=\textwidth]{figures/madgraph_pythia_comparisons/plots/part2/min_dphi.pdf}
-        \caption{\mindphi between \ptmiss and two leading \glspl{jet}}
+        \caption{\mindphi between \ptvecmiss and two leading \glspl{jet}}
     \end{subfigure}
     \caption[Distributions of several observables for the models SVJ\_\-3000\_\-20\_\-0.5\_\-peak, SVJ\_\-3000\_\-50\_\-0.3\_\-peak, and SVJ\_\-4000\_\-20\_\-0.3\_\-peak]{Distributions of several observables for the models SVJ\_\-3000\_\-20\_\-0.5\_\-peak, SVJ\_\-3000\_\-50\_\-0.3\_\-peak, and SVJ\_\-4000\_\-20\_\-0.3\_\-peak. Generation in \MGvATNLO is compared to \PYTHIAEIGHT, with the ratios between them for each model displayed in the respective subplot.}
     \label{fig:svj_mg_pythia_comparison_set2}

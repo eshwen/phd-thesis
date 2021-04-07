@@ -1,6 +1,6 @@
 # Making plots for the Higgs to invisible analysis chapter
 
-This README should be an indicator of how to make some of the plots included in the Higgs to invisible analysis chapter, in case they need to be regenerated or I need more context for them.
+This README should be an indicator of how to make some of the plots included in the Higgs to invisible analysis chapter, in case they need to be regenerated or I need more context for them. All plots are made in the `esh_unblinding_no_lepton_cr_cuts` branch of my fork of the chip repository, unless stated otherwise.
 
 - [Making plots for the Higgs to invisible analysis chapter](#making-plots-for-the-higgs-to-invisible-analysis-chapter)
   - [`fast-plotter` plots](#fast-plotter-plots)
@@ -16,7 +16,6 @@ This README should be an indicator of how to make some of the plots included in 
   - [Rate parameter tables](#rate-parameter-tables)
   - [QCD scale for top processes](#qcd-scale-for-top-processes)
   - [Top pt reweighting](#top-pt-reweighting)
-    - [Aesthetic changes to legend](#aesthetic-changes-to-legend)
     - [Plots with theory uncertainties](#plots-with-theory-uncertainties)
     - [Plots with all functions overlaid](#plots-with-all-functions-overlaid)
   - [Trigger efficiencies](#trigger-efficiencies)
@@ -201,56 +200,7 @@ To plot just the central function with uncertainties on the fit parameters, run
 compTopPtReweighting("central")
 ```
 
-### Aesthetic changes to legend
-
-For slightly more aesthetic changes to legend entries, add the line
-
-```C++
-string fit_param_letters [5] = {"a", "b", "c", "d", "e"};
-```
-
-before the line
-
-```C++
-for (int i = 0; i < num_fit_params; ++i) {
-```
-
-Then, replace the lines
-
-```C++
-String f12UpName = Form("parameter %i up", i);
-```
-
-with
-
-```C++
-TString f12UpName = Form("parameter %s up", fit_param_letters[i].c_str());
-```
-
-and
-
-```C++
-String f12DownName = Form("parameter %i down", i);
-```
-
-with
-
-```C++
-TString f12DownName = Form("parameter %s down", fit_param_letters[i].c_str());
-```
-
-Then, also replace the lines
-
-```C++
-string toDisp_str = "#splitline{Fit func. = ";
-toDisp_str += FormulaFitFunction2.Data();
-```
-
-with
-
-```C++
-string toDisp_str = "#splitline{Fit func. = a + bx + cx^{2}";
-```
+If there's an issue saying a plot can't be opened/created, make a `plots/` subdirectory and rerun.
 
 ### Plots with theory uncertainties
 

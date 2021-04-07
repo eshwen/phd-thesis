@@ -193,6 +193,6 @@ This is taken directly from the semi-visible jets analysis note AN-19-061. The r
 
 For plots with `fast-plotter` (perhaps within <https://gitlab.cern.ch/cms-chip/chip/-/blob/master/chip_code/make_nonVBF_plots.py>):
 
-- Use the right x-axis limits so there's no horizontal space between the histograms and axis limits. 
+- Use the right x-axis limits so there's no horizontal space between the histograms and axis limits.
 - Add the bin widths on the y-axis label if the bin width is constant. Achievable in the plotting config with the `ylabel` kwarg
 - Make sure signal line colours are consistent (broken in `fast-plotter` as of v0.8.0)

@@ -136,9 +136,9 @@ elif [[ "$df" == *"--dijet_pt"* ]]; then
 fi
 
 if [[ $svj_model == "s" ]]; then
-    sed -i 's/1e7/2e6/g' $plotting_cfg
+    sed -i 's/4e7/4e6/g' $plotting_cfg
 elif [[ $svj_model == "t" ]]; then
-    sed -i 's/2e6/1e7/g' $plotting_cfg
+    sed -i 's/4e6/4e7/g' $plotting_cfg
 fi
 out_dirs=( "svj_${svj_model}_thesis_benchmark_variations_mD" "svj_${svj_model}_thesis_benchmark_variations_m${med}" "svj_${svj_model}_thesis_benchmark_variations_rinv" )
 for dir in "${out_dirs[@]}"; do
@@ -153,9 +153,9 @@ sed -i 's/.96/.808/g' ../src/fast-plotter/fast_plotter/plotting.py
 fast_plotter -c $plotting_cfg -o svj_${svj_model}_thesis_benchmark_variations_aD svj_${svj_model}_thesis_benchmark_variations_aD/$df
 sed -i 's/.808/.96/g' ../src/fast-plotter/fast_plotter/plotting.py
 if [[ $svj_model == "s" ]]; then
-    sed -i 's/1e7/2e6/g' $plotting_cfg
+    sed -i 's/4e7/4e6/g' $plotting_cfg
 elif [[ $svj_model == "t" ]]; then
-    sed -i 's/2e6/1e7/g' $plotting_cfg
+    sed -i 's/4e6/4e7/g' $plotting_cfg
 fi
 ```
 

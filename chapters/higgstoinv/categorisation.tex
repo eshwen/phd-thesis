@@ -103,7 +103,7 @@ To reject mismeasured multijet events manifesting in \glspl{jet} aligned with th
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.95\textwidth]{figures/category_optimisations/omega_vs_dphi.pdf}
+    \includegraphics[width=0.95\textwidth]{figures/category_optimisations/correlations/omega_vs_dphi_QCD_SR_all_cats.pdf}
     \caption[The distribution of QCD multijet events in the signal region as a function of \omegaTilde and \mindphi]{The distribution of \acrshort{qcd} multijet events in the signal region as a function of \omegaTilde and \mindphi. The full event selection, except the cuts pertaining to the variables of interest, is applied.}
     \label{fig:htoinv_omega_vs_dphi_qcd_SR}
 \end{figure}
@@ -145,6 +145,7 @@ The preselection from Sec.~\ref{subsec:htoinv_preselection} and $\mindphi > \tex
     \begin{subfigure}[b]{0.47\textwidth}
         \includegraphics[width=\textwidth]{figures/category_optimisations/with_mindphi_cut/min_omega_tilde_VH.pdf}
         \caption{Event counts in \VH channel}
+        \label{subfig:min_omega_tilde_VH}
     \end{subfigure}
 
     \begin{subfigure}[b]{0.47\textwidth}
@@ -178,7 +179,38 @@ In the ``background rejection'' column of Tab.~\ref{tab:htoinv_categories}, sele
 \subsection{Binning}
 \label{subsec:htoinv_binning}
 
-In addition to the categories in Sec.~\ref{sec:htoinv_categorisation}, events are further separated into bins of \ptmiss as that distribution is expected to maximally differentiate signal and background in the fit. Since the number of events can significantly differ between categories in the different regions of the analysis, the number and widths of the bins are tuned to ensure sufficient statistical precision. These schemes are tied to the category, so are reflected in all regions such that the background estimation methods can operate on a bin-by-bin basis. The binning configuration is outlined in Tab.~\ref{tab:htoinv_binning_scheme}.
+In addition to the categories in Sec.~\ref{sec:htoinv_categorisation}, events are further separated into bins of \ptmiss as that distribution is expected to maximally differentiate signal and background in the fit. Correlations were examined between \ptmiss and both of the optimisation variables, \omegaTilde and \mindphi. Strong correlations would only affect background predictions from \glspl{CR} or \glspl{SB} if, for example, an ABCD method were used. This method is not used in this thesis and therefore presents no issue. Separately for the \ttH and \VH categories---given their distinct signatures---two dimensional histograms of \ptmiss versus each optimisation variable are illustrated in Fig.~\ref{fig:htoinv_correlations_met_omega_dphi}. The full event selection, excluding the cuts in the penultimate column of Tab.~\ref{tab:htoinv_categories} were applied to the 2017 dataset.
+
+Strong correlations are not observed in any of the distributions. As expected, the event count reduces as a function of \ptmiss, and consistently for each bin of the angular variable in question. In the \VH channel, the histogram peaks at large \mindphi due to the topological signature of two standard \glspl{jet} or a single boosted \gls{jet} recoiling against the \ptvecmiss. The distribution in \omegaTilde is also a consequence of this topology, as corroborated by Fig.~\ref{subfig:min_omega_tilde_VH}.
+
+\clearpage
+
+\begin{figure}[ht]
+    \centering
+    \begin{subfigure}[b]{0.49\textwidth}
+        \includegraphics[width=\textwidth]{figures/category_optimisations/correlations/omega_vs_met_all_bkg_SR_ttH.pdf}
+        \caption{\ptmiss vs. \omegaTilde in \ttH channel}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.49\textwidth}
+        \includegraphics[width=\textwidth]{figures/category_optimisations/correlations/omega_vs_met_all_bkg_SR_VH.pdf}
+        \caption{\ptmiss vs. \omegaTilde in \VH channel}
+    \end{subfigure}
+
+    \begin{subfigure}[b]{0.49\textwidth}
+        \includegraphics[width=\textwidth]{figures/category_optimisations/correlations/dphi_vs_met_all_bkg_SR_ttH.pdf}
+        \caption{\ptmiss vs. \mindphi in \ttH channel}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.49\textwidth}
+        \includegraphics[width=\textwidth]{figures/category_optimisations/correlations/dphi_vs_met_all_bkg_SR_VH.pdf}
+        \caption{\ptmiss vs. \mindphi in \VH channel}
+    \end{subfigure}
+    \caption[Histograms of the background event counts in the \ttH and \VH channels of the signal region for the search variable \ptmiss against the optimisation variables \omegaTilde and \mindphi]{Histograms of the background event counts in the \ttH and \VH channels of the signal region for the search variable \ptmiss against the optimisation variables \omegaTilde and \mindphi.}
+    \label{fig:htoinv_correlations_met_omega_dphi}
+\end{figure}
+
+Since the number of events can significantly differ between categories in the different regions of the analysis, the number and widths of the \ptmiss bins are tuned to ensure sufficient statistical precision. These schemes are tied to the category, so are reflected in all regions such that the background estimation methods can operate on a bin-by-bin basis. The binning configuration is outlined in Tab.~\ref{tab:htoinv_binning_scheme}.
 
 \begin{table}[htbp]
     \centering
@@ -215,8 +247,6 @@ In addition to the categories in Sec.~\ref{sec:htoinv_categorisation}, events ar
 The signal region is the area of phase space where the highest rate of invisible Higgs boson decays are expected, and the background to be reduced sufficiently that the potential presence of signal in data can be statistically verified. Only hadronic final states are permitted in the signal region. Events with leptons, photons and taus (defined in Sec.~\ref{sec:analysis_objects}) are vetoed.
 
 Events must satisfy a logical \texttt{OR} of \acrshort{hlt} cross-triggers for \acrlong{pf} \ptmiss and \mht calculated without muons (as they can also appear in the \gls{jet} collection in \acrshort{cms}), and at least one \gls{jet} fulfilling the tight ID criteria (see Sec.~\ref{sec:analysis_objects}). The triggers are illustrated in Tab.~\ref{tab:htoinv_SR_triggers}.
-
-\
 
 \begin{table}[htbp]
     \centering

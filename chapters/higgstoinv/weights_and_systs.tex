@@ -55,23 +55,21 @@ where $s$ denotes the set of events that have passed the selection given by its 
     w_{\mathrm{trg}}(\ptmiss, \mht) = \frac{\epsilon_{\mathrm{trg, \ data}}(\ptmiss, \mht)}{\epsilon_{\mathrm{trg, \ MC}}(\ptmiss, \mht)}.
     \label{eq:trigger_weight}
 \end{equation}
-Uncertainties are estimated using the Clopper-Pearson method~\cite{10.1093/biomet/26.4.404} and impact the yields by up to 1--2\,\%. In the signal region, sidebands, and muon \glspl{CR}, weights from the efficiencies of the \ptmiss--\mht cross triggers are used. The weights are provided for each data taking year in Fig.~\ref{fig:htoinv_trig_effs}. In the electron and photon \glspl{CR}, the efficiencies are calculated in the same manner, instead with the triggers in Tabs.~\ref{tab:htoinv_ele_pd_triggers} and \ref{tab:htoinv_photon_pd_triggers}.
-
-\clearpage
+Uncertainties are estimated using the Clopper--Pearson method~\cite{10.1093/biomet/26.4.404} and impact the yields by up to 1--2\,\%. In the signal region, sidebands, and muon \glspl{CR}, weights from the efficiencies of the \ptmiss--\mht cross triggers are used. The weights are provided for each data taking year in Fig.~\ref{fig:htoinv_trig_effs}. In the electron and photon \glspl{CR}, the efficiencies are calculated in the same manner, instead with the triggers in Tabs.~\ref{tab:htoinv_ele_pd_triggers} and \ref{tab:htoinv_photon_pd_triggers}.
 
 \begin{figure}[htbp]
     \centering
-    \begin{subfigure}[b]{0.49\textwidth}
+    \begin{subfigure}[b]{0.46\textwidth}
         \includegraphics[width=\textwidth]{figures/trigger_efficiencies/2016/SFs.pdf}
         \caption{2016}
     \end{subfigure}
     \hfill
-    \begin{subfigure}[b]{0.49\textwidth}
+    \begin{subfigure}[b]{0.46\textwidth}
         \includegraphics[width=\textwidth]{figures/trigger_efficiencies/2017/SFs.pdf}
         \caption{2017}
     \end{subfigure}
 
-    \begin{subfigure}[b]{0.49\textwidth}
+    \begin{subfigure}[b]{0.46\textwidth}
         \includegraphics[width=\textwidth]{figures/trigger_efficiencies/2018/SFs.pdf}
         \caption{2018}
     \end{subfigure}
@@ -140,11 +138,9 @@ Uncertainties for the \acrshort{qcd} renormalisation scale, factorisation scale,
 
 Since all of the $\PVec \plusjets$ samples were generated at \acrshort{lo} electroweak accuracy, an additional $k$-factor is needed to reweight events to \acrshort{nlo}. Ref.~\citenum{Lindert_2017}{}provides \acrshort{nlo} electroweak corrections for \PW, \PZ, and $\Pphoton\plusjets$ processes as a function of $\pt^{\PVec}$, depicted in Fig.~\ref{fig:htoinv_nlo_k_factor_ewk}. The \PZ $k$-factor is adopted by both the Drell-Yan and \ztonunu processes.
 
-\clearpage
-
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.52\textwidth]{figures/nlo_k_factors/1D_all_ewk.pdf}
+    \includegraphics[width=0.65\textwidth]{figures/nlo_k_factors/1D_all_ewk.pdf}
     \caption[NLO $k$-factors as a function of generator-level boson \pt for reweighting QCD $\PVec \plusjets$ events generated at LO electroweak accuracy]{\acrshort{nlo} $k$-factors as a function of generator-level boson \pt for reweighting \acrshort{qcd} $\PVec \plusjets$ events generated at \acrshort{nlo} electroweak accuracy. Separate $k$-factors correct the \PW, \PZ, and $\Pphoton\plusjets$ processes. Values obtained from Ref.~\citenum{Lindert_2017}.}
     \label{fig:htoinv_nlo_k_factor_ewk}
 \end{figure}
@@ -212,11 +208,9 @@ where the coefficients are $a = \text{1.614} \times \text{10}^{-2}$, $b = -\text
 
 The uncertainties are acquired from the fit itself over the theoretical uncertainties inherent in \acrshort{mc} calculations. This was to avoid double counting with respect to the renormalisation and factorisation scale uncertainty in Sec.~\ref{subsubsec:ttbar_renorm_fact_scale_uncert}, as overlap would be present and otherwise difficult to disentangle. For each parameter in the fit, the upward and downward variations were estimated. The fit function was then recalculated, fixing the parameter of interest to the variation. Providing upward and downward functions, the systematic uncertainty attributed to the parameter is simply the event weight calculated with these functions over the nominal. Separate, uncorrelated uncertainties were estimated for each parameter in the fit, and were each found to have a $< \text{2\,\%}$ impact on the event yields. The dependence on normalisation was removed in the same fashion as for the \acrshort{qcd} scale to consider the correction only to the shape of the distributions and not also the normalisation. The nominal function and associated variations are shown in Fig.~\ref{fig:top_pt_reweighting}.
 
-\clearpage
-
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.6\textwidth]{figures/top_pt_reweighting/top_pt_reweighting_central.pdf}
+    \includegraphics[width=0.65\textwidth]{figures/top_pt_reweighting/top_pt_reweighting_central.pdf}
     \caption[The ratio of the NNLO to NLO \ttbar cross section as a function of top quark \pt. The fit to the distribution---along with the uncertainties in the parameters---is shown]{The ratio of the \acrshort{nnlo} to \acrshort{nlo} \ttbar cross section as a function of top quark \pt. The fit to the distribution---along with the uncertainties in the parameters---is shown.}
     \label{fig:top_pt_reweighting}
 \end{figure}

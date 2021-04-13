@@ -9,7 +9,7 @@ These estimations rely on the distributions of data and \acrlong{mc} in those re
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.6\textwidth]{figures/fit_overview.pdf}
+    \includegraphics[width=0.7\textwidth]{figures/fit_overview.pdf}
     \caption[An infographic showcasing the role of each analysis region in the fit to data]{An infographic showcasing the role of each analysis region in the fit to data. The \glspl{CR} predict the lost lepton and \ztonunu backgrounds, and a \gls{CR} (CR)--only fit informs the \acrshort{qcd} multijet prediction that contributes to the eventual background determination in the signal region.}
     \label{fig:htoinv_fit_overview}
 \end{figure}
@@ -42,7 +42,9 @@ The transverse mass cuts in the single lepton \glspl{CR} reduce the effect of si
 
 In the \doubleMuCr and \doubleEleCr \glspl{CR}, the \doubleLepMass window is halved for the \ttH categories compared to the others to reduce contamination from dileptonic \ttbar decays, granting a higher purity \ztolplmpjets region. The leading lepton \pt requirement is increased in these regions for all categories, also for purity purposes.
 
-The \singleEleCr and \doubleEleCr \glspl{CR} take advantage of the increased statistical power of two \glspl{PD} in both 2016 and 2017, one where the events pass electron object triggers and the other where they pass photon triggers. In 2018, they were merged into a single $\Pe/\Pphoton$ \gls{PD}, and as such affects the logic behind the trigger requirements for data and simulation, which is explained below. Tabs.~\ref{tab:htoinv_ele_pd_triggers} and~\ref{tab:htoinv_photon_pd_triggers} elucidate how the trigger requirements are specified for each year. As before, each quantity and object is defined at \acrshort{hlt} level. If an event aims to enter the \singleEleCr or \doubleEleCr, and is from the dataset of \Pe-based triggers, the criteria for either of the two triggers for the given year in Tab.~\ref{tab:htoinv_ele_pd_triggers} must be satisfied. If an event aims to enter either \gls{CR} and is from the \gls{PD} of \Pphoton-based triggers, the failure of both of the electron triggers in Tab.~\ref{tab:htoinv_ele_pd_triggers} and the passing of any of the photon triggers in Tab.~\ref{tab:htoinv_photon_pd_triggers} are required. This condition avoids double counting events that also appear in the electron trigger-based dataset. In 2018, any of the year's triggers in Tabs.~\ref{tab:htoinv_ele_pd_triggers} and~\ref{tab:htoinv_photon_pd_triggers} may be satisfied since there is only one \gls{PD}. For \acrlong{mc} events, as the datasets are not categorised by trigger, they may pass any of the requirements for their respective year in either table.
+The \singleEleCr and \doubleEleCr \glspl{CR} take advantage of the increased statistical power of two \glspl{PD} in both 2016 and 2017, one where the events pass electron object triggers and the other where they pass photon triggers. In 2018, they were merged into a single $\Pe/\Pphoton$ \gls{PD}, and as such affects the logic behind the trigger requirements for data and simulation, which is explained below. Tabs.~\ref{tab:htoinv_ele_pd_triggers} and~\ref{tab:htoinv_photon_pd_triggers} elucidate how the trigger requirements are specified for each year.
+
+As before, each quantity and object is defined at \acrshort{hlt} level. If an event aims to enter the \singleEleCr or \doubleEleCr, and is from the dataset of \Pe-based triggers, the criteria for either of the two triggers for the given year in Tab.~\ref{tab:htoinv_ele_pd_triggers} must be satisfied. If an event aims to enter either \gls{CR} and is from the \gls{PD} of \Pphoton-based triggers, the failure of both of the electron triggers in Tab.~\ref{tab:htoinv_ele_pd_triggers} and the passing of any of the photon triggers in Tab.~\ref{tab:htoinv_photon_pd_triggers} are required. This condition avoids double counting events that also appear in the electron trigger-based dataset. In 2018, any of the year's triggers in Tabs.~\ref{tab:htoinv_ele_pd_triggers} and~\ref{tab:htoinv_photon_pd_triggers} may be satisfied since there is only one \gls{PD}. For \acrlong{mc} events, as the datasets are not categorised by trigger, they may pass any of the requirements for their respective year in either table.
 
 \begin{table}[htbp]
     \centering
@@ -80,13 +82,11 @@ The \singleEleCr and \doubleEleCr \glspl{CR} take advantage of the increased sta
     \label{tab:htoinv_photon_pd_triggers}
 \end{table}
 
-\
-
 For the \singlePhotonCr \gls{CR}, data is used from \acrshort{cms} originating only from the dataset of \Pphoton-based triggers. Data and \acrshort{mc} must satisfy any of the triggers from Tab.~\ref{tab:htoinv_photon_pd_triggers} for the respective year.
 
 In each of the \glspl{CR}, the \ptvecmiss is recalculated without the objects used to define said region as a proxy for \ptvecmiss in the signal region. Conditions in the event selection and binning that refer to \ptvecmiss or \ptmiss use this recalculated quantity when applied to the \glspl{CR}. Using the \singleMuCr \gls{CR} as an example, the new \ptvecmiss is the vector sum of the old \ptvecmiss and the tight muon's \ptvec.
 
-The relative composition of the background processes in each \gls{CR} after the analysis-level selection is summarised in Fig.~\ref{fig:htoinv_cr_composition_comb2016to18}, and can be compared to those in the signal region from Fig.~\ref{fig:htoinv_sr_composition_comb2016to18}. As desired, the single lepton \glspl{CR} are very similar and dominated by the \ttbar and \wtolnu processes. The dilepton regions also possess a very similar composition to each other, enriched in Drell-Yan \ztoll, and to a lesser extent \ttbar and $\ttbar X$ which contain several dileptonic decay channels. In the \singlePhotonCr \gls{CR}, expectedly the \gammapjets process dominates virtually every category. \acrshort{qcd} multijet events make up a consistent, small fraction of the events. Rather than the yields from \acrshort{mc} as they would likely consist of \glspl{jet} misidentified as photons, its presence in this region is estimated from a data driven purity measurement explained in Sec.~\ref{subsubsec:htoinv_photon_purity}.
+The relative composition of the background processes in each \gls{CR} after the analysis-level selection is summarised in Figs.~\ref{fig:htoinv_cr_composition_comb2016to18}, and can be compared to those in the signal region from Fig.~\ref{fig:htoinv_sr_composition_comb2016to18}. As desired, the single lepton \glspl{CR} are very similar and dominated by the \ttbar and \wtolnu processes. The dilepton regions also possess a very similar composition to each other, enriched in Drell-Yan \ztoll, and to a lesser extent \ttbar and $\ttbar X$ which contain several dileptonic decay channels. In the \singlePhotonCr \gls{CR}, expectedly the \gammapjets process dominates virtually every category. \acrshort{qcd} multijet events make up a consistent, small fraction of the events. Rather than the yields from \acrshort{mc} as they would likely consist of \glspl{jet} misidentified as photons, its presence in this region is estimated from a data driven purity measurement explained in Sec.~\ref{subsubsec:htoinv_photon_purity}.
 
 \begin{figure}[htbp]
     \centering
@@ -100,17 +100,17 @@ The relative composition of the background processes in each \gls{CR} after the 
         \caption{\singleEleCr control region}
     \end{subfigure}
 
-    \begin{subfigure}[b]{0.33\textwidth}
+    \begin{subfigure}[b]{0.32\textwidth}
         \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/region_2/background_composition.pdf}
         \caption{\doubleMuCr control region}
     \end{subfigure}
-    \hspace{0.05\textwidth}
-    \begin{subfigure}[b]{0.33\textwidth}
+    \hfill
+    \begin{subfigure}[b]{0.32\textwidth}
         \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/region_4/background_composition.pdf}
         \caption{\doubleEleCr control region}
     \end{subfigure}
-
-    \begin{subfigure}[b]{0.33\textwidth}
+    \hfill
+    \begin{subfigure}[b]{0.32\textwidth}
         \includegraphics[width=\textwidth]{figures/region_plots/full_Run2/region_5/background_composition.pdf}
         \caption{\singlePhotonCr control region}
     \end{subfigure}
@@ -143,8 +143,6 @@ Distributions of the single lepton \glspl{CR} after the \gls{CR}--only fit are i
     \caption[Post-fit yields for each category and \ptmiss bin in the single lepton control regions of the \ttH categories for the 2017 dataset]{Post-fit yields for each category and \ptmiss bin in the single lepton \glspl{CR} of the \ttH categories for the 2017 dataset. The total background pre-fit and post-fit is compared to data in the lower panel of each subfigure.}
     \label{fig:htoinv_mountain_range_2017_single_lep_ttH}
 \end{figure}
-
-\clearpage
 
 \begin{figure}[htbp]
     \centering
@@ -221,7 +219,7 @@ The templates are derived in separate bins of photon \pt, and the purity measure
 
 It can be seen that the data resembles the real template at low values of \sieie with the fake template dominating at larger values. Each fit captures the features of both templates appropriately. By calculating the purity within acceptance (i.e., $\sieie \leq \text{0.01}$ as given by the medium ID requirement), the \emph{impurity} can be derived as a function of photon \pt. An exponential function is fitted to interpolate within the range that also serves to extrapolate above it. Fig.~\ref{fig:htoinv_photon_impurity} illustrates the impurity versus photon \pt for each data taking year. A 25\,\% uncertainty around the fit is assumed to account for effects related to the binning of the \sieie distribution.
 
-\begin{figure}[htbp]
+\begin{figure}[ht]
     \centering
     \begin{subfigure}[b]{0.49\textwidth}
         \includegraphics[width=\textwidth]{figures/photon_purity/2016/impurity_plot_2016.pdf}

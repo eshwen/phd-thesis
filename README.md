@@ -50,20 +50,13 @@ The font of my choice is **Garamond Expert with New TX Math** for the main text 
 ```bash
 curl --remote-name https://www.tug.org/fonts/getnonfreefonts/install-getnonfreefonts
 sudo texlua install-getnonfreefonts
-getnonfreefonts --user -a
+sudo getnonfreefonts --sys -a
 ```
 
 If the above doesn't work (sometimes the `microtype` package kinda fails to map things properly), also try
 
 ```bash
-sudo getnonfreefonts --sys -a
 updmap-sys
-```
-
-If those two commands don't resolve it, additionally run
-
-```bash
-updmap-user
 ```
 
 Note that New TX Math is _not_ used to render mathematical symbols in the thesis; the conventional AMS Math with its associated packages are instead used. While New TX Math may look a bit more natural inline to accompany Garamond text, I prefer the styling of AMS Math. Of course, if the font(s) are not to your taste, you can skip this step and replace the relevant preamble lines with whatever you desire.
